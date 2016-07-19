@@ -7,6 +7,10 @@ body {
     margin: 0;
     padding: 0;
 }
+p {
+    margin: 0;
+    line-height: 1.5;
+}
 
 .interactive-embed {
     position: relative;
@@ -16,10 +20,16 @@ body {
 .header {
     font-size: 14px;
     background-color: rgba(255, 255, 255, 0.75);
-    position: absolute;
-    min-width: 300px;
     width: 50%;
+    min-width: 300px;
+    position: absolute;
+    top: calc(100% + 60px); 
 }
+@media (min-width: 480px) { 
+.header {
+    top: 30px;//10%; 
+}}
+
 
 // chart
 .main {
@@ -38,13 +48,13 @@ body {
     circle {
     cursor: pointer;
 }}
-.axis-year line{
+.axis-year line {
     stroke: #eee;//rgb(238, 238, 238);
     shape-rendering: auto;
     stroke-dasharray: 2, 3;    
 }
 .axis-mark line {
-    stroke: #f6f6f6;//rgb(246, 246, 246);
+    stroke: transparent;//#f6f6f6;//rgb(246, 246, 246);
     shape-rendering: auto;
 }
 .axis-highlight > * {
@@ -53,6 +63,7 @@ body {
 
 // states 
 .states {
+    font-size: 15px;
     color: grey;
     width: 100%;
     position: absolute;
@@ -64,9 +75,6 @@ body {
 .btn {
     padding: 0 5px;
     cursor: pointer;
-}
-.btn:nth-child(1) {
-    padding-left: 0;
 }
 .btn-focus {
     border-top: 4px solid;
@@ -87,4 +95,4 @@ body {
 .f-14 { font-size: 14px; }
 .c-g { color: grey; }
 .m-0 { margin: 0; }
-.mv-12 { margin: 12px 0; }
+.mb-10 { margin-bottom: 10px; }

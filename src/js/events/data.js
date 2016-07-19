@@ -124,7 +124,6 @@ function remapDataForCharts(data, type) {
             y: isJump ? result.val : dd.year,
             color: dd.record,
             attrs: {
-                //TODO: id
                 year: dd.year,
                 name: dd.name,
                 team: dd.team,

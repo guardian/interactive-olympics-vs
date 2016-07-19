@@ -1,5 +1,5 @@
-import jsonRecord from '../../data/breaststroke100_m.json!json';
-import jsonFinals from '../../dataDummy/breaststroke100_m.json!json';
+import jsonRecord from '../../data/long-jump_m.json!json';
+import jsonFinals from '../../dataDummy/long-jump_m.json!json';
 import parseData from './data';
 
 import {select as d3_select} from 'd3-selection';
@@ -9,27 +9,25 @@ import getScale from '../draw/scale';
 import updateInfo from '../draw/info';
 import Dots from '../draw/dots';
 import Axis from '../draw/axis';
-//import Grid from '../draw/grid';
 
 export default function() {
     let data = parseData(jsonRecord, jsonFinals);
     let dataCombo = data.finals.concat(data.medals, data.worlds);
 
-    /* data manipulation, even specific */ 
-    // fastest swimming time
-    let timeWr = d3_extent(dataCombo, d => d.x)[0];
+    let distWr = d3_extent(dataCombo, d => d.x)[1];
     Object.keys(data).forEach(dd => {
         // time to distance
         data[dd] = data[dd].map(dm => {
-            dm.x = 100*timeWr/dm.x - 100;
-            dm.attrs.dist = Math.round(Math.abs(dm.x)*100)/100;
+            dm.x = Math.round((dm.x - distWr)*1000)/1000;
+            dm.attrs.dist = Math.abs(dm.x);
             return dm;
         });
         // sort
         data[dd].sort((d1, d2) => d1.x - d2.x);
     });
     console.log(data);
-
+    
+    // ====== same init ====== 
     let domain = getDomain(dataCombo);
     console.log(domain);
 
@@ -56,9 +54,10 @@ export default function() {
         stroke: "rgba(255, 255, 255, 0.5)"
     });
     els.dotsW.init(data.worlds, scale);   
-
-
-    let steps = d3_range(domain.y[1], domain.y[0], -4);
+    // ====== end of same init ======
+    
+    let steps = d3_range(domain.y[1], domain.y[0], -8);
+    // ====== same init and updates ======
     els.axisY = new Axis({coord: "y", value: "year"});
     els.axisY.init(dataCombo.map(d => d.y), scale, steps); 
 
@@ -78,6 +77,7 @@ export default function() {
         },
         opacity: [0.75, 0, 0]
     };
+    toState(els, state.final, "final");
 
     let domainMedal = getDomain(data.finals.concat(data.medals));
     domainMedal.x[1] = 0;
@@ -87,6 +87,7 @@ export default function() {
         domain: domainMedal, 
         opacity: [0.75, 0.5, 0]
     };    
+    toState(els, state.medal, "medal");
 
     state.world = { 
         delay: 8, 
@@ -94,6 +95,7 @@ export default function() {
         domain: getDomain(data.finals.concat(data.worlds)),
         opacity: [0.75, 0, 0.75]
     };    
+    toState(els, state.world, "world");
 
     state.mixed = { 
         delay: 13, 
@@ -101,41 +103,20 @@ export default function() {
         domain: domain,
         opacity: [0.75, 0.5, 0.75]
     };    
-   
-    // default
-    /*let stateDefault = state.final;/ *{
-        duration: 0, 
-        delay: 0,
-        domain: domain,
-        opacity: [0.75, 0.5, 0.75]
-    };*/
-    //toState(els, stateDefault, "mixed");
+    toState(els, state.mixed, "mixed");
 
-    // play states
-    document.querySelector(".btn-play").addEventListener("click", () => {
-        play();
-    });
-    let play = () => {
-        Object.keys(state).map(key => {
-            toState(els, state[key], [key]);
-        });  
-    };
-    play();
-
-    // state on event
     let btns = document.querySelectorAll(".btn");
-    //window.setTimeout(() => {
-    btns.forEach(btn => 
-        btn.addEventListener("click", (e) => {
-        console.log(btn);
-        let nameState = e.target.getAttribute("data-dots");
-        let dataState = state[nameState];
-        dataState.delay = 0;
-        dataState.duration = 2; 
-        toState(els, dataState, nameState);
-        })    
-    ); 
-    //}, (state.mixed.delay + state.mixed.duration) * 1000); 
+    window.setTimeout(() => {
+        btns.forEach(btn => 
+            btn.addEventListener("click", (e) => {
+            let nameState = e.target.getAttribute("data-dots");
+            let dataState = state[nameState];
+            dataState.delay = 0;
+            dataState.duration = 2; 
+            toState(els, dataState, nameState);
+            })    
+        ); 
+    }, 15000); 
 }
 
 function getDomain(data) {
@@ -159,4 +140,5 @@ function toState(els, data, name) {
         // update info
         updateInfo(name);
     }, data.delay*1000);
+
 }

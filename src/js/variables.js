@@ -17,6 +17,7 @@ export let chart = {
     padding: padding
 };
 
+// colors
 export const colors = {
     gold:   "#dab509", 
     silver: "#a1a1a1", 

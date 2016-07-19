@@ -11,6 +11,7 @@ import freestyle200_m from '../dataDummy/freestyle200_m.json!json';
 import breaststroke200_m from '../dataDummy/breaststroke200_m.json!json';
 
 import breaststroke100_m from '../js/events/breaststroke100_m';
+import longjump_m from '../js/events/longjump_m';
 
 import utils from './lib/utils';
 import throttle from './lib/throttle';
@@ -46,8 +47,7 @@ window.init = function init(el, config) {
             breaststroke100_m();
         break;
         case "long-jump_m": 
-            data = getData([], long_jump_m, "D");
-            console.log(data.finals);
+            longjump_m();
         break;
         default:
             console.log("This event is not special!");

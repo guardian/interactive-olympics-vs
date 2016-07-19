@@ -7,6 +7,11 @@ const headlines = {
     mixed: "All results"
 };
 
+const cfg= {
+    "long-jump_m": { unit: "m", event: "male's high jump" },
+    "breaststroke-100_m": { unit: "s", event: "male's breaststroke 100m" }
+};
+
 export default function(data, records) {
     //console.log(data);
     if (!records) {
@@ -22,15 +27,17 @@ export default function(data, records) {
         let cAll = cMedal + cWorld;
 
         let attrs = data.attrs;
+        let event = window.location.search.replace("?", ""); 
         d3_select(".js-headline").text(attrs.name);
         d3_select(".js-team").text(attrs.team);
         d3_select(".js-count").text(cAll!==0 ? "1 " + data.color + " out of " + cAll : "rank " + data.color + " in 2016 fianl");
         d3_select(".js-medal").text(cMedal!==0 ? ", "+cMedal+" olympic medals" : "");
         d3_select(".js-wr").text(cWorld!==0 ? ", "+cWorld+" world records" : "");
         d3_select(".js-standfirst").text(
-            "In " + attrs.year + " male's breaststroke 100m event, " +
-            attrs.name.split(" ")[0] + " marked " + attrs.mark + "s which could be " +
-            attrs.dist + "m behind current world record."
+            "In " + attrs.year + " " + cfg[event].event + " event, " +
+            attrs.name.split(" ")[0] + " marked " + attrs.mark + cfg[event].unit + " which " + 
+            (attrs.dist !== 0 ? "could be " + attrs.dist + "m behind " : "is ") +
+            "current world record."
         );
 
     }

@@ -12,7 +12,7 @@ export default function(cfg) {
 
         dataAxis = d3_axisBottom(scale[coord]);
         if (steps) { dataAxis.tickValues(steps); }
-        dataAxis.tickFormat(d => Math.abs(d));
+        dataAxis.tickFormat(d => Math.round(Math.abs(d)*100)/100);
 
         axis = d3_select(".axis-" + coord)
         .attr("class", "axis-" +  cfg.value)
@@ -58,15 +58,19 @@ export default function(cfg) {
 
         axis.selectAll("line")
         .transition()
-        .delay(opt.delay*1000)
-        .duration(duration*1000)
+        .delay(opt.delay || 0)
+        .duration((opt.duration || 2) * 1000)
+        //.delay(opt.delay*1000)
+        //.duration(duration*1000)
         .attr(coord+"1", d => scale[coord](d) + "%")
         .attr(coord+"2", d => scale[coord](d) + "%");
         
         axis.selectAll("text")
         .transition()
-        .delay(opt.delay*1000)
-        .duration(duration*1000)
+        .delay(opt.delay || 0)
+        .duration((opt.duration || 2) * 1000)
+        //.delay(opt.delay*1000)
+        //.duration(duration*1000)
         .attr("dy", coord === "x" ? ".71em" : ".3em")
         .attr(coord, d => scale[coord](d) + "%");
         
