@@ -1,0 +1,596 @@
+{
+    "olympics": {
+        "eventUnit": {
+            "identifier": "ATM061101",
+            "description": "Men's Long Jump Final",
+            "unitType": "Individuals",
+            "medalEvent": "Yes",
+            "disciplineDescription": {
+                "identifier": "athletics",
+                "value": "Athletics"
+            },
+            "phaseDescription": {
+                "identifier": "ATM0611",
+                "value": "Final"
+            },
+            "result": {
+                "type": "Official",
+                "timestamp": "2013-11-13T12:14:31Z",
+                "entrant": [{
+                    "order": "1",
+                    "type": "Individual",
+                    "code": "1127211",
+                    "rank": "1",
+                    "value": "8.31",
+                    "property": [{
+                        "type": "Medal Awarded",
+                        "value": "Gold"
+                    }, {
+                        "type": "Result Type",
+                        "value": "Distance"
+                    }],
+                    "resultExtension": [{
+                        "type": "Wind Speed",
+                        "value": "-0.4"
+                    }, {
+                        "type": "Split Results",
+                        "extension": [{
+                            "position": "1",
+                            "value": "6.28"
+                        }, {
+                            "position": "2",
+                            "value": "8.21"
+                        }, {
+                            "position": "3",
+                            "value": "8.14"
+                        }, {
+                            "position": "4",
+                            "value": "8.31"
+                        }, {
+                            "position": "5",
+                            "value": "x"
+                        }, {
+                            "position": "6",
+                            "value": "6.33"
+                        }]
+                    }],
+                    "country": {
+                        "identifier": "GBR",
+                        "name": "Great Britain",
+                        "longName": "Great Britain"
+                    },
+                    "participant": {
+                        "order": "1",
+                        "bib": "1832",
+                        "competitor": {
+                            "identifier": "1127211",
+                            "firstName": "Greg",
+                            "lastName": "Rutherford",
+                            "fullName": "Greg Rutherford"
+                        }
+                    }
+                }, {
+                    "order": "2",
+                    "type": "Individual",
+                    "code": "1090308",
+                    "rank": "2",
+                    "value": "8.16",
+                    "property": [{
+                        "type": "Medal Awarded",
+                        "value": "Silver"
+                    }, {
+                        "type": "Result Type",
+                        "value": "Distance"
+                    }],
+                    "resultExtension": [{
+                        "type": "Wind Speed",
+                        "value": "-0.2"
+                    }, {
+                        "type": "Split Results",
+                        "extension": [{
+                            "position": "1",
+                            "value": "x"
+                        }, {
+                            "position": "2",
+                            "value": "7.97"
+                        }, {
+                            "position": "3",
+                            "value": "x"
+                        }, {
+                            "position": "4",
+                            "value": "x"
+                        }, {
+                            "position": "5",
+                            "value": "8.13"
+                        }, {
+                            "position": "6",
+                            "value": "8.16"
+                        }]
+                    }],
+                    "country": {
+                        "identifier": "AUS",
+                        "name": "Australia",
+                        "longName": "Australia"
+                    },
+                    "participant": {
+                        "order": "1",
+                        "bib": "1066",
+                        "competitor": {
+                            "identifier": "1090308",
+                            "firstName": "Mitchell",
+                            "lastName": "Watt",
+                            "fullName": "Mitchell Watt"
+                        }
+                    }
+                }, {
+                    "order": "3",
+                    "type": "Individual",
+                    "code": "1135588",
+                    "rank": "3",
+                    "value": "8.12",
+                    "property": [{
+                        "type": "Medal Awarded",
+                        "value": "Bronze"
+                    }, {
+                        "type": "Result Type",
+                        "value": "Distance"
+                    }],
+                    "resultExtension": [{
+                        "type": "Wind Speed",
+                        "value": "-0.2"
+                    }, {
+                        "type": "Split Results",
+                        "extension": [{
+                            "position": "1",
+                            "value": "7.98"
+                        }, {
+                            "position": "2",
+                            "value": "8.07"
+                        }, {
+                            "position": "3",
+                            "value": "7.93"
+                        }, {
+                            "position": "4",
+                            "value": "8.12"
+                        }, {
+                            "position": "5",
+                            "value": "7.96"
+                        }, {
+                            "position": "6",
+                            "value": "x"
+                        }]
+                    }],
+                    "country": {
+                        "identifier": "USA",
+                        "name": "United States",
+                        "longName": "United States of America"
+                    },
+                    "participant": {
+                        "order": "1",
+                        "bib": "3211",
+                        "competitor": {
+                            "identifier": "1135588",
+                            "firstName": "Will",
+                            "lastName": "Claye",
+                            "fullName": "Will Claye"
+                        }
+                    }
+                }, {
+                    "order": "4",
+                    "type": "Individual",
+                    "code": "1018320",
+                    "rank": "4",
+                    "value": "8.11",
+                    "property": {
+                        "type": "Result Type",
+                        "value": "Distance"
+                    },
+                    "resultExtension": [{
+                        "type": "Wind Speed",
+                        "value": "-0.7"
+                    }, {
+                        "type": "Split Results",
+                        "extension": [{
+                            "position": "1",
+                            "value": "7.63"
+                        }, {
+                            "position": "2",
+                            "value": "7.80"
+                        }, {
+                            "position": "3",
+                            "value": "8.07"
+                        }, {
+                            "position": "4",
+                            "value": "8.11"
+                        }, {
+                            "position": "5",
+                            "value": "8.07"
+                        }, {
+                            "position": "6",
+                            "value": "7.98"
+                        }]
+                    }],
+                    "country": {
+                        "identifier": "SWE",
+                        "name": "Sweden",
+                        "longName": "Sweden"
+                    },
+                    "participant": {
+                        "order": "1",
+                        "bib": "3002",
+                        "competitor": {
+                            "identifier": "1018320",
+                            "firstName": "Michel",
+                            "lastName": "Torneus",
+                            "fullName": "Michel Torneus"
+                        }
+                    }
+                }, {
+                    "order": "5",
+                    "type": "Individual",
+                    "code": "1119463",
+                    "rank": "5",
+                    "value": "8.10",
+                    "property": {
+                        "type": "Result Type",
+                        "value": "Distance"
+                    },
+                    "resultExtension": [{
+                        "type": "Wind Speed",
+                        "value": "+0.4"
+                    }, {
+                        "type": "Split Results",
+                        "extension": [{
+                            "position": "1",
+                            "value": "7.87"
+                        }, {
+                            "position": "2",
+                            "value": "x"
+                        }, {
+                            "position": "3",
+                            "value": "7.96"
+                        }, {
+                            "position": "4",
+                            "value": "8.10"
+                        }, {
+                            "position": "5",
+                            "value": "7.96"
+                        }, {
+                            "position": "6",
+                            "value": "7.98"
+                        }]
+                    }],
+                    "country": {
+                        "identifier": "GER",
+                        "name": "Germany",
+                        "longName": "Germany"
+                    },
+                    "participant": {
+                        "order": "1",
+                        "bib": "1892",
+                        "competitor": {
+                            "identifier": "1119463",
+                            "firstName": "Sebastian",
+                            "lastName": "Bayer",
+                            "fullName": "Sebastian Bayer"
+                        }
+                    }
+                }, {
+                    "order": "6",
+                    "type": "Individual",
+                    "code": "1094292",
+                    "rank": "6",
+                    "value": "8.07",
+                    "property": {
+                        "type": "Result Type",
+                        "value": "Distance"
+                    },
+                    "resultExtension": [{
+                        "type": "Wind Speed",
+                        "value": "+0.2"
+                    }, {
+                        "type": "Split Results",
+                        "extension": [{
+                            "position": "1",
+                            "value": "8.06"
+                        }, {
+                            "position": "2",
+                            "value": "7.87"
+                        }, {
+                            "position": "3",
+                            "value": "7.83"
+                        }, {
+                            "position": "4",
+                            "value": "8.07"
+                        }, {
+                            "position": "5",
+                            "value": "7.74"
+                        }, {
+                            "position": "6",
+                            "value": "7.76"
+                        }]
+                    }],
+                    "country": {
+                        "identifier": "GBR",
+                        "name": "Great Britain",
+                        "longName": "Great Britain"
+                    },
+                    "participant": {
+                        "order": "1",
+                        "bib": "1839",
+                        "competitor": {
+                            "identifier": "1094292",
+                            "firstName": "Christopher",
+                            "lastName": "Tomlinson",
+                            "fullName": "Christopher Tomlinson"
+                        }
+                    }
+                }, {
+                    "order": "7",
+                    "type": "Individual",
+                    "code": "1099126",
+                    "rank": "7",
+                    "value": "8.01",
+                    "property": {
+                        "type": "Result Type",
+                        "value": "Distance"
+                    },
+                    "resultExtension": [{
+                        "type": "Wind Speed",
+                        "value": "-0.1"
+                    }, {
+                        "type": "Split Results",
+                        "extension": [{
+                            "position": "1",
+                            "value": "x"
+                        }, {
+                            "position": "2",
+                            "value": "x"
+                        }, {
+                            "position": "3",
+                            "value": "7.96"
+                        }, {
+                            "position": "4",
+                            "value": "8.01"
+                        }, {
+                            "position": "5",
+                            "value": "x"
+                        }, {
+                            "position": "6",
+                            "value": "x"
+                        }]
+                    }],
+                    "country": {
+                        "identifier": "BRA",
+                        "name": "Brazil",
+                        "longName": "Brazil"
+                    },
+                    "participant": {
+                        "order": "1",
+                        "bib": "1219",
+                        "competitor": {
+                            "identifier": "1099126",
+                            "firstName": "Mauro Vinicius",
+                            "lastName": "da Silva",
+                            "fullName": "Mauro Vinicius da Silva"
+                        }
+                    }
+                }, {
+                    "order": "8",
+                    "type": "Individual",
+                    "code": "1086011",
+                    "rank": "8",
+                    "value": "7.93",
+                    "property": {
+                        "type": "Result Type",
+                        "value": "Distance"
+                    },
+                    "resultExtension": [{
+                        "type": "Wind Speed",
+                        "value": "-2.3"
+                    }, {
+                        "type": "Split Results",
+                        "extension": [{
+                            "position": "1",
+                            "value": "7.93"
+                        }, {
+                            "position": "2",
+                            "value": "x"
+                        }, {
+                            "position": "3",
+                            "value": "7.62"
+                        }, {
+                            "position": "4",
+                            "value": "x"
+                        }, {
+                            "position": "5",
+                            "value": "x"
+                        }, {
+                            "position": "6",
+                            "value": "x"
+                        }]
+                    }],
+                    "country": {
+                        "identifier": "RSA",
+                        "name": "South Africa",
+                        "longName": "South Africa"
+                    },
+                    "participant": {
+                        "order": "1",
+                        "bib": "2785",
+                        "competitor": {
+                            "identifier": "1086011",
+                            "firstName": "Godfrey Khotso",
+                            "lastName": "Mokoena",
+                            "fullName": "Godfrey Khotso Mokoena"
+                        }
+                    }
+                }, {
+                    "order": "9",
+                    "type": "Individual",
+                    "code": "1090262",
+                    "rank": "9",
+                    "value": "7.85",
+                    "property": {
+                        "type": "Result Type",
+                        "value": "Distance"
+                    },
+                    "resultExtension": [{
+                        "type": "Wind Speed",
+                        "value": "-0.3"
+                    }, {
+                        "type": "Split Results",
+                        "extension": [{
+                            "position": "1",
+                            "value": "7.85"
+                        }, {
+                            "position": "2",
+                            "value": "x"
+                        }, {
+                            "position": "3",
+                            "value": "7.63"
+                        }]
+                    }],
+                    "country": {
+                        "identifier": "AUS",
+                        "name": "Australia",
+                        "longName": "Australia"
+                    },
+                    "participant": {
+                        "order": "1",
+                        "bib": "1043",
+                        "competitor": {
+                            "identifier": "1090262",
+                            "firstName": "Henry",
+                            "lastName": "Frayne",
+                            "fullName": "Henry Frayne"
+                        }
+                    }
+                }, {
+                    "order": "10",
+                    "type": "Individual",
+                    "code": "1284181",
+                    "rank": "10",
+                    "value": "7.80",
+                    "property": {
+                        "type": "Result Type",
+                        "value": "Distance"
+                    },
+                    "resultExtension": [{
+                        "type": "Wind Speed",
+                        "value": "+0.2"
+                    }, {
+                        "type": "Split Results",
+                        "extension": [{
+                            "position": "1",
+                            "value": "x"
+                        }, {
+                            "position": "2",
+                            "value": "7.80"
+                        }, {
+                            "position": "3",
+                            "value": "7.76"
+                        }]
+                    }],
+                    "country": {
+                        "identifier": "USA",
+                        "name": "United States",
+                        "longName": "United States of America"
+                    },
+                    "participant": {
+                        "order": "1",
+                        "bib": "3218",
+                        "competitor": {
+                            "identifier": "1284181",
+                            "firstName": "Marquise",
+                            "lastName": "Goodwin",
+                            "fullName": "Marquise Goodwin"
+                        }
+                    }
+                }, {
+                    "order": "11",
+                    "type": "Individual",
+                    "code": "1016752",
+                    "rank": "11",
+                    "value": "7.78",
+                    "property": {
+                        "type": "Result Type",
+                        "value": "Distance"
+                    },
+                    "resultExtension": [{
+                        "type": "Wind Speed",
+                        "value": "-0.9"
+                    }, {
+                        "type": "Split Results",
+                        "extension": [{
+                            "position": "1",
+                            "value": "x"
+                        }, {
+                            "position": "2",
+                            "value": "x"
+                        }, {
+                            "position": "3",
+                            "value": "7.78"
+                        }]
+                    }],
+                    "country": {
+                        "identifier": "RUS",
+                        "name": "Russian Fed.",
+                        "longName": "Russian Federation"
+                    },
+                    "participant": {
+                        "order": "1",
+                        "bib": "2818",
+                        "competitor": {
+                            "identifier": "1016752",
+                            "firstName": "Aleksandr",
+                            "lastName": "Menkov",
+                            "fullName": "Aleksandr Menkov"
+                        }
+                    }
+                }, {
+                    "order": "12",
+                    "type": "Individual",
+                    "code": "1086699",
+                    "rank": "12",
+                    "value": "7.70",
+                    "property": {
+                        "type": "Result Type",
+                        "value": "Distance"
+                    },
+                    "resultExtension": [{
+                        "type": "Wind Speed",
+                        "value": "+0.9"
+                    }, {
+                        "type": "Split Results",
+                        "extension": [{
+                            "position": "1",
+                            "value": "7.70"
+                        }, {
+                            "position": "2",
+                            "value": "x"
+                        }, {
+                            "position": "3",
+                            "value": "x"
+                        }]
+                    }],
+                    "country": {
+                        "identifier": "BER",
+                        "name": "Bermuda",
+                        "longName": "Bermuda"
+                    },
+                    "participant": {
+                        "order": "1",
+                        "bib": "1151",
+                        "competitor": {
+                            "identifier": "1086699",
+                            "firstName": "Tyrone",
+                            "lastName": "Smith",
+                            "fullName": "Tyrone Smith"
+                        }
+                    }
+                }]
+            }
+        }
+    }
+}

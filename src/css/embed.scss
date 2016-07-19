@@ -1,0 +1,90 @@
+@import "fonts";
+
+html,
+body {
+    @include fs-bodyCopy(2);
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.interactive-embed {
+    position: relative;
+    width: 100%;
+}
+
+.header {
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.75);
+    position: absolute;
+    min-width: 300px;
+    width: 50%;
+}
+
+// chart
+.main {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+
+    position: absolute;
+    padding: 5px 20px 20px 5px;
+    
+    text {
+    fill: rgb(187, 187, 187);
+    font-family: monospace;
+    font-size: 14px;
+    }
+    circle {
+    cursor: pointer;
+}}
+.axis-year line{
+    stroke: #eee;//rgb(238, 238, 238);
+    shape-rendering: auto;
+    stroke-dasharray: 2, 3;    
+}
+.axis-mark line {
+    stroke: #f6f6f6;//rgb(246, 246, 246);
+    shape-rendering: auto;
+}
+.axis-highlight > * {
+    transition: 0.25s;
+}
+
+// states 
+.states {
+    color: grey;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    border-top: 1px solid #ccc;
+    margin-top: 20px;
+    padding-top: 5px;
+}
+.btn {
+    padding: 0 5px;
+    cursor: pointer;
+}
+.btn:nth-child(1) {
+    padding-left: 0;
+}
+.btn-focus {
+    border-top: 4px solid;
+    padding-top: 5px;
+}
+
+// demo
+.plot {
+    display: inline-block;
+    font-size: 14px;
+    font-family: monospace;
+}
+
+//@media (min-width: 660px) { width: (100% / 2); }
+//@media (min-width: 980px) { width: (100% / 3); }
+
+/* atomic style */
+.f-14 { font-size: 14px; }
+.c-g { color: grey; }
+.m-0 { margin: 0; }
+.mv-12 { margin: 12px 0; }
