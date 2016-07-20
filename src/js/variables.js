@@ -19,8 +19,8 @@ export let chart = {
 
 // colors
 export const colors = {
-    gold:   "#dab509", 
-    silver: "#a1a1a1", 
-    bronze: "#ae7058", 
-    others: "#ccc"
+    gold:   "#fbdc00", 
+    silver: "#C0C0C0", 
+    bronze: "#CD7F32", 
+    others: "#E0E0E0"
 };

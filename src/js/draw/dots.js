@@ -36,7 +36,7 @@ export default function(cfg) {
         .attr("cy", d => cfg.cy(d, cfg.radius, scale.y) + "%")
         .attr("r", cfg.radius)
         .attr("fill-opacity", () => cfg.opacity ? cfg.opacity : 0)
-        .attr("fill", d => (d.color||cfg.color) ? (colors[d.color]||cfg.color) : "#000")
+        .attr("fill", d => (d.color||cfg.color) ? (colors[d.color]||cfg.color) : colors.others)
         .attr("stroke-opacity", () => cfg.opacity ? cfg.opacity : 0)
         .attr("stroke", () => { if(cfg.stroke) return cfg.stroke; })
         .attr("stroke-width", 1);
@@ -100,11 +100,7 @@ export default function(cfg) {
             d3_select(".js-highlight-h").style("opacity", 1)
             .attr("y1", y + "%").attr("y2", y + "%") 
             .attr("x1", x + "%");
-            d3_select(".js-highlight-l").style("opacity", 1)
-            .attr("x1", x + "%").attr("x2", x + "%")
-            .attr("y1", (y-1) + "%").attr("y2", (y+1) + "%"); 
-            d3_select(".js-highlight-r").style("opacity", 1)
-            .attr("y1", (y-1) + "%").attr("y2", (y+1) + "%"); 
+            
         })
         .on("mouseout", d1 => {
             let attrs = d1.attrs;
@@ -117,8 +113,6 @@ export default function(cfg) {
             .attr("r", d => d.r);
             
             // highlight
-            d3_select(".js-highlight-l").style("opacity", 0);
-            d3_select(".js-highlight-r").style("opacity", 0);
             d3_select(".js-highlight-h").style("opacity", 0);
         });
     };

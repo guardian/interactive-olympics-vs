@@ -42,16 +42,15 @@ p {
     
     text {
     fill: rgb(187, 187, 187);
-    font-family: monospace;
-    font-size: 14px;
+    @include fs-data(2);
     }
     circle {
     cursor: pointer;
 }}
 .axis-year line {
-    stroke: #eee;//rgb(238, 238, 238);
+    stroke: #e6e6e6;//rgb(238, 238, 238);
     shape-rendering: auto;
-    stroke-dasharray: 2, 3;    
+    stroke-dasharray: 1, 1;    
 }
 .axis-mark line {
     stroke: transparent;//#f6f6f6;//rgb(246, 246, 246);
@@ -84,8 +83,7 @@ p {
 // demo
 .plot {
     display: inline-block;
-    font-size: 14px;
-    font-family: monospace;
+    @include fs-data(2);
 }
 
 //@media (min-width: 660px) { width: (100% / 2); }
