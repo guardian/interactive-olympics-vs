@@ -212,7 +212,7 @@ module.exports = function(grunt) {
         grunt.config('visuals', {
             s3: grunt.file.readJSON('./cfg/s3.json'),
             timestamp: Date.now(),
-            jspmFlags: '-m',
+            jspmFlags: '',//-m',
             assetPath: '<%= visuals.s3.domain %><%= visuals.s3.path %>/<%= visuals.timestamp %>'
         });
     })

@@ -1,0 +1,11 @@
+tmp
+node_modules
+jspm_packages
+bower_components
+build
+deploy
+cfg/aws-keys.json
+.jshintrc
+*DS_Store
+*.sw*
+*.log

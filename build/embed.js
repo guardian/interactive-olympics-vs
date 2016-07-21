@@ -285,7 +285,7 @@ $__System.registerDynamic("5", [], true, function($__require, exports, module) {
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = "<svg class=\"js-chart main\">\n    <g class=\"axis-y\"></g>\n    <g class=\"axis-x\"></g>\n    <g class=\"axis-highlight\">\n        <line class=\"js-highlight-h\" x1=\"0\" x2=\"95.5%\" stroke=\"#dcdcdc\" stroke-width=\"3px\" style=\"opacity: 0\"></line>\n    </g>\n    <g class=\"line-ruler\"></g>\n    <g class=\"line-marks\"></g>\n    <g class=\"line-frame\"></g>\n    <g class=\"dots-final\"></g>\n    <g class=\"dots-medal\"></g>\n    <g class=\"dots-world\"></g>\n    <g class=\"dots-highlight\"></g>\n</svg>\n<div class=\"header\">\n    <h2 class=\"m-0\">\n        <span class=\"js-headline\"></span>\n        <span class=\"js-team f-14 c-g\"></span>\n    </h2>\n    <p class=\"mb-10\">\n        <span class=\"js-count\"></span>\n        <span class=\"js-medal\"></span>\n        <span class=\"js-wr\"></span>\n    </p>\n    <p class=\"js-standfirst\"></p>\n</div>\n<div class=\"states\">\n    <span class=\"btn-play\">Play states:</span>\n    <span class=\"btn btn-final\" data-dots=\"final\">final</span> |\n    <span class=\"btn btn-medal\" data-dots=\"medal\">medal</span> |\n    <span class=\"btn btn-world\" data-dots=\"world\">world records</span> |\n    <span class=\"btn btn-mixed\" data-dots=\"mixed\">all</span>\n</div>\n";
+  module.exports = "<svg class=\"js-chart main\">\n    <g class=\"axis-y\"></g>\n    <g class=\"axis-x\"></g>\n    <g class=\"axis-highlight\">\n        <line class=\"js-highlight-h\" x1=\"0\" x2=\"95.5%\" stroke=\"#dcdcdc\" stroke-width=\"3px\" style=\"opacity: 0\"></line>\n    </g>\n    <g class=\"line-ruler\"></g>\n    <g class=\"line-marks\"></g>\n    <g class=\"line-frame\"></g>\n    <g class=\"dots-final\"></g>\n    <g class=\"dots-medal\"></g>\n    <g class=\"dots-world\"></g>\n    <g class=\"dots-highlight\"></g>\n</svg>\n<div class=\"header\">\n    <h2 class=\"m-0\">\n        <span class=\"js-headline\"></span>\n        <span class=\"js-team f-14 c-g\"></span>\n    </h2>\n    <p class=\"mb-10\">\n        <span class=\"js-final count count-final\"></span>\n        <span class=\"js-medal count count-medal\"></span>\n        <span class=\"js-world count count-world\"></span>\n    </p>\n    <p class=\"js-standfirst\"></p>\n</div>\n<div class=\"states\">\n    <span class=\"btn-play\">Play states:</span>\n    <span class=\"btn btn-final\" data-dots=\"final\">final</span> |\n    <span class=\"btn btn-medal\" data-dots=\"medal\">medal</span> |\n    <span class=\"btn btn-world\" data-dots=\"world\">world records</span> |\n    <span class=\"btn btn-mixed\" data-dots=\"mixed\">all</span>\n</div>\n";
   return module.exports;
 });
 
@@ -1041,27 +1041,6 @@ $__System.register('31', ['30', '32', '33', '2d', '2e', '2f'], function (_export
         }
     };
 });
-$__System.registerDynamic("21", [], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  var $Object = Object;
-  module.exports = {
-    create: $Object.create,
-    getProto: $Object.getPrototypeOf,
-    isEnum: {}.propertyIsEnumerable,
-    getDesc: $Object.getOwnPropertyDescriptor,
-    setDesc: $Object.defineProperty,
-    setDescs: $Object.defineProperties,
-    getKeys: $Object.keys,
-    getNames: $Object.getOwnPropertyNames,
-    getSymbols: $Object.getOwnPropertySymbols,
-    each: [].forEach
-  };
-  return module.exports;
-});
-
 $__System.registerDynamic("26", [], true, function($__require, exports, module) {
   ;
   var define,
@@ -5991,60 +5970,24 @@ $__System.registerDynamic("51", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.register('52', ['33', '43', '50', '51', '53', '54', '55', '56', '57', '4b'], function (_export) {
-    var _Object$keys, d3_select, jsonRecord, jsonFinals, parseData, getScale, updateInfo, Dots, Axis, d3_extent, d3_range;
+$__System.register('52', ['33', '50', '51', '53', '54', '4b'], function (_export) {
+    var _Object$keys, jsonRecord, jsonFinals, parseData, result, d3_extent;
 
-    //}, (state.mixed.delay + state.mixed.duration) * 1000);
-
-    function getDomain(data) {
-        return {
-            x: d3_extent(data, function (d) {
-                return d.x;
-            }),
-            y: d3_extent(data, function (d) {
-                return d.y;
-            })
-        };
-    }
-
-    function toState(els, data, name) {
-        var scale = getScale(data.domain);
-        _Object$keys(els).forEach(function (key, i) {
-            els[key].update(data, scale, data.opacity[i]);
-        });
-        window.setTimeout(function () {
-            d3_select(".states").selectAll(".btn").classed("btn-focus", false);
-            d3_select(".btn-" + name).classed("btn-focus", true);
-            // update info
-            updateInfo(name);
-        }, data.delay * 1000);
-    }
     return {
         setters: [function (_) {
             _Object$keys = _['default'];
-        }, function (_5) {
-            d3_select = _5.select;
         }, function (_2) {
             jsonRecord = _2['default'];
         }, function (_3) {
             jsonFinals = _3['default'];
         }, function (_4) {
             parseData = _4['default'];
-        }, function (_6) {
-            getScale = _6['default'];
-        }, function (_7) {
-            updateInfo = _7['default'];
-        }, function (_8) {
-            Dots = _8['default'];
-        }, function (_9) {
-            Axis = _9['default'];
+        }, function (_5) {
+            result = _5['default'];
         }, function (_b) {
             d3_extent = _b.extent;
-            d3_range = _b.range;
         }],
         execute: function () {
-            //import Grid from '../draw/grid';
-
             'use strict';
 
             _export('default', function () {
@@ -6070,330 +6013,12 @@ $__System.register('52', ['33', '43', '50', '51', '53', '54', '55', '56', '57', 
                 });
                 console.log(data);
 
-                var domain = getDomain(dataCombo);
-                console.log(domain);
-
-                // init, draw all
-                var scale = getScale(domain);
-                var els = {};
-
-                els.dotsF = new Dots({
-                    dataset: "final",
-                    radius: 9
-                });
-                els.dotsF.init(data.finals, scale);
-
-                els.dotsM = new Dots({
-                    dataset: "medal",
-                    radius: 6
-                });
-                els.dotsM.init(data.medals, scale);
-
-                els.dotsW = new Dots({
-                    dataset: "world",
-                    radius: 3,
-                    color: "#333",
-                    stroke: "rgba(255, 255, 255, 0.5)"
-                });
-                els.dotsW.init(data.worlds, scale);
-
-                var steps = d3_range(domain.y[1], domain.y[0], -4);
-                els.axisY = new Axis({ coord: "y", value: "year" });
-                els.axisY.init(dataCombo.map(function (d) {
-                    return d.y;
-                }), scale, steps);
-
-                els.axisX = new Axis({ coord: "x", value: "mark" });
-                els.axisX.init(dataCombo.map(function (d) {
-                    return d.x;
-                }), scale);
-
-                // update with animations
-                var state = {};
-                state.final = {
-                    delay: 0,
-                    duration: 0,
-                    //domain: getDomain(data.finals.concat([data.medals[data.medals.length-1], data.worlds[data.worlds.length-1]])),
-                    domain: {
-                        x: [d3_extent(data.finals, function (d) {
-                            return d.x;
-                        })[0], 0],
-                        y: [2015, 2017]
-                    },
-                    opacity: [0.75, 0, 0]
-                };
-
-                var domainMedal = getDomain(data.finals.concat(data.medals));
-                domainMedal.x[1] = 0;
-                state.medal = {
-                    delay: 3,
-                    duration: 2,
-                    domain: domainMedal,
-                    opacity: [0.75, 0.5, 0]
-                };
-
-                state.world = {
-                    delay: 8,
-                    duration: 2,
-                    domain: getDomain(data.finals.concat(data.worlds)),
-                    opacity: [0.75, 0, 0.75]
-                };
-
-                state.mixed = {
-                    delay: 13,
-                    duration: 2,
-                    domain: domain,
-                    opacity: [0.75, 0.5, 0.75]
-                };
-
-                // default
-                /*let stateDefault = state.final;/ *{
-                    duration: 0, 
-                    delay: 0,
-                    domain: domain,
-                    opacity: [0.75, 0.5, 0.75]
-                };*/
-                //toState(els, stateDefault, "mixed");
-
-                // play states
-                document.querySelector(".btn-play").addEventListener("click", function () {
-                    play();
-                });
-                var play = function play() {
-                    _Object$keys(state).map(function (key) {
-                        toState(els, state[key], [key]);
-                    });
-                };
-                play();
-
-                // state on event
-                var btns = document.querySelectorAll(".btn");
-                //window.setTimeout(() => {
-                btns.forEach(function (btn) {
-                    return btn.addEventListener("click", function (e) {
-                        console.log(btn);
-                        var nameState = e.target.getAttribute("data-dots");
-                        var dataState = state[nameState];
-                        dataState.delay = 0;
-                        dataState.duration = 2;
-                        toState(els, dataState, nameState);
-                    });
-                });
+                result(data, dataCombo);
             });
         }
     };
 });
-$__System.registerDynamic("16", [], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  module.exports = function(it) {
-    if (it == undefined)
-      throw TypeError("Can't call method on  " + it);
-    return it;
-  };
-  return module.exports;
-});
-
-$__System.registerDynamic("35", ["16"], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  var defined = $__require('16');
-  module.exports = function(it) {
-    return Object(defined(it));
-  };
-  return module.exports;
-});
-
-$__System.registerDynamic("28", [], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  var global = module.exports = typeof window != 'undefined' && window.Math == Math ? window : typeof self != 'undefined' && self.Math == Math ? self : Function('return this')();
-  if (typeof __g == 'number')
-    __g = global;
-  return module.exports;
-});
-
-$__System.registerDynamic("58", [], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  module.exports = function(it) {
-    if (typeof it != 'function')
-      throw TypeError(it + ' is not a function!');
-    return it;
-  };
-  return module.exports;
-});
-
-$__System.registerDynamic("59", ["58"], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  var aFunction = $__require('58');
-  module.exports = function(fn, that, length) {
-    aFunction(fn);
-    if (that === undefined)
-      return fn;
-    switch (length) {
-      case 1:
-        return function(a) {
-          return fn.call(that, a);
-        };
-      case 2:
-        return function(a, b) {
-          return fn.call(that, a, b);
-        };
-      case 3:
-        return function(a, b, c) {
-          return fn.call(that, a, b, c);
-        };
-    }
-    return function() {
-      return fn.apply(that, arguments);
-    };
-  };
-  return module.exports;
-});
-
-$__System.registerDynamic("25", ["28", "c", "59"], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  var global = $__require('28'),
-      core = $__require('c'),
-      ctx = $__require('59'),
-      PROTOTYPE = 'prototype';
-  var $export = function(type, name, source) {
-    var IS_FORCED = type & $export.F,
-        IS_GLOBAL = type & $export.G,
-        IS_STATIC = type & $export.S,
-        IS_PROTO = type & $export.P,
-        IS_BIND = type & $export.B,
-        IS_WRAP = type & $export.W,
-        exports = IS_GLOBAL ? core : core[name] || (core[name] = {}),
-        target = IS_GLOBAL ? global : IS_STATIC ? global[name] : (global[name] || {})[PROTOTYPE],
-        key,
-        own,
-        out;
-    if (IS_GLOBAL)
-      source = name;
-    for (key in source) {
-      own = !IS_FORCED && target && key in target;
-      if (own && key in exports)
-        continue;
-      out = own ? target[key] : source[key];
-      exports[key] = IS_GLOBAL && typeof target[key] != 'function' ? source[key] : IS_BIND && own ? ctx(out, global) : IS_WRAP && target[key] == out ? (function(C) {
-        var F = function(param) {
-          return this instanceof C ? new C(param) : C(param);
-        };
-        F[PROTOTYPE] = C[PROTOTYPE];
-        return F;
-      })(out) : IS_PROTO && typeof out == 'function' ? ctx(Function.call, out) : out;
-      if (IS_PROTO)
-        (exports[PROTOTYPE] || (exports[PROTOTYPE] = {}))[key] = out;
-    }
-  };
-  $export.F = 1;
-  $export.G = 2;
-  $export.S = 4;
-  $export.P = 8;
-  $export.B = 16;
-  $export.W = 32;
-  module.exports = $export;
-  return module.exports;
-});
-
-$__System.registerDynamic("20", [], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  module.exports = function(exec) {
-    try {
-      return !!exec();
-    } catch (e) {
-      return true;
-    }
-  };
-  return module.exports;
-});
-
-$__System.registerDynamic("5a", ["25", "c", "20"], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  var $export = $__require('25'),
-      core = $__require('c'),
-      fails = $__require('20');
-  module.exports = function(KEY, exec) {
-    var fn = (core.Object || {})[KEY] || Object[KEY],
-        exp = {};
-    exp[KEY] = exec(fn);
-    $export($export.S + $export.F * fails(function() {
-      fn(1);
-    }), 'Object', exp);
-  };
-  return module.exports;
-});
-
-$__System.registerDynamic("5b", ["35", "5a"], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  var toObject = $__require('35');
-  $__require('5a')('keys', function($keys) {
-    return function keys(it) {
-      return $keys(toObject(it));
-    };
-  });
-  return module.exports;
-});
-
-$__System.registerDynamic("c", [], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  var core = module.exports = {version: '1.2.6'};
-  if (typeof __e == 'number')
-    __e = core;
-  return module.exports;
-});
-
-$__System.registerDynamic("5c", ["5b", "c"], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  $__require('5b');
-  module.exports = $__require('c').Object.keys;
-  return module.exports;
-});
-
-$__System.registerDynamic("33", ["5c"], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  module.exports = {
-    "default": $__require('5c'),
-    __esModule: true
-  };
-  return module.exports;
-});
-
-$__System.registerDynamic("5d", [], true, function($__require, exports, module) {
+$__System.registerDynamic("55", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -6406,7 +6031,7 @@ $__System.registerDynamic("5d", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("5e", [], true, function($__require, exports, module) {
+$__System.registerDynamic("56", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -7217,7 +6842,217 @@ $__System.register("53", ["32", "44"], function (_export) {
         }
     };
 });
-$__System.registerDynamic("5f", [], true, function($__require, exports, module) {
+$__System.registerDynamic("16", [], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  module.exports = function(it) {
+    if (it == undefined)
+      throw TypeError("Can't call method on  " + it);
+    return it;
+  };
+  return module.exports;
+});
+
+$__System.registerDynamic("35", ["16"], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  var defined = $__require('16');
+  module.exports = function(it) {
+    return Object(defined(it));
+  };
+  return module.exports;
+});
+
+$__System.registerDynamic("28", [], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  var global = module.exports = typeof window != 'undefined' && window.Math == Math ? window : typeof self != 'undefined' && self.Math == Math ? self : Function('return this')();
+  if (typeof __g == 'number')
+    __g = global;
+  return module.exports;
+});
+
+$__System.registerDynamic("57", [], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  module.exports = function(it) {
+    if (typeof it != 'function')
+      throw TypeError(it + ' is not a function!');
+    return it;
+  };
+  return module.exports;
+});
+
+$__System.registerDynamic("58", ["57"], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  var aFunction = $__require('57');
+  module.exports = function(fn, that, length) {
+    aFunction(fn);
+    if (that === undefined)
+      return fn;
+    switch (length) {
+      case 1:
+        return function(a) {
+          return fn.call(that, a);
+        };
+      case 2:
+        return function(a, b) {
+          return fn.call(that, a, b);
+        };
+      case 3:
+        return function(a, b, c) {
+          return fn.call(that, a, b, c);
+        };
+    }
+    return function() {
+      return fn.apply(that, arguments);
+    };
+  };
+  return module.exports;
+});
+
+$__System.registerDynamic("25", ["28", "c", "58"], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  var global = $__require('28'),
+      core = $__require('c'),
+      ctx = $__require('58'),
+      PROTOTYPE = 'prototype';
+  var $export = function(type, name, source) {
+    var IS_FORCED = type & $export.F,
+        IS_GLOBAL = type & $export.G,
+        IS_STATIC = type & $export.S,
+        IS_PROTO = type & $export.P,
+        IS_BIND = type & $export.B,
+        IS_WRAP = type & $export.W,
+        exports = IS_GLOBAL ? core : core[name] || (core[name] = {}),
+        target = IS_GLOBAL ? global : IS_STATIC ? global[name] : (global[name] || {})[PROTOTYPE],
+        key,
+        own,
+        out;
+    if (IS_GLOBAL)
+      source = name;
+    for (key in source) {
+      own = !IS_FORCED && target && key in target;
+      if (own && key in exports)
+        continue;
+      out = own ? target[key] : source[key];
+      exports[key] = IS_GLOBAL && typeof target[key] != 'function' ? source[key] : IS_BIND && own ? ctx(out, global) : IS_WRAP && target[key] == out ? (function(C) {
+        var F = function(param) {
+          return this instanceof C ? new C(param) : C(param);
+        };
+        F[PROTOTYPE] = C[PROTOTYPE];
+        return F;
+      })(out) : IS_PROTO && typeof out == 'function' ? ctx(Function.call, out) : out;
+      if (IS_PROTO)
+        (exports[PROTOTYPE] || (exports[PROTOTYPE] = {}))[key] = out;
+    }
+  };
+  $export.F = 1;
+  $export.G = 2;
+  $export.S = 4;
+  $export.P = 8;
+  $export.B = 16;
+  $export.W = 32;
+  module.exports = $export;
+  return module.exports;
+});
+
+$__System.registerDynamic("20", [], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  module.exports = function(exec) {
+    try {
+      return !!exec();
+    } catch (e) {
+      return true;
+    }
+  };
+  return module.exports;
+});
+
+$__System.registerDynamic("59", ["25", "c", "20"], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  var $export = $__require('25'),
+      core = $__require('c'),
+      fails = $__require('20');
+  module.exports = function(KEY, exec) {
+    var fn = (core.Object || {})[KEY] || Object[KEY],
+        exp = {};
+    exp[KEY] = exec(fn);
+    $export($export.S + $export.F * fails(function() {
+      fn(1);
+    }), 'Object', exp);
+  };
+  return module.exports;
+});
+
+$__System.registerDynamic("5a", ["35", "59"], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  var toObject = $__require('35');
+  $__require('59')('keys', function($keys) {
+    return function keys(it) {
+      return $keys(toObject(it));
+    };
+  });
+  return module.exports;
+});
+
+$__System.registerDynamic("c", [], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  var core = module.exports = {version: '1.2.6'};
+  if (typeof __e == 'number')
+    __e = core;
+  return module.exports;
+});
+
+$__System.registerDynamic("5b", ["5a", "c"], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  $__require('5a');
+  module.exports = $__require('c').Object.keys;
+  return module.exports;
+});
+
+$__System.registerDynamic("33", ["5b"], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  module.exports = {
+    "default": $__require('5b'),
+    __esModule: true
+  };
+  return module.exports;
+});
+
+$__System.registerDynamic("5c", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -7468,16 +7303,16 @@ $__System.registerDynamic("5f", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("60", ["5f"], true, function($__require, exports, module) {
+$__System.registerDynamic("5d", ["5c"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('5f');
+  module.exports = $__require('5c');
   return module.exports;
 });
 
-$__System.registerDynamic("61", [], true, function($__require, exports, module) {
+$__System.registerDynamic("5e", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -7764,16 +7599,16 @@ $__System.registerDynamic("61", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("62", ["61"], true, function($__require, exports, module) {
+$__System.registerDynamic("5f", ["5e"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('61');
+  module.exports = $__require('5e');
   return module.exports;
 });
 
-$__System.registerDynamic("63", [], true, function($__require, exports, module) {
+$__System.registerDynamic("60", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -8113,23 +7948,23 @@ $__System.registerDynamic("63", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("64", ["63"], true, function($__require, exports, module) {
+$__System.registerDynamic("61", ["60"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('63');
+  module.exports = $__require('60');
   return module.exports;
 });
 
-$__System.registerDynamic("65", ["64"], true, function($__require, exports, module) {
+$__System.registerDynamic("62", ["61"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
   "format cjs";
   (function(global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('64')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-time'], factory) : (factory((global.d3 = global.d3 || {}), global.d3));
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('61')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-time'], factory) : (factory((global.d3 = global.d3 || {}), global.d3));
   }(this, function(exports, d3Time) {
     'use strict';
     function localDate(d) {
@@ -8638,23 +8473,23 @@ $__System.registerDynamic("65", ["64"], true, function($__require, exports, modu
   return module.exports;
 });
 
-$__System.registerDynamic("66", ["65"], true, function($__require, exports, module) {
+$__System.registerDynamic("63", ["62"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('65');
+  module.exports = $__require('62');
   return module.exports;
 });
 
-$__System.registerDynamic("67", ["4b", "60", "69", "62", "64", "66", "68"], true, function($__require, exports, module) {
+$__System.registerDynamic("64", ["4b", "5d", "66", "5f", "61", "63", "65"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
   "format cjs";
   (function(global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('4b'), $__require('60'), $__require('69'), $__require('62'), $__require('64'), $__require('66'), $__require('68')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-array', 'd3-collection', 'd3-interpolate', 'd3-format', 'd3-time', 'd3-time-format', 'd3-color'], factory) : (factory((global.d3 = global.d3 || {}), global.d3, global.d3, global.d3, global.d3, global.d3, global.d3, global.d3));
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('4b'), $__require('5d'), $__require('66'), $__require('5f'), $__require('61'), $__require('63'), $__require('65')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-array', 'd3-collection', 'd3-interpolate', 'd3-format', 'd3-time', 'd3-time-format', 'd3-color'], factory) : (factory((global.d3 = global.d3 || {}), global.d3, global.d3, global.d3, global.d3, global.d3, global.d3, global.d3));
   }(this, function(exports, d3Array, d3Collection, d3Interpolate, d3Format, d3Time, d3TimeFormat, d3Color) {
     'use strict';
     var array = Array.prototype;
@@ -9396,50 +9231,59 @@ $__System.registerDynamic("67", ["4b", "60", "69", "62", "64", "66", "68"], true
   return module.exports;
 });
 
-$__System.registerDynamic("46", ["67"], true, function($__require, exports, module) {
+$__System.registerDynamic("46", ["64"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('67');
+  module.exports = $__require('64');
   return module.exports;
 });
 
-$__System.register('54', ['46'], function (_export) {
+$__System.register('67', ['46', '3f'], function (_export) {
     'use strict';
 
-    var d3_scaleLinear;
+    var d3_scaleLinear, sync;
     return {
         setters: [function (_) {
             d3_scaleLinear = _.scaleLinear;
+        }, function (_f) {
+            sync = _f.sync;
         }],
         execute: function () {
             _export('default', function (domain) {
                 var min = undefined,
-                    max = undefined,
-                    scale = {};
+                    max = undefined;
+                var scale = { domain: {} };
+                var isRange = function isRange(dd) {
+                    return dd[0] !== dd[1];
+                };
 
                 if (domain.x) {
-                    scale.domainShiftX = (domain.x[1] - domain.x[0]) / 20;
+                    scale.domain.x = domain.x;
+                    scale.domainShiftX = isRange(domain.x) ? (domain.x[1] - domain.x[0]) / 20 : 1;
                     min = Math.round((domain.x[0] - scale.domainShiftX) * 100) / 100;
                     max = Math.round((domain.x[1] + scale.domainShiftX) * 100) / 100;
                     scale.x = d3_scaleLinear().domain([min, max]).range([0, 100]);
                     //console.log("x:", domain.x, min, max);
                 }
                 if (domain.y) {
-                    scale.domainShiftY = (domain.y[1] - domain.y[0]) / 20;
+                    scale.domain.y = domain.y;
+                    scale.domainShiftY = isRange(domain.y) ? (domain.y[1] - domain.y[0]) / 20 : 1;
                     min = Math.round((domain.y[0] - scale.domainShiftY) * 100) / 100;
                     max = Math.round((domain.y[1] + scale.domainShiftY) * 100) / 100;
                     scale.y = d3_scaleLinear().domain([min, max]).range([100, 0]);
                     //console.log("y:", domain.y, min, max);
                 }
 
+                //console.log(scale);
+                sync.scale = scale;
                 return scale;
             });
         }
     };
 });
-$__System.registerDynamic("6a", [], true, function($__require, exports, module) {
+$__System.registerDynamic("68", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -9561,16 +9405,16 @@ $__System.registerDynamic("6a", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("6b", ["6a"], true, function($__require, exports, module) {
+$__System.registerDynamic("69", ["68"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('6a');
+  module.exports = $__require('68');
   return module.exports;
 });
 
-$__System.registerDynamic("6c", [], true, function($__require, exports, module) {
+$__System.registerDynamic("6a", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -9732,23 +9576,23 @@ $__System.registerDynamic("6c", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("6d", ["6c"], true, function($__require, exports, module) {
+$__System.registerDynamic("6b", ["6a"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('6c');
+  module.exports = $__require('6a');
   return module.exports;
 });
 
-$__System.registerDynamic("6e", ["68"], true, function($__require, exports, module) {
+$__System.registerDynamic("6c", ["65"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
   "format cjs";
   (function(global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('68')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-color'], factory) : (factory((global.d3 = global.d3 || {}), global.d3));
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('65')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-color'], factory) : (factory((global.d3 = global.d3 || {}), global.d3));
   }(this, function(exports, d3Color) {
     'use strict';
     function basis(t1, v0, v1, v2, v3) {
@@ -10243,16 +10087,16 @@ $__System.registerDynamic("6e", ["68"], true, function($__require, exports, modu
   return module.exports;
 });
 
-$__System.registerDynamic("69", ["6e"], true, function($__require, exports, module) {
+$__System.registerDynamic("66", ["6c"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('6e');
+  module.exports = $__require('6c');
   return module.exports;
 });
 
-$__System.registerDynamic("6f", [], true, function($__require, exports, module) {
+$__System.registerDynamic("6d", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -10720,16 +10564,16 @@ $__System.registerDynamic("6f", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("68", ["6f"], true, function($__require, exports, module) {
+$__System.registerDynamic("65", ["6d"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('6f');
+  module.exports = $__require('6d');
   return module.exports;
 });
 
-$__System.registerDynamic("70", [], true, function($__require, exports, module) {
+$__System.registerDynamic("6e", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -10942,23 +10786,23 @@ $__System.registerDynamic("70", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("71", ["70"], true, function($__require, exports, module) {
+$__System.registerDynamic("6f", ["6e"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('70');
+  module.exports = $__require('6e');
   return module.exports;
 });
 
-$__System.registerDynamic("72", ["43", "6b", "6d", "69", "68", "71"], true, function($__require, exports, module) {
+$__System.registerDynamic("70", ["43", "69", "6b", "66", "65", "6f"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
   "format cjs";
   (function(global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('43'), $__require('6b'), $__require('6d'), $__require('69'), $__require('68'), $__require('71')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-selection', 'd3-dispatch', 'd3-timer', 'd3-interpolate', 'd3-color', 'd3-ease'], factory) : (factory((global.d3 = global.d3 || {}), global.d3, global.d3, global.d3, global.d3, global.d3, global.d3));
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('43'), $__require('69'), $__require('6b'), $__require('66'), $__require('65'), $__require('6f')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-selection', 'd3-dispatch', 'd3-timer', 'd3-interpolate', 'd3-color', 'd3-ease'], factory) : (factory((global.d3 = global.d3 || {}), global.d3, global.d3, global.d3, global.d3, global.d3, global.d3));
   }(this, function(exports, d3Selection, d3Dispatch, d3Timer, d3Interpolate, d3Color, d3Ease) {
     'use strict';
     var emptyOn = d3Dispatch.dispatch("start", "end", "interrupt");
@@ -11655,24 +11499,439 @@ $__System.registerDynamic("72", ["43", "6b", "6d", "69", "68", "71"], true, func
   return module.exports;
 });
 
-$__System.registerDynamic("45", ["72"], true, function($__require, exports, module) {
+$__System.registerDynamic("45", ["70"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('72');
+  module.exports = $__require('70');
   return module.exports;
 });
 
-$__System.register("3f", ["44"], function (_export) {
-    "use strict";
+$__System.register('71', ['43', '3f'], function (_export) {
+    'use strict';
 
-    var utils, minWidth, padding, size, cols, width, height, chart, colors;
+    var d3_select, defaultHeaderTexts, cfg;
+
+    function isNumeric(n) {
+        return !isNaN(parseFloat(n)) && isFinite(n);
+    }
+
+    function cleanFields() {
+        var keys = ["team", "final", "medal", "world", "standfirst"];
+        keys.forEach(function (key) {
+            return d3_select(".js-" + key).text("");
+        });
+    }
     return {
         setters: [function (_) {
-            utils = _["default"];
+            d3_select = _.select;
+        }, function (_f) {
+            defaultHeaderTexts = _f.defaultHeaderTexts;
         }],
         execute: function () {
+            cfg = {
+                "long-jump_m": { unit: "m", event: "male's high jump" },
+                "breaststroke-100_m": { unit: "s", event: "male's breaststroke 100m" }
+            };
+
+            _export('default', function (data, records) {
+                //console.log(data);
+                if (!records) {
+
+                    cleanFields();
+                    d3_select(".js-headline").text(defaultHeaderTexts.headline[data]);
+                    d3_select(".js-standfirst").text(defaultHeaderTexts.standfirst[data]);
+                } else {
+
+                    var cFinal = records.filter(function (dr) {
+                        return isNumeric(dr.color);
+                    }).length;
+                    var cWorld = records.filter(function (dr) {
+                        return dr.color === "wr";
+                    }).length;
+                    var cMedal = records.length - cFinal - cWorld;
+                    var cAll = cMedal + cWorld;
+
+                    var attrs = data.attrs;
+                    var _event = window.location.search.replace("?", "");
+                    d3_select(".js-headline").text(attrs.name);
+                    d3_select(".js-team").text(attrs.team);
+                    d3_select(".js-final").text(cAll !== 0 ? "1 " + data.color + " out of " + cAll : "rank " + data.color + " in 2016 fianl");
+                    d3_select(".js-medal").text(cMedal !== 0 ? ", " + cMedal + " olympic medals" : "");
+                    d3_select(".js-world").text(cWorld !== 0 ? ", " + cWorld + " world records" : "");
+                    d3_select(".js-standfirst").text("In " + attrs.year + " " + cfg[_event].event + " event, " + attrs.name.split(" ")[0] + " marked " + attrs.mark + cfg[_event].unit + " which " + (attrs.dist !== 0 ? "could be " + attrs.dist + "m behind " : "is ") + "current world record.");
+                }
+            });
+        }
+    };
+});
+$__System.register('72', ['43', '44', '45', '71', '3f'], function (_export) {
+    'use strict';
+
+    var d3_select, utils, transition, updateInfo, colors, sync;
+
+    // interaction
+    function showHighlight(d1) {
+        var attrs = d1.attrs;
+        var x = sync.scale.x(d1.x);
+        var y = sync.scale.y(d1.y);
+
+        // name
+        var elsAll = d3_select(".js-chart").selectAll("circle").style("transition", "0.25s").attr("fill-opacity", function (d) {
+            return d.o / 2;
+        });
+
+        var elsName = elsAll.filter(function (d2) {
+            return d2.attrs.name === attrs.name;
+        }).attr("fill-opacity", function (d) {
+            return d.o === 0 ? 0 : 1;
+        }).attr("r", function (d) {
+            return d.r * 2;
+        });
+
+        var d1Records = elsName._groups[0].map(function (el) {
+            return el.__data__;
+        });
+        updateInfo(d1, d1Records);
+
+        // hightlight
+        d3_select(".js-highlight-h").style("opacity", 1).attr("y1", y + "%").attr("y2", y + "%").attr("x1", x + "%");
+    }
+
+    function hideHighlight(d1) {
+        var attrs = d1.attrs;
+
+        // name
+        var elsAll = d3_select(".js-chart").selectAll("circle").style("transition", "0s").attr("fill-opacity", function (d) {
+            return d.o;
+        });
+        elsAll.filter(function (d2) {
+            return d2.attrs.name === attrs.name;
+        }).attr("r", function (d) {
+            return d.r;
+        });
+
+        // highlight
+        d3_select(".js-highlight-h").style("opacity", 0);
+    }
+    return {
+        setters: [function (_) {
+            d3_select = _.select;
+        }, function (_3) {
+            utils = _3['default'];
+        }, function (_2) {
+            transition = _2.transition;
+        }, function (_4) {
+            updateInfo = _4['default'];
+        }, function (_f) {
+            colors = _f.colors;
+            sync = _f.sync;
+        }],
+        execute: function () {
+            _export('default', function (cfg) {
+
+                // TODO: depends on h or v direction
+                // TODO: recalc r, temp 1%
+                var dots = undefined;
+                var cxShift = function cxShift(d, r) {
+                    return r * ((d.index - 1) * 2 - (d.count - 1)) * 0.75;
+                };
+                var cyShift = function cyShift(d, r) {
+                    return 1 * ((d.index - 1) * 2 - (d.count - 1)) * 0.75;
+                };
+                cfg.cx = function (d, r, x) {
+                    return x(d.x);
+                }; // + (d.count ? cxShift(d, cfg.radius) : 0);
+                cfg.cy = function (d, r, y) {
+                    return y(d.y) + (d.count ? cyShift(d, r) : 0);
+                };
+
+                var tempColor = function tempColor(d) {
+                    return colors[d.color] || cfg.color ? colors[d.color] || cfg.color : colors.others;
+                };
+
+                this.init = function (data, scale) {
+                    data.map(function (dd, i) {
+                        dd.r = cfg.radius;
+                        dd.id = cfg.dataset.slice(0, 1) + i;
+                        return dd;
+                    });
+
+                    dots = d3_select(".dots-" + cfg.dataset).selectAll(".dots").data(data).enter().append("circle").attr("id", function (d) {
+                        return d.id;
+                    }).attr("data-year", function (d) {
+                        return d.attrs.year;
+                    }).attr("data-mark", function (d) {
+                        return d.attrs.mark;
+                    }).attr("data-name", function (d) {
+                        return d.attrs.name;
+                    }).attr("cx", function (d) {
+                        return cfg.cx(d, cfg.radius, scale.x) + "%";
+                    }).attr("cy", function (d) {
+                        return cfg.cy(d, cfg.radius, scale.y) + "%";
+                    }).attr("r", cfg.radius).attr("fill-opacity", function () {
+                        return cfg.opacity ? cfg.opacity : 0;
+                    }).attr("fill", function (d) {
+                        return tempColor(d);
+                    }).attr("stroke-opacity", function () {
+                        return cfg.opacity ? cfg.opacity : 0;
+                    }).attr("stroke", function () {
+                        if (cfg.stroke) return cfg.stroke;
+                    }).attr("stroke-width", 1)
+                    // interaction
+                    .on("mouseover", function (d) {
+                        showHighlight(d);
+                    }).on("mouseout", function (d) {
+                        hideHighlight(d);
+                    });
+
+                    cfg.best = {};
+                    cfg.best = data[data.length - 1];
+                };
+
+                // update
+                this.update = function (opt, scale, opacity) {
+                    //if (cfg.dataset==="final") console.log(opt.delay, "(pause)");
+
+                    dots.transition().duration(opt.duration * 1000).attr("fill-opacity", opacity).attr("stroke-opacity", opacity).attr("cx", function (d) {
+                        return cfg.cx(d, cfg.radius, scale.x) + "%";
+                    }).attr("cy", function (d) {
+                        return cfg.cy(d, cfg.radius, scale.y) + "%";
+                    });
+
+                    // disable events on transition
+                    var elParent = d3_select(".dots-" + cfg.dataset);
+                    elParent.style("pointer-events", "none");
+
+                    dots.each(function (d) {
+                        return d.o = opacity;
+                    }); // opacity for highlight
+
+                    window.setTimeout(function () {
+                        //if (cfg.dataset==="final") console.log(opt.delay+opt.duration, "(restart)");
+                        elParent.style("pointer-events", opacity === 0 ? "none" : "all");
+
+                        var state = document.querySelector(".js-chart").getAttribute("data-state");
+                        if (state === cfg.dataset) {
+                            showHighlight(cfg.best);
+                        }
+                    }, opt.duration * 1000);
+
+                    window.setTimeout(function () {
+                        hideHighlight(cfg.best);
+                    }, (opt.duration + 3) * 1000);
+                };
+            });
+        }
+    };
+});
+$__System.registerDynamic("73", [], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  "format cjs";
+  (function(global, factory) {
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) : typeof define === 'function' && define.amd ? define(['exports'], factory) : (factory((global.d3 = global.d3 || {})));
+  }(this, function(exports) {
+    'use strict';
+    var slice = Array.prototype.slice;
+    function identity(x) {
+      return x;
+    }
+    var top = 1;
+    var right = 2;
+    var bottom = 3;
+    var left = 4;
+    var epsilon = 1e-6;
+    function translateX(scale0, scale1, d) {
+      var x = scale0(d);
+      return "translate(" + (isFinite(x) ? x : scale1(d)) + ",0)";
+    }
+    function translateY(scale0, scale1, d) {
+      var y = scale0(d);
+      return "translate(0," + (isFinite(y) ? y : scale1(d)) + ")";
+    }
+    function center(scale) {
+      var width = scale.bandwidth() / 2;
+      return function(d) {
+        return scale(d) + width;
+      };
+    }
+    function entering() {
+      return !this.__axis;
+    }
+    function axis(orient, scale) {
+      var tickArguments = [],
+          tickValues = null,
+          tickFormat = null,
+          tickSizeInner = 6,
+          tickSizeOuter = 6,
+          tickPadding = 3;
+      function axis(context) {
+        var values = tickValues == null ? (scale.ticks ? scale.ticks.apply(scale, tickArguments) : scale.domain()) : tickValues,
+            format = tickFormat == null ? (scale.tickFormat ? scale.tickFormat.apply(scale, tickArguments) : identity) : tickFormat,
+            spacing = Math.max(tickSizeInner, 0) + tickPadding,
+            transform = orient === top || orient === bottom ? translateX : translateY,
+            range = scale.range(),
+            range0 = range[0] + 0.5,
+            range1 = range[range.length - 1] + 0.5,
+            position = (scale.bandwidth ? center : identity)(scale.copy()),
+            selection = context.selection ? context.selection() : context,
+            path = selection.selectAll(".domain").data([null]),
+            tick = selection.selectAll(".tick").data(values, scale).order(),
+            tickExit = tick.exit(),
+            tickEnter = tick.enter().append("g").attr("class", "tick"),
+            line = tick.select("line"),
+            text = tick.select("text"),
+            k = orient === top || orient === left ? -1 : 1,
+            x,
+            y = orient === left || orient === right ? (x = "x", "y") : (x = "y", "x");
+        path = path.merge(path.enter().insert("path", ".tick").attr("class", "domain").attr("stroke", "#000"));
+        tick = tick.merge(tickEnter);
+        line = line.merge(tickEnter.append("line").attr("stroke", "#000").attr(x + "2", k * tickSizeInner).attr(y + "1", 0.5).attr(y + "2", 0.5));
+        text = text.merge(tickEnter.append("text").attr("fill", "#000").attr(x, k * spacing).attr(y, 0.5).attr("dy", orient === top ? "0em" : orient === bottom ? ".71em" : ".32em"));
+        if (context !== selection) {
+          path = path.transition(context);
+          tick = tick.transition(context);
+          line = line.transition(context);
+          text = text.transition(context);
+          tickExit = tickExit.transition(context).attr("opacity", epsilon).attr("transform", function(d) {
+            return transform(position, this.parentNode.__axis || position, d);
+          });
+          tickEnter.attr("opacity", epsilon).attr("transform", function(d) {
+            return transform(this.parentNode.__axis || position, position, d);
+          });
+        }
+        tickExit.remove();
+        path.attr("d", orient === left || orient == right ? "M" + k * tickSizeOuter + "," + range0 + "H0.5V" + range1 + "H" + k * tickSizeOuter : "M" + range0 + "," + k * tickSizeOuter + "V0.5H" + range1 + "V" + k * tickSizeOuter);
+        tick.attr("opacity", 1).attr("transform", function(d) {
+          return transform(position, position, d);
+        });
+        line.attr(x + "2", k * tickSizeInner);
+        text.attr(x, k * spacing).text(format);
+        selection.filter(entering).attr("fill", "none").attr("font-size", 10).attr("font-family", "sans-serif").attr("text-anchor", orient === right ? "start" : orient === left ? "end" : "middle");
+        selection.each(function() {
+          this.__axis = position;
+        });
+      }
+      axis.scale = function(_) {
+        return arguments.length ? (scale = _, axis) : scale;
+      };
+      axis.ticks = function() {
+        return tickArguments = slice.call(arguments), axis;
+      };
+      axis.tickArguments = function(_) {
+        return arguments.length ? (tickArguments = _ == null ? [] : slice.call(_), axis) : tickArguments.slice();
+      };
+      axis.tickValues = function(_) {
+        return arguments.length ? (tickValues = _ == null ? null : slice.call(_), axis) : tickValues && tickValues.slice();
+      };
+      axis.tickFormat = function(_) {
+        return arguments.length ? (tickFormat = _, axis) : tickFormat;
+      };
+      axis.tickSize = function(_) {
+        return arguments.length ? (tickSizeInner = tickSizeOuter = +_, axis) : tickSizeInner;
+      };
+      axis.tickSizeInner = function(_) {
+        return arguments.length ? (tickSizeInner = +_, axis) : tickSizeInner;
+      };
+      axis.tickSizeOuter = function(_) {
+        return arguments.length ? (tickSizeOuter = +_, axis) : tickSizeOuter;
+      };
+      axis.tickPadding = function(_) {
+        return arguments.length ? (tickPadding = +_, axis) : tickPadding;
+      };
+      return axis;
+    }
+    function axisTop(scale) {
+      return axis(top, scale);
+    }
+    function axisRight(scale) {
+      return axis(right, scale);
+    }
+    function axisBottom(scale) {
+      return axis(bottom, scale);
+    }
+    function axisLeft(scale) {
+      return axis(left, scale);
+    }
+    exports.axisTop = axisTop;
+    exports.axisRight = axisRight;
+    exports.axisBottom = axisBottom;
+    exports.axisLeft = axisLeft;
+    Object.defineProperty(exports, '__esModule', {value: true});
+  }));
+  return module.exports;
+});
+
+$__System.registerDynamic("3e", ["73"], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  module.exports = $__require('73');
+  return module.exports;
+});
+
+$__System.registerDynamic("21", [], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  var $Object = Object;
+  module.exports = {
+    create: $Object.create,
+    getProto: $Object.getPrototypeOf,
+    isEnum: {}.propertyIsEnumerable,
+    getDesc: $Object.getOwnPropertyDescriptor,
+    setDesc: $Object.defineProperty,
+    setDescs: $Object.defineProperties,
+    getKeys: $Object.keys,
+    getNames: $Object.getOwnPropertyNames,
+    getSymbols: $Object.getOwnPropertySymbols,
+    each: [].forEach
+  };
+  return module.exports;
+});
+
+$__System.registerDynamic("74", ["21"], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  var $ = $__require('21');
+  module.exports = function defineProperties(T, D) {
+    return $.setDescs(T, D);
+  };
+  return module.exports;
+});
+
+$__System.registerDynamic("75", ["74"], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  module.exports = {
+    "default": $__require('74'),
+    __esModule: true
+  };
+  return module.exports;
+});
+
+$__System.register("3f", ["44", "75"], function (_export) {
+    var utils, _Object$defineProperties, minWidth, padding, size, cols, width, height, chart, colors, sync, defaultHeaderTexts;
+
+    return {
+        setters: [function (_2) {
+            utils = _2["default"];
+        }, function (_) {
+            _Object$defineProperties = _["default"];
+        }],
+        execute: function () {
+            "use strict";
+
             minWidth = 320;
             padding = 20;
 
@@ -11700,221 +11959,329 @@ $__System.register("3f", ["44"], function (_export) {
             };
 
             _export("colors", colors);
-        }
-    };
-});
-$__System.register("55", ["43"], function (_export) {
-    "use strict";
 
-    var d3_select, headlines, cfg;
-
-    function isNumeric(n) {
-        return !isNaN(parseFloat(n)) && isFinite(n);
-    }
-
-    function cleanFields() {
-        var keys = ["team", "count", "medal", "wr", "standfirst"];
-        keys.forEach(function (key) {
-            return d3_select(".js-" + key).text("");
-        });
-    }
-    return {
-        setters: [function (_) {
-            d3_select = _.select;
-        }],
-        execute: function () {
-            headlines = {
-                final: "2016 Olympic final result",
-                medal: "Olympic medalists",
-                world: "World record progression",
-                mixed: "All results"
-            };
-            cfg = {
-                "long-jump_m": { unit: "m", event: "male's high jump" },
-                "breaststroke-100_m": { unit: "s", event: "male's breaststroke 100m" }
-            };
-
-            _export("default", function (data, records) {
-                //console.log(data);
-                if (!records) {
-
-                    cleanFields();
-                    d3_select(".js-headline").text(headlines[data]);
-                } else {
-
-                    var cFinal = records.filter(function (dr) {
-                        return isNumeric(dr.color);
-                    }).length;
-                    var cWorld = records.filter(function (dr) {
-                        return dr.color === "wr";
-                    }).length;
-                    var cMedal = records.length - cFinal - cWorld;
-                    var cAll = cMedal + cWorld;
-
-                    var attrs = data.attrs;
-                    var _event = window.location.search.replace("?", "");
-                    d3_select(".js-headline").text(attrs.name);
-                    d3_select(".js-team").text(attrs.team);
-                    d3_select(".js-count").text(cAll !== 0 ? "1 " + data.color + " out of " + cAll : "rank " + data.color + " in 2016 fianl");
-                    d3_select(".js-medal").text(cMedal !== 0 ? ", " + cMedal + " olympic medals" : "");
-                    d3_select(".js-wr").text(cWorld !== 0 ? ", " + cWorld + " world records" : "");
-                    d3_select(".js-standfirst").text("In " + attrs.year + " " + cfg[_event].event + " event, " + attrs.name.split(" ")[0] + " marked " + attrs.mark + cfg[_event].unit + " which " + (attrs.dist !== 0 ? "could be " + attrs.dist + "m behind " : "is ") + "current world record.");
+            // sync state, scale, domain, ... ?
+            sync = _Object$defineProperties({
+                s: { x: null, y: null },
+                d: { x: null, y: null }
+            }, {
+                scale: {
+                    set: function set(s) {
+                        this.s.x = s.x;
+                        this.s.y = s.y;
+                        this.d.x = s.domain.x;
+                        this.d.y = s.domain.y;
+                        //console.log("year:", this.d.y, "mark:", this.d.x);
+                    },
+                    get: function get() {
+                        return this.s;
+                    },
+                    configurable: true,
+                    enumerable: true
+                },
+                domain: {
+                    get: function get() {
+                        return this.d;
+                    },
+                    configurable: true,
+                    enumerable: true
                 }
             });
+
+            _export("sync", sync);
+
+            defaultHeaderTexts = {
+                headline: {
+                    "final": "2016 Olympic final result",
+                    "medal": "Olympic medalists",
+                    "world": "World record progression",
+                    "mixed": "All results"
+                },
+                standfirst: {
+                    "final": "",
+                    "medal": "",
+                    "world": "",
+                    "mixed": "Interactive with this chart to explore more details ..."
+                }
+            };
+
+            _export("defaultHeaderTexts", defaultHeaderTexts);
         }
     };
 });
-$__System.register('56', ['43', '44', '45', '55', '3f'], function (_export) {
+$__System.register('76', ['43', '4b', '3e', '3f'], function (_export) {
+
+    /* param: coord - x or y */
+    /* param: direction - h or v, isJump? */
     'use strict';
 
-    var d3_select, utils, transition, updateInfo, colors;
+    var d3_select, d3_range, d3_extent, d3_axisBottom, sync;
     return {
         setters: [function (_) {
             d3_select = _.select;
-        }, function (_3) {
-            utils = _3['default'];
-        }, function (_2) {
-            transition = _2.transition;
-        }, function (_4) {
-            updateInfo = _4['default'];
+        }, function (_b) {
+            d3_range = _b.range;
+            d3_extent = _b.extent;
+        }, function (_e) {
+            d3_axisBottom = _e.axisBottom;
         }, function (_f) {
-            colors = _f.colors;
+            sync = _f.sync;
         }],
         execute: function () {
             _export('default', function (cfg) {
-                var that = {};
+                var axis = undefined,
+                    line = undefined,
+                    text = undefined;
+                var coord = cfg.coord;
 
-                // TODO: depends on h or v direction
-                // TODO: recalc r, temp 1%
-                var dots = undefined;
-                var cxShift = function cxShift(d, r) {
-                    return r * ((d.index - 1) * 2 - (d.count - 1)) * 0.75;
-                };
-                var cyShift = function cyShift(d, r) {
-                    return 1 * ((d.index - 1) * 2 - (d.count - 1)) * 0.75;
-                };
-                cfg.cx = function (d, r, x) {
-                    return x(d.x);
-                }; // + (d.count ? cxShift(d, cfg.radius) : 0);
-                cfg.cy = function (d, r, y) {
-                    return y(d.y) + (d.count ? cyShift(d, r) : 0);
+                var getSteps = function getSteps(scale) {
+                    switch (true) {
+                        //TODO: steps case
+                        case cfg.value === "year":
+                            var min = scale.domain[coord][0];
+                            var range = d3_range(scale.domain[coord][1], min, -4);
+                            return range[range.length - 1] === min ? range : range.concat([min]);
+                        case cfg.value === "mark":
+                            //TODO: remove axisBottom later?
+                            var d3_axis = d3_axisBottom(scale[coord]).ticks(8);
+                            return d3_axis.scale().ticks(d3_axis.ticks()[0]).reverse();
+                    }
                 };
 
-                that.init = function (data, scale) {
-                    cfg.scale = scale;
-                    data.map(function (dd, i) {
-                        dd.r = cfg.radius;
-                        dd.id = cfg.dataset.slice(0, 1) + i;
-                        return dd;
+                this.init = function (data, scale) {
+                    axis = d3_select(".axis-" + coord).attr("class", "axis-" + cfg.value);
+                };
+
+                this.update = function (opt, scale) {
+                    var steps = getSteps(scale);
+
+                    var divHide = undefined;
+                    var axisSize = document.querySelector(".js-chart").getBoundingClientRect();
+                    switch (coord) {
+                        case "x":
+                            divHide = Math.ceil(24 * steps.length / (axisSize.width - 30));break;
+                        case "y":
+                            divHide = Math.ceil(12 * steps.length / (axisSize.height - 30));break;
+                    }
+                    //console.log(coord, steps.length, divHide);
+
+                    line = axis.selectAll("line").data(steps);
+                    text = axis.selectAll("text").data(steps);
+
+                    // exit
+                    line.exit().remove();
+                    text.exit().remove();
+
+                    // enter
+                    //window.setTimeout(() => {
+
+                    line.enter().append("line").attr("opacity", 0).transition().duration(opt.duration * 1000).attr("opacity", 1).attr("x1", function (d) {
+                        return 0;
+                    }).attr("x2", function (d) {
+                        return "95.5%";
+                    }).attr("y1", function (d) {
+                        return 0;
+                    }).attr("y2", function (d) {
+                        return "99%";
+                    }).attr(coord + "1", function (d) {
+                        return scale[coord](d) + "%";
+                    }).attr(coord + "2", function (d) {
+                        return scale[coord](d) + "%";
                     });
 
-                    dots = d3_select(".dots-" + cfg.dataset).selectAll(".dots").data(data).enter().append("circle").attr("id", function (d) {
-                        return d.id;
-                    }).attr("data-year", function (d) {
-                        return d.attrs.year;
-                    }).attr("data-mark", function (d) {
-                        return d.attrs.mark;
-                    }).attr("data-name", function (d) {
-                        return d.attrs.name;
-                    }).attr("cx", function (d) {
-                        return cfg.cx(d, cfg.radius, scale.x) + "%";
-                    }).attr("cy", function (d) {
-                        return cfg.cy(d, cfg.radius, scale.y) + "%";
-                    }).attr("r", cfg.radius).attr("fill-opacity", function () {
-                        return cfg.opacity ? cfg.opacity : 0;
-                    }).attr("fill", function (d) {
-                        return d.color || cfg.color ? colors[d.color] || cfg.color : colors.others;
-                    }).attr("stroke-opacity", function () {
-                        return cfg.opacity ? cfg.opacity : 0;
-                    }).attr("stroke", function () {
-                        if (cfg.stroke) return cfg.stroke;
-                    }).attr("stroke-width", 1);
-
-                    that.interactive();
-                };
-
-                // update
-                that.update = function (opt, scale, opacity) {
-                    dots.transition().delay(opt.delay * 1000 || 0).duration((opt.duration || 2) * 1000).attr("fill-opacity", opacity).attr("stroke-opacity", opacity).attr("cx", function (d) {
-                        return cfg.cx(d, cfg.radius, scale.x) + "%";
-                    }).attr("cy", function (d) {
-                        return cfg.cy(d, cfg.radius, scale.y) + "%";
+                    text.enter().append("text").transition().duration(opt.duration * 1000).attr("x", function (d) {
+                        return "103%";
+                    }).attr("y", function (d) {
+                        return "100%";
+                    }).attr("dy", coord === "x" ? ".71em" : ".3em").attr(coord, function (d) {
+                        return scale[coord](d) + "%";
+                    }).attr("opacity", function (d, i) {
+                        return i % divHide === 0 ? 1 : 0;
+                    }).text(function (d) {
+                        return Math.round(Math.abs(d) * 100) / 100;
                     });
 
-                    // disable events on transition
-                    var elParent = d3_select(".dots-" + cfg.dataset);
-                    // start
-                    window.setTimeout(function () {
-                        if (cfg.dataset === "final") console.log("delay", opt.delay, "duration:", opt.duration);
-                        //if (cfg.dataset==="final") console.log(opt.delay, "(pause)");
-                        //console.log(cfg.dataset, opacity);
-                        elParent.style("pointer-events", "none");
-                        cfg.scale = scale;
-                        dots.each(function (d) {
-                            return d.o = opacity;
-                        });
-                    }, opt.delay * 1000);
-                    // end
-                    window.setTimeout(function () {
-                        //if (cfg.dataset==="final") console.log(opt.delay+opt.duration, "(restart)");
-                        elParent.style("pointer-events", opacity === 0 ? "none" : "all");
-                    }, (opt.delay + opt.duration) * 1000);
-                };
+                    //}, (opt.duration-1)*1000);
 
-                // events
-                var elsAll = undefined,
-                    elsName = undefined;
-                that.interactive = function () {
-                    dots.on("mouseover", function (d1) {
-                        var attrs = d1.attrs;
-                        var x = cfg.scale.x(d1.x);
-                        var y = cfg.scale.y(d1.y);
-                        //console.log(attrs);
+                    // update
+                    line.transition().duration(opt.duration * 1000).attr(coord + "1", function (d) {
+                        return scale[coord](d) + "%";
+                    }).attr(coord + "2", function (d) {
+                        return scale[coord](d) + "%";
+                    });
 
-                        // name
-                        elsAll = d3_select(".js-chart").selectAll("circle").style("transition", "0.25s").attr("fill-opacity", function (d) {
-                            return d.o / 2;
-                        });
-
-                        elsName = elsAll.filter(function (d2) {
-                            return d2.attrs.name === attrs.name;
-                        }).attr("fill-opacity", function (d) {
-                            return d.o === 0 ? 0 : 1;
-                        }).attr("r", function (d) {
-                            return d.r * 2;
-                        });
-
-                        var d1Records = elsName._groups[0].map(function (el) {
-                            return el.__data__;
-                        });
-                        updateInfo(d1, d1Records);
-
-                        // hightlight
-                        d3_select(".js-highlight-h").style("opacity", 1).attr("y1", y + "%").attr("y2", y + "%").attr("x1", x + "%");
-                    }).on("mouseout", function (d1) {
-                        var attrs = d1.attrs;
-
-                        // name
-                        var elsAll = d3_select(".js-chart").selectAll("circle").style("transition", "0s").attr("fill-opacity", function (d) {
-                            return d.o;
-                        });
-                        elsAll.filter(function (d2) {
-                            return d2.attrs.name === attrs.name;
-                        }).attr("r", function (d) {
-                            return d.r;
-                        });
-
-                        // highlight
-                        d3_select(".js-highlight-h").style("opacity", 0);
+                    text.transition().duration(opt.duration * 1000).attr("dy", coord === "x" ? ".71em" : ".3em").attr(coord, function (d) {
+                        return scale[coord](d) + "%";
+                    }).attr("opacity", function (d, i) {
+                        return i % divHide === 0 ? 1 : 0;
+                    }).text(function (d) {
+                        return Math.round(Math.abs(d) * 100) / 100;
                     });
                 };
-
-                return that;
             });
         }
     };
 });
-$__System.registerDynamic("73", [], true, function($__require, exports, module) {
+$__System.register('54', ['33', '43', '67', '71', '72', '76', '4b'], function (_export) {
+    var _Object$keys, d3_select, calcScale, updateInfo, Dots, Axis, d3_extent;
+
+    function getDomain(data) {
+        return {
+            x: d3_extent(data, function (d) {
+                return d.x;
+            }),
+            y: d3_extent(data, function (d) {
+                return d.y;
+            })
+        };
+    }
+
+    function toState(els, data, name) {
+        window.setTimeout(function () {
+            console.log("===", name, "===", data.delay, data.duration);
+
+            var scale = calcScale(data.domain);
+            _Object$keys(els).forEach(function (key, i) {
+                els[key].update(data, scale, data.opacity[i]);
+            });
+
+            calcScale(data.domain);
+            d3_select(".js-chart").attr("data-state", name);
+
+            d3_select(".states").selectAll(".btn").classed("btn-focus", false);
+            d3_select(".btn-" + name).classed("btn-focus", true);
+
+            d3_select(".header").selectAll(".count").classed("count-focus", false);
+            d3_select(".count-" + name).classed("count-focus", true);
+
+            // update info
+            updateInfo(name);
+        }, data.delay * 1000);
+    }
+    return {
+        setters: [function (_) {
+            _Object$keys = _['default'];
+        }, function (_2) {
+            d3_select = _2.select;
+        }, function (_3) {
+            calcScale = _3['default'];
+        }, function (_4) {
+            updateInfo = _4['default'];
+        }, function (_5) {
+            Dots = _5['default'];
+        }, function (_6) {
+            Axis = _6['default'];
+        }, function (_b) {
+            d3_extent = _b.extent;
+        }],
+        execute: function () {
+            //import Grid from '../draw/grid';
+
+            'use strict';
+
+            _export('default', function (data, dataCombo) {
+                var domain = getDomain(dataCombo);
+                console.log(domain);
+
+                // init, draw all
+                var scale = calcScale(domain);
+                var els = {};
+
+                els.dotsF = new Dots({
+                    dataset: "final",
+                    radius: 9
+                });
+                els.dotsF.init(data.finals, scale);
+
+                els.dotsM = new Dots({
+                    dataset: "medal",
+                    radius: 6
+                });
+                els.dotsM.init(data.medals, scale);
+
+                els.dotsW = new Dots({
+                    dataset: "world",
+                    radius: 3,
+                    color: "#333",
+                    stroke: "rgba(255, 255, 255, 0.5)"
+                });
+                els.dotsW.init(data.worlds, scale);
+
+                els.axisY = new Axis({ coord: "y", value: "year" });
+                els.axisY.init(dataCombo.map(function (d) {
+                    return d.y;
+                }), scale);
+
+                els.axisX = new Axis({ coord: "x", value: "mark" });
+                els.axisX.init(dataCombo.map(function (d) {
+                    return d.x;
+                }), scale);
+
+                // update with animations
+                var state = {};
+                state.final = {
+                    delay: 0,
+                    duration: 2,
+                    //domain: getDomain(data.finals.concat([data.medals[data.medals.length-1], data.worlds[data.worlds.length-1]])),
+                    domain: {
+                        x: [d3_extent(data.finals, function (d) {
+                            return d.x;
+                        })[0], 0],
+                        y: [2016, 2016]
+                    },
+                    opacity: [0.75, 0, 0]
+                };
+
+                var domainMedal = getDomain(data.finals.concat(data.medals));
+                domainMedal.x[1] = 0;
+                state.medal = {
+                    delay: 5,
+                    duration: 2,
+                    domain: domainMedal,
+                    opacity: [0.75, 0.5, 0]
+                };
+
+                state.world = {
+                    delay: 10,
+                    duration: 2,
+                    domain: getDomain(data.finals.concat(data.worlds)),
+                    opacity: [0.75, 0, 0.75]
+                };
+
+                state.mixed = {
+                    delay: 15,
+                    duration: 2,
+                    domain: domain,
+                    opacity: [0.75, 0.5, 0.75]
+                };
+
+                // default
+                // toState(els, state.final, "final");
+                // play states
+                document.querySelector(".btn-play").addEventListener("click", function () {
+                    play();
+                });
+                var play = function play() {
+                    _Object$keys(state).map(function (key) {
+                        toState(els, state[key], [key]);
+                    });
+                };
+                play();
+
+                // state on event
+                var btns = document.querySelectorAll(".btn");
+                btns.forEach(function (btn) {
+                    return btn.addEventListener("click", function (e) {
+                        var name = e.target.getAttribute("data-dots");
+                        var data = state[name];
+                        toState(els, { domain: data.domain, opacity: data.opacity, delay: 0, duration: 2 }, name);
+                    });
+                });
+            });
+        }
+    };
+});
+$__System.registerDynamic("77", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -12380,308 +12747,31 @@ $__System.registerDynamic("73", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("4b", ["73"], true, function($__require, exports, module) {
+$__System.registerDynamic("4b", ["77"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('73');
+  module.exports = $__require('77');
   return module.exports;
 });
 
-$__System.registerDynamic("74", [], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  "format cjs";
-  (function(global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) : typeof define === 'function' && define.amd ? define(['exports'], factory) : (factory((global.d3 = global.d3 || {})));
-  }(this, function(exports) {
-    'use strict';
-    var slice = Array.prototype.slice;
-    function identity(x) {
-      return x;
-    }
-    var top = 1;
-    var right = 2;
-    var bottom = 3;
-    var left = 4;
-    var epsilon = 1e-6;
-    function translateX(scale0, scale1, d) {
-      var x = scale0(d);
-      return "translate(" + (isFinite(x) ? x : scale1(d)) + ",0)";
-    }
-    function translateY(scale0, scale1, d) {
-      var y = scale0(d);
-      return "translate(0," + (isFinite(y) ? y : scale1(d)) + ")";
-    }
-    function center(scale) {
-      var width = scale.bandwidth() / 2;
-      return function(d) {
-        return scale(d) + width;
-      };
-    }
-    function entering() {
-      return !this.__axis;
-    }
-    function axis(orient, scale) {
-      var tickArguments = [],
-          tickValues = null,
-          tickFormat = null,
-          tickSizeInner = 6,
-          tickSizeOuter = 6,
-          tickPadding = 3;
-      function axis(context) {
-        var values = tickValues == null ? (scale.ticks ? scale.ticks.apply(scale, tickArguments) : scale.domain()) : tickValues,
-            format = tickFormat == null ? (scale.tickFormat ? scale.tickFormat.apply(scale, tickArguments) : identity) : tickFormat,
-            spacing = Math.max(tickSizeInner, 0) + tickPadding,
-            transform = orient === top || orient === bottom ? translateX : translateY,
-            range = scale.range(),
-            range0 = range[0] + 0.5,
-            range1 = range[range.length - 1] + 0.5,
-            position = (scale.bandwidth ? center : identity)(scale.copy()),
-            selection = context.selection ? context.selection() : context,
-            path = selection.selectAll(".domain").data([null]),
-            tick = selection.selectAll(".tick").data(values, scale).order(),
-            tickExit = tick.exit(),
-            tickEnter = tick.enter().append("g").attr("class", "tick"),
-            line = tick.select("line"),
-            text = tick.select("text"),
-            k = orient === top || orient === left ? -1 : 1,
-            x,
-            y = orient === left || orient === right ? (x = "x", "y") : (x = "y", "x");
-        path = path.merge(path.enter().insert("path", ".tick").attr("class", "domain").attr("stroke", "#000"));
-        tick = tick.merge(tickEnter);
-        line = line.merge(tickEnter.append("line").attr("stroke", "#000").attr(x + "2", k * tickSizeInner).attr(y + "1", 0.5).attr(y + "2", 0.5));
-        text = text.merge(tickEnter.append("text").attr("fill", "#000").attr(x, k * spacing).attr(y, 0.5).attr("dy", orient === top ? "0em" : orient === bottom ? ".71em" : ".32em"));
-        if (context !== selection) {
-          path = path.transition(context);
-          tick = tick.transition(context);
-          line = line.transition(context);
-          text = text.transition(context);
-          tickExit = tickExit.transition(context).attr("opacity", epsilon).attr("transform", function(d) {
-            return transform(position, this.parentNode.__axis || position, d);
-          });
-          tickEnter.attr("opacity", epsilon).attr("transform", function(d) {
-            return transform(this.parentNode.__axis || position, position, d);
-          });
-        }
-        tickExit.remove();
-        path.attr("d", orient === left || orient == right ? "M" + k * tickSizeOuter + "," + range0 + "H0.5V" + range1 + "H" + k * tickSizeOuter : "M" + range0 + "," + k * tickSizeOuter + "V0.5H" + range1 + "V" + k * tickSizeOuter);
-        tick.attr("opacity", 1).attr("transform", function(d) {
-          return transform(position, position, d);
-        });
-        line.attr(x + "2", k * tickSizeInner);
-        text.attr(x, k * spacing).text(format);
-        selection.filter(entering).attr("fill", "none").attr("font-size", 10).attr("font-family", "sans-serif").attr("text-anchor", orient === right ? "start" : orient === left ? "end" : "middle");
-        selection.each(function() {
-          this.__axis = position;
-        });
-      }
-      axis.scale = function(_) {
-        return arguments.length ? (scale = _, axis) : scale;
-      };
-      axis.ticks = function() {
-        return tickArguments = slice.call(arguments), axis;
-      };
-      axis.tickArguments = function(_) {
-        return arguments.length ? (tickArguments = _ == null ? [] : slice.call(_), axis) : tickArguments.slice();
-      };
-      axis.tickValues = function(_) {
-        return arguments.length ? (tickValues = _ == null ? null : slice.call(_), axis) : tickValues && tickValues.slice();
-      };
-      axis.tickFormat = function(_) {
-        return arguments.length ? (tickFormat = _, axis) : tickFormat;
-      };
-      axis.tickSize = function(_) {
-        return arguments.length ? (tickSizeInner = tickSizeOuter = +_, axis) : tickSizeInner;
-      };
-      axis.tickSizeInner = function(_) {
-        return arguments.length ? (tickSizeInner = +_, axis) : tickSizeInner;
-      };
-      axis.tickSizeOuter = function(_) {
-        return arguments.length ? (tickSizeOuter = +_, axis) : tickSizeOuter;
-      };
-      axis.tickPadding = function(_) {
-        return arguments.length ? (tickPadding = +_, axis) : tickPadding;
-      };
-      return axis;
-    }
-    function axisTop(scale) {
-      return axis(top, scale);
-    }
-    function axisRight(scale) {
-      return axis(right, scale);
-    }
-    function axisBottom(scale) {
-      return axis(bottom, scale);
-    }
-    function axisLeft(scale) {
-      return axis(left, scale);
-    }
-    exports.axisTop = axisTop;
-    exports.axisRight = axisRight;
-    exports.axisBottom = axisBottom;
-    exports.axisLeft = axisLeft;
-    Object.defineProperty(exports, '__esModule', {value: true});
-  }));
-  return module.exports;
-});
+$__System.register('78', ['33', '53', '54', '55', '56', '4b'], function (_export) {
+    var _Object$keys, parseData, result, jsonRecord, jsonFinals, d3_extent;
 
-$__System.registerDynamic("3e", ["74"], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  module.exports = $__require('74');
-  return module.exports;
-});
-
-$__System.register('57', ['43', '4b', '3e'], function (_export) {
-
-    /* param: coord - x or y */
-    /* param: direction - h or v, isJump? */
-    'use strict';
-
-    var d3_select, d3_extent, d3_axisBottom;
-    return {
-        setters: [function (_) {
-            d3_select = _.select;
-        }, function (_b) {
-            d3_extent = _b.extent;
-        }, function (_e) {
-            d3_axisBottom = _e.axisBottom;
-        }],
-        execute: function () {
-            _export('default', function (cfg) {
-                var axis = undefined,
-                    dataAxis = undefined;
-                var coord = cfg.coord;
-
-                this.init = function (data, scale, steps) {
-
-                    dataAxis = d3_axisBottom(scale[coord]);
-                    if (steps) {
-                        dataAxis.tickValues(steps);
-                    }
-                    dataAxis.tickFormat(function (d) {
-                        return Math.round(Math.abs(d) * 100) / 100;
-                    });
-
-                    axis = d3_select(".axis-" + coord).attr("class", "axis-" + cfg.value).call(dataAxis);
-
-                    axis.selectAll("line").attr("x1", function (d) {
-                        return 0;
-                    }).attr("x2", function (d) {
-                        return "97%";
-                    }).attr("y1", function (d) {
-                        return 0;
-                    }).attr("y2", function (d) {
-                        return "99%";
-                    }).attr(coord + "1", function (d) {
-                        return scale[coord](d) + "%";
-                    }).attr(coord + "2", function (d) {
-                        return scale[coord](d) + "%";
-                    });
-
-                    axis.selectAll("text").attr("dy", coord === "x" ? ".71em" : ".3em").attr("x", function (d) {
-                        return "100%";
-                    }).attr("y", function (d) {
-                        return "100%";
-                    }).attr(coord, function (d) {
-                        return scale[coord](d) + "%";
-                    });
-
-                    axis.select(".domain").style("display", "none");
-                    axis.selectAll(".tick").attr("transform", "");
-
-                    if (coord === "y" && cfg.value === "year") {
-                        axis.append("rect").attr("x", 0).attr("y", "100%").attr("fill", "white").style("width", "calc(100%  + 25px)").style("height", "25px");
-                    }
-                };
-
-                this.update = function (opt, scale) {
-                    /*if (cfg.value === "mark") {
-                    dataAxis = d3_axisBottom(scale[coord])
-                    .tickFormat(d => Math.abs(d));
-                    axis.call(dataAxis);
-                    }*/
-
-                    var duration = opt.duration !== undefined ? opt.duration : 1;
-
-                    axis.selectAll("line").transition().delay(opt.delay || 0).duration((opt.duration || 2) * 1000)
-                    //.delay(opt.delay*1000)
-                    //.duration(duration*1000)
-                    .attr(coord + "1", function (d) {
-                        return scale[coord](d) + "%";
-                    }).attr(coord + "2", function (d) {
-                        return scale[coord](d) + "%";
-                    });
-
-                    axis.selectAll("text").transition().delay(opt.delay || 0).duration((opt.duration || 2) * 1000)
-                    //.delay(opt.delay*1000)
-                    //.duration(duration*1000)
-                    .attr("dy", coord === "x" ? ".71em" : ".3em").attr(coord, function (d) {
-                        return scale[coord](d) + "%";
-                    });
-
-                    //axis
-                    //.duration(1000)
-                    //.call(dataAxis);
-                };
-            });
-        }
-    };
-});
-$__System.register('75', ['33', '43', '53', '54', '55', '56', '57', '5d', '5e', '4b'], function (_export) {
-    var _Object$keys, d3_select, parseData, getScale, updateInfo, Dots, Axis, jsonRecord, jsonFinals, d3_extent, d3_range;
-
-    function getDomain(data) {
-        return {
-            x: d3_extent(data, function (d) {
-                return d.x;
-            }),
-            y: d3_extent(data, function (d) {
-                return d.y;
-            })
-        };
-    }
-
-    function toState(els, data, name) {
-        var scale = getScale(data.domain);
-        _Object$keys(els).forEach(function (key, i) {
-            els[key].update(data, scale, data.opacity[i]);
-        });
-        window.setTimeout(function () {
-            d3_select(".states").selectAll(".btn").classed("btn-focus", false);
-            d3_select(".btn-" + name).classed("btn-focus", true);
-            // update info
-            updateInfo(name);
-        }, data.delay * 1000);
-    }
     return {
         setters: [function (_) {
             _Object$keys = _['default'];
-        }, function (_3) {
-            d3_select = _3.select;
-        }, function (_2) {
-            parseData = _2['default'];
         }, function (_4) {
-            getScale = _4['default'];
+            parseData = _4['default'];
         }, function (_5) {
-            updateInfo = _5['default'];
-        }, function (_6) {
-            Dots = _6['default'];
-        }, function (_7) {
-            Axis = _7['default'];
-        }, function (_d) {
-            jsonRecord = _d['default'];
-        }, function (_e) {
-            jsonFinals = _e['default'];
+            result = _5['default'];
+        }, function (_2) {
+            jsonRecord = _2['default'];
+        }, function (_3) {
+            jsonFinals = _3['default'];
         }, function (_b) {
             d3_extent = _b.extent;
-            d3_range = _b.range;
         }],
         execute: function () {
             'use strict';
@@ -12707,101 +12797,7 @@ $__System.register('75', ['33', '43', '53', '54', '55', '56', '57', '5d', '5e', 
                 });
                 console.log(data);
 
-                // ====== same init ======
-                var domain = getDomain(dataCombo);
-                console.log(domain);
-
-                // init, draw all
-                var scale = getScale(domain);
-                var els = {};
-
-                els.dotsF = new Dots({
-                    dataset: "final",
-                    radius: 9
-                });
-                els.dotsF.init(data.finals, scale);
-
-                els.dotsM = new Dots({
-                    dataset: "medal",
-                    radius: 6
-                });
-                els.dotsM.init(data.medals, scale);
-
-                els.dotsW = new Dots({
-                    dataset: "world",
-                    radius: 3,
-                    color: "#333",
-                    stroke: "rgba(255, 255, 255, 0.5)"
-                });
-                els.dotsW.init(data.worlds, scale);
-                // ====== end of same init ======
-
-                var steps = d3_range(domain.y[1], domain.y[0], -8);
-                // ====== same init and updates ======
-                els.axisY = new Axis({ coord: "y", value: "year" });
-                els.axisY.init(dataCombo.map(function (d) {
-                    return d.y;
-                }), scale, steps);
-
-                els.axisX = new Axis({ coord: "x", value: "mark" });
-                els.axisX.init(dataCombo.map(function (d) {
-                    return d.x;
-                }), scale);
-
-                // update with animations
-                var state = {};
-                state.final = {
-                    delay: 0,
-                    duration: 0,
-                    //domain: getDomain(data.finals.concat([data.medals[data.medals.length-1], data.worlds[data.worlds.length-1]])),
-                    domain: {
-                        x: [d3_extent(data.finals, function (d) {
-                            return d.x;
-                        })[0], 0],
-                        y: [2015, 2017]
-                    },
-                    opacity: [0.75, 0, 0]
-                };
-                toState(els, state.final, "final");
-
-                var domainMedal = getDomain(data.finals.concat(data.medals));
-                domainMedal.x[1] = 0;
-                state.medal = {
-                    delay: 3,
-                    duration: 2,
-                    domain: domainMedal,
-                    opacity: [0.75, 0.5, 0]
-                };
-                toState(els, state.medal, "medal");
-
-                state.world = {
-                    delay: 8,
-                    duration: 2,
-                    domain: getDomain(data.finals.concat(data.worlds)),
-                    opacity: [0.75, 0, 0.75]
-                };
-                toState(els, state.world, "world");
-
-                state.mixed = {
-                    delay: 13,
-                    duration: 2,
-                    domain: domain,
-                    opacity: [0.75, 0.5, 0.75]
-                };
-                toState(els, state.mixed, "mixed");
-
-                var btns = document.querySelectorAll(".btn");
-                window.setTimeout(function () {
-                    btns.forEach(function (btn) {
-                        return btn.addEventListener("click", function (e) {
-                            var nameState = e.target.getAttribute("data-dots");
-                            var dataState = state[nameState];
-                            dataState.delay = 0;
-                            dataState.duration = 2;
-                            toState(els, dataState, nameState);
-                        });
-                    });
-                }, 15000);
+                result(data, dataCombo);
             });
         }
     };
@@ -12834,7 +12830,7 @@ $__System.registerDynamic("44", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.register("76", [], function (_export) {
+$__System.register("79", [], function (_export) {
   "use strict";
 
   return {
@@ -12876,7 +12872,7 @@ $__System.register("76", [], function (_export) {
     }
   };
 });
-$__System.registerDynamic("77", [], true, function($__require, exports, module) {
+$__System.registerDynamic("7a", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -13801,19 +13797,19 @@ $__System.registerDynamic("77", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("43", ["77"], true, function($__require, exports, module) {
+$__System.registerDynamic("43", ["7a"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('77');
+  module.exports = $__require('7a');
   return module.exports;
 });
 
-$__System.register('1', ['3', '4', '5', '43', '44', '52', '53', '75', '76', '4c', '5e', '4d', '4e', '4f'], function (_export) {
+$__System.register('1', ['3', '4', '5', '43', '44', '52', '53', '56', '78', '79', '4c', '4d', '4e', '4f'], function (_export) {
     'use strict';
 
-    var iframeMessenger, embedHTML, chartHTML, d3_select, utils, breaststroke100_m, getData, longjump_m, throttle, demo, long_jump_m, team_pursuit_m, freestyle200_m, breaststroke200_m;
+    var iframeMessenger, embedHTML, chartHTML, d3_select, utils, breaststroke100_m, getData, long_jump_m, longjump_m, throttle, demo, team_pursuit_m, freestyle200_m, breaststroke200_m;
 
     //console.log(event);
     //console.log(data);
@@ -13833,26 +13829,26 @@ $__System.register('1', ['3', '4', '5', '43', '44', '52', '53', '75', '76', '4c'
             embedHTML = _2['default'];
         }, function (_3) {
             chartHTML = _3['default'];
-        }, function (_9) {
-            d3_select = _9.select;
-        }, function (_7) {
-            utils = _7['default'];
-        }, function (_5) {
-            breaststroke100_m = _5['default'];
+        }, function (_10) {
+            d3_select = _10.select;
+        }, function (_8) {
+            utils = _8['default'];
+        }, function (_6) {
+            breaststroke100_m = _6['default'];
         }, function (_4) {
             getData = _4['default'];
-        }, function (_6) {
-            longjump_m = _6['default'];
-        }, function (_8) {
-            throttle = _8['default'];
+        }, function (_5) {
+            long_jump_m = _5['default'];
+        }, function (_7) {
+            longjump_m = _7['default'];
+        }, function (_9) {
+            throttle = _9['default'];
         }, function (_c) {
             demo = _c['default'];
-        }, function (_e) {
-            long_jump_m = _e['default'];
         }, function (_d) {
             team_pursuit_m = _d['default'];
-        }, function (_e2) {
-            freestyle200_m = _e2['default'];
+        }, function (_e) {
+            freestyle200_m = _e['default'];
         }, function (_f) {
             breaststroke200_m = _f['default'];
         }],

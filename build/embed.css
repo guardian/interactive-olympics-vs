@@ -644,7 +644,7 @@ p {
   width: 100%; }
 
 .header {
-  font-size: 14px;
+  font-size: 12px;
   background-color: rgba(255, 255, 255, 0.75);
   width: 50%;
   min-width: 300px;
@@ -653,21 +653,24 @@ p {
 
 @media (min-width: 480px) {
   .header {
-    top: 30px; } }
+    top: 8%; } }
 
 .main {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
   position: absolute;
-  padding: 5px 20px 20px 5px; }
+  padding: 10px 30px 10px 10px; }
   .main text {
-    fill: #bbbbbb;
     font-size: 12px;
     line-height: 14px;
-    font-family: "Guardian Agate Sans 1 Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
+    font-family: "Guardian Agate Sans 1 Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    fill: #bbbbbb; }
   .main circle {
     cursor: pointer; }
+
+g[class^="axis"] {
+  text-anchor: middle; }
 
 .axis-year line {
   stroke: #e6e6e6;
@@ -682,28 +685,33 @@ p {
   transition: 0.25s; }
 
 .states {
-  font-size: 15px;
   color: grey;
+  font-size: 13px;
   width: 100%;
   position: absolute;
   top: 100%;
   border-top: 1px solid #ccc;
   margin-top: 20px;
-  padding-top: 5px; }
+  padding-top: 3px; }
 
 .btn {
-  padding: 0 5px;
-  cursor: pointer; }
+  padding: 0 5px; }
 
 .btn-focus {
   border-top: 4px solid;
   padding-top: 5px; }
 
+[class*="btn-"] {
+  cursor: pointer; }
+
+.count-focus {
+  text-decoration: underline; }
+
 .plot {
-  display: inline-block;
   font-size: 12px;
   line-height: 14px;
-  font-family: "Guardian Agate Sans 1 Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
+  font-family: "Guardian Agate Sans 1 Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  display: inline-block; }
 
 /* atomic style */
 .f-14 {

@@ -18,7 +18,7 @@ p {
 }
 
 .header {
-    font-size: 14px;
+    font-size: 12px;
     background-color: rgba(255, 255, 255, 0.75);
     width: 50%;
     min-width: 300px;
@@ -27,7 +27,7 @@ p {
 }
 @media (min-width: 480px) { 
 .header {
-    top: 30px;//10%; 
+    top: 8%; 
 }}
 
 
@@ -38,15 +38,19 @@ p {
     box-sizing: border-box;
 
     position: absolute;
-    padding: 5px 20px 20px 5px;
+    //padding: 5px 20px 20px 5px;
+    padding: 10px 30px 10px 10px;
     
     text {
-    fill: rgb(187, 187, 187);
     @include fs-data(2);
+    fill: rgb(187, 187, 187);
     }
     circle {
     cursor: pointer;
 }}
+g[class^="axis"] {
+    text-anchor: middle;
+}
 .axis-year line {
     stroke: #e6e6e6;//rgb(238, 238, 238);
     shape-rendering: auto;
@@ -62,28 +66,35 @@ p {
 
 // states 
 .states {
-    font-size: 15px;
     color: grey;
+    font-size: 13px;
+    
     width: 100%;
     position: absolute;
     top: 100%;
     border-top: 1px solid #ccc;
     margin-top: 20px;
-    padding-top: 5px;
+    padding-top: 3px;
 }
 .btn {
     padding: 0 5px;
-    cursor: pointer;
 }
 .btn-focus {
     border-top: 4px solid;
     padding-top: 5px;
 }
+[class*="btn-"] {
+    cursor: pointer;
+}
+
+.count-focus {
+    text-decoration: underline;
+}
 
 // demo
 .plot {
-    display: inline-block;
     @include fs-data(2);
+    display: inline-block;
 }
 
 //@media (min-width: 660px) { width: (100% / 2); }

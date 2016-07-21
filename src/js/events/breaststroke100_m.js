@@ -1,15 +1,9 @@
 import jsonRecord from '../../data/breaststroke100_m.json!json';
 import jsonFinals from '../../dataDummy/breaststroke100_m.json!json';
 import parseData from './data';
+import result from './result';
 
-import {select as d3_select} from 'd3-selection';
 import {extent as d3_extent} from 'd3-array';
-import {range as d3_range} from 'd3-array';
-import getScale from '../draw/scale';
-import updateInfo from '../draw/info';
-import Dots from '../draw/dots';
-import Axis from '../draw/axis';
-//import Grid from '../draw/grid';
 
 export default function() {
     let data = parseData(jsonRecord, jsonFinals);
@@ -30,133 +24,5 @@ export default function() {
     });
     console.log(data);
 
-    let domain = getDomain(dataCombo);
-    console.log(domain);
-
-    // init, draw all
-    let scale = getScale(domain);
-    let els = {};
-
-    els.dotsF = new Dots({
-        dataset: "final",
-        radius: 9
-    });
-    els.dotsF.init(data.finals, scale);
-
-    els.dotsM = new Dots({
-        dataset: "medal",
-        radius: 6
-    });
-    els.dotsM.init(data.medals, scale);
-
-    els.dotsW = new Dots({
-        dataset: "world",
-        radius: 3,
-        color: "#333",
-        stroke: "rgba(255, 255, 255, 0.5)"
-    });
-    els.dotsW.init(data.worlds, scale);   
-
-
-    let steps = d3_range(domain.y[1], domain.y[0], -4);
-    els.axisY = new Axis({coord: "y", value: "year"});
-    els.axisY.init(dataCombo.map(d => d.y), scale, steps); 
-
-    els.axisX = new Axis({coord: "x", value: "mark"});
-    els.axisX.init(dataCombo.map(d => d.x), scale);    
-
-
-    // update with animations
-    let state = {};
-    state.final = { 
-        delay: 0, 
-        duration: 0, 
-        //domain: getDomain(data.finals.concat([data.medals[data.medals.length-1], data.worlds[data.worlds.length-1]])),
-        domain: {
-            x: [d3_extent(data.finals, d => d.x)[0], 0],
-                y: [2015, 2017]
-        },
-        opacity: [0.75, 0, 0]
-    };
-
-    let domainMedal = getDomain(data.finals.concat(data.medals));
-    domainMedal.x[1] = 0;
-    state.medal = { 
-        delay: 3, 
-        duration: 2,
-        domain: domainMedal, 
-        opacity: [0.75, 0.5, 0]
-    };    
-
-    state.world = { 
-        delay: 8, 
-        duration: 2,
-        domain: getDomain(data.finals.concat(data.worlds)),
-        opacity: [0.75, 0, 0.75]
-    };    
-
-    state.mixed = { 
-        delay: 13, 
-        duration: 2,
-        domain: domain,
-        opacity: [0.75, 0.5, 0.75]
-    };    
-   
-    // default
-    /*let stateDefault = state.final;/ *{
-        duration: 0, 
-        delay: 0,
-        domain: domain,
-        opacity: [0.75, 0.5, 0.75]
-    };*/
-    //toState(els, stateDefault, "mixed");
-
-    // play states
-    document.querySelector(".btn-play").addEventListener("click", () => {
-        play();
-    });
-    let play = () => {
-        Object.keys(state).map(key => {
-            toState(els, state[key], [key]);
-        });  
-    };
-    play();
-
-    // state on event
-    let btns = document.querySelectorAll(".btn");
-    //window.setTimeout(() => {
-    btns.forEach(btn => 
-        btn.addEventListener("click", (e) => {
-        console.log(btn);
-        let nameState = e.target.getAttribute("data-dots");
-        let dataState = state[nameState];
-        dataState.delay = 0;
-        dataState.duration = 2; 
-        toState(els, dataState, nameState);
-        })    
-    ); 
-    //}, (state.mixed.delay + state.mixed.duration) * 1000); 
-}
-
-function getDomain(data) {
-    return {
-        x: d3_extent(data, d => d.x),
-            y: d3_extent(data, d => d.y)
-    };
-}
-
-function toState(els, data, name) {
-    let scale = getScale(data.domain);
-    Object.keys(els).forEach((key, i) => {
-        els[key].update(data, scale, data.opacity[i]); 
-    }); 
-    window.setTimeout(() => {
-        d3_select(".states")
-        .selectAll(".btn")
-        .classed("btn-focus", false);
-        d3_select(".btn-" + name) 
-        .classed("btn-focus", true);
-        // update info
-        updateInfo(name);
-    }, data.delay*1000);
+    result(data, dataCombo); 
 }
