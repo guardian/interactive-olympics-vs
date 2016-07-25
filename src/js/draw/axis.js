@@ -15,8 +15,10 @@ export default function(cfg) {
         //TODO: steps case 
         case cfg.value === "year": 
             let min = scale.domain[coord][0];
-            let range = d3_range(scale.domain[coord][1], min, -4);
-            return range[range.length-1] === min ? range : range.concat([min]);
+            let max = scale.domain[coord][1];
+            let range = min===max ? [min] : d3_range(max, min, -4);
+            
+            return range;//[range.length-1] === min ? range : range.concat([min]);
         case cfg.value === "mark":
             //TODO: remove axisBottom later? 
             let d3_axis = d3_axisBottom(scale[coord]).ticks(8);
@@ -65,7 +67,7 @@ export default function(cfg) {
         text.enter()
         .append("text")
         .transition().duration(opt.duration*1000)
-        .attr("x", d => "103%")
+        .attr("x", d => "101%")
         .attr("y", d => "100%")
         .attr("dy", coord === "x" ? ".71em" : ".3em")
         .attr(coord, d => scale[coord](d) + "%")

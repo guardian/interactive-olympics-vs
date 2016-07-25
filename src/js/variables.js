@@ -54,3 +54,14 @@ export const defaultHeaderTexts = {
         "mixed": "Interactive with this chart to explore more details ..."
     }
 };
+
+// highlight
+export let point = {
+    pt: null,
+    set obj(obj) {
+        this.pt = pt;
+    },
+    get obj() {
+        return this.pt;
+    }
+};

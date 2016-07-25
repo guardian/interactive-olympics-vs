@@ -285,7 +285,7 @@ $__System.registerDynamic("5", [], true, function($__require, exports, module) {
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = "<svg class=\"js-chart main\">\n    <g class=\"axis-y\"></g>\n    <g class=\"axis-x\"></g>\n    <g class=\"axis-highlight\">\n        <line class=\"js-highlight-h\" x1=\"0\" x2=\"95.5%\" stroke=\"#dcdcdc\" stroke-width=\"3px\" style=\"opacity: 0\"></line>\n    </g>\n    <g class=\"line-ruler\"></g>\n    <g class=\"line-marks\"></g>\n    <g class=\"line-frame\"></g>\n    <g class=\"dots-final\"></g>\n    <g class=\"dots-medal\"></g>\n    <g class=\"dots-world\"></g>\n    <g class=\"dots-highlight\"></g>\n</svg>\n<div class=\"header\">\n    <h2 class=\"m-0\">\n        <span class=\"js-headline\"></span>\n        <span class=\"js-team f-14 c-g\"></span>\n    </h2>\n    <p class=\"mb-10\">\n        <span class=\"js-final count count-final\"></span>\n        <span class=\"js-medal count count-medal\"></span>\n        <span class=\"js-world count count-world\"></span>\n    </p>\n    <p class=\"js-standfirst\"></p>\n</div>\n<div class=\"states\">\n    <span class=\"btn-play\">Play states:</span>\n    <span class=\"btn btn-final\" data-dots=\"final\">final</span> |\n    <span class=\"btn btn-medal\" data-dots=\"medal\">medal</span> |\n    <span class=\"btn btn-world\" data-dots=\"world\">world records</span> |\n    <span class=\"btn btn-mixed\" data-dots=\"mixed\">all</span>\n</div>\n";
+  module.exports = "<svg class=\"js-chart main\">\n    <g class=\"axis-y\"></g>\n    <g class=\"axis-x\"></g>\n    <!--g class=\"axis-highlight\">\n        <line class=\"js-highlight-h\" x1=\"0\" x2=\"95.5%\" stroke=\"#dcdcdc\" stroke-width=\"3px\" style=\"opacity: 0\"></line>\n    </g-->\n    <g class=\"line-ruler\"></g>\n    <g class=\"line-marks\"></g>\n    <g class=\"line-frame\"></g>\n    <g class=\"dots-final\"></g>\n    <g class=\"dots-medal\"></g>\n    <g class=\"dots-world\"></g>\n    <g class=\"dots-highlight\"></g>\n</svg>\n<div class=\"highlight\">\n    <div class=\"dots-select\"></div>\n    <div class=\"dots-animate\"></div>\n    <div class=\"line-v\"></div>\n    <div class=\"line-h\"></div>\n    <div class=\"text-x\"></div>\n    <div class=\"text-y\"></div>\n</div>\n<div class=\"header\">\n    <h2 class=\"m-0\">\n        <span class=\"js-headline\"></span>\n        <span class=\"js-team f-14 c-g\"></span>\n    </h2>\n    <p class=\"mb-10\">\n        <span class=\"js-final count count-final\"></span>\n        <span class=\"js-medal count count-medal\"></span>\n        <span class=\"js-world count count-world\"></span>\n    </p>\n    <p class=\"js-standfirst\"></p>\n</div>\n<div class=\"states\">\n    <span class=\"btn-play\">Play states:</span>\n    <span class=\"btn btn-final\" data-dots=\"final\">final</span> |\n    <span class=\"btn btn-medal\" data-dots=\"medal\">medal</span> |\n    <span class=\"btn btn-world\" data-dots=\"world\">world records</span> |\n    <span class=\"btn btn-mixed\" data-dots=\"mixed\">all</span>\n</div>\n";
   return module.exports;
 });
 
@@ -11572,7 +11572,7 @@ $__System.register('72', ['43', '44', '45', '71', '3f'], function (_export) {
     var d3_select, utils, transition, updateInfo, colors, sync;
 
     // interaction
-    function showHighlight(d1) {
+    function showBestAthlete(d1) {
         var attrs = d1.attrs;
         var x = sync.scale.x(d1.x);
         var y = sync.scale.y(d1.y);
@@ -11590,16 +11590,15 @@ $__System.register('72', ['43', '44', '45', '71', '3f'], function (_export) {
             return d.r * 2;
         });
 
-        var d1Records = elsName._groups[0].map(function (el) {
-            return el.__data__;
-        });
-        updateInfo(d1, d1Records);
+        d3_select("#" + d1.id).attr("stroke", "black");
 
-        // hightlight
-        d3_select(".js-highlight-h").style("opacity", 1).attr("y1", y + "%").attr("y2", y + "%").attr("x1", x + "%");
+        // info
+        updateInfo(d1, elsName._groups[0].map(function (el) {
+            return el.__data__;
+        }));
     }
 
-    function hideHighlight(d1) {
+    function hideAllAthletes(d1) {
         var attrs = d1.attrs;
 
         // name
@@ -11612,8 +11611,16 @@ $__System.register('72', ['43', '44', '45', '71', '3f'], function (_export) {
             return d.r;
         });
 
-        // highlight
-        d3_select(".js-highlight-h").style("opacity", 0);
+        d3_select("#" + d1.id).attr("stroke", null);
+    }
+
+    function showHighlightAnimate(data) {
+        var pos = document.querySelector("#" + data.id).getBoundingClientRect();
+
+        d3_select(".highlight").style("opacity", 1);
+        console.log("animate");
+
+        d3_select(".dots-animate").classed("animate", true).style("width", data.r * 2 + "px").style("height", data.r * 2 + "px").style("top", pos.top - 1 + "px").style("left", pos.left - 1 + "px");
     }
     return {
         setters: [function (_) {
@@ -11671,33 +11678,46 @@ $__System.register('72', ['43', '44', '45', '71', '3f'], function (_export) {
                     }).attr("cy", function (d) {
                         return cfg.cy(d, cfg.radius, scale.y) + "%";
                     }).attr("r", cfg.radius).attr("fill-opacity", function () {
-                        return cfg.opacity ? cfg.opacity : 0;
+                        return 0;
                     }).attr("fill", function (d) {
                         return tempColor(d);
                     }).attr("stroke-opacity", function () {
-                        return cfg.opacity ? cfg.opacity : 0;
+                        return 0;
                     }).attr("stroke", function () {
                         if (cfg.stroke) return cfg.stroke;
                     }).attr("stroke-width", 1)
                     // interaction
                     .on("mouseover", function (d) {
-                        showHighlight(d);
+                        showBestAthlete(d);
+                        d3_select(".highlight").style("opacity", 0);
+                        d3_select(".dots-animate").classed("animate", false);
                     }).on("mouseout", function (d) {
-                        hideHighlight(d);
+                        hideAllAthletes(d);
+                        showHighlightAnimate(d);
                     });
 
+                    // best of each state
                     cfg.best = {};
                     cfg.best = data[data.length - 1];
+                    // TODO: add most frequent ?
+                    // ...
+
+                    if (cfg.dataset === "world") {
+                        var els = dots._groups[0];
+                        cfg.wr = els[els.length - 1].id;
+                    }
                 };
 
                 // update
                 this.update = function (opt, scale, opacity) {
-                    //if (cfg.dataset==="final") console.log(opt.delay, "(pause)");
-
                     dots.transition().duration(opt.duration * 1000).attr("fill-opacity", opacity).attr("stroke-opacity", opacity).attr("cx", function (d) {
                         return cfg.cx(d, cfg.radius, scale.x) + "%";
                     }).attr("cy", function (d) {
-                        return cfg.cy(d, cfg.radius, scale.y) + "%";
+                        var cy = cfg.cy(d, cfg.radius, scale.y);
+                        if (d.id === cfg.wr && cy > 95) {
+                            cy = 75;
+                        }
+                        return cy + "%";
                     });
 
                     // disable events on transition
@@ -11706,21 +11726,31 @@ $__System.register('72', ['43', '44', '45', '71', '3f'], function (_export) {
 
                     dots.each(function (d) {
                         return d.o = opacity;
-                    }); // opacity for highlight
+                    }); // opacity for showAtheletes
 
+                    var state = undefined;
+                    console.log("update");
+                    d3_select(".highlight").style("opacity", 0);
+                    d3_select(".dots-animate").classed("animate", false);
                     window.setTimeout(function () {
                         //if (cfg.dataset==="final") console.log(opt.delay+opt.duration, "(restart)");
                         elParent.style("pointer-events", opacity === 0 ? "none" : "all");
 
-                        var state = document.querySelector(".js-chart").getAttribute("data-state");
+                        state = document.querySelector(".js-chart").getAttribute("data-state");
                         if (state === cfg.dataset) {
-                            showHighlight(cfg.best);
+                            showBestAthlete(cfg.best);
+                            d3_select(".highlight").style("opacity", 0);
+                            d3_select(".dots-animate").classed("animate", false);
+                            console.log("after duration");
                         }
                     }, opt.duration * 1000);
 
                     window.setTimeout(function () {
-                        hideHighlight(cfg.best);
-                    }, (opt.duration + 3) * 1000);
+                        hideAllAthletes(cfg.best);
+                        if (state === cfg.dataset) {
+                            showHighlightAnimate(cfg.best);
+                        }
+                    }, (opt.duration + 2) * 1000);
                 };
             });
         }
@@ -11921,7 +11951,7 @@ $__System.registerDynamic("75", ["74"], true, function($__require, exports, modu
 });
 
 $__System.register("3f", ["44", "75"], function (_export) {
-    var utils, _Object$defineProperties, minWidth, padding, size, cols, width, height, chart, colors, sync, defaultHeaderTexts;
+    var utils, _Object$defineProperties, minWidth, padding, size, cols, width, height, chart, colors, sync, defaultHeaderTexts, point;
 
     return {
         setters: [function (_2) {
@@ -12006,6 +12036,24 @@ $__System.register("3f", ["44", "75"], function (_export) {
             };
 
             _export("defaultHeaderTexts", defaultHeaderTexts);
+
+            // highlight
+            point = _Object$defineProperties({
+                pt: null
+            }, {
+                obj: {
+                    set: function set(obj) {
+                        this.pt = pt;
+                    },
+                    get: function get() {
+                        return this.pt;
+                    },
+                    configurable: true,
+                    enumerable: true
+                }
+            });
+
+            _export("point", point);
         }
     };
 });
@@ -12039,8 +12087,10 @@ $__System.register('76', ['43', '4b', '3e', '3f'], function (_export) {
                         //TODO: steps case
                         case cfg.value === "year":
                             var min = scale.domain[coord][0];
-                            var range = d3_range(scale.domain[coord][1], min, -4);
-                            return range[range.length - 1] === min ? range : range.concat([min]);
+                            var max = scale.domain[coord][1];
+                            var range = min === max ? [min] : d3_range(max, min, -4);
+
+                            return range; //[range.length-1] === min ? range : range.concat([min]);
                         case cfg.value === "mark":
                             //TODO: remove axisBottom later?
                             var d3_axis = d3_axisBottom(scale[coord]).ticks(8);
@@ -12090,7 +12140,7 @@ $__System.register('76', ['43', '4b', '3e', '3f'], function (_export) {
                     });
 
                     text.enter().append("text").transition().duration(opt.duration * 1000).attr("x", function (d) {
-                        return "103%";
+                        return "101%";
                     }).attr("y", function (d) {
                         return "100%";
                     }).attr("dy", coord === "x" ? ".71em" : ".3em").attr(coord, function (d) {

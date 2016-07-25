@@ -109,7 +109,7 @@ function getDomain(data) {
 function toState(els, data, name) {
     window.setTimeout(() => {
         console.log("===", name, "===", data.delay, data.duration);
-
+    
         let scale = calcScale(data.domain);
         Object.keys(els).forEach((key, i) => {
             els[key].update(data, scale, data.opacity[i]); 
@@ -126,6 +126,6 @@ function toState(els, data, name) {
         
         // update info
         updateInfo(name);
-
+       
     }, (data.delay)*1000);
 }
