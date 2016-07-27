@@ -1,9 +1,13 @@
 import {select as d3_select} from 'd3-selection';
 import {defaultHeaderTexts} from '../variables';
 
-const cfg= {
-    "long-jump_m": { unit: "m", event: "male's high jump" },
-    "breaststroke-100_m": { unit: "s", event: "male's breaststroke 100m" }
+const cfg = {
+    "long-jump_m": { unit: "m", event: "men's high jump" },
+    "freestyle-200_m": { unit: "s", event: "men's freestyle 200m" },
+    "freestyle-100x4_relay_w": { unit: "s", event: "women's freestyle 4x100m" },
+    "breaststroke-100_m": { unit: "s", event: "men's breaststroke 100m" },
+    "medley-400_m": { unit: "s", event: "men's medley 400m" },
+    "medley-400_w": { unit: "s", event: "womens's medley 400m" }
 };
 
 export default function(data, records) {

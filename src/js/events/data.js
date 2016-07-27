@@ -46,26 +46,26 @@ function parseDataRecord(dataHeader, dataWorlds, type) {
 }
 
 function parseDataFinals(dataRaw, type) {
-    return dataRaw.filter(dd => dd.property).map(dd => {
-        //let properties = getProperties(dd.property);
-
-        let data = {};
-        data.year = thisYear;
-        data.name = getName(dd.participant, type.team);
-        data.team = dd.country.identifier;
-        //data.rank = dd.rank;
-        data.record = getProperties(dd.property, dd.rank).medal;
-        data.result = dd.value;
-        //data.resultBlur = Math.round(getParsedValue(dd.value, type.result).val*10)/10; 
-        //data.id = teamType === "Team" ? data.team : utils.str2class(data.name);
-        
-        return data;
+    return dataRaw.filter(dd => {
+            // filter out disqualified
+            let toClass = {}.toString;
+            return toClass.call(dd.property).indexOf("Array") > -1;
+        }).map(dd => {
+            //console.log(dd);
+            let data = {};
+            data.year = thisYear;
+            data.name = getName(dd.participant, type.team, dd.country.name);
+            data.team = dd.country.identifier;
+            data.record = getProperties(dd.property, dd.rank).medal;
+            data.result = dd.value;
+            //data.resultBlur = Math.round(getParsedValue(dd.value, type.result).val*10)/10; 
+            return data;
     });
 }
 
-function getName(participant, type) {
+function getName(participant, type, team) {
     return type === "Team" ? 
-        participant.map(dp => dp.competitor.fullName).join(", ") :  //team
+        team + " ("+participant.map(dp => dp.competitor.fullName).join(", ")+")" :  //team
         participant.competitor.fullName;                            //individual
 }
 
@@ -76,10 +76,10 @@ function getProperties(property, rank) {
     */
     let flag = property.length;
     let medal = flag ? property.filter(dp => dp.type.indexOf("Medal") > -1)
-    .map(dp => dp.value.toLowerCase()) : rank;
+    .map(dp => dp.value.toLowerCase()) : (rank ? rank : null);
     let record = flag ? property.filter(dp => dp.type.indexOf("Record") > -1)
     .map(dt => dt.value.toLowerCase()).join(", ") : null;
-    
+    //console.log(medal, flag, rank); 
     return {
         medal: medal[0],
         record: record

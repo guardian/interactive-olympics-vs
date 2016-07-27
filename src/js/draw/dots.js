@@ -85,7 +85,7 @@ export default function(cfg) {
         dots.each(d => d.o = opacity); // opacity for showAtheletes
     
         let state;
-        console.log("update");
+        //console.log("update");
         d3_select(".highlight").style("opacity", 0); 
         d3_select(".dots-animate").classed("animate", false);
         window.setTimeout(() => {
@@ -97,7 +97,7 @@ export default function(cfg) {
                 showBestAthlete(cfg.best); 
                 d3_select(".highlight").style("opacity", 0); 
                 d3_select(".dots-animate").classed("animate", false);
-                console.log("after duration");
+                //console.log("after duration");
             }
         }, (opt.duration) * 1000); 
 
@@ -122,7 +122,7 @@ function showBestAthlete(d1) {
     .attr("fill-opacity", d => d.o/2);
 
     let elsName = elsAll
-    .filter(d2 => d2.attrs.name === attrs.name)
+    .filter(d2 => d2.attrs.name.indexOf(attrs.name) > -1)
     .attr("fill-opacity", d => d.o === 0 ? 0 : 1)
     .attr("r", d => d.r*2);
     
@@ -139,7 +139,7 @@ function hideAllAthletes(d1) {
     let elsAll = d3_select(".js-chart").selectAll("circle")
     .style("transition", "0s")
     .attr("fill-opacity", d => d.o);
-    elsAll.filter(d2 => d2.attrs.name === attrs.name)
+    elsAll.filter(d2 => d2.attrs.name.indexOf(attrs.name) > -1)
     .attr("r", d => d.r);
     
     d3_select("#" + d1.id).attr("stroke", null);
@@ -149,7 +149,7 @@ function showHighlightAnimate(data) {
     let pos = document.querySelector("#" + data.id).getBoundingClientRect();
     
     d3_select(".highlight").style("opacity", 1);   
-    console.log("animate");    
+    //console.log("animate");    
     
     d3_select(".dots-animate")
     .classed("animate", true)

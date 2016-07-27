@@ -4565,6 +4565,421 @@ $__System.registerDynamic("4e", [], true, function($__require, exports, module) 
   var define,
       global = this,
       GLOBAL = this;
+  module.exports = {
+    "header": ["year", "name", "team", "record", "result"],
+    "world_records": [[1961, "Leonid Kolesnikov", "URS", "wr", "1:11.4"], [1961, "Chet Jastremski", "USA", "wr", "1:11.1"], [1961, "Gunter Tittes", "GDR", "wr", "1:10.8"], [1961, "Chet Jastremski", "USA", "wr", "1:10.7"], [1961, "Chet Jastremski", "USA", "wr", "1:10.0"], [1961, "Chet Jastremski", "USA", "wr", "1:09.5"], [1961, "Chet Jastremski", "USA", "wr", "1:07.8"], [1961, "Chet Jastremski", "USA", "wr", "1:07.5"], [1964, "Georgy Prokopenko", "URS", "wr", "1:07.4"], [1964, "Georgy Prokopenko", "URS", "wr", "1:06.9"], [1967, "Vladimir Kosinsky", "URS", "wr", "1:06.7"], [1968, "Jose Fiolo", "BRA", "wr", "1:06.4"], [1968, "Nikolai Pankin", "URS", "wr", "1:06.2"], [1969, "Nikolai Pankin", "URS", "wr", "1:05.8"], [1972, "John Hencken", "USA", "wr", "1:05.68"], [1972, "Nobutaka Taguchi", "JPN", "wr", "1:05.13"], [1972, "Nobutaka Taguchi", "JPN", "wr", "1:04.94"], [1973, "John Hencken", "USA", "wr", "1:04.35"], [1973, "John Hencken", "USA", "wr", "1:04.02"], [1974, "John Hencken", "USA", "wr", "1:03.88"], [1976, "John Hencken", "USA", "wr", "1:03.88"], [1976, "John Hencken", "USA", "wr", "1:03.62"], [1976, "John Hencken", "USA", "wr", "1:03.11"], [1977, "Gerald Mörken", "FRG", "wr", "1:02.86"], [1982, "Steven Lundquist", "USA", "wr", "1:02.62"], [1982, "Steven Lundquist", "USA", "wr", "1:02.53"], [1983, "Steven Lundquist", "USA", "wr", "1:02.34"], [1983, "Steven Lundquist", "USA", "wr", "1:02.28"], [1984, "John Moffet", "USA", "wr", "1:02.13"], [1984, "Steven Lundquist", "USA", "wr", "1:01.65"], [1989, "Adrian Moorhouse", "GBR", "wr", "1:01.49"], [1990, "Adrian Moorhouse", "GBR", "wr", "1:01.49"], [1990, "Adrian Moorhouse", "GBR", "wr", "1:01.49"], [1991, "Norbert Rózsa", "HUN", "wr", "1:01.49"], [1991, "Norbert Rózsa", "HUN", "wr", "1:01.45"], [1991, "Vasili Ivanov", "URS", "wr", "1:01.45"], [1991, "Norbert Rózsa", "HUN", "wr", "1:01.29"], [1993, "Károly Güttler", "HUN", "wr", "1:00.95"], [1996, "Frederik Deburghgraeve", "BEL", "wr", "1:00.60"], [2000, "Roman Sludnov", "RUS", "wr", "1:00.36"], [2001, "Ed Moses", "USA", "wr", "1:00.29"], [2001, "Roman Sludnov", "RUS", "wr", "1:00.26"], [2001, "Roman Sludnov", "RUS", "wr", "59.97"], [2001, "Roman Sludnov", "RUS", "wr", "59.94"], [2003, "Kosuke Kitajima", "JPN", "wr", "59.78"], [2004, "Brendan Hansen", "USA", "wr", "59.3"], [2006, "Brendan Hansen", "USA", "wr", "59.13"], [2008, "Kosuke Kitajima", "JPN", "wr", "58.91"], [2009, "Brenton Rickard", "AUS", "wr", "58.58"], [2012, "Cameron van der Burgh", "RSA", "wr", "58.46"], [2015, "Adam Peaty", "GBR", "wr", "57.92"]],
+    "olympics": [[1968, "Donald Ward Jr. Mckenzie", "USA", "gold", "1:07.7"], [1968, "Vladimir Kosinsky", "URS", "silver", "1:08.0"], [1968, "Nikolai Pankin", "URS", "bronze", "1:08.0"], [1972, "Nobutaka Taguchi", "JPN", "gold", "1:04.94"], [1972, "Thomas Edwin Bruce", "USA", "silver", "1:05.43"], [1972, "John Hencken", "USA", "bronze", "1:05.61"], [1976, "John Hencken", "USA", "gold", "1:03.11"], [1976, "David Wilkie", "GBR", "silver", "1:03.43"], [1976, "Arvydas Juozaitis", "URS", "bronze", "1:04.23"], [1980, "Duncan Goodhew", "GBR", "gold", "1:03.34"], [1980, "Arsen Miskarov", "URS", "silver", "1:03.82"], [1980, "Peter Evans", "AUS", "bronze", "1:03.96"], [1984, "Steven Lundquist", "USA", "gold", "1:01.65"], [1984, "Victor Davis", "CAN", "silver", "1:01.99"], [1984, "Peter Evans", "AUS", "bronze", "1:02.97"], [1988, "Adrian Moorhouse", "GBR", "gold", "1:02.04"], [1988, "Károly Guttler", "HUN", "silver", "1:02.05"], [1988, "Dmitri Volkov", "URS", "bronze", "1:02.20"], [1992, "Nelson Diebel", "USA", "gold", "1:01.50"], [1992, "Norbert Rózsa", "HUN", "silver", "1:01.68"], [1992, "Phil Rogers", "AUS", "bronze", "1:01.76"], [1996, "Frederik Deburghgraeve", "BEL", "gold", "1:00.65"], [1996, "Jeremy Linn", "USA", "silver", "1:00.77"], [1996, "Mark Warnecke", "GER", "bronze", "1:01.33"], [2000, "Domenico Fioravanti", "ITA", "gold", "01:00.46"], [2000, "Ed Moses", "USA", "silver", "01:00.73"], [2000, "Roman Sludnov", "RUS", "bronze", "01:00.91"], [2004, "Kosuke Kitajima", "JPN", "gold", "1:00.08"], [2004, "Brendan Hansen", "USA", "silver", "1:00.25"], [2004, "Hugues Duboscq", "FRA", "bronze", "1:00.88"], [2008, "Kosuke Kitajima", "JPN", "gold", "58.91"], [2008, "Alexander Oen", "NOR", "silver", "59.2"], [2008, "Hugues Duboscq", "FRA", "bronze", "59.37"], [2012, "Cameron van der Burgh", "RSA", "gold", "58.46"], [2012, "Christian Sprenger", "AUS", "silver", "58.93"], [2012, "Brendan Hansen", "USA", "bronze", "59.49"]]
+  };
+  return module.exports;
+});
+
+$__System.registerDynamic("4f", [], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  module.exports = {"olympics": {"eventUnit": {
+        "identifier": "SWM031101",
+        "description": "Men's 100m Breaststroke Final",
+        "unitType": "Individuals",
+        "medalEvent": "Yes",
+        "disciplineDescription": {
+          "identifier": "swimming",
+          "value": "Swimming"
+        },
+        "phaseDescription": {
+          "identifier": "SWM0311",
+          "value": "Final"
+        },
+        "result": {
+          "type": "Official",
+          "timestamp": "2013-11-13T12:15:00Z",
+          "entrant": [{
+            "order": "1",
+            "type": "Individual",
+            "code": "1056740",
+            "rank": "1",
+            "value": "58.46",
+            "property": [{
+              "type": "Medal Awarded",
+              "value": "Gold"
+            }, {
+              "type": "Record Set",
+              "value": "WR"
+            }, {
+              "type": "Record Set",
+              "value": "OR"
+            }, {
+              "type": "Record Set",
+              "value": "AF"
+            }, {
+              "type": "Result Type",
+              "value": "Time"
+            }],
+            "resultExtension": [{
+              "type": "Reaction Time",
+              "value": "0.63"
+            }, {
+              "type": "Split Times",
+              "extension": [{
+                "position": "1",
+                "value": "27.07"
+              }, {
+                "position": "2",
+                "value": "58.46"
+              }]
+            }],
+            "country": {
+              "identifier": "RSA",
+              "name": "South Africa",
+              "longName": "South Africa"
+            },
+            "participant": {
+              "order": "1",
+              "competitor": {
+                "identifier": "1056740",
+                "firstName": "Cameron",
+                "lastName": "van der Burgh",
+                "fullName": "Cameron van der Burgh"
+              }
+            }
+          }, {
+            "order": "2",
+            "type": "Individual",
+            "code": "1125374",
+            "rank": "2",
+            "value": "58.93",
+            "property": [{
+              "type": "Medal Awarded",
+              "value": "Silver"
+            }, {
+              "type": "Result Type",
+              "value": "Time"
+            }],
+            "resultExtension": [{
+              "type": "Reaction Time",
+              "value": "0.67"
+            }, {
+              "type": "Split Times",
+              "extension": [{
+                "position": "1",
+                "value": "27.65"
+              }, {
+                "position": "2",
+                "value": "58.93"
+              }]
+            }],
+            "country": {
+              "identifier": "AUS",
+              "name": "Australia",
+              "longName": "Australia"
+            },
+            "participant": {
+              "order": "1",
+              "competitor": {
+                "identifier": "1125374",
+                "firstName": "Christian",
+                "lastName": "Sprenger",
+                "fullName": "Christian Sprenger"
+              }
+            }
+          }, {
+            "order": "3",
+            "type": "Individual",
+            "code": "1133055",
+            "rank": "3",
+            "value": "59.49",
+            "property": [{
+              "type": "Medal Awarded",
+              "value": "Bronze"
+            }, {
+              "type": "Result Type",
+              "value": "Time"
+            }],
+            "resultExtension": [{
+              "type": "Reaction Time",
+              "value": "0.67"
+            }, {
+              "type": "Split Times",
+              "extension": [{
+                "position": "1",
+                "value": "27.85"
+              }, {
+                "position": "2",
+                "value": "59.49"
+              }]
+            }],
+            "country": {
+              "identifier": "USA",
+              "name": "United States",
+              "longName": "United States of America"
+            },
+            "participant": {
+              "order": "1",
+              "competitor": {
+                "identifier": "1133055",
+                "firstName": "Brendan",
+                "lastName": "Hansen",
+                "fullName": "Brendan Hansen"
+              }
+            }
+          }, {
+            "order": "4",
+            "type": "Individual",
+            "code": "1121231",
+            "rank": "4",
+            "value": "59.53",
+            "property": {
+              "type": "Result Type",
+              "value": "Time"
+            },
+            "resultExtension": [{
+              "type": "Reaction Time",
+              "value": "0.73"
+            }, {
+              "type": "Split Times",
+              "extension": [{
+                "position": "1",
+                "value": "28.05"
+              }, {
+                "position": "2",
+                "value": "59.53"
+              }]
+            }],
+            "country": {
+              "identifier": "HUN",
+              "name": "Hungary",
+              "longName": "Hungary"
+            },
+            "participant": {
+              "order": "1",
+              "competitor": {
+                "identifier": "1121231",
+                "firstName": "Daniel",
+                "lastName": "Gyurta",
+                "fullName": "Daniel Gyurta"
+              }
+            }
+          }, {
+            "order": "5",
+            "type": "Individual",
+            "code": "1026879",
+            "rank": "5",
+            "value": "59.79",
+            "property": {
+              "type": "Result Type",
+              "value": "Time"
+            },
+            "resultExtension": [{
+              "type": "Reaction Time",
+              "value": "0.64"
+            }, {
+              "type": "Split Times",
+              "extension": [{
+                "position": "1",
+                "value": "27.78"
+              }, {
+                "position": "2",
+                "value": "59.79"
+              }]
+            }],
+            "country": {
+              "identifier": "JPN",
+              "name": "Japan",
+              "longName": "Japan"
+            },
+            "participant": {
+              "order": "1",
+              "competitor": {
+                "identifier": "1026879",
+                "firstName": "Kosuke",
+                "lastName": "Kitajima",
+                "fullName": "Kosuke Kitajima"
+              }
+            }
+          }, {
+            "order": "6",
+            "type": "Individual",
+            "code": "1116547",
+            "rank": "6",
+            "value": "59.87",
+            "property": {
+              "type": "Result Type",
+              "value": "Time"
+            },
+            "resultExtension": [{
+              "type": "Reaction Time",
+              "value": "0.73"
+            }, {
+              "type": "Split Times",
+              "extension": [{
+                "position": "1",
+                "value": "28.08"
+              }, {
+                "position": "2",
+                "value": "59.87"
+              }]
+            }],
+            "country": {
+              "identifier": "AUS",
+              "name": "Australia",
+              "longName": "Australia"
+            },
+            "participant": {
+              "order": "1",
+              "competitor": {
+                "identifier": "1116547",
+                "firstName": "Brenton",
+                "lastName": "Rickard",
+                "fullName": "Brenton Rickard"
+              }
+            }
+          }, {
+            "order": "7",
+            "type": "Individual",
+            "code": "1096376",
+            "rank": "7",
+            "value": "59.97",
+            "property": {
+              "type": "Result Type",
+              "value": "Time"
+            },
+            "resultExtension": [{
+              "type": "Reaction Time",
+              "value": "0.62"
+            }, {
+              "type": "Split Times",
+              "extension": [{
+                "position": "1",
+                "value": "27.73"
+              }, {
+                "position": "2",
+                "value": "59.97"
+              }]
+            }],
+            "country": {
+              "identifier": "ITA",
+              "name": "Italy",
+              "longName": "Italy"
+            },
+            "participant": {
+              "order": "1",
+              "competitor": {
+                "identifier": "1096376",
+                "firstName": "Fabio",
+                "lastName": "Scozzoli",
+                "fullName": "Fabio Scozzoli"
+              }
+            }
+          }, {
+            "order": "8",
+            "type": "Individual",
+            "code": "1065090",
+            "rank": "8",
+            "value": "1:00.84",
+            "property": {
+              "type": "Result Type",
+              "value": "Time"
+            },
+            "resultExtension": [{
+              "type": "Reaction Time",
+              "value": "0.74"
+            }, {
+              "type": "Split Times",
+              "extension": [{
+                "position": "1",
+                "value": "27.71"
+              }, {
+                "position": "2",
+                "value": "1:00.84"
+              }]
+            }],
+            "country": {
+              "identifier": "LTU",
+              "name": "Lithuania",
+              "longName": "Lithuania"
+            },
+            "participant": {
+              "order": "1",
+              "competitor": {
+                "identifier": "1065090",
+                "firstName": "Giedrius",
+                "lastName": "Titenis",
+                "fullName": "Giedrius Titenis"
+              }
+            }
+          }]
+        }
+      }}};
+  return module.exports;
+});
+
+$__System.register('50', ['33', '51', '52', '4e', '4f', '4b'], function (_export) {
+    var _Object$keys, parseData, result, jsonRecord, jsonFinals, d3_extent;
+
+    return {
+        setters: [function (_) {
+            _Object$keys = _['default'];
+        }, function (_2) {
+            parseData = _2['default'];
+        }, function (_3) {
+            result = _3['default'];
+        }, function (_e) {
+            jsonRecord = _e['default'];
+        }, function (_f) {
+            jsonFinals = _f['default'];
+        }, function (_b) {
+            d3_extent = _b.extent;
+        }],
+        execute: function () {
+            'use strict';
+
+            _export('default', function () {
+                var data = parseData(jsonRecord, jsonFinals);
+                var dataCombo = data.finals.concat(data.medals, data.worlds);
+
+                /* data manipulation, even specific */
+                // fastest swimming time
+                var timeWr = d3_extent(dataCombo, function (d) {
+                    return d.x;
+                })[0];
+                _Object$keys(data).forEach(function (dd) {
+                    // time to distance
+                    data[dd] = data[dd].map(function (dm) {
+                        dm.x = 100 * timeWr / dm.x - 100;
+                        dm.attrs.dist = Math.round(Math.abs(dm.x) * 100) / 100;
+                        return dm;
+                    });
+                    // sort
+                    data[dd].sort(function (d1, d2) {
+                        return d1.x - d2.x;
+                    });
+                });
+                console.log(data);
+
+                result(data, dataCombo);
+            });
+        }
+    };
+});
+$__System.registerDynamic("53", [], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  module.exports = {
+    "header": ["year", "name", "team", "record", "result"],
+    "world_records": [[1908, "Otto Scheff", "AUT", "wr", "2:31.6"], [1910, "Frank Beaurepaire", "AUS", "wr", "2:30.0"], [1911, "Charles Daniels", "USA", "wr", "2:25.4"], [1916, "Norman Ross", "USA", "wr", "2:21.6"], [1920, "Tedford Cann", "USA", "wr", "2:19.8"], [1922, "Johnny Weissmuller", "USA", "wr", "2:15.6"], [1925, "Johnny Weissmuller", "USA", "wr", "2:15.2"], [1927, "Johnny Weissmuller", "USA", "wr", "2:08.0"], [1935, "Jack Medica", "USA", "wr", "2:07.2"], [1944, "Bill Smith", "USA", "wr", "2:06.2"], [1946, "Alex Jany", "FRA", "wr", "2:05.4"], [1950, "John Marshall", "AUS", "wr", "2:04.6"], [1954, "Ford Konno", "USA", "wr", "2:03.9"], [1955, "Jack Wardrop", "GBR", "wr", "2:03.4"], [1957, "Dick Hanley", "USA", "wr", "2:01.5"], [1958, "John Konrads", "AUS", "wr", "2:04.8"], [1958, "John Konrads", "AUS", "wr", "2:03.2"], [1958, "Tsuyoshi Yamanaka", "JPN", "wr", "2:03.0"], [1959, "John Konrads", "AUS", "wr", "2:02.2"], [1959, "Tsuyoshi Yamanaka", "JPN", "wr", "2:01.5"], [1961, "Tsuyoshi Yamanaka", "JPN", "wr", "2:01.2"], [1961, "Tsuyoshi Yamanaka", "JPN", "wr", "2:01.1"], [1961, "Tsuyoshi Yamanaka", "JPN", "wr", "2:00.4"], [1962, "Don Schollander", "USA", "wr", "2:00.4"], [1963, "Bob Windle", "AUS", "wr", "2:00.3"], [1963, "Don Schollander", "USA", "wr", "1:58.8"], [1963, "Don Schollander", "USA", "wr", "1:58.5"], [1963, "Don Schollander", "USA", "wr", "1:58.4"], [1964, "Hans-Joachim Klein", "FRG (West Germany)", "wr", "1:58.2"], [1964, "Don Schollander", "USA", "wr", "1:57.6"], [1966, "Don Schollander", "USA", "wr", "1:57.2"], [1966, "Don Schollander", "USA", "wr", "1:56.2"], [1967, "Don Schollander", "USA", "wr", "1:56.0"], [1967, "Don Schollander", "USA", "wr", "1:55.7"], [1968, "Don Schollander", "USA", "wr", "1:54.8"], [1968, "Don Schollander", "USA", "wr", "1:54.3"], [1969, "Mark Spitz", "USA", "wr", "1:54.3"], [1971, "Mark Spitz", "USA", "wr", "1:54.2"], [1971, "Mark Spitz", "USA", "wr", "1:53.5"], [1972, "Mark Spitz", "USA", "wr", "1:52.78"], [1974, "Tim Shaw", "USA", "wr", "1:51.66"], [1975, "Bruce Furniss", "USA", "wr", "1:51.41"], [1975, "Bruce Furniss", "USA", "wr", "1:50.89"], [1975, "Bruce Furniss", "USA", "wr", "1:50.32"], [1976, "Bruce Furniss", "USA", "wr", "1:50.29"], [1979, "Sergey Koplyakov", "URS (Soviet Union)", "wr", "1:49.83"], [1980, "Rowdy Gaines", "USA", "wr", "1:49.16"], [1982, "Rowdy Gaines", "USA", "wr", "1:48.93"], [1983, "Michael Gross", "FRG (West Germany)", "wr", "1:48.28"], [1983, "Michael Gross", "FRG (West Germany)", "wr", "1:47.87"], [1984, "Michael Gross", "FRG (West Germany)", "wr", "1:47.55"], [1984, "Michael Gross", "FRG (West Germany)", "wr", "1:47.44"], [1988, "Duncan Armstrong", "AUS", "wr", "1:47.25"], [1989, "Giorgio Lamberti", "ITA", "wr", "1:46.69"], [1999, "Grant Hackett", "AUS", "wr", "1:46.67"], [1999, "Ian Thorpe", "AUS", "wr", "1:46.34"], [1999, "Ian Thorpe", "AUS", "wr", "1:46.00"], [2000, "Ian Thorpe", "AUS", "wr", "1:45.69"], [2000, "Ian Thorpe", "AUS", "wr", "1:45.51"], [2000, "Pieter van den Hoogenband", "NED", "wr", "1:45.35"], [2000, "Pieter van den Hoogenband", "NED", "wr", "1:45.35"], [2001, "Ian Thorpe", "AUS", "wr", "1:44.69"], [2001, "Ian Thorpe", "AUS", "wr", "1:44.06"], [2007, "Michael Phelps", "USA", "wr", "1:43.86"], [2008, "Michael Phelps", "USA", "wr", "1:42.96"], [2009, "Paul Biedermann", "GER", "wr", "1:42.00"]],
+    "olympics": [[1900, "Frederick Lane", "AUS", "gold", "2:25.2"], [1900, "Zoltan Halmay", "HUN", "silver", "2:31.4"], [1900, "Karl Ruberl", "AUT", "bronze", "2:32.0"], [1904, "Charles Daniels", "USA", "gold", "2:44.2"], [1904, "Francis Gailey", "USA", "silver", "2:46"], [1904, "Emil Rausch", "GER", "bronze", "2:56.0"], [1968, "Mike Wenden", "AUS", "gold", "1:55.2"], [1968, "Don Schollander", "USA", "silver", "1:55.8"], [1968, "John Nelson", "USA", "bronze", "1:58.1"], [1972, "Mark Spitz", "USA", "gold", "1:52.78"], [1972, "Steve Genter", "USA", "silver", "1:53.73"], [1972, "Werner Lampe", "FRG", "bronze", "1:53.99"], [1976, "Bruce Furniss", "USA", "gold", "1:50.29"], [1976, "John Naber", "USA", "silver", "1:50.50"], [1976, "Jim Montgomery", "USA", "bronze", "1:50.58"], [1980, "Sergey Koplyakov", "URS", "gold", "1:49.81"], [1980, "Andrey Krylov", "URS", "silver", "1:50.76"], [1980, "Graeme Brewer", "AUS", "bronze", "1:51.60"], [1984, "Michael Gross", "FRG", "gold", "1:47.44"], [1984, "Michael Heath", "USA", "silver", "1:49.10"], [1984, "Thomas Fahrner", "FRG", "bronze", "1:49.69"], [1988, "Duncan Armstrong", "AUS", "gold", "1:47.25"], [1988, "Anders Holmertz", "SWE", "silver", "1:47.89"], [1988, "Matthew Biondi", "USA", "bronze", "1:47.99"], [1992, "Evgueni Sadovyi", "EUN", "gold", "1:46.70"], [1992, "Anders Holmertz", "SWE", "silver", "1:46.86"], [1992, "Antti Kasvio", "FIN", "bronze", "1:47.63"], [1996, "Danyon Loader", "NZL", "gold", "1:47.63"], [1996, "Gustavo Borges", "BRA", "silver", "1:48.08"], [1996, "Daniel Kowalski", "AUS", "bronze", "1:48.25"], [2000, "Pieter Van Den Hoogenband", "NED", "gold", "01:45.35"], [2000, "Ian Thorpe", "AUS", "silver", "01:45.83"], [2000, "Massimiliano Rosolino", "ITA", "bronze", "01:46.65"], [2004, "Ian Thorpe", "AUS", "gold", "1:44.71"], [2004, "Pieter Van Den Hoogenband", "NED", "silver", "1:45.23"], [2004, "Michael Phelps", "USA", "bronze", "1:45.32"], [2008, "Michael Phelps", "USA", "gold", "1:42.96"], [2008, "Taehwan Park", "KOR", "silver", "1:44.85"], [2008, "Peter Vanderkaay", "USA", "bronze", "1:45.14"], [2012, "Yannick Agnel", "FRA", "gold", "1:43.14"], [2012, "Taehwan Park", "KOR", "silver", "1:44.93"], [2012, "Yang Sun", "CHN", "silver", "1:44.93"]]
+  };
+  return module.exports;
+});
+
+$__System.registerDynamic("54", [], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
   module.exports = {"olympics": {"eventUnit": {
         "identifier": "SWM012101",
         "description": "Men's 200m Freestyle Final",
@@ -5227,763 +5642,20 @@ $__System.registerDynamic("4e", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("4f", [], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  module.exports = {"olympics": {"eventUnit": {
-        "identifier": "SWM032101",
-        "description": "Men's 200m Breaststroke Final",
-        "unitType": "Individuals",
-        "medalEvent": "Yes",
-        "disciplineDescription": {
-          "identifier": "swimming",
-          "value": "Swimming"
-        },
-        "phaseDescription": {
-          "identifier": "SWM0321",
-          "value": "Final"
-        },
-        "result": {
-          "type": "Official",
-          "timestamp": "2013-11-13T12:15:00Z",
-          "entrant": [{
-            "order": "1",
-            "type": "Individual",
-            "code": "1121231",
-            "rank": "1",
-            "value": "2:07.28",
-            "property": [{
-              "type": "Medal Awarded",
-              "value": "Gold"
-            }, {
-              "type": "Record Set",
-              "value": "WR"
-            }, {
-              "type": "Record Set",
-              "value": "OR"
-            }, {
-              "type": "Record Set",
-              "value": "EU"
-            }, {
-              "type": "Result Type",
-              "value": "Time"
-            }],
-            "resultExtension": [{
-              "type": "Reaction Time",
-              "value": "0.75"
-            }, {
-              "type": "Split Times",
-              "extension": [{
-                "position": "1",
-                "value": "29.19"
-              }, {
-                "position": "2",
-                "value": "1:01.56"
-              }, {
-                "position": "3",
-                "value": "1:34.16"
-              }, {
-                "position": "4",
-                "value": "2:07.28"
-              }]
-            }],
-            "country": {
-              "identifier": "HUN",
-              "name": "Hungary",
-              "longName": "Hungary"
-            },
-            "participant": {
-              "order": "1",
-              "competitor": {
-                "identifier": "1121231",
-                "firstName": "Daniel",
-                "lastName": "Gyurta",
-                "fullName": "Daniel Gyurta"
-              }
-            }
-          }, {
-            "order": "2",
-            "type": "Individual",
-            "code": "1098548",
-            "rank": "2",
-            "value": "2:07.43",
-            "property": [{
-              "type": "Medal Awarded",
-              "value": "Silver"
-            }, {
-              "type": "Result Type",
-              "value": "Time"
-            }],
-            "resultExtension": [{
-              "type": "Reaction Time",
-              "value": "0.78"
-            }, {
-              "type": "Split Times",
-              "extension": [{
-                "position": "1",
-                "value": "29.20"
-              }, {
-                "position": "2",
-                "value": "1:01.92"
-              }, {
-                "position": "3",
-                "value": "1:34.81"
-              }, {
-                "position": "4",
-                "value": "2:07.43"
-              }]
-            }],
-            "country": {
-              "identifier": "GBR",
-              "name": "Great Britain",
-              "longName": "Great Britain"
-            },
-            "participant": {
-              "order": "1",
-              "competitor": {
-                "identifier": "1098548",
-                "firstName": "Michael",
-                "lastName": "Jamieson",
-                "fullName": "Michael Jamieson"
-              }
-            }
-          }, {
-            "order": "3",
-            "type": "Individual",
-            "code": "1026880",
-            "rank": "3",
-            "value": "2:08.29",
-            "property": [{
-              "type": "Medal Awarded",
-              "value": "Bronze"
-            }, {
-              "type": "Result Type",
-              "value": "Time"
-            }],
-            "resultExtension": [{
-              "type": "Reaction Time",
-              "value": "0.64"
-            }, {
-              "type": "Split Times",
-              "extension": [{
-                "position": "1",
-                "value": "29.25"
-              }, {
-                "position": "2",
-                "value": "1:02.27"
-              }, {
-                "position": "3",
-                "value": "1:34.81"
-              }, {
-                "position": "4",
-                "value": "2:08.29"
-              }]
-            }],
-            "country": {
-              "identifier": "JPN",
-              "name": "Japan",
-              "longName": "Japan"
-            },
-            "participant": {
-              "order": "1",
-              "competitor": {
-                "identifier": "1026880",
-                "firstName": "Ryo",
-                "lastName": "Tateishi",
-                "fullName": "Ryo Tateishi"
-              }
-            }
-          }, {
-            "order": "4",
-            "type": "Individual",
-            "code": "1026879",
-            "rank": "4",
-            "value": "2:08.35",
-            "property": {
-              "type": "Result Type",
-              "value": "Time"
-            },
-            "resultExtension": [{
-              "type": "Reaction Time",
-              "value": "0.64"
-            }, {
-              "type": "Split Times",
-              "extension": [{
-                "position": "1",
-                "value": "28.64"
-              }, {
-                "position": "2",
-                "value": "1:01.40"
-              }, {
-                "position": "3",
-                "value": "1:34.47"
-              }, {
-                "position": "4",
-                "value": "2:08.35"
-              }]
-            }],
-            "country": {
-              "identifier": "JPN",
-              "name": "Japan",
-              "longName": "Japan"
-            },
-            "participant": {
-              "order": "1",
-              "competitor": {
-                "identifier": "1026879",
-                "firstName": "Kosuke",
-                "lastName": "Kitajima",
-                "fullName": "Kosuke Kitajima"
-              }
-            }
-          }, {
-            "order": "5",
-            "type": "Individual",
-            "code": "1131064",
-            "rank": "5",
-            "value": "2:09.02",
-            "property": {
-              "type": "Result Type",
-              "value": "Time"
-            },
-            "resultExtension": [{
-              "type": "Reaction Time",
-              "value": "0.72"
-            }, {
-              "type": "Split Times",
-              "extension": [{
-                "position": "1",
-                "value": "29.65"
-              }, {
-                "position": "2",
-                "value": "1:03.16"
-              }, {
-                "position": "3",
-                "value": "1:35.86"
-              }, {
-                "position": "4",
-                "value": "2:09.02"
-              }]
-            }],
-            "country": {
-              "identifier": "USA",
-              "name": "United States",
-              "longName": "United States of America"
-            },
-            "participant": {
-              "order": "1",
-              "competitor": {
-                "identifier": "1131064",
-                "firstName": "Scott",
-                "lastName": "Weltz",
-                "fullName": "Scott Weltz"
-              }
-            }
-          }, {
-            "order": "6",
-            "type": "Individual",
-            "code": "1133375",
-            "rank": "6",
-            "value": "2:09.25",
-            "property": {
-              "type": "Result Type",
-              "value": "Time"
-            },
-            "resultExtension": [{
-              "type": "Reaction Time",
-              "value": "0.68"
-            }, {
-              "type": "Split Times",
-              "extension": [{
-                "position": "1",
-                "value": "29.55"
-              }, {
-                "position": "2",
-                "value": "1:02.43"
-              }, {
-                "position": "3",
-                "value": "1:35.60"
-              }, {
-                "position": "4",
-                "value": "2:09.25"
-              }]
-            }],
-            "country": {
-              "identifier": "USA",
-              "name": "United States",
-              "longName": "United States of America"
-            },
-            "participant": {
-              "order": "1",
-              "competitor": {
-                "identifier": "1133375",
-                "firstName": "Clark",
-                "lastName": "Burckle",
-                "fullName": "Clark Burckle"
-              }
-            }
-          }, {
-            "order": "7",
-            "type": "Individual",
-            "code": "1116547",
-            "rank": "7",
-            "value": "2:09.28",
-            "property": {
-              "type": "Result Type",
-              "value": "Time"
-            },
-            "resultExtension": [{
-              "type": "Reaction Time",
-              "value": "0.73"
-            }, {
-              "type": "Split Times",
-              "extension": [{
-                "position": "1",
-                "value": "29.26"
-              }, {
-                "position": "2",
-                "value": "1:02.12"
-              }, {
-                "position": "3",
-                "value": "1:35.53"
-              }, {
-                "position": "4",
-                "value": "2:09.28"
-              }]
-            }],
-            "country": {
-              "identifier": "AUS",
-              "name": "Australia",
-              "longName": "Australia"
-            },
-            "participant": {
-              "order": "1",
-              "competitor": {
-                "identifier": "1116547",
-                "firstName": "Brenton",
-                "lastName": "Rickard",
-                "fullName": "Brenton Rickard"
-              }
-            }
-          }, {
-            "order": "8",
-            "type": "Individual",
-            "code": "1098575",
-            "rank": "8",
-            "value": "2:09.44",
-            "property": {
-              "type": "Result Type",
-              "value": "Time"
-            },
-            "resultExtension": [{
-              "type": "Reaction Time",
-              "value": "0.74"
-            }, {
-              "type": "Split Times",
-              "extension": [{
-                "position": "1",
-                "value": "29.21"
-              }, {
-                "position": "2",
-                "value": "1:01.82"
-              }, {
-                "position": "3",
-                "value": "1:35.03"
-              }, {
-                "position": "4",
-                "value": "2:09.44"
-              }]
-            }],
-            "country": {
-              "identifier": "GBR",
-              "name": "Great Britain",
-              "longName": "Great Britain"
-            },
-            "participant": {
-              "order": "1",
-              "competitor": {
-                "identifier": "1098575",
-                "firstName": "Andrew",
-                "lastName": "Willis",
-                "fullName": "Andrew Willis"
-              }
-            }
-          }]
-        }
-      }}};
-  return module.exports;
-});
-
-$__System.registerDynamic("50", [], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  module.exports = {
-    "header": ["year", "name", "team", "record", "result"],
-    "world_records": [[1961, "Leonid Kolesnikov", "URS", "wr", "1:11.4"], [1961, "Chet Jastremski", "USA", "wr", "1:11.1"], [1961, "Gunter Tittes", "GDR", "wr", "1:10.8"], [1961, "Chet Jastremski", "USA", "wr", "1:10.7"], [1961, "Chet Jastremski", "USA", "wr", "1:10.0"], [1961, "Chet Jastremski", "USA", "wr", "1:09.5"], [1961, "Chet Jastremski", "USA", "wr", "1:07.8"], [1961, "Chet Jastremski", "USA", "wr", "1:07.5"], [1964, "Georgy Prokopenko", "URS", "wr", "1:07.4"], [1964, "Georgy Prokopenko", "URS", "wr", "1:06.9"], [1967, "Vladimir Kosinsky", "URS", "wr", "1:06.7"], [1968, "Jose Fiolo", "BRA", "wr", "1:06.4"], [1968, "Nikolai Pankin", "URS", "wr", "1:06.2"], [1969, "Nikolai Pankin", "URS", "wr", "1:05.8"], [1972, "John Hencken", "USA", "wr", "1:05.68"], [1972, "Nobutaka Taguchi", "JPN", "wr", "1:05.13"], [1972, "Nobutaka Taguchi", "JPN", "wr", "1:04.94"], [1973, "John Hencken", "USA", "wr", "1:04.35"], [1973, "John Hencken", "USA", "wr", "1:04.02"], [1974, "John Hencken", "USA", "wr", "1:03.88"], [1976, "John Hencken", "USA", "wr", "1:03.88"], [1976, "John Hencken", "USA", "wr", "1:03.62"], [1976, "John Hencken", "USA", "wr", "1:03.11"], [1977, "Gerald Mörken", "FRG", "wr", "1:02.86"], [1982, "Steven Lundquist", "USA", "wr", "1:02.62"], [1982, "Steven Lundquist", "USA", "wr", "1:02.53"], [1983, "Steven Lundquist", "USA", "wr", "1:02.34"], [1983, "Steven Lundquist", "USA", "wr", "1:02.28"], [1984, "John Moffet", "USA", "wr", "1:02.13"], [1984, "Steven Lundquist", "USA", "wr", "1:01.65"], [1989, "Adrian Moorhouse", "GBR", "wr", "1:01.49"], [1990, "Adrian Moorhouse", "GBR", "wr", "1:01.49"], [1990, "Adrian Moorhouse", "GBR", "wr", "1:01.49"], [1991, "Norbert Rózsa", "HUN", "wr", "1:01.49"], [1991, "Norbert Rózsa", "HUN", "wr", "1:01.45"], [1991, "Vasili Ivanov", "URS", "wr", "1:01.45"], [1991, "Norbert Rózsa", "HUN", "wr", "1:01.29"], [1993, "Károly Güttler", "HUN", "wr", "1:00.95"], [1996, "Frederik Deburghgraeve", "BEL", "wr", "1:00.60"], [2000, "Roman Sludnov", "RUS", "wr", "1:00.36"], [2001, "Ed Moses", "USA", "wr", "1:00.29"], [2001, "Roman Sludnov", "RUS", "wr", "1:00.26"], [2001, "Roman Sludnov", "RUS", "wr", "59.97"], [2001, "Roman Sludnov", "RUS", "wr", "59.94"], [2003, "Kosuke Kitajima", "JPN", "wr", "59.78"], [2004, "Brendan Hansen", "USA", "wr", "59.3"], [2006, "Brendan Hansen", "USA", "wr", "59.13"], [2008, "Kosuke Kitajima", "JPN", "wr", "58.91"], [2009, "Brenton Rickard", "AUS", "wr", "58.58"], [2012, "Cameron van der Burgh", "RSA", "wr", "58.46"], [2015, "Adam Peaty", "GBR", "wr", "57.92"]],
-    "olympics": [[1968, "Donald Ward Jr. Mckenzie", "USA", "gold", "1:07.7"], [1968, "Vladimir Kosinsky", "URS", "silver", "1:08.0"], [1968, "Nikolai Pankin", "URS", "bronze", "1:08.0"], [1972, "Nobutaka Taguchi", "JPN", "gold", "1:04.94"], [1972, "Thomas Edwin Bruce", "USA", "silver", "1:05.43"], [1972, "John Hencken", "USA", "bronze", "1:05.61"], [1976, "John Hencken", "USA", "gold", "1:03.11"], [1976, "David Wilkie", "GBR", "silver", "1:03.43"], [1976, "Arvydas Juozaitis", "URS", "bronze", "1:04.23"], [1980, "Duncan Goodhew", "GBR", "gold", "1:03.34"], [1980, "Arsen Miskarov", "URS", "silver", "1:03.82"], [1980, "Peter Evans", "AUS", "bronze", "1:03.96"], [1984, "Steven Lundquist", "USA", "gold", "1:01.65"], [1984, "Victor Davis", "CAN", "silver", "1:01.99"], [1984, "Peter Evans", "AUS", "bronze", "1:02.97"], [1988, "Adrian Moorhouse", "GBR", "gold", "1:02.04"], [1988, "Károly Guttler", "HUN", "silver", "1:02.05"], [1988, "Dmitri Volkov", "URS", "bronze", "1:02.20"], [1992, "Nelson Diebel", "USA", "gold", "1:01.50"], [1992, "Norbert Rózsa", "HUN", "silver", "1:01.68"], [1992, "Phil Rogers", "AUS", "bronze", "1:01.76"], [1996, "Frederik Deburghgraeve", "BEL", "gold", "1:00.65"], [1996, "Jeremy Linn", "USA", "silver", "1:00.77"], [1996, "Mark Warnecke", "GER", "bronze", "1:01.33"], [2000, "Domenico Fioravanti", "ITA", "gold", "01:00.46"], [2000, "Ed Moses", "USA", "silver", "01:00.73"], [2000, "Roman Sludnov", "RUS", "bronze", "01:00.91"], [2004, "Kosuke Kitajima", "JPN", "gold", "1:00.08"], [2004, "Brendan Hansen", "USA", "silver", "1:00.25"], [2004, "Hugues Duboscq", "FRA", "bronze", "1:00.88"], [2008, "Kosuke Kitajima", "JPN", "gold", "58.91"], [2008, "Alexander Oen", "NOR", "silver", "59.2"], [2008, "Hugues Duboscq", "FRA", "bronze", "59.37"], [2012, "Cameron van der Burgh", "RSA", "gold", "58.46"], [2012, "Christian Sprenger", "AUS", "silver", "58.93"], [2012, "Brendan Hansen", "USA", "bronze", "59.49"]]
-  };
-  return module.exports;
-});
-
-$__System.registerDynamic("51", [], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  module.exports = {"olympics": {"eventUnit": {
-        "identifier": "SWM031101",
-        "description": "Men's 100m Breaststroke Final",
-        "unitType": "Individuals",
-        "medalEvent": "Yes",
-        "disciplineDescription": {
-          "identifier": "swimming",
-          "value": "Swimming"
-        },
-        "phaseDescription": {
-          "identifier": "SWM0311",
-          "value": "Final"
-        },
-        "result": {
-          "type": "Official",
-          "timestamp": "2013-11-13T12:15:00Z",
-          "entrant": [{
-            "order": "1",
-            "type": "Individual",
-            "code": "1056740",
-            "rank": "1",
-            "value": "58.46",
-            "property": [{
-              "type": "Medal Awarded",
-              "value": "Gold"
-            }, {
-              "type": "Record Set",
-              "value": "WR"
-            }, {
-              "type": "Record Set",
-              "value": "OR"
-            }, {
-              "type": "Record Set",
-              "value": "AF"
-            }, {
-              "type": "Result Type",
-              "value": "Time"
-            }],
-            "resultExtension": [{
-              "type": "Reaction Time",
-              "value": "0.63"
-            }, {
-              "type": "Split Times",
-              "extension": [{
-                "position": "1",
-                "value": "27.07"
-              }, {
-                "position": "2",
-                "value": "58.46"
-              }]
-            }],
-            "country": {
-              "identifier": "RSA",
-              "name": "South Africa",
-              "longName": "South Africa"
-            },
-            "participant": {
-              "order": "1",
-              "competitor": {
-                "identifier": "1056740",
-                "firstName": "Cameron",
-                "lastName": "van der Burgh",
-                "fullName": "Cameron van der Burgh"
-              }
-            }
-          }, {
-            "order": "2",
-            "type": "Individual",
-            "code": "1125374",
-            "rank": "2",
-            "value": "58.93",
-            "property": [{
-              "type": "Medal Awarded",
-              "value": "Silver"
-            }, {
-              "type": "Result Type",
-              "value": "Time"
-            }],
-            "resultExtension": [{
-              "type": "Reaction Time",
-              "value": "0.67"
-            }, {
-              "type": "Split Times",
-              "extension": [{
-                "position": "1",
-                "value": "27.65"
-              }, {
-                "position": "2",
-                "value": "58.93"
-              }]
-            }],
-            "country": {
-              "identifier": "AUS",
-              "name": "Australia",
-              "longName": "Australia"
-            },
-            "participant": {
-              "order": "1",
-              "competitor": {
-                "identifier": "1125374",
-                "firstName": "Christian",
-                "lastName": "Sprenger",
-                "fullName": "Christian Sprenger"
-              }
-            }
-          }, {
-            "order": "3",
-            "type": "Individual",
-            "code": "1133055",
-            "rank": "3",
-            "value": "59.49",
-            "property": [{
-              "type": "Medal Awarded",
-              "value": "Bronze"
-            }, {
-              "type": "Result Type",
-              "value": "Time"
-            }],
-            "resultExtension": [{
-              "type": "Reaction Time",
-              "value": "0.67"
-            }, {
-              "type": "Split Times",
-              "extension": [{
-                "position": "1",
-                "value": "27.85"
-              }, {
-                "position": "2",
-                "value": "59.49"
-              }]
-            }],
-            "country": {
-              "identifier": "USA",
-              "name": "United States",
-              "longName": "United States of America"
-            },
-            "participant": {
-              "order": "1",
-              "competitor": {
-                "identifier": "1133055",
-                "firstName": "Brendan",
-                "lastName": "Hansen",
-                "fullName": "Brendan Hansen"
-              }
-            }
-          }, {
-            "order": "4",
-            "type": "Individual",
-            "code": "1121231",
-            "rank": "4",
-            "value": "59.53",
-            "property": {
-              "type": "Result Type",
-              "value": "Time"
-            },
-            "resultExtension": [{
-              "type": "Reaction Time",
-              "value": "0.73"
-            }, {
-              "type": "Split Times",
-              "extension": [{
-                "position": "1",
-                "value": "28.05"
-              }, {
-                "position": "2",
-                "value": "59.53"
-              }]
-            }],
-            "country": {
-              "identifier": "HUN",
-              "name": "Hungary",
-              "longName": "Hungary"
-            },
-            "participant": {
-              "order": "1",
-              "competitor": {
-                "identifier": "1121231",
-                "firstName": "Daniel",
-                "lastName": "Gyurta",
-                "fullName": "Daniel Gyurta"
-              }
-            }
-          }, {
-            "order": "5",
-            "type": "Individual",
-            "code": "1026879",
-            "rank": "5",
-            "value": "59.79",
-            "property": {
-              "type": "Result Type",
-              "value": "Time"
-            },
-            "resultExtension": [{
-              "type": "Reaction Time",
-              "value": "0.64"
-            }, {
-              "type": "Split Times",
-              "extension": [{
-                "position": "1",
-                "value": "27.78"
-              }, {
-                "position": "2",
-                "value": "59.79"
-              }]
-            }],
-            "country": {
-              "identifier": "JPN",
-              "name": "Japan",
-              "longName": "Japan"
-            },
-            "participant": {
-              "order": "1",
-              "competitor": {
-                "identifier": "1026879",
-                "firstName": "Kosuke",
-                "lastName": "Kitajima",
-                "fullName": "Kosuke Kitajima"
-              }
-            }
-          }, {
-            "order": "6",
-            "type": "Individual",
-            "code": "1116547",
-            "rank": "6",
-            "value": "59.87",
-            "property": {
-              "type": "Result Type",
-              "value": "Time"
-            },
-            "resultExtension": [{
-              "type": "Reaction Time",
-              "value": "0.73"
-            }, {
-              "type": "Split Times",
-              "extension": [{
-                "position": "1",
-                "value": "28.08"
-              }, {
-                "position": "2",
-                "value": "59.87"
-              }]
-            }],
-            "country": {
-              "identifier": "AUS",
-              "name": "Australia",
-              "longName": "Australia"
-            },
-            "participant": {
-              "order": "1",
-              "competitor": {
-                "identifier": "1116547",
-                "firstName": "Brenton",
-                "lastName": "Rickard",
-                "fullName": "Brenton Rickard"
-              }
-            }
-          }, {
-            "order": "7",
-            "type": "Individual",
-            "code": "1096376",
-            "rank": "7",
-            "value": "59.97",
-            "property": {
-              "type": "Result Type",
-              "value": "Time"
-            },
-            "resultExtension": [{
-              "type": "Reaction Time",
-              "value": "0.62"
-            }, {
-              "type": "Split Times",
-              "extension": [{
-                "position": "1",
-                "value": "27.73"
-              }, {
-                "position": "2",
-                "value": "59.97"
-              }]
-            }],
-            "country": {
-              "identifier": "ITA",
-              "name": "Italy",
-              "longName": "Italy"
-            },
-            "participant": {
-              "order": "1",
-              "competitor": {
-                "identifier": "1096376",
-                "firstName": "Fabio",
-                "lastName": "Scozzoli",
-                "fullName": "Fabio Scozzoli"
-              }
-            }
-          }, {
-            "order": "8",
-            "type": "Individual",
-            "code": "1065090",
-            "rank": "8",
-            "value": "1:00.84",
-            "property": {
-              "type": "Result Type",
-              "value": "Time"
-            },
-            "resultExtension": [{
-              "type": "Reaction Time",
-              "value": "0.74"
-            }, {
-              "type": "Split Times",
-              "extension": [{
-                "position": "1",
-                "value": "27.71"
-              }, {
-                "position": "2",
-                "value": "1:00.84"
-              }]
-            }],
-            "country": {
-              "identifier": "LTU",
-              "name": "Lithuania",
-              "longName": "Lithuania"
-            },
-            "participant": {
-              "order": "1",
-              "competitor": {
-                "identifier": "1065090",
-                "firstName": "Giedrius",
-                "lastName": "Titenis",
-                "fullName": "Giedrius Titenis"
-              }
-            }
-          }]
-        }
-      }}};
-  return module.exports;
-});
-
-$__System.register('52', ['33', '50', '51', '53', '54', '4b'], function (_export) {
-    var _Object$keys, jsonRecord, jsonFinals, parseData, result, d3_extent;
+$__System.register('55', ['33', '51', '52', '53', '54', '4b'], function (_export) {
+    var _Object$keys, parseData, result, jsonRecord, jsonFinals, d3_extent;
 
     return {
         setters: [function (_) {
             _Object$keys = _['default'];
-        }, function (_2) {
-            jsonRecord = _2['default'];
-        }, function (_3) {
-            jsonFinals = _3['default'];
         }, function (_4) {
             parseData = _4['default'];
         }, function (_5) {
             result = _5['default'];
+        }, function (_2) {
+            jsonRecord = _2['default'];
+        }, function (_3) {
+            jsonFinals = _3['default'];
         }, function (_b) {
             d3_extent = _b.extent;
         }],
@@ -6018,7 +5690,2792 @@ $__System.register('52', ['33', '50', '51', '53', '54', '4b'], function (_export
         }
     };
 });
-$__System.registerDynamic("55", [], true, function($__require, exports, module) {
+$__System.registerDynamic("56", [], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  module.exports = {
+    "header": ["year", "team", "name", "record", "result"],
+    "world_records": [[1912, "GBR", "Great Britain", "wr", "5:52.8"], [1920, "USA", "United States of America", "wr", "5:11.6"], [1924, "USA", "United States of America", "wr", "4:58.8"], [1928, "USA", "United States of America", "wr", "4:55.6"], [1928, "USA", "United States of America", "wr", "4:47.6"], [1932, "USA", "United States of America", "wr", "4:38.0"], [1934, "NED", "Netherlands", "wr", "4:33.3"], [1936, "NED", "Netherlands", "wr", "4:32.8"], [1938, "DEN", "Denmark", "wr", "4:29.7"], [1938, "DEN", "Denmark", "wr", "4:27.6"], [1952, "HUN", "Hungary", "wr", "4:27.2"], [1952, "HUN", "Hungary", "wr", "4:24.4"], [1956, "AUS", "Australia", "wr", "4:22.3"], [1956, "AUS", "Australia", "wr", "4:19.7"], [1956, "AUS", "Australia", "wr", "4:17.1"], [1960, "AUS", "Australia", "wr", "4:16.2"], [1960, "USA", "United States of America", "wr", "4:08.9"], [1964, "USA", "United States of America", "wr", "4:08.5"], [1964, "USA", "United States of America", "wr", "4:07.6"], [1964, "USA", "United States of America", "wr", "4:03.8"], [1967, "USA", "United States of America", "wr", "4:03.5"], [1968, "USA", "United States of America", "wr", "4:01.1"], [1970, "GDR", "East Germany", "wr", "4:00.8"], [1971, "USA", "United States of America", "wr", "4:00.7"], [1972, "USA", "United States of America", "wr", "3:58.11"], [1972, "GDR", "East Germany", "wr", "3:58.11"], [1972, "USA", "United States of America", "wr", "3:55.19"], [1973, "GDR", "East Germany", "wr", "3:52.45"], [1974, "USA", "United States of America", "wr", "3:51.99"], [1975, "GDR", "East Germany", "wr", "3:49.37"], [1976, "GDR", "East Germany", "wr", "3:48.80"], [1976, "USA", "United States of America", "wr", "3:44.82"], [1978, "USA", "United States of America", "wr", "3:43.43"], [1980, "GDR", "East Germany", "wr", "3:42.71"], [1984, "GDR", "East Germany", "wr", "3:42.41"], [1986, "GDR", "East Germany", "wr", "3:40.57"], [1992, "USA", "United States of America", "wr", "3:39.46"], [1994, "CHN", "China", "wr", "3:37.91"], [2000, "USA", "United States of America", "wr", "3:36.61"], [2002, "GER", "Germany", "wr", "3:36.00"], [2004, "AUS", "Australia", "wr", "3:35.94"], [2006, "GER", "Germany", "wr", "3:35.22"], [2008, "NED", "Netherlands", "wr", "3:33.62"], [2009, "NED", "Netherlands", "wr", "3:31.72"], [2014, "AUS", "Australia", "wr", "3:30.98"]],
+    "olympics": [[1912, "GBR", "Great Britain", "gold", "5:52.8"], [1912, "GER", "Germany", "silver", "6:04.6"], [1912, "AUT", "Austria", "bronze", "6:17.0"], [1920, "USA", "United States of America", "gold", "5:11.6"], [1920, "GBR", "Great Britain", "silver", "5:40.8"], [1920, "SWE", "Sweden", "bronze", "5:43.6"], [1924, "USA", "United States of America", "gold", "4:58.8"], [1924, "GBR", "Great Britain", "silver", "5:17.0"], [1924, "SWE", "Sweden", "bronze", "5:35.6"], [1928, "USA", "United States of America", "gold", "4:47.6"], [1928, "GBR", "Great Britain", "silver", "5:02.8"], [1928, "RSA", "South Africa", "bronze", "5:13.4"], [1932, "USA", "United States of America", "gold", "4:38.0"], [1932, "NED", "Netherlands", "silver", "4:47.5"], [1932, "GBR", "Great Britain", "bronze", "4:52.4"], [1936, "NED", "Netherlands", "gold", "4:36.0"], [1936, "GER", "Germany", "silver", "4:36.8"], [1936, "USA", "United States of America", "bronze", "4:40.2"], [1948, "USA", "United States of America", "gold", "4:29.2"], [1948, "DEN", "Denmark", "silver", "4:29.6"], [1948, "NED", "Netherlands", "bronze", "4:31.6"], [1952, "HUN", "Hungary", "gold", "4:24.4"], [1952, "NED", "Netherlands", "silver", "4:29.0"], [1952, "USA", "United States of America", "bronze", "4:30.1"], [1956, "AUS", "Australia", "gold", "4:17.1"], [1956, "USA", "United States of America", "silver", "4:19.2"], [1956, "RSA", "South Africa", "bronze", "4:25.7"], [1960, "USA", "United States of America", "gold", "4:08.9"], [1960, "AUS", "Australia", "silver", "4:11.3"], [1960, "EUA", "Unified Team of Germany", "bronze", "4:19.7"], [1964, "USA", "United States of America", "gold", "4:03.8"], [1964, "AUS", "Australia", "silver", "4:06.9"], [1964, "NED", "Netherlands", "bronze", "4:12.0"], [1968, "USA", "United States of America", "gold", "4:02.5"], [1968, "GDR", "East Germany", "silver", "4:05.7"], [1968, "CAN", "Canada", "bronze", "4:07.2"], [1972, "USA", "United States of America", "gold", "3:55.19"], [1972, "GDR", "East Germany", "silver", "3:55.55"], [1972, "FRG", "West Germany", "bronze", "3:57.93"], [1976, "USA", "United States of America", "gold", "3:44.82"], [1976, "GDR", "East Germany", "silver", "3:45.50"], [1976, "CAN", "Canada", "bronze", "3:48.81"], [1980, "GDR", "East Germany", "gold", "3:42.71"], [1980, "SWE", "Sweden", "silver", "3:48.93"], [1980, "NED", "Netherlands", "bronze", "3:49.51"], [1984, "USA", "United States of America", "gold", "3:43.43"], [1984, "NED", "Netherlands", "silver", "3:44.40"], [1984, "FRG", "West Germany", "bronze", "3:45.56"], [1988, "GDR", "East Germany", "gold", "3:40.63"], [1988, "NED", "Netherlands", "silver", "3:43.39"], [1988, "USA", "United States of America", "bronze", "3:44.25"], [1992, "USA", "United States of America", "gold", "3:39.46"], [1992, "CHN", "China", "silver", "3:40.12"], [1992, "GER", "Germany", "bronze", "3:41.60"], [1996, "USA", "United States of America", "gold", "3:39.29"], [1996, "CHN", "China", "silver", "3:40.48"], [1996, "GER", "Germany", "bronze", "3:41.48"], [2000, "USA", "United States of America", "gold", "03:36.61"], [2000, "NED", "Netherlands", "silver", "03:39.83"], [2000, "SWE", "Sweden", "bronze", "03:40.30"], [2004, "AUS", "Australia", "gold", "3:35.94"], [2004, "USA", "United States of America", "silver", "3:36.39"], [2004, "NED", "Netherlands", "bronze", "3:37.59"], [2008, "NED", "Netherlands", "gold", "3:33.76"], [2008, "USA", "United States of America", "silver", "3:34.33"], [2008, "AUS", "Australia", "bronze", "3:35.05"], [2012, "AUS", "Australia", "gold", "3:33.15"], [2012, "NED", "Netherlands", "silver", "3:33.79"], [2012, "USA", "United States of America", "bronze", "3:34.24"]]
+  };
+  return module.exports;
+});
+
+$__System.registerDynamic("57", [], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  module.exports = {"olympics": {"eventUnit": {
+        "identifier": "SWW411101",
+        "description": "Women's 4 x 100m Freestyle Relay Final",
+        "unitType": "Team",
+        "medalEvent": "Yes",
+        "disciplineDescription": {
+          "identifier": "swimming",
+          "value": "Swimming"
+        },
+        "phaseDescription": {
+          "identifier": "SWW4111",
+          "value": "Final"
+        },
+        "result": {
+          "type": "Official",
+          "timestamp": "2016-07-25T19:23:06Z",
+          "entrant": [{
+            "order": "1",
+            "type": "Team",
+            "code": "SWW411DEN01",
+            "rank": "1",
+            "value": "3:33.15",
+            "property": [{
+              "type": "Medal Awarded",
+              "value": "Gold"
+            }, {
+              "type": "Record Set",
+              "value": "OR"
+            }, {
+              "type": "Diff",
+              "value": "0.00"
+            }, {
+              "type": "Result Type",
+              "value": "Time"
+            }],
+            "resultExtension": [{
+              "type": "Reaction Time",
+              "value": ["0.70", "0.32", "0.43", "0.24"]
+            }, {
+              "type": "Leg Breakdown",
+              "extension": [{
+                "position": "2",
+                "value": "27.76"
+              }, {
+                "position": "3",
+                "value": "25.00"
+              }, {
+                "position": "4",
+                "value": "28.19"
+              }, {
+                "position": "5",
+                "value": "25.71"
+              }, {
+                "position": "6",
+                "value": "27.70"
+              }, {
+                "position": "7",
+                "value": "25.55"
+              }, {
+                "position": "8",
+                "value": "27.10"
+              }]
+            }, {
+              "type": "Split Times",
+              "extension": [{
+                "position": "1",
+                "value": "26.14",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.28"
+                }
+              }, {
+                "position": "2",
+                "value": "53.90",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.38"
+                }
+              }, {
+                "position": "3",
+                "value": "1:18.90",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.19"
+                }
+              }, {
+                "position": "4",
+                "value": "1:47.09",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.04"
+                }
+              }, {
+                "position": "5",
+                "value": "2:12.80",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.00"
+                }
+              }, {
+                "position": "6",
+                "value": "2:40.50",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.00"
+                }
+              }, {
+                "position": "7",
+                "value": "3:06.05",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.00"
+                }
+              }, {
+                "position": "8",
+                "value": "3:33.15",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.00"
+                }
+              }]
+            }],
+            "country": {
+              "identifier": "DEN",
+              "name": "Denmark",
+              "longName": "Denmark"
+            },
+            "participant": [{
+              "order": "1",
+              "competitor": {
+                "identifier": "7260934",
+                "firstName": "Lotte",
+                "lastName": "F",
+                "fullName": "Lotte F"
+              }
+            }, {
+              "order": "2",
+              "competitor": {
+                "identifier": "7261331",
+                "firstName": "Rikke",
+                "lastName": "Pedersen",
+                "fullName": "Rikke Pedersen"
+              }
+            }, {
+              "order": "3",
+              "competitor": {
+                "identifier": "7261336",
+                "firstName": "Jeanette",
+                "lastName": "Gray",
+                "fullName": "Jeanette Gray"
+              }
+            }, {
+              "order": "4",
+              "competitor": {
+                "identifier": "7261364",
+                "firstName": "Pernille",
+                "lastName": "Blume",
+                "fullName": "Pernille Blume"
+              }
+            }]
+          }, {
+            "order": "2",
+            "type": "Team",
+            "code": "SWW411AUS01",
+            "rank": "2",
+            "value": "3:33.79",
+            "property": [{
+              "type": "Medal Awarded",
+              "value": "Silver"
+            }, {
+              "type": "Diff",
+              "value": "0.64"
+            }, {
+              "type": "Result Type",
+              "value": "Time"
+            }],
+            "resultExtension": [{
+              "type": "Reaction Time",
+              "value": ["0.72", "0.27", "0.36", "0.32"]
+            }, {
+              "type": "Leg Breakdown",
+              "extension": [{
+                "position": "2",
+                "value": "28.81"
+              }, {
+                "position": "3",
+                "value": "25.29"
+              }, {
+                "position": "4",
+                "value": "28.51"
+              }, {
+                "position": "5",
+                "value": "25.46"
+              }, {
+                "position": "6",
+                "value": "27.93"
+              }, {
+                "position": "7",
+                "value": "24.71"
+              }, {
+                "position": "8",
+                "value": "27.22"
+              }]
+            }, {
+              "type": "Split Times",
+              "extension": [{
+                "position": "1",
+                "value": "25.86",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.00"
+                }
+              }, {
+                "position": "2",
+                "value": "54.67",
+                "property": {
+                  "type": "Diff",
+                  "value": "1.15"
+                }
+              }, {
+                "position": "3",
+                "value": "1:19.96",
+                "property": {
+                  "type": "Diff",
+                  "value": "1.25"
+                }
+              }, {
+                "position": "4",
+                "value": "1:48.47",
+                "property": {
+                  "type": "Diff",
+                  "value": "1.42"
+                }
+              }, {
+                "position": "5",
+                "value": "2:13.93",
+                "property": {
+                  "type": "Diff",
+                  "value": "1.13"
+                }
+              }, {
+                "position": "6",
+                "value": "2:41.86",
+                "property": {
+                  "type": "Diff",
+                  "value": "1.36"
+                }
+              }, {
+                "position": "7",
+                "value": "3:06.57",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.52"
+                }
+              }, {
+                "position": "8",
+                "value": "3:33.79",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.64"
+                }
+              }]
+            }],
+            "country": {
+              "identifier": "AUS",
+              "name": "Australia",
+              "longName": "Australia"
+            },
+            "participant": [{
+              "order": "1",
+              "competitor": {
+                "identifier": "7262302",
+                "firstName": "Angie",
+                "lastName": "Bainbridge",
+                "fullName": "Angie Bainbridge"
+              }
+            }, {
+              "order": "2",
+              "competitor": {
+                "identifier": "7262570",
+                "firstName": "Bronte",
+                "lastName": "Barratt",
+                "fullName": "Bronte Barratt"
+              }
+            }, {
+              "order": "3",
+              "competitor": {
+                "identifier": "7262571",
+                "firstName": "Cate",
+                "lastName": "Campbell",
+                "fullName": "Cate Campbell"
+              }
+            }, {
+              "order": "4",
+              "competitor": {
+                "identifier": "7262572",
+                "firstName": "Alicia",
+                "lastName": "Coutts",
+                "fullName": "Alicia Coutts"
+              }
+            }]
+          }, {
+            "order": "3",
+            "type": "Team",
+            "code": "SWW411BLR01",
+            "rank": "3",
+            "value": "3:34.24",
+            "property": [{
+              "type": "Medal Awarded",
+              "value": "Bronze"
+            }, {
+              "type": "Diff",
+              "value": "1.09"
+            }, {
+              "type": "Result Type",
+              "value": "Time"
+            }],
+            "resultExtension": [{
+              "type": "Reaction Time",
+              "value": ["0.78", "0.27", "0.35", "0.41"]
+            }, {
+              "type": "Leg Breakdown",
+              "extension": [{
+                "position": "2",
+                "value": "27.47"
+              }, {
+                "position": "3",
+                "value": "25.19"
+              }, {
+                "position": "4",
+                "value": "28.34"
+              }, {
+                "position": "5",
+                "value": "25.81"
+              }, {
+                "position": "6",
+                "value": "27.84"
+              }, {
+                "position": "7",
+                "value": "25.53"
+              }, {
+                "position": "8",
+                "value": "28.01"
+              }]
+            }, {
+              "type": "Split Times",
+              "extension": [{
+                "position": "1",
+                "value": "26.05",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.19"
+                }
+              }, {
+                "position": "2",
+                "value": "53.52",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.00"
+                }
+              }, {
+                "position": "3",
+                "value": "1:18.71",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.00"
+                }
+              }, {
+                "position": "4",
+                "value": "1:47.05",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.00"
+                }
+              }, {
+                "position": "5",
+                "value": "2:12.86",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.06"
+                }
+              }, {
+                "position": "6",
+                "value": "2:40.70",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.20"
+                }
+              }, {
+                "position": "7",
+                "value": "3:06.23",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.18"
+                }
+              }, {
+                "position": "8",
+                "value": "3:34.24",
+                "property": {
+                  "type": "Diff",
+                  "value": "1.09"
+                }
+              }]
+            }],
+            "country": {
+              "identifier": "BLR",
+              "name": "Belarus",
+              "longName": "Belarus"
+            },
+            "participant": [{
+              "order": "1",
+              "competitor": {
+                "identifier": "7260510",
+                "firstName": "Yuliya",
+                "lastName": "Khitraya",
+                "fullName": "Yuliya Khitraya"
+              }
+            }, {
+              "order": "2",
+              "competitor": {
+                "identifier": "7260518",
+                "firstName": "Sviatlana",
+                "lastName": "Khakhlova",
+                "fullName": "Sviatlana Khakhlova"
+              }
+            }, {
+              "order": "3",
+              "competitor": {
+                "identifier": "7260520",
+                "firstName": "Aliaksandra",
+                "lastName": "Herasimenia",
+                "fullName": "Aliaksandra Herasimenia"
+              }
+            }, {
+              "order": "4",
+              "competitor": {
+                "identifier": "7260521",
+                "firstName": "Pavel",
+                "lastName": "Sankovich",
+                "fullName": "Pavel Sankovich"
+              }
+            }]
+          }, {
+            "order": "4",
+            "type": "Team",
+            "code": "SWW411CHN01",
+            "rank": "4",
+            "value": "3:36.75",
+            "property": [{
+              "type": "Diff",
+              "value": "3.60"
+            }, {
+              "type": "Result Type",
+              "value": "Time"
+            }],
+            "resultExtension": [{
+              "type": "Reaction Time",
+              "value": ["0.71", "0.41", "0.17", "0.23"]
+            }, {
+              "type": "Leg Breakdown",
+              "extension": [{
+                "position": "2",
+                "value": "27.59"
+              }, {
+                "position": "3",
+                "value": "25.88"
+              }, {
+                "position": "4",
+                "value": "28.61"
+              }, {
+                "position": "5",
+                "value": "25.98"
+              }, {
+                "position": "6",
+                "value": "28.05"
+              }, {
+                "position": "7",
+                "value": "26.26"
+              }, {
+                "position": "8",
+                "value": "28.39"
+              }]
+            }, {
+              "type": "Split Times",
+              "extension": [{
+                "position": "1",
+                "value": "25.99",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.13"
+                }
+              }, {
+                "position": "2",
+                "value": "53.58",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.06"
+                }
+              }, {
+                "position": "3",
+                "value": "1:19.46",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.75"
+                }
+              }, {
+                "position": "4",
+                "value": "1:48.07",
+                "property": {
+                  "type": "Diff",
+                  "value": "1.02"
+                }
+              }, {
+                "position": "5",
+                "value": "2:14.05",
+                "property": {
+                  "type": "Diff",
+                  "value": "1.25"
+                }
+              }, {
+                "position": "6",
+                "value": "2:42.10",
+                "property": {
+                  "type": "Diff",
+                  "value": "1.60"
+                }
+              }, {
+                "position": "7",
+                "value": "3:08.36",
+                "property": {
+                  "type": "Diff",
+                  "value": "2.31"
+                }
+              }, {
+                "position": "8",
+                "value": "3:36.75",
+                "property": {
+                  "type": "Diff",
+                  "value": "3.60"
+                }
+              }]
+            }],
+            "country": {
+              "identifier": "CHN",
+              "name": "China",
+              "longName": "People's Republic of China"
+            },
+            "participant": [{
+              "order": "1",
+              "competitor": {
+                "identifier": "7261030",
+                "firstName": "Shiwen",
+                "lastName": "Ye",
+                "fullName": "Shiwen Ye"
+              }
+            }, {
+              "order": "2",
+              "competitor": {
+                "identifier": "7261033",
+                "firstName": "Jin",
+                "lastName": "Zhao",
+                "fullName": "Jin Zhao"
+              }
+            }, {
+              "order": "3",
+              "competitor": {
+                "identifier": "7261034",
+                "firstName": "Jing",
+                "lastName": "Zhao",
+                "fullName": "Jing Zhao"
+              }
+            }, {
+              "order": "4",
+              "competitor": {
+                "identifier": "7261035",
+                "firstName": "Lili",
+                "lastName": "Zhou",
+                "fullName": "Lili Zhou"
+              }
+            }]
+          }, {
+            "order": "5",
+            "type": "Team",
+            "code": "SWW411GBR01",
+            "rank": "5",
+            "value": "3:37.02",
+            "property": [{
+              "type": "Diff",
+              "value": "3.87"
+            }, {
+              "type": "Result Type",
+              "value": "Time"
+            }],
+            "resultExtension": [{
+              "type": "Reaction Time",
+              "value": ["0.68", "0.33", "0.08", "0.00"]
+            }, {
+              "type": "Leg Breakdown",
+              "extension": [{
+                "position": "2",
+                "value": "28.14"
+              }, {
+                "position": "3",
+                "value": "25.24"
+              }, {
+                "position": "4",
+                "value": "28.05"
+              }, {
+                "position": "5",
+                "value": "25.91"
+              }, {
+                "position": "6",
+                "value": "28.74"
+              }, {
+                "position": "7",
+                "value": "25.83"
+              }, {
+                "position": "8",
+                "value": "28.98"
+              }]
+            }, {
+              "type": "Split Times",
+              "extension": [{
+                "position": "1",
+                "value": "26.13",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.27"
+                }
+              }, {
+                "position": "2",
+                "value": "54.27",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.75"
+                }
+              }, {
+                "position": "3",
+                "value": "1:19.51",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.80"
+                }
+              }, {
+                "position": "4",
+                "value": "1:47.56",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.51"
+                }
+              }, {
+                "position": "5",
+                "value": "2:13.47",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.67"
+                }
+              }, {
+                "position": "6",
+                "value": "2:42.21",
+                "property": {
+                  "type": "Diff",
+                  "value": "1.71"
+                }
+              }, {
+                "position": "7",
+                "value": "3:08.04",
+                "property": {
+                  "type": "Diff",
+                  "value": "1.99"
+                }
+              }, {
+                "position": "8",
+                "value": "3:37.02",
+                "property": {
+                  "type": "Diff",
+                  "value": "3.87"
+                }
+              }]
+            }],
+            "country": {
+              "identifier": "GBR",
+              "name": "Great Britain",
+              "longName": "Great Britain"
+            },
+            "participant": [{
+              "order": "1",
+              "competitor": {
+                "identifier": "7260859",
+                "firstName": "Rebecca",
+                "lastName": "Adlington",
+                "fullName": "Rebecca Adlington"
+              }
+            }, {
+              "order": "2",
+              "competitor": {
+                "identifier": "7261829",
+                "firstName": "Sophie",
+                "lastName": "Allen",
+                "fullName": "Sophie Allen"
+              }
+            }, {
+              "order": "3",
+              "competitor": {
+                "identifier": "7261838",
+                "firstName": "Ellie",
+                "lastName": "Faulkner",
+                "fullName": "Ellie Faulkner"
+              }
+            }, {
+              "order": "4",
+              "competitor": {
+                "identifier": "7261849",
+                "firstName": "Jess",
+                "lastName": "Lloyd",
+                "fullName": "Jess Lloyd"
+              }
+            }]
+          }, {
+            "order": "6",
+            "type": "Team",
+            "code": "SWW411HUN01",
+            "rank": "6",
+            "value": "3:37.45",
+            "property": [{
+              "type": "Diff",
+              "value": "4.30"
+            }, {
+              "type": "Result Type",
+              "value": "Time"
+            }],
+            "resultExtension": [{
+              "type": "Reaction Time",
+              "value": ["0.77", "0.20", "0.04", "0.40"]
+            }, {
+              "type": "Leg Breakdown",
+              "extension": [{
+                "position": "2",
+                "value": "28.10"
+              }, {
+                "position": "3",
+                "value": "25.78"
+              }, {
+                "position": "4",
+                "value": "28.26"
+              }, {
+                "position": "5",
+                "value": "26.93"
+              }, {
+                "position": "6",
+                "value": "28.72"
+              }, {
+                "position": "7",
+                "value": "25.51"
+              }, {
+                "position": "8",
+                "value": "27.73"
+              }]
+            }, {
+              "type": "Split Times",
+              "extension": [{
+                "position": "1",
+                "value": "26.42",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.56"
+                }
+              }, {
+                "position": "2",
+                "value": "54.52",
+                "property": {
+                  "type": "Diff",
+                  "value": "1.00"
+                }
+              }, {
+                "position": "3",
+                "value": "1:20.30",
+                "property": {
+                  "type": "Diff",
+                  "value": "1.59"
+                }
+              }, {
+                "position": "4",
+                "value": "1:48.56",
+                "property": {
+                  "type": "Diff",
+                  "value": "1.51"
+                }
+              }, {
+                "position": "5",
+                "value": "2:15.49",
+                "property": {
+                  "type": "Diff",
+                  "value": "2.69"
+                }
+              }, {
+                "position": "6",
+                "value": "2:44.21",
+                "property": {
+                  "type": "Diff",
+                  "value": "3.71"
+                }
+              }, {
+                "position": "7",
+                "value": "3:09.72",
+                "property": {
+                  "type": "Diff",
+                  "value": "3.67"
+                }
+              }, {
+                "position": "8",
+                "value": "3:37.45",
+                "property": {
+                  "type": "Diff",
+                  "value": "4.30"
+                }
+              }]
+            }],
+            "country": {
+              "identifier": "HUN",
+              "name": "Hungary",
+              "longName": "Hungary"
+            },
+            "participant": [{
+              "order": "1",
+              "competitor": {
+                "identifier": "7262823",
+                "firstName": "Eszter",
+                "lastName": "Dara",
+                "fullName": "Eszter Dara"
+              }
+            }, {
+              "order": "2",
+              "competitor": {
+                "identifier": "7262824",
+                "firstName": "Julia",
+                "lastName": "Fehervari",
+                "fullName": "Julia Fehervari"
+              }
+            }, {
+              "order": "3",
+              "competitor": {
+                "identifier": "7262825",
+                "firstName": "Fanni",
+                "lastName": "Ferenczi",
+                "fullName": "Fanni Ferenczi"
+              }
+            }, {
+              "order": "4",
+              "competitor": {
+                "identifier": "7262828",
+                "firstName": "Reka",
+                "lastName": "Gyorgy",
+                "fullName": "Reka Gyorgy"
+              }
+            }]
+          }, {
+            "order": "7",
+            "type": "Team",
+            "code": "SWW411GRE01",
+            "rank": "7",
+            "value": "3:37.96",
+            "property": [{
+              "type": "Diff",
+              "value": "4.81"
+            }, {
+              "type": "Result Type",
+              "value": "Time"
+            }],
+            "resultExtension": [{
+              "type": "Reaction Time",
+              "value": ["0.74", "0.18", "0.24", "0.14"]
+            }, {
+              "type": "Leg Breakdown",
+              "extension": [{
+                "position": "2",
+                "value": "28.10"
+              }, {
+                "position": "3",
+                "value": "26.11"
+              }, {
+                "position": "4",
+                "value": "28.41"
+              }, {
+                "position": "5",
+                "value": "25.60"
+              }, {
+                "position": "6",
+                "value": "28.83"
+              }, {
+                "position": "7",
+                "value": "26.25"
+              }, {
+                "position": "8",
+                "value": "28.42"
+              }]
+            }, {
+              "type": "Split Times",
+              "extension": [{
+                "position": "1",
+                "value": "26.24",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.38"
+                }
+              }, {
+                "position": "2",
+                "value": "54.34",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.82"
+                }
+              }, {
+                "position": "3",
+                "value": "1:20.45",
+                "property": {
+                  "type": "Diff",
+                  "value": "1.74"
+                }
+              }, {
+                "position": "4",
+                "value": "1:48.86",
+                "property": {
+                  "type": "Diff",
+                  "value": "1.81"
+                }
+              }, {
+                "position": "5",
+                "value": "2:14.46",
+                "property": {
+                  "type": "Diff",
+                  "value": "1.66"
+                }
+              }, {
+                "position": "6",
+                "value": "2:43.29",
+                "property": {
+                  "type": "Diff",
+                  "value": "2.79"
+                }
+              }, {
+                "position": "7",
+                "value": "3:09.54",
+                "property": {
+                  "type": "Diff",
+                  "value": "3.49"
+                }
+              }, {
+                "position": "8",
+                "value": "3:37.96",
+                "property": {
+                  "type": "Diff",
+                  "value": "4.81"
+                }
+              }]
+            }],
+            "country": {
+              "identifier": "GRE",
+              "name": "Greece",
+              "longName": "Greece"
+            },
+            "participant": [{
+              "order": "1",
+              "competitor": {
+                "identifier": "7262531",
+                "firstName": "Marianna",
+                "lastName": "Lymperta",
+                "fullName": "Marianna Lymperta"
+              }
+            }, {
+              "order": "2",
+              "competitor": {
+                "identifier": "7262536",
+                "firstName": "Theodora",
+                "lastName": "Drakou",
+                "fullName": "Theodora Drakou"
+              }
+            }, {
+              "order": "3",
+              "competitor": {
+                "identifier": "7262537",
+                "firstName": "Kristel",
+                "lastName": "Vourna",
+                "fullName": "Kristel Vourna"
+              }
+            }, {
+              "order": "4",
+              "competitor": {
+                "identifier": "7262538",
+                "firstName": "Angeliki",
+                "lastName": "Exarchou",
+                "fullName": "Angeliki Exarchou"
+              }
+            }]
+          }, {
+            "order": "8",
+            "type": "Team",
+            "code": "SWW411ITA01",
+            "property": {
+              "type": "Invalid Result Mark",
+              "value": "Disqualified"
+            },
+            "resultExtension": [{
+              "type": "Leg Breakdown",
+              "extension": [{
+                "position": "2",
+                "value": "28.26"
+              }, {
+                "position": "3",
+                "value": "25.88"
+              }, {
+                "position": "4",
+                "value": "28.03"
+              }, {
+                "position": "5",
+                "value": "26.23"
+              }, {
+                "position": "6",
+                "value": "28.78"
+              }]
+            }, {
+              "type": "Split Times",
+              "extension": [{
+                "position": "1",
+                "value": "26.31",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.45"
+                }
+              }, {
+                "position": "2",
+                "value": "54.57",
+                "property": {
+                  "type": "Diff",
+                  "value": "1.05"
+                }
+              }, {
+                "position": "3",
+                "value": "1:20.45",
+                "property": {
+                  "type": "Diff",
+                  "value": "1.74"
+                }
+              }, {
+                "position": "4",
+                "value": "1:48.48",
+                "property": {
+                  "type": "Diff",
+                  "value": "1.43"
+                }
+              }, {
+                "position": "5",
+                "value": "2:14.71",
+                "property": {
+                  "type": "Diff",
+                  "value": "1.91"
+                }
+              }, {
+                "position": "6",
+                "value": "2:43.49",
+                "property": {
+                  "type": "Diff",
+                  "value": "2.99"
+                }
+              }]
+            }],
+            "country": {
+              "identifier": "ITA",
+              "name": "Italy",
+              "longName": "Italy"
+            },
+            "participant": [{
+              "order": "1",
+              "competitor": {
+                "identifier": "7261140",
+                "firstName": "Martina",
+                "lastName": "Grimaldi",
+                "fullName": "Martina Grimaldi"
+              }
+            }, {
+              "order": "2",
+              "competitor": {
+                "identifier": "7261688",
+                "firstName": "Arianna",
+                "lastName": "Barbieri",
+                "fullName": "Arianna Barbieri"
+              }
+            }, {
+              "order": "3",
+              "competitor": {
+                "identifier": "7261691",
+                "firstName": "Ilaria",
+                "lastName": "Bianchi",
+                "fullName": "Ilaria Bianchi"
+              }
+            }, {
+              "order": "4",
+              "competitor": {
+                "identifier": "7261694",
+                "firstName": "Erica",
+                "lastName": "Buratto",
+                "fullName": "Erica Buratto"
+              }
+            }]
+          }, {
+            "order": "9",
+            "type": "Team",
+            "code": "SWW411CAN01",
+            "country": {
+              "identifier": "CAN",
+              "name": "Canada",
+              "longName": "Canada"
+            }
+          }, {
+            "order": "10",
+            "type": "Team",
+            "code": "SWW411NED01",
+            "country": {
+              "identifier": "NED",
+              "name": "Netherlands",
+              "longName": "Netherlands"
+            }
+          }]
+        }
+      }}};
+  return module.exports;
+});
+
+$__System.register('58', ['33', '51', '52', '56', '57', '4b'], function (_export) {
+    var _Object$keys, parseData, result, jsonRecord, jsonFinals, d3_extent;
+
+    return {
+        setters: [function (_) {
+            _Object$keys = _['default'];
+        }, function (_4) {
+            parseData = _4['default'];
+        }, function (_5) {
+            result = _5['default'];
+        }, function (_2) {
+            jsonRecord = _2['default'];
+        }, function (_3) {
+            jsonFinals = _3['default'];
+        }, function (_b) {
+            d3_extent = _b.extent;
+        }],
+        execute: function () {
+            'use strict';
+
+            _export('default', function () {
+                var data = parseData(jsonRecord, jsonFinals);
+                var dataCombo = data.finals.concat(data.medals, data.worlds);
+
+                /* data manipulation, even specific */
+                // fastest swimming time
+                var timeWr = d3_extent(dataCombo, function (d) {
+                    return d.x;
+                })[0];
+                _Object$keys(data).forEach(function (dd) {
+                    // time to distance
+                    data[dd] = data[dd].map(function (dm) {
+                        dm.x = 100 * timeWr / dm.x - 100;
+                        dm.attrs.dist = Math.round(Math.abs(dm.x) * 100) / 100;
+                        return dm;
+                    });
+                    // sort
+                    data[dd].sort(function (d1, d2) {
+                        return d1.x - d2.x;
+                    });
+                });
+                console.log(data);
+
+                result(data, dataCombo);
+            });
+        }
+    };
+});
+$__System.registerDynamic("59", [], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  module.exports = {
+    "header": ["year", "name", "team", "record", "result"],
+    "world_records": [[1957, "Gary Heinrich", "USA", "wr", "5:15.6"], [1957, "Vladimir Strushanov", "URS (Soviet Union)", "wr", "5:12.9"], [1959, "Ian Black", "GBR", "wr", "5:08.8"], [1960, "George Harrison", "USA", "wr", "5:05.3"], [1960, "George Harrison", "USA", "wr", "5:07.8"], [1960, "Dennis Rounsaville", "USA", "wr", "5:04.5"], [1961, "Ted Stickles", "USA", "wr", "5:04.3"], [1961, "Ted Stickles", "USA", "wr", "4:55.6"], [1962, "Gerhard Hetz", "FRG (Germany)", "wr", "4:53.8"], [1962, "Ted Stickles", "USA", "wr", "4:51.4"], [1962, "Ted Stickles", "USA", "wr", "4:51.0"], [1963, "Gerhard Hetz", "FRG (Germany)", "wr", "4:50.2"], [1964, "Richard William Roth", "USA", "wr", "4:48.6"], [1964, "Richard William Roth", "USA", "wr", "4:45.4"], [1968, "Andrei Dunayev", "URS (Soviet Union)", "wr", "4:45.3"], [1968, "Greg Buckingham", "USA", "wr", "4:45.1"], [1968, "Gary Hall", "USA", "wr", "4:43.4"], [1968, "Charles Hickcox", "USA", "wr", "4:39.0"], [1968, "Charles Hickcox", "USA", "wr", "4:43.3"], [1969, "Gary Hall", "USA", "wr", "4:38.7"], [1969, "Gary Hall", "USA", "wr", "4:33.9"], [1970, "Gary Hall", "USA", "wr", "4:31.0"], [1972, "Gary Hall", "USA", "wr", "4:30.81"], [1974, "András Hargitay", "HUN", "wr", "4:28.89"], [1976, "Zoltán Verrasztó", "HUN", "wr", "4:26.00"], [1976, "Rod Strachan", "USA", "wr", "4:23.68"], [1978, "Jesse Vassallo", "USA", "wr", "4:23.39"], [1978, "Jesse Vassallo", "USA", "wr", "4:20.05"], [1982, "Ricardo Prado", "BRA", "wr", "4:19.78"], [1984, "Jens-Peter Berndt", "GDR (East Germany)", "wr", "4:19.61"], [1984, "Alex Baumann", "CAN", "wr", "4:17.53"], [1984, "Alex Baumann", "CAN", "wr", "4:17.41"], [1987, "David Wharton", "USA", "wr", "4:16.12"], [1987, "Tamás Darnyi", "HUN", "wr", "4:15.42"], [1988, "Tamás Darnyi", "HUN", "wr", "4:14.75"], [1991, "Tamás Darnyi", "HUN", "wr", "4:12.36"], [1994, "Tom Dolan", "USA", "wr", "4:12.30"], [2000, "Tom Dolan", "USA", "wr", "4:11.76"], [2002, "Michael Phelps", "USA", "wr", "4:11.09"], [2003, "Michael Phelps", "USA", "wr", "4:10.73"], [2003, "Michael Phelps", "USA", "wr", "4:09.09"], [2004, "Michael Phelps", "USA", "wr", "4:08.41"], [2004, "Michael Phelps", "USA", "wr", "4:08.26"], [2007, "Michael Phelps", "USA", "wr", "4:06.22"], [2008, "Michael Phelps", "USA", "wr", "4:05.25"], [2008, "Michael Phelps", "USA", "wr", "4:03.84"]],
+    "olympics": [[1964, "Richard William Roth", "USA", "gold", "4:45.4"], [1964, "Roy Saari", "USA", "silver", "4:47.1"], [1964, "Gerhard Hetz", "EUA", "bronze", "4:51.0"], [1968, "Charles Hickcox", "USA", "gold", "4:48.4"], [1968, "Gary Hall", "USA", "silver", "4:48.7"], [1968, "Michael Holthaus", "FRG", "bronze", "4:51.4"], [1972, "Gunnar Larsson", "SWE", "gold", "4:31.98"], [1972, "Alexander Timothy Mckee", "USA", "silver", "4:31.98"], [1972, "András Hargitay", "HUN", "bronze", "4:32.70"], [1976, "Rod Strachan", "USA", "gold", "4:23.68"], [1976, "Alexander Timothy Mckee", "USA", "silver", "4:24.62"], [1976, "Andrey Smirnov", "URS", "bronze", "4:26.90"], [1980, "Aleksandr Sidorenko", "URS", "gold", "4:22.89"], [1980, "Sergei Fesenko", "URS", "silver", "4:23.43"], [1980, "Zoltan Verraszto", "HUN", "bronze", "4:24.24"], [1984, "Alex Baumann", "CAN", "gold", "4:17.41"], [1984, "Ricardo Prado", "BRA", "silver", "4:18.45"], [1984, "Robert Woodhouse", "AUS", "bronze", "4:20.50"], [1988, "Tamás Darnyi", "HUN", "gold", "4:14.75"], [1988, "David Wharton", "USA", "silver", "4:17.36"], [1988, "Stefano Battistelli", "ITA", "bronze", "4:18.01"], [1992, "Tamás Darnyi", "HUN", "gold", "4:14.23"], [1992, "Eric Namesnik", "USA", "silver", "4:15.57"], [1992, "Luca Sacchi", "ITA", "bronze", "4:16.34"], [1996, "Tom Dolan", "USA", "gold", "4:14.90"], [1996, "Eric Namesnik", "USA", "silver", "4:15.25"], [1996, "Curtis Myden", "CAN", "bronze", "4:16.28"], [2000, "Tom Dolan", "USA", "gold", "04:11.76"], [2000, "Erik Vendt", "USA", "silver", "04:14.23"], [2000, "Curtis Myden", "CAN", "bronze", "04:15.33"], [2004, "Michael Phelps", "USA", "gold", "4:08.26"], [2004, "Erik Vendt", "USA", "silver", "4:11.81"], [2004, "Laszlo Cseh", "HUN", "bronze", "4:12.15"], [2008, "Michael Phelps", "USA", "gold", "4:03.84"], [2008, "Laszlo Cseh", "HUN", "silver", "4:06.16"], [2008, "Ryan Lochte", "USA", "bronze", "4:08.09"], [2012, "Ryan Lochte", "USA", "gold", "4:05.18"], [2012, "Thiago Pereira", "BRA", "silver", "4:08.56"], [2012, "Kosuke Hagino", "JPN", "bronze", "4:08.94"]]
+  };
+  return module.exports;
+});
+
+$__System.registerDynamic("5a", [], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  module.exports = {"olympics": {"eventUnit": {
+        "identifier": "SWM054101",
+        "description": "Men's 400m Individual Medley Final",
+        "unitType": "Individuals",
+        "medalEvent": "Yes",
+        "disciplineDescription": {
+          "identifier": "swimming",
+          "value": "Swimming"
+        },
+        "phaseDescription": {
+          "identifier": "SWM0541",
+          "value": "Final"
+        },
+        "result": {
+          "type": "Official",
+          "timestamp": "2016-07-25T19:19:37Z",
+          "entrant": [{
+            "order": "1",
+            "type": "Individual",
+            "code": "7263600",
+            "rank": "1",
+            "value": "4:05.18",
+            "property": [{
+              "type": "Medal Awarded",
+              "value": "Gold"
+            }, {
+              "type": "Diff",
+              "value": "0.00"
+            }, {
+              "type": "Result Type",
+              "value": "Time"
+            }],
+            "resultExtension": [{
+              "type": "Reaction Time",
+              "value": "0.65"
+            }, {
+              "type": "Leg Breakdown",
+              "extension": [{
+                "position": "2",
+                "value": "29.40"
+              }, {
+                "position": "3",
+                "value": "31.17"
+              }, {
+                "position": "4",
+                "value": "30.67"
+              }, {
+                "position": "5",
+                "value": "34.18"
+              }, {
+                "position": "6",
+                "value": "35.49"
+              }, {
+                "position": "7",
+                "value": "29.55"
+              }, {
+                "position": "8",
+                "value": "29.10"
+              }]
+            }, {
+              "type": "Split Times",
+              "extension": [{
+                "position": "1",
+                "value": "25.62",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.04"
+                }
+              }, {
+                "position": "2",
+                "value": "55.02",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.00"
+                }
+              }, {
+                "position": "3",
+                "value": "1:26.19",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.00"
+                }
+              }, {
+                "position": "4",
+                "value": "1:56.86",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.00"
+                }
+              }, {
+                "position": "5",
+                "value": "2:31.04",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.00"
+                }
+              }, {
+                "position": "6",
+                "value": "3:06.53",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.00"
+                }
+              }, {
+                "position": "7",
+                "value": "3:36.08",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.00"
+                }
+              }, {
+                "position": "8",
+                "value": "4:05.18",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.00"
+                }
+              }]
+            }],
+            "country": {
+              "identifier": "USA",
+              "name": "United States",
+              "longName": "United States of America"
+            },
+            "participant": {
+              "order": "1",
+              "competitor": {
+                "identifier": "7263600",
+                "firstName": "Ryan",
+                "lastName": "Lochte",
+                "fullName": "Ryan Lochte"
+              }
+            }
+          }, {
+            "order": "2",
+            "type": "Individual",
+            "code": "7260681",
+            "rank": "2",
+            "value": "4:08.86",
+            "property": [{
+              "type": "Medal Awarded",
+              "value": "Silver"
+            }, {
+              "type": "Diff",
+              "value": "3.68"
+            }, {
+              "type": "Result Type",
+              "value": "Time"
+            }],
+            "resultExtension": [{
+              "type": "Reaction Time",
+              "value": "0.67"
+            }, {
+              "type": "Leg Breakdown",
+              "extension": [{
+                "position": "2",
+                "value": "30.47"
+              }, {
+                "position": "3",
+                "value": "31.63"
+              }, {
+                "position": "4",
+                "value": "32.22"
+              }, {
+                "position": "5",
+                "value": "33.37"
+              }, {
+                "position": "6",
+                "value": "35.18"
+              }, {
+                "position": "7",
+                "value": "30.36"
+              }, {
+                "position": "8",
+                "value": "29.34"
+              }]
+            }, {
+              "type": "Split Times",
+              "extension": [{
+                "position": "1",
+                "value": "26.29",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.71"
+                }
+              }, {
+                "position": "2",
+                "value": "56.76",
+                "property": {
+                  "type": "Diff",
+                  "value": "1.74"
+                }
+              }, {
+                "position": "3",
+                "value": "1:28.39",
+                "property": {
+                  "type": "Diff",
+                  "value": "2.20"
+                }
+              }, {
+                "position": "4",
+                "value": "2:00.61",
+                "property": {
+                  "type": "Diff",
+                  "value": "3.75"
+                }
+              }, {
+                "position": "5",
+                "value": "2:33.98",
+                "property": {
+                  "type": "Diff",
+                  "value": "2.94"
+                }
+              }, {
+                "position": "6",
+                "value": "3:09.16",
+                "property": {
+                  "type": "Diff",
+                  "value": "2.63"
+                }
+              }, {
+                "position": "7",
+                "value": "3:39.52",
+                "property": {
+                  "type": "Diff",
+                  "value": "3.44"
+                }
+              }, {
+                "position": "8",
+                "value": "4:08.86",
+                "property": {
+                  "type": "Diff",
+                  "value": "3.68"
+                }
+              }]
+            }],
+            "country": {
+              "identifier": "UKR",
+              "name": "Ukraine",
+              "longName": "Ukraine"
+            },
+            "participant": {
+              "order": "1",
+              "competitor": {
+                "identifier": "7260681",
+                "firstName": "Maksym",
+                "lastName": "Shemberev",
+                "fullName": "Maksym Shemberev"
+              }
+            }
+          }, {
+            "order": "3",
+            "type": "Individual",
+            "code": "7262533",
+            "rank": "3",
+            "value": "4:08.94",
+            "property": [{
+              "type": "Medal Awarded",
+              "value": "Bronze"
+            }, {
+              "type": "Diff",
+              "value": "3.76"
+            }, {
+              "type": "Result Type",
+              "value": "Time"
+            }],
+            "resultExtension": [{
+              "type": "Reaction Time",
+              "value": "0.68"
+            }, {
+              "type": "Leg Breakdown",
+              "extension": [{
+                "position": "2",
+                "value": "30.11"
+              }, {
+                "position": "3",
+                "value": "31.67"
+              }, {
+                "position": "4",
+                "value": "30.74"
+              }, {
+                "position": "5",
+                "value": "35.59"
+              }, {
+                "position": "6",
+                "value": "35.97"
+              }, {
+                "position": "7",
+                "value": "29.68"
+              }, {
+                "position": "8",
+                "value": "28.52"
+              }]
+            }, {
+              "type": "Split Times",
+              "extension": [{
+                "position": "1",
+                "value": "26.66",
+                "property": {
+                  "type": "Diff",
+                  "value": "1.08"
+                }
+              }, {
+                "position": "2",
+                "value": "56.77",
+                "property": {
+                  "type": "Diff",
+                  "value": "1.75"
+                }
+              }, {
+                "position": "3",
+                "value": "1:28.44",
+                "property": {
+                  "type": "Diff",
+                  "value": "2.25"
+                }
+              }, {
+                "position": "4",
+                "value": "1:59.18",
+                "property": {
+                  "type": "Diff",
+                  "value": "2.32"
+                }
+              }, {
+                "position": "5",
+                "value": "2:34.77",
+                "property": {
+                  "type": "Diff",
+                  "value": "3.73"
+                }
+              }, {
+                "position": "6",
+                "value": "3:10.74",
+                "property": {
+                  "type": "Diff",
+                  "value": "4.21"
+                }
+              }, {
+                "position": "7",
+                "value": "3:40.42",
+                "property": {
+                  "type": "Diff",
+                  "value": "4.34"
+                }
+              }, {
+                "position": "8",
+                "value": "4:08.94",
+                "property": {
+                  "type": "Diff",
+                  "value": "3.76"
+                }
+              }]
+            }],
+            "country": {
+              "identifier": "GRE",
+              "name": "Greece",
+              "longName": "Greece"
+            },
+            "participant": {
+              "order": "1",
+              "competitor": {
+                "identifier": "7262533",
+                "firstName": "Ioannis",
+                "lastName": "Drymonakos",
+                "fullName": "Ioannis Drymonakos"
+              }
+            }
+          }, {
+            "order": "4",
+            "type": "Individual",
+            "code": "7263550",
+            "rank": "4",
+            "value": "4:09.28",
+            "property": [{
+              "type": "Diff",
+              "value": "4.10"
+            }, {
+              "type": "Result Type",
+              "value": "Time"
+            }],
+            "resultExtension": [{
+              "type": "Reaction Time",
+              "value": "0.71"
+            }, {
+              "type": "Leg Breakdown",
+              "extension": [{
+                "position": "2",
+                "value": "29.67"
+              }, {
+                "position": "3",
+                "value": "32.14"
+              }, {
+                "position": "4",
+                "value": "31.92"
+              }, {
+                "position": "5",
+                "value": "35.07"
+              }, {
+                "position": "6",
+                "value": "36.48"
+              }, {
+                "position": "7",
+                "value": "29.88"
+              }, {
+                "position": "8",
+                "value": "28.44"
+              }]
+            }, {
+              "type": "Split Times",
+              "extension": [{
+                "position": "1",
+                "value": "25.68",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.10"
+                }
+              }, {
+                "position": "2",
+                "value": "55.35",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.33"
+                }
+              }, {
+                "position": "3",
+                "value": "1:27.49",
+                "property": {
+                  "type": "Diff",
+                  "value": "1.30"
+                }
+              }, {
+                "position": "4",
+                "value": "1:59.41",
+                "property": {
+                  "type": "Diff",
+                  "value": "2.55"
+                }
+              }, {
+                "position": "5",
+                "value": "2:34.48",
+                "property": {
+                  "type": "Diff",
+                  "value": "3.44"
+                }
+              }, {
+                "position": "6",
+                "value": "3:10.96",
+                "property": {
+                  "type": "Diff",
+                  "value": "4.43"
+                }
+              }, {
+                "position": "7",
+                "value": "3:40.84",
+                "property": {
+                  "type": "Diff",
+                  "value": "4.76"
+                }
+              }, {
+                "position": "8",
+                "value": "4:09.28",
+                "property": {
+                  "type": "Diff",
+                  "value": "4.10"
+                }
+              }]
+            }],
+            "country": {
+              "identifier": "USA",
+              "name": "United States",
+              "longName": "United States of America"
+            },
+            "participant": {
+              "order": "1",
+              "competitor": {
+                "identifier": "7263550",
+                "firstName": "Michael",
+                "lastName": "Phelps",
+                "fullName": "Michael Phelps"
+              }
+            }
+          }, {
+            "order": "5",
+            "type": "Individual",
+            "code": "7261123",
+            "rank": "5",
+            "value": "4:12.42",
+            "property": [{
+              "type": "Diff",
+              "value": "7.24"
+            }, {
+              "type": "Result Type",
+              "value": "Time"
+            }],
+            "resultExtension": [{
+              "type": "Reaction Time",
+              "value": "0.76"
+            }, {
+              "type": "Leg Breakdown",
+              "extension": [{
+                "position": "2",
+                "value": "29.90"
+              }, {
+                "position": "3",
+                "value": "32.78"
+              }, {
+                "position": "4",
+                "value": "32.06"
+              }, {
+                "position": "5",
+                "value": "36.37"
+              }, {
+                "position": "6",
+                "value": "36.58"
+              }, {
+                "position": "7",
+                "value": "29.87"
+              }, {
+                "position": "8",
+                "value": "29.28"
+              }]
+            }, {
+              "type": "Split Times",
+              "extension": [{
+                "position": "1",
+                "value": "25.58",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.00"
+                }
+              }, {
+                "position": "2",
+                "value": "55.48",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.46"
+                }
+              }, {
+                "position": "3",
+                "value": "1:28.26",
+                "property": {
+                  "type": "Diff",
+                  "value": "2.07"
+                }
+              }, {
+                "position": "4",
+                "value": "2:00.32",
+                "property": {
+                  "type": "Diff",
+                  "value": "3.46"
+                }
+              }, {
+                "position": "5",
+                "value": "2:36.69",
+                "property": {
+                  "type": "Diff",
+                  "value": "5.65"
+                }
+              }, {
+                "position": "6",
+                "value": "3:13.27",
+                "property": {
+                  "type": "Diff",
+                  "value": "6.74"
+                }
+              }, {
+                "position": "7",
+                "value": "3:43.14",
+                "property": {
+                  "type": "Diff",
+                  "value": "7.06"
+                }
+              }, {
+                "position": "8",
+                "value": "4:12.42",
+                "property": {
+                  "type": "Diff",
+                  "value": "7.24"
+                }
+              }]
+            }],
+            "country": {
+              "identifier": "CHN",
+              "name": "China",
+              "longName": "People's Republic of China"
+            },
+            "participant": {
+              "order": "1",
+              "competitor": {
+                "identifier": "7261123",
+                "firstName": "Zhixian",
+                "lastName": "Yang",
+                "fullName": "Zhixian Yang"
+              }
+            }
+          }, {
+            "order": "6",
+            "type": "Individual",
+            "code": "7260320",
+            "rank": "6",
+            "value": "4:13.30",
+            "property": [{
+              "type": "Diff",
+              "value": "8.12"
+            }, {
+              "type": "Result Type",
+              "value": "Time"
+            }],
+            "resultExtension": [{
+              "type": "Reaction Time",
+              "value": "0.69"
+            }, {
+              "type": "Leg Breakdown",
+              "extension": [{
+                "position": "2",
+                "value": "30.59"
+              }, {
+                "position": "3",
+                "value": "32.31"
+              }, {
+                "position": "4",
+                "value": "32.36"
+              }, {
+                "position": "5",
+                "value": "36.50"
+              }, {
+                "position": "6",
+                "value": "36.87"
+              }, {
+                "position": "7",
+                "value": "29.71"
+              }, {
+                "position": "8",
+                "value": "27.87"
+              }]
+            }, {
+              "type": "Split Times",
+              "extension": [{
+                "position": "1",
+                "value": "27.09",
+                "property": {
+                  "type": "Diff",
+                  "value": "1.51"
+                }
+              }, {
+                "position": "2",
+                "value": "57.68",
+                "property": {
+                  "type": "Diff",
+                  "value": "2.66"
+                }
+              }, {
+                "position": "3",
+                "value": "1:29.99",
+                "property": {
+                  "type": "Diff",
+                  "value": "3.80"
+                }
+              }, {
+                "position": "4",
+                "value": "2:02.35",
+                "property": {
+                  "type": "Diff",
+                  "value": "5.49"
+                }
+              }, {
+                "position": "5",
+                "value": "2:38.85",
+                "property": {
+                  "type": "Diff",
+                  "value": "7.81"
+                }
+              }, {
+                "position": "6",
+                "value": "3:15.72",
+                "property": {
+                  "type": "Diff",
+                  "value": "9.19"
+                }
+              }, {
+                "position": "7",
+                "value": "3:45.43",
+                "property": {
+                  "type": "Diff",
+                  "value": "9.35"
+                }
+              }, {
+                "position": "8",
+                "value": "4:13.30",
+                "property": {
+                  "type": "Diff",
+                  "value": "8.12"
+                }
+              }]
+            }],
+            "country": {
+              "identifier": "JPN",
+              "name": "Japan",
+              "longName": "Japan"
+            },
+            "participant": {
+              "order": "1",
+              "competitor": {
+                "identifier": "7260320",
+                "firstName": "Kosuke",
+                "lastName": "Hagino",
+                "fullName": "Kosuke Hagino"
+              }
+            }
+          }, {
+            "order": "7",
+            "type": "Individual",
+            "code": "7262822",
+            "rank": "7",
+            "value": "4:13.49",
+            "property": [{
+              "type": "Diff",
+              "value": "8.31"
+            }, {
+              "type": "Result Type",
+              "value": "Time"
+            }],
+            "resultExtension": [{
+              "type": "Reaction Time",
+              "value": "0.69"
+            }, {
+              "type": "Leg Breakdown",
+              "extension": [{
+                "position": "2",
+                "value": "30.31"
+              }, {
+                "position": "3",
+                "value": "32.97"
+              }, {
+                "position": "4",
+                "value": "32.28"
+              }, {
+                "position": "5",
+                "value": "36.49"
+              }, {
+                "position": "6",
+                "value": "36.87"
+              }, {
+                "position": "7",
+                "value": "29.78"
+              }, {
+                "position": "8",
+                "value": "28.35"
+              }]
+            }, {
+              "type": "Split Times",
+              "extension": [{
+                "position": "1",
+                "value": "26.44",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.86"
+                }
+              }, {
+                "position": "2",
+                "value": "56.75",
+                "property": {
+                  "type": "Diff",
+                  "value": "1.73"
+                }
+              }, {
+                "position": "3",
+                "value": "1:29.72",
+                "property": {
+                  "type": "Diff",
+                  "value": "3.53"
+                }
+              }, {
+                "position": "4",
+                "value": "2:02.00",
+                "property": {
+                  "type": "Diff",
+                  "value": "5.14"
+                }
+              }, {
+                "position": "5",
+                "value": "2:38.49",
+                "property": {
+                  "type": "Diff",
+                  "value": "7.45"
+                }
+              }, {
+                "position": "6",
+                "value": "3:15.36",
+                "property": {
+                  "type": "Diff",
+                  "value": "8.83"
+                }
+              }, {
+                "position": "7",
+                "value": "3:45.14",
+                "property": {
+                  "type": "Diff",
+                  "value": "9.06"
+                }
+              }, {
+                "position": "8",
+                "value": "4:13.49",
+                "property": {
+                  "type": "Diff",
+                  "value": "8.31"
+                }
+              }]
+            }],
+            "country": {
+              "identifier": "HUN",
+              "name": "Hungary",
+              "longName": "Hungary"
+            },
+            "participant": {
+              "order": "1",
+              "competitor": {
+                "identifier": "7262822",
+                "firstName": "Laszlo",
+                "lastName": "Cseh",
+                "fullName": "Laszlo Cseh"
+              }
+            }
+          }, {
+            "order": "8",
+            "type": "Individual",
+            "code": "7262577",
+            "rank": "8",
+            "value": "4:14.89",
+            "property": [{
+              "type": "Diff",
+              "value": "9.71"
+            }, {
+              "type": "Result Type",
+              "value": "Time"
+            }],
+            "resultExtension": [{
+              "type": "Reaction Time",
+              "value": "0.73"
+            }, {
+              "type": "Leg Breakdown",
+              "extension": [{
+                "position": "2",
+                "value": "31.26"
+              }, {
+                "position": "3",
+                "value": "32.24"
+              }, {
+                "position": "4",
+                "value": "30.91"
+              }, {
+                "position": "5",
+                "value": "36.02"
+              }, {
+                "position": "6",
+                "value": "36.68"
+              }, {
+                "position": "7",
+                "value": "30.87"
+              }, {
+                "position": "8",
+                "value": "29.25"
+              }]
+            }, {
+              "type": "Split Times",
+              "extension": [{
+                "position": "1",
+                "value": "27.66",
+                "property": {
+                  "type": "Diff",
+                  "value": "2.08"
+                }
+              }, {
+                "position": "2",
+                "value": "58.92",
+                "property": {
+                  "type": "Diff",
+                  "value": "3.90"
+                }
+              }, {
+                "position": "3",
+                "value": "1:31.16",
+                "property": {
+                  "type": "Diff",
+                  "value": "4.97"
+                }
+              }, {
+                "position": "4",
+                "value": "2:02.07",
+                "property": {
+                  "type": "Diff",
+                  "value": "5.21"
+                }
+              }, {
+                "position": "5",
+                "value": "2:38.09",
+                "property": {
+                  "type": "Diff",
+                  "value": "7.05"
+                }
+              }, {
+                "position": "6",
+                "value": "3:14.77",
+                "property": {
+                  "type": "Diff",
+                  "value": "8.24"
+                }
+              }, {
+                "position": "7",
+                "value": "3:45.64",
+                "property": {
+                  "type": "Diff",
+                  "value": "9.56"
+                }
+              }, {
+                "position": "8",
+                "value": "4:14.89",
+                "property": {
+                  "type": "Diff",
+                  "value": "9.71"
+                }
+              }]
+            }],
+            "country": {
+              "identifier": "AUS",
+              "name": "Australia",
+              "longName": "Australia"
+            },
+            "participant": {
+              "order": "1",
+              "competitor": {
+                "identifier": "7262577",
+                "firstName": "Thomas",
+                "lastName": "Fraser-Holmes",
+                "fullName": "Thomas Fraser-Holmes"
+              }
+            }
+          }, {
+            "order": "9",
+            "type": "Individual",
+            "code": "7260322",
+            "country": {
+              "identifier": "JPN",
+              "name": "Japan",
+              "longName": "Japan"
+            },
+            "participant": {
+              "order": "1",
+              "competitor": {
+                "identifier": "7260322",
+                "firstName": "Yuya",
+                "lastName": "Horihata",
+                "fullName": "Yuya Horihata"
+              }
+            }
+          }, {
+            "order": "10",
+            "type": "Individual",
+            "code": "7262472",
+            "country": {
+              "identifier": "AUT",
+              "name": "Austria",
+              "longName": "Austria"
+            },
+            "participant": {
+              "order": "1",
+              "competitor": {
+                "identifier": "7262472",
+                "firstName": "Dinko",
+                "lastName": "Jukic",
+                "fullName": "Dinko Jukic"
+              }
+            }
+          }]
+        }
+      }}};
+  return module.exports;
+});
+
+$__System.register('5b', ['33', '51', '52', '59', '5a', '4b'], function (_export) {
+    var _Object$keys, parseData, result, jsonRecord, jsonFinals, d3_extent;
+
+    return {
+        setters: [function (_) {
+            _Object$keys = _['default'];
+        }, function (_3) {
+            parseData = _3['default'];
+        }, function (_4) {
+            result = _4['default'];
+        }, function (_2) {
+            jsonRecord = _2['default'];
+        }, function (_a) {
+            jsonFinals = _a['default'];
+        }, function (_b) {
+            d3_extent = _b.extent;
+        }],
+        execute: function () {
+            'use strict';
+
+            _export('default', function () {
+                var data = parseData(jsonRecord, jsonFinals);
+                var dataCombo = data.finals.concat(data.medals, data.worlds);
+
+                /* data manipulation, even specific */
+                // fastest swimming time
+                var timeWr = d3_extent(dataCombo, function (d) {
+                    return d.x;
+                })[0];
+                _Object$keys(data).forEach(function (dd) {
+                    // time to distance
+                    data[dd] = data[dd].map(function (dm) {
+                        dm.x = 100 * timeWr / dm.x - 100;
+                        dm.attrs.dist = Math.round(Math.abs(dm.x) * 100) / 100;
+                        return dm;
+                    });
+                    // sort
+                    data[dd].sort(function (d1, d2) {
+                        return d1.x - d2.x;
+                    });
+                });
+                console.log(data);
+
+                result(data, dataCombo);
+            });
+        }
+    };
+});
+$__System.registerDynamic("5c", [], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  module.exports = {
+    "header": ["year", "name", "team", "record", "result"],
+    "world_records": [[1958, "Sylvia Ruuska", "USA", "wr", "5:46.6"], [1958, "Sylvia Ruuska", "USA", "wr", "5:43.7"], [1959, "Sylvia Ruuska", "USA", "wr", "5:41.1"], [1959, "Sylvia Ruuska", "USA", "wr", "5:40.2"], [1960, "Donna de Varona", "USA", "wr", "5:36.5"], [1961, "Donna de Varona", "USA", "wr", "5:34.5"], [1962, "Donna de Varona", "USA", "wr", "5:29.7"], [1962, "Sharon Finneran", "USA", "wr", "5:27.4"], [1962, "Donna de Varona", "USA", "wr", "5:24.7"], [1962, "Sharon Finneran", "USA", "wr", "5:21.9"], [1964, "Donna de Varona", "USA", "wr", "5:16.5"], [1964, "Donna de Varona", "USA", "wr", "5:14.9"], [1967, "Claudia Kolb", "USA", "wr", "5:11.7"], [1967, "Claudia Kolb", "USA", "wr", "5:09.7"], [1967, "Claudia Kolb", "USA", "wr", "5:08.2"], [1968, "Claudia Kolb", "USA", "wr", "5:04.7"], [1972, "Gail Neall", "AUS", "wr", "5:02.97"], [1973, "Angela Franke", "GDR (East Germany)", "wr", "5:01.10"], [1973, "Gudrun Wegner", "GDR (East Germany)", "wr", "4:57.51"], [1974, "Ulrike Tauber", "GDR (East Germany)", "wr", "4:52.42"], [1975, "Ulrike Tauber", "GDR (East Germany)", "wr", "4:52.20"], [1976, "Birgit Treiber", "GDR (East Germany)", "wr", "4:48.79"], [1976, "Ulrike Tauber", "GDR (East Germany)", "wr", "4:42.77"], [1978, "Tracy Caulkins", "USA", "wr", "4:40.83"], [1980, "Petra Schneider", "GDR (East Germany)", "wr", "4:39.96"], [1980, "Petra Schneider", "GDR (East Germany)", "wr", "4:38.44"], [1980, "Petra Schneider", "GDR (East Germany)", "wr", "4:36.29"], [1982, "Petra Schneider", "GDR (East Germany)", "wr", "4:36.10"], [1997, "Chen Yan", "CHN", "wr", "4:34.79"], [2000, "Yana Klochkova", "UKR", "wr", "4:33.59"], [2007, "Katie Hoff", "USA", "wr", "4:32.89"], [2008, "Stephanie Rice", "AUS", "wr", "4:31.46"], [2008, "Katie Hoff", "USA", "wr", "4:31.12"], [2008, "Stephanie Rice", "AUS", "wr", "4:29.45"], [2012, "Shiwen Ye", "CHN", "wr", "4:28.43"]],
+    "olympics": [[1964, "Donna De Varona", "USA", "gold", "5:18.7"], [1964, "Sharon Finneran", "USA", "silver", "5:24.1"], [1964, "Martha Randall", "USA", "bronze", "5:24.2"], [1968, "Claudia Kolb", "USA", "gold", "5:08.5"], [1968, "Lynn Vidali", "USA", "silver", "5:22.2"], [1968, "Sabine Steinbach", "GDR", "bronze", "5:25.3"], [1972, "Gail Neall", "AUS", "gold", "5:02.97"], [1972, "Leslie Cliff", "CAN", "silver", "5:03.57"], [1972, "Novella Calligaris", "ITA", "bronze", "5:03.99"], [1976, "Ulrike Tauber", "GDR", "gold", "4:42.77"], [1976, "Cheryl Gibson", "CAN", "silver", "4:48.10"], [1976, "Becky Smith", "CAN", "bronze", "4:50.48"], [1980, "Petra Schneider", "GDR", "gold", "4:36.29"], [1980, "Sharron Davies", "GBR", "silver", "4:46.83"], [1980, "Agnieszka Czopek", "POL", "bronze", "4:48.17"], [1984, "Tracy Caulkins", "USA", "gold", "4:39.24"], [1984, "Suzanne Landells", "AUS", "silver", "4:48.30"], [1984, "Petra Zindler", "FRG", "bronze", "4:48.57"], [1988, "Janet Evans", "USA", "gold", "4:37.76"], [1988, "Noemi Lung", "ROU", "silver", "4:39.46"], [1988, "Daniela Hunger", "GDR", "bronze", "4:39.76"], [1992, "Krisztina Egerszegi", "HUN", "gold", "4:36.54"], [1992, "Li Lin", "CHN", "silver", "4:36.73"], [1992, "Summer Sanders", "USA", "bronze", "4:37.58"], [1996, "Michelle Smith", "IRL", "gold", "4:39.18"], [1996, "Allison Wagner", "USA", "silver", "4:42.03"], [1996, "Krisztina Egerszegi", "HUN", "bronze", "4:42.53"], [2000, "Yana Klochkova", "UKR", "gold", "04:33.59"], [2000, "Yasuko Tajima", "JPN", "silver", "04:35.96"], [2000, "Beatrice Coada", "ROU", "bronze", "04:37.18"], [2004, "Yana Klochkova", "UKR", "gold", "4:34.83"], [2004, "Kaitlin Sandeno", "USA", "silver", "4:34.95"], [2004, "Georgina Bardach", "ARG", "bronze", "4:37.51"], [2008, "Stephanie Rice", "AUS", "gold", "4:29.45"], [2008, "Kirsty Coventry", "ZIM", "silver", "4:29.89"], [2008, "Katie Hoff", "USA", "bronze", "4:31.71"], [2012, "Shiwen Ye", "CHN", "gold", "4:28.43"], [2012, "Elizabeth Beisel", "USA", "silver", "4:31.27"], [2012, "Xuanxu Li", "CHN", "bronze", "4:32.91"]]
+  };
+  return module.exports;
+});
+
+$__System.registerDynamic("5d", [], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  module.exports = {"olympics": {"eventUnit": {
+        "identifier": "SWW054101",
+        "description": "Women's 400m Individual Medley Final",
+        "unitType": "Individuals",
+        "medalEvent": "Yes",
+        "disciplineDescription": {
+          "identifier": "swimming",
+          "value": "Swimming"
+        },
+        "phaseDescription": {
+          "identifier": "SWW0541",
+          "value": "Final"
+        },
+        "result": {
+          "type": "Official",
+          "timestamp": "2013-11-13T12:15:01Z",
+          "entrant": [{
+            "order": "1",
+            "type": "Individual",
+            "code": "1072444",
+            "rank": "1",
+            "value": "4:28.43",
+            "property": [{
+              "type": "Medal Awarded",
+              "value": "Gold"
+            }, {
+              "type": "Record Set",
+              "value": "WR"
+            }, {
+              "type": "Record Set",
+              "value": "OR"
+            }, {
+              "type": "Record Set",
+              "value": "AS"
+            }, {
+              "type": "Result Type",
+              "value": "Time"
+            }],
+            "resultExtension": [{
+              "type": "Reaction Time",
+              "value": "0.74"
+            }, {
+              "type": "Split Times",
+              "extension": [{
+                "position": "1",
+                "value": "28.85"
+              }, {
+                "position": "2",
+                "value": "1:02.19"
+              }, {
+                "position": "3",
+                "value": "1:37.53"
+              }, {
+                "position": "4",
+                "value": "2:11.73"
+              }, {
+                "position": "5",
+                "value": "2:50.53"
+              }, {
+                "position": "6",
+                "value": "3:29.75"
+              }, {
+                "position": "7",
+                "value": "3:59.50"
+              }, {
+                "position": "8",
+                "value": "4:28.43"
+              }]
+            }],
+            "country": {
+              "identifier": "CHN",
+              "name": "China",
+              "longName": "People's Republic of China"
+            },
+            "participant": {
+              "order": "1",
+              "competitor": {
+                "identifier": "1072444",
+                "firstName": "Shiwen",
+                "lastName": "Ye",
+                "fullName": "Shiwen Ye"
+              }
+            }
+          }, {
+            "order": "2",
+            "type": "Individual",
+            "code": "1133260",
+            "rank": "2",
+            "value": "4:31.27",
+            "property": [{
+              "type": "Medal Awarded",
+              "value": "Silver"
+            }, {
+              "type": "Result Type",
+              "value": "Time"
+            }],
+            "resultExtension": [{
+              "type": "Reaction Time",
+              "value": "0.70"
+            }, {
+              "type": "Split Times",
+              "extension": [{
+                "position": "1",
+                "value": "29.52"
+              }, {
+                "position": "2",
+                "value": "1:03.10"
+              }, {
+                "position": "3",
+                "value": "1:37.62"
+              }, {
+                "position": "4",
+                "value": "2:11.28"
+              }, {
+                "position": "5",
+                "value": "2:49.74"
+              }, {
+                "position": "6",
+                "value": "3:28.94"
+              }, {
+                "position": "7",
+                "value": "4:00.46"
+              }, {
+                "position": "8",
+                "value": "4:31.27"
+              }]
+            }],
+            "country": {
+              "identifier": "USA",
+              "name": "United States",
+              "longName": "United States of America"
+            },
+            "participant": {
+              "order": "1",
+              "competitor": {
+                "identifier": "1133260",
+                "firstName": "Elizabeth",
+                "lastName": "Beisel",
+                "fullName": "Elizabeth Beisel"
+              }
+            }
+          }, {
+            "order": "3",
+            "type": "Individual",
+            "code": "1072471",
+            "rank": "3",
+            "value": "4:32.91",
+            "property": [{
+              "type": "Medal Awarded",
+              "value": "Bronze"
+            }, {
+              "type": "Result Type",
+              "value": "Time"
+            }],
+            "resultExtension": [{
+              "type": "Reaction Time",
+              "value": "0.75"
+            }, {
+              "type": "Split Times",
+              "extension": [{
+                "position": "1",
+                "value": "29.62"
+              }, {
+                "position": "2",
+                "value": "1:02.91"
+              }, {
+                "position": "3",
+                "value": "1:37.77"
+              }, {
+                "position": "4",
+                "value": "2:11.91"
+              }, {
+                "position": "5",
+                "value": "2:51.16"
+              }, {
+                "position": "6",
+                "value": "3:31.33"
+              }, {
+                "position": "7",
+                "value": "4:03.14"
+              }, {
+                "position": "8",
+                "value": "4:32.91"
+              }]
+            }],
+            "country": {
+              "identifier": "CHN",
+              "name": "China",
+              "longName": "People's Republic of China"
+            },
+            "participant": {
+              "order": "1",
+              "competitor": {
+                "identifier": "1072471",
+                "firstName": "Xuanxu",
+                "lastName": "Li",
+                "fullName": "Xuanxu Li"
+              }
+            }
+          }, {
+            "order": "4",
+            "type": "Individual",
+            "code": "1121233",
+            "rank": "4",
+            "value": "4:33.49",
+            "property": {
+              "type": "Result Type",
+              "value": "Time"
+            },
+            "resultExtension": [{
+              "type": "Reaction Time",
+              "value": "0.77"
+            }, {
+              "type": "Split Times",
+              "extension": [{
+                "position": "1",
+                "value": "28.64"
+              }, {
+                "position": "2",
+                "value": "1:01.34"
+              }, {
+                "position": "3",
+                "value": "1:36.60"
+              }, {
+                "position": "4",
+                "value": "2:11.13"
+              }, {
+                "position": "5",
+                "value": "2:50.43"
+              }, {
+                "position": "6",
+                "value": "3:30.83"
+              }, {
+                "position": "7",
+                "value": "4:02.56"
+              }, {
+                "position": "8",
+                "value": "4:33.49"
+              }]
+            }],
+            "country": {
+              "identifier": "HUN",
+              "name": "Hungary",
+              "longName": "Hungary"
+            },
+            "participant": {
+              "order": "1",
+              "competitor": {
+                "identifier": "1121233",
+                "firstName": "Katinka",
+                "lastName": "Hosszu",
+                "fullName": "Katinka Hosszu"
+              }
+            }
+          }, {
+            "order": "5",
+            "type": "Individual",
+            "code": "1098559",
+            "rank": "5",
+            "value": "4:34.17",
+            "property": {
+              "type": "Result Type",
+              "value": "Time"
+            },
+            "resultExtension": [{
+              "type": "Reaction Time",
+              "value": "0.68"
+            }, {
+              "type": "Split Times",
+              "extension": [{
+                "position": "1",
+                "value": "29.80"
+              }, {
+                "position": "2",
+                "value": "1:03.02"
+              }, {
+                "position": "3",
+                "value": "1:37.94"
+              }, {
+                "position": "4",
+                "value": "2:12.94"
+              }, {
+                "position": "5",
+                "value": "2:51.59"
+              }, {
+                "position": "6",
+                "value": "3:31.20"
+              }, {
+                "position": "7",
+                "value": "4:03.44"
+              }, {
+                "position": "8",
+                "value": "4:34.17"
+              }]
+            }],
+            "country": {
+              "identifier": "GBR",
+              "name": "Great Britain",
+              "longName": "Great Britain"
+            },
+            "participant": {
+              "order": "1",
+              "competitor": {
+                "identifier": "1098559",
+                "firstName": "Hannah",
+                "lastName": "Miley",
+                "fullName": "Hannah Miley"
+              }
+            }
+          }, {
+            "order": "6",
+            "type": "Individual",
+            "code": "1116546",
+            "rank": "6",
+            "value": "4:35.49",
+            "property": {
+              "type": "Result Type",
+              "value": "Time"
+            },
+            "resultExtension": [{
+              "type": "Reaction Time",
+              "value": "0.77"
+            }, {
+              "type": "Split Times",
+              "extension": [{
+                "position": "1",
+                "value": "28.74"
+              }, {
+                "position": "2",
+                "value": "1:01.60"
+              }, {
+                "position": "3",
+                "value": "1:36.88"
+              }, {
+                "position": "4",
+                "value": "2:11.81"
+              }, {
+                "position": "5",
+                "value": "2:51.28"
+              }, {
+                "position": "6",
+                "value": "3:31.51"
+              }, {
+                "position": "7",
+                "value": "4:04.16"
+              }, {
+                "position": "8",
+                "value": "4:35.49"
+              }]
+            }],
+            "country": {
+              "identifier": "AUS",
+              "name": "Australia",
+              "longName": "Australia"
+            },
+            "participant": {
+              "order": "1",
+              "competitor": {
+                "identifier": "1116546",
+                "firstName": "Stephanie",
+                "lastName": "Rice",
+                "fullName": "Stephanie Rice"
+              }
+            }
+          }, {
+            "order": "7",
+            "type": "Individual",
+            "code": "1132417",
+            "rank": "6",
+            "value": "4:35.49",
+            "property": {
+              "type": "Result Type",
+              "value": "Time"
+            },
+            "resultExtension": [{
+              "type": "Reaction Time",
+              "value": "0.74"
+            }, {
+              "type": "Split Times",
+              "extension": [{
+                "position": "1",
+                "value": "28.64"
+              }, {
+                "position": "2",
+                "value": "1:01.87"
+              }, {
+                "position": "3",
+                "value": "1:38.11"
+              }, {
+                "position": "4",
+                "value": "2:14.46"
+              }, {
+                "position": "5",
+                "value": "2:52.11"
+              }, {
+                "position": "6",
+                "value": "3:31.04"
+              }, {
+                "position": "7",
+                "value": "4:03.74"
+              }, {
+                "position": "8",
+                "value": "4:35.49"
+              }]
+            }],
+            "country": {
+              "identifier": "USA",
+              "name": "United States",
+              "longName": "United States of America"
+            },
+            "participant": {
+              "order": "1",
+              "competitor": {
+                "identifier": "1132417",
+                "firstName": "Caitlin",
+                "lastName": "Leverenz",
+                "fullName": "Caitlin Leverenz"
+              }
+            }
+          }, {
+            "order": "8",
+            "type": "Individual",
+            "code": "1104020",
+            "rank": "8",
+            "value": "4:35.62",
+            "property": {
+              "type": "Result Type",
+              "value": "Time"
+            },
+            "resultExtension": [{
+              "type": "Reaction Time",
+              "value": "0.71"
+            }, {
+              "type": "Split Times",
+              "extension": [{
+                "position": "1",
+                "value": "28.95"
+              }, {
+                "position": "2",
+                "value": "1:01.64"
+              }, {
+                "position": "3",
+                "value": "1:37.94"
+              }, {
+                "position": "4",
+                "value": "2:13.43"
+              }, {
+                "position": "5",
+                "value": "2:52.43"
+              }, {
+                "position": "6",
+                "value": "3:32.71"
+              }, {
+                "position": "7",
+                "value": "4:04.54"
+              }, {
+                "position": "8",
+                "value": "4:35.62"
+              }]
+            }],
+            "country": {
+              "identifier": "ESP",
+              "name": "Spain",
+              "longName": "Spain"
+            },
+            "participant": {
+              "order": "1",
+              "competitor": {
+                "identifier": "1104020",
+                "firstName": "Mireia",
+                "lastName": "Belmonte Garcia",
+                "fullName": "Mireia Belmonte Garcia"
+              }
+            }
+          }]
+        }
+      }}};
+  return module.exports;
+});
+
+$__System.register('5e', ['33', '51', '52', '5c', '5d', '4b'], function (_export) {
+    var _Object$keys, parseData, result, jsonRecord, jsonFinals, d3_extent;
+
+    return {
+        setters: [function (_) {
+            _Object$keys = _['default'];
+        }, function (_2) {
+            parseData = _2['default'];
+        }, function (_3) {
+            result = _3['default'];
+        }, function (_c) {
+            jsonRecord = _c['default'];
+        }, function (_d) {
+            jsonFinals = _d['default'];
+        }, function (_b) {
+            d3_extent = _b.extent;
+        }],
+        execute: function () {
+            'use strict';
+
+            _export('default', function () {
+                var data = parseData(jsonRecord, jsonFinals);
+                var dataCombo = data.finals.concat(data.medals, data.worlds);
+
+                /* data manipulation, even specific */
+                // fastest swimming time
+                var timeWr = d3_extent(dataCombo, function (d) {
+                    return d.x;
+                })[0];
+                _Object$keys(data).forEach(function (dd) {
+                    // time to distance
+                    data[dd] = data[dd].map(function (dm) {
+                        dm.x = 100 * timeWr / dm.x - 100;
+                        dm.attrs.dist = Math.round(Math.abs(dm.x) * 100) / 100;
+                        return dm;
+                    });
+                    // sort
+                    data[dd].sort(function (d1, d2) {
+                        return d1.x - d2.x;
+                    });
+                });
+                console.log(data);
+
+                result(data, dataCombo);
+            });
+        }
+    };
+});
+$__System.registerDynamic("5f", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -6031,7 +8488,7 @@ $__System.registerDynamic("55", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("56", [], true, function($__require, exports, module) {
+$__System.registerDynamic("60", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -6662,7 +9119,7 @@ $__System.registerDynamic("32", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.register("53", ["32", "44"], function (_export) {
+$__System.register("51", ["32", "44"], function (_export) {
     //import {json as d3_json} from "d3.request";
     "use strict";
 
@@ -6688,28 +9145,26 @@ $__System.register("53", ["32", "44"], function (_export) {
 
     function parseDataFinals(dataRaw, type) {
         return dataRaw.filter(function (dd) {
-            return dd.property;
+            // filter out disqualified
+            var toClass = ({}).toString;
+            return toClass.call(dd.property).indexOf("Array") > -1;
         }).map(function (dd) {
-            //let properties = getProperties(dd.property);
-
+            //console.log(dd);
             var data = {};
             data.year = thisYear;
-            data.name = getName(dd.participant, type.team);
+            data.name = getName(dd.participant, type.team, dd.country.name);
             data.team = dd.country.identifier;
-            //data.rank = dd.rank;
             data.record = getProperties(dd.property, dd.rank).medal;
             data.result = dd.value;
             //data.resultBlur = Math.round(getParsedValue(dd.value, type.result).val*10)/10;
-            //data.id = teamType === "Team" ? data.team : utils.str2class(data.name);
-
             return data;
         });
     }
 
-    function getName(participant, type) {
-        return type === "Team" ? participant.map(function (dp) {
+    function getName(participant, type, team) {
+        return type === "Team" ? team + " (" + participant.map(function (dp) {
             return dp.competitor.fullName;
-        }).join(", ") : //team
+        }).join(", ") + ")" : //team
         participant.competitor.fullName; //individual
     }
 
@@ -6723,13 +9178,13 @@ $__System.register("53", ["32", "44"], function (_export) {
             return dp.type.indexOf("Medal") > -1;
         }).map(function (dp) {
             return dp.value.toLowerCase();
-        }) : rank;
+        }) : rank ? rank : null;
         var record = flag ? property.filter(function (dp) {
             return dp.type.indexOf("Record") > -1;
         }).map(function (dt) {
             return dt.value.toLowerCase();
         }).join(", ") : null;
-
+        //console.log(medal, flag, rank);
         return {
             medal: medal[0],
             record: record
@@ -6878,7 +9333,7 @@ $__System.registerDynamic("28", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("57", [], true, function($__require, exports, module) {
+$__System.registerDynamic("61", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -6891,12 +9346,12 @@ $__System.registerDynamic("57", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("58", ["57"], true, function($__require, exports, module) {
+$__System.registerDynamic("62", ["61"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  var aFunction = $__require('57');
+  var aFunction = $__require('61');
   module.exports = function(fn, that, length) {
     aFunction(fn);
     if (that === undefined)
@@ -6922,14 +9377,14 @@ $__System.registerDynamic("58", ["57"], true, function($__require, exports, modu
   return module.exports;
 });
 
-$__System.registerDynamic("25", ["28", "c", "58"], true, function($__require, exports, module) {
+$__System.registerDynamic("25", ["28", "c", "62"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
   var global = $__require('28'),
       core = $__require('c'),
-      ctx = $__require('58'),
+      ctx = $__require('62'),
       PROTOTYPE = 'prototype';
   var $export = function(type, name, source) {
     var IS_FORCED = type & $export.F,
@@ -6986,7 +9441,7 @@ $__System.registerDynamic("20", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("59", ["25", "c", "20"], true, function($__require, exports, module) {
+$__System.registerDynamic("63", ["25", "c", "20"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -7005,13 +9460,13 @@ $__System.registerDynamic("59", ["25", "c", "20"], true, function($__require, ex
   return module.exports;
 });
 
-$__System.registerDynamic("5a", ["35", "59"], true, function($__require, exports, module) {
+$__System.registerDynamic("64", ["35", "63"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
   var toObject = $__require('35');
-  $__require('59')('keys', function($keys) {
+  $__require('63')('keys', function($keys) {
     return function keys(it) {
       return $keys(toObject(it));
     };
@@ -7030,29 +9485,29 @@ $__System.registerDynamic("c", [], true, function($__require, exports, module) {
   return module.exports;
 });
 
-$__System.registerDynamic("5b", ["5a", "c"], true, function($__require, exports, module) {
+$__System.registerDynamic("65", ["64", "c"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  $__require('5a');
+  $__require('64');
   module.exports = $__require('c').Object.keys;
   return module.exports;
 });
 
-$__System.registerDynamic("33", ["5b"], true, function($__require, exports, module) {
+$__System.registerDynamic("33", ["65"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
   module.exports = {
-    "default": $__require('5b'),
+    "default": $__require('65'),
     __esModule: true
   };
   return module.exports;
 });
 
-$__System.registerDynamic("5c", [], true, function($__require, exports, module) {
+$__System.registerDynamic("66", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -7303,16 +9758,16 @@ $__System.registerDynamic("5c", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("5d", ["5c"], true, function($__require, exports, module) {
+$__System.registerDynamic("67", ["66"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('5c');
+  module.exports = $__require('66');
   return module.exports;
 });
 
-$__System.registerDynamic("5e", [], true, function($__require, exports, module) {
+$__System.registerDynamic("68", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -7599,16 +10054,16 @@ $__System.registerDynamic("5e", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("5f", ["5e"], true, function($__require, exports, module) {
+$__System.registerDynamic("69", ["68"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('5e');
+  module.exports = $__require('68');
   return module.exports;
 });
 
-$__System.registerDynamic("60", [], true, function($__require, exports, module) {
+$__System.registerDynamic("6a", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -7948,23 +10403,23 @@ $__System.registerDynamic("60", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("61", ["60"], true, function($__require, exports, module) {
+$__System.registerDynamic("6b", ["6a"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('60');
+  module.exports = $__require('6a');
   return module.exports;
 });
 
-$__System.registerDynamic("62", ["61"], true, function($__require, exports, module) {
+$__System.registerDynamic("6c", ["6b"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
   "format cjs";
   (function(global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('61')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-time'], factory) : (factory((global.d3 = global.d3 || {}), global.d3));
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('6b')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-time'], factory) : (factory((global.d3 = global.d3 || {}), global.d3));
   }(this, function(exports, d3Time) {
     'use strict';
     function localDate(d) {
@@ -8473,23 +10928,23 @@ $__System.registerDynamic("62", ["61"], true, function($__require, exports, modu
   return module.exports;
 });
 
-$__System.registerDynamic("63", ["62"], true, function($__require, exports, module) {
+$__System.registerDynamic("6d", ["6c"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('62');
+  module.exports = $__require('6c');
   return module.exports;
 });
 
-$__System.registerDynamic("64", ["4b", "5d", "66", "5f", "61", "63", "65"], true, function($__require, exports, module) {
+$__System.registerDynamic("6e", ["4b", "67", "70", "69", "6b", "6d", "6f"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
   "format cjs";
   (function(global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('4b'), $__require('5d'), $__require('66'), $__require('5f'), $__require('61'), $__require('63'), $__require('65')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-array', 'd3-collection', 'd3-interpolate', 'd3-format', 'd3-time', 'd3-time-format', 'd3-color'], factory) : (factory((global.d3 = global.d3 || {}), global.d3, global.d3, global.d3, global.d3, global.d3, global.d3, global.d3));
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('4b'), $__require('67'), $__require('70'), $__require('69'), $__require('6b'), $__require('6d'), $__require('6f')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-array', 'd3-collection', 'd3-interpolate', 'd3-format', 'd3-time', 'd3-time-format', 'd3-color'], factory) : (factory((global.d3 = global.d3 || {}), global.d3, global.d3, global.d3, global.d3, global.d3, global.d3, global.d3));
   }(this, function(exports, d3Array, d3Collection, d3Interpolate, d3Format, d3Time, d3TimeFormat, d3Color) {
     'use strict';
     var array = Array.prototype;
@@ -9231,16 +11686,16 @@ $__System.registerDynamic("64", ["4b", "5d", "66", "5f", "61", "63", "65"], true
   return module.exports;
 });
 
-$__System.registerDynamic("46", ["64"], true, function($__require, exports, module) {
+$__System.registerDynamic("46", ["6e"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('64');
+  module.exports = $__require('6e');
   return module.exports;
 });
 
-$__System.register('67', ['46', '3f'], function (_export) {
+$__System.register('71', ['46', '3f'], function (_export) {
     'use strict';
 
     var d3_scaleLinear, sync;
@@ -9283,7 +11738,7 @@ $__System.register('67', ['46', '3f'], function (_export) {
         }
     };
 });
-$__System.registerDynamic("68", [], true, function($__require, exports, module) {
+$__System.registerDynamic("72", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -9405,16 +11860,16 @@ $__System.registerDynamic("68", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("69", ["68"], true, function($__require, exports, module) {
+$__System.registerDynamic("73", ["72"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('68');
+  module.exports = $__require('72');
   return module.exports;
 });
 
-$__System.registerDynamic("6a", [], true, function($__require, exports, module) {
+$__System.registerDynamic("74", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -9576,23 +12031,23 @@ $__System.registerDynamic("6a", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("6b", ["6a"], true, function($__require, exports, module) {
+$__System.registerDynamic("75", ["74"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('6a');
+  module.exports = $__require('74');
   return module.exports;
 });
 
-$__System.registerDynamic("6c", ["65"], true, function($__require, exports, module) {
+$__System.registerDynamic("76", ["6f"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
   "format cjs";
   (function(global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('65')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-color'], factory) : (factory((global.d3 = global.d3 || {}), global.d3));
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('6f')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-color'], factory) : (factory((global.d3 = global.d3 || {}), global.d3));
   }(this, function(exports, d3Color) {
     'use strict';
     function basis(t1, v0, v1, v2, v3) {
@@ -10087,16 +12542,16 @@ $__System.registerDynamic("6c", ["65"], true, function($__require, exports, modu
   return module.exports;
 });
 
-$__System.registerDynamic("66", ["6c"], true, function($__require, exports, module) {
+$__System.registerDynamic("70", ["76"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('6c');
+  module.exports = $__require('76');
   return module.exports;
 });
 
-$__System.registerDynamic("6d", [], true, function($__require, exports, module) {
+$__System.registerDynamic("77", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -10564,16 +13019,16 @@ $__System.registerDynamic("6d", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("65", ["6d"], true, function($__require, exports, module) {
+$__System.registerDynamic("6f", ["77"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('6d');
+  module.exports = $__require('77');
   return module.exports;
 });
 
-$__System.registerDynamic("6e", [], true, function($__require, exports, module) {
+$__System.registerDynamic("78", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -10786,23 +13241,23 @@ $__System.registerDynamic("6e", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("6f", ["6e"], true, function($__require, exports, module) {
+$__System.registerDynamic("79", ["78"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('6e');
+  module.exports = $__require('78');
   return module.exports;
 });
 
-$__System.registerDynamic("70", ["43", "69", "6b", "66", "65", "6f"], true, function($__require, exports, module) {
+$__System.registerDynamic("7a", ["43", "73", "75", "70", "6f", "79"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
   "format cjs";
   (function(global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('43'), $__require('69'), $__require('6b'), $__require('66'), $__require('65'), $__require('6f')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-selection', 'd3-dispatch', 'd3-timer', 'd3-interpolate', 'd3-color', 'd3-ease'], factory) : (factory((global.d3 = global.d3 || {}), global.d3, global.d3, global.d3, global.d3, global.d3, global.d3));
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('43'), $__require('73'), $__require('75'), $__require('70'), $__require('6f'), $__require('79')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-selection', 'd3-dispatch', 'd3-timer', 'd3-interpolate', 'd3-color', 'd3-ease'], factory) : (factory((global.d3 = global.d3 || {}), global.d3, global.d3, global.d3, global.d3, global.d3, global.d3));
   }(this, function(exports, d3Selection, d3Dispatch, d3Timer, d3Interpolate, d3Color, d3Ease) {
     'use strict';
     var emptyOn = d3Dispatch.dispatch("start", "end", "interrupt");
@@ -11499,16 +13954,16 @@ $__System.registerDynamic("70", ["43", "69", "6b", "66", "65", "6f"], true, func
   return module.exports;
 });
 
-$__System.registerDynamic("45", ["70"], true, function($__require, exports, module) {
+$__System.registerDynamic("45", ["7a"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('70');
+  module.exports = $__require('7a');
   return module.exports;
 });
 
-$__System.register('71', ['43', '3f'], function (_export) {
+$__System.register('7b', ['43', '3f'], function (_export) {
     'use strict';
 
     var d3_select, defaultHeaderTexts, cfg;
@@ -11531,8 +13986,12 @@ $__System.register('71', ['43', '3f'], function (_export) {
         }],
         execute: function () {
             cfg = {
-                "long-jump_m": { unit: "m", event: "male's high jump" },
-                "breaststroke-100_m": { unit: "s", event: "male's breaststroke 100m" }
+                "long-jump_m": { unit: "m", event: "men's high jump" },
+                "freestyle-200_m": { unit: "s", event: "men's freestyle 200m" },
+                "freestyle-100x4_relay_w": { unit: "s", event: "women's freestyle 4x100m" },
+                "breaststroke-100_m": { unit: "s", event: "men's breaststroke 100m" },
+                "medley-400_m": { unit: "s", event: "men's medley 400m" },
+                "medley-400_w": { unit: "s", event: "womens's medley 400m" }
             };
 
             _export('default', function (data, records) {
@@ -11566,10 +14025,10 @@ $__System.register('71', ['43', '3f'], function (_export) {
         }
     };
 });
-$__System.register('72', ['43', '44', '45', '71', '3f'], function (_export) {
+$__System.register('7c', ['43', '44', '45', '3f', '7b'], function (_export) {
     'use strict';
 
-    var d3_select, utils, transition, updateInfo, colors, sync;
+    var d3_select, utils, transition, colors, sync, updateInfo;
 
     // interaction
     function showBestAthlete(d1) {
@@ -11583,7 +14042,7 @@ $__System.register('72', ['43', '44', '45', '71', '3f'], function (_export) {
         });
 
         var elsName = elsAll.filter(function (d2) {
-            return d2.attrs.name === attrs.name;
+            return d2.attrs.name.indexOf(attrs.name) > -1;
         }).attr("fill-opacity", function (d) {
             return d.o === 0 ? 0 : 1;
         }).attr("r", function (d) {
@@ -11606,7 +14065,8 @@ $__System.register('72', ['43', '44', '45', '71', '3f'], function (_export) {
             return d.o;
         });
         elsAll.filter(function (d2) {
-            return d2.attrs.name === attrs.name;
+            if (attrs.name === "Germany") console.log(attrs.name, d2.attrs.name, d2.attrs.name.indexOf(attrs.name));
+            return d2.attrs.name.indexOf(attrs.name) > -1;
         }).attr("r", function (d) {
             return d.r;
         });
@@ -11618,7 +14078,7 @@ $__System.register('72', ['43', '44', '45', '71', '3f'], function (_export) {
         var pos = document.querySelector("#" + data.id).getBoundingClientRect();
 
         d3_select(".highlight").style("opacity", 1);
-        console.log("animate");
+        //console.log("animate");   
 
         d3_select(".dots-animate").classed("animate", true).style("width", data.r * 2 + "px").style("height", data.r * 2 + "px").style("top", pos.top - 1 + "px").style("left", pos.left - 1 + "px");
     }
@@ -11629,11 +14089,11 @@ $__System.register('72', ['43', '44', '45', '71', '3f'], function (_export) {
             utils = _3['default'];
         }, function (_2) {
             transition = _2.transition;
-        }, function (_4) {
-            updateInfo = _4['default'];
         }, function (_f) {
             colors = _f.colors;
             sync = _f.sync;
+        }, function (_b) {
+            updateInfo = _b['default'];
         }],
         execute: function () {
             _export('default', function (cfg) {
@@ -11729,7 +14189,7 @@ $__System.register('72', ['43', '44', '45', '71', '3f'], function (_export) {
                     }); // opacity for showAtheletes
 
                     var state = undefined;
-                    console.log("update");
+                    //console.log("update");
                     d3_select(".highlight").style("opacity", 0);
                     d3_select(".dots-animate").classed("animate", false);
                     window.setTimeout(function () {
@@ -11741,7 +14201,7 @@ $__System.register('72', ['43', '44', '45', '71', '3f'], function (_export) {
                             showBestAthlete(cfg.best);
                             d3_select(".highlight").style("opacity", 0);
                             d3_select(".dots-animate").classed("animate", false);
-                            console.log("after duration");
+                            //console.log("after duration");
                         }
                     }, opt.duration * 1000);
 
@@ -11756,7 +14216,7 @@ $__System.register('72', ['43', '44', '45', '71', '3f'], function (_export) {
         }
     };
 });
-$__System.registerDynamic("73", [], true, function($__require, exports, module) {
+$__System.registerDynamic("7d", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -11896,12 +14356,12 @@ $__System.registerDynamic("73", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("3e", ["73"], true, function($__require, exports, module) {
+$__System.registerDynamic("3e", ["7d"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('73');
+  module.exports = $__require('7d');
   return module.exports;
 });
 
@@ -11926,7 +14386,7 @@ $__System.registerDynamic("21", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("74", ["21"], true, function($__require, exports, module) {
+$__System.registerDynamic("7e", ["21"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -11938,26 +14398,26 @@ $__System.registerDynamic("74", ["21"], true, function($__require, exports, modu
   return module.exports;
 });
 
-$__System.registerDynamic("75", ["74"], true, function($__require, exports, module) {
+$__System.registerDynamic("7f", ["7e"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
   module.exports = {
-    "default": $__require('74'),
+    "default": $__require('7e'),
     __esModule: true
   };
   return module.exports;
 });
 
-$__System.register("3f", ["44", "75"], function (_export) {
+$__System.register("3f", ["44", "7f"], function (_export) {
     var utils, _Object$defineProperties, minWidth, padding, size, cols, width, height, chart, colors, sync, defaultHeaderTexts, point;
 
     return {
-        setters: [function (_2) {
-            utils = _2["default"];
-        }, function (_) {
-            _Object$defineProperties = _["default"];
+        setters: [function (_) {
+            utils = _["default"];
+        }, function (_f) {
+            _Object$defineProperties = _f["default"];
         }],
         execute: function () {
             "use strict";
@@ -12057,7 +14517,7 @@ $__System.register("3f", ["44", "75"], function (_export) {
         }
     };
 });
-$__System.register('76', ['43', '4b', '3e', '3f'], function (_export) {
+$__System.register('80', ['43', '4b', '3e', '3f'], function (_export) {
 
     /* param: coord - x or y */
     /* param: direction - h or v, isJump? */
@@ -12172,8 +14632,8 @@ $__System.register('76', ['43', '4b', '3e', '3f'], function (_export) {
         }
     };
 });
-$__System.register('54', ['33', '43', '67', '71', '72', '76', '4b'], function (_export) {
-    var _Object$keys, d3_select, calcScale, updateInfo, Dots, Axis, d3_extent;
+$__System.register('52', ['33', '43', '71', '80', '4b', '7b', '7c'], function (_export) {
+    var _Object$keys, d3_select, calcScale, Axis, d3_extent, updateInfo, Dots;
 
     function getDomain(data) {
         return {
@@ -12188,7 +14648,7 @@ $__System.register('54', ['33', '43', '67', '71', '72', '76', '4b'], function (_
 
     function toState(els, data, name) {
         window.setTimeout(function () {
-            console.log("===", name, "===", data.delay, data.duration);
+            //console.log("===", name, "===", data.delay, data.duration);
 
             var scale = calcScale(data.domain);
             _Object$keys(els).forEach(function (key, i) {
@@ -12216,13 +14676,13 @@ $__System.register('54', ['33', '43', '67', '71', '72', '76', '4b'], function (_
         }, function (_3) {
             calcScale = _3['default'];
         }, function (_4) {
-            updateInfo = _4['default'];
-        }, function (_5) {
-            Dots = _5['default'];
-        }, function (_6) {
-            Axis = _6['default'];
+            Axis = _4['default'];
         }, function (_b) {
             d3_extent = _b.extent;
+        }, function (_b2) {
+            updateInfo = _b2['default'];
+        }, function (_c) {
+            Dots = _c['default'];
         }],
         execute: function () {
             //import Grid from '../draw/grid';
@@ -12231,7 +14691,7 @@ $__System.register('54', ['33', '43', '67', '71', '72', '76', '4b'], function (_
 
             _export('default', function (data, dataCombo) {
                 var domain = getDomain(dataCombo);
-                console.log(domain);
+                //console.log(domain);
 
                 // init, draw all
                 var scale = calcScale(domain);
@@ -12331,7 +14791,7 @@ $__System.register('54', ['33', '43', '67', '71', '72', '76', '4b'], function (_
         }
     };
 });
-$__System.registerDynamic("77", [], true, function($__require, exports, module) {
+$__System.registerDynamic("81", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -12797,29 +15257,29 @@ $__System.registerDynamic("77", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("4b", ["77"], true, function($__require, exports, module) {
+$__System.registerDynamic("4b", ["81"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('77');
+  module.exports = $__require('81');
   return module.exports;
 });
 
-$__System.register('78', ['33', '53', '54', '55', '56', '4b'], function (_export) {
-    var _Object$keys, parseData, result, jsonRecord, jsonFinals, d3_extent;
+$__System.register('82', ['33', '51', '52', '60', '5f', '4b'], function (_export) {
+    var _Object$keys, parseData, result, jsonFinals, jsonRecord, d3_extent;
 
     return {
         setters: [function (_) {
             _Object$keys = _['default'];
-        }, function (_4) {
-            parseData = _4['default'];
-        }, function (_5) {
-            result = _5['default'];
-        }, function (_2) {
-            jsonRecord = _2['default'];
         }, function (_3) {
-            jsonFinals = _3['default'];
+            parseData = _3['default'];
+        }, function (_4) {
+            result = _4['default'];
+        }, function (_2) {
+            jsonFinals = _2['default'];
+        }, function (_f) {
+            jsonRecord = _f['default'];
         }, function (_b) {
             d3_extent = _b.extent;
         }],
@@ -12880,7 +15340,7 @@ $__System.registerDynamic("44", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.register("79", [], function (_export) {
+$__System.register("83", [], function (_export) {
   "use strict";
 
   return {
@@ -12922,7 +15382,7 @@ $__System.register("79", [], function (_export) {
     }
   };
 });
-$__System.registerDynamic("7a", [], true, function($__require, exports, module) {
+$__System.registerDynamic("84", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -13847,19 +16307,19 @@ $__System.registerDynamic("7a", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("43", ["7a"], true, function($__require, exports, module) {
+$__System.registerDynamic("43", ["84"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('7a');
+  module.exports = $__require('84');
   return module.exports;
 });
 
-$__System.register('1', ['3', '4', '5', '43', '44', '52', '53', '56', '78', '79', '4c', '4d', '4e', '4f'], function (_export) {
+$__System.register('1', ['3', '4', '5', '43', '44', '50', '51', '55', '58', '82', '83', '4c', '4d', '5b', '5e'], function (_export) {
     'use strict';
 
-    var iframeMessenger, embedHTML, chartHTML, d3_select, utils, breaststroke100_m, getData, long_jump_m, longjump_m, throttle, demo, team_pursuit_m, freestyle200_m, breaststroke200_m;
+    var iframeMessenger, embedHTML, chartHTML, d3_select, utils, breaststroke100_m, getData, freestyle200_m, freestyle100x4_relay_w, longjump_m, throttle, demo, team_pursuit_m, medley400_m, medley400_w;
 
     //console.log(event);
     //console.log(data);
@@ -13879,28 +16339,30 @@ $__System.register('1', ['3', '4', '5', '43', '44', '52', '53', '56', '78', '79'
             embedHTML = _2['default'];
         }, function (_3) {
             chartHTML = _3['default'];
-        }, function (_10) {
-            d3_select = _10.select;
-        }, function (_8) {
-            utils = _8['default'];
-        }, function (_6) {
-            breaststroke100_m = _6['default'];
+        }, function (_11) {
+            d3_select = _11.select;
+        }, function (_9) {
+            utils = _9['default'];
+        }, function (_5) {
+            breaststroke100_m = _5['default'];
         }, function (_4) {
             getData = _4['default'];
-        }, function (_5) {
-            long_jump_m = _5['default'];
+        }, function (_6) {
+            freestyle200_m = _6['default'];
         }, function (_7) {
-            longjump_m = _7['default'];
-        }, function (_9) {
-            throttle = _9['default'];
+            freestyle100x4_relay_w = _7['default'];
+        }, function (_8) {
+            longjump_m = _8['default'];
+        }, function (_10) {
+            throttle = _10['default'];
         }, function (_c) {
             demo = _c['default'];
         }, function (_d) {
             team_pursuit_m = _d['default'];
+        }, function (_b) {
+            medley400_m = _b['default'];
         }, function (_e) {
-            freestyle200_m = _e['default'];
-        }, function (_f) {
-            breaststroke200_m = _f['default'];
+            medley400_w = _e['default'];
         }],
         execute: function () {
 
@@ -13923,11 +16385,17 @@ $__System.register('1', ['3', '4', '5', '43', '44', '52', '53', '56', '78', '79'
                     case "team-pursuit_m":
                         data = getData(team_pursuit_m, "T");
                         break;
-                    case "freestyle200_m":
-                        data = getData(freestyle200_m, "T");
+                    case "medley-400_w":
+                        medley400_w();
                         break;
-                    case "breaststroke-200_m":
-                        data = getData(breaststroke200_m, "T");
+                    case "medley-400_m":
+                        medley400_m();
+                        break;
+                    case "freestyle-100x4_relay_w":
+                        freestyle100x4_relay_w();
+                        break;
+                    case "freestyle-200_m":
+                        freestyle200_m();
                         break;
                     case "breaststroke-100_m":
                         breaststroke100_m();

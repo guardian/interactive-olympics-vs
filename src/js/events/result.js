@@ -8,7 +8,7 @@ import Axis from '../draw/axis';
 
 export default function(data, dataCombo) {
     let domain = getDomain(dataCombo);
-    console.log(domain);
+    //console.log(domain);
 
     // init, draw all
     let scale = calcScale(domain);
@@ -108,7 +108,7 @@ function getDomain(data) {
 
 function toState(els, data, name) {
     window.setTimeout(() => {
-        console.log("===", name, "===", data.delay, data.duration);
+        //console.log("===", name, "===", data.delay, data.duration);
     
         let scale = calcScale(data.domain);
         Object.keys(els).forEach((key, i) => {

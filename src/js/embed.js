@@ -5,12 +5,13 @@ import chartHTML from './text/chart.html!text';
 import demo from './eventDemo/result';
 import getData from './events/data';
 
-import long_jump_m from '../dataDummy/long-jump_m.json!json';
 import team_pursuit_m from '../dataDummy/team-pursuit_m.json!json';
-import freestyle200_m from '../dataDummy/freestyle200_m.json!json';
-import breaststroke200_m from '../dataDummy/breaststroke200_m.json!json';
 
 import breaststroke100_m from '../js/events/breaststroke100_m';
+import freestyle200_m from '../js/events/freestyle200_m';
+import freestyle100x4_relay_w from '../js/events/freestyle100x4_relay_w';
+import medley400_m from '../js/events/medley400_m';
+import medley400_w from '../js/events/medley400_w';
 import longjump_m from '../js/events/longjump_m';
 
 import utils from './lib/utils';
@@ -37,11 +38,17 @@ window.init = function init(el, config) {
         case "team-pursuit_m": 
             data = getData(team_pursuit_m, "T");
         break;
-        case "freestyle200_m": 
-            data = getData(freestyle200_m, "T");
+        case "medley-400_w": 
+            medley400_w();
+        break;       
+        case "medley-400_m": 
+            medley400_m();
+        break;       
+        case "freestyle-100x4_relay_w": 
+            freestyle100x4_relay_w();
         break;
-        case "breaststroke-200_m": 
-            data = getData(breaststroke200_m, "T");
+        case "freestyle-200_m": 
+            freestyle200_m();
         break;
         case "breaststroke-100_m": 
             breaststroke100_m();
