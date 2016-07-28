@@ -74,7 +74,7 @@ export default function(cfg) {
         .attr("cx", d => cfg.cx(d, cfg.radius, scale.x) + "%")
         .attr("cy", d => {
             let cy = cfg.cy(d, cfg.radius, scale.y);
-            if (d.id === cfg.wr && cy > 95) { cy = 75; }
+            if (d.id === cfg.wr && cy > 95) { cy = 52; }
             return cy + "%";
         });
 

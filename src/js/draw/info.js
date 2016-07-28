@@ -15,11 +15,11 @@ export default function(data, records) {
     if (!records) {
 
         cleanFields();
-        d3_select(".js-headline").text(defaultHeaderTexts.headline[data]);
-        d3_select(".js-standfirst").text(defaultHeaderTexts.standfirst[data]);
+        //d3_select(".js-headline").text(defaultHeaderTexts.headline[data]);
+        //d3_select(".js-standfirst").text(defaultHeaderTexts.standfirst[data]);
          
     } else {
-
+        // TODO: double check calc
         let cFinal = records.filter(dr => isNumeric(dr.color)).length; 
         let cWorld = records.filter(dr => dr.color === "wr").length;
         let cMedal = records.length - cFinal - cWorld; 
@@ -47,6 +47,6 @@ function isNumeric(n) {
 }
 
 function cleanFields() {
-    let keys = ["team", "final", "medal", "world", "standfirst"];
+    let keys = ["headline", "team", "final", "medal", "world", "standfirst"];
     keys.forEach(key => d3_select(".js-" + key).text(""));
 }

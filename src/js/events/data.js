@@ -65,7 +65,7 @@ function parseDataFinals(dataRaw, type) {
 
 function getName(participant, type, team) {
     return type === "Team" ? 
-        team + " ("+participant.map(dp => dp.competitor.fullName).join(", ")+")" :  //team
+        team : //+ " ("+participant.map(dp => dp.competitor.fullName).join(", ")+")" :  //team
         participant.competitor.fullName;                            //individual
 }
 

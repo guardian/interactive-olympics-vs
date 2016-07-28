@@ -285,7 +285,7 @@ $__System.registerDynamic("5", [], true, function($__require, exports, module) {
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = "<svg class=\"js-chart main\">\n    <g class=\"axis-y\"></g>\n    <g class=\"axis-x\"></g>\n    <!--g class=\"axis-highlight\">\n        <line class=\"js-highlight-h\" x1=\"0\" x2=\"95.5%\" stroke=\"#dcdcdc\" stroke-width=\"3px\" style=\"opacity: 0\"></line>\n    </g-->\n    <g class=\"line-ruler\"></g>\n    <g class=\"line-marks\"></g>\n    <g class=\"line-frame\"></g>\n    <g class=\"dots-final\"></g>\n    <g class=\"dots-medal\"></g>\n    <g class=\"dots-world\"></g>\n    <g class=\"dots-highlight\"></g>\n</svg>\n<div class=\"highlight\">\n    <div class=\"dots-select\"></div>\n    <div class=\"dots-animate\"></div>\n    <div class=\"line-v\"></div>\n    <div class=\"line-h\"></div>\n    <div class=\"text-x\"></div>\n    <div class=\"text-y\"></div>\n</div>\n<div class=\"header\">\n    <h2 class=\"m-0\">\n        <span class=\"js-headline\"></span>\n        <span class=\"js-team f-14 c-g\"></span>\n    </h2>\n    <p class=\"mb-10\">\n        <span class=\"js-final count count-final\"></span>\n        <span class=\"js-medal count count-medal\"></span>\n        <span class=\"js-world count count-world\"></span>\n    </p>\n    <p class=\"js-standfirst\"></p>\n</div>\n<div class=\"states\">\n    <span class=\"btn-play\">Play states:</span>\n    <span class=\"btn btn-final\" data-dots=\"final\">final</span> |\n    <span class=\"btn btn-medal\" data-dots=\"medal\">medal</span> |\n    <span class=\"btn btn-world\" data-dots=\"world\">world records</span> |\n    <span class=\"btn btn-mixed\" data-dots=\"mixed\">all</span>\n</div>\n";
+  module.exports = "<header>\n    <h2>But ... how did it compare?</h2>\n    <p>\n        It was a WR, OR - how much better. Silver or bronze did better than gold last Olympic, or gold was worst than prior Olympics.\n        <br>\n        <span class=\"js-state-current\"></span> \n        ...\n    </p>\n    <div class=\"btn-next\">\n        <span class=\"js-state-next\"></span>\n        <svg class=\"arrow-right\" width=\"28\" height=\"28\" viewBox=\"0 0 30 30\"><path d=\"M22.8 14.6l-7.6-7.6-.7.7 5.5 6.6h-14v1.5h14l-5.5 6.6.7.7 7.6-7.6v-.9\" fill=\"#fff\"/></svg>\n    </div>\n</header>\n<div class=\"graph\">\n    <svg class=\"chart js-chart\">\n        <g class=\"axis-y\"></g>\n        <g class=\"axis-x\"></g>\n        <g class=\"line-ruler\"></g>\n        <g class=\"line-marks\"></g>\n        <g class=\"line-frame\"></g>\n        <g class=\"dots-final\"></g>\n        <g class=\"dots-medal\"></g>\n        <g class=\"dots-world\"></g>\n        <g class=\"dots-highlight\"></g>\n    </svg>\n    <div class=\"highlight\">\n        <div class=\"dots-select\"></div>\n        <div class=\"dots-animate\"></div>\n        <div class=\"line-v\"></div>\n        <div class=\"line-h\"></div>\n        <div class=\"text-x\"></div>\n        <div class=\"text-y\"></div>\n    </div>\n    <div class=\"tooltip\">\n        <h2 class=\"m-0\">\n            <span class=\"js-headline\"></span>\n            <span class=\"js-team f-14 c-g\"></span>\n        </h2>\n        <p class=\"mb-10\">\n            <span class=\"js-final count count-final\"></span>\n            <span class=\"js-medal count count-medal\"></span>\n            <span class=\"js-world count count-world\"></span>\n        </p>\n        <p class=\"js-standfirst\"></p>\n    </div>\n    <div class=\"states\">\n        <span class=\"btn-play\">Play states:</span>\n        <span class=\"btn btn-final\" data-dots=\"final\">final</span> |\n        <span class=\"btn btn-medal\" data-dots=\"medal\">medal</span> |\n        <span class=\"btn btn-world\" data-dots=\"world\">world records</span> |\n        <span class=\"btn btn-mixed\" data-dots=\"mixed\">all</span>\n    </div>\n</div>\n";
   return module.exports;
 });
 
@@ -9162,9 +9162,7 @@ $__System.register("51", ["32", "44"], function (_export) {
     }
 
     function getName(participant, type, team) {
-        return type === "Team" ? team + " (" + participant.map(function (dp) {
-            return dp.competitor.fullName;
-        }).join(", ") + ")" : //team
+        return type === "Team" ? team : //+ " ("+participant.map(dp => dp.competitor.fullName).join(", ")+")" :  //team
         participant.competitor.fullName; //individual
     }
 
@@ -13973,7 +13971,7 @@ $__System.register('7b', ['43', '3f'], function (_export) {
     }
 
     function cleanFields() {
-        var keys = ["team", "final", "medal", "world", "standfirst"];
+        var keys = ["headline", "team", "final", "medal", "world", "standfirst"];
         keys.forEach(function (key) {
             return d3_select(".js-" + key).text("");
         });
@@ -13999,28 +13997,28 @@ $__System.register('7b', ['43', '3f'], function (_export) {
                 if (!records) {
 
                     cleanFields();
-                    d3_select(".js-headline").text(defaultHeaderTexts.headline[data]);
-                    d3_select(".js-standfirst").text(defaultHeaderTexts.standfirst[data]);
+                    //d3_select(".js-headline").text(defaultHeaderTexts.headline[data]);
+                    //d3_select(".js-standfirst").text(defaultHeaderTexts.standfirst[data]);
                 } else {
+                        // TODO: double check calc
+                        var cFinal = records.filter(function (dr) {
+                            return isNumeric(dr.color);
+                        }).length;
+                        var cWorld = records.filter(function (dr) {
+                            return dr.color === "wr";
+                        }).length;
+                        var cMedal = records.length - cFinal - cWorld;
+                        var cAll = cMedal + cWorld;
 
-                    var cFinal = records.filter(function (dr) {
-                        return isNumeric(dr.color);
-                    }).length;
-                    var cWorld = records.filter(function (dr) {
-                        return dr.color === "wr";
-                    }).length;
-                    var cMedal = records.length - cFinal - cWorld;
-                    var cAll = cMedal + cWorld;
-
-                    var attrs = data.attrs;
-                    var _event = window.location.search.replace("?", "");
-                    d3_select(".js-headline").text(attrs.name);
-                    d3_select(".js-team").text(attrs.team);
-                    d3_select(".js-final").text(cAll !== 0 ? "1 " + data.color + " out of " + cAll : "rank " + data.color + " in 2016 fianl");
-                    d3_select(".js-medal").text(cMedal !== 0 ? ", " + cMedal + " olympic medals" : "");
-                    d3_select(".js-world").text(cWorld !== 0 ? ", " + cWorld + " world records" : "");
-                    d3_select(".js-standfirst").text("In " + attrs.year + " " + cfg[_event].event + " event, " + attrs.name.split(" ")[0] + " marked " + attrs.mark + cfg[_event].unit + " which " + (attrs.dist !== 0 ? "could be " + attrs.dist + "m behind " : "is ") + "current world record.");
-                }
+                        var attrs = data.attrs;
+                        var _event = window.location.search.replace("?", "");
+                        d3_select(".js-headline").text(attrs.name);
+                        d3_select(".js-team").text(attrs.team);
+                        d3_select(".js-final").text(cAll !== 0 ? "1 " + data.color + " out of " + cAll : "rank " + data.color + " in 2016 fianl");
+                        d3_select(".js-medal").text(cMedal !== 0 ? ", " + cMedal + " olympic medals" : "");
+                        d3_select(".js-world").text(cWorld !== 0 ? ", " + cWorld + " world records" : "");
+                        d3_select(".js-standfirst").text("In " + attrs.year + " " + cfg[_event].event + " event, " + attrs.name.split(" ")[0] + " marked " + attrs.mark + cfg[_event].unit + " which " + (attrs.dist !== 0 ? "could be " + attrs.dist + "m behind " : "is ") + "current world record.");
+                    }
             });
         }
     };
@@ -14065,7 +14063,6 @@ $__System.register('7c', ['43', '44', '45', '3f', '7b'], function (_export) {
             return d.o;
         });
         elsAll.filter(function (d2) {
-            if (attrs.name === "Germany") console.log(attrs.name, d2.attrs.name, d2.attrs.name.indexOf(attrs.name));
             return d2.attrs.name.indexOf(attrs.name) > -1;
         }).attr("r", function (d) {
             return d.r;
@@ -14175,7 +14172,7 @@ $__System.register('7c', ['43', '44', '45', '3f', '7b'], function (_export) {
                     }).attr("cy", function (d) {
                         var cy = cfg.cy(d, cfg.radius, scale.y);
                         if (d.id === cfg.wr && cy > 95) {
-                            cy = 75;
+                            cy = 52;
                         }
                         return cy + "%";
                     });
@@ -14365,6 +14362,127 @@ $__System.registerDynamic("3e", ["7d"], true, function($__require, exports, modu
   return module.exports;
 });
 
+$__System.register('7e', ['43', '4b', '3e', '3f'], function (_export) {
+
+    /* param: coord - x or y */
+    /* param: direction - h or v, isJump? */
+    'use strict';
+
+    var d3_select, d3_range, d3_extent, d3_axisBottom, sync;
+    return {
+        setters: [function (_) {
+            d3_select = _.select;
+        }, function (_b) {
+            d3_range = _b.range;
+            d3_extent = _b.extent;
+        }, function (_e) {
+            d3_axisBottom = _e.axisBottom;
+        }, function (_f) {
+            sync = _f.sync;
+        }],
+        execute: function () {
+            _export('default', function (cfg) {
+                var axis = undefined,
+                    line = undefined,
+                    text = undefined;
+                var coord = cfg.coord;
+
+                var getSteps = function getSteps(scale) {
+                    switch (true) {
+                        //TODO: steps case
+                        case cfg.value === "year":
+                            var min = scale.domain[coord][0];
+                            var max = scale.domain[coord][1];
+                            var range = min === max ? [min] : d3_range(max, min, -4);
+
+                            return range; //[range.length-1] === min ? range : range.concat([min]);
+                        case cfg.value === "mark":
+                            //TODO: remove axisBottom later?
+                            var d3_axis = d3_axisBottom(scale[coord]).ticks(8);
+                            return d3_axis.scale().ticks(d3_axis.ticks()[0]).reverse();
+                    }
+                };
+
+                this.init = function (data, scale) {
+                    axis = d3_select(".axis-" + coord).attr("class", "axis-" + cfg.value);
+                };
+
+                this.update = function (opt, scale) {
+                    var steps = getSteps(scale);
+
+                    var divHide = undefined;
+                    var axisSize = document.querySelector(".js-chart").getBoundingClientRect();
+                    switch (coord) {
+                        case "x":
+                            divHide = Math.ceil(24 * steps.length / (axisSize.width - 30));break;
+                        case "y":
+                            divHide = Math.ceil(12 * steps.length / (axisSize.height - 30));break;
+                    }
+                    //console.log(coord, steps.length, divHide);
+
+                    line = axis.selectAll("line").data(steps);
+                    text = axis.selectAll("text").data(steps);
+
+                    // exit
+                    line.exit().remove();
+                    text.exit().remove();
+
+                    // enter
+                    //window.setTimeout(() => {
+
+                    line.enter().append("line").attr("opacity", 0).transition().duration(opt.duration * 1000)
+                    //.attr("opacity", 1)
+                    .attr("opacity", function (d, i) {
+                        return i % divHide === 0 ? 1 : 0.25;
+                    }).attr("x1", function (d) {
+                        return 0;
+                    }).attr("x2", function (d) {
+                        return "95.5%";
+                    }).attr("y1", function (d) {
+                        return 0;
+                    }).attr("y2", function (d) {
+                        return "99%";
+                    }).attr(coord + "1", function (d) {
+                        return scale[coord](d) + "%";
+                    }).attr(coord + "2", function (d) {
+                        return scale[coord](d) + "%";
+                    });
+
+                    text.enter().append("text").transition().duration(opt.duration * 1000).attr("x", function (d) {
+                        return "101%";
+                    }).attr("y", function (d) {
+                        return "100%";
+                    }).attr("dy", coord === "x" ? ".71em" : ".3em").attr(coord, function (d) {
+                        return scale[coord](d) + "%";
+                    }).attr("opacity", function (d, i) {
+                        return i % divHide === 0 ? 1 : 0;
+                    }).text(function (d) {
+                        return Math.round(Math.abs(d) * 100) / 100;
+                    });
+
+                    //}, (opt.duration-1)*1000);
+
+                    // update
+                    line.transition().duration(opt.duration * 1000).attr("opacity", function (d, i) {
+                        return i % divHide === 0 ? 1 : 0.25;
+                    }).attr(coord + "1", function (d) {
+                        return scale[coord](d) + "%";
+                    }).attr(coord + "2", function (d) {
+                        return scale[coord](d) + "%";
+                    });
+
+                    text.transition().duration(opt.duration * 1000).attr("dy", coord === "x" ? ".71em" : ".3em").attr(coord, function (d) {
+                        return scale[coord](d) + "%";
+                    }).attr("opacity", function (d, i) {
+                        return i % divHide === 0 ? 1 : 0;
+                    }).text(function (d) {
+                        return Math.round(Math.abs(d) * 100) / 100;
+                    });
+                };
+            });
+        }
+    };
+});
 $__System.registerDynamic("21", [], true, function($__require, exports, module) {
   ;
   var define,
@@ -14386,7 +14504,7 @@ $__System.registerDynamic("21", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("7e", ["21"], true, function($__require, exports, module) {
+$__System.registerDynamic("7f", ["21"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -14398,26 +14516,26 @@ $__System.registerDynamic("7e", ["21"], true, function($__require, exports, modu
   return module.exports;
 });
 
-$__System.registerDynamic("7f", ["7e"], true, function($__require, exports, module) {
+$__System.registerDynamic("80", ["7f"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
   module.exports = {
-    "default": $__require('7e'),
+    "default": $__require('7f'),
     __esModule: true
   };
   return module.exports;
 });
 
-$__System.register("3f", ["44", "7f"], function (_export) {
+$__System.register("3f", ["44", "80"], function (_export) {
     var utils, _Object$defineProperties, minWidth, padding, size, cols, width, height, chart, colors, sync, defaultHeaderTexts, point;
 
     return {
-        setters: [function (_) {
-            utils = _["default"];
-        }, function (_f) {
-            _Object$defineProperties = _f["default"];
+        setters: [function (_2) {
+            utils = _2["default"];
+        }, function (_) {
+            _Object$defineProperties = _["default"];
         }],
         execute: function () {
             "use strict";
@@ -14517,123 +14635,8 @@ $__System.register("3f", ["44", "7f"], function (_export) {
         }
     };
 });
-$__System.register('80', ['43', '4b', '3e', '3f'], function (_export) {
-
-    /* param: coord - x or y */
-    /* param: direction - h or v, isJump? */
-    'use strict';
-
-    var d3_select, d3_range, d3_extent, d3_axisBottom, sync;
-    return {
-        setters: [function (_) {
-            d3_select = _.select;
-        }, function (_b) {
-            d3_range = _b.range;
-            d3_extent = _b.extent;
-        }, function (_e) {
-            d3_axisBottom = _e.axisBottom;
-        }, function (_f) {
-            sync = _f.sync;
-        }],
-        execute: function () {
-            _export('default', function (cfg) {
-                var axis = undefined,
-                    line = undefined,
-                    text = undefined;
-                var coord = cfg.coord;
-
-                var getSteps = function getSteps(scale) {
-                    switch (true) {
-                        //TODO: steps case
-                        case cfg.value === "year":
-                            var min = scale.domain[coord][0];
-                            var max = scale.domain[coord][1];
-                            var range = min === max ? [min] : d3_range(max, min, -4);
-
-                            return range; //[range.length-1] === min ? range : range.concat([min]);
-                        case cfg.value === "mark":
-                            //TODO: remove axisBottom later?
-                            var d3_axis = d3_axisBottom(scale[coord]).ticks(8);
-                            return d3_axis.scale().ticks(d3_axis.ticks()[0]).reverse();
-                    }
-                };
-
-                this.init = function (data, scale) {
-                    axis = d3_select(".axis-" + coord).attr("class", "axis-" + cfg.value);
-                };
-
-                this.update = function (opt, scale) {
-                    var steps = getSteps(scale);
-
-                    var divHide = undefined;
-                    var axisSize = document.querySelector(".js-chart").getBoundingClientRect();
-                    switch (coord) {
-                        case "x":
-                            divHide = Math.ceil(24 * steps.length / (axisSize.width - 30));break;
-                        case "y":
-                            divHide = Math.ceil(12 * steps.length / (axisSize.height - 30));break;
-                    }
-                    //console.log(coord, steps.length, divHide);
-
-                    line = axis.selectAll("line").data(steps);
-                    text = axis.selectAll("text").data(steps);
-
-                    // exit
-                    line.exit().remove();
-                    text.exit().remove();
-
-                    // enter
-                    //window.setTimeout(() => {
-
-                    line.enter().append("line").attr("opacity", 0).transition().duration(opt.duration * 1000).attr("opacity", 1).attr("x1", function (d) {
-                        return 0;
-                    }).attr("x2", function (d) {
-                        return "95.5%";
-                    }).attr("y1", function (d) {
-                        return 0;
-                    }).attr("y2", function (d) {
-                        return "99%";
-                    }).attr(coord + "1", function (d) {
-                        return scale[coord](d) + "%";
-                    }).attr(coord + "2", function (d) {
-                        return scale[coord](d) + "%";
-                    });
-
-                    text.enter().append("text").transition().duration(opt.duration * 1000).attr("x", function (d) {
-                        return "101%";
-                    }).attr("y", function (d) {
-                        return "100%";
-                    }).attr("dy", coord === "x" ? ".71em" : ".3em").attr(coord, function (d) {
-                        return scale[coord](d) + "%";
-                    }).attr("opacity", function (d, i) {
-                        return i % divHide === 0 ? 1 : 0;
-                    }).text(function (d) {
-                        return Math.round(Math.abs(d) * 100) / 100;
-                    });
-
-                    //}, (opt.duration-1)*1000);
-
-                    // update
-                    line.transition().duration(opt.duration * 1000).attr(coord + "1", function (d) {
-                        return scale[coord](d) + "%";
-                    }).attr(coord + "2", function (d) {
-                        return scale[coord](d) + "%";
-                    });
-
-                    text.transition().duration(opt.duration * 1000).attr("dy", coord === "x" ? ".71em" : ".3em").attr(coord, function (d) {
-                        return scale[coord](d) + "%";
-                    }).attr("opacity", function (d, i) {
-                        return i % divHide === 0 ? 1 : 0;
-                    }).text(function (d) {
-                        return Math.round(Math.abs(d) * 100) / 100;
-                    });
-                };
-            });
-        }
-    };
-});
-$__System.register('52', ['33', '43', '71', '80', '4b', '7b', '7c'], function (_export) {
-    var _Object$keys, d3_select, calcScale, Axis, d3_extent, updateInfo, Dots;
+$__System.register('52', ['33', '43', '71', '4b', '7b', '7c', '7e', '3f'], function (_export) {
+    var _Object$keys, d3_select, calcScale, d3_extent, updateInfo, Dots, Axis, defaultHeaderTexts;
 
     function getDomain(data) {
         return {
@@ -14646,7 +14649,14 @@ $__System.register('52', ['33', '43', '71', '80', '4b', '7b', '7c'], function (_
         };
     }
 
-    function toState(els, data, name) {
+    function getNextState(stateName) {
+        var stateList = ["final", "medal", "world", "mixed"];
+        var stateLen = stateList.length;
+        var stateNumbNext = (stateList.indexOf(stateName) + 1) % stateLen;
+        return stateList[stateNumbNext];
+    }
+
+    function toState(els, data, stateName) {
         window.setTimeout(function () {
             //console.log("===", name, "===", data.delay, data.duration);
 
@@ -14656,16 +14666,21 @@ $__System.register('52', ['33', '43', '71', '80', '4b', '7b', '7c'], function (_
             });
 
             calcScale(data.domain);
-            d3_select(".js-chart").attr("data-state", name);
+            d3_select(".js-chart").attr("data-state", stateName);
 
             d3_select(".states").selectAll(".btn").classed("btn-focus", false);
-            d3_select(".btn-" + name).classed("btn-focus", true);
+            d3_select(".btn-" + stateName).classed("btn-focus", true);
 
-            d3_select(".header").selectAll(".count").classed("count-focus", false);
-            d3_select(".count-" + name).classed("count-focus", true);
+            d3_select(".tooltip").selectAll(".count").classed("count-focus", false);
+            d3_select(".count-" + stateName).classed("count-focus", true);
+
+            var next = defaultHeaderTexts.headline[getNextState(stateName)];
+            next = next === "fianl" ? "Replay" : "Next with " + next;
+            d3_select(".js-state-current").text(defaultHeaderTexts.headline[stateName]);
+            d3_select(".js-state-next").text(next.toLowerCase());
 
             // update info
-            updateInfo(name);
+            updateInfo(stateName);
         }, data.delay * 1000);
     }
     return {
@@ -14675,19 +14690,21 @@ $__System.register('52', ['33', '43', '71', '80', '4b', '7b', '7c'], function (_
             d3_select = _2.select;
         }, function (_3) {
             calcScale = _3['default'];
-        }, function (_4) {
-            Axis = _4['default'];
         }, function (_b) {
             d3_extent = _b.extent;
         }, function (_b2) {
             updateInfo = _b2['default'];
         }, function (_c) {
             Dots = _c['default'];
+        }, function (_e) {
+            Axis = _e['default'];
+        }, function (_f) {
+            defaultHeaderTexts = _f.defaultHeaderTexts;
         }],
         execute: function () {
-            //import Grid from '../draw/grid';
-
             'use strict';
+
+            //import Grid from '../draw/grid';
 
             _export('default', function (data, dataCombo) {
                 var domain = getDomain(dataCombo);
@@ -14766,7 +14783,7 @@ $__System.register('52', ['33', '43', '71', '80', '4b', '7b', '7c'], function (_
                 };
 
                 // default
-                // toState(els, state.final, "final");
+                toState(els, state.final, "final");
                 // play states
                 document.querySelector(".btn-play").addEventListener("click", function () {
                     play();
@@ -14776,7 +14793,7 @@ $__System.register('52', ['33', '43', '71', '80', '4b', '7b', '7c'], function (_
                         toState(els, state[key], [key]);
                     });
                 };
-                play();
+                //play();
 
                 // state on event
                 var btns = document.querySelectorAll(".btn");
@@ -14786,6 +14803,16 @@ $__System.register('52', ['33', '43', '71', '80', '4b', '7b', '7c'], function (_
                         var data = state[name];
                         toState(els, { domain: data.domain, opacity: data.opacity, delay: 0, duration: 2 }, name);
                     });
+                });
+
+                document.querySelector(".btn-next").addEventListener("click", function () {
+                    // current
+                    var stateName = d3_select(".js-chart").attr("data-state");
+                    // next
+                    var stateNameNext = getNextState(stateName);
+                    var stateDataNext = state[stateNameNext];
+
+                    toState(els, { domain: stateDataNext.domain, opacity: stateDataNext.opacity, delay: 0, duration: 2 }, stateNameNext);
                 });
             });
         }
@@ -16324,11 +16351,11 @@ $__System.register('1', ['3', '4', '5', '43', '44', '50', '51', '55', '58', '82'
     //console.log(event);
     //console.log(data);
 
-    function setInteractiveSize() {
+    function setGraphSize() {
         var size = utils.getWindowSize();
         var height = Math.round(size.w * 0.6);
 
-        d3_select(".js-interactive").style("height", height + "px");
+        d3_select(".graph").style("height", height + "px");
         //.style("width", size.w + "px")
         //console.log(size.w, height);
     }
@@ -16378,8 +16405,8 @@ $__System.register('1', ['3', '4', '5', '43', '44', '50', '51', '55', '58', '82'
 
                 var data = undefined;
                 el.innerHTML = chartHTML;
-                window.addEventListener("resize", throttle(setInteractiveSize, 500));
-                setInteractiveSize();
+                window.addEventListener("resize", throttle(setGraphSize, 500));
+                setGraphSize();
 
                 switch (event) {
                     case "team-pursuit_m":

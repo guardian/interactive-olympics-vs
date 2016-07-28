@@ -31,8 +31,8 @@ window.init = function init(el, config) {
 
     let data;
     el.innerHTML = chartHTML;
-    window.addEventListener("resize", throttle(setInteractiveSize, 500));
-    setInteractiveSize();
+    window.addEventListener("resize", throttle(setGraphSize, 500));
+    setGraphSize();
 
     switch (event) {
         case "team-pursuit_m": 
@@ -63,11 +63,11 @@ window.init = function init(el, config) {
     //console.log(data); 
 };
 
-function setInteractiveSize() {
+function setGraphSize() {
     let size = utils.getWindowSize();
     let height = Math.round(size.w*0.6);
     
-    d3_select(".js-interactive")
+    d3_select(".graph")
     .style("height", height + "px");
     //.style("width", size.w + "px")
     //console.log(size.w, height);

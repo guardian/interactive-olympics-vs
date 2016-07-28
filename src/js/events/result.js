@@ -5,6 +5,7 @@ import updateInfo from '../draw/info';
 import Dots from '../draw/dots';
 import Axis from '../draw/axis';
 //import Grid from '../draw/grid';
+import {defaultHeaderTexts} from '../variables';
 
 export default function(data, dataCombo) {
     let domain = getDomain(dataCombo);
@@ -77,7 +78,7 @@ export default function(data, dataCombo) {
     };    
 
     // default 
-    // toState(els, state.final, "final");
+    toState(els, state.final, "final");
     // play states
     document.querySelector(".btn-play").addEventListener("click", () => {
         play();
@@ -87,7 +88,7 @@ export default function(data, dataCombo) {
             toState(els, state[key], [key]);
         });  
     };
-    play();
+    //play();
 
     // state on event
     let btns = document.querySelectorAll(".btn");
@@ -97,6 +98,16 @@ export default function(data, dataCombo) {
             let data = state[name];
             toState(els, {domain: data.domain, opacity: data.opacity, delay: 0, duration: 2}, name);
     }));
+    
+    document.querySelector(".btn-next").addEventListener("click", () => {
+        // current
+        let stateName = d3_select(".js-chart").attr("data-state");
+        // next
+        let stateNameNext = getNextState(stateName);
+        let stateDataNext = state[stateNameNext];
+        
+        toState(els, {domain: stateDataNext.domain, opacity: stateDataNext.opacity, delay: 0, duration: 2}, stateNameNext);
+    });
 }
 
 function getDomain(data) {
@@ -106,7 +117,14 @@ function getDomain(data) {
     };
 }
 
-function toState(els, data, name) {
+function getNextState(stateName) {
+    let stateList = ["final", "medal", "world", "mixed"];
+    let stateLen = stateList.length;
+    let stateNumbNext = (stateList.indexOf(stateName) + 1) % stateLen;
+    return stateList[stateNumbNext];
+}
+
+function toState(els, data, stateName) {
     window.setTimeout(() => {
         //console.log("===", name, "===", data.delay, data.duration);
     
@@ -116,16 +134,21 @@ function toState(els, data, name) {
         }); 
 
         calcScale(data.domain);       
-        d3_select(".js-chart").attr("data-state", name);
+        d3_select(".js-chart").attr("data-state", stateName);
 
         d3_select(".states").selectAll(".btn").classed("btn-focus", false); 
-        d3_select(".btn-" + name).classed("btn-focus", true);
+        d3_select(".btn-" + stateName).classed("btn-focus", true);
 
-        d3_select(".header").selectAll(".count").classed("count-focus", false);
-        d3_select(".count-" + name).classed("count-focus", true);
+        d3_select(".tooltip").selectAll(".count").classed("count-focus", false);
+        d3_select(".count-" + stateName).classed("count-focus", true);
+        
+        let next = defaultHeaderTexts.headline[getNextState(stateName)];
+        next = next === "fianl" ? "Replay" : "Next with " + next;   
+        d3_select(".js-state-current").text(defaultHeaderTexts.headline[stateName]);
+        d3_select(".js-state-next").text(next.toLowerCase());
         
         // update info
-        updateInfo(name);
+        updateInfo(stateName);
        
     }, (data.delay)*1000);
 }

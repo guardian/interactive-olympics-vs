@@ -636,14 +636,33 @@ body {
   padding: 0; }
 
 p {
-  margin: 0;
   line-height: 1.5; }
 
-.interactive-embed {
+/* section header */
+header {
+  max-width: 496px; }
+
+.btn-next {
+  font-size: 14px;
+  color: #fff;
+  background-color: #2492c4;
+  position: relative;
+  display: inline-block;
+  padding: 7px 36px 5px 12px;
+  border-radius: 20px;
+  cursor: pointer; }
+
+.arrow-right {
+  position: absolute;
+  right: 5px;
+  top: 4px; }
+
+/* section graph*/
+.graph {
   position: relative;
   width: 100%; }
 
-.header {
+.tooltip {
   font-size: 12px;
   background-color: rgba(255, 255, 255, 0.75);
   width: 50%;
@@ -652,21 +671,21 @@ p {
   top: calc(100% + 60px); }
 
 @media (min-width: 480px) {
-  .header {
+  .tooltip {
     top: 8%; } }
 
-.main {
+.chart {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
   position: absolute;
   padding: 10px 30px 10px 10px; }
-  .main text {
+  .chart text {
     font-size: 12px;
     line-height: 14px;
     font-family: "Guardian Agate Sans 1 Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     fill: #bbbbbb; }
-  .main circle {
+  .chart circle {
     cursor: pointer; }
 
 g[class^="axis"] {
@@ -693,7 +712,8 @@ g[class^="axis"] {
   top: 100%;
   border-top: 1px solid #ccc;
   margin-top: 20px;
-  padding-top: 3px; }
+  padding-top: 3px;
+  display: none; }
 
 [class*="btn-"] {
   cursor: pointer; }
@@ -710,15 +730,12 @@ g[class^="axis"] {
 
 .highlight {
   opacity: 0;
-  position: relative;
   pointer-events: none; }
-
-.highlight > div {
-  position: absolute; }
 
 .dots-animate {
   border: 1px solid;
-  border-radius: 50px; }
+  border-radius: 50px;
+  position: fixed; }
 
 .animate {
   animation: scale 1.5s ease infinite; }
