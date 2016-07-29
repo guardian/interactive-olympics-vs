@@ -12,6 +12,10 @@ p {
     line-height: 1.5;
 }
 
+[class*="btn-"] {
+    cursor: pointer;
+}
+
 .interactive-embed { }
 
 
@@ -19,6 +23,7 @@ p {
 header {
     max-width: 496px; // 620 (max width)*0.8
 }
+
 .btn-next {
     font-size: 14px;    
     color: #fff;
@@ -28,14 +33,25 @@ header {
     display: inline-block;
     padding: 7px 36px 5px 12px;
     border-radius: 20px;
-    
-    cursor: pointer;
+
+    transition: 1s;
 }
+.btn-disable {
+    background-color: #bbb;
+    cursor: default;    
+}
+
 .arrow-right {
     position: absolute;
     right: 5px;
     top: 4px;
 }
+.replay {
+    position: absolute;
+    right: 12px;
+    top: 10px;
+}
+
 
 /* section graph*/
 .graph {
@@ -43,19 +59,24 @@ header {
     width: 100%;
 }
 
+
 // tooltip 
 .tooltip { 
-    font-size: 12px;
-    background-color: rgba(255, 255, 255, 0.75);
-    width: 50%;
-    min-width: 300px;
-    position: absolute;
-    top: calc(100% + 60px); 
+    @include fs-textSans(1);
+    background-color: rgba(255, 255, 255, 0.5);
+    
+    //width: 50%;
+    //min-width: 300px;
+    border: 1px solid #f1f1f1; 
+    padding: 10px;
+    position: fixed;//absolute;
+
+    p { margin: 0; }
 }
-@media (min-width: 480px) { 
+/*@media (min-width: 480px) { 
 .tooltip {
     top: 8%; 
-}}
+}}*/
 
 
 // chart
@@ -106,9 +127,6 @@ g[class^="axis"] {
     // temp
     display: none;
 }
-[class*="btn-"] {
-    cursor: pointer;
-}
 .btn {
     padding: 0 5px;
 }
@@ -145,11 +163,12 @@ g[class^="axis"] {
 }
 
 /* atomic style */
-.f-14 { font-size: 14px; }
+.fz-14 { font-size: 14px; }
+.fw-b { font-weight: bold; }
 .c-g { color: grey; }
 .m-0 { margin: 0; }
 .mb-10 { margin-bottom: 10px; }
-
+.d-ib { display: inline-block; }
 
 // demo
 .plot {
@@ -158,3 +177,11 @@ g[class^="axis"] {
 }
 //@media (min-width: 660px) { width: (100% / 2); }
 //@media (min-width: 980px) { width: (100% / 3); }
+
+@media (max-width: 480px) { 
+body {
+    font-size: 14px;
+}
+.graph {
+    margin-top: 15px; 
+}}

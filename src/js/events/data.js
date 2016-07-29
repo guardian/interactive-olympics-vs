@@ -47,19 +47,19 @@ function parseDataRecord(dataHeader, dataWorlds, type) {
 
 function parseDataFinals(dataRaw, type) {
     return dataRaw.filter(dd => {
-            // filter out disqualified
-            let toClass = {}.toString;
-            return toClass.call(dd.property).indexOf("Array") > -1;
-        }).map(dd => {
-            //console.log(dd);
-            let data = {};
-            data.year = thisYear;
-            data.name = getName(dd.participant, type.team, dd.country.name);
-            data.team = dd.country.identifier;
-            data.record = getProperties(dd.property, dd.rank).medal;
-            data.result = dd.value;
-            //data.resultBlur = Math.round(getParsedValue(dd.value, type.result).val*10)/10; 
-            return data;
+        // filter out disqualified
+        let toClass = {}.toString;
+        return dd.rank;//toClass.call(dd.property).indexOf("Array") > -1;
+    }).map(dd => {
+        //console.log(dd);
+        let data = {};
+        data.year = thisYear;
+        data.name = getName(dd.participant, type.team, dd.country.name);
+        data.team = dd.country.identifier;
+        data.record = getProperties(dd.property, dd.rank).medal;
+        data.result = dd.value;
+        //data.resultBlur = Math.round(getParsedValue(dd.value, type.result).val*10)/10; 
+        return data;
     });
 }
 
@@ -79,7 +79,10 @@ function getProperties(property, rank) {
     .map(dp => dp.value.toLowerCase()) : (rank ? rank : null);
     let record = flag ? property.filter(dp => dp.type.indexOf("Record") > -1)
     .map(dt => dt.value.toLowerCase()).join(", ") : null;
+    
+    //console.log(property);
     //console.log(medal, flag, rank); 
+    
     return {
         medal: medal[0],
         record: record

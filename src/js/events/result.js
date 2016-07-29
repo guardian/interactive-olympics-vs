@@ -31,7 +31,7 @@ export default function(data, dataCombo) {
         dataset: "world",
         radius: 3,
         color: "#333",
-        stroke: "rgba(255, 255, 255, 0.5)"
+        stroke: "rgba(255, 255, 255, 0.25)"
     });
     els.dotsW.init(data.worlds, scale);   
 
@@ -125,30 +125,33 @@ function getNextState(stateName) {
 }
 
 function toState(els, data, stateName) {
-    window.setTimeout(() => {
-        //console.log("===", name, "===", data.delay, data.duration);
+    //window.setTimeout(() => {
     
-        let scale = calcScale(data.domain);
-        Object.keys(els).forEach((key, i) => {
-            els[key].update(data, scale, data.opacity[i]); 
-        }); 
+    let scale = calcScale(data.domain);
+    Object.keys(els).forEach((key, i) => {
+        els[key].update(data, scale, data.opacity[i]); 
+    }); 
 
-        calcScale(data.domain);       
-        d3_select(".js-chart").attr("data-state", stateName);
+    calcScale(data.domain);       
+    d3_select(".js-chart").attr("data-state", stateName);
 
-        d3_select(".states").selectAll(".btn").classed("btn-focus", false); 
-        d3_select(".btn-" + stateName).classed("btn-focus", true);
+    d3_select(".states").selectAll(".btn").classed("btn-focus", false); 
+    d3_select(".btn-" + stateName).classed("btn-focus", true);
 
-        d3_select(".tooltip").selectAll(".count").classed("count-focus", false);
-        d3_select(".count-" + stateName).classed("count-focus", true);
-        
-        let next = defaultHeaderTexts.headline[getNextState(stateName)];
-        next = next === "fianl" ? "Replay" : "Next with " + next;   
-        d3_select(".js-state-current").text(defaultHeaderTexts.headline[stateName]);
-        d3_select(".js-state-next").text(next.toLowerCase());
-        
-        // update info
-        updateInfo(stateName);
+    d3_select(".tooltip").selectAll(".count").classed("count-focus", false);
+    d3_select(".count-" + stateName).classed("count-focus", true);
+    
+    let nextState = getNextState(stateName);
+    let nextText = defaultHeaderTexts.headline[nextState].toLowerCase();
+    let isReplay = nextState === "final";
+    d3_select(".js-state-current").text(defaultHeaderTexts.headline[stateName]);
+    d3_select(".js-state-next").text((isReplay ? "Replay" : "Next with " + nextText));
+    d3_select(".replay").style("opacity", isReplay ? 1 : 0); 
+    d3_select(".arrow-right").style("opacity", isReplay ? 0 : 1); 
+    d3_select(".btn-next").classed("btn-disable", true).style("pointer-events", "none");
+    
+    // update info
+    updateInfo(stateName);
        
-    }, (data.delay)*1000);
+    //}, (data.delay)*1000);
 }

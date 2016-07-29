@@ -4,6 +4,7 @@ import {transition} from 'd3-transition';
 import utils from '../lib/utils';
 import {colors, sync} from '../variables';
 import updateInfo from './info';
+import updateHighlight from './highlight';
 
 export default function(cfg) {
 
@@ -34,8 +35,8 @@ export default function(cfg) {
         .attr("data-year", d => d.attrs.year)
         .attr("data-mark", d => d.attrs.mark)
         .attr("data-name", d => d.attrs.name)
-        .attr("cx", d => cfg.cx(d, cfg.radius, scale.x) + "%")
-        .attr("cy", d => cfg.cy(d, cfg.radius, scale.y) + "%")
+        .attr("cx", d => 0)//cfg.cx(d, cfg.radius, scale.x) + "%")
+        .attr("cy", d => "50%")//cfg.cy(d, cfg.radius, scale.y) + "%")
         .attr("r", cfg.radius)
         .attr("fill-opacity", () => 0)
         .attr("fill", d => tempColor(d))
@@ -49,8 +50,8 @@ export default function(cfg) {
             d3_select(".dots-animate").classed("animate", false);
         })
         .on("mouseout",  d => { 
-            hideAllAthletes(d); 
-            showHighlightAnimate(d); 
+            hideAllAthletes(d);
+            updateHighlight(d);
         });
 
         // best of each state
@@ -68,6 +69,8 @@ export default function(cfg) {
     // update
     this.update = (opt, scale, opacity) => {
         dots
+        .style("transition", "0s")
+        .each(d => d.o = opacity)
         .transition().duration(opt.duration*1000)
         .attr("fill-opacity", opacity)
         .attr("stroke-opacity", opacity)
@@ -81,80 +84,75 @@ export default function(cfg) {
         // disable events on transition
         let elParent = d3_select(".dots-" + cfg.dataset);
         elParent.style("pointer-events", "none");
-
-        dots.each(d => d.o = opacity); // opacity for showAtheletes
-    
-        let state;
-        //console.log("update");
+        //console.log("event lock");
+         
         d3_select(".highlight").style("opacity", 0); 
         d3_select(".dots-animate").classed("animate", false);
+        
+        let state;
         window.setTimeout(() => {
-            //if (cfg.dataset==="final") console.log(opt.delay+opt.duration, "(restart)");
-            elParent.style("pointer-events", opacity === 0 ? "none" : "all");
-
-            state = document.querySelector(".js-chart").getAttribute("data-state");
+            state = d3_select(".js-chart").attr("data-state");
             if (state === cfg.dataset) { 
+                //console.log("highlight");
                 showBestAthlete(cfg.best); 
-                d3_select(".highlight").style("opacity", 0); 
-                d3_select(".dots-animate").classed("animate", false);
-                //console.log("after duration");
+            } else if (state === "mixed") {
+                d3_select(".btn-next").style("pointer-events", "all")
+                .classed("btn-disable", false);
             }
-        }, (opt.duration) * 1000); 
+        }, (opt.duration+0.5) * 1000); 
 
         window.setTimeout(() => {
             hideAllAthletes(cfg.best);
+            
             if (state === cfg.dataset) { 
-                showHighlightAnimate(cfg.best); 
-            } 
-        }, (opt.duration + 2) * 1000); 
+                updateHighlight(cfg.best); 
+                d3_select(".btn-next").style("pointer-events", "all")
+                .classed("btn-disable", false);
+            }  
+            
+            //console.log("event free");
+            elParent.style("pointer-events", opacity === 0 ? "none" : "all");
+        }, (opt.duration + 3) * 1000); 
     };
 }
 
 // interaction
+let selectAllDots = null;
+let selectDotRelated = null;
+let selectDotPre = null;
+
 function showBestAthlete(d1) {
     let attrs = d1.attrs;
     let x = sync.scale.x(d1.x);
     let y = sync.scale.y(d1.y);
 
     // name
-    let elsAll = d3_select(".js-chart").selectAll("circle")
+    selectAllDots = d3_select(".js-chart")
+    .selectAll("circle")
     .style("transition", "0.25s")
-    .attr("fill-opacity", d => d.o/2);
-
-    let elsName = elsAll
+    .attr("fill-opacity", d => d.o !== 0 ? 0.1 : 0);
+    
+    selectDotRelated = selectAllDots
     .filter(d2 => d2.attrs.name.indexOf(attrs.name) > -1)
     .attr("fill-opacity", d => d.o === 0 ? 0 : 1)
-    .attr("r", d => d.r*2);
+    .attr("r", d => d.r*1.5);
     
-    d3_select("#" + d1.id).attr("stroke", "black");
-
+    if (selectDotPre) { 
+        selectDotPre.attr("stroke", null);
+        d3_select(".dots-animate").style("opacity", 0); 
+    }
+    selectDotPre = d3_select("#" + d1.id)
+    .attr("stroke", "black")
+    .attr("r", d => d.r*2);
+ 
     // info
-    updateInfo(d1, elsName._groups[0].map(el => el.__data__));
+    updateInfo(d1, selectDotRelated._groups[0].map(el => el.__data__));
 }
 
 function hideAllAthletes(d1) {
     let attrs = d1.attrs;
 
     // name
-    let elsAll = d3_select(".js-chart").selectAll("circle")
-    .style("transition", "0s")
-    .attr("fill-opacity", d => d.o);
-    elsAll.filter(d2 => d2.attrs.name.indexOf(attrs.name) > -1)
-    .attr("r", d => d.r);
-    
-    d3_select("#" + d1.id).attr("stroke", null);
-}
-
-function showHighlightAnimate(data) {
-    let pos = document.querySelector("#" + data.id).getBoundingClientRect();
-    
-    d3_select(".highlight").style("opacity", 1);   
-    //console.log("animate");    
-    
-    d3_select(".dots-animate")
-    .classed("animate", true)
-    .style("width", (data.r*2) + "px")
-    .style("height", (data.r*2) + "px")
-    .style("top", (pos.top - 1) + "px")
-    .style("left", (pos.left - 1) + "px");
+    selectAllDots.attr("fill-opacity", d => d.o).style("transition", "0s");
+    selectDotRelated.attr("r", d => d.r);
 }

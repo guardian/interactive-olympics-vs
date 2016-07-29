@@ -285,7 +285,7 @@ $__System.registerDynamic("5", [], true, function($__require, exports, module) {
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = "<header>\n    <h2>But ... how did it compare?</h2>\n    <p>\n        It was a WR, OR - how much better. Silver or bronze did better than gold last Olympic, or gold was worst than prior Olympics.\n        <br>\n        <span class=\"js-state-current\"></span> \n        ...\n    </p>\n    <div class=\"btn-next\">\n        <span class=\"js-state-next\"></span>\n        <svg class=\"arrow-right\" width=\"28\" height=\"28\" viewBox=\"0 0 30 30\"><path d=\"M22.8 14.6l-7.6-7.6-.7.7 5.5 6.6h-14v1.5h14l-5.5 6.6.7.7 7.6-7.6v-.9\" fill=\"#fff\"/></svg>\n    </div>\n</header>\n<div class=\"graph\">\n    <svg class=\"chart js-chart\">\n        <g class=\"axis-y\"></g>\n        <g class=\"axis-x\"></g>\n        <g class=\"line-ruler\"></g>\n        <g class=\"line-marks\"></g>\n        <g class=\"line-frame\"></g>\n        <g class=\"dots-final\"></g>\n        <g class=\"dots-medal\"></g>\n        <g class=\"dots-world\"></g>\n        <g class=\"dots-highlight\"></g>\n    </svg>\n    <div class=\"highlight\">\n        <div class=\"dots-select\"></div>\n        <div class=\"dots-animate\"></div>\n        <div class=\"line-v\"></div>\n        <div class=\"line-h\"></div>\n        <div class=\"text-x\"></div>\n        <div class=\"text-y\"></div>\n    </div>\n    <div class=\"tooltip\">\n        <h2 class=\"m-0\">\n            <span class=\"js-headline\"></span>\n            <span class=\"js-team f-14 c-g\"></span>\n        </h2>\n        <p class=\"mb-10\">\n            <span class=\"js-final count count-final\"></span>\n            <span class=\"js-medal count count-medal\"></span>\n            <span class=\"js-world count count-world\"></span>\n        </p>\n        <p class=\"js-standfirst\"></p>\n    </div>\n    <div class=\"states\">\n        <span class=\"btn-play\">Play states:</span>\n        <span class=\"btn btn-final\" data-dots=\"final\">final</span> |\n        <span class=\"btn btn-medal\" data-dots=\"medal\">medal</span> |\n        <span class=\"btn btn-world\" data-dots=\"world\">world records</span> |\n        <span class=\"btn btn-mixed\" data-dots=\"mixed\">all</span>\n    </div>\n</div>\n";
+  module.exports = "<header>\n    <h2>But ... how did it compare?</h2>\n    <p>\n        It was a WR, OR - how much better. Silver or bronze did better than gold last Olympic, or gold was worst than prior Olympics.\n        <br>\n        <span class=\"js-state-current\"></span> \n        ...\n    </p>\n    <div class=\"btn-next\">\n        <span class=\"js-state-next\"></span>\n        <svg class=\"arrow-right\" width=\"28\" height=\"28\" viewBox=\"0 0 30 30\">\n            <path d=\"M22.8 14.6l-7.6-7.6-.7.7 5.5 6.6h-14v1.5h14l-5.5 6.6.7.7 7.6-7.6v-.9\" fill=\"#fff\"/>\n        </svg>\n        <svg class=\"replay\" width=\"16px\" height=\"16px\" viewBox=\"0 0 43 44\">\n            <path d=\"M7.15497025,33.442558 L14.398,32.27 L14.398,29.77 L1.58,29.77 L0.606,30.74 L0.606,44 L3.106,44 L4.278,36.27 L4.28132921,36.2666837 C8.31677436,41.0007268 14.3191026,44 21.023,44 C33.173,44 43.023,34.15 43.023,22 C43.023,9.85 33.173,0 21.023,0 C13.508,0 6.876,3.77 2.908,9.52 L2.944,9.54 L3.266,10.92 L4.964,11.98 L6.311,11.66 C9.572,7.04 14.945,4 21.023,4 C30.949,4 39.023,12.08 39.023,22 C39.023,31.92 30.949,40 21.023,40 C15.4437157,40 10.4578363,37.4375695 7.15497025,33.442558 Z\" fill=\"#fff\"></path>\n        </svg>\n    </div>\n</header>\n<div class=\"graph\">\n    <svg class=\"chart js-chart\">\n        <g class=\"axis-y\"></g>\n        <g class=\"axis-x\"></g>\n        <g class=\"line-ruler\"></g>\n        <g class=\"line-marks\"></g>\n        <g class=\"line-frame\"></g>\n        <g class=\"dots-final\"></g>\n        <g class=\"dots-medal\"></g>\n        <g class=\"dots-world\"></g>\n        <g class=\"dots-highlight\"></g>\n    </svg>\n    <div class=\"highlight\">\n        <div class=\"dots-select\"></div>\n        <div class=\"dots-animate\"></div>\n        <div class=\"line-v\"></div>\n        <div class=\"line-h\"></div>\n        <div class=\"text-x\"></div>\n        <div class=\"text-y\"></div>\n    </div>\n    <div class=\"tooltip\">\n        <span class=\"js-title fz-14 fw-b\"></span>\n        <span class=\"js-team fz-14 fw-b c-g\"></span><br>\n        <span class=\"js-result\"></span><br> \n        <span class=\"js-record\"></span>\n        <!--h2 class=\"m-0\">\n        <span class=\"js-headline\"></span>\n        <span class=\"js-team fz-14 c-g\"></span>\n        </h2-->\n        <!--p class=\"mb-10\">\n        <span class=\"js-final count count-final\"></span>\n        <span class=\"js-medal count count-medal\"></span>\n        <span class=\"js-world count count-world\"></span>\n    </p>\n    <p class=\"js-standfirst\"></p-->\n    </div>\n    <div class=\"states\">\n        <span class=\"btn-play\">Play states:</span>\n        <span class=\"btn btn-final\" data-dots=\"final\">final</span> |\n        <span class=\"btn btn-medal\" data-dots=\"medal\">medal</span> |\n        <span class=\"btn btn-world\" data-dots=\"world\">world records</span> |\n        <span class=\"btn btn-mixed\" data-dots=\"mixed\">all</span>\n    </div>\n</div>\n";
   return module.exports;
 });
 
@@ -9147,7 +9147,7 @@ $__System.register("51", ["32", "44"], function (_export) {
         return dataRaw.filter(function (dd) {
             // filter out disqualified
             var toClass = ({}).toString;
-            return toClass.call(dd.property).indexOf("Array") > -1;
+            return dd.rank; //toClass.call(dd.property).indexOf("Array") > -1;
         }).map(function (dd) {
             //console.log(dd);
             var data = {};
@@ -9182,7 +9182,10 @@ $__System.register("51", ["32", "44"], function (_export) {
         }).map(function (dt) {
             return dt.value.toLowerCase();
         }).join(", ") : null;
+
+        //console.log(property);
         //console.log(medal, flag, rank);
+
         return {
             medal: medal[0],
             record: record
@@ -13966,12 +13969,26 @@ $__System.register('7b', ['43', '3f'], function (_export) {
 
     var d3_select, defaultHeaderTexts, cfg;
 
+    // long version
+    /*d3_select(".js-headline").text(attrs.name);
+    d3_select(".js-team").text(attrs.team);
+    d3_select(".js-final").text(cAll!==0 ? "1 " + data.color + " out of " + cAll : "rank " + data.color + " in 2016 fianl");
+    d3_select(".js-medal").text(cMedal!==0 ? ", "+cMedal+" olympic medals" : "");
+    d3_select(".js-world").text(cWorld!==0 ? ", "+cWorld+" world records" : "");
+    d3_select(".js-standfirst").text(
+        "In " + attrs.year + " " + cfg[event].event + " event, " +
+        attrs.name.split(" ")[0] + " marked " + attrs.mark + cfg[event].unit + " which " + 
+        (attrs.dist !== 0 ? "could be " + attrs.dist + "m behind " : "is ") +
+        "current world record."
+    );*/
+
     function isNumeric(n) {
         return !isNaN(parseFloat(n)) && isFinite(n);
     }
 
     function cleanFields() {
-        var keys = ["headline", "team", "final", "medal", "world", "standfirst"];
+        var keys = ["title", "team", "result", "record"];
+        //let keys = ["headline", "team", "final", "medal", "world", "standfirst"];
         keys.forEach(function (key) {
             return d3_select(".js-" + key).text("");
         });
@@ -13997,6 +14014,7 @@ $__System.register('7b', ['43', '3f'], function (_export) {
                 if (!records) {
 
                     cleanFields();
+                    d3_select(".tooltip").style("opacity", 0);
                     //d3_select(".js-headline").text(defaultHeaderTexts.headline[data]);
                     //d3_select(".js-standfirst").text(defaultHeaderTexts.standfirst[data]);
                 } else {
@@ -14012,45 +14030,82 @@ $__System.register('7b', ['43', '3f'], function (_export) {
 
                         var attrs = data.attrs;
                         var _event = window.location.search.replace("?", "");
-                        d3_select(".js-headline").text(attrs.name);
+                        var state = d3_select(".js-chart").attr("data-state");
+                        var rank = (isNumeric(data.color) ? "rank " : "") + data.color;
+
+                        // short version
+                        d3_select(".js-title").text(attrs.name);
                         d3_select(".js-team").text(attrs.team);
-                        d3_select(".js-final").text(cAll !== 0 ? "1 " + data.color + " out of " + cAll : "rank " + data.color + " in 2016 fianl");
-                        d3_select(".js-medal").text(cMedal !== 0 ? ", " + cMedal + " olympic medals" : "");
-                        d3_select(".js-world").text(cWorld !== 0 ? ", " + cWorld + " world records" : "");
-                        d3_select(".js-standfirst").text("In " + attrs.year + " " + cfg[_event].event + " event, " + attrs.name.split(" ")[0] + " marked " + attrs.mark + cfg[_event].unit + " which " + (attrs.dist !== 0 ? "could be " + attrs.dist + "m behind " : "is ") + "current world record.");
+                        d3_select(".js-result").text(rank + " " + attrs.mark + cfg[_event].unit + " (" + attrs.year + ")");
+                        d3_select(".js-record").text(cMedal + " medals and " + cWorld + " wr");
+
+                        var width = document.querySelector(".tooltip").offsetWidth;
+                        var height = document.querySelector(".tooltip").offsetHeight + 30;
+                        var point = document.querySelector("#" + data.id).getBoundingClientRect();
+                        var chart = document.querySelector(".js-chart").getBoundingClientRect();
+                        var left = point.left - (state !== "final" ? width + 60 : width / 2 - 10);
+                        var _top = point.top - (state !== "final" && point.top < chart.top + chart.height * 3 / 4 ? 35 : height);
+
+                        d3_select(".tooltip").style("opacity", 1).style("top", (_top > chart.top ? _top : chart.top + 5) + "px").style("left", left > 0 ? left + "px" : 0);
                     }
             });
         }
     };
 });
-$__System.register('7c', ['43', '44', '45', '3f', '7b'], function (_export) {
+$__System.register("7c", ["43"], function (_export) {
+    "use strict";
+
+    var d3_select;
+    return {
+        setters: [function (_) {
+            d3_select = _.select;
+        }],
+        execute: function () {
+            _export("default", function (data) {
+                //window.setTimeout(() => {
+                var pos = document.querySelector("#" + data.id).getBoundingClientRect();
+
+                d3_select(".highlight").style("opacity", 1);
+
+                d3_select(".dots-animate").classed("animate", true).style("width", data.r * 2 + "px").style("height", data.r * 2 + "px").style("top", pos.top - 1 + "px").style("left", pos.left - 1 + "px");
+                //}, 500);
+            });
+        }
+    };
+});
+$__System.register('7d', ['43', '44', '45', '3f', '7b', '7c'], function (_export) {
     'use strict';
 
-    var d3_select, utils, transition, colors, sync, updateInfo;
+    var d3_select, utils, transition, colors, sync, updateInfo, updateHighlight, selectAllDots, selectDotRelated, selectDotPre;
 
-    // interaction
     function showBestAthlete(d1) {
         var attrs = d1.attrs;
         var x = sync.scale.x(d1.x);
         var y = sync.scale.y(d1.y);
 
         // name
-        var elsAll = d3_select(".js-chart").selectAll("circle").style("transition", "0.25s").attr("fill-opacity", function (d) {
-            return d.o / 2;
+        selectAllDots = d3_select(".js-chart").selectAll("circle").style("transition", "0.25s").attr("fill-opacity", function (d) {
+            return d.o !== 0 ? 0.1 : 0;
         });
 
-        var elsName = elsAll.filter(function (d2) {
+        selectDotRelated = selectAllDots.filter(function (d2) {
             return d2.attrs.name.indexOf(attrs.name) > -1;
         }).attr("fill-opacity", function (d) {
             return d.o === 0 ? 0 : 1;
         }).attr("r", function (d) {
+            return d.r * 1.5;
+        });
+
+        if (selectDotPre) {
+            selectDotPre.attr("stroke", null);
+            d3_select(".dots-animate").style("opacity", 0);
+        }
+        selectDotPre = d3_select("#" + d1.id).attr("stroke", "black").attr("r", function (d) {
             return d.r * 2;
         });
 
-        d3_select("#" + d1.id).attr("stroke", "black");
-
         // info
-        updateInfo(d1, elsName._groups[0].map(function (el) {
+        updateInfo(d1, selectDotRelated._groups[0].map(function (el) {
             return el.__data__;
         }));
     }
@@ -14059,25 +14114,12 @@ $__System.register('7c', ['43', '44', '45', '3f', '7b'], function (_export) {
         var attrs = d1.attrs;
 
         // name
-        var elsAll = d3_select(".js-chart").selectAll("circle").style("transition", "0s").attr("fill-opacity", function (d) {
+        selectAllDots.attr("fill-opacity", function (d) {
             return d.o;
-        });
-        elsAll.filter(function (d2) {
-            return d2.attrs.name.indexOf(attrs.name) > -1;
-        }).attr("r", function (d) {
+        }).style("transition", "0s");
+        selectDotRelated.attr("r", function (d) {
             return d.r;
         });
-
-        d3_select("#" + d1.id).attr("stroke", null);
-    }
-
-    function showHighlightAnimate(data) {
-        var pos = document.querySelector("#" + data.id).getBoundingClientRect();
-
-        d3_select(".highlight").style("opacity", 1);
-        //console.log("animate");   
-
-        d3_select(".dots-animate").classed("animate", true).style("width", data.r * 2 + "px").style("height", data.r * 2 + "px").style("top", pos.top - 1 + "px").style("left", pos.left - 1 + "px");
     }
     return {
         setters: [function (_) {
@@ -14091,6 +14133,8 @@ $__System.register('7c', ['43', '44', '45', '3f', '7b'], function (_export) {
             sync = _f.sync;
         }, function (_b) {
             updateInfo = _b['default'];
+        }, function (_c) {
+            updateHighlight = _c['default'];
         }],
         execute: function () {
             _export('default', function (cfg) {
@@ -14131,10 +14175,12 @@ $__System.register('7c', ['43', '44', '45', '3f', '7b'], function (_export) {
                     }).attr("data-name", function (d) {
                         return d.attrs.name;
                     }).attr("cx", function (d) {
-                        return cfg.cx(d, cfg.radius, scale.x) + "%";
-                    }).attr("cy", function (d) {
-                        return cfg.cy(d, cfg.radius, scale.y) + "%";
-                    }).attr("r", cfg.radius).attr("fill-opacity", function () {
+                        return 0;
+                    }) //cfg.cx(d, cfg.radius, scale.x) + "%")
+                    .attr("cy", function (d) {
+                        return "50%";
+                    }) //cfg.cy(d, cfg.radius, scale.y) + "%")
+                    .attr("r", cfg.radius).attr("fill-opacity", function () {
                         return 0;
                     }).attr("fill", function (d) {
                         return tempColor(d);
@@ -14150,7 +14196,7 @@ $__System.register('7c', ['43', '44', '45', '3f', '7b'], function (_export) {
                         d3_select(".dots-animate").classed("animate", false);
                     }).on("mouseout", function (d) {
                         hideAllAthletes(d);
-                        showHighlightAnimate(d);
+                        updateHighlight(d);
                     });
 
                     // best of each state
@@ -14167,7 +14213,9 @@ $__System.register('7c', ['43', '44', '45', '3f', '7b'], function (_export) {
 
                 // update
                 this.update = function (opt, scale, opacity) {
-                    dots.transition().duration(opt.duration * 1000).attr("fill-opacity", opacity).attr("stroke-opacity", opacity).attr("cx", function (d) {
+                    dots.style("transition", "0s").each(function (d) {
+                        return d.o = opacity;
+                    }).transition().duration(opt.duration * 1000).attr("fill-opacity", opacity).attr("stroke-opacity", opacity).attr("cx", function (d) {
                         return cfg.cx(d, cfg.radius, scale.x) + "%";
                     }).attr("cy", function (d) {
                         var cy = cfg.cy(d, cfg.radius, scale.y);
@@ -14180,40 +14228,44 @@ $__System.register('7c', ['43', '44', '45', '3f', '7b'], function (_export) {
                     // disable events on transition
                     var elParent = d3_select(".dots-" + cfg.dataset);
                     elParent.style("pointer-events", "none");
+                    //console.log("event lock");
 
-                    dots.each(function (d) {
-                        return d.o = opacity;
-                    }); // opacity for showAtheletes
-
-                    var state = undefined;
-                    //console.log("update");
                     d3_select(".highlight").style("opacity", 0);
                     d3_select(".dots-animate").classed("animate", false);
-                    window.setTimeout(function () {
-                        //if (cfg.dataset==="final") console.log(opt.delay+opt.duration, "(restart)");
-                        elParent.style("pointer-events", opacity === 0 ? "none" : "all");
 
-                        state = document.querySelector(".js-chart").getAttribute("data-state");
+                    var state = undefined;
+                    window.setTimeout(function () {
+                        state = d3_select(".js-chart").attr("data-state");
                         if (state === cfg.dataset) {
+                            //console.log("highlight");
                             showBestAthlete(cfg.best);
-                            d3_select(".highlight").style("opacity", 0);
-                            d3_select(".dots-animate").classed("animate", false);
-                            //console.log("after duration");
+                        } else if (state === "mixed") {
+                            d3_select(".btn-next").style("pointer-events", "all").classed("btn-disable", false);
                         }
-                    }, opt.duration * 1000);
+                    }, (opt.duration + 0.5) * 1000);
 
                     window.setTimeout(function () {
                         hideAllAthletes(cfg.best);
+
                         if (state === cfg.dataset) {
-                            showHighlightAnimate(cfg.best);
+                            updateHighlight(cfg.best);
+                            d3_select(".btn-next").style("pointer-events", "all").classed("btn-disable", false);
                         }
-                    }, (opt.duration + 2) * 1000);
+
+                        //console.log("event free");
+                        elParent.style("pointer-events", opacity === 0 ? "none" : "all");
+                    }, (opt.duration + 3) * 1000);
                 };
             });
+
+            // interaction
+            selectAllDots = null;
+            selectDotRelated = null;
+            selectDotPre = null;
         }
     };
 });
-$__System.registerDynamic("7d", [], true, function($__require, exports, module) {
+$__System.registerDynamic("7e", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -14353,16 +14405,16 @@ $__System.registerDynamic("7d", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("3e", ["7d"], true, function($__require, exports, module) {
+$__System.registerDynamic("3e", ["7e"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('7d');
+  module.exports = $__require('7e');
   return module.exports;
 });
 
-$__System.register('7e', ['43', '4b', '3e', '3f'], function (_export) {
+$__System.register('7f', ['43', '4b', '3e', '3f'], function (_export) {
 
     /* param: coord - x or y */
     /* param: direction - h or v, isJump? */
@@ -14394,8 +14446,7 @@ $__System.register('7e', ['43', '4b', '3e', '3f'], function (_export) {
                             var min = scale.domain[coord][0];
                             var max = scale.domain[coord][1];
                             var range = min === max ? [min] : d3_range(max, min, -4);
-
-                            return range; //[range.length-1] === min ? range : range.concat([min]);
+                            return range[range.length - 1] - 4 === min ? range.concat([min]) : range;
                         case cfg.value === "mark":
                             //TODO: remove axisBottom later?
                             var d3_axis = d3_axisBottom(scale[coord]).ticks(8);
@@ -14504,7 +14555,7 @@ $__System.registerDynamic("21", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("7f", ["21"], true, function($__require, exports, module) {
+$__System.registerDynamic("80", ["21"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -14516,19 +14567,19 @@ $__System.registerDynamic("7f", ["21"], true, function($__require, exports, modu
   return module.exports;
 });
 
-$__System.registerDynamic("80", ["7f"], true, function($__require, exports, module) {
+$__System.registerDynamic("81", ["80"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
   module.exports = {
-    "default": $__require('7f'),
+    "default": $__require('80'),
     __esModule: true
   };
   return module.exports;
 });
 
-$__System.register("3f", ["44", "80"], function (_export) {
+$__System.register("3f", ["44", "81"], function (_export) {
     var utils, _Object$defineProperties, minWidth, padding, size, cols, width, height, chart, colors, sync, defaultHeaderTexts, point;
 
     return {
@@ -14635,7 +14686,7 @@ $__System.register("3f", ["44", "80"], function (_export) {
         }
     };
 });
-$__System.register('52', ['33', '43', '71', '4b', '7b', '7c', '7e', '3f'], function (_export) {
+$__System.register('52', ['33', '43', '71', '4b', '7b', '7d', '7f', '3f'], function (_export) {
     var _Object$keys, d3_select, calcScale, d3_extent, updateInfo, Dots, Axis, defaultHeaderTexts;
 
     function getDomain(data) {
@@ -14657,31 +14708,35 @@ $__System.register('52', ['33', '43', '71', '4b', '7b', '7c', '7e', '3f'], funct
     }
 
     function toState(els, data, stateName) {
-        window.setTimeout(function () {
-            //console.log("===", name, "===", data.delay, data.duration);
+        //window.setTimeout(() => {
 
-            var scale = calcScale(data.domain);
-            _Object$keys(els).forEach(function (key, i) {
-                els[key].update(data, scale, data.opacity[i]);
-            });
+        var scale = calcScale(data.domain);
+        _Object$keys(els).forEach(function (key, i) {
+            els[key].update(data, scale, data.opacity[i]);
+        });
 
-            calcScale(data.domain);
-            d3_select(".js-chart").attr("data-state", stateName);
+        calcScale(data.domain);
+        d3_select(".js-chart").attr("data-state", stateName);
 
-            d3_select(".states").selectAll(".btn").classed("btn-focus", false);
-            d3_select(".btn-" + stateName).classed("btn-focus", true);
+        d3_select(".states").selectAll(".btn").classed("btn-focus", false);
+        d3_select(".btn-" + stateName).classed("btn-focus", true);
 
-            d3_select(".tooltip").selectAll(".count").classed("count-focus", false);
-            d3_select(".count-" + stateName).classed("count-focus", true);
+        d3_select(".tooltip").selectAll(".count").classed("count-focus", false);
+        d3_select(".count-" + stateName).classed("count-focus", true);
 
-            var next = defaultHeaderTexts.headline[getNextState(stateName)];
-            next = next === "fianl" ? "Replay" : "Next with " + next;
-            d3_select(".js-state-current").text(defaultHeaderTexts.headline[stateName]);
-            d3_select(".js-state-next").text(next.toLowerCase());
+        var nextState = getNextState(stateName);
+        var nextText = defaultHeaderTexts.headline[nextState].toLowerCase();
+        var isReplay = nextState === "final";
+        d3_select(".js-state-current").text(defaultHeaderTexts.headline[stateName]);
+        d3_select(".js-state-next").text(isReplay ? "Replay" : "Next with " + nextText);
+        d3_select(".replay").style("opacity", isReplay ? 1 : 0);
+        d3_select(".arrow-right").style("opacity", isReplay ? 0 : 1);
+        d3_select(".btn-next").classed("btn-disable", true).style("pointer-events", "none");
 
-            // update info
-            updateInfo(stateName);
-        }, data.delay * 1000);
+        // update info
+        updateInfo(stateName);
+
+        //}, (data.delay)*1000);
     }
     return {
         setters: [function (_) {
@@ -14694,12 +14749,12 @@ $__System.register('52', ['33', '43', '71', '4b', '7b', '7c', '7e', '3f'], funct
             d3_extent = _b.extent;
         }, function (_b2) {
             updateInfo = _b2['default'];
-        }, function (_c) {
-            Dots = _c['default'];
-        }, function (_e) {
-            Axis = _e['default'];
+        }, function (_d) {
+            Dots = _d['default'];
         }, function (_f) {
-            defaultHeaderTexts = _f.defaultHeaderTexts;
+            Axis = _f['default'];
+        }, function (_f2) {
+            defaultHeaderTexts = _f2.defaultHeaderTexts;
         }],
         execute: function () {
             'use strict';
@@ -14730,7 +14785,7 @@ $__System.register('52', ['33', '43', '71', '4b', '7b', '7c', '7e', '3f'], funct
                     dataset: "world",
                     radius: 3,
                     color: "#333",
-                    stroke: "rgba(255, 255, 255, 0.5)"
+                    stroke: "rgba(255, 255, 255, 0.25)"
                 });
                 els.dotsW.init(data.worlds, scale);
 
@@ -14818,7 +14873,7 @@ $__System.register('52', ['33', '43', '71', '4b', '7b', '7c', '7e', '3f'], funct
         }
     };
 });
-$__System.registerDynamic("81", [], true, function($__require, exports, module) {
+$__System.registerDynamic("82", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -15284,16 +15339,16 @@ $__System.registerDynamic("81", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("4b", ["81"], true, function($__require, exports, module) {
+$__System.registerDynamic("4b", ["82"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('81');
+  module.exports = $__require('82');
   return module.exports;
 });
 
-$__System.register('82', ['33', '51', '52', '60', '5f', '4b'], function (_export) {
+$__System.register('83', ['33', '51', '52', '60', '5f', '4b'], function (_export) {
     var _Object$keys, parseData, result, jsonFinals, jsonRecord, d3_extent;
 
     return {
@@ -15367,7 +15422,7 @@ $__System.registerDynamic("44", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.register("83", [], function (_export) {
+$__System.register("84", [], function (_export) {
   "use strict";
 
   return {
@@ -15409,7 +15464,7 @@ $__System.register("83", [], function (_export) {
     }
   };
 });
-$__System.registerDynamic("84", [], true, function($__require, exports, module) {
+$__System.registerDynamic("85", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -16334,16 +16389,16 @@ $__System.registerDynamic("84", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("43", ["84"], true, function($__require, exports, module) {
+$__System.registerDynamic("43", ["85"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('84');
+  module.exports = $__require('85');
   return module.exports;
 });
 
-$__System.register('1', ['3', '4', '5', '43', '44', '50', '51', '55', '58', '82', '83', '4c', '4d', '5b', '5e'], function (_export) {
+$__System.register('1', ['3', '4', '5', '43', '44', '50', '51', '55', '58', '83', '84', '4c', '4d', '5b', '5e'], function (_export) {
     'use strict';
 
     var iframeMessenger, embedHTML, chartHTML, d3_select, utils, breaststroke100_m, getData, freestyle200_m, freestyle100x4_relay_w, longjump_m, throttle, demo, team_pursuit_m, medley400_m, medley400_w;

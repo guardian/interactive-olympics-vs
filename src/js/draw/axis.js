@@ -17,8 +17,7 @@ export default function(cfg) {
             let min = scale.domain[coord][0];
             let max = scale.domain[coord][1];
             let range = min===max ? [min] : d3_range(max, min, -4);
-            
-            return range;//[range.length-1] === min ? range : range.concat([min]);
+            return range[range.length-1] - 4 === min ? range.concat([min]) : range; 
         case cfg.value === "mark":
             //TODO: remove axisBottom later? 
             let d3_axis = d3_axisBottom(scale[coord]).ticks(8);

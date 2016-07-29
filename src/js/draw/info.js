@@ -15,6 +15,7 @@ export default function(data, records) {
     if (!records) {
 
         cleanFields();
+        d3_select(".tooltip").style("opacity", 0);
         //d3_select(".js-headline").text(defaultHeaderTexts.headline[data]);
         //d3_select(".js-standfirst").text(defaultHeaderTexts.standfirst[data]);
          
@@ -24,10 +25,31 @@ export default function(data, records) {
         let cWorld = records.filter(dr => dr.color === "wr").length;
         let cMedal = records.length - cFinal - cWorld; 
         let cAll = cMedal + cWorld;
-
+        
         let attrs = data.attrs;
         let event = window.location.search.replace("?", ""); 
-        d3_select(".js-headline").text(attrs.name);
+        let state = d3_select(".js-chart").attr("data-state"); 
+        let rank = (isNumeric(data.color) ? "rank " : "") + data.color; 
+
+        // short version
+        d3_select(".js-title").text(attrs.name);
+        d3_select(".js-team").text(attrs.team);
+        d3_select(".js-result").text(rank + " " + attrs.mark + cfg[event].unit + " (" + attrs.year + ")");
+        d3_select(".js-record").text(cMedal + " medals and " + cWorld + " wr"); 
+
+        let width = document.querySelector(".tooltip").offsetWidth;
+        let height = document.querySelector(".tooltip").offsetHeight + 30;
+        let point = document.querySelector("#" + data.id).getBoundingClientRect();
+        let chart = document.querySelector(".js-chart").getBoundingClientRect();
+        let left = point.left - (state !== "final" ? width + 60 : (width/2) - 10);
+        let top =  point.top - (state !== "final" && point.top < chart.top+chart.height*3/4 ? 35 : height);
+        
+        d3_select(".tooltip").style("opacity", 1)
+        .style("top", (top > chart.top ? top : (chart.top + 5)) + "px")
+        .style("left", left > 0 ? left + "px" : 0);
+        
+        // long version
+        /*d3_select(".js-headline").text(attrs.name);
         d3_select(".js-team").text(attrs.team);
         d3_select(".js-final").text(cAll!==0 ? "1 " + data.color + " out of " + cAll : "rank " + data.color + " in 2016 fianl");
         d3_select(".js-medal").text(cMedal!==0 ? ", "+cMedal+" olympic medals" : "");
@@ -37,8 +59,7 @@ export default function(data, records) {
             attrs.name.split(" ")[0] + " marked " + attrs.mark + cfg[event].unit + " which " + 
             (attrs.dist !== 0 ? "could be " + attrs.dist + "m behind " : "is ") +
             "current world record."
-        );
-
+        );*/
     }
 }
 
@@ -47,6 +68,7 @@ function isNumeric(n) {
 }
 
 function cleanFields() {
-    let keys = ["headline", "team", "final", "medal", "world", "standfirst"];
+    let keys = ["title", "team", "result", "record"];
+    //let keys = ["headline", "team", "final", "medal", "world", "standfirst"];
     keys.forEach(key => d3_select(".js-" + key).text(""));
 }
