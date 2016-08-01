@@ -22,7 +22,8 @@ export const colors = {
     gold:   "#fbdc00", 
     silver: "#C0C0C0", 
     bronze: "#CD7F32", 
-    others: "#E0E0E0"
+    others: "#E0E0E0",
+    wr: "#333"
 };
 
 // sync state, scale, domain, ... ?

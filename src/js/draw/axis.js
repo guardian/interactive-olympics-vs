@@ -56,7 +56,7 @@ export default function(cfg) {
         .attr("opacity", 0)
         .transition().duration(opt.duration*1000)
         //.attr("opacity", 1)
-        .attr("opacity", (d, i) => i%divHide === 0 ? 1 : 0.25)
+        .attr("opacity", (d, i) => i%divHide === 0 ? 1 : 0.5)
         .attr("x1", d => 0)
         .attr("x2", d => "95.5%")
         .attr("y1", d => 0)
@@ -79,7 +79,7 @@ export default function(cfg) {
         // update
         line
         .transition().duration(opt.duration*1000)
-        .attr("opacity", (d, i) => i%divHide === 0 ? 1 : 0.25)
+        .attr("opacity", (d, i) => i%divHide === 0 ? 1 : 0.5)
         .attr(coord+"1", d => scale[coord](d) + "%")
         .attr(coord+"2", d => scale[coord](d) + "%");
         

@@ -21,9 +21,11 @@ export default function(cfg) {
     };
 
     this.init = (data, scale) => {
+        let dataLen = data.length - 1;
+        let idTexts = {"world": "wr", "medal": "or", "final": "gm"}; 
         data.map((dd, i) => {
             dd.r = cfg.radius; 
-            dd.id = cfg.dataset.slice(0, 1) + i;
+            dd.id = cfg.dataset.slice(0, 1) + i + (i===dataLen ? "-" + idTexts[cfg.dataset] : "");
             return dd;
         });
 
@@ -59,11 +61,6 @@ export default function(cfg) {
         cfg.best = data[data.length - 1];
         // TODO: add most frequent ?
         // ...
-    
-        if (cfg.dataset === "world") {
-            let els = dots._groups[0];
-            cfg.wr = els[els.length-1].id;
-        }
     };
 
     // update
@@ -77,7 +74,7 @@ export default function(cfg) {
         .attr("cx", d => cfg.cx(d, cfg.radius, scale.x) + "%")
         .attr("cy", d => {
             let cy = cfg.cy(d, cfg.radius, scale.y);
-            if (d.id === cfg.wr && cy > 95) { cy = 52; }
+            if (d.id.indexOf("wr") && cy > 95) { cy = 60; }
             return cy + "%";
         });
 

@@ -25,7 +25,7 @@ header {
 }
 
 .btn-next {
-    font-size: 14px;    
+    @include fs-textSans(3);
     color: #fff;
     background-color: #2492c4;
     
@@ -63,21 +63,26 @@ header {
 // tooltip 
 .tooltip { 
     @include fs-textSans(1);
+    line-height: 17px;
+    white-space: nowrap;
     background-color: rgba(255, 255, 255, 0.5);
     
     //width: 50%;
     //min-width: 300px;
     border: 1px solid #f1f1f1; 
-    padding: 10px;
+    padding: 8px 10px 7px;
     position: fixed;//absolute;
-
+    pointer-events: none; 
+    
     p { margin: 0; }
 }
-/*@media (min-width: 480px) { 
-.tooltip {
-    top: 8%; 
-}}*/
-
+.icon-medal {
+    width: 12px;
+    height: 12px;
+    border-radius: 6px;
+    display: inline-block;
+    margin: 3px 5px -1px -1px;
+}
 
 // chart
 .chart {
@@ -87,7 +92,7 @@ header {
 
     position: absolute;
     //padding: 5px 20px 20px 5px;
-    padding: 10px 30px 10px 10px;
+    padding: 11px 30px 10px 10px;
     
     text {
     @include fs-data(2);

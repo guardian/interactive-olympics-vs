@@ -1,5 +1,5 @@
 import {select as d3_select} from 'd3-selection';
-import {defaultHeaderTexts} from '../variables';
+import {defaultHeaderTexts, colors} from '../variables';
 
 const cfg = {
     "long-jump_m": { unit: "m", event: "men's high jump" },
@@ -16,50 +16,29 @@ export default function(data, records) {
 
         cleanFields();
         d3_select(".tooltip").style("opacity", 0);
-        //d3_select(".js-headline").text(defaultHeaderTexts.headline[data]);
-        //d3_select(".js-standfirst").text(defaultHeaderTexts.standfirst[data]);
          
     } else {
-        // TODO: double check calc
-        let cFinal = records.filter(dr => isNumeric(dr.color)).length; 
-        let cWorld = records.filter(dr => dr.color === "wr").length;
-        let cMedal = records.length - cFinal - cWorld; 
-        let cAll = cMedal + cWorld;
-        
+        console.log(data);
+
         let attrs = data.attrs;
         let event = window.location.search.replace("?", ""); 
-        let state = d3_select(".js-chart").attr("data-state"); 
-        let rank = (isNumeric(data.color) ? "rank " : "") + data.color; 
 
-        // short version
         d3_select(".js-title").text(attrs.name);
         d3_select(".js-team").text(attrs.team);
-        d3_select(".js-result").text(rank + " " + attrs.mark + cfg[event].unit + " (" + attrs.year + ")");
-        d3_select(".js-record").text(cMedal + " medals and " + cWorld + " wr"); 
-
-        let width = document.querySelector(".tooltip").offsetWidth;
-        let height = document.querySelector(".tooltip").offsetHeight + 30;
-        let point = document.querySelector("#" + data.id).getBoundingClientRect();
-        let chart = document.querySelector(".js-chart").getBoundingClientRect();
-        let left = point.left - (state !== "final" ? width + 60 : (width/2) - 10);
-        let top =  point.top - (state !== "final" && point.top < chart.top+chart.height*3/4 ? 35 : height);
-        
+        d3_select(".js-record").html(getRecordHtml(records, data.id)); 
+        d3_select(".js-result").html(
+            (isNumeric(data.color) ? 
+            "rank " + data.color + " - ": 
+            "<span class='icon-medal' style='background-color:" + colors[data.color] + "'></span>") +
+            attrs.mark + cfg[event].unit + " (" + attrs.year + ")" +
+            (data.id.indexOf("wr") > -1 ? " WR" : "") + 
+            (data.id.indexOf("or") > -1 ? " OR" : "") 
+        );
+       
+        let pos = getInfoPos(data);       
         d3_select(".tooltip").style("opacity", 1)
-        .style("top", (top > chart.top ? top : (chart.top + 5)) + "px")
-        .style("left", left > 0 ? left + "px" : 0);
-        
-        // long version
-        /*d3_select(".js-headline").text(attrs.name);
-        d3_select(".js-team").text(attrs.team);
-        d3_select(".js-final").text(cAll!==0 ? "1 " + data.color + " out of " + cAll : "rank " + data.color + " in 2016 fianl");
-        d3_select(".js-medal").text(cMedal!==0 ? ", "+cMedal+" olympic medals" : "");
-        d3_select(".js-world").text(cWorld!==0 ? ", "+cWorld+" world records" : "");
-        d3_select(".js-standfirst").text(
-            "In " + attrs.year + " " + cfg[event].event + " event, " +
-            attrs.name.split(" ")[0] + " marked " + attrs.mark + cfg[event].unit + " which " + 
-            (attrs.dist !== 0 ? "could be " + attrs.dist + "m behind " : "is ") +
-            "current world record."
-        );*/
+        .style("top", pos.top)
+        .style("left", pos.left);
     }
 }
 
@@ -71,4 +50,66 @@ function cleanFields() {
     let keys = ["title", "team", "result", "record"];
     //let keys = ["headline", "team", "final", "medal", "world", "standfirst"];
     keys.forEach(key => d3_select(".js-" + key).text(""));
+}
+
+function getRecordHtml(records, id) {
+    // TODO: double check calc
+    let cf = records.filter(dr => isNumeric(dr.color)).length; 
+    let cw = records.filter(dr => dr.color === "wr").length;
+    let cm = records.length - cf - cw; 
+    let ct = cm > 1 ? " medals" : " medal";
+    //console.log("w:", cw, "m:", cm);
+    
+    return (
+        (cm > 0 ? cm + ct : "") + 
+        (cm > 0 && cw >0 ? " and " : "") + 
+        (cw > 0 ? cw + " WRP" : "")
+    );
+}
+
+function getInfoPos (data) {
+    let top, left;
+    let alignTop, alignLeft;
+
+    let state = d3_select(".js-chart").attr("data-state"); 
+    let chart = document.querySelector(".js-chart").getBoundingClientRect();
+    let select = document.querySelector("#" + data.id).getBoundingClientRect();
+    let width = document.querySelector(".tooltip").offsetWidth;
+    let height = document.querySelector(".tooltip").offsetHeight;// + 30;
+    
+    let testFinal = state === "final";
+    let test1_4Bottom = select.top > chart.top + chart.height*3/4;
+    let test1_3Top = select.top < chart.top + chart.height/3;
+    
+    /* horizontal align */
+    let x = {
+        l: select.left - width - 60,         // left
+        c: select.left - (width/2) + data.r, // center 
+        r: chart.width - width               // right 
+    };
+    /* vertical align */
+    let y = {
+        t: select.top - height - 30,         // top
+        m: select.top - (height/2) + data.r, // middle
+        b: select.top + data.r*2 + 30        // under 
+    };
+
+    // 1. default: middleLeft, topLeft(bottom 1/4), topCenter (fianl)
+    left = testFinal ? x.c : x.l;      
+    top = testFinal || test1_4Bottom ? y.t : y.m; 
+    
+    // 2. test and adjust outside edgs: top, left, right
+    let testTop = top > chart.top;
+    top = testTop ? top : chart.top;
+    
+    let testLeft = left > 0; 
+    let testRight = left + width < chart.width;
+    left = testLeft ? left : 0;
+    left = testRight ? left : x.r;
+
+    // 3. test overlay
+    let testOverlay = (select.left + data.r*2 < left + width) && (select.top + data.r*2 < top + height); 
+    if (testOverlay) { top = test1_3Top ? y.b : y.t; }
+    
+    return {top: top + "px", left: left + "px"};
 }

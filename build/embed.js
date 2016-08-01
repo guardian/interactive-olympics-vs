@@ -294,3610 +294,6 @@ $__System.registerDynamic("6", [], true, function($__require, exports, module) {
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = function(it) {
-    return typeof it === 'object' ? it !== null : typeof it === 'function';
-  };
-  return module.exports;
-});
-
-$__System.registerDynamic("7", ["6"], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  var isObject = $__require('6');
-  module.exports = function(it) {
-    if (!isObject(it))
-      throw TypeError(it + ' is not an object!');
-    return it;
-  };
-  return module.exports;
-});
-
-$__System.registerDynamic("8", ["9", "a", "b", "c"], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  var classof = $__require('9'),
-      ITERATOR = $__require('a')('iterator'),
-      Iterators = $__require('b');
-  module.exports = $__require('c').getIteratorMethod = function(it) {
-    if (it != undefined)
-      return it[ITERATOR] || it['@@iterator'] || Iterators[classof(it)];
-  };
-  return module.exports;
-});
-
-$__System.registerDynamic("d", ["7", "8", "c"], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  var anObject = $__require('7'),
-      get = $__require('8');
-  module.exports = $__require('c').getIterator = function(it) {
-    var iterFn = get(it);
-    if (typeof iterFn != 'function')
-      throw TypeError(it + ' is not iterable!');
-    return anObject(iterFn.call(it));
-  };
-  return module.exports;
-});
-
-$__System.registerDynamic("e", ["f", "10", "d"], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  $__require('f');
-  $__require('10');
-  module.exports = $__require('d');
-  return module.exports;
-});
-
-$__System.registerDynamic("11", ["e"], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  module.exports = {
-    "default": $__require('e'),
-    __esModule: true
-  };
-  return module.exports;
-});
-
-$__System.registerDynamic("12", [], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  module.exports = function() {};
-  return module.exports;
-});
-
-$__System.registerDynamic("13", [], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  module.exports = function(done, value) {
-    return {
-      value: value,
-      done: !!done
-    };
-  };
-  return module.exports;
-});
-
-$__System.registerDynamic("14", ["15", "16"], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  var IObject = $__require('15'),
-      defined = $__require('16');
-  module.exports = function(it) {
-    return IObject(defined(it));
-  };
-  return module.exports;
-});
-
-$__System.registerDynamic("17", ["12", "13", "b", "14", "18"], true, function($__require, exports, module) {
-  "use strict";
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  var addToUnscopables = $__require('12'),
-      step = $__require('13'),
-      Iterators = $__require('b'),
-      toIObject = $__require('14');
-  module.exports = $__require('18')(Array, 'Array', function(iterated, kind) {
-    this._t = toIObject(iterated);
-    this._i = 0;
-    this._k = kind;
-  }, function() {
-    var O = this._t,
-        kind = this._k,
-        index = this._i++;
-    if (!O || index >= O.length) {
-      this._t = undefined;
-      return step(1);
-    }
-    if (kind == 'keys')
-      return step(0, index);
-    if (kind == 'values')
-      return step(0, O[index]);
-    return step(0, [index, O[index]]);
-  }, 'values');
-  Iterators.Arguments = Iterators.Array;
-  addToUnscopables('keys');
-  addToUnscopables('values');
-  addToUnscopables('entries');
-  return module.exports;
-});
-
-$__System.registerDynamic("f", ["17", "b"], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  $__require('17');
-  var Iterators = $__require('b');
-  Iterators.NodeList = Iterators.HTMLCollection = Iterators.Array;
-  return module.exports;
-});
-
-$__System.registerDynamic("19", [], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  var ceil = Math.ceil,
-      floor = Math.floor;
-  module.exports = function(it) {
-    return isNaN(it = +it) ? 0 : (it > 0 ? floor : ceil)(it);
-  };
-  return module.exports;
-});
-
-$__System.registerDynamic("1a", ["19", "16"], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  var toInteger = $__require('19'),
-      defined = $__require('16');
-  module.exports = function(TO_STRING) {
-    return function(that, pos) {
-      var s = String(defined(that)),
-          i = toInteger(pos),
-          l = s.length,
-          a,
-          b;
-      if (i < 0 || i >= l)
-        return TO_STRING ? '' : undefined;
-      a = s.charCodeAt(i);
-      return a < 0xd800 || a > 0xdbff || i + 1 === l || (b = s.charCodeAt(i + 1)) < 0xdc00 || b > 0xdfff ? TO_STRING ? s.charAt(i) : a : TO_STRING ? s.slice(i, i + 2) : (a - 0xd800 << 10) + (b - 0xdc00) + 0x10000;
-    };
-  };
-  return module.exports;
-});
-
-$__System.registerDynamic("1b", [], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  module.exports = true;
-  return module.exports;
-});
-
-$__System.registerDynamic("1c", ["1d"], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  module.exports = $__require('1d');
-  return module.exports;
-});
-
-$__System.registerDynamic("1e", [], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  module.exports = function(bitmap, value) {
-    return {
-      enumerable: !(bitmap & 1),
-      configurable: !(bitmap & 2),
-      writable: !(bitmap & 4),
-      value: value
-    };
-  };
-  return module.exports;
-});
-
-$__System.registerDynamic("1f", ["20"], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  module.exports = !$__require('20')(function() {
-    return Object.defineProperty({}, 'a', {get: function() {
-        return 7;
-      }}).a != 7;
-  });
-  return module.exports;
-});
-
-$__System.registerDynamic("1d", ["21", "1e", "1f"], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  var $ = $__require('21'),
-      createDesc = $__require('1e');
-  module.exports = $__require('1f') ? function(object, key, value) {
-    return $.setDesc(object, key, createDesc(1, value));
-  } : function(object, key, value) {
-    object[key] = value;
-    return object;
-  };
-  return module.exports;
-});
-
-$__System.registerDynamic("22", ["21", "1e", "23", "1d", "a"], true, function($__require, exports, module) {
-  "use strict";
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  var $ = $__require('21'),
-      descriptor = $__require('1e'),
-      setToStringTag = $__require('23'),
-      IteratorPrototype = {};
-  $__require('1d')(IteratorPrototype, $__require('a')('iterator'), function() {
-    return this;
-  });
-  module.exports = function(Constructor, NAME, next) {
-    Constructor.prototype = $.create(IteratorPrototype, {next: descriptor(1, next)});
-    setToStringTag(Constructor, NAME + ' Iterator');
-  };
-  return module.exports;
-});
-
-$__System.registerDynamic("24", [], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  var hasOwnProperty = {}.hasOwnProperty;
-  module.exports = function(it, key) {
-    return hasOwnProperty.call(it, key);
-  };
-  return module.exports;
-});
-
-$__System.registerDynamic("23", ["21", "24", "a"], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  var def = $__require('21').setDesc,
-      has = $__require('24'),
-      TAG = $__require('a')('toStringTag');
-  module.exports = function(it, tag, stat) {
-    if (it && !has(it = stat ? it : it.prototype, TAG))
-      def(it, TAG, {
-        configurable: true,
-        value: tag
-      });
-  };
-  return module.exports;
-});
-
-$__System.registerDynamic("18", ["1b", "25", "1c", "1d", "24", "b", "22", "23", "21", "a"], true, function($__require, exports, module) {
-  "use strict";
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  var LIBRARY = $__require('1b'),
-      $export = $__require('25'),
-      redefine = $__require('1c'),
-      hide = $__require('1d'),
-      has = $__require('24'),
-      Iterators = $__require('b'),
-      $iterCreate = $__require('22'),
-      setToStringTag = $__require('23'),
-      getProto = $__require('21').getProto,
-      ITERATOR = $__require('a')('iterator'),
-      BUGGY = !([].keys && 'next' in [].keys()),
-      FF_ITERATOR = '@@iterator',
-      KEYS = 'keys',
-      VALUES = 'values';
-  var returnThis = function() {
-    return this;
-  };
-  module.exports = function(Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCED) {
-    $iterCreate(Constructor, NAME, next);
-    var getMethod = function(kind) {
-      if (!BUGGY && kind in proto)
-        return proto[kind];
-      switch (kind) {
-        case KEYS:
-          return function keys() {
-            return new Constructor(this, kind);
-          };
-        case VALUES:
-          return function values() {
-            return new Constructor(this, kind);
-          };
-      }
-      return function entries() {
-        return new Constructor(this, kind);
-      };
-    };
-    var TAG = NAME + ' Iterator',
-        DEF_VALUES = DEFAULT == VALUES,
-        VALUES_BUG = false,
-        proto = Base.prototype,
-        $native = proto[ITERATOR] || proto[FF_ITERATOR] || DEFAULT && proto[DEFAULT],
-        $default = $native || getMethod(DEFAULT),
-        methods,
-        key;
-    if ($native) {
-      var IteratorPrototype = getProto($default.call(new Base));
-      setToStringTag(IteratorPrototype, TAG, true);
-      if (!LIBRARY && has(proto, FF_ITERATOR))
-        hide(IteratorPrototype, ITERATOR, returnThis);
-      if (DEF_VALUES && $native.name !== VALUES) {
-        VALUES_BUG = true;
-        $default = function values() {
-          return $native.call(this);
-        };
-      }
-    }
-    if ((!LIBRARY || FORCED) && (BUGGY || VALUES_BUG || !proto[ITERATOR])) {
-      hide(proto, ITERATOR, $default);
-    }
-    Iterators[NAME] = $default;
-    Iterators[TAG] = returnThis;
-    if (DEFAULT) {
-      methods = {
-        values: DEF_VALUES ? $default : getMethod(VALUES),
-        keys: IS_SET ? $default : getMethod(KEYS),
-        entries: !DEF_VALUES ? $default : getMethod('entries')
-      };
-      if (FORCED)
-        for (key in methods) {
-          if (!(key in proto))
-            redefine(proto, key, methods[key]);
-        }
-      else
-        $export($export.P + $export.F * (BUGGY || VALUES_BUG), NAME, methods);
-    }
-    return methods;
-  };
-  return module.exports;
-});
-
-$__System.registerDynamic("10", ["1a", "18"], true, function($__require, exports, module) {
-  "use strict";
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  var $at = $__require('1a')(true);
-  $__require('18')(String, 'String', function(iterated) {
-    this._t = String(iterated);
-    this._i = 0;
-  }, function() {
-    var O = this._t,
-        index = this._i,
-        point;
-    if (index >= O.length)
-      return {
-        value: undefined,
-        done: true
-      };
-    point = $at(O, index);
-    this._i += point.length;
-    return {
-      value: point,
-      done: false
-    };
-  });
-  return module.exports;
-});
-
-$__System.registerDynamic("9", ["26", "a"], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  var cof = $__require('26'),
-      TAG = $__require('a')('toStringTag'),
-      ARG = cof(function() {
-        return arguments;
-      }()) == 'Arguments';
-  module.exports = function(it) {
-    var O,
-        T,
-        B;
-    return it === undefined ? 'Undefined' : it === null ? 'Null' : typeof(T = (O = Object(it))[TAG]) == 'string' ? T : ARG ? cof(O) : (B = cof(O)) == 'Object' && typeof O.callee == 'function' ? 'Arguments' : B;
-  };
-  return module.exports;
-});
-
-$__System.registerDynamic("27", ["28"], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  var global = $__require('28'),
-      SHARED = '__core-js_shared__',
-      store = global[SHARED] || (global[SHARED] = {});
-  module.exports = function(key) {
-    return store[key] || (store[key] = {});
-  };
-  return module.exports;
-});
-
-$__System.registerDynamic("29", [], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  var id = 0,
-      px = Math.random();
-  module.exports = function(key) {
-    return 'Symbol('.concat(key === undefined ? '' : key, ')_', (++id + px).toString(36));
-  };
-  return module.exports;
-});
-
-$__System.registerDynamic("a", ["27", "29", "28"], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  var store = $__require('27')('wks'),
-      uid = $__require('29'),
-      Symbol = $__require('28').Symbol;
-  module.exports = function(name) {
-    return store[name] || (store[name] = Symbol && Symbol[name] || (Symbol || uid)('Symbol.' + name));
-  };
-  return module.exports;
-});
-
-$__System.registerDynamic("b", [], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  module.exports = {};
-  return module.exports;
-});
-
-$__System.registerDynamic("2a", ["9", "a", "b", "c"], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  var classof = $__require('9'),
-      ITERATOR = $__require('a')('iterator'),
-      Iterators = $__require('b');
-  module.exports = $__require('c').isIterable = function(it) {
-    var O = Object(it);
-    return O[ITERATOR] !== undefined || '@@iterator' in O || Iterators.hasOwnProperty(classof(O));
-  };
-  return module.exports;
-});
-
-$__System.registerDynamic("2b", ["f", "10", "2a"], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  $__require('f');
-  $__require('10');
-  module.exports = $__require('2a');
-  return module.exports;
-});
-
-$__System.registerDynamic("2c", ["2b"], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  module.exports = {
-    "default": $__require('2b'),
-    __esModule: true
-  };
-  return module.exports;
-});
-
-$__System.registerDynamic("2d", ["11", "2c"], true, function($__require, exports, module) {
-  "use strict";
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  var _getIterator = $__require('11')["default"];
-  var _isIterable = $__require('2c')["default"];
-  exports["default"] = (function() {
-    function sliceIterator(arr, i) {
-      var _arr = [];
-      var _n = true;
-      var _d = false;
-      var _e = undefined;
-      try {
-        for (var _i = _getIterator(arr),
-            _s; !(_n = (_s = _i.next()).done); _n = true) {
-          _arr.push(_s.value);
-          if (i && _arr.length === i)
-            break;
-        }
-      } catch (err) {
-        _d = true;
-        _e = err;
-      } finally {
-        try {
-          if (!_n && _i["return"])
-            _i["return"]();
-        } finally {
-          if (_d)
-            throw _e;
-        }
-      }
-      return _arr;
-    }
-    return function(arr, i) {
-      if (Array.isArray(arr)) {
-        return arr;
-      } else if (_isIterable(Object(arr))) {
-        return sliceIterator(arr, i);
-      } else {
-        throw new TypeError("Invalid attempt to destructure non-iterable instance");
-      }
-    };
-  })();
-  exports.__esModule = true;
-  return module.exports;
-});
-
-$__System.registerDynamic("2e", [], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  module.exports = [[1922, "Nancy Voorhees (USA)", "USA", "world", 1.46], [1923, "Elizabeth Stine (USA)", "USA", "world", 1.485], [1923, "Sophie Eliott-Lynn (GBR)", "GBR", "world", 1.485], [1925, "Phyllis Green (GBR)", "GBR", "world", 1.524], [1926, "Phyllis Green (GBR)", "GBR", "world", 1.552], [1926, "Ethel Catherwood (CAN)", "CAN", "world", 1.58], [1928, "Lien Gisolf (NED)", "NED", "world", 1.58], [1928, "Ethel Catherwood (CAN)", "CAN", "world", 1.595], [1929, "Lien Gisolf (NED)", "NED", "world", 1.605], [1932, "Lien Gisolf (NED)", "NED", "world", 1.62], [1932, "Jean Shiley (USA)", "USA", "world", 1.65], [1932, "Mildred Didrikson (USA)", "USA", "world", 1.65], [1939, "Dorothy Odam (GBR)", "GBR", "world", 1.66], [1941, "Esther van Heerden (South Africa)", "ZAF", "world", 1.66], [1941, "Ilsebill Pfenning (SUI)", "SUI", "world", 1.66], [1943, "Fanny Blankers-Koen (NED)", "NED", "world", 1.71], [1951, "Sheila Lerwill (GBR)", "GBR", "world", 1.72], [1954, "Aleksandra Chudina (URS)", "URS", "world", 1.73], [1956, "Thelma Hopkins (GBR)", "GBR", "world", 1.74], [1956, "Iolanda Balaș (ROM)", "ROM", "world", 1.75], [1956, "Mildred McDaniel (USA)", "USE", "world", 1.76], [1957, "Iolanda Balaş (ROM)", "ROM", "world", 1.76], [1957, "Zheng Fengrong (CHN)", "CHN", "world", 1.77], [1958, "Iolanda Balaş (ROM)", "ROM", "world", 1.78], [1958, "Iolanda Balaş (ROM)", "ROM", "world", 1.8], [1958, "Iolanda Balaş (ROM)", "ROM", "world", 1.81], [1958, "Iolanda Balaş (ROM)", "ROM", "world", 1.82], [1958, "Iolanda Balaş (ROM)", "ROM", "world", 1.83], [1959, "Iolanda Balaş (ROM)", "ROM", "world", 1.84], [1960, "Iolanda Balaş (ROM)", "ROM", "world", 1.85], [1960, "Iolanda Balaş (ROM)", "ROM", "world", 1.86], [1961, "Iolanda Balaş (ROM)", "ROM", "world", 1.87], [1961, "Iolanda Balaş (ROM)", "ROM", "world", 1.88], [1961, "Iolanda Balaş (ROM)", "ROM", "world", 1.9], [1961, "Iolanda Balaş (ROM)", "ROM", "world", 1.91], [1971, "Ilona Gusenbauer (AUT)", "AUT", "world", 1.92], [1972, "Ulrike Meyfarth (FRG)", "FRG", "world", 1.92], [1972, "Yordanka Blagoeva (BUL)", "BUL", "world", 1.94], [1974, "Rosemarie Witschas (GDR)", "GDR", "world", 1.94], [1974, "Rosemarie Ackermann (GDR)", "GDR", "world", 1.95], [1976, "Rosemarie Ackermann (GDR)", "GDR", "world", 1.96], [1977, "Rosemarie Ackermann (GDR)", "GDR", "world", 1.96], [1977, "Rosemarie Ackermann (GDR)", "GDR", "world", 1.97], [1977, "Rosemarie Ackermann (GDR)", "GDR", "world", 1.97], [1977, "Rosemarie Ackermann (GDR)", "GDR", "world", 2], [1978, "Sara Simeoni (ITA)", "ITA", "world", 2.01], [1978, "Sara Simeoni (ITA)", "ITA", "world", 2.01], [1982, "Ulrike Meyfarth (FRG)", "FRG", "world", 2.02], [1983, "Ulrike Meyfarth (FRG)", "FRG", "world", 2.03], [1983, "Tamara Bykova (URS)", "URS", "world", 2.03], [1983, "Tamara Bykova (URS)", "URS", "world", 2.04], [1984, "Tamara Bykova (URS)", "URS", "world", 2.05], [1984, "Lyudmila Andonova (BUL)", "BUL", "world", 2.07], [1986, "Stefka Kostadinova (BUL)", "BUL", "world", 2.07], [1986, "Stefka Kostadinova (BUL)", "BUL", "world", 2.08], [1987, "Stefka Kostadinova (BUL)", "BUL", "world", 2.09], [1928, "Ethel CATHERWOOD", "CAN", "gold", 1.59], [1928, "Carolina Anna GISOLF", "NED", "silver", 1.56], [1928, "Mildred WILEY", "USA", "bronze", 1.56], [1932, "Jean SHILEY", "USA", "gold", 1.65], [1932, "Mildred DIDRIKSON", "USA", "silver", 1.65], [1932, "Eva DAWES", "CAN", "bronze", 1.6], [1936, "Ibolya CSÁK", "HUN", "gold", 1.6], [1936, "Dorothy ODAM", "GBR", "silver", 1.6], [1936, "Elfriede KAUN", "GER", "bronze", 1.6], [1948, "Alice COACHMAN", "USA", "gold", 1.68], [1948, "Dorothy ODAM", "GBR", "silver", 1.68], [1948, "Micheline OSTERMEYER", "FRA", "bronze", 1.61], [1952, "Esther BRAND", "RSA", "gold", 1.67], [1952, "Sheila LERWILL", "GBR", "silver", 1.65], [1952, "Aleksandra CHUDINA", "URS", "bronze", 1.63], [1956, "Mildred MCDANIEL", "USA", "gold", 1.76], [1956, "Thelma HOPKINS", "GBR", "silver", 1.67], [1956, "Mariya PISSAREVA", "URS", "silver", 1.67], [1960, "Iolanda BALAS", "ROU", "gold", 1.85], [1960, "Dorothy SHIRLEY", "GBR", "silver", 1.71], [1960, "Jaroslawa JÓZWIAKOWSKA", "POL", "silver", 1.71], [1964, "Iolanda BALAS", "ROU", "gold", 1.9], [1964, "Michele BROWN", "AUS", "silver", 1.8], [1964, "Taisiya CHENCHIK", "URS", "bronze", 1.78], [1968, "Miloslava REZKOVA-HUBNER", "TCH", "gold", 1.82], [1968, "Antonina OKOROKOVA", "URS", "silver", 1.8], [1968, "Valentina KOZYR", "URS", "bronze", 1.8], [1972, "Ulrike MEYFARTH", "FRG", "gold", 1.92], [1972, "Yordanka BLAGOEVA-DIMITROVA", "BUL", "silver", 1.88], [1972, "Ilona GUSENBAUER", "AUT", "bronze", 1.88], [1976, "Rosemarie WITSCHAS-ACKERMANN", "GDR", "gold", 1.93], [1976, "Sara SIMEONI", "ITA", "silver", 1.91], [1976, "Yordanka BLAGOEVA-DIMITROVA", "BUL", "bronze", 1.91], [1980, "Sara SIMEONI", "ITA", "gold", 1.97], [1980, "Urszula KIELAN", "POL", "silver", 1.94], [1980, "Jutta KIRST", "GDR", "bronze", 1.94], [1984, "Ulrike MEYFARTH", "FRG", "gold", 2.02], [1984, "Sara SIMEONI", "ITA", "silver", 2], [1984, "Joni HUNTLEY", "USA", "bronze", 1.97], [1988, "Louise RITTER", "USA", "gold", 2.03], [1988, "Stefka KOSTADINOVA", "BUL", "silver", 2.01], [1988, "Tamara BYKOVA", "URS", "bronze", 1.99], [1992, "Heike HENKEL", "GER", "gold", 2.02], [1992, "Galina ASTAFEI", "ROU", "silver", 2], [1992, "Joanet QUINTERO", "CUB", "bronze", 1.97], [1996, "Stefka KOSTADINOVA", "BUL", "gold", 2.05], [1996, "Niki BAKOGIANNI", "GRE", "silver", 2.03], [1996, "Inha BABAKOVA", "UKR", "bronze", 2.01], [2000, "Yelena YELESINA", "RUS", "gold", 2.01], [2000, "Hestrie CLOETE", "RSA", "silver", 2.01], [2000, "Oana PANTELIMON", "ROU", "bronze", 1.99], [2004, "Elena SLESARENKO", "RUS", "gold", 2.06], [2004, "Hestrie CLOETE", "RSA", "silver", 2.02], [2004, "Vita STYOPINA", "UKR", "bronze", 2.02], [2008, "Tia HELLEBAUT", "BEL", "gold", 2.05], [2008, "Blanka VLASIC", "CRO", "silver", 2.05], [2008, "Anna CHICHEROVA", "RUS", "bronze", 2.03], [2012, "Anna CHICHEROVA", "RUS", "gold", 2.05], [2012, "Brigetta BARRETT", "USA", "silver", 2.03], [2012, "Svetlana SHKOLINA", "RUS", "bronze", 2.03], [2012, "Ruth Beitia (ESP)", "ESP", "4", 2], [2012, "Tia Hellebaut (BEL)", "BEL", "5", 1.97], [2012, "Chaunte Lowe (USA)", "USA", "6", 1.97], [2012, "Svetlana Radzivil (UZB)", "UZB", "7", 1.97], [2012, "Emma Green Tregaro (SWE)", "SWE", "8", 1.93], [2012, "Melanie Melfort (FRA)", "FRA", "9", 1.93], [2012, "Irina Gordeeva (RUS)", "RUS", "10", 1.93], [2012, "Airinė Palšytė (LTU)", "LTU", "11", 1.89], [2012, "Burcu Ayhan (TUR)", "TUR", "12", 1.89]];
-  return module.exports;
-});
-
-$__System.registerDynamic("2f", [], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  exports.cap = (str) => str.charAt(0).toUpperCase() + str.slice(1);
-  return module.exports;
-});
-
-$__System.registerDynamic("30", [], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  exports.toArray = (obj) => Object.keys(obj).map((key) => obj[key]);
-  return module.exports;
-});
-
-$__System.register('31', ['30', '32', '33', '2d', '2e', '2f'], function (_export) {
-    var object, array, _Object$keys, _slicedToArray, highjump_W, string, thisYear;
-
-    /* data: array list -> object list */
-    // TODO: remove name parsing
-    function parseNameText(name) {
-        // remove country code and to lower case
-        name = name.split("(")[0].toLowerCase().trim();
-        // first letter upper case
-        name = name.split(" ").map(function (str) {
-            return string.cap(str);
-        }).join(" ");
-        name = name.split("-").map(function (str) {
-            return string.cap(str);
-        }).join("-");
-
-        return name;
-    }
-    function parseRecordType(record, year) {
-        if (record === "world") {
-            return "w";
-        } // world records
-        else if (year === thisYear) {
-                return "f";
-            } // olympic final (this year)
-            else {
-                    return "o";
-                } // olympic medalists
-    }
-    function arrayToObject(data) {
-        // data cols: 0 - year, 1 - name, 2 - team, 3 - record type, 4 - mark
-        var dataObj = data.map(function (dd) {
-            var _dd = _slicedToArray(dd, 5);
-
-            var year = _dd[0];
-            var name = _dd[1];
-            var team = _dd[2];
-            var record = _dd[3];
-            var mark = _dd[4];
-
-            return {
-                year: year,
-                name: parseNameText(name),
-                team: team,
-                record: parseRecordType(record, year),
-                result: record !== "world" ? record : null,
-                mark: mark
-            };
-        });
-
-        // sort small -> large numbers
-        return dataObj.sort(function (d1, d2) {
-            return d1.mark - d2.mark;
-        });
-    }
-
-    /* data: pa data -> chart data */
-    // case 1: x - year, y - mark ex. high jump
-    // case 2: x - mark, y - year ex. long jump, swim
-    function paToChartDataFormat(data, opt) {
-        // TODO: case 1, 2 with opt
-        return data.map(function (dd) {
-            return {
-                x: dd.year,
-                y: dd.mark,
-                c: dd.result,
-                name: dd.name,
-                team: dd.team
-            };
-        });
-    }
-    /* data: add count and index to avoid visual overlapped */
-    //record: dd.record
-    function paToChartData(data) {
-        var dataGroup = undefined;
-        dataGroup = array.groupBy(["year", "mark"], data);
-        dataGroup = dataGroup.map(function (dg) {
-            dg = paToChartDataFormat(dg);
-            if (dg.length > 1) {
-                (function () {
-                    var len = dg.length;
-                    dg.map(function (dd, index) {
-                        dd.count = len;
-                        dd.index = index + 1;
-                    });
-                })();
-            }
-            return dg;
-        });
-
-        return array.merge(dataGroup);
-    }
-
-    /* group */
-    function groupDataByRecordType(data) {
-        var dataObj = array.groupBy(["record"], data, true);
-        _Object$keys(dataObj).map(function (key) {
-            return dataObj[key] = paToChartData(dataObj[key]);
-        });
-
-        // current wr and or
-        // TODO: if wr === or, ...
-        var or = dataObj.o[dataObj.o.length - 1];
-        var wr = dataObj.w[dataObj.w.length - 1];
-        or.text = "or";
-        wr.text = "wr";
-
-        //console.log(dataObj);
-        return {
-            finals: dataObj.f, // olympic final results (this year)
-            medals: dataObj.o, // olympic medalists
-            worlds: dataObj.w, // world records
-            record: [or, wr]
-        };
-    }
-    return {
-        setters: [function (_2) {
-            object = _2['default'];
-        }, function (_3) {
-            array = _3['default'];
-        }, function (_) {
-            _Object$keys = _['default'];
-        }, function (_d) {
-            _slicedToArray = _d['default'];
-        }, function (_e) {
-            highjump_W = _e['default'];
-        }, function (_f) {
-            string = _f['default'];
-        }],
-        execute: function () {
-
-            // this year will be highlighted
-            'use strict';
-
-            thisYear = 2012;
-
-            _export('default', function () {
-                var dataObj = arrayToObject(highjump_W);
-                var dataGroup = groupDataByRecordType(dataObj);
-                return dataGroup;
-            });
-        }
-    };
-});
-$__System.registerDynamic("26", [], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  var toString = {}.toString;
-  module.exports = function(it) {
-    return toString.call(it).slice(8, -1);
-  };
-  return module.exports;
-});
-
-$__System.registerDynamic("15", ["26"], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  var cof = $__require('26');
-  module.exports = Object('z').propertyIsEnumerable(0) ? Object : function(it) {
-    return cof(it) == 'String' ? it.split('') : Object(it);
-  };
-  return module.exports;
-});
-
-$__System.registerDynamic("34", ["21", "35", "15", "20"], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  var $ = $__require('21'),
-      toObject = $__require('35'),
-      IObject = $__require('15');
-  module.exports = $__require('20')(function() {
-    var a = Object.assign,
-        A = {},
-        B = {},
-        S = Symbol(),
-        K = 'abcdefghijklmnopqrst';
-    A[S] = 7;
-    K.split('').forEach(function(k) {
-      B[k] = k;
-    });
-    return a({}, A)[S] != 7 || Object.keys(a({}, B)).join('') != K;
-  }) ? function assign(target, source) {
-    var T = toObject(target),
-        $$ = arguments,
-        $$len = $$.length,
-        index = 1,
-        getKeys = $.getKeys,
-        getSymbols = $.getSymbols,
-        isEnum = $.isEnum;
-    while ($$len > index) {
-      var S = IObject($$[index++]),
-          keys = getSymbols ? getKeys(S).concat(getSymbols(S)) : getKeys(S),
-          length = keys.length,
-          j = 0,
-          key;
-      while (length > j)
-        if (isEnum.call(S, key = keys[j++]))
-          T[key] = S[key];
-    }
-    return T;
-  } : Object.assign;
-  return module.exports;
-});
-
-$__System.registerDynamic("36", ["25", "34"], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  var $export = $__require('25');
-  $export($export.S + $export.F, 'Object', {assign: $__require('34')});
-  return module.exports;
-});
-
-$__System.registerDynamic("37", ["36", "c"], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  $__require('36');
-  module.exports = $__require('c').Object.assign;
-  return module.exports;
-});
-
-$__System.registerDynamic("38", ["37"], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  module.exports = {
-    "default": $__require('37'),
-    __esModule: true
-  };
-  return module.exports;
-});
-
-$__System.registerDynamic("39", [], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  "format cjs";
-  (function(global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) : typeof define === 'function' && define.amd ? define(['exports'], factory) : (factory((global.d3 = global.d3 || {})));
-  }(this, function(exports) {
-    'use strict';
-    var pi = Math.PI;
-    var tau = 2 * pi;
-    var epsilon = 1e-6;
-    var tauEpsilon = tau - epsilon;
-    function Path() {
-      this._x0 = this._y0 = this._x1 = this._y1 = null;
-      this._ = [];
-    }
-    function path() {
-      return new Path;
-    }
-    Path.prototype = path.prototype = {
-      constructor: Path,
-      moveTo: function(x, y) {
-        this._.push("M", this._x0 = this._x1 = +x, ",", this._y0 = this._y1 = +y);
-      },
-      closePath: function() {
-        if (this._x1 !== null) {
-          this._x1 = this._x0, this._y1 = this._y0;
-          this._.push("Z");
-        }
-      },
-      lineTo: function(x, y) {
-        this._.push("L", this._x1 = +x, ",", this._y1 = +y);
-      },
-      quadraticCurveTo: function(x1, y1, x, y) {
-        this._.push("Q", +x1, ",", +y1, ",", this._x1 = +x, ",", this._y1 = +y);
-      },
-      bezierCurveTo: function(x1, y1, x2, y2, x, y) {
-        this._.push("C", +x1, ",", +y1, ",", +x2, ",", +y2, ",", this._x1 = +x, ",", this._y1 = +y);
-      },
-      arcTo: function(x1, y1, x2, y2, r) {
-        x1 = +x1, y1 = +y1, x2 = +x2, y2 = +y2, r = +r;
-        var x0 = this._x1,
-            y0 = this._y1,
-            x21 = x2 - x1,
-            y21 = y2 - y1,
-            x01 = x0 - x1,
-            y01 = y0 - y1,
-            l01_2 = x01 * x01 + y01 * y01;
-        if (r < 0)
-          throw new Error("negative radius: " + r);
-        if (this._x1 === null) {
-          this._.push("M", this._x1 = x1, ",", this._y1 = y1);
-        } else if (!(l01_2 > epsilon))
-          ;
-        else if (!(Math.abs(y01 * x21 - y21 * x01) > epsilon) || !r) {
-          this._.push("L", this._x1 = x1, ",", this._y1 = y1);
-        } else {
-          var x20 = x2 - x0,
-              y20 = y2 - y0,
-              l21_2 = x21 * x21 + y21 * y21,
-              l20_2 = x20 * x20 + y20 * y20,
-              l21 = Math.sqrt(l21_2),
-              l01 = Math.sqrt(l01_2),
-              l = r * Math.tan((pi - Math.acos((l21_2 + l01_2 - l20_2) / (2 * l21 * l01))) / 2),
-              t01 = l / l01,
-              t21 = l / l21;
-          if (Math.abs(t01 - 1) > epsilon) {
-            this._.push("L", x1 + t01 * x01, ",", y1 + t01 * y01);
-          }
-          this._.push("A", r, ",", r, ",0,0,", +(y01 * x20 > x01 * y20), ",", this._x1 = x1 + t21 * x21, ",", this._y1 = y1 + t21 * y21);
-        }
-      },
-      arc: function(x, y, r, a0, a1, ccw) {
-        x = +x, y = +y, r = +r;
-        var dx = r * Math.cos(a0),
-            dy = r * Math.sin(a0),
-            x0 = x + dx,
-            y0 = y + dy,
-            cw = 1 ^ ccw,
-            da = ccw ? a0 - a1 : a1 - a0;
-        if (r < 0)
-          throw new Error("negative radius: " + r);
-        if (this._x1 === null) {
-          this._.push("M", x0, ",", y0);
-        } else if (Math.abs(this._x1 - x0) > epsilon || Math.abs(this._y1 - y0) > epsilon) {
-          this._.push("L", x0, ",", y0);
-        }
-        if (!r)
-          return;
-        if (da > tauEpsilon) {
-          this._.push("A", r, ",", r, ",0,1,", cw, ",", x - dx, ",", y - dy, "A", r, ",", r, ",0,1,", cw, ",", this._x1 = x0, ",", this._y1 = y0);
-        } else {
-          if (da < 0)
-            da = da % tau + tau;
-          this._.push("A", r, ",", r, ",0,", +(da >= pi), ",", cw, ",", this._x1 = x + r * Math.cos(a1), ",", this._y1 = y + r * Math.sin(a1));
-        }
-      },
-      rect: function(x, y, w, h) {
-        this._.push("M", this._x0 = this._x1 = +x, ",", this._y0 = this._y1 = +y, "h", +w, "v", +h, "h", -w, "Z");
-      },
-      toString: function() {
-        return this._.join("");
-      }
-    };
-    exports.path = path;
-    Object.defineProperty(exports, '__esModule', {value: true});
-  }));
-  return module.exports;
-});
-
-$__System.registerDynamic("3a", ["39"], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  module.exports = $__require('39');
-  return module.exports;
-});
-
-$__System.registerDynamic("3b", ["3a"], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  "format cjs";
-  (function(global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('3a')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-path'], factory) : (factory((global.d3 = global.d3 || {}), global.d3));
-  }(this, function(exports, d3Path) {
-    'use strict';
-    function constant(x) {
-      return function constant() {
-        return x;
-      };
-    }
-    var epsilon = 1e-12;
-    var pi = Math.PI;
-    var halfPi = pi / 2;
-    var tau = 2 * pi;
-    function arcInnerRadius(d) {
-      return d.innerRadius;
-    }
-    function arcOuterRadius(d) {
-      return d.outerRadius;
-    }
-    function arcStartAngle(d) {
-      return d.startAngle;
-    }
-    function arcEndAngle(d) {
-      return d.endAngle;
-    }
-    function arcPadAngle(d) {
-      return d && d.padAngle;
-    }
-    function asin(x) {
-      return x >= 1 ? halfPi : x <= -1 ? -halfPi : Math.asin(x);
-    }
-    function intersect(x0, y0, x1, y1, x2, y2, x3, y3) {
-      var x10 = x1 - x0,
-          y10 = y1 - y0,
-          x32 = x3 - x2,
-          y32 = y3 - y2,
-          t = (x32 * (y0 - y2) - y32 * (x0 - x2)) / (y32 * x10 - x32 * y10);
-      return [x0 + t * x10, y0 + t * y10];
-    }
-    function cornerTangents(x0, y0, x1, y1, r1, rc, cw) {
-      var x01 = x0 - x1,
-          y01 = y0 - y1,
-          lo = (cw ? rc : -rc) / Math.sqrt(x01 * x01 + y01 * y01),
-          ox = lo * y01,
-          oy = -lo * x01,
-          x11 = x0 + ox,
-          y11 = y0 + oy,
-          x10 = x1 + ox,
-          y10 = y1 + oy,
-          x00 = (x11 + x10) / 2,
-          y00 = (y11 + y10) / 2,
-          dx = x10 - x11,
-          dy = y10 - y11,
-          d2 = dx * dx + dy * dy,
-          r = r1 - rc,
-          D = x11 * y10 - x10 * y11,
-          d = (dy < 0 ? -1 : 1) * Math.sqrt(Math.max(0, r * r * d2 - D * D)),
-          cx0 = (D * dy - dx * d) / d2,
-          cy0 = (-D * dx - dy * d) / d2,
-          cx1 = (D * dy + dx * d) / d2,
-          cy1 = (-D * dx + dy * d) / d2,
-          dx0 = cx0 - x00,
-          dy0 = cy0 - y00,
-          dx1 = cx1 - x00,
-          dy1 = cy1 - y00;
-      if (dx0 * dx0 + dy0 * dy0 > dx1 * dx1 + dy1 * dy1)
-        cx0 = cx1, cy0 = cy1;
-      return {
-        cx: cx0,
-        cy: cy0,
-        x01: -ox,
-        y01: -oy,
-        x11: cx0 * (r1 / r - 1),
-        y11: cy0 * (r1 / r - 1)
-      };
-    }
-    function arc() {
-      var innerRadius = arcInnerRadius,
-          outerRadius = arcOuterRadius,
-          cornerRadius = constant(0),
-          padRadius = null,
-          startAngle = arcStartAngle,
-          endAngle = arcEndAngle,
-          padAngle = arcPadAngle,
-          context = null;
-      function arc() {
-        var buffer,
-            r,
-            r0 = +innerRadius.apply(this, arguments),
-            r1 = +outerRadius.apply(this, arguments),
-            a0 = startAngle.apply(this, arguments) - halfPi,
-            a1 = endAngle.apply(this, arguments) - halfPi,
-            da = Math.abs(a1 - a0),
-            cw = a1 > a0;
-        if (!context)
-          context = buffer = d3Path.path();
-        if (r1 < r0)
-          r = r1, r1 = r0, r0 = r;
-        if (!(r1 > epsilon))
-          context.moveTo(0, 0);
-        else if (da > tau - epsilon) {
-          context.moveTo(r1 * Math.cos(a0), r1 * Math.sin(a0));
-          context.arc(0, 0, r1, a0, a1, !cw);
-          if (r0 > epsilon) {
-            context.moveTo(r0 * Math.cos(a1), r0 * Math.sin(a1));
-            context.arc(0, 0, r0, a1, a0, cw);
-          }
-        } else {
-          var a01 = a0,
-              a11 = a1,
-              a00 = a0,
-              a10 = a1,
-              da0 = da,
-              da1 = da,
-              ap = padAngle.apply(this, arguments) / 2,
-              rp = (ap > epsilon) && (padRadius ? +padRadius.apply(this, arguments) : Math.sqrt(r0 * r0 + r1 * r1)),
-              rc = Math.min(Math.abs(r1 - r0) / 2, +cornerRadius.apply(this, arguments)),
-              rc0 = rc,
-              rc1 = rc,
-              t0,
-              t1;
-          if (rp > epsilon) {
-            var p0 = asin(rp / r0 * Math.sin(ap)),
-                p1 = asin(rp / r1 * Math.sin(ap));
-            if ((da0 -= p0 * 2) > epsilon)
-              p0 *= (cw ? 1 : -1), a00 += p0, a10 -= p0;
-            else
-              da0 = 0, a00 = a10 = (a0 + a1) / 2;
-            if ((da1 -= p1 * 2) > epsilon)
-              p1 *= (cw ? 1 : -1), a01 += p1, a11 -= p1;
-            else
-              da1 = 0, a01 = a11 = (a0 + a1) / 2;
-          }
-          var x01 = r1 * Math.cos(a01),
-              y01 = r1 * Math.sin(a01),
-              x10 = r0 * Math.cos(a10),
-              y10 = r0 * Math.sin(a10);
-          if (rc > epsilon) {
-            var x11 = r1 * Math.cos(a11),
-                y11 = r1 * Math.sin(a11),
-                x00 = r0 * Math.cos(a00),
-                y00 = r0 * Math.sin(a00);
-            if (da < pi) {
-              var oc = da0 > epsilon ? intersect(x01, y01, x00, y00, x11, y11, x10, y10) : [x10, y10],
-                  ax = x01 - oc[0],
-                  ay = y01 - oc[1],
-                  bx = x11 - oc[0],
-                  by = y11 - oc[1],
-                  kc = 1 / Math.sin(Math.acos((ax * bx + ay * by) / (Math.sqrt(ax * ax + ay * ay) * Math.sqrt(bx * bx + by * by))) / 2),
-                  lc = Math.sqrt(oc[0] * oc[0] + oc[1] * oc[1]);
-              rc0 = Math.min(rc, (r0 - lc) / (kc - 1));
-              rc1 = Math.min(rc, (r1 - lc) / (kc + 1));
-            }
-          }
-          if (!(da1 > epsilon))
-            context.moveTo(x01, y01);
-          else if (rc1 > epsilon) {
-            t0 = cornerTangents(x00, y00, x01, y01, r1, rc1, cw);
-            t1 = cornerTangents(x11, y11, x10, y10, r1, rc1, cw);
-            context.moveTo(t0.cx + t0.x01, t0.cy + t0.y01);
-            if (rc1 < rc)
-              context.arc(t0.cx, t0.cy, rc1, Math.atan2(t0.y01, t0.x01), Math.atan2(t1.y01, t1.x01), !cw);
-            else {
-              context.arc(t0.cx, t0.cy, rc1, Math.atan2(t0.y01, t0.x01), Math.atan2(t0.y11, t0.x11), !cw);
-              context.arc(0, 0, r1, Math.atan2(t0.cy + t0.y11, t0.cx + t0.x11), Math.atan2(t1.cy + t1.y11, t1.cx + t1.x11), !cw);
-              context.arc(t1.cx, t1.cy, rc1, Math.atan2(t1.y11, t1.x11), Math.atan2(t1.y01, t1.x01), !cw);
-            }
-          } else
-            context.moveTo(x01, y01), context.arc(0, 0, r1, a01, a11, !cw);
-          if (!(r0 > epsilon) || !(da0 > epsilon))
-            context.lineTo(x10, y10);
-          else if (rc0 > epsilon) {
-            t0 = cornerTangents(x10, y10, x11, y11, r0, -rc0, cw);
-            t1 = cornerTangents(x01, y01, x00, y00, r0, -rc0, cw);
-            context.lineTo(t0.cx + t0.x01, t0.cy + t0.y01);
-            if (rc0 < rc)
-              context.arc(t0.cx, t0.cy, rc0, Math.atan2(t0.y01, t0.x01), Math.atan2(t1.y01, t1.x01), !cw);
-            else {
-              context.arc(t0.cx, t0.cy, rc0, Math.atan2(t0.y01, t0.x01), Math.atan2(t0.y11, t0.x11), !cw);
-              context.arc(0, 0, r0, Math.atan2(t0.cy + t0.y11, t0.cx + t0.x11), Math.atan2(t1.cy + t1.y11, t1.cx + t1.x11), cw);
-              context.arc(t1.cx, t1.cy, rc0, Math.atan2(t1.y11, t1.x11), Math.atan2(t1.y01, t1.x01), !cw);
-            }
-          } else
-            context.arc(0, 0, r0, a10, a00, cw);
-        }
-        context.closePath();
-        if (buffer)
-          return context = null, buffer + "" || null;
-      }
-      arc.centroid = function() {
-        var r = (+innerRadius.apply(this, arguments) + +outerRadius.apply(this, arguments)) / 2,
-            a = (+startAngle.apply(this, arguments) + +endAngle.apply(this, arguments)) / 2 - pi / 2;
-        return [Math.cos(a) * r, Math.sin(a) * r];
-      };
-      arc.innerRadius = function(_) {
-        return arguments.length ? (innerRadius = typeof _ === "function" ? _ : constant(+_), arc) : innerRadius;
-      };
-      arc.outerRadius = function(_) {
-        return arguments.length ? (outerRadius = typeof _ === "function" ? _ : constant(+_), arc) : outerRadius;
-      };
-      arc.cornerRadius = function(_) {
-        return arguments.length ? (cornerRadius = typeof _ === "function" ? _ : constant(+_), arc) : cornerRadius;
-      };
-      arc.padRadius = function(_) {
-        return arguments.length ? (padRadius = _ == null ? null : typeof _ === "function" ? _ : constant(+_), arc) : padRadius;
-      };
-      arc.startAngle = function(_) {
-        return arguments.length ? (startAngle = typeof _ === "function" ? _ : constant(+_), arc) : startAngle;
-      };
-      arc.endAngle = function(_) {
-        return arguments.length ? (endAngle = typeof _ === "function" ? _ : constant(+_), arc) : endAngle;
-      };
-      arc.padAngle = function(_) {
-        return arguments.length ? (padAngle = typeof _ === "function" ? _ : constant(+_), arc) : padAngle;
-      };
-      arc.context = function(_) {
-        return arguments.length ? ((context = _ == null ? null : _), arc) : context;
-      };
-      return arc;
-    }
-    function Linear(context) {
-      this._context = context;
-    }
-    Linear.prototype = {
-      areaStart: function() {
-        this._line = 0;
-      },
-      areaEnd: function() {
-        this._line = NaN;
-      },
-      lineStart: function() {
-        this._point = 0;
-      },
-      lineEnd: function() {
-        if (this._line || (this._line !== 0 && this._point === 1))
-          this._context.closePath();
-        this._line = 1 - this._line;
-      },
-      point: function(x, y) {
-        x = +x, y = +y;
-        switch (this._point) {
-          case 0:
-            this._point = 1;
-            this._line ? this._context.lineTo(x, y) : this._context.moveTo(x, y);
-            break;
-          case 1:
-            this._point = 2;
-          default:
-            this._context.lineTo(x, y);
-            break;
-        }
-      }
-    };
-    function curveLinear(context) {
-      return new Linear(context);
-    }
-    function x(p) {
-      return p[0];
-    }
-    function y(p) {
-      return p[1];
-    }
-    function line() {
-      var x$$ = x,
-          y$$ = y,
-          defined = constant(true),
-          context = null,
-          curve = curveLinear,
-          output = null;
-      function line(data) {
-        var i,
-            n = data.length,
-            d,
-            defined0 = false,
-            buffer;
-        if (context == null)
-          output = curve(buffer = d3Path.path());
-        for (i = 0; i <= n; ++i) {
-          if (!(i < n && defined(d = data[i], i, data)) === defined0) {
-            if (defined0 = !defined0)
-              output.lineStart();
-            else
-              output.lineEnd();
-          }
-          if (defined0)
-            output.point(+x$$(d, i, data), +y$$(d, i, data));
-        }
-        if (buffer)
-          return output = null, buffer + "" || null;
-      }
-      line.x = function(_) {
-        return arguments.length ? (x$$ = typeof _ === "function" ? _ : constant(+_), line) : x$$;
-      };
-      line.y = function(_) {
-        return arguments.length ? (y$$ = typeof _ === "function" ? _ : constant(+_), line) : y$$;
-      };
-      line.defined = function(_) {
-        return arguments.length ? (defined = typeof _ === "function" ? _ : constant(!!_), line) : defined;
-      };
-      line.curve = function(_) {
-        return arguments.length ? (curve = _, context != null && (output = curve(context)), line) : curve;
-      };
-      line.context = function(_) {
-        return arguments.length ? (_ == null ? context = output = null : output = curve(context = _), line) : context;
-      };
-      return line;
-    }
-    function area() {
-      var x0 = x,
-          x1 = null,
-          y0 = constant(0),
-          y1 = y,
-          defined = constant(true),
-          context = null,
-          curve = curveLinear,
-          output = null;
-      function area(data) {
-        var i,
-            j,
-            k,
-            n = data.length,
-            d,
-            defined0 = false,
-            buffer,
-            x0z = new Array(n),
-            y0z = new Array(n);
-        if (context == null)
-          output = curve(buffer = d3Path.path());
-        for (i = 0; i <= n; ++i) {
-          if (!(i < n && defined(d = data[i], i, data)) === defined0) {
-            if (defined0 = !defined0) {
-              j = i;
-              output.areaStart();
-              output.lineStart();
-            } else {
-              output.lineEnd();
-              output.lineStart();
-              for (k = i - 1; k >= j; --k) {
-                output.point(x0z[k], y0z[k]);
-              }
-              output.lineEnd();
-              output.areaEnd();
-            }
-          }
-          if (defined0) {
-            x0z[i] = +x0(d, i, data), y0z[i] = +y0(d, i, data);
-            output.point(x1 ? +x1(d, i, data) : x0z[i], y1 ? +y1(d, i, data) : y0z[i]);
-          }
-        }
-        if (buffer)
-          return output = null, buffer + "" || null;
-      }
-      function arealine() {
-        return line().defined(defined).curve(curve).context(context);
-      }
-      area.x = function(_) {
-        return arguments.length ? (x0 = typeof _ === "function" ? _ : constant(+_), x1 = null, area) : x0;
-      };
-      area.x0 = function(_) {
-        return arguments.length ? (x0 = typeof _ === "function" ? _ : constant(+_), area) : x0;
-      };
-      area.x1 = function(_) {
-        return arguments.length ? (x1 = _ == null ? null : typeof _ === "function" ? _ : constant(+_), area) : x1;
-      };
-      area.y = function(_) {
-        return arguments.length ? (y0 = typeof _ === "function" ? _ : constant(+_), y1 = null, area) : y0;
-      };
-      area.y0 = function(_) {
-        return arguments.length ? (y0 = typeof _ === "function" ? _ : constant(+_), area) : y0;
-      };
-      area.y1 = function(_) {
-        return arguments.length ? (y1 = _ == null ? null : typeof _ === "function" ? _ : constant(+_), area) : y1;
-      };
-      area.lineX0 = area.lineY0 = function() {
-        return arealine().x(x0).y(y0);
-      };
-      area.lineY1 = function() {
-        return arealine().x(x0).y(y1);
-      };
-      area.lineX1 = function() {
-        return arealine().x(x1).y(y0);
-      };
-      area.defined = function(_) {
-        return arguments.length ? (defined = typeof _ === "function" ? _ : constant(!!_), area) : defined;
-      };
-      area.curve = function(_) {
-        return arguments.length ? (curve = _, context != null && (output = curve(context)), area) : curve;
-      };
-      area.context = function(_) {
-        return arguments.length ? (_ == null ? context = output = null : output = curve(context = _), area) : context;
-      };
-      return area;
-    }
-    function descending(a, b) {
-      return b < a ? -1 : b > a ? 1 : b >= a ? 0 : NaN;
-    }
-    function identity(d) {
-      return d;
-    }
-    function pie() {
-      var value = identity,
-          sortValues = descending,
-          sort = null,
-          startAngle = constant(0),
-          endAngle = constant(tau),
-          padAngle = constant(0);
-      function pie(data) {
-        var i,
-            n = data.length,
-            j,
-            k,
-            sum = 0,
-            index = new Array(n),
-            arcs = new Array(n),
-            a0 = +startAngle.apply(this, arguments),
-            da = Math.min(tau, Math.max(-tau, endAngle.apply(this, arguments) - a0)),
-            a1,
-            p = Math.min(Math.abs(da) / n, padAngle.apply(this, arguments)),
-            pa = p * (da < 0 ? -1 : 1),
-            v;
-        for (i = 0; i < n; ++i) {
-          if ((v = arcs[index[i] = i] = +value(data[i], i, data)) > 0) {
-            sum += v;
-          }
-        }
-        if (sortValues != null)
-          index.sort(function(i, j) {
-            return sortValues(arcs[i], arcs[j]);
-          });
-        else if (sort != null)
-          index.sort(function(i, j) {
-            return sort(data[i], data[j]);
-          });
-        for (i = 0, k = sum ? (da - n * pa) / sum : 0; i < n; ++i, a0 = a1) {
-          j = index[i], v = arcs[j], a1 = a0 + (v > 0 ? v * k : 0) + pa, arcs[j] = {
-            data: data[j],
-            index: i,
-            value: v,
-            startAngle: a0,
-            endAngle: a1,
-            padAngle: p
-          };
-        }
-        return arcs;
-      }
-      pie.value = function(_) {
-        return arguments.length ? (value = typeof _ === "function" ? _ : constant(+_), pie) : value;
-      };
-      pie.sortValues = function(_) {
-        return arguments.length ? (sortValues = _, sort = null, pie) : sortValues;
-      };
-      pie.sort = function(_) {
-        return arguments.length ? (sort = _, sortValues = null, pie) : sort;
-      };
-      pie.startAngle = function(_) {
-        return arguments.length ? (startAngle = typeof _ === "function" ? _ : constant(+_), pie) : startAngle;
-      };
-      pie.endAngle = function(_) {
-        return arguments.length ? (endAngle = typeof _ === "function" ? _ : constant(+_), pie) : endAngle;
-      };
-      pie.padAngle = function(_) {
-        return arguments.length ? (padAngle = typeof _ === "function" ? _ : constant(+_), pie) : padAngle;
-      };
-      return pie;
-    }
-    var curveRadialLinear = curveRadial(curveLinear);
-    function Radial(curve) {
-      this._curve = curve;
-    }
-    Radial.prototype = {
-      areaStart: function() {
-        this._curve.areaStart();
-      },
-      areaEnd: function() {
-        this._curve.areaEnd();
-      },
-      lineStart: function() {
-        this._curve.lineStart();
-      },
-      lineEnd: function() {
-        this._curve.lineEnd();
-      },
-      point: function(a, r) {
-        this._curve.point(r * Math.sin(a), r * -Math.cos(a));
-      }
-    };
-    function curveRadial(curve) {
-      function radial(context) {
-        return new Radial(curve(context));
-      }
-      radial._curve = curve;
-      return radial;
-    }
-    function radialLine(l) {
-      var c = l.curve;
-      l.angle = l.x, delete l.x;
-      l.radius = l.y, delete l.y;
-      l.curve = function(_) {
-        return arguments.length ? c(curveRadial(_)) : c()._curve;
-      };
-      return l;
-    }
-    function radialLine$1() {
-      return radialLine(line().curve(curveRadialLinear));
-    }
-    function radialArea() {
-      var a = area().curve(curveRadialLinear),
-          c = a.curve,
-          x0 = a.lineX0,
-          x1 = a.lineX1,
-          y0 = a.lineY0,
-          y1 = a.lineY1;
-      a.angle = a.x, delete a.x;
-      a.startAngle = a.x0, delete a.x0;
-      a.endAngle = a.x1, delete a.x1;
-      a.radius = a.y, delete a.y;
-      a.innerRadius = a.y0, delete a.y0;
-      a.outerRadius = a.y1, delete a.y1;
-      a.lineStartAngle = function() {
-        return radialLine(x0());
-      }, delete a.lineX0;
-      a.lineEndAngle = function() {
-        return radialLine(x1());
-      }, delete a.lineX1;
-      a.lineInnerRadius = function() {
-        return radialLine(y0());
-      }, delete a.lineY0;
-      a.lineOuterRadius = function() {
-        return radialLine(y1());
-      }, delete a.lineY1;
-      a.curve = function(_) {
-        return arguments.length ? c(curveRadial(_)) : c()._curve;
-      };
-      return a;
-    }
-    var circle = {draw: function(context, size) {
-        var r = Math.sqrt(size / pi);
-        context.moveTo(r, 0);
-        context.arc(0, 0, r, 0, tau);
-      }};
-    var cross = {draw: function(context, size) {
-        var r = Math.sqrt(size / 5) / 2;
-        context.moveTo(-3 * r, -r);
-        context.lineTo(-r, -r);
-        context.lineTo(-r, -3 * r);
-        context.lineTo(r, -3 * r);
-        context.lineTo(r, -r);
-        context.lineTo(3 * r, -r);
-        context.lineTo(3 * r, r);
-        context.lineTo(r, r);
-        context.lineTo(r, 3 * r);
-        context.lineTo(-r, 3 * r);
-        context.lineTo(-r, r);
-        context.lineTo(-3 * r, r);
-        context.closePath();
-      }};
-    var tan30 = Math.sqrt(1 / 3);
-    var tan30_2 = tan30 * 2;
-    var diamond = {draw: function(context, size) {
-        var y = Math.sqrt(size / tan30_2),
-            x = y * tan30;
-        context.moveTo(0, -y);
-        context.lineTo(x, 0);
-        context.lineTo(0, y);
-        context.lineTo(-x, 0);
-        context.closePath();
-      }};
-    var ka = 0.89081309152928522810;
-    var kr = Math.sin(pi / 10) / Math.sin(7 * pi / 10);
-    var kx = Math.sin(tau / 10) * kr;
-    var ky = -Math.cos(tau / 10) * kr;
-    var star = {draw: function(context, size) {
-        var r = Math.sqrt(size * ka),
-            x = kx * r,
-            y = ky * r;
-        context.moveTo(0, -r);
-        context.lineTo(x, y);
-        for (var i = 1; i < 5; ++i) {
-          var a = tau * i / 5,
-              c = Math.cos(a),
-              s = Math.sin(a);
-          context.lineTo(s * r, -c * r);
-          context.lineTo(c * x - s * y, s * x + c * y);
-        }
-        context.closePath();
-      }};
-    var square = {draw: function(context, size) {
-        var w = Math.sqrt(size),
-            x = -w / 2;
-        context.rect(x, x, w, w);
-      }};
-    var sqrt3 = Math.sqrt(3);
-    var triangle = {draw: function(context, size) {
-        var y = -Math.sqrt(size / (sqrt3 * 3));
-        context.moveTo(0, y * 2);
-        context.lineTo(-sqrt3 * y, -y);
-        context.lineTo(sqrt3 * y, -y);
-        context.closePath();
-      }};
-    var c = -0.5;
-    var s = Math.sqrt(3) / 2;
-    var k = 1 / Math.sqrt(12);
-    var a = (k / 2 + 1) * 3;
-    var wye = {draw: function(context, size) {
-        var r = Math.sqrt(size / a),
-            x0 = r / 2,
-            y0 = r * k,
-            x1 = x0,
-            y1 = r * k + r,
-            x2 = -x1,
-            y2 = y1;
-        context.moveTo(x0, y0);
-        context.lineTo(x1, y1);
-        context.lineTo(x2, y2);
-        context.lineTo(c * x0 - s * y0, s * x0 + c * y0);
-        context.lineTo(c * x1 - s * y1, s * x1 + c * y1);
-        context.lineTo(c * x2 - s * y2, s * x2 + c * y2);
-        context.lineTo(c * x0 + s * y0, c * y0 - s * x0);
-        context.lineTo(c * x1 + s * y1, c * y1 - s * x1);
-        context.lineTo(c * x2 + s * y2, c * y2 - s * x2);
-        context.closePath();
-      }};
-    var symbols = [circle, cross, diamond, square, star, triangle, wye];
-    function symbol() {
-      var type = constant(circle),
-          size = constant(64),
-          context = null;
-      function symbol() {
-        var buffer;
-        if (!context)
-          context = buffer = d3Path.path();
-        type.apply(this, arguments).draw(context, +size.apply(this, arguments));
-        if (buffer)
-          return context = null, buffer + "" || null;
-      }
-      symbol.type = function(_) {
-        return arguments.length ? (type = typeof _ === "function" ? _ : constant(_), symbol) : type;
-      };
-      symbol.size = function(_) {
-        return arguments.length ? (size = typeof _ === "function" ? _ : constant(+_), symbol) : size;
-      };
-      symbol.context = function(_) {
-        return arguments.length ? (context = _ == null ? null : _, symbol) : context;
-      };
-      return symbol;
-    }
-    function noop() {}
-    function point(that, x, y) {
-      that._context.bezierCurveTo((2 * that._x0 + that._x1) / 3, (2 * that._y0 + that._y1) / 3, (that._x0 + 2 * that._x1) / 3, (that._y0 + 2 * that._y1) / 3, (that._x0 + 4 * that._x1 + x) / 6, (that._y0 + 4 * that._y1 + y) / 6);
-    }
-    function Basis(context) {
-      this._context = context;
-    }
-    Basis.prototype = {
-      areaStart: function() {
-        this._line = 0;
-      },
-      areaEnd: function() {
-        this._line = NaN;
-      },
-      lineStart: function() {
-        this._x0 = this._x1 = this._y0 = this._y1 = NaN;
-        this._point = 0;
-      },
-      lineEnd: function() {
-        switch (this._point) {
-          case 3:
-            point(this, this._x1, this._y1);
-          case 2:
-            this._context.lineTo(this._x1, this._y1);
-            break;
-        }
-        if (this._line || (this._line !== 0 && this._point === 1))
-          this._context.closePath();
-        this._line = 1 - this._line;
-      },
-      point: function(x, y) {
-        x = +x, y = +y;
-        switch (this._point) {
-          case 0:
-            this._point = 1;
-            this._line ? this._context.lineTo(x, y) : this._context.moveTo(x, y);
-            break;
-          case 1:
-            this._point = 2;
-            break;
-          case 2:
-            this._point = 3;
-            this._context.lineTo((5 * this._x0 + this._x1) / 6, (5 * this._y0 + this._y1) / 6);
-          default:
-            point(this, x, y);
-            break;
-        }
-        this._x0 = this._x1, this._x1 = x;
-        this._y0 = this._y1, this._y1 = y;
-      }
-    };
-    function basis(context) {
-      return new Basis(context);
-    }
-    function BasisClosed(context) {
-      this._context = context;
-    }
-    BasisClosed.prototype = {
-      areaStart: noop,
-      areaEnd: noop,
-      lineStart: function() {
-        this._x0 = this._x1 = this._x2 = this._x3 = this._x4 = this._y0 = this._y1 = this._y2 = this._y3 = this._y4 = NaN;
-        this._point = 0;
-      },
-      lineEnd: function() {
-        switch (this._point) {
-          case 1:
-            {
-              this._context.moveTo(this._x2, this._y2);
-              this._context.closePath();
-              break;
-            }
-          case 2:
-            {
-              this._context.moveTo((this._x2 + 2 * this._x3) / 3, (this._y2 + 2 * this._y3) / 3);
-              this._context.lineTo((this._x3 + 2 * this._x2) / 3, (this._y3 + 2 * this._y2) / 3);
-              this._context.closePath();
-              break;
-            }
-          case 3:
-            {
-              this.point(this._x2, this._y2);
-              this.point(this._x3, this._y3);
-              this.point(this._x4, this._y4);
-              break;
-            }
-        }
-      },
-      point: function(x, y) {
-        x = +x, y = +y;
-        switch (this._point) {
-          case 0:
-            this._point = 1;
-            this._x2 = x, this._y2 = y;
-            break;
-          case 1:
-            this._point = 2;
-            this._x3 = x, this._y3 = y;
-            break;
-          case 2:
-            this._point = 3;
-            this._x4 = x, this._y4 = y;
-            this._context.moveTo((this._x0 + 4 * this._x1 + x) / 6, (this._y0 + 4 * this._y1 + y) / 6);
-            break;
-          default:
-            point(this, x, y);
-            break;
-        }
-        this._x0 = this._x1, this._x1 = x;
-        this._y0 = this._y1, this._y1 = y;
-      }
-    };
-    function basisClosed(context) {
-      return new BasisClosed(context);
-    }
-    function BasisOpen(context) {
-      this._context = context;
-    }
-    BasisOpen.prototype = {
-      areaStart: function() {
-        this._line = 0;
-      },
-      areaEnd: function() {
-        this._line = NaN;
-      },
-      lineStart: function() {
-        this._x0 = this._x1 = this._y0 = this._y1 = NaN;
-        this._point = 0;
-      },
-      lineEnd: function() {
-        if (this._line || (this._line !== 0 && this._point === 3))
-          this._context.closePath();
-        this._line = 1 - this._line;
-      },
-      point: function(x, y) {
-        x = +x, y = +y;
-        switch (this._point) {
-          case 0:
-            this._point = 1;
-            break;
-          case 1:
-            this._point = 2;
-            break;
-          case 2:
-            this._point = 3;
-            var x0 = (this._x0 + 4 * this._x1 + x) / 6,
-                y0 = (this._y0 + 4 * this._y1 + y) / 6;
-            this._line ? this._context.lineTo(x0, y0) : this._context.moveTo(x0, y0);
-            break;
-          case 3:
-            this._point = 4;
-          default:
-            point(this, x, y);
-            break;
-        }
-        this._x0 = this._x1, this._x1 = x;
-        this._y0 = this._y1, this._y1 = y;
-      }
-    };
-    function basisOpen(context) {
-      return new BasisOpen(context);
-    }
-    function Bundle(context, beta) {
-      this._basis = new Basis(context);
-      this._beta = beta;
-    }
-    Bundle.prototype = {
-      lineStart: function() {
-        this._x = [];
-        this._y = [];
-        this._basis.lineStart();
-      },
-      lineEnd: function() {
-        var x = this._x,
-            y = this._y,
-            j = x.length - 1;
-        if (j > 0) {
-          var x0 = x[0],
-              y0 = y[0],
-              dx = x[j] - x0,
-              dy = y[j] - y0,
-              i = -1,
-              t;
-          while (++i <= j) {
-            t = i / j;
-            this._basis.point(this._beta * x[i] + (1 - this._beta) * (x0 + t * dx), this._beta * y[i] + (1 - this._beta) * (y0 + t * dy));
-          }
-        }
-        this._x = this._y = null;
-        this._basis.lineEnd();
-      },
-      point: function(x, y) {
-        this._x.push(+x);
-        this._y.push(+y);
-      }
-    };
-    var bundle = (function custom(beta) {
-      function bundle(context) {
-        return beta === 1 ? new Basis(context) : new Bundle(context, beta);
-      }
-      bundle.beta = function(beta) {
-        return custom(+beta);
-      };
-      return bundle;
-    })(0.85);
-    function point$1(that, x, y) {
-      that._context.bezierCurveTo(that._x1 + that._k * (that._x2 - that._x0), that._y1 + that._k * (that._y2 - that._y0), that._x2 + that._k * (that._x1 - x), that._y2 + that._k * (that._y1 - y), that._x2, that._y2);
-    }
-    function Cardinal(context, tension) {
-      this._context = context;
-      this._k = (1 - tension) / 6;
-    }
-    Cardinal.prototype = {
-      areaStart: function() {
-        this._line = 0;
-      },
-      areaEnd: function() {
-        this._line = NaN;
-      },
-      lineStart: function() {
-        this._x0 = this._x1 = this._x2 = this._y0 = this._y1 = this._y2 = NaN;
-        this._point = 0;
-      },
-      lineEnd: function() {
-        switch (this._point) {
-          case 2:
-            this._context.lineTo(this._x2, this._y2);
-            break;
-          case 3:
-            point$1(this, this._x1, this._y1);
-            break;
-        }
-        if (this._line || (this._line !== 0 && this._point === 1))
-          this._context.closePath();
-        this._line = 1 - this._line;
-      },
-      point: function(x, y) {
-        x = +x, y = +y;
-        switch (this._point) {
-          case 0:
-            this._point = 1;
-            this._line ? this._context.lineTo(x, y) : this._context.moveTo(x, y);
-            break;
-          case 1:
-            this._point = 2;
-            this._x1 = x, this._y1 = y;
-            break;
-          case 2:
-            this._point = 3;
-          default:
-            point$1(this, x, y);
-            break;
-        }
-        this._x0 = this._x1, this._x1 = this._x2, this._x2 = x;
-        this._y0 = this._y1, this._y1 = this._y2, this._y2 = y;
-      }
-    };
-    var cardinal = (function custom(tension) {
-      function cardinal(context) {
-        return new Cardinal(context, tension);
-      }
-      cardinal.tension = function(tension) {
-        return custom(+tension);
-      };
-      return cardinal;
-    })(0);
-    function CardinalClosed(context, tension) {
-      this._context = context;
-      this._k = (1 - tension) / 6;
-    }
-    CardinalClosed.prototype = {
-      areaStart: noop,
-      areaEnd: noop,
-      lineStart: function() {
-        this._x0 = this._x1 = this._x2 = this._x3 = this._x4 = this._x5 = this._y0 = this._y1 = this._y2 = this._y3 = this._y4 = this._y5 = NaN;
-        this._point = 0;
-      },
-      lineEnd: function() {
-        switch (this._point) {
-          case 1:
-            {
-              this._context.moveTo(this._x3, this._y3);
-              this._context.closePath();
-              break;
-            }
-          case 2:
-            {
-              this._context.lineTo(this._x3, this._y3);
-              this._context.closePath();
-              break;
-            }
-          case 3:
-            {
-              this.point(this._x3, this._y3);
-              this.point(this._x4, this._y4);
-              this.point(this._x5, this._y5);
-              break;
-            }
-        }
-      },
-      point: function(x, y) {
-        x = +x, y = +y;
-        switch (this._point) {
-          case 0:
-            this._point = 1;
-            this._x3 = x, this._y3 = y;
-            break;
-          case 1:
-            this._point = 2;
-            this._context.moveTo(this._x4 = x, this._y4 = y);
-            break;
-          case 2:
-            this._point = 3;
-            this._x5 = x, this._y5 = y;
-            break;
-          default:
-            point$1(this, x, y);
-            break;
-        }
-        this._x0 = this._x1, this._x1 = this._x2, this._x2 = x;
-        this._y0 = this._y1, this._y1 = this._y2, this._y2 = y;
-      }
-    };
-    var cardinalClosed = (function custom(tension) {
-      function cardinal(context) {
-        return new CardinalClosed(context, tension);
-      }
-      cardinal.tension = function(tension) {
-        return custom(+tension);
-      };
-      return cardinal;
-    })(0);
-    function CardinalOpen(context, tension) {
-      this._context = context;
-      this._k = (1 - tension) / 6;
-    }
-    CardinalOpen.prototype = {
-      areaStart: function() {
-        this._line = 0;
-      },
-      areaEnd: function() {
-        this._line = NaN;
-      },
-      lineStart: function() {
-        this._x0 = this._x1 = this._x2 = this._y0 = this._y1 = this._y2 = NaN;
-        this._point = 0;
-      },
-      lineEnd: function() {
-        if (this._line || (this._line !== 0 && this._point === 3))
-          this._context.closePath();
-        this._line = 1 - this._line;
-      },
-      point: function(x, y) {
-        x = +x, y = +y;
-        switch (this._point) {
-          case 0:
-            this._point = 1;
-            break;
-          case 1:
-            this._point = 2;
-            break;
-          case 2:
-            this._point = 3;
-            this._line ? this._context.lineTo(this._x2, this._y2) : this._context.moveTo(this._x2, this._y2);
-            break;
-          case 3:
-            this._point = 4;
-          default:
-            point$1(this, x, y);
-            break;
-        }
-        this._x0 = this._x1, this._x1 = this._x2, this._x2 = x;
-        this._y0 = this._y1, this._y1 = this._y2, this._y2 = y;
-      }
-    };
-    var cardinalOpen = (function custom(tension) {
-      function cardinal(context) {
-        return new CardinalOpen(context, tension);
-      }
-      cardinal.tension = function(tension) {
-        return custom(+tension);
-      };
-      return cardinal;
-    })(0);
-    function point$2(that, x, y) {
-      var x1 = that._x1,
-          y1 = that._y1,
-          x2 = that._x2,
-          y2 = that._y2;
-      if (that._l01_a > epsilon) {
-        var a = 2 * that._l01_2a + 3 * that._l01_a * that._l12_a + that._l12_2a,
-            n = 3 * that._l01_a * (that._l01_a + that._l12_a);
-        x1 = (x1 * a - that._x0 * that._l12_2a + that._x2 * that._l01_2a) / n;
-        y1 = (y1 * a - that._y0 * that._l12_2a + that._y2 * that._l01_2a) / n;
-      }
-      if (that._l23_a > epsilon) {
-        var b = 2 * that._l23_2a + 3 * that._l23_a * that._l12_a + that._l12_2a,
-            m = 3 * that._l23_a * (that._l23_a + that._l12_a);
-        x2 = (x2 * b + that._x1 * that._l23_2a - x * that._l12_2a) / m;
-        y2 = (y2 * b + that._y1 * that._l23_2a - y * that._l12_2a) / m;
-      }
-      that._context.bezierCurveTo(x1, y1, x2, y2, that._x2, that._y2);
-    }
-    function CatmullRom(context, alpha) {
-      this._context = context;
-      this._alpha = alpha;
-    }
-    CatmullRom.prototype = {
-      areaStart: function() {
-        this._line = 0;
-      },
-      areaEnd: function() {
-        this._line = NaN;
-      },
-      lineStart: function() {
-        this._x0 = this._x1 = this._x2 = this._y0 = this._y1 = this._y2 = NaN;
-        this._l01_a = this._l12_a = this._l23_a = this._l01_2a = this._l12_2a = this._l23_2a = this._point = 0;
-      },
-      lineEnd: function() {
-        switch (this._point) {
-          case 2:
-            this._context.lineTo(this._x2, this._y2);
-            break;
-          case 3:
-            this.point(this, this._x2, this._y2);
-            break;
-        }
-        if (this._line || (this._line !== 0 && this._point === 1))
-          this._context.closePath();
-        this._line = 1 - this._line;
-      },
-      point: function(x, y) {
-        x = +x, y = +y;
-        if (this._point) {
-          var x23 = this._x2 - x,
-              y23 = this._y2 - y;
-          this._l23_a = Math.sqrt(this._l23_2a = Math.pow(x23 * x23 + y23 * y23, this._alpha));
-        }
-        switch (this._point) {
-          case 0:
-            this._point = 1;
-            this._line ? this._context.lineTo(x, y) : this._context.moveTo(x, y);
-            break;
-          case 1:
-            this._point = 2;
-            break;
-          case 2:
-            this._point = 3;
-          default:
-            point$2(this, x, y);
-            break;
-        }
-        this._l01_a = this._l12_a, this._l12_a = this._l23_a;
-        this._l01_2a = this._l12_2a, this._l12_2a = this._l23_2a;
-        this._x0 = this._x1, this._x1 = this._x2, this._x2 = x;
-        this._y0 = this._y1, this._y1 = this._y2, this._y2 = y;
-      }
-    };
-    var catmullRom = (function custom(alpha) {
-      function catmullRom(context) {
-        return alpha ? new CatmullRom(context, alpha) : new Cardinal(context, 0);
-      }
-      catmullRom.alpha = function(alpha) {
-        return custom(+alpha);
-      };
-      return catmullRom;
-    })(0.5);
-    function CatmullRomClosed(context, alpha) {
-      this._context = context;
-      this._alpha = alpha;
-    }
-    CatmullRomClosed.prototype = {
-      areaStart: noop,
-      areaEnd: noop,
-      lineStart: function() {
-        this._x0 = this._x1 = this._x2 = this._x3 = this._x4 = this._x5 = this._y0 = this._y1 = this._y2 = this._y3 = this._y4 = this._y5 = NaN;
-        this._l01_a = this._l12_a = this._l23_a = this._l01_2a = this._l12_2a = this._l23_2a = this._point = 0;
-      },
-      lineEnd: function() {
-        switch (this._point) {
-          case 1:
-            {
-              this._context.moveTo(this._x3, this._y3);
-              this._context.closePath();
-              break;
-            }
-          case 2:
-            {
-              this._context.lineTo(this._x3, this._y3);
-              this._context.closePath();
-              break;
-            }
-          case 3:
-            {
-              this.point(this._x3, this._y3);
-              this.point(this._x4, this._y4);
-              this.point(this._x5, this._y5);
-              break;
-            }
-        }
-      },
-      point: function(x, y) {
-        x = +x, y = +y;
-        if (this._point) {
-          var x23 = this._x2 - x,
-              y23 = this._y2 - y;
-          this._l23_a = Math.sqrt(this._l23_2a = Math.pow(x23 * x23 + y23 * y23, this._alpha));
-        }
-        switch (this._point) {
-          case 0:
-            this._point = 1;
-            this._x3 = x, this._y3 = y;
-            break;
-          case 1:
-            this._point = 2;
-            this._context.moveTo(this._x4 = x, this._y4 = y);
-            break;
-          case 2:
-            this._point = 3;
-            this._x5 = x, this._y5 = y;
-            break;
-          default:
-            point$2(this, x, y);
-            break;
-        }
-        this._l01_a = this._l12_a, this._l12_a = this._l23_a;
-        this._l01_2a = this._l12_2a, this._l12_2a = this._l23_2a;
-        this._x0 = this._x1, this._x1 = this._x2, this._x2 = x;
-        this._y0 = this._y1, this._y1 = this._y2, this._y2 = y;
-      }
-    };
-    var catmullRomClosed = (function custom(alpha) {
-      function catmullRom(context) {
-        return alpha ? new CatmullRomClosed(context, alpha) : new CardinalClosed(context, 0);
-      }
-      catmullRom.alpha = function(alpha) {
-        return custom(+alpha);
-      };
-      return catmullRom;
-    })(0.5);
-    function CatmullRomOpen(context, alpha) {
-      this._context = context;
-      this._alpha = alpha;
-    }
-    CatmullRomOpen.prototype = {
-      areaStart: function() {
-        this._line = 0;
-      },
-      areaEnd: function() {
-        this._line = NaN;
-      },
-      lineStart: function() {
-        this._x0 = this._x1 = this._x2 = this._y0 = this._y1 = this._y2 = NaN;
-        this._l01_a = this._l12_a = this._l23_a = this._l01_2a = this._l12_2a = this._l23_2a = this._point = 0;
-      },
-      lineEnd: function() {
-        if (this._line || (this._line !== 0 && this._point === 3))
-          this._context.closePath();
-        this._line = 1 - this._line;
-      },
-      point: function(x, y) {
-        x = +x, y = +y;
-        if (this._point) {
-          var x23 = this._x2 - x,
-              y23 = this._y2 - y;
-          this._l23_a = Math.sqrt(this._l23_2a = Math.pow(x23 * x23 + y23 * y23, this._alpha));
-        }
-        switch (this._point) {
-          case 0:
-            this._point = 1;
-            break;
-          case 1:
-            this._point = 2;
-            break;
-          case 2:
-            this._point = 3;
-            this._line ? this._context.lineTo(this._x2, this._y2) : this._context.moveTo(this._x2, this._y2);
-            break;
-          case 3:
-            this._point = 4;
-          default:
-            point$2(this, x, y);
-            break;
-        }
-        this._l01_a = this._l12_a, this._l12_a = this._l23_a;
-        this._l01_2a = this._l12_2a, this._l12_2a = this._l23_2a;
-        this._x0 = this._x1, this._x1 = this._x2, this._x2 = x;
-        this._y0 = this._y1, this._y1 = this._y2, this._y2 = y;
-      }
-    };
-    var catmullRomOpen = (function custom(alpha) {
-      function catmullRom(context) {
-        return alpha ? new CatmullRomOpen(context, alpha) : new CardinalOpen(context, 0);
-      }
-      catmullRom.alpha = function(alpha) {
-        return custom(+alpha);
-      };
-      return catmullRom;
-    })(0.5);
-    function LinearClosed(context) {
-      this._context = context;
-    }
-    LinearClosed.prototype = {
-      areaStart: noop,
-      areaEnd: noop,
-      lineStart: function() {
-        this._point = 0;
-      },
-      lineEnd: function() {
-        if (this._point)
-          this._context.closePath();
-      },
-      point: function(x, y) {
-        x = +x, y = +y;
-        if (this._point)
-          this._context.lineTo(x, y);
-        else
-          this._point = 1, this._context.moveTo(x, y);
-      }
-    };
-    function linearClosed(context) {
-      return new LinearClosed(context);
-    }
-    function sign(x) {
-      return x < 0 ? -1 : 1;
-    }
-    function slope3(that, x2, y2) {
-      var h0 = that._x1 - that._x0,
-          h1 = x2 - that._x1,
-          s0 = (that._y1 - that._y0) / (h0 || h1 < 0 && -0),
-          s1 = (y2 - that._y1) / (h1 || h0 < 0 && -0),
-          p = (s0 * h1 + s1 * h0) / (h0 + h1);
-      return (sign(s0) + sign(s1)) * Math.min(Math.abs(s0), Math.abs(s1), 0.5 * Math.abs(p)) || 0;
-    }
-    function slope2(that, t) {
-      var h = that._x1 - that._x0;
-      return h ? (3 * (that._y1 - that._y0) / h - t) / 2 : t;
-    }
-    function point$3(that, t0, t1) {
-      var x0 = that._x0,
-          y0 = that._y0,
-          x1 = that._x1,
-          y1 = that._y1,
-          dx = (x1 - x0) / 3;
-      that._context.bezierCurveTo(x0 + dx, y0 + dx * t0, x1 - dx, y1 - dx * t1, x1, y1);
-    }
-    function MonotoneX(context) {
-      this._context = context;
-    }
-    MonotoneX.prototype = {
-      areaStart: function() {
-        this._line = 0;
-      },
-      areaEnd: function() {
-        this._line = NaN;
-      },
-      lineStart: function() {
-        this._x0 = this._x1 = this._y0 = this._y1 = this._t0 = NaN;
-        this._point = 0;
-      },
-      lineEnd: function() {
-        switch (this._point) {
-          case 2:
-            this._context.lineTo(this._x1, this._y1);
-            break;
-          case 3:
-            point$3(this, this._t0, slope2(this, this._t0));
-            break;
-        }
-        if (this._line || (this._line !== 0 && this._point === 1))
-          this._context.closePath();
-        this._line = 1 - this._line;
-      },
-      point: function(x, y) {
-        var t1 = NaN;
-        x = +x, y = +y;
-        if (x === this._x1 && y === this._y1)
-          return;
-        switch (this._point) {
-          case 0:
-            this._point = 1;
-            this._line ? this._context.lineTo(x, y) : this._context.moveTo(x, y);
-            break;
-          case 1:
-            this._point = 2;
-            break;
-          case 2:
-            this._point = 3;
-            point$3(this, slope2(this, t1 = slope3(this, x, y)), t1);
-            break;
-          default:
-            point$3(this, this._t0, t1 = slope3(this, x, y));
-            break;
-        }
-        this._x0 = this._x1, this._x1 = x;
-        this._y0 = this._y1, this._y1 = y;
-        this._t0 = t1;
-      }
-    };
-    function MonotoneY(context) {
-      this._context = new ReflectContext(context);
-    }
-    (MonotoneY.prototype = Object.create(MonotoneX.prototype)).point = function(x, y) {
-      MonotoneX.prototype.point.call(this, y, x);
-    };
-    function ReflectContext(context) {
-      this._context = context;
-    }
-    ReflectContext.prototype = {
-      moveTo: function(x, y) {
-        this._context.moveTo(y, x);
-      },
-      closePath: function() {
-        this._context.closePath();
-      },
-      lineTo: function(x, y) {
-        this._context.lineTo(y, x);
-      },
-      bezierCurveTo: function(x1, y1, x2, y2, x, y) {
-        this._context.bezierCurveTo(y1, x1, y2, x2, y, x);
-      }
-    };
-    function monotoneX(context) {
-      return new MonotoneX(context);
-    }
-    function monotoneY(context) {
-      return new MonotoneY(context);
-    }
-    function Natural(context) {
-      this._context = context;
-    }
-    Natural.prototype = {
-      areaStart: function() {
-        this._line = 0;
-      },
-      areaEnd: function() {
-        this._line = NaN;
-      },
-      lineStart: function() {
-        this._x = [];
-        this._y = [];
-      },
-      lineEnd: function() {
-        var x = this._x,
-            y = this._y,
-            n = x.length;
-        if (n) {
-          this._line ? this._context.lineTo(x[0], y[0]) : this._context.moveTo(x[0], y[0]);
-          if (n === 2) {
-            this._context.lineTo(x[1], y[1]);
-          } else {
-            var px = controlPoints(x),
-                py = controlPoints(y);
-            for (var i0 = 0,
-                i1 = 1; i1 < n; ++i0, ++i1) {
-              this._context.bezierCurveTo(px[0][i0], py[0][i0], px[1][i0], py[1][i0], x[i1], y[i1]);
-            }
-          }
-        }
-        if (this._line || (this._line !== 0 && n === 1))
-          this._context.closePath();
-        this._line = 1 - this._line;
-        this._x = this._y = null;
-      },
-      point: function(x, y) {
-        this._x.push(+x);
-        this._y.push(+y);
-      }
-    };
-    function controlPoints(x) {
-      var i,
-          n = x.length - 1,
-          m,
-          a = new Array(n),
-          b = new Array(n),
-          r = new Array(n);
-      a[0] = 0, b[0] = 2, r[0] = x[0] + 2 * x[1];
-      for (i = 1; i < n - 1; ++i)
-        a[i] = 1, b[i] = 4, r[i] = 4 * x[i] + 2 * x[i + 1];
-      a[n - 1] = 2, b[n - 1] = 7, r[n - 1] = 8 * x[n - 1] + x[n];
-      for (i = 1; i < n; ++i)
-        m = a[i] / b[i - 1], b[i] -= m, r[i] -= m * r[i - 1];
-      a[n - 1] = r[n - 1] / b[n - 1];
-      for (i = n - 2; i >= 0; --i)
-        a[i] = (r[i] - a[i + 1]) / b[i];
-      b[n - 1] = (x[n] + a[n - 1]) / 2;
-      for (i = 0; i < n - 1; ++i)
-        b[i] = 2 * x[i + 1] - a[i + 1];
-      return [a, b];
-    }
-    function natural(context) {
-      return new Natural(context);
-    }
-    function Step(context, t) {
-      this._context = context;
-      this._t = t;
-    }
-    Step.prototype = {
-      areaStart: function() {
-        this._line = 0;
-      },
-      areaEnd: function() {
-        this._line = NaN;
-      },
-      lineStart: function() {
-        this._x = this._y = NaN;
-        this._point = 0;
-      },
-      lineEnd: function() {
-        if (0 < this._t && this._t < 1 && this._point === 2)
-          this._context.lineTo(this._x, this._y);
-        if (this._line || (this._line !== 0 && this._point === 1))
-          this._context.closePath();
-        if (this._line >= 0)
-          this._t = 1 - this._t, this._line = 1 - this._line;
-      },
-      point: function(x, y) {
-        x = +x, y = +y;
-        switch (this._point) {
-          case 0:
-            this._point = 1;
-            this._line ? this._context.lineTo(x, y) : this._context.moveTo(x, y);
-            break;
-          case 1:
-            this._point = 2;
-          default:
-            {
-              if (this._t <= 0) {
-                this._context.lineTo(this._x, y);
-                this._context.lineTo(x, y);
-              } else {
-                var x1 = this._x * (1 - this._t) + x * this._t;
-                this._context.lineTo(x1, this._y);
-                this._context.lineTo(x1, y);
-              }
-              break;
-            }
-        }
-        this._x = x, this._y = y;
-      }
-    };
-    function step(context) {
-      return new Step(context, 0.5);
-    }
-    function stepBefore(context) {
-      return new Step(context, 0);
-    }
-    function stepAfter(context) {
-      return new Step(context, 1);
-    }
-    var slice = Array.prototype.slice;
-    function none(series, order) {
-      if (!((n = series.length) > 1))
-        return;
-      for (var i = 1,
-          s0,
-          s1 = series[order[0]],
-          n,
-          m = s1.length; i < n; ++i) {
-        s0 = s1, s1 = series[order[i]];
-        for (var j = 0; j < m; ++j) {
-          s1[j][1] += s1[j][0] = isNaN(s0[j][1]) ? s0[j][0] : s0[j][1];
-        }
-      }
-    }
-    function none$1(series) {
-      var n = series.length,
-          o = new Array(n);
-      while (--n >= 0)
-        o[n] = n;
-      return o;
-    }
-    function stackValue(d, key) {
-      return d[key];
-    }
-    function stack() {
-      var keys = constant([]),
-          order = none$1,
-          offset = none,
-          value = stackValue;
-      function stack(data) {
-        var kz = keys.apply(this, arguments),
-            i,
-            m = data.length,
-            n = kz.length,
-            sz = new Array(n),
-            oz;
-        for (i = 0; i < n; ++i) {
-          for (var ki = kz[i],
-              si = sz[i] = new Array(m),
-              j = 0,
-              sij; j < m; ++j) {
-            si[j] = sij = [0, +value(data[j], ki, j, data)];
-            sij.data = data[j];
-          }
-          si.key = ki;
-        }
-        for (i = 0, oz = order(sz); i < n; ++i) {
-          sz[oz[i]].index = i;
-        }
-        offset(sz, oz);
-        return sz;
-      }
-      stack.keys = function(_) {
-        return arguments.length ? (keys = typeof _ === "function" ? _ : constant(slice.call(_)), stack) : keys;
-      };
-      stack.value = function(_) {
-        return arguments.length ? (value = typeof _ === "function" ? _ : constant(+_), stack) : value;
-      };
-      stack.order = function(_) {
-        return arguments.length ? (order = _ == null ? none$1 : typeof _ === "function" ? _ : constant(slice.call(_)), stack) : order;
-      };
-      stack.offset = function(_) {
-        return arguments.length ? (offset = _ == null ? none : _, stack) : offset;
-      };
-      return stack;
-    }
-    function expand(series, order) {
-      if (!((n = series.length) > 0))
-        return;
-      for (var i,
-          n,
-          j = 0,
-          m = series[0].length,
-          y; j < m; ++j) {
-        for (y = i = 0; i < n; ++i)
-          y += series[i][j][1] || 0;
-        if (y)
-          for (i = 0; i < n; ++i)
-            series[i][j][1] /= y;
-      }
-      none(series, order);
-    }
-    function silhouette(series, order) {
-      if (!((n = series.length) > 0))
-        return;
-      for (var j = 0,
-          s0 = series[order[0]],
-          n,
-          m = s0.length; j < m; ++j) {
-        for (var i = 0,
-            y = 0; i < n; ++i)
-          y += series[i][j][1] || 0;
-        s0[j][1] += s0[j][0] = -y / 2;
-      }
-      none(series, order);
-    }
-    function wiggle(series, order) {
-      if (!((n = series.length) > 0) || !((m = (s0 = series[order[0]]).length) > 0))
-        return;
-      for (var y = 0,
-          j = 1,
-          s0,
-          m,
-          n; j < m; ++j) {
-        for (var i = 0,
-            s1 = 0,
-            s2 = 0; i < n; ++i) {
-          var si = series[order[i]],
-              sij0 = si[j][1] || 0,
-              sij1 = si[j - 1][1] || 0,
-              s3 = (sij0 - sij1) / 2;
-          for (var k = 0; k < i; ++k) {
-            var sk = series[order[k]],
-                skj0 = sk[j][1] || 0,
-                skj1 = sk[j - 1][1] || 0;
-            s3 += skj0 - skj1;
-          }
-          s1 += sij0, s2 += s3 * sij0;
-        }
-        s0[j - 1][1] += s0[j - 1][0] = y;
-        if (s1)
-          y -= s2 / s1;
-      }
-      s0[j - 1][1] += s0[j - 1][0] = y;
-      none(series, order);
-    }
-    function ascending(series) {
-      var sums = series.map(sum);
-      return none$1(series).sort(function(a, b) {
-        return sums[a] - sums[b];
-      });
-    }
-    function sum(series) {
-      var s = 0,
-          i = -1,
-          n = series.length,
-          v;
-      while (++i < n)
-        if (v = +series[i][1])
-          s += v;
-      return s;
-    }
-    function descending$1(series) {
-      return ascending(series).reverse();
-    }
-    function insideOut(series) {
-      var n = series.length,
-          i,
-          j,
-          sums = series.map(sum),
-          order = none$1(series).sort(function(a, b) {
-            return sums[b] - sums[a];
-          }),
-          top = 0,
-          bottom = 0,
-          tops = [],
-          bottoms = [];
-      for (i = 0; i < n; ++i) {
-        j = order[i];
-        if (top < bottom) {
-          top += sums[j];
-          tops.push(j);
-        } else {
-          bottom += sums[j];
-          bottoms.push(j);
-        }
-      }
-      return bottoms.reverse().concat(tops);
-    }
-    function reverse(series) {
-      return none$1(series).reverse();
-    }
-    exports.arc = arc;
-    exports.area = area;
-    exports.line = line;
-    exports.pie = pie;
-    exports.radialArea = radialArea;
-    exports.radialLine = radialLine$1;
-    exports.symbol = symbol;
-    exports.symbols = symbols;
-    exports.symbolCircle = circle;
-    exports.symbolCross = cross;
-    exports.symbolDiamond = diamond;
-    exports.symbolSquare = square;
-    exports.symbolStar = star;
-    exports.symbolTriangle = triangle;
-    exports.symbolWye = wye;
-    exports.curveBasisClosed = basisClosed;
-    exports.curveBasisOpen = basisOpen;
-    exports.curveBasis = basis;
-    exports.curveBundle = bundle;
-    exports.curveCardinalClosed = cardinalClosed;
-    exports.curveCardinalOpen = cardinalOpen;
-    exports.curveCardinal = cardinal;
-    exports.curveCatmullRomClosed = catmullRomClosed;
-    exports.curveCatmullRomOpen = catmullRomOpen;
-    exports.curveCatmullRom = catmullRom;
-    exports.curveLinearClosed = linearClosed;
-    exports.curveLinear = curveLinear;
-    exports.curveMonotoneX = monotoneX;
-    exports.curveMonotoneY = monotoneY;
-    exports.curveNatural = natural;
-    exports.curveStep = step;
-    exports.curveStepAfter = stepAfter;
-    exports.curveStepBefore = stepBefore;
-    exports.stack = stack;
-    exports.stackOffsetExpand = expand;
-    exports.stackOffsetNone = none;
-    exports.stackOffsetSilhouette = silhouette;
-    exports.stackOffsetWiggle = wiggle;
-    exports.stackOrderAscending = ascending;
-    exports.stackOrderDescending = descending$1;
-    exports.stackOrderInsideOut = insideOut;
-    exports.stackOrderNone = none$1;
-    exports.stackOrderReverse = reverse;
-    Object.defineProperty(exports, '__esModule', {value: true});
-  }));
-  return module.exports;
-});
-
-$__System.registerDynamic("3c", ["3b"], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  module.exports = $__require('3b');
-  return module.exports;
-});
-
-$__System.register('3d', ['40', '3e', '3f'], function (_export) {
-    'use strict';
-
-    var scale, d3_axisBottom, chart;
-    return {
-        setters: [function (_) {
-            scale = _['default'];
-        }, function (_e) {
-            d3_axisBottom = _e.axisBottom;
-        }, function (_f) {
-            chart = _f.chart;
-        }],
-        execute: function () {
-            _export('default', function (data, cfg, el, svg, x, y) {
-                var axisYear = d3_axisBottom(x);
-                //let axisY = d3_axis.scale(y).orient("left");
-
-                /*if (data.y) {
-                  axisY.tickValues(data.y);
-                  svg.append("g")
-                  .attr("class", "y axis")
-                  .call(axisY);
-                }*/
-                var axisX = undefined;
-                this.draw = function () {
-                    if (data.x) {
-                        axisYear.tickValues(data.x).tickFormat(function (d) {
-                            return d;
-                        });
-
-                        axisX = svg
-                        //.insert("g", ":first-child")
-                        .select(".axis").attr("fill", "#ccc").attr("transform", "translate(0," + chart.h + ")").call(axisYear);
-
-                        axisX.select(".domain").style("display", "none");
-
-                        axisX.selectAll("line").style("stroke", "#ccc").style("shape-rendering", "auto").style("transform", "rotate(30deg)");
-                        axisX.selectAll("text").style("fill", "#bbb").style("font-family", "monospace").style("font-size", "14px");
-                    }
-                };
-
-                this.animate = function (opt) {
-                    if (!opt) return;
-                    if (opt.domain.str.x) {
-                        var axisYearStr = d3_axisBottom(scale(opt.domain.str).x);
-                        var axisYearEnd = d3_axisBottom(scale(opt.domain.end).x);
-                        axisYearStr.tickValues(data.x).tickFormat(function (d) {
-                            return d;
-                        });
-                        axisYearEnd.tickValues(data.x).tickFormat(function (d) {
-                            return d;
-                        });
-                        axisX.call(axisYearStr).transition().duration(opt.duration).call(axisYearEnd);
-                    }
-                };
-            });
-        }
-    };
-});
-$__System.register('41', ['40', '3f'], function (_export) {
-    'use strict';
-
-    var scale, chart;
-    return {
-        setters: [function (_) {
-            scale = _['default'];
-        }, function (_f) {
-            chart = _f.chart;
-        }],
-        execute: function () {
-            _export('default', function (data, cfg, el, svg, x, y) {
-                var dataCloneL = data.slice(0).map(function (d) {
-                    return { x: 2, y: d.y };
-                });
-                var dataCloneR = data.slice(0).map(function (d) {
-                    return { x: chart.w - 10, y: d.y };
-                });
-
-                var marks = undefined,
-                    lines = undefined,
-                    texts = undefined;
-                this.draw = function () {
-                    marks = svg.select(".line-marks");
-                    lines = marks.selectAll("line").data(dataCloneL.concat(dataCloneR)).enter().append("line").attr("x1", function (d) {
-                        return d.x;
-                    }).attr("x2", function (d) {
-                        return d.x + 8;
-                    }).attr("y1", function (d) {
-                        return y(d.y);
-                    }).attr("y2", function (d) {
-                        return y(d.y);
-                    }).attr("stroke", "grey").attr("stroke-width", 1).attr("pointer-events", "none");
-                    texts = marks.selectAll("text").data(data).enter().append("text").attr("x", 15).attr("y", function (d, i) {
-                        return y(d.y);
-                    }).attr("fill", "grey").attr("fill-opacity", 1).attr("pointer-events", "none").text(function (d) {
-                        return d.y + "(" + d.text + ")";
-                    });
-                };
-
-                this.animate = function (opt) {
-                    if (!opt) return;
-                    // domain
-                    var yStr = scale(opt.domain.str).y;
-                    var yEnd = scale(opt.domain.end).y;
-                    lines.attr("y1", function (d) {
-                        return yStr(d.y);
-                    }).attr("y2", function (d) {
-                        return yStr(d.y);
-                    }).transition().duration(opt.duration).attr("y1", function (d) {
-                        return yEnd(d.y);
-                    }).attr("y2", function (d) {
-                        return yEnd(d.y);
-                    });
-                    texts.attr("y", function (d) {
-                        return yStr(d.y);
-                    }).transition().duration(opt.duration).attr("y", function (d) {
-                        return yEnd(d.y);
-                    });
-                };
-            });
-        }
-    };
-});
-$__System.register('42', ['32', '40', '43', '44', '45', '3f'], function (_export) {
-    'use strict';
-
-    var array, scale, d3_select, utils, transition, chart;
-    return {
-        setters: [function (_5) {
-            array = _5['default'];
-        }, function (_3) {
-            scale = _3['default'];
-        }, function (_) {
-            d3_select = _.select;
-        }, function (_4) {
-            utils = _4['default'];
-        }, function (_2) {
-            transition = _2.transition;
-        }, function (_f) {
-            chart = _f.chart;
-        }],
-        execute: function () {
-            _export('default', function (data, cfg, el, svg, x, y, parent) {
-                data = data.map(function (d) {
-                    return d.y;
-                });
-                data = array.unique(data);
-                data = array.sort(data);
-
-                //console.log(data);
-                var len = data.length - 1;
-                var dataRuler = data.map(function (d, i, arr) {
-                    var pre = i !== len ? arr[i + 1] : arr[i - 1];
-                    var avg = (d + pre) / 2;
-                    return {
-                        val: d,
-                        yRect: y(avg),
-                        height: (y(d) - y(avg)) * 1.5
-                    };
-                });
-                dataRuler[len].yRect = y(dataRuler[len].val);
-                dataRuler[len].height = Math.abs(dataRuler[len].height) * 2 / 3;
-
-                // ruler
-                var ruler = undefined,
-                    lines = undefined;
-                this.draw = function () {
-                    ruler = svg //.insert("g", ":first-child")
-                    .select(".line-ruler").selectAll(".line").data(dataRuler).enter();
-
-                    // ruler high
-                    lines = ruler.append("line").attr("class", function (d) {
-                        return "js-" + utils.num2class(d.val);
-                    }).attr("x1", 0 - 8).attr("x2", chart.w + 8).attr("y1", function (d) {
-                        return y(d.val);
-                    }).attr("y2", function (d) {
-                        return y(d.val);
-                    }).attr("stroke", "#f6f6f6").attr("stroke-width", 1).attr("opacity", cfg ? cfg.opacity : 1);
-                };
-
-                this.animate = function (opt) {
-                    if (!opt) return;
-                    // domain
-                    var yStr = scale(opt.domain.str).y;
-                    var yEnd = scale(opt.domain.end).y;
-                    lines.attr("y1", function (d) {
-                        return yStr(d.val);
-                    }).attr("y2", function (d) {
-                        return yStr(d.val);
-                    }).transition().duration(opt.duration).attr("y1", function (d) {
-                        return yEnd(d.val);
-                    }).attr("y2", function (d) {
-                        return yEnd(d.val);
-                    });
-                };
-
-                // ruler events
-                this.events = function () {
-                    ruler.append("rect").attr("x", 0).attr("y", function (d) {
-                        return d.yRect;
-                    }).attr("width", chart.w).attr("height", function (d) {
-                        return d.height;
-                    }).attr("fill", "transparent").style("cursor", "pointer").on("mouseover", function (d) {
-                        var el_t = document.querySelector(parent + " .js-highlight text");
-                        var el_h = document.querySelector(parent + " .js-" + utils.num2class(d.val));
-                        var elsc = utils.nlist2arr(document.querySelectorAll( /*parent +*/" .js-" + utils.num2class(d.val)));
-                        el_h.style.stroke = "#333";
-                        el_h.style.transition = "stroke 0s";
-                        el_t.setAttribute("y", y(d.val));
-                        el_t.textContent = d.val;
-                        elsc.forEach(function (d) {
-                            d.setAttribute("r", d.getAttribute("r") * 2);
-                        });
-                    }).on("mouseout", function (d) {
-                        var el_t = document.querySelector(parent + " .js-highlight text");
-                        var el_h = document.querySelector(parent + " .js-" + utils.num2class(d.val));
-                        var elsc = utils.nlist2arr(document.querySelectorAll( /*parent +*/" .js-" + utils.num2class(d.val)));
-                        el_h.style.stroke = "#f6f6f6";
-                        el_h.style.transition = "stroke 0.5s";
-                        el_t.setAttribute("y", defaultY);
-                        elsc.forEach(function (d) {
-                            d.setAttribute("r", d.getAttribute("r") / 2);
-                        });
-                    });
-
-                    // interactive
-                    var defaultY = -100;
-                    var highlight = svg.append("g").attr("class", "js-highlight");
-                    highlight.append("text").attr("x", 15).attr("y", defaultY).attr("fill", "#333").text(defaultY);
-                };
-            });
-        }
-    };
-});
-$__System.register('40', ['46', '3f'], function (_export) {
-    'use strict';
-
-    var d3_scaleLinear, chart;
-    return {
-        setters: [function (_) {
-            d3_scaleLinear = _.scaleLinear;
-        }, function (_f) {
-            chart = _f.chart;
-        }],
-        execute: function () {
-            _export('default', function (domain) {
-                var min = undefined,
-                    max = undefined,
-                    scale = {};
-
-                if (domain.x) {
-                    scale.domainShiftX = (domain.x[1] - domain.x[0]) / 20;
-                    min = Math.round((domain.x[0] - scale.domainShiftX) * 100) / 100;
-                    max = Math.round((domain.x[1] + scale.domainShiftX) * 100) / 100;
-                    scale.x = d3_scaleLinear().domain([min, max]).range([0, chart.w]);
-                    //console.log("x:", domain.x, min, max);
-                }
-                if (domain.y) {
-                    scale.domainShiftY = (domain.y[1] - domain.y[0]) / 20;
-                    min = Math.round((domain.y[0] - scale.domainShiftY) * 100) / 100;
-                    max = Math.round((domain.y[1] + scale.domainShiftY) * 100) / 100;
-                    scale.y = d3_scaleLinear().domain([min, max]).range([chart.h, 0]);
-                    //console.log("y:", domain.y, min, max);
-                }
-
-                return scale;
-            });
-        }
-    };
-});
-$__System.register('47', ['40', '43', '44', '45', '3f'], function (_export) {
-    'use strict';
-
-    var scale, d3_select, utils, transition, colors;
-    return {
-        setters: [function (_3) {
-            scale = _3['default'];
-        }, function (_) {
-            d3_select = _.select;
-        }, function (_4) {
-            utils = _4['default'];
-        }, function (_2) {
-            transition = _2.transition;
-        }, function (_f) {
-            colors = _f.colors;
-        }],
-        execute: function () {
-            _export('default', function (data, cfg, el, svg, x, y, parent) {
-                var lenTime = 250;
-                var lenData = data.length - 1;
-                var cxShift = function cxShift(d, r) {
-                    return r * ((d.index - 1) * 2 - (d.count - 1)) * 0.75;
-                };
-
-                var dots = undefined;
-                this.draw = function () {
-                    dots = svg.append("g").attr("class", cfg.classname).selectAll(".dots").data(data).enter().append("circle").attr("class", function (d) {
-                        return "js-" + d.x + " " + "js-" + utils.num2class(d.y) + " " + "js-" + utils.str2class(d.name);
-                    }).attr("cx", function (d) {
-                        return x(d.x) + (d.count ? cxShift(d, cfg.radius) : 0);
-                    }).attr("cy", function (d) {
-                        return y(d.y);
-                    }).attr("r", cfg.radius).attr("fill-opacity", function () {
-                        if (cfg.opacity) return cfg.opacity;
-                    }).attr("fill", function (d) {
-                        return d.c || cfg.color ? colors[d.c] || cfg.color : cfg.color;
-                    }).attr("stroke", function () {
-                        if (cfg.stroke) return cfg.stroke;
-                    }).attr("stroke-width", 1);
-
-                    dots.on("mouseover", function (d) {
-                        var el_d = el.selectAll(parent + " .js-" + utils.str2class(d.name));
-                        el.select(parent + " .js-" + utils.num2class(d.y)).attr("stroke", "#333");
-                        el.select(parent + " .js-highlight text").attr("y", y(d.y)).text(d.y);
-                        el_d.attr("r", el_d.attr("r") * 2).style("transition", "0.25s");
-                    }).on("mouseout", function (d) {
-                        var el_d = el.selectAll(parent + " .js-" + utils.str2class(d.name));
-                        el.select(parent + " .js-" + utils.num2class(d.y)).attr("stroke", "#f6f6f6");
-                        el.select(parent + " .js-highlight text").text("");
-                        el_d.attr("r", el_d.attr("r") / 2).style("transition", "0s");
-                    });
-                };
-
-                // animation
-                this.animate = function (opt) {
-                    if (!opt) return;
-                    var delay = opt.delay || 0;
-                    var duration = opt.duration || opt.delay || lenTime;
-                    var radius = function radius(index) {
-                        return opt.radius ? opt.radius[index] : cfg.radius;
-                    };
-                    var scaleStr = opt.domain ? scale(opt.domain.str) : false;
-                    var scaleEnd = opt.domain ? scale(opt.domain.end) : false;
-
-                    dots.attr("fill-opacity", opt.opacity ? opt.opacity.str : cfg.opacity).attr("r", radius("str")).attr("cx", function (d) {
-                        return (scaleStr.x ? scaleStr.x(d.x) : x(d.x)) + (d.count ? cxShift(d, radius("str")) : 0);
-                    }).attr("cy", function (d) {
-                        return scaleStr.y ? scaleStr.y(d.y) : y(d.y);
-                    }).transition().delay(function (d, i) {
-                        return i * delay;
-                    }).duration(duration).attr("fill-opacity", function (d, i) {
-                        var ruler = el.select(parent + " .line-ruler .js-" + utils.num2class(d.y));
-                        ruler.attr("opacity", 0);
-                        window.setTimeout(function () {
-                            ruler.attr("opacity", 1);
-                        }, i * delay);
-                        return opt.opacity ? opt.opacity.end : cfg.opacity;
-                    }).attr("r", radius("end")).attr("cx", function (d) {
-                        return (scaleEnd.x ? scaleEnd.x(d.x) : x(d.x)) + (d.count ? cxShift(d, radius("end")) : 0);
-                    }).attr("cy", function (d) {
-                        return scaleEnd.y ? scaleEnd.y(d.y) : y(d.y);
-                    });
-                };
-
-                // events
-                this.events = function () {
-                    /*dots
-                      .on("mouseover", d => {
-                      let el_d = el.selectAll(parent + " .js-" + utils.str2class(d.name));
-                      el.select(parent + " .js-" + utils.num2class(d.y)).attr("stroke", "#333");
-                      el.select(parent + " .js-highlight text").attr("y", y(d.y)).text(d.y);
-                      el_d
-                      .attr("r", el_d.attr("r")*2)
-                      .style("transition", "0.25s");
-                      })
-                      .on("mouseout", d => {
-                      let el_d = el.selectAll(parent + " .js-" + utils.str2class(d.name));
-                      el.select(parent + " .js-" + utils.num2class(d.y)).attr("stroke", "#f6f6f6");
-                      el.select(parent + " .js-highlight text").text("");
-                      el_d
-                      .attr("r", el_d.attr("r")/2)
-                      .style("transition", "0s");
-                      });*/
-                };
-            });
-        }
-    };
-});
-$__System.register("48", ["32"], function (_export) {
-    "use strict";
-
-    var array;
-    return {
-        setters: [function (_) {
-            array = _["default"];
-        }],
-        execute: function () {
-            _export("default", function (data, cfg, el, svg, scale) {
-                var list = array.sort(data.divide.concat(data.domain.x));
-                list[0] -= scale.domainShiftX;
-                list[list.length - 1] += scale.domainShiftX;
-
-                var dataRect = list.map(function (d, i, arr) {
-                    return {
-                        x: scale.x(d),
-                        y: 0,
-                        w: scale.x(arr[i + 1]) - scale.x(d),
-                        h: scale.y(data.domain.y[0] - scale.domainShiftY)
-                    };
-                });
-                dataRect = dataRect.slice(0, -1);
-                dataRect[0].x += 3;
-                dataRect[0].w -= 3;
-                dataRect[dataRect.length - 1].w -= 3;
-
-                var rect = undefined;
-                this.draw = function () {
-                    rect = svg.append("g").attr("class", "rect-techs").selectAll("rect").data(dataRect).enter().append("rect").attr("fill", "#4bcbdf").attr("fill-opacity", function (d, i) {
-                        return 0.2 + 0.1 * i;
-                    }).attr("x", function (d) {
-                        return d.x;
-                    }).attr("y", function (d) {
-                        return d.y;
-                    })
-                    //.attr("width", d => d.w)
-                    .attr("height", function (d) {
-                        return d.h;
-                    });
-                };
-
-                this.animate = function (opt) {
-                    //console.log(opt);
-                    rect.attr("width", function (d) {
-                        return opt.width.str;
-                    }).transition().delay(function (d, i) {
-                        return i * opt.delay || 0;
-                    }).duration(opt.duration || opt.delay).attr("width", function (d) {
-                        return d.w;
-                    });
-                };
-            });
-        }
-    };
-});
-$__System.register('49', ['38', '40', '41', '42', '43', '44', '47', '48', '3f', '3c', '3d'], function (_export) {
-    var _Object$assign, getScale, Mark, Grid, d3_select, utils, Dots, Rect, colors, chart, padding, line, d3_line, d3_area, Axis;
-
-    return {
-        setters: [function (_) {
-            _Object$assign = _['default'];
-        }, function (_3) {
-            getScale = _3['default'];
-        }, function (_5) {
-            Mark = _5['default'];
-        }, function (_6) {
-            Grid = _6['default'];
-        }, function (_4) {
-            d3_select = _4.select;
-        }, function (_2) {
-            utils = _2['default'];
-        }, function (_7) {
-            Dots = _7['default'];
-        }, function (_8) {
-            Rect = _8['default'];
-        }, function (_f) {
-            colors = _f.colors;
-            chart = _f.chart;
-            padding = _f.padding;
-        }, function (_c) {
-            line = _c.line;
-            d3_line = _c.area;
-            d3_area = _c.d3_area;
-        }, function (_d) {
-            Axis = _d['default'];
-        }],
-        execute: function () {
-            'use strict';
-
-            _export('default', function (el, cfg, opt) {
-                /* chart size and scale */
-                // TODO: remove x, y
-                var scale = getScale(cfg.domain);
-                var x = scale.x;
-                var y = scale.y;
-
-                /* compose charts */
-                var parent = "#" + el.attr("id") + " ." + cfg.classname;
-
-                // chart, svg, divs
-                var plot = undefined,
-                    svg = undefined;
-
-                plot = el.append("div").attr("class", "plot " + cfg.classname);
-
-                plot.append("div").attr("class", "js-headline");
-                //.text();
-
-                svg = plot.append("svg").attr("width", chart.w).attr("height", chart.h).style("padding", chart.padding + "px");
-
-                plot.append("div").attr("class", "js-hightlight");
-
-                // plot chart
-                svg.append("g").attr("class", "axis");
-                svg.append("g").attr("class", "line-ruler");
-                svg.append("g").attr("class", "line-marks");
-
-                // background depends on event type
-                svg.append("g").attr("class", "line-frame").selectAll(".frame").data([0, chart.w]).enter().append("line").attr("x1", function (d) {
-                    return d;
-                }).attr("x2", function (d) {
-                    return d;
-                }).attr("y1", 0).attr("y2", chart.h).attr("stroke", "#333").attr("stroke-width", 6).attr("stroke-linecap", "round");
-
-                var optParent = opt;
-
-                this.axis = function (data, cfg) {
-                    var axis = new Axis(data, cfg, el, svg, x, y);
-                    axis.draw();
-                    axis.animate(optParent);
-                };
-
-                this.ruler = function (data, cfg) {
-                    var grid = new Grid(data, cfg, el, svg, x, y, parent);
-                    grid.draw();
-                    grid.animate(optParent);
-                    grid.events();
-                };
-
-                this.marks = function (data, cfg) {
-                    var mark = new Mark(data, cfg, el, svg, x, y);
-                    mark.draw();
-                    mark.animate(optParent);
-                };
-
-                this.dots = function (data, cfg, opt) {
-                    var dots = new Dots(data, cfg, el, svg, x, y, parent);
-                    opt = optParent ? _Object$assign(opt, optParent) : opt;
-                    dots.draw();
-                    dots.animate(opt);
-                    dots.events();
-                };
-
-                this.rects = function (data, cfg, opt) {
-                    var rect = new Rect(data, cfg, el, svg, scale);
-                    rect.draw();
-                    rect.animate(opt);
-                };
-
-                /*this.paths = (data, cfg) => {
-                    let path = d3_line()
-                    .x(d => x(d.x))
-                    .y(d => y(d.y));
-                     svg.append("g")
-                    .attr("class", cfg.classname)
-                    .selectAll(".line")
-                    .data(data)
-                    .enter().append("path")
-                    .attr("stroke", cfg.color)
-                    .attr("fill", "none")
-                    .attr("d", path);
-                };
-                 this.areas = (data, cfg) => {
-                    let len = data.length + 1;
-                    let area = d3_area()
-                    .x(d => x(d.x))
-                    .y0(chart.h)
-                    .y1(d => y(d.y));
-                     svg.append("g")
-                    .attr("class", cfg.classname)
-                    .selectAll(".area")
-                    .data(data)
-                    .enter().append("path")
-                    .attr("fill", (d, i) => "rgba(0, 125, 250, " + (0.5/(len-i)) +")")
-                    .attr("d", area);
-                };*/
-            });
-        }
-    };
-});
-$__System.register('4a', ['32', '43', '49', '4b'], function (_export) {
-    'use strict';
-
-    var array, d3_select, Plot, d3_extent;
-    return {
-        setters: [function (_) {
-            array = _['default'];
-        }, function (_3) {
-            d3_select = _3.select;
-        }, function (_2) {
-            Plot = _2['default'];
-        }, function (_b) {
-            d3_extent = _b.extent;
-        }],
-        execute: function () {
-            _export('default', function (id, data) {
-                console.log(data);
-
-                var plot = undefined;
-                var domain = undefined,
-                    tempDomain = undefined,
-                    maxX = undefined,
-                    maxY = undefined,
-                    last = undefined;
-                var dataCombo = undefined,
-                    divide = undefined,
-                    diff = undefined;
-
-                var elPlot = d3_select("#" + id);
-
-                /* 1. olympic finals */
-                last = data.finals.length - 1;
-                maxX = data.finals[0].x; // min = max
-                last = data.worlds.length - 1;
-                maxY = data.worlds[last - 1].y;
-                domain = {
-                    x: [maxX - 1, maxX + 1], //hotfix
-                    y: [0, maxY]
-                };
-
-                // === plot 1 ===
-                plot = new Plot(elPlot, {
-                    classname: "hj-finals-f-1",
-                    domain: domain
-                });
-                plot.ruler(data.record);
-                plot.marks(data.record);
-                plot.axis({ x: [maxX] });
-                // === end of plot 1 ===
-
-                // === plot 2 ===
-                plot = new Plot(elPlot, {
-                    classname: "hj-finals-f-2",
-                    domain: domain
-                });
-                plot.ruler(data.finals.concat(data.record));
-                plot.marks(data.record);
-                plot.axis({ x: [maxX] });
-                plot.dots(data.finals, {
-                    classname: "dots-final",
-                    radius: 2,
-                    opacity: 0.75
-                }, {
-                    // animation
-                    radius: { str: 6, end: 2 },
-                    opacity: { str: 0, end: 0.75 },
-                    delay: 250
-                });
-                // === end of plot 2 ===
-
-                dataCombo = data.finals.concat(data.record);
-                domain.y = d3_extent(dataCombo, function (d) {
-                    return d.y;
-                });
-
-                // === plot 3 ===
-                plot = new Plot(elPlot, {
-                    classname: "hj-finals-f-3",
-                    domain: domain
-                }, {
-                    // animation
-                    domain: {
-                        str: { y: [0, domain.y[1]] },
-                        end: { y: domain.y }
-                    },
-                    duration: 1000
-                });
-                plot.ruler(dataCombo);
-                plot.marks(data.record);
-                plot.axis({ x: [maxX] });
-                plot.dots(data.finals, {
-                    classname: "dots-final",
-                    radius: 6,
-                    opacity: 1
-                }, {
-                    // animation
-                    radius: { str: 2, end: 6 }
-                });
-                // === end of plot 3 ===
-
-                /* 2. olympic medalists */
-                dataCombo = data.finals.concat(data.medals);
-                tempDomain = domain;
-                domain = {
-                    x: d3_extent(dataCombo, function (d) {
-                        return d.x;
-                    }),
-                    y: d3_extent(dataCombo, function (d) {
-                        return d.y;
-                    })
-                };
-
-                // === plot 4 ===
-                plot = new Plot(elPlot, {
-                    classname: "hj-medals-f-1",
-                    domain: domain
-                }, {
-                    // animation
-                    domain: {
-                        str: tempDomain,
-                        end: domain
-                    },
-                    duration: 1000
-                });
-                plot.ruler(data.finals.concat([data.record[0]]));
-                plot.marks([data.record[0]]);
-                plot.axis({ x: [maxX] });
-                plot.dots(data.finals, {
-                    classname: "dots-final",
-                    radius: 3,
-                    opacity: 1
-                }, {
-                    // animation
-                    radius: { str: 6, end: 3 }
-                });
-                // === end of plot 4 ===
-
-                // === plot 5 ===
-                plot = new Plot(elPlot, {
-                    classname: "hj-medals-f-2",
-                    domain: domain
-                });
-                plot.ruler(dataCombo);
-                plot.marks([data.record[0]]);
-                plot.axis({ x: domain.x.concat([maxX]) });
-                plot.dots(data.finals, {
-                    classname: "dots-final",
-                    radius: 3,
-                    opacity: 1
-                });
-                data.medals.sort(function (d1, d2) {
-                    return d2.x - d1.x;
-                });
-                plot.dots(data.medals, {
-                    classname: "dots-medal",
-                    radius: 3,
-                    opacity: 0.75
-                }, {
-                    // animation
-                    opacity: { str: 0, end: 0.75 },
-                    delay: 1000 / data.medals.length
-                });
-                // === end of plot 5 ===
-
-                /* 3. world records */
-                dataCombo = data.finals.concat(data.worlds);
-                domain = {
-                    x: d3_extent(dataCombo, function (d) {
-                        return d.x;
-                    }),
-                    y: d3_extent(dataCombo, function (d) {
-                        return d.y;
-                    })
-                };
-
-                // === plot 6 ===
-                plot = new Plot(elPlot, {
-                    classname: "hj-worlds-f-1",
-                    domain: domain
-                });
-                plot.ruler(dataCombo);
-                plot.marks([data.record[1]]);
-                plot.axis({ x: d3_extent(data.worlds, function (d) {
-                        return d.x;
-                    }).concat([maxX]) });
-                plot.dots(data.finals, {
-                    classname: "dots-final",
-                    radius: 3,
-                    opacity: 1
-                });
-                plot.dots(data.worlds, {
-                    classname: "dots-world",
-                    color: "#666",
-                    radius: 2,
-                    opacity: 1
-                }, {
-                    // animation
-                    opacity: { str: 0, end: 0.75 },
-                    delay: 1000 / data.medals.length
-                });
-                // === end of plot 6 ===
-
-                /* 4. all with tech changes */
-                divide = [1912, 1936, 1968];
-                domain.x[0] = divide[0];
-
-                // === plot 7 ===
-                plot = new Plot(elPlot, {
-                    classname: "hj-tech-f-1",
-                    domain: domain
-                });
-                plot.ruler(dataCombo);
-                plot.marks(data.record);
-                plot.rects({ domain: domain, divide: divide }, {}, {
-                    //animation
-                    width: { str: 0 },
-                    delay: 250
-                });
-                plot.axis({ x: divide.concat([maxX]) });
-                plot.dots(dataCombo, {
-                    classname: "dots-world",
-                    radius: 2,
-                    opacity: 0.75,
-                    color: "#666"
-                });
-                // === end of plot 7 ===
-
-                /* 5. all */
-                dataCombo = data.finals.concat(data.worlds, data.medals);
-                domain = {
-                    x: d3_extent(dataCombo, function (d) {
-                        return d.x;
-                    }),
-                    y: d3_extent(dataCombo, function (d) {
-                        return d.y;
-                    })
-                };
-                diff = (domain.x[1] - domain.x[0]) / 2;
-                domain.x[1] += diff;
-
-                // === plot 8 ===
-                plot = new Plot(elPlot, {
-                    classname: "hj-all-f-1",
-                    domain: domain
-                });
-                plot.ruler(dataCombo);
-                plot.marks(data.record);
-                plot.axis({ x: d3_extent(data.worlds, function (d) {
-                        return d.x;
-                    }).concat([maxX]) });
-                plot.dots(data.finals, {
-                    classname: "dots-final",
-                    radius: 3,
-                    opacity: 1
-                });
-                plot.dots(data.medals, {
-                    classname: "dots-medal",
-                    radius: 3,
-                    opacity: 0.75
-                });
-                plot.dots(data.worlds, {
-                    classname: "dots-world",
-                    radius: 2,
-                    opacity: 1,
-                    color: "#666"
-                });
-                // === end of plot 8 ===   
-
-                /* animation test * /
-                // === plot 9 ===
-                last = data.finals.length - 1;
-                maxX = data.finals[0].x; // min = max
-                last = data.worlds.length - 1;
-                maxY = data.worlds[last-1].y;
-                domain = {
-                    x: [maxX-1, maxX+1], //hotfix
-                    y: [0, maxY]
-                };
-                 plot = new Plot(elPlot, {
-                    classname: "hj-f-animation", 
-                    domain: domain
-                }); 
-                plot.axis({x: [maxX]});   
-                plot.marks(data.record);  
-                // stage 1: add final
-                plot.ruler(data.record.concat(data.finals));
-                plot.dots(data.finals, {
-                    classname: "dots-final",
-                    radius: 2,
-                    opacity: 0.75,
-                }, {
-                    radius: { str: 6, end: 2 },
-                    opacity: { str: 0, end: 0.75 },
-                    delay: 250
-                });
-                plot.dots(data.finals, {}, {
-                    duration: w0,
-                    domain: {
-                        str: {y: domain}
-                    }
-                });
-                */
-                // step 2
-                //dataCombo = data.finals.concat(data.record);
-                //domain.y = d3_extent(dataCombo, d => d.y);
-
-                // === end of plot 9 ===
-            });
-        }
-    };
-});
-$__System.register('4c', ['31', '4a'], function (_export) {
-    'use strict';
-
-    var getData, highjump;
-    return {
-        setters: [function (_) {
-            getData = _['default'];
-        }, function (_a) {
-            highjump = _a['default'];
-        }],
-        execute: function () {
-            _export('default', function () {
-
-                var data = getData();
-                //console.log(data);
-
-                highjump("js-highjump", data);
-            });
-        }
-    };
-});
-$__System.registerDynamic("4d", [], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
   module.exports = {"olympics": {"eventUnit": {
         "identifier": "CTM402101",
         "description": "Men's Team Pursuit Finals - Gold",
@@ -4560,1137 +956,7 @@ $__System.registerDynamic("4d", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("4e", [], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  module.exports = {
-    "header": ["year", "name", "team", "record", "result"],
-    "world_records": [[1961, "Leonid Kolesnikov", "URS", "wr", "1:11.4"], [1961, "Chet Jastremski", "USA", "wr", "1:11.1"], [1961, "Gunter Tittes", "GDR", "wr", "1:10.8"], [1961, "Chet Jastremski", "USA", "wr", "1:10.7"], [1961, "Chet Jastremski", "USA", "wr", "1:10.0"], [1961, "Chet Jastremski", "USA", "wr", "1:09.5"], [1961, "Chet Jastremski", "USA", "wr", "1:07.8"], [1961, "Chet Jastremski", "USA", "wr", "1:07.5"], [1964, "Georgy Prokopenko", "URS", "wr", "1:07.4"], [1964, "Georgy Prokopenko", "URS", "wr", "1:06.9"], [1967, "Vladimir Kosinsky", "URS", "wr", "1:06.7"], [1968, "Jose Fiolo", "BRA", "wr", "1:06.4"], [1968, "Nikolai Pankin", "URS", "wr", "1:06.2"], [1969, "Nikolai Pankin", "URS", "wr", "1:05.8"], [1972, "John Hencken", "USA", "wr", "1:05.68"], [1972, "Nobutaka Taguchi", "JPN", "wr", "1:05.13"], [1972, "Nobutaka Taguchi", "JPN", "wr", "1:04.94"], [1973, "John Hencken", "USA", "wr", "1:04.35"], [1973, "John Hencken", "USA", "wr", "1:04.02"], [1974, "John Hencken", "USA", "wr", "1:03.88"], [1976, "John Hencken", "USA", "wr", "1:03.88"], [1976, "John Hencken", "USA", "wr", "1:03.62"], [1976, "John Hencken", "USA", "wr", "1:03.11"], [1977, "Gerald Mörken", "FRG", "wr", "1:02.86"], [1982, "Steven Lundquist", "USA", "wr", "1:02.62"], [1982, "Steven Lundquist", "USA", "wr", "1:02.53"], [1983, "Steven Lundquist", "USA", "wr", "1:02.34"], [1983, "Steven Lundquist", "USA", "wr", "1:02.28"], [1984, "John Moffet", "USA", "wr", "1:02.13"], [1984, "Steven Lundquist", "USA", "wr", "1:01.65"], [1989, "Adrian Moorhouse", "GBR", "wr", "1:01.49"], [1990, "Adrian Moorhouse", "GBR", "wr", "1:01.49"], [1990, "Adrian Moorhouse", "GBR", "wr", "1:01.49"], [1991, "Norbert Rózsa", "HUN", "wr", "1:01.49"], [1991, "Norbert Rózsa", "HUN", "wr", "1:01.45"], [1991, "Vasili Ivanov", "URS", "wr", "1:01.45"], [1991, "Norbert Rózsa", "HUN", "wr", "1:01.29"], [1993, "Károly Güttler", "HUN", "wr", "1:00.95"], [1996, "Frederik Deburghgraeve", "BEL", "wr", "1:00.60"], [2000, "Roman Sludnov", "RUS", "wr", "1:00.36"], [2001, "Ed Moses", "USA", "wr", "1:00.29"], [2001, "Roman Sludnov", "RUS", "wr", "1:00.26"], [2001, "Roman Sludnov", "RUS", "wr", "59.97"], [2001, "Roman Sludnov", "RUS", "wr", "59.94"], [2003, "Kosuke Kitajima", "JPN", "wr", "59.78"], [2004, "Brendan Hansen", "USA", "wr", "59.3"], [2006, "Brendan Hansen", "USA", "wr", "59.13"], [2008, "Kosuke Kitajima", "JPN", "wr", "58.91"], [2009, "Brenton Rickard", "AUS", "wr", "58.58"], [2012, "Cameron van der Burgh", "RSA", "wr", "58.46"], [2015, "Adam Peaty", "GBR", "wr", "57.92"]],
-    "olympics": [[1968, "Donald Ward Jr. Mckenzie", "USA", "gold", "1:07.7"], [1968, "Vladimir Kosinsky", "URS", "silver", "1:08.0"], [1968, "Nikolai Pankin", "URS", "bronze", "1:08.0"], [1972, "Nobutaka Taguchi", "JPN", "gold", "1:04.94"], [1972, "Thomas Edwin Bruce", "USA", "silver", "1:05.43"], [1972, "John Hencken", "USA", "bronze", "1:05.61"], [1976, "John Hencken", "USA", "gold", "1:03.11"], [1976, "David Wilkie", "GBR", "silver", "1:03.43"], [1976, "Arvydas Juozaitis", "URS", "bronze", "1:04.23"], [1980, "Duncan Goodhew", "GBR", "gold", "1:03.34"], [1980, "Arsen Miskarov", "URS", "silver", "1:03.82"], [1980, "Peter Evans", "AUS", "bronze", "1:03.96"], [1984, "Steven Lundquist", "USA", "gold", "1:01.65"], [1984, "Victor Davis", "CAN", "silver", "1:01.99"], [1984, "Peter Evans", "AUS", "bronze", "1:02.97"], [1988, "Adrian Moorhouse", "GBR", "gold", "1:02.04"], [1988, "Károly Guttler", "HUN", "silver", "1:02.05"], [1988, "Dmitri Volkov", "URS", "bronze", "1:02.20"], [1992, "Nelson Diebel", "USA", "gold", "1:01.50"], [1992, "Norbert Rózsa", "HUN", "silver", "1:01.68"], [1992, "Phil Rogers", "AUS", "bronze", "1:01.76"], [1996, "Frederik Deburghgraeve", "BEL", "gold", "1:00.65"], [1996, "Jeremy Linn", "USA", "silver", "1:00.77"], [1996, "Mark Warnecke", "GER", "bronze", "1:01.33"], [2000, "Domenico Fioravanti", "ITA", "gold", "01:00.46"], [2000, "Ed Moses", "USA", "silver", "01:00.73"], [2000, "Roman Sludnov", "RUS", "bronze", "01:00.91"], [2004, "Kosuke Kitajima", "JPN", "gold", "1:00.08"], [2004, "Brendan Hansen", "USA", "silver", "1:00.25"], [2004, "Hugues Duboscq", "FRA", "bronze", "1:00.88"], [2008, "Kosuke Kitajima", "JPN", "gold", "58.91"], [2008, "Alexander Oen", "NOR", "silver", "59.2"], [2008, "Hugues Duboscq", "FRA", "bronze", "59.37"], [2012, "Cameron van der Burgh", "RSA", "gold", "58.46"], [2012, "Christian Sprenger", "AUS", "silver", "58.93"], [2012, "Brendan Hansen", "USA", "bronze", "59.49"]]
-  };
-  return module.exports;
-});
-
-$__System.registerDynamic("4f", [], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  module.exports = {"olympics": {"eventUnit": {
-        "identifier": "SWM031101",
-        "description": "Men's 100m Breaststroke Final",
-        "unitType": "Individuals",
-        "medalEvent": "Yes",
-        "disciplineDescription": {
-          "identifier": "swimming",
-          "value": "Swimming"
-        },
-        "phaseDescription": {
-          "identifier": "SWM0311",
-          "value": "Final"
-        },
-        "result": {
-          "type": "Official",
-          "timestamp": "2013-11-13T12:15:00Z",
-          "entrant": [{
-            "order": "1",
-            "type": "Individual",
-            "code": "1056740",
-            "rank": "1",
-            "value": "58.46",
-            "property": [{
-              "type": "Medal Awarded",
-              "value": "Gold"
-            }, {
-              "type": "Record Set",
-              "value": "WR"
-            }, {
-              "type": "Record Set",
-              "value": "OR"
-            }, {
-              "type": "Record Set",
-              "value": "AF"
-            }, {
-              "type": "Result Type",
-              "value": "Time"
-            }],
-            "resultExtension": [{
-              "type": "Reaction Time",
-              "value": "0.63"
-            }, {
-              "type": "Split Times",
-              "extension": [{
-                "position": "1",
-                "value": "27.07"
-              }, {
-                "position": "2",
-                "value": "58.46"
-              }]
-            }],
-            "country": {
-              "identifier": "RSA",
-              "name": "South Africa",
-              "longName": "South Africa"
-            },
-            "participant": {
-              "order": "1",
-              "competitor": {
-                "identifier": "1056740",
-                "firstName": "Cameron",
-                "lastName": "van der Burgh",
-                "fullName": "Cameron van der Burgh"
-              }
-            }
-          }, {
-            "order": "2",
-            "type": "Individual",
-            "code": "1125374",
-            "rank": "2",
-            "value": "58.93",
-            "property": [{
-              "type": "Medal Awarded",
-              "value": "Silver"
-            }, {
-              "type": "Result Type",
-              "value": "Time"
-            }],
-            "resultExtension": [{
-              "type": "Reaction Time",
-              "value": "0.67"
-            }, {
-              "type": "Split Times",
-              "extension": [{
-                "position": "1",
-                "value": "27.65"
-              }, {
-                "position": "2",
-                "value": "58.93"
-              }]
-            }],
-            "country": {
-              "identifier": "AUS",
-              "name": "Australia",
-              "longName": "Australia"
-            },
-            "participant": {
-              "order": "1",
-              "competitor": {
-                "identifier": "1125374",
-                "firstName": "Christian",
-                "lastName": "Sprenger",
-                "fullName": "Christian Sprenger"
-              }
-            }
-          }, {
-            "order": "3",
-            "type": "Individual",
-            "code": "1133055",
-            "rank": "3",
-            "value": "59.49",
-            "property": [{
-              "type": "Medal Awarded",
-              "value": "Bronze"
-            }, {
-              "type": "Result Type",
-              "value": "Time"
-            }],
-            "resultExtension": [{
-              "type": "Reaction Time",
-              "value": "0.67"
-            }, {
-              "type": "Split Times",
-              "extension": [{
-                "position": "1",
-                "value": "27.85"
-              }, {
-                "position": "2",
-                "value": "59.49"
-              }]
-            }],
-            "country": {
-              "identifier": "USA",
-              "name": "United States",
-              "longName": "United States of America"
-            },
-            "participant": {
-              "order": "1",
-              "competitor": {
-                "identifier": "1133055",
-                "firstName": "Brendan",
-                "lastName": "Hansen",
-                "fullName": "Brendan Hansen"
-              }
-            }
-          }, {
-            "order": "4",
-            "type": "Individual",
-            "code": "1121231",
-            "rank": "4",
-            "value": "59.53",
-            "property": {
-              "type": "Result Type",
-              "value": "Time"
-            },
-            "resultExtension": [{
-              "type": "Reaction Time",
-              "value": "0.73"
-            }, {
-              "type": "Split Times",
-              "extension": [{
-                "position": "1",
-                "value": "28.05"
-              }, {
-                "position": "2",
-                "value": "59.53"
-              }]
-            }],
-            "country": {
-              "identifier": "HUN",
-              "name": "Hungary",
-              "longName": "Hungary"
-            },
-            "participant": {
-              "order": "1",
-              "competitor": {
-                "identifier": "1121231",
-                "firstName": "Daniel",
-                "lastName": "Gyurta",
-                "fullName": "Daniel Gyurta"
-              }
-            }
-          }, {
-            "order": "5",
-            "type": "Individual",
-            "code": "1026879",
-            "rank": "5",
-            "value": "59.79",
-            "property": {
-              "type": "Result Type",
-              "value": "Time"
-            },
-            "resultExtension": [{
-              "type": "Reaction Time",
-              "value": "0.64"
-            }, {
-              "type": "Split Times",
-              "extension": [{
-                "position": "1",
-                "value": "27.78"
-              }, {
-                "position": "2",
-                "value": "59.79"
-              }]
-            }],
-            "country": {
-              "identifier": "JPN",
-              "name": "Japan",
-              "longName": "Japan"
-            },
-            "participant": {
-              "order": "1",
-              "competitor": {
-                "identifier": "1026879",
-                "firstName": "Kosuke",
-                "lastName": "Kitajima",
-                "fullName": "Kosuke Kitajima"
-              }
-            }
-          }, {
-            "order": "6",
-            "type": "Individual",
-            "code": "1116547",
-            "rank": "6",
-            "value": "59.87",
-            "property": {
-              "type": "Result Type",
-              "value": "Time"
-            },
-            "resultExtension": [{
-              "type": "Reaction Time",
-              "value": "0.73"
-            }, {
-              "type": "Split Times",
-              "extension": [{
-                "position": "1",
-                "value": "28.08"
-              }, {
-                "position": "2",
-                "value": "59.87"
-              }]
-            }],
-            "country": {
-              "identifier": "AUS",
-              "name": "Australia",
-              "longName": "Australia"
-            },
-            "participant": {
-              "order": "1",
-              "competitor": {
-                "identifier": "1116547",
-                "firstName": "Brenton",
-                "lastName": "Rickard",
-                "fullName": "Brenton Rickard"
-              }
-            }
-          }, {
-            "order": "7",
-            "type": "Individual",
-            "code": "1096376",
-            "rank": "7",
-            "value": "59.97",
-            "property": {
-              "type": "Result Type",
-              "value": "Time"
-            },
-            "resultExtension": [{
-              "type": "Reaction Time",
-              "value": "0.62"
-            }, {
-              "type": "Split Times",
-              "extension": [{
-                "position": "1",
-                "value": "27.73"
-              }, {
-                "position": "2",
-                "value": "59.97"
-              }]
-            }],
-            "country": {
-              "identifier": "ITA",
-              "name": "Italy",
-              "longName": "Italy"
-            },
-            "participant": {
-              "order": "1",
-              "competitor": {
-                "identifier": "1096376",
-                "firstName": "Fabio",
-                "lastName": "Scozzoli",
-                "fullName": "Fabio Scozzoli"
-              }
-            }
-          }, {
-            "order": "8",
-            "type": "Individual",
-            "code": "1065090",
-            "rank": "8",
-            "value": "1:00.84",
-            "property": {
-              "type": "Result Type",
-              "value": "Time"
-            },
-            "resultExtension": [{
-              "type": "Reaction Time",
-              "value": "0.74"
-            }, {
-              "type": "Split Times",
-              "extension": [{
-                "position": "1",
-                "value": "27.71"
-              }, {
-                "position": "2",
-                "value": "1:00.84"
-              }]
-            }],
-            "country": {
-              "identifier": "LTU",
-              "name": "Lithuania",
-              "longName": "Lithuania"
-            },
-            "participant": {
-              "order": "1",
-              "competitor": {
-                "identifier": "1065090",
-                "firstName": "Giedrius",
-                "lastName": "Titenis",
-                "fullName": "Giedrius Titenis"
-              }
-            }
-          }]
-        }
-      }}};
-  return module.exports;
-});
-
-$__System.register('50', ['33', '51', '52', '4e', '4f', '4b'], function (_export) {
-    var _Object$keys, parseData, result, jsonRecord, jsonFinals, d3_extent;
-
-    return {
-        setters: [function (_) {
-            _Object$keys = _['default'];
-        }, function (_2) {
-            parseData = _2['default'];
-        }, function (_3) {
-            result = _3['default'];
-        }, function (_e) {
-            jsonRecord = _e['default'];
-        }, function (_f) {
-            jsonFinals = _f['default'];
-        }, function (_b) {
-            d3_extent = _b.extent;
-        }],
-        execute: function () {
-            'use strict';
-
-            _export('default', function () {
-                var data = parseData(jsonRecord, jsonFinals);
-                var dataCombo = data.finals.concat(data.medals, data.worlds);
-
-                /* data manipulation, even specific */
-                // fastest swimming time
-                var timeWr = d3_extent(dataCombo, function (d) {
-                    return d.x;
-                })[0];
-                _Object$keys(data).forEach(function (dd) {
-                    // time to distance
-                    data[dd] = data[dd].map(function (dm) {
-                        dm.x = 100 * timeWr / dm.x - 100;
-                        dm.attrs.dist = Math.round(Math.abs(dm.x) * 100) / 100;
-                        return dm;
-                    });
-                    // sort
-                    data[dd].sort(function (d1, d2) {
-                        return d1.x - d2.x;
-                    });
-                });
-                console.log(data);
-
-                result(data, dataCombo);
-            });
-        }
-    };
-});
-$__System.registerDynamic("53", [], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  module.exports = {
-    "header": ["year", "name", "team", "record", "result"],
-    "world_records": [[1908, "Otto Scheff", "AUT", "wr", "2:31.6"], [1910, "Frank Beaurepaire", "AUS", "wr", "2:30.0"], [1911, "Charles Daniels", "USA", "wr", "2:25.4"], [1916, "Norman Ross", "USA", "wr", "2:21.6"], [1920, "Tedford Cann", "USA", "wr", "2:19.8"], [1922, "Johnny Weissmuller", "USA", "wr", "2:15.6"], [1925, "Johnny Weissmuller", "USA", "wr", "2:15.2"], [1927, "Johnny Weissmuller", "USA", "wr", "2:08.0"], [1935, "Jack Medica", "USA", "wr", "2:07.2"], [1944, "Bill Smith", "USA", "wr", "2:06.2"], [1946, "Alex Jany", "FRA", "wr", "2:05.4"], [1950, "John Marshall", "AUS", "wr", "2:04.6"], [1954, "Ford Konno", "USA", "wr", "2:03.9"], [1955, "Jack Wardrop", "GBR", "wr", "2:03.4"], [1957, "Dick Hanley", "USA", "wr", "2:01.5"], [1958, "John Konrads", "AUS", "wr", "2:04.8"], [1958, "John Konrads", "AUS", "wr", "2:03.2"], [1958, "Tsuyoshi Yamanaka", "JPN", "wr", "2:03.0"], [1959, "John Konrads", "AUS", "wr", "2:02.2"], [1959, "Tsuyoshi Yamanaka", "JPN", "wr", "2:01.5"], [1961, "Tsuyoshi Yamanaka", "JPN", "wr", "2:01.2"], [1961, "Tsuyoshi Yamanaka", "JPN", "wr", "2:01.1"], [1961, "Tsuyoshi Yamanaka", "JPN", "wr", "2:00.4"], [1962, "Don Schollander", "USA", "wr", "2:00.4"], [1963, "Bob Windle", "AUS", "wr", "2:00.3"], [1963, "Don Schollander", "USA", "wr", "1:58.8"], [1963, "Don Schollander", "USA", "wr", "1:58.5"], [1963, "Don Schollander", "USA", "wr", "1:58.4"], [1964, "Hans-Joachim Klein", "FRG (West Germany)", "wr", "1:58.2"], [1964, "Don Schollander", "USA", "wr", "1:57.6"], [1966, "Don Schollander", "USA", "wr", "1:57.2"], [1966, "Don Schollander", "USA", "wr", "1:56.2"], [1967, "Don Schollander", "USA", "wr", "1:56.0"], [1967, "Don Schollander", "USA", "wr", "1:55.7"], [1968, "Don Schollander", "USA", "wr", "1:54.8"], [1968, "Don Schollander", "USA", "wr", "1:54.3"], [1969, "Mark Spitz", "USA", "wr", "1:54.3"], [1971, "Mark Spitz", "USA", "wr", "1:54.2"], [1971, "Mark Spitz", "USA", "wr", "1:53.5"], [1972, "Mark Spitz", "USA", "wr", "1:52.78"], [1974, "Tim Shaw", "USA", "wr", "1:51.66"], [1975, "Bruce Furniss", "USA", "wr", "1:51.41"], [1975, "Bruce Furniss", "USA", "wr", "1:50.89"], [1975, "Bruce Furniss", "USA", "wr", "1:50.32"], [1976, "Bruce Furniss", "USA", "wr", "1:50.29"], [1979, "Sergey Koplyakov", "URS (Soviet Union)", "wr", "1:49.83"], [1980, "Rowdy Gaines", "USA", "wr", "1:49.16"], [1982, "Rowdy Gaines", "USA", "wr", "1:48.93"], [1983, "Michael Gross", "FRG (West Germany)", "wr", "1:48.28"], [1983, "Michael Gross", "FRG (West Germany)", "wr", "1:47.87"], [1984, "Michael Gross", "FRG (West Germany)", "wr", "1:47.55"], [1984, "Michael Gross", "FRG (West Germany)", "wr", "1:47.44"], [1988, "Duncan Armstrong", "AUS", "wr", "1:47.25"], [1989, "Giorgio Lamberti", "ITA", "wr", "1:46.69"], [1999, "Grant Hackett", "AUS", "wr", "1:46.67"], [1999, "Ian Thorpe", "AUS", "wr", "1:46.34"], [1999, "Ian Thorpe", "AUS", "wr", "1:46.00"], [2000, "Ian Thorpe", "AUS", "wr", "1:45.69"], [2000, "Ian Thorpe", "AUS", "wr", "1:45.51"], [2000, "Pieter van den Hoogenband", "NED", "wr", "1:45.35"], [2000, "Pieter van den Hoogenband", "NED", "wr", "1:45.35"], [2001, "Ian Thorpe", "AUS", "wr", "1:44.69"], [2001, "Ian Thorpe", "AUS", "wr", "1:44.06"], [2007, "Michael Phelps", "USA", "wr", "1:43.86"], [2008, "Michael Phelps", "USA", "wr", "1:42.96"], [2009, "Paul Biedermann", "GER", "wr", "1:42.00"]],
-    "olympics": [[1900, "Frederick Lane", "AUS", "gold", "2:25.2"], [1900, "Zoltan Halmay", "HUN", "silver", "2:31.4"], [1900, "Karl Ruberl", "AUT", "bronze", "2:32.0"], [1904, "Charles Daniels", "USA", "gold", "2:44.2"], [1904, "Francis Gailey", "USA", "silver", "2:46"], [1904, "Emil Rausch", "GER", "bronze", "2:56.0"], [1968, "Mike Wenden", "AUS", "gold", "1:55.2"], [1968, "Don Schollander", "USA", "silver", "1:55.8"], [1968, "John Nelson", "USA", "bronze", "1:58.1"], [1972, "Mark Spitz", "USA", "gold", "1:52.78"], [1972, "Steve Genter", "USA", "silver", "1:53.73"], [1972, "Werner Lampe", "FRG", "bronze", "1:53.99"], [1976, "Bruce Furniss", "USA", "gold", "1:50.29"], [1976, "John Naber", "USA", "silver", "1:50.50"], [1976, "Jim Montgomery", "USA", "bronze", "1:50.58"], [1980, "Sergey Koplyakov", "URS", "gold", "1:49.81"], [1980, "Andrey Krylov", "URS", "silver", "1:50.76"], [1980, "Graeme Brewer", "AUS", "bronze", "1:51.60"], [1984, "Michael Gross", "FRG", "gold", "1:47.44"], [1984, "Michael Heath", "USA", "silver", "1:49.10"], [1984, "Thomas Fahrner", "FRG", "bronze", "1:49.69"], [1988, "Duncan Armstrong", "AUS", "gold", "1:47.25"], [1988, "Anders Holmertz", "SWE", "silver", "1:47.89"], [1988, "Matthew Biondi", "USA", "bronze", "1:47.99"], [1992, "Evgueni Sadovyi", "EUN", "gold", "1:46.70"], [1992, "Anders Holmertz", "SWE", "silver", "1:46.86"], [1992, "Antti Kasvio", "FIN", "bronze", "1:47.63"], [1996, "Danyon Loader", "NZL", "gold", "1:47.63"], [1996, "Gustavo Borges", "BRA", "silver", "1:48.08"], [1996, "Daniel Kowalski", "AUS", "bronze", "1:48.25"], [2000, "Pieter Van Den Hoogenband", "NED", "gold", "01:45.35"], [2000, "Ian Thorpe", "AUS", "silver", "01:45.83"], [2000, "Massimiliano Rosolino", "ITA", "bronze", "01:46.65"], [2004, "Ian Thorpe", "AUS", "gold", "1:44.71"], [2004, "Pieter Van Den Hoogenband", "NED", "silver", "1:45.23"], [2004, "Michael Phelps", "USA", "bronze", "1:45.32"], [2008, "Michael Phelps", "USA", "gold", "1:42.96"], [2008, "Taehwan Park", "KOR", "silver", "1:44.85"], [2008, "Peter Vanderkaay", "USA", "bronze", "1:45.14"], [2012, "Yannick Agnel", "FRA", "gold", "1:43.14"], [2012, "Taehwan Park", "KOR", "silver", "1:44.93"], [2012, "Yang Sun", "CHN", "silver", "1:44.93"]]
-  };
-  return module.exports;
-});
-
-$__System.registerDynamic("54", [], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  module.exports = {"olympics": {"eventUnit": {
-        "identifier": "SWM012101",
-        "description": "Men's 200m Freestyle Final",
-        "unitType": "Individuals",
-        "medalEvent": "Yes",
-        "disciplineDescription": {
-          "identifier": "swimming",
-          "value": "Swimming"
-        },
-        "phaseDescription": {
-          "identifier": "SWM0121",
-          "value": "Final"
-        },
-        "result": {
-          "type": "Official",
-          "timestamp": "2016-06-30T17:13:16Z",
-          "entrant": [{
-            "order": "1",
-            "type": "Individual",
-            "code": "7261113",
-            "rank": "1",
-            "value": "1:43.14",
-            "property": [{
-              "type": "Medal Awarded",
-              "value": "Gold"
-            }, {
-              "type": "Record Set",
-              "value": "AS"
-            }, {
-              "type": "Diff",
-              "value": "0.00"
-            }, {
-              "type": "Result Type",
-              "value": "Time"
-            }],
-            "resultExtension": [{
-              "type": "Reaction Time",
-              "value": "0.70"
-            }, {
-              "type": "Leg Breakdown",
-              "extension": [{
-                "position": "2",
-                "value": "26.09"
-              }, {
-                "position": "3",
-                "value": "26.52"
-              }, {
-                "position": "4",
-                "value": "25.98"
-              }]
-            }, {
-              "type": "Split Times",
-              "extension": [{
-                "position": "1",
-                "value": "24.55",
-                "property": {
-                  "type": "Diff",
-                  "value": "0.00"
-                }
-              }, {
-                "position": "2",
-                "value": "50.64",
-                "property": {
-                  "type": "Diff",
-                  "value": "0.00"
-                }
-              }, {
-                "position": "3",
-                "value": "1:17.16",
-                "property": {
-                  "type": "Diff",
-                  "value": "0.00"
-                }
-              }, {
-                "position": "4",
-                "value": "1:43.14",
-                "property": {
-                  "type": "Diff",
-                  "value": "0.00"
-                }
-              }]
-            }],
-            "country": {
-              "identifier": "CHN",
-              "name": "China",
-              "longName": "People's Republic of China"
-            },
-            "participant": {
-              "order": "1",
-              "competitor": {
-                "identifier": "7261113",
-                "firstName": "Yang",
-                "lastName": "Sun",
-                "fullName": "Yang Sun"
-              }
-            }
-          }, {
-            "order": "2",
-            "type": "Individual",
-            "code": "7262741",
-            "rank": "2",
-            "value": "1:44.93",
-            "property": [{
-              "type": "Medal Awarded",
-              "value": "Silver"
-            }, {
-              "type": "Diff",
-              "value": "1.79"
-            }, {
-              "type": "Result Type",
-              "value": "Time"
-            }],
-            "resultExtension": [{
-              "type": "Reaction Time",
-              "value": "0.64"
-            }, {
-              "type": "Leg Breakdown",
-              "extension": [{
-                "position": "2",
-                "value": "26.07"
-              }, {
-                "position": "3",
-                "value": "27.08"
-              }, {
-                "position": "4",
-                "value": "27.05"
-              }]
-            }, {
-              "type": "Split Times",
-              "extension": [{
-                "position": "1",
-                "value": "24.73",
-                "property": {
-                  "type": "Diff",
-                  "value": "0.18"
-                }
-              }, {
-                "position": "2",
-                "value": "50.80",
-                "property": {
-                  "type": "Diff",
-                  "value": "0.16"
-                }
-              }, {
-                "position": "3",
-                "value": "1:17.88",
-                "property": {
-                  "type": "Diff",
-                  "value": "0.72"
-                }
-              }, {
-                "position": "4",
-                "value": "1:44.93",
-                "property": {
-                  "type": "Diff",
-                  "value": "1.79"
-                }
-              }]
-            }],
-            "country": {
-              "identifier": "NED",
-              "name": "Netherlands",
-              "longName": "Netherlands"
-            },
-            "participant": {
-              "order": "1",
-              "competitor": {
-                "identifier": "7262741",
-                "firstName": "Sebastiaan",
-                "lastName": "Verschuren",
-                "fullName": "Sebastiaan Verschuren"
-              }
-            }
-          }, {
-            "order": "3",
-            "type": "Individual",
-            "code": "7261937",
-            "rank": "2",
-            "value": "1:44.93",
-            "property": [{
-              "type": "Medal Awarded",
-              "value": "Silver"
-            }, {
-              "type": "Diff",
-              "value": "1.79"
-            }, {
-              "type": "Result Type",
-              "value": "Time"
-            }],
-            "resultExtension": [{
-              "type": "Reaction Time",
-              "value": "0.73"
-            }, {
-              "type": "Leg Breakdown",
-              "extension": [{
-                "position": "2",
-                "value": "26.26"
-              }, {
-                "position": "3",
-                "value": "26.71"
-              }, {
-                "position": "4",
-                "value": "27.00"
-              }]
-            }, {
-              "type": "Split Times",
-              "extension": [{
-                "position": "1",
-                "value": "24.96",
-                "property": {
-                  "type": "Diff",
-                  "value": "0.41"
-                }
-              }, {
-                "position": "2",
-                "value": "51.22",
-                "property": {
-                  "type": "Diff",
-                  "value": "0.58"
-                }
-              }, {
-                "position": "3",
-                "value": "1:17.93",
-                "property": {
-                  "type": "Diff",
-                  "value": "0.77"
-                }
-              }, {
-                "position": "4",
-                "value": "1:44.93",
-                "property": {
-                  "type": "Diff",
-                  "value": "1.79"
-                }
-              }]
-            }],
-            "country": {
-              "identifier": "KOR",
-              "name": "Republic of Korea",
-              "longName": "Korea"
-            },
-            "participant": {
-              "order": "1",
-              "competitor": {
-                "identifier": "7261937",
-                "firstName": "Taehwan",
-                "lastName": "Park",
-                "fullName": "Taehwan Park"
-              }
-            }
-          }, {
-            "order": "4",
-            "type": "Individual",
-            "code": "7262903",
-            "rank": "4",
-            "value": "1:45.04",
-            "property": [{
-              "type": "Diff",
-              "value": "1.90"
-            }, {
-              "type": "Result Type",
-              "value": "Time"
-            }],
-            "resultExtension": [{
-              "type": "Reaction Time",
-              "value": "0.67"
-            }, {
-              "type": "Leg Breakdown",
-              "extension": [{
-                "position": "2",
-                "value": "26.47"
-              }, {
-                "position": "3",
-                "value": "26.60"
-              }, {
-                "position": "4",
-                "value": "27.25"
-              }]
-            }, {
-              "type": "Split Times",
-              "extension": [{
-                "position": "1",
-                "value": "24.72",
-                "property": {
-                  "type": "Diff",
-                  "value": "0.17"
-                }
-              }, {
-                "position": "2",
-                "value": "51.19",
-                "property": {
-                  "type": "Diff",
-                  "value": "0.55"
-                }
-              }, {
-                "position": "3",
-                "value": "1:17.79",
-                "property": {
-                  "type": "Diff",
-                  "value": "0.63"
-                }
-              }, {
-                "position": "4",
-                "value": "1:45.04",
-                "property": {
-                  "type": "Diff",
-                  "value": "1.90"
-                }
-              }]
-            }],
-            "country": {
-              "identifier": "FRA",
-              "name": "France",
-              "longName": "France"
-            },
-            "participant": {
-              "order": "1",
-              "competitor": {
-                "identifier": "7262903",
-                "firstName": "Yannick",
-                "lastName": "Agnel",
-                "fullName": "Yannick Agnel"
-              }
-            }
-          }, {
-            "order": "5",
-            "type": "Individual",
-            "code": "7261102",
-            "rank": "5",
-            "value": "1:45.53",
-            "property": [{
-              "type": "Diff",
-              "value": "2.39"
-            }, {
-              "type": "Result Type",
-              "value": "Time"
-            }],
-            "resultExtension": [{
-              "type": "Reaction Time",
-              "value": "0.77"
-            }, {
-              "type": "Leg Breakdown",
-              "extension": [{
-                "position": "2",
-                "value": "26.41"
-              }, {
-                "position": "3",
-                "value": "26.98"
-              }, {
-                "position": "4",
-                "value": "26.97"
-              }]
-            }, {
-              "type": "Split Times",
-              "extension": [{
-                "position": "1",
-                "value": "25.17",
-                "property": {
-                  "type": "Diff",
-                  "value": "0.62"
-                }
-              }, {
-                "position": "2",
-                "value": "51.58",
-                "property": {
-                  "type": "Diff",
-                  "value": "0.94"
-                }
-              }, {
-                "position": "3",
-                "value": "1:18.56",
-                "property": {
-                  "type": "Diff",
-                  "value": "1.40"
-                }
-              }, {
-                "position": "4",
-                "value": "1:45.53",
-                "property": {
-                  "type": "Diff",
-                  "value": "2.39"
-                }
-              }]
-            }],
-            "country": {
-              "identifier": "CHN",
-              "name": "China",
-              "longName": "People's Republic of China"
-            },
-            "participant": {
-              "order": "1",
-              "competitor": {
-                "identifier": "7261102",
-                "firstName": "Yunqi",
-                "lastName": "Li",
-                "fullName": "Yunqi Li"
-              }
-            }
-          }, {
-            "order": "6",
-            "type": "Individual",
-            "code": "7261825",
-            "rank": "6",
-            "value": "1:46.53",
-            "property": [{
-              "type": "Diff",
-              "value": "3.39"
-            }, {
-              "type": "Result Type",
-              "value": "Time"
-            }],
-            "resultExtension": [{
-              "type": "Reaction Time",
-              "value": "0.68"
-            }, {
-              "type": "Leg Breakdown",
-              "extension": [{
-                "position": "2",
-                "value": "26.87"
-              }, {
-                "position": "3",
-                "value": "27.30"
-              }, {
-                "position": "4",
-                "value": "27.30"
-              }]
-            }, {
-              "type": "Split Times",
-              "extension": [{
-                "position": "1",
-                "value": "25.06",
-                "property": {
-                  "type": "Diff",
-                  "value": "0.51"
-                }
-              }, {
-                "position": "2",
-                "value": "51.93",
-                "property": {
-                  "type": "Diff",
-                  "value": "1.29"
-                }
-              }, {
-                "position": "3",
-                "value": "1:19.23",
-                "property": {
-                  "type": "Diff",
-                  "value": "2.07"
-                }
-              }, {
-                "position": "4",
-                "value": "1:46.53",
-                "property": {
-                  "type": "Diff",
-                  "value": "3.39"
-                }
-              }]
-            }],
-            "country": {
-              "identifier": "CAY",
-              "name": "Cayman Islands",
-              "longName": "Cayman Islands"
-            },
-            "participant": {
-              "order": "1",
-              "competitor": {
-                "identifier": "7261825",
-                "firstName": "Brett",
-                "lastName": "Fraser",
-                "fullName": "Brett Fraser"
-              }
-            }
-          }, {
-            "order": "7",
-            "type": "Individual",
-            "code": "7263009",
-            "rank": "7",
-            "value": "1:46.93",
-            "property": [{
-              "type": "Diff",
-              "value": "3.79"
-            }, {
-              "type": "Result Type",
-              "value": "Time"
-            }],
-            "resultExtension": [{
-              "type": "Reaction Time",
-              "value": "0.70"
-            }, {
-              "type": "Leg Breakdown",
-              "extension": [{
-                "position": "2",
-                "value": "27.07"
-              }, {
-                "position": "3",
-                "value": "27.82"
-              }, {
-                "position": "4",
-                "value": "27.39"
-              }]
-            }, {
-              "type": "Split Times",
-              "extension": [{
-                "position": "1",
-                "value": "24.65",
-                "property": {
-                  "type": "Diff",
-                  "value": "0.10"
-                }
-              }, {
-                "position": "2",
-                "value": "51.72",
-                "property": {
-                  "type": "Diff",
-                  "value": "1.08"
-                }
-              }, {
-                "position": "3",
-                "value": "1:19.54",
-                "property": {
-                  "type": "Diff",
-                  "value": "2.38"
-                }
-              }, {
-                "position": "4",
-                "value": "1:46.93",
-                "property": {
-                  "type": "Diff",
-                  "value": "3.79"
-                }
-              }]
-            }],
-            "country": {
-              "identifier": "GER",
-              "name": "Germany",
-              "longName": "Germany"
-            },
-            "participant": {
-              "order": "1",
-              "competitor": {
-                "identifier": "7263009",
-                "firstName": "Paul",
-                "lastName": "Biedermann",
-                "fullName": "Paul Biedermann"
-              }
-            }
-          }, {
-            "order": "8",
-            "type": "Individual",
-            "code": "7260048",
-            "rank": "8",
-            "value": "1:47.75",
-            "property": [{
-              "type": "Diff",
-              "value": "4.61"
-            }, {
-              "type": "Result Type",
-              "value": "Time"
-            }],
-            "resultExtension": [{
-              "type": "Reaction Time",
-              "value": "0.71"
-            }, {
-              "type": "Leg Breakdown",
-              "extension": [{
-                "position": "2",
-                "value": "26.70"
-              }, {
-                "position": "3",
-                "value": "27.78"
-              }, {
-                "position": "4",
-                "value": "28.37"
-              }]
-            }, {
-              "type": "Split Times",
-              "extension": [{
-                "position": "1",
-                "value": "24.90",
-                "property": {
-                  "type": "Diff",
-                  "value": "0.35"
-                }
-              }, {
-                "position": "2",
-                "value": "51.60",
-                "property": {
-                  "type": "Diff",
-                  "value": "0.96"
-                }
-              }, {
-                "position": "3",
-                "value": "1:19.38",
-                "property": {
-                  "type": "Diff",
-                  "value": "2.22"
-                }
-              }, {
-                "position": "4",
-                "value": "1:47.75",
-                "property": {
-                  "type": "Diff",
-                  "value": "4.61"
-                }
-              }]
-            }],
-            "country": {
-              "identifier": "RUS",
-              "name": "Russian Federation",
-              "longName": "Russian Federation"
-            },
-            "participant": {
-              "order": "1",
-              "competitor": {
-                "identifier": "7260048",
-                "firstName": "Artem",
-                "lastName": "Lobuzov",
-                "fullName": "Artem Lobuzov"
-              }
-            }
-          }, {
-            "order": "9",
-            "type": "Individual",
-            "code": "7263665",
-            "country": {
-              "identifier": "USA",
-              "name": "United States",
-              "longName": "United States of America"
-            },
-            "participant": {
-              "order": "1",
-              "competitor": {
-                "identifier": "7263665",
-                "firstName": "Ricky",
-                "lastName": "Berens",
-                "fullName": "Ricky Berens"
-              }
-            }
-          }, {
-            "order": "10",
-            "type": "Individual",
-            "code": "7262585",
-            "country": {
-              "identifier": "AUS",
-              "name": "Australia",
-              "longName": "Australia"
-            },
-            "participant": {
-              "order": "1",
-              "competitor": {
-                "identifier": "7262585",
-                "firstName": "Kenrick",
-                "lastName": "Monk",
-                "fullName": "Kenrick Monk"
-              }
-            }
-          }]
-        }
-      }}};
-  return module.exports;
-});
-
-$__System.register('55', ['33', '51', '52', '53', '54', '4b'], function (_export) {
-    var _Object$keys, parseData, result, jsonRecord, jsonFinals, d3_extent;
-
-    return {
-        setters: [function (_) {
-            _Object$keys = _['default'];
-        }, function (_4) {
-            parseData = _4['default'];
-        }, function (_5) {
-            result = _5['default'];
-        }, function (_2) {
-            jsonRecord = _2['default'];
-        }, function (_3) {
-            jsonFinals = _3['default'];
-        }, function (_b) {
-            d3_extent = _b.extent;
-        }],
-        execute: function () {
-            'use strict';
-
-            _export('default', function () {
-                var data = parseData(jsonRecord, jsonFinals);
-                var dataCombo = data.finals.concat(data.medals, data.worlds);
-
-                /* data manipulation, even specific */
-                // fastest swimming time
-                var timeWr = d3_extent(dataCombo, function (d) {
-                    return d.x;
-                })[0];
-                _Object$keys(data).forEach(function (dd) {
-                    // time to distance
-                    data[dd] = data[dd].map(function (dm) {
-                        dm.x = 100 * timeWr / dm.x - 100;
-                        dm.attrs.dist = Math.round(Math.abs(dm.x) * 100) / 100;
-                        return dm;
-                    });
-                    // sort
-                    data[dd].sort(function (d1, d2) {
-                        return d1.x - d2.x;
-                    });
-                });
-                console.log(data);
-
-                result(data, dataCombo);
-            });
-        }
-    };
-});
-$__System.registerDynamic("56", [], true, function($__require, exports, module) {
+$__System.registerDynamic("7", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -5703,7 +969,7 @@ $__System.registerDynamic("56", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("57", [], true, function($__require, exports, module) {
+$__System.registerDynamic("8", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -6836,22 +2102,22 @@ $__System.registerDynamic("57", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.register('58', ['33', '51', '52', '56', '57', '4b'], function (_export) {
-    var _Object$keys, parseData, result, jsonRecord, jsonFinals, d3_extent;
+$__System.register('9', ['7', '8', 'd', 'a', 'b', 'c'], function (_export) {
+    var jsonRecord, jsonFinals, _Object$keys, parseData, result, d3_extent;
 
     return {
         setters: [function (_) {
-            _Object$keys = _['default'];
-        }, function (_4) {
-            parseData = _4['default'];
-        }, function (_5) {
-            result = _5['default'];
+            jsonRecord = _['default'];
         }, function (_2) {
-            jsonRecord = _2['default'];
-        }, function (_3) {
-            jsonFinals = _3['default'];
+            jsonFinals = _2['default'];
+        }, function (_d) {
+            _Object$keys = _d['default'];
+        }, function (_a) {
+            parseData = _a['default'];
         }, function (_b) {
-            d3_extent = _b.extent;
+            result = _b['default'];
+        }, function (_c) {
+            d3_extent = _c.extent;
         }],
         execute: function () {
             'use strict';
@@ -6884,7 +2150,1137 @@ $__System.register('58', ['33', '51', '52', '56', '57', '4b'], function (_export
         }
     };
 });
-$__System.registerDynamic("59", [], true, function($__require, exports, module) {
+$__System.registerDynamic("e", [], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  module.exports = {
+    "header": ["year", "name", "team", "record", "result"],
+    "world_records": [[1908, "Otto Scheff", "AUT", "wr", "2:31.6"], [1910, "Frank Beaurepaire", "AUS", "wr", "2:30.0"], [1911, "Charles Daniels", "USA", "wr", "2:25.4"], [1916, "Norman Ross", "USA", "wr", "2:21.6"], [1920, "Tedford Cann", "USA", "wr", "2:19.8"], [1922, "Johnny Weissmuller", "USA", "wr", "2:15.6"], [1925, "Johnny Weissmuller", "USA", "wr", "2:15.2"], [1927, "Johnny Weissmuller", "USA", "wr", "2:08.0"], [1935, "Jack Medica", "USA", "wr", "2:07.2"], [1944, "Bill Smith", "USA", "wr", "2:06.2"], [1946, "Alex Jany", "FRA", "wr", "2:05.4"], [1950, "John Marshall", "AUS", "wr", "2:04.6"], [1954, "Ford Konno", "USA", "wr", "2:03.9"], [1955, "Jack Wardrop", "GBR", "wr", "2:03.4"], [1957, "Dick Hanley", "USA", "wr", "2:01.5"], [1958, "John Konrads", "AUS", "wr", "2:04.8"], [1958, "John Konrads", "AUS", "wr", "2:03.2"], [1958, "Tsuyoshi Yamanaka", "JPN", "wr", "2:03.0"], [1959, "John Konrads", "AUS", "wr", "2:02.2"], [1959, "Tsuyoshi Yamanaka", "JPN", "wr", "2:01.5"], [1961, "Tsuyoshi Yamanaka", "JPN", "wr", "2:01.2"], [1961, "Tsuyoshi Yamanaka", "JPN", "wr", "2:01.1"], [1961, "Tsuyoshi Yamanaka", "JPN", "wr", "2:00.4"], [1962, "Don Schollander", "USA", "wr", "2:00.4"], [1963, "Bob Windle", "AUS", "wr", "2:00.3"], [1963, "Don Schollander", "USA", "wr", "1:58.8"], [1963, "Don Schollander", "USA", "wr", "1:58.5"], [1963, "Don Schollander", "USA", "wr", "1:58.4"], [1964, "Hans-Joachim Klein", "FRG (West Germany)", "wr", "1:58.2"], [1964, "Don Schollander", "USA", "wr", "1:57.6"], [1966, "Don Schollander", "USA", "wr", "1:57.2"], [1966, "Don Schollander", "USA", "wr", "1:56.2"], [1967, "Don Schollander", "USA", "wr", "1:56.0"], [1967, "Don Schollander", "USA", "wr", "1:55.7"], [1968, "Don Schollander", "USA", "wr", "1:54.8"], [1968, "Don Schollander", "USA", "wr", "1:54.3"], [1969, "Mark Spitz", "USA", "wr", "1:54.3"], [1971, "Mark Spitz", "USA", "wr", "1:54.2"], [1971, "Mark Spitz", "USA", "wr", "1:53.5"], [1972, "Mark Spitz", "USA", "wr", "1:52.78"], [1974, "Tim Shaw", "USA", "wr", "1:51.66"], [1975, "Bruce Furniss", "USA", "wr", "1:51.41"], [1975, "Bruce Furniss", "USA", "wr", "1:50.89"], [1975, "Bruce Furniss", "USA", "wr", "1:50.32"], [1976, "Bruce Furniss", "USA", "wr", "1:50.29"], [1979, "Sergey Koplyakov", "URS (Soviet Union)", "wr", "1:49.83"], [1980, "Rowdy Gaines", "USA", "wr", "1:49.16"], [1982, "Rowdy Gaines", "USA", "wr", "1:48.93"], [1983, "Michael Gross", "FRG (West Germany)", "wr", "1:48.28"], [1983, "Michael Gross", "FRG (West Germany)", "wr", "1:47.87"], [1984, "Michael Gross", "FRG (West Germany)", "wr", "1:47.55"], [1984, "Michael Gross", "FRG (West Germany)", "wr", "1:47.44"], [1988, "Duncan Armstrong", "AUS", "wr", "1:47.25"], [1989, "Giorgio Lamberti", "ITA", "wr", "1:46.69"], [1999, "Grant Hackett", "AUS", "wr", "1:46.67"], [1999, "Ian Thorpe", "AUS", "wr", "1:46.34"], [1999, "Ian Thorpe", "AUS", "wr", "1:46.00"], [2000, "Ian Thorpe", "AUS", "wr", "1:45.69"], [2000, "Ian Thorpe", "AUS", "wr", "1:45.51"], [2000, "Pieter van den Hoogenband", "NED", "wr", "1:45.35"], [2000, "Pieter van den Hoogenband", "NED", "wr", "1:45.35"], [2001, "Ian Thorpe", "AUS", "wr", "1:44.69"], [2001, "Ian Thorpe", "AUS", "wr", "1:44.06"], [2007, "Michael Phelps", "USA", "wr", "1:43.86"], [2008, "Michael Phelps", "USA", "wr", "1:42.96"], [2009, "Paul Biedermann", "GER", "wr", "1:42.00"]],
+    "olympics": [[1900, "Frederick Lane", "AUS", "gold", "2:25.2"], [1900, "Zoltan Halmay", "HUN", "silver", "2:31.4"], [1900, "Karl Ruberl", "AUT", "bronze", "2:32.0"], [1904, "Charles Daniels", "USA", "gold", "2:44.2"], [1904, "Francis Gailey", "USA", "silver", "2:46"], [1904, "Emil Rausch", "GER", "bronze", "2:56.0"], [1968, "Mike Wenden", "AUS", "gold", "1:55.2"], [1968, "Don Schollander", "USA", "silver", "1:55.8"], [1968, "John Nelson", "USA", "bronze", "1:58.1"], [1972, "Mark Spitz", "USA", "gold", "1:52.78"], [1972, "Steve Genter", "USA", "silver", "1:53.73"], [1972, "Werner Lampe", "FRG", "bronze", "1:53.99"], [1976, "Bruce Furniss", "USA", "gold", "1:50.29"], [1976, "John Naber", "USA", "silver", "1:50.50"], [1976, "Jim Montgomery", "USA", "bronze", "1:50.58"], [1980, "Sergey Koplyakov", "URS", "gold", "1:49.81"], [1980, "Andrey Krylov", "URS", "silver", "1:50.76"], [1980, "Graeme Brewer", "AUS", "bronze", "1:51.60"], [1984, "Michael Gross", "FRG", "gold", "1:47.44"], [1984, "Michael Heath", "USA", "silver", "1:49.10"], [1984, "Thomas Fahrner", "FRG", "bronze", "1:49.69"], [1988, "Duncan Armstrong", "AUS", "gold", "1:47.25"], [1988, "Anders Holmertz", "SWE", "silver", "1:47.89"], [1988, "Matthew Biondi", "USA", "bronze", "1:47.99"], [1992, "Evgueni Sadovyi", "EUN", "gold", "1:46.70"], [1992, "Anders Holmertz", "SWE", "silver", "1:46.86"], [1992, "Antti Kasvio", "FIN", "bronze", "1:47.63"], [1996, "Danyon Loader", "NZL", "gold", "1:47.63"], [1996, "Gustavo Borges", "BRA", "silver", "1:48.08"], [1996, "Daniel Kowalski", "AUS", "bronze", "1:48.25"], [2000, "Pieter Van Den Hoogenband", "NED", "gold", "01:45.35"], [2000, "Ian Thorpe", "AUS", "silver", "01:45.83"], [2000, "Massimiliano Rosolino", "ITA", "bronze", "01:46.65"], [2004, "Ian Thorpe", "AUS", "gold", "1:44.71"], [2004, "Pieter Van Den Hoogenband", "NED", "silver", "1:45.23"], [2004, "Michael Phelps", "USA", "bronze", "1:45.32"], [2008, "Michael Phelps", "USA", "gold", "1:42.96"], [2008, "Taehwan Park", "KOR", "silver", "1:44.85"], [2008, "Peter Vanderkaay", "USA", "bronze", "1:45.14"], [2012, "Yannick Agnel", "FRA", "gold", "1:43.14"], [2012, "Taehwan Park", "KOR", "silver", "1:44.93"], [2012, "Yang Sun", "CHN", "silver", "1:44.93"]]
+  };
+  return module.exports;
+});
+
+$__System.registerDynamic("f", [], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  module.exports = {"olympics": {"eventUnit": {
+        "identifier": "SWM012101",
+        "description": "Men's 200m Freestyle Final",
+        "unitType": "Individuals",
+        "medalEvent": "Yes",
+        "disciplineDescription": {
+          "identifier": "swimming",
+          "value": "Swimming"
+        },
+        "phaseDescription": {
+          "identifier": "SWM0121",
+          "value": "Final"
+        },
+        "result": {
+          "type": "Official",
+          "timestamp": "2016-06-30T17:13:16Z",
+          "entrant": [{
+            "order": "1",
+            "type": "Individual",
+            "code": "7261113",
+            "rank": "1",
+            "value": "1:43.14",
+            "property": [{
+              "type": "Medal Awarded",
+              "value": "Gold"
+            }, {
+              "type": "Record Set",
+              "value": "AS"
+            }, {
+              "type": "Diff",
+              "value": "0.00"
+            }, {
+              "type": "Result Type",
+              "value": "Time"
+            }],
+            "resultExtension": [{
+              "type": "Reaction Time",
+              "value": "0.70"
+            }, {
+              "type": "Leg Breakdown",
+              "extension": [{
+                "position": "2",
+                "value": "26.09"
+              }, {
+                "position": "3",
+                "value": "26.52"
+              }, {
+                "position": "4",
+                "value": "25.98"
+              }]
+            }, {
+              "type": "Split Times",
+              "extension": [{
+                "position": "1",
+                "value": "24.55",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.00"
+                }
+              }, {
+                "position": "2",
+                "value": "50.64",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.00"
+                }
+              }, {
+                "position": "3",
+                "value": "1:17.16",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.00"
+                }
+              }, {
+                "position": "4",
+                "value": "1:43.14",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.00"
+                }
+              }]
+            }],
+            "country": {
+              "identifier": "CHN",
+              "name": "China",
+              "longName": "People's Republic of China"
+            },
+            "participant": {
+              "order": "1",
+              "competitor": {
+                "identifier": "7261113",
+                "firstName": "Yang",
+                "lastName": "Sun",
+                "fullName": "Yang Sun"
+              }
+            }
+          }, {
+            "order": "2",
+            "type": "Individual",
+            "code": "7262741",
+            "rank": "2",
+            "value": "1:44.93",
+            "property": [{
+              "type": "Medal Awarded",
+              "value": "Silver"
+            }, {
+              "type": "Diff",
+              "value": "1.79"
+            }, {
+              "type": "Result Type",
+              "value": "Time"
+            }],
+            "resultExtension": [{
+              "type": "Reaction Time",
+              "value": "0.64"
+            }, {
+              "type": "Leg Breakdown",
+              "extension": [{
+                "position": "2",
+                "value": "26.07"
+              }, {
+                "position": "3",
+                "value": "27.08"
+              }, {
+                "position": "4",
+                "value": "27.05"
+              }]
+            }, {
+              "type": "Split Times",
+              "extension": [{
+                "position": "1",
+                "value": "24.73",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.18"
+                }
+              }, {
+                "position": "2",
+                "value": "50.80",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.16"
+                }
+              }, {
+                "position": "3",
+                "value": "1:17.88",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.72"
+                }
+              }, {
+                "position": "4",
+                "value": "1:44.93",
+                "property": {
+                  "type": "Diff",
+                  "value": "1.79"
+                }
+              }]
+            }],
+            "country": {
+              "identifier": "NED",
+              "name": "Netherlands",
+              "longName": "Netherlands"
+            },
+            "participant": {
+              "order": "1",
+              "competitor": {
+                "identifier": "7262741",
+                "firstName": "Sebastiaan",
+                "lastName": "Verschuren",
+                "fullName": "Sebastiaan Verschuren"
+              }
+            }
+          }, {
+            "order": "3",
+            "type": "Individual",
+            "code": "7261937",
+            "rank": "2",
+            "value": "1:44.93",
+            "property": [{
+              "type": "Medal Awarded",
+              "value": "Silver"
+            }, {
+              "type": "Diff",
+              "value": "1.79"
+            }, {
+              "type": "Result Type",
+              "value": "Time"
+            }],
+            "resultExtension": [{
+              "type": "Reaction Time",
+              "value": "0.73"
+            }, {
+              "type": "Leg Breakdown",
+              "extension": [{
+                "position": "2",
+                "value": "26.26"
+              }, {
+                "position": "3",
+                "value": "26.71"
+              }, {
+                "position": "4",
+                "value": "27.00"
+              }]
+            }, {
+              "type": "Split Times",
+              "extension": [{
+                "position": "1",
+                "value": "24.96",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.41"
+                }
+              }, {
+                "position": "2",
+                "value": "51.22",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.58"
+                }
+              }, {
+                "position": "3",
+                "value": "1:17.93",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.77"
+                }
+              }, {
+                "position": "4",
+                "value": "1:44.93",
+                "property": {
+                  "type": "Diff",
+                  "value": "1.79"
+                }
+              }]
+            }],
+            "country": {
+              "identifier": "KOR",
+              "name": "Republic of Korea",
+              "longName": "Korea"
+            },
+            "participant": {
+              "order": "1",
+              "competitor": {
+                "identifier": "7261937",
+                "firstName": "Taehwan",
+                "lastName": "Park",
+                "fullName": "Taehwan Park"
+              }
+            }
+          }, {
+            "order": "4",
+            "type": "Individual",
+            "code": "7262903",
+            "rank": "4",
+            "value": "1:45.04",
+            "property": [{
+              "type": "Diff",
+              "value": "1.90"
+            }, {
+              "type": "Result Type",
+              "value": "Time"
+            }],
+            "resultExtension": [{
+              "type": "Reaction Time",
+              "value": "0.67"
+            }, {
+              "type": "Leg Breakdown",
+              "extension": [{
+                "position": "2",
+                "value": "26.47"
+              }, {
+                "position": "3",
+                "value": "26.60"
+              }, {
+                "position": "4",
+                "value": "27.25"
+              }]
+            }, {
+              "type": "Split Times",
+              "extension": [{
+                "position": "1",
+                "value": "24.72",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.17"
+                }
+              }, {
+                "position": "2",
+                "value": "51.19",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.55"
+                }
+              }, {
+                "position": "3",
+                "value": "1:17.79",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.63"
+                }
+              }, {
+                "position": "4",
+                "value": "1:45.04",
+                "property": {
+                  "type": "Diff",
+                  "value": "1.90"
+                }
+              }]
+            }],
+            "country": {
+              "identifier": "FRA",
+              "name": "France",
+              "longName": "France"
+            },
+            "participant": {
+              "order": "1",
+              "competitor": {
+                "identifier": "7262903",
+                "firstName": "Yannick",
+                "lastName": "Agnel",
+                "fullName": "Yannick Agnel"
+              }
+            }
+          }, {
+            "order": "5",
+            "type": "Individual",
+            "code": "7261102",
+            "rank": "5",
+            "value": "1:45.53",
+            "property": [{
+              "type": "Diff",
+              "value": "2.39"
+            }, {
+              "type": "Result Type",
+              "value": "Time"
+            }],
+            "resultExtension": [{
+              "type": "Reaction Time",
+              "value": "0.77"
+            }, {
+              "type": "Leg Breakdown",
+              "extension": [{
+                "position": "2",
+                "value": "26.41"
+              }, {
+                "position": "3",
+                "value": "26.98"
+              }, {
+                "position": "4",
+                "value": "26.97"
+              }]
+            }, {
+              "type": "Split Times",
+              "extension": [{
+                "position": "1",
+                "value": "25.17",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.62"
+                }
+              }, {
+                "position": "2",
+                "value": "51.58",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.94"
+                }
+              }, {
+                "position": "3",
+                "value": "1:18.56",
+                "property": {
+                  "type": "Diff",
+                  "value": "1.40"
+                }
+              }, {
+                "position": "4",
+                "value": "1:45.53",
+                "property": {
+                  "type": "Diff",
+                  "value": "2.39"
+                }
+              }]
+            }],
+            "country": {
+              "identifier": "CHN",
+              "name": "China",
+              "longName": "People's Republic of China"
+            },
+            "participant": {
+              "order": "1",
+              "competitor": {
+                "identifier": "7261102",
+                "firstName": "Yunqi",
+                "lastName": "Li",
+                "fullName": "Yunqi Li"
+              }
+            }
+          }, {
+            "order": "6",
+            "type": "Individual",
+            "code": "7261825",
+            "rank": "6",
+            "value": "1:46.53",
+            "property": [{
+              "type": "Diff",
+              "value": "3.39"
+            }, {
+              "type": "Result Type",
+              "value": "Time"
+            }],
+            "resultExtension": [{
+              "type": "Reaction Time",
+              "value": "0.68"
+            }, {
+              "type": "Leg Breakdown",
+              "extension": [{
+                "position": "2",
+                "value": "26.87"
+              }, {
+                "position": "3",
+                "value": "27.30"
+              }, {
+                "position": "4",
+                "value": "27.30"
+              }]
+            }, {
+              "type": "Split Times",
+              "extension": [{
+                "position": "1",
+                "value": "25.06",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.51"
+                }
+              }, {
+                "position": "2",
+                "value": "51.93",
+                "property": {
+                  "type": "Diff",
+                  "value": "1.29"
+                }
+              }, {
+                "position": "3",
+                "value": "1:19.23",
+                "property": {
+                  "type": "Diff",
+                  "value": "2.07"
+                }
+              }, {
+                "position": "4",
+                "value": "1:46.53",
+                "property": {
+                  "type": "Diff",
+                  "value": "3.39"
+                }
+              }]
+            }],
+            "country": {
+              "identifier": "CAY",
+              "name": "Cayman Islands",
+              "longName": "Cayman Islands"
+            },
+            "participant": {
+              "order": "1",
+              "competitor": {
+                "identifier": "7261825",
+                "firstName": "Brett",
+                "lastName": "Fraser",
+                "fullName": "Brett Fraser"
+              }
+            }
+          }, {
+            "order": "7",
+            "type": "Individual",
+            "code": "7263009",
+            "rank": "7",
+            "value": "1:46.93",
+            "property": [{
+              "type": "Diff",
+              "value": "3.79"
+            }, {
+              "type": "Result Type",
+              "value": "Time"
+            }],
+            "resultExtension": [{
+              "type": "Reaction Time",
+              "value": "0.70"
+            }, {
+              "type": "Leg Breakdown",
+              "extension": [{
+                "position": "2",
+                "value": "27.07"
+              }, {
+                "position": "3",
+                "value": "27.82"
+              }, {
+                "position": "4",
+                "value": "27.39"
+              }]
+            }, {
+              "type": "Split Times",
+              "extension": [{
+                "position": "1",
+                "value": "24.65",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.10"
+                }
+              }, {
+                "position": "2",
+                "value": "51.72",
+                "property": {
+                  "type": "Diff",
+                  "value": "1.08"
+                }
+              }, {
+                "position": "3",
+                "value": "1:19.54",
+                "property": {
+                  "type": "Diff",
+                  "value": "2.38"
+                }
+              }, {
+                "position": "4",
+                "value": "1:46.93",
+                "property": {
+                  "type": "Diff",
+                  "value": "3.79"
+                }
+              }]
+            }],
+            "country": {
+              "identifier": "GER",
+              "name": "Germany",
+              "longName": "Germany"
+            },
+            "participant": {
+              "order": "1",
+              "competitor": {
+                "identifier": "7263009",
+                "firstName": "Paul",
+                "lastName": "Biedermann",
+                "fullName": "Paul Biedermann"
+              }
+            }
+          }, {
+            "order": "8",
+            "type": "Individual",
+            "code": "7260048",
+            "rank": "8",
+            "value": "1:47.75",
+            "property": [{
+              "type": "Diff",
+              "value": "4.61"
+            }, {
+              "type": "Result Type",
+              "value": "Time"
+            }],
+            "resultExtension": [{
+              "type": "Reaction Time",
+              "value": "0.71"
+            }, {
+              "type": "Leg Breakdown",
+              "extension": [{
+                "position": "2",
+                "value": "26.70"
+              }, {
+                "position": "3",
+                "value": "27.78"
+              }, {
+                "position": "4",
+                "value": "28.37"
+              }]
+            }, {
+              "type": "Split Times",
+              "extension": [{
+                "position": "1",
+                "value": "24.90",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.35"
+                }
+              }, {
+                "position": "2",
+                "value": "51.60",
+                "property": {
+                  "type": "Diff",
+                  "value": "0.96"
+                }
+              }, {
+                "position": "3",
+                "value": "1:19.38",
+                "property": {
+                  "type": "Diff",
+                  "value": "2.22"
+                }
+              }, {
+                "position": "4",
+                "value": "1:47.75",
+                "property": {
+                  "type": "Diff",
+                  "value": "4.61"
+                }
+              }]
+            }],
+            "country": {
+              "identifier": "RUS",
+              "name": "Russian Federation",
+              "longName": "Russian Federation"
+            },
+            "participant": {
+              "order": "1",
+              "competitor": {
+                "identifier": "7260048",
+                "firstName": "Artem",
+                "lastName": "Lobuzov",
+                "fullName": "Artem Lobuzov"
+              }
+            }
+          }, {
+            "order": "9",
+            "type": "Individual",
+            "code": "7263665",
+            "country": {
+              "identifier": "USA",
+              "name": "United States",
+              "longName": "United States of America"
+            },
+            "participant": {
+              "order": "1",
+              "competitor": {
+                "identifier": "7263665",
+                "firstName": "Ricky",
+                "lastName": "Berens",
+                "fullName": "Ricky Berens"
+              }
+            }
+          }, {
+            "order": "10",
+            "type": "Individual",
+            "code": "7262585",
+            "country": {
+              "identifier": "AUS",
+              "name": "Australia",
+              "longName": "Australia"
+            },
+            "participant": {
+              "order": "1",
+              "competitor": {
+                "identifier": "7262585",
+                "firstName": "Kenrick",
+                "lastName": "Monk",
+                "fullName": "Kenrick Monk"
+              }
+            }
+          }]
+        }
+      }}};
+  return module.exports;
+});
+
+$__System.register('10', ['d', 'e', 'f', 'a', 'b', 'c'], function (_export) {
+    var _Object$keys, jsonRecord, jsonFinals, parseData, result, d3_extent;
+
+    return {
+        setters: [function (_d) {
+            _Object$keys = _d['default'];
+        }, function (_e) {
+            jsonRecord = _e['default'];
+        }, function (_f) {
+            jsonFinals = _f['default'];
+        }, function (_a) {
+            parseData = _a['default'];
+        }, function (_b) {
+            result = _b['default'];
+        }, function (_c) {
+            d3_extent = _c.extent;
+        }],
+        execute: function () {
+            'use strict';
+
+            _export('default', function () {
+                var data = parseData(jsonRecord, jsonFinals);
+                var dataCombo = data.finals.concat(data.medals, data.worlds);
+
+                /* data manipulation, even specific */
+                // fastest swimming time
+                var timeWr = d3_extent(dataCombo, function (d) {
+                    return d.x;
+                })[0];
+                _Object$keys(data).forEach(function (dd) {
+                    // time to distance
+                    data[dd] = data[dd].map(function (dm) {
+                        dm.x = 100 * timeWr / dm.x - 100;
+                        dm.attrs.dist = Math.round(Math.abs(dm.x) * 100) / 100;
+                        return dm;
+                    });
+                    // sort
+                    data[dd].sort(function (d1, d2) {
+                        return d1.x - d2.x;
+                    });
+                });
+                console.log(data);
+
+                result(data, dataCombo);
+            });
+        }
+    };
+});
+$__System.registerDynamic("11", [], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  module.exports = {
+    "header": ["year", "name", "team", "record", "result"],
+    "world_records": [[1961, "Leonid Kolesnikov", "URS", "wr", "1:11.4"], [1961, "Chet Jastremski", "USA", "wr", "1:11.1"], [1961, "Gunter Tittes", "GDR", "wr", "1:10.8"], [1961, "Chet Jastremski", "USA", "wr", "1:10.7"], [1961, "Chet Jastremski", "USA", "wr", "1:10.0"], [1961, "Chet Jastremski", "USA", "wr", "1:09.5"], [1961, "Chet Jastremski", "USA", "wr", "1:07.8"], [1961, "Chet Jastremski", "USA", "wr", "1:07.5"], [1964, "Georgy Prokopenko", "URS", "wr", "1:07.4"], [1964, "Georgy Prokopenko", "URS", "wr", "1:06.9"], [1967, "Vladimir Kosinsky", "URS", "wr", "1:06.7"], [1968, "Jose Fiolo", "BRA", "wr", "1:06.4"], [1968, "Nikolai Pankin", "URS", "wr", "1:06.2"], [1969, "Nikolai Pankin", "URS", "wr", "1:05.8"], [1972, "John Hencken", "USA", "wr", "1:05.68"], [1972, "Nobutaka Taguchi", "JPN", "wr", "1:05.13"], [1972, "Nobutaka Taguchi", "JPN", "wr", "1:04.94"], [1973, "John Hencken", "USA", "wr", "1:04.35"], [1973, "John Hencken", "USA", "wr", "1:04.02"], [1974, "John Hencken", "USA", "wr", "1:03.88"], [1976, "John Hencken", "USA", "wr", "1:03.88"], [1976, "John Hencken", "USA", "wr", "1:03.62"], [1976, "John Hencken", "USA", "wr", "1:03.11"], [1977, "Gerald Mörken", "FRG", "wr", "1:02.86"], [1982, "Steven Lundquist", "USA", "wr", "1:02.62"], [1982, "Steven Lundquist", "USA", "wr", "1:02.53"], [1983, "Steven Lundquist", "USA", "wr", "1:02.34"], [1983, "Steven Lundquist", "USA", "wr", "1:02.28"], [1984, "John Moffet", "USA", "wr", "1:02.13"], [1984, "Steven Lundquist", "USA", "wr", "1:01.65"], [1989, "Adrian Moorhouse", "GBR", "wr", "1:01.49"], [1990, "Adrian Moorhouse", "GBR", "wr", "1:01.49"], [1990, "Adrian Moorhouse", "GBR", "wr", "1:01.49"], [1991, "Norbert Rózsa", "HUN", "wr", "1:01.49"], [1991, "Norbert Rózsa", "HUN", "wr", "1:01.45"], [1991, "Vasili Ivanov", "URS", "wr", "1:01.45"], [1991, "Norbert Rózsa", "HUN", "wr", "1:01.29"], [1993, "Károly Güttler", "HUN", "wr", "1:00.95"], [1996, "Frederik Deburghgraeve", "BEL", "wr", "1:00.60"], [2000, "Roman Sludnov", "RUS", "wr", "1:00.36"], [2001, "Ed Moses", "USA", "wr", "1:00.29"], [2001, "Roman Sludnov", "RUS", "wr", "1:00.26"], [2001, "Roman Sludnov", "RUS", "wr", "59.97"], [2001, "Roman Sludnov", "RUS", "wr", "59.94"], [2003, "Kosuke Kitajima", "JPN", "wr", "59.78"], [2004, "Brendan Hansen", "USA", "wr", "59.3"], [2006, "Brendan Hansen", "USA", "wr", "59.13"], [2008, "Kosuke Kitajima", "JPN", "wr", "58.91"], [2009, "Brenton Rickard", "AUS", "wr", "58.58"], [2012, "Cameron van der Burgh", "RSA", "wr", "58.46"], [2015, "Adam Peaty", "GBR", "wr", "57.92"]],
+    "olympics": [[1968, "Donald Ward Jr. Mckenzie", "USA", "gold", "1:07.7"], [1968, "Vladimir Kosinsky", "URS", "silver", "1:08.0"], [1968, "Nikolai Pankin", "URS", "bronze", "1:08.0"], [1972, "Nobutaka Taguchi", "JPN", "gold", "1:04.94"], [1972, "Thomas Edwin Bruce", "USA", "silver", "1:05.43"], [1972, "John Hencken", "USA", "bronze", "1:05.61"], [1976, "John Hencken", "USA", "gold", "1:03.11"], [1976, "David Wilkie", "GBR", "silver", "1:03.43"], [1976, "Arvydas Juozaitis", "URS", "bronze", "1:04.23"], [1980, "Duncan Goodhew", "GBR", "gold", "1:03.34"], [1980, "Arsen Miskarov", "URS", "silver", "1:03.82"], [1980, "Peter Evans", "AUS", "bronze", "1:03.96"], [1984, "Steven Lundquist", "USA", "gold", "1:01.65"], [1984, "Victor Davis", "CAN", "silver", "1:01.99"], [1984, "Peter Evans", "AUS", "bronze", "1:02.97"], [1988, "Adrian Moorhouse", "GBR", "gold", "1:02.04"], [1988, "Károly Guttler", "HUN", "silver", "1:02.05"], [1988, "Dmitri Volkov", "URS", "bronze", "1:02.20"], [1992, "Nelson Diebel", "USA", "gold", "1:01.50"], [1992, "Norbert Rózsa", "HUN", "silver", "1:01.68"], [1992, "Phil Rogers", "AUS", "bronze", "1:01.76"], [1996, "Frederik Deburghgraeve", "BEL", "gold", "1:00.65"], [1996, "Jeremy Linn", "USA", "silver", "1:00.77"], [1996, "Mark Warnecke", "GER", "bronze", "1:01.33"], [2000, "Domenico Fioravanti", "ITA", "gold", "01:00.46"], [2000, "Ed Moses", "USA", "silver", "01:00.73"], [2000, "Roman Sludnov", "RUS", "bronze", "01:00.91"], [2004, "Kosuke Kitajima", "JPN", "gold", "1:00.08"], [2004, "Brendan Hansen", "USA", "silver", "1:00.25"], [2004, "Hugues Duboscq", "FRA", "bronze", "1:00.88"], [2008, "Kosuke Kitajima", "JPN", "gold", "58.91"], [2008, "Alexander Oen", "NOR", "silver", "59.2"], [2008, "Hugues Duboscq", "FRA", "bronze", "59.37"], [2012, "Cameron van der Burgh", "RSA", "gold", "58.46"], [2012, "Christian Sprenger", "AUS", "silver", "58.93"], [2012, "Brendan Hansen", "USA", "bronze", "59.49"]]
+  };
+  return module.exports;
+});
+
+$__System.registerDynamic("12", [], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  module.exports = {"olympics": {"eventUnit": {
+        "identifier": "SWM031101",
+        "description": "Men's 100m Breaststroke Final",
+        "unitType": "Individuals",
+        "medalEvent": "Yes",
+        "disciplineDescription": {
+          "identifier": "swimming",
+          "value": "Swimming"
+        },
+        "phaseDescription": {
+          "identifier": "SWM0311",
+          "value": "Final"
+        },
+        "result": {
+          "type": "Official",
+          "timestamp": "2013-11-13T12:15:00Z",
+          "entrant": [{
+            "order": "1",
+            "type": "Individual",
+            "code": "1056740",
+            "rank": "1",
+            "value": "58.46",
+            "property": [{
+              "type": "Medal Awarded",
+              "value": "Gold"
+            }, {
+              "type": "Record Set",
+              "value": "WR"
+            }, {
+              "type": "Record Set",
+              "value": "OR"
+            }, {
+              "type": "Record Set",
+              "value": "AF"
+            }, {
+              "type": "Result Type",
+              "value": "Time"
+            }],
+            "resultExtension": [{
+              "type": "Reaction Time",
+              "value": "0.63"
+            }, {
+              "type": "Split Times",
+              "extension": [{
+                "position": "1",
+                "value": "27.07"
+              }, {
+                "position": "2",
+                "value": "58.46"
+              }]
+            }],
+            "country": {
+              "identifier": "RSA",
+              "name": "South Africa",
+              "longName": "South Africa"
+            },
+            "participant": {
+              "order": "1",
+              "competitor": {
+                "identifier": "1056740",
+                "firstName": "Cameron",
+                "lastName": "van der Burgh",
+                "fullName": "Cameron van der Burgh"
+              }
+            }
+          }, {
+            "order": "2",
+            "type": "Individual",
+            "code": "1125374",
+            "rank": "2",
+            "value": "58.93",
+            "property": [{
+              "type": "Medal Awarded",
+              "value": "Silver"
+            }, {
+              "type": "Result Type",
+              "value": "Time"
+            }],
+            "resultExtension": [{
+              "type": "Reaction Time",
+              "value": "0.67"
+            }, {
+              "type": "Split Times",
+              "extension": [{
+                "position": "1",
+                "value": "27.65"
+              }, {
+                "position": "2",
+                "value": "58.93"
+              }]
+            }],
+            "country": {
+              "identifier": "AUS",
+              "name": "Australia",
+              "longName": "Australia"
+            },
+            "participant": {
+              "order": "1",
+              "competitor": {
+                "identifier": "1125374",
+                "firstName": "Christian",
+                "lastName": "Sprenger",
+                "fullName": "Christian Sprenger"
+              }
+            }
+          }, {
+            "order": "3",
+            "type": "Individual",
+            "code": "1133055",
+            "rank": "3",
+            "value": "59.49",
+            "property": [{
+              "type": "Medal Awarded",
+              "value": "Bronze"
+            }, {
+              "type": "Result Type",
+              "value": "Time"
+            }],
+            "resultExtension": [{
+              "type": "Reaction Time",
+              "value": "0.67"
+            }, {
+              "type": "Split Times",
+              "extension": [{
+                "position": "1",
+                "value": "27.85"
+              }, {
+                "position": "2",
+                "value": "59.49"
+              }]
+            }],
+            "country": {
+              "identifier": "USA",
+              "name": "United States",
+              "longName": "United States of America"
+            },
+            "participant": {
+              "order": "1",
+              "competitor": {
+                "identifier": "1133055",
+                "firstName": "Brendan",
+                "lastName": "Hansen",
+                "fullName": "Brendan Hansen"
+              }
+            }
+          }, {
+            "order": "4",
+            "type": "Individual",
+            "code": "1121231",
+            "rank": "4",
+            "value": "59.53",
+            "property": {
+              "type": "Result Type",
+              "value": "Time"
+            },
+            "resultExtension": [{
+              "type": "Reaction Time",
+              "value": "0.73"
+            }, {
+              "type": "Split Times",
+              "extension": [{
+                "position": "1",
+                "value": "28.05"
+              }, {
+                "position": "2",
+                "value": "59.53"
+              }]
+            }],
+            "country": {
+              "identifier": "HUN",
+              "name": "Hungary",
+              "longName": "Hungary"
+            },
+            "participant": {
+              "order": "1",
+              "competitor": {
+                "identifier": "1121231",
+                "firstName": "Daniel",
+                "lastName": "Gyurta",
+                "fullName": "Daniel Gyurta"
+              }
+            }
+          }, {
+            "order": "5",
+            "type": "Individual",
+            "code": "1026879",
+            "rank": "5",
+            "value": "59.79",
+            "property": {
+              "type": "Result Type",
+              "value": "Time"
+            },
+            "resultExtension": [{
+              "type": "Reaction Time",
+              "value": "0.64"
+            }, {
+              "type": "Split Times",
+              "extension": [{
+                "position": "1",
+                "value": "27.78"
+              }, {
+                "position": "2",
+                "value": "59.79"
+              }]
+            }],
+            "country": {
+              "identifier": "JPN",
+              "name": "Japan",
+              "longName": "Japan"
+            },
+            "participant": {
+              "order": "1",
+              "competitor": {
+                "identifier": "1026879",
+                "firstName": "Kosuke",
+                "lastName": "Kitajima",
+                "fullName": "Kosuke Kitajima"
+              }
+            }
+          }, {
+            "order": "6",
+            "type": "Individual",
+            "code": "1116547",
+            "rank": "6",
+            "value": "59.87",
+            "property": {
+              "type": "Result Type",
+              "value": "Time"
+            },
+            "resultExtension": [{
+              "type": "Reaction Time",
+              "value": "0.73"
+            }, {
+              "type": "Split Times",
+              "extension": [{
+                "position": "1",
+                "value": "28.08"
+              }, {
+                "position": "2",
+                "value": "59.87"
+              }]
+            }],
+            "country": {
+              "identifier": "AUS",
+              "name": "Australia",
+              "longName": "Australia"
+            },
+            "participant": {
+              "order": "1",
+              "competitor": {
+                "identifier": "1116547",
+                "firstName": "Brenton",
+                "lastName": "Rickard",
+                "fullName": "Brenton Rickard"
+              }
+            }
+          }, {
+            "order": "7",
+            "type": "Individual",
+            "code": "1096376",
+            "rank": "7",
+            "value": "59.97",
+            "property": {
+              "type": "Result Type",
+              "value": "Time"
+            },
+            "resultExtension": [{
+              "type": "Reaction Time",
+              "value": "0.62"
+            }, {
+              "type": "Split Times",
+              "extension": [{
+                "position": "1",
+                "value": "27.73"
+              }, {
+                "position": "2",
+                "value": "59.97"
+              }]
+            }],
+            "country": {
+              "identifier": "ITA",
+              "name": "Italy",
+              "longName": "Italy"
+            },
+            "participant": {
+              "order": "1",
+              "competitor": {
+                "identifier": "1096376",
+                "firstName": "Fabio",
+                "lastName": "Scozzoli",
+                "fullName": "Fabio Scozzoli"
+              }
+            }
+          }, {
+            "order": "8",
+            "type": "Individual",
+            "code": "1065090",
+            "rank": "8",
+            "value": "1:00.84",
+            "property": {
+              "type": "Result Type",
+              "value": "Time"
+            },
+            "resultExtension": [{
+              "type": "Reaction Time",
+              "value": "0.74"
+            }, {
+              "type": "Split Times",
+              "extension": [{
+                "position": "1",
+                "value": "27.71"
+              }, {
+                "position": "2",
+                "value": "1:00.84"
+              }]
+            }],
+            "country": {
+              "identifier": "LTU",
+              "name": "Lithuania",
+              "longName": "Lithuania"
+            },
+            "participant": {
+              "order": "1",
+              "competitor": {
+                "identifier": "1065090",
+                "firstName": "Giedrius",
+                "lastName": "Titenis",
+                "fullName": "Giedrius Titenis"
+              }
+            }
+          }]
+        }
+      }}};
+  return module.exports;
+});
+
+$__System.register('13', ['11', '12', 'd', 'a', 'b', 'c'], function (_export) {
+    var jsonRecord, jsonFinals, _Object$keys, parseData, result, d3_extent;
+
+    return {
+        setters: [function (_) {
+            jsonRecord = _['default'];
+        }, function (_2) {
+            jsonFinals = _2['default'];
+        }, function (_d) {
+            _Object$keys = _d['default'];
+        }, function (_a) {
+            parseData = _a['default'];
+        }, function (_b) {
+            result = _b['default'];
+        }, function (_c) {
+            d3_extent = _c.extent;
+        }],
+        execute: function () {
+            'use strict';
+
+            _export('default', function () {
+                var data = parseData(jsonRecord, jsonFinals);
+                var dataCombo = data.finals.concat(data.medals, data.worlds);
+
+                /* data manipulation, even specific */
+                // fastest swimming time
+                var timeWr = d3_extent(dataCombo, function (d) {
+                    return d.x;
+                })[0];
+                _Object$keys(data).forEach(function (dd) {
+                    // time to distance
+                    data[dd] = data[dd].map(function (dm) {
+                        dm.x = 100 * timeWr / dm.x - 100;
+                        dm.attrs.dist = Math.round(Math.abs(dm.x) * 100) / 100;
+                        return dm;
+                    });
+                    // sort
+                    data[dd].sort(function (d1, d2) {
+                        return d1.x - d2.x;
+                    });
+                });
+                console.log(data);
+
+                result(data, dataCombo);
+            });
+        }
+    };
+});
+$__System.registerDynamic("14", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -6897,7 +3293,7 @@ $__System.registerDynamic("59", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("5a", [], true, function($__require, exports, module) {
+$__System.registerDynamic("15", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -7881,22 +4277,22 @@ $__System.registerDynamic("5a", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.register('5b', ['33', '51', '52', '59', '5a', '4b'], function (_export) {
-    var _Object$keys, parseData, result, jsonRecord, jsonFinals, d3_extent;
+$__System.register('16', ['14', '15', 'd', 'a', 'b', 'c'], function (_export) {
+    var jsonRecord, jsonFinals, _Object$keys, parseData, result, d3_extent;
 
     return {
         setters: [function (_) {
-            _Object$keys = _['default'];
-        }, function (_3) {
-            parseData = _3['default'];
-        }, function (_4) {
-            result = _4['default'];
+            jsonRecord = _['default'];
         }, function (_2) {
-            jsonRecord = _2['default'];
+            jsonFinals = _2['default'];
+        }, function (_d) {
+            _Object$keys = _d['default'];
         }, function (_a) {
-            jsonFinals = _a['default'];
+            parseData = _a['default'];
         }, function (_b) {
-            d3_extent = _b.extent;
+            result = _b['default'];
+        }, function (_c) {
+            d3_extent = _c.extent;
         }],
         execute: function () {
             'use strict';
@@ -7929,7 +4325,7 @@ $__System.register('5b', ['33', '51', '52', '59', '5a', '4b'], function (_export
         }
     };
 });
-$__System.registerDynamic("5c", [], true, function($__require, exports, module) {
+$__System.registerDynamic("17", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -7942,7 +4338,7 @@ $__System.registerDynamic("5c", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("5d", [], true, function($__require, exports, module) {
+$__System.registerDynamic("18", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -8427,22 +4823,22 @@ $__System.registerDynamic("5d", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.register('5e', ['33', '51', '52', '5c', '5d', '4b'], function (_export) {
-    var _Object$keys, parseData, result, jsonRecord, jsonFinals, d3_extent;
+$__System.register('19', ['17', '18', 'd', 'a', 'b', 'c'], function (_export) {
+    var jsonRecord, jsonFinals, _Object$keys, parseData, result, d3_extent;
 
     return {
         setters: [function (_) {
-            _Object$keys = _['default'];
+            jsonRecord = _['default'];
         }, function (_2) {
-            parseData = _2['default'];
-        }, function (_3) {
-            result = _3['default'];
-        }, function (_c) {
-            jsonRecord = _c['default'];
+            jsonFinals = _2['default'];
         }, function (_d) {
-            jsonFinals = _d['default'];
+            _Object$keys = _d['default'];
+        }, function (_a) {
+            parseData = _a['default'];
         }, function (_b) {
-            d3_extent = _b.extent;
+            result = _b['default'];
+        }, function (_c) {
+            d3_extent = _c.extent;
         }],
         execute: function () {
             'use strict';
@@ -8475,7 +4871,7 @@ $__System.register('5e', ['33', '51', '52', '5c', '5d', '4b'], function (_export
         }
     };
 });
-$__System.registerDynamic("5f", [], true, function($__require, exports, module) {
+$__System.registerDynamic("1a", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -8488,7 +4884,7 @@ $__System.registerDynamic("5f", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("60", [], true, function($__require, exports, module) {
+$__System.registerDynamic("1b", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -9088,7 +5484,7 @@ $__System.registerDynamic("60", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("32", [], true, function($__require, exports, module) {
+$__System.registerDynamic("1c", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -9119,7 +5515,7 @@ $__System.registerDynamic("32", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.register("51", ["32", "44"], function (_export) {
+$__System.register("a", ["1c", "1d"], function (_export) {
     //import {json as d3_json} from "d3.request";
     "use strict";
 
@@ -9262,10 +5658,10 @@ $__System.register("51", ["32", "44"], function (_export) {
         };
     }
     return {
-        setters: [function (_) {
-            array = _["default"];
-        }, function (_2) {
-            utils = _2["default"];
+        setters: [function (_c) {
+            array = _c["default"];
+        }, function (_d) {
+            utils = _d["default"];
         }],
         execute: function () {
             thisYear = 2016;
@@ -9298,7 +5694,7 @@ $__System.register("51", ["32", "44"], function (_export) {
         }
     };
 });
-$__System.registerDynamic("16", [], true, function($__require, exports, module) {
+$__System.registerDynamic("1e", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -9311,19 +5707,19 @@ $__System.registerDynamic("16", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("35", ["16"], true, function($__require, exports, module) {
+$__System.registerDynamic("1f", ["1e"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  var defined = $__require('16');
+  var defined = $__require('1e');
   module.exports = function(it) {
     return Object(defined(it));
   };
   return module.exports;
 });
 
-$__System.registerDynamic("28", [], true, function($__require, exports, module) {
+$__System.registerDynamic("20", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -9334,7 +5730,7 @@ $__System.registerDynamic("28", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("61", [], true, function($__require, exports, module) {
+$__System.registerDynamic("21", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -9347,12 +5743,12 @@ $__System.registerDynamic("61", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("62", ["61"], true, function($__require, exports, module) {
+$__System.registerDynamic("22", ["21"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  var aFunction = $__require('61');
+  var aFunction = $__require('21');
   module.exports = function(fn, that, length) {
     aFunction(fn);
     if (that === undefined)
@@ -9378,14 +5774,14 @@ $__System.registerDynamic("62", ["61"], true, function($__require, exports, modu
   return module.exports;
 });
 
-$__System.registerDynamic("25", ["28", "c", "62"], true, function($__require, exports, module) {
+$__System.registerDynamic("23", ["20", "24", "22"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  var global = $__require('28'),
-      core = $__require('c'),
-      ctx = $__require('62'),
+  var global = $__require('20'),
+      core = $__require('24'),
+      ctx = $__require('22'),
       PROTOTYPE = 'prototype';
   var $export = function(type, name, source) {
     var IS_FORCED = type & $export.F,
@@ -9427,7 +5823,7 @@ $__System.registerDynamic("25", ["28", "c", "62"], true, function($__require, ex
   return module.exports;
 });
 
-$__System.registerDynamic("20", [], true, function($__require, exports, module) {
+$__System.registerDynamic("25", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -9442,14 +5838,14 @@ $__System.registerDynamic("20", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("63", ["25", "c", "20"], true, function($__require, exports, module) {
+$__System.registerDynamic("26", ["23", "24", "25"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  var $export = $__require('25'),
-      core = $__require('c'),
-      fails = $__require('20');
+  var $export = $__require('23'),
+      core = $__require('24'),
+      fails = $__require('25');
   module.exports = function(KEY, exec) {
     var fn = (core.Object || {})[KEY] || Object[KEY],
         exp = {};
@@ -9461,13 +5857,13 @@ $__System.registerDynamic("63", ["25", "c", "20"], true, function($__require, ex
   return module.exports;
 });
 
-$__System.registerDynamic("64", ["35", "63"], true, function($__require, exports, module) {
+$__System.registerDynamic("27", ["1f", "26"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  var toObject = $__require('35');
-  $__require('63')('keys', function($keys) {
+  var toObject = $__require('1f');
+  $__require('26')('keys', function($keys) {
     return function keys(it) {
       return $keys(toObject(it));
     };
@@ -9475,7 +5871,7 @@ $__System.registerDynamic("64", ["35", "63"], true, function($__require, exports
   return module.exports;
 });
 
-$__System.registerDynamic("c", [], true, function($__require, exports, module) {
+$__System.registerDynamic("24", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -9486,29 +5882,29 @@ $__System.registerDynamic("c", [], true, function($__require, exports, module) {
   return module.exports;
 });
 
-$__System.registerDynamic("65", ["64", "c"], true, function($__require, exports, module) {
+$__System.registerDynamic("28", ["27", "24"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  $__require('64');
-  module.exports = $__require('c').Object.keys;
+  $__require('27');
+  module.exports = $__require('24').Object.keys;
   return module.exports;
 });
 
-$__System.registerDynamic("33", ["65"], true, function($__require, exports, module) {
+$__System.registerDynamic("d", ["28"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
   module.exports = {
-    "default": $__require('65'),
+    "default": $__require('28'),
     __esModule: true
   };
   return module.exports;
 });
 
-$__System.registerDynamic("66", [], true, function($__require, exports, module) {
+$__System.registerDynamic("29", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -9759,16 +6155,16 @@ $__System.registerDynamic("66", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("67", ["66"], true, function($__require, exports, module) {
+$__System.registerDynamic("2a", ["29"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('66');
+  module.exports = $__require('29');
   return module.exports;
 });
 
-$__System.registerDynamic("68", [], true, function($__require, exports, module) {
+$__System.registerDynamic("2b", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -10055,16 +6451,16 @@ $__System.registerDynamic("68", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("69", ["68"], true, function($__require, exports, module) {
+$__System.registerDynamic("2c", ["2b"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('68');
+  module.exports = $__require('2b');
   return module.exports;
 });
 
-$__System.registerDynamic("6a", [], true, function($__require, exports, module) {
+$__System.registerDynamic("2d", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -10404,23 +6800,23 @@ $__System.registerDynamic("6a", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("6b", ["6a"], true, function($__require, exports, module) {
+$__System.registerDynamic("2e", ["2d"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('6a');
+  module.exports = $__require('2d');
   return module.exports;
 });
 
-$__System.registerDynamic("6c", ["6b"], true, function($__require, exports, module) {
+$__System.registerDynamic("2f", ["2e"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
   "format cjs";
   (function(global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('6b')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-time'], factory) : (factory((global.d3 = global.d3 || {}), global.d3));
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('2e')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-time'], factory) : (factory((global.d3 = global.d3 || {}), global.d3));
   }(this, function(exports, d3Time) {
     'use strict';
     function localDate(d) {
@@ -10929,23 +7325,23 @@ $__System.registerDynamic("6c", ["6b"], true, function($__require, exports, modu
   return module.exports;
 });
 
-$__System.registerDynamic("6d", ["6c"], true, function($__require, exports, module) {
+$__System.registerDynamic("30", ["2f"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('6c');
+  module.exports = $__require('2f');
   return module.exports;
 });
 
-$__System.registerDynamic("6e", ["4b", "67", "70", "69", "6b", "6d", "6f"], true, function($__require, exports, module) {
+$__System.registerDynamic("31", ["c", "2a", "33", "2c", "2e", "30", "32"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
   "format cjs";
   (function(global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('4b'), $__require('67'), $__require('70'), $__require('69'), $__require('6b'), $__require('6d'), $__require('6f')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-array', 'd3-collection', 'd3-interpolate', 'd3-format', 'd3-time', 'd3-time-format', 'd3-color'], factory) : (factory((global.d3 = global.d3 || {}), global.d3, global.d3, global.d3, global.d3, global.d3, global.d3, global.d3));
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('c'), $__require('2a'), $__require('33'), $__require('2c'), $__require('2e'), $__require('30'), $__require('32')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-array', 'd3-collection', 'd3-interpolate', 'd3-format', 'd3-time', 'd3-time-format', 'd3-color'], factory) : (factory((global.d3 = global.d3 || {}), global.d3, global.d3, global.d3, global.d3, global.d3, global.d3, global.d3));
   }(this, function(exports, d3Array, d3Collection, d3Interpolate, d3Format, d3Time, d3TimeFormat, d3Color) {
     'use strict';
     var array = Array.prototype;
@@ -11687,24 +8083,24 @@ $__System.registerDynamic("6e", ["4b", "67", "70", "69", "6b", "6d", "6f"], true
   return module.exports;
 });
 
-$__System.registerDynamic("46", ["6e"], true, function($__require, exports, module) {
+$__System.registerDynamic("34", ["31"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('6e');
+  module.exports = $__require('31');
   return module.exports;
 });
 
-$__System.register('71', ['46', '3f'], function (_export) {
+$__System.register('35', ['34', '36'], function (_export) {
     'use strict';
 
     var d3_scaleLinear, sync;
     return {
-        setters: [function (_) {
-            d3_scaleLinear = _.scaleLinear;
-        }, function (_f) {
-            sync = _f.sync;
+        setters: [function (_2) {
+            d3_scaleLinear = _2.scaleLinear;
+        }, function (_) {
+            sync = _.sync;
         }],
         execute: function () {
             _export('default', function (domain) {
@@ -11739,7 +8135,7 @@ $__System.register('71', ['46', '3f'], function (_export) {
         }
     };
 });
-$__System.registerDynamic("72", [], true, function($__require, exports, module) {
+$__System.registerDynamic("37", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -11861,16 +8257,16 @@ $__System.registerDynamic("72", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("73", ["72"], true, function($__require, exports, module) {
+$__System.registerDynamic("38", ["37"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('72');
+  module.exports = $__require('37');
   return module.exports;
 });
 
-$__System.registerDynamic("74", [], true, function($__require, exports, module) {
+$__System.registerDynamic("39", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -12032,23 +8428,23 @@ $__System.registerDynamic("74", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("75", ["74"], true, function($__require, exports, module) {
+$__System.registerDynamic("3a", ["39"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('74');
+  module.exports = $__require('39');
   return module.exports;
 });
 
-$__System.registerDynamic("76", ["6f"], true, function($__require, exports, module) {
+$__System.registerDynamic("3b", ["32"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
   "format cjs";
   (function(global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('6f')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-color'], factory) : (factory((global.d3 = global.d3 || {}), global.d3));
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('32')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-color'], factory) : (factory((global.d3 = global.d3 || {}), global.d3));
   }(this, function(exports, d3Color) {
     'use strict';
     function basis(t1, v0, v1, v2, v3) {
@@ -12543,16 +8939,16 @@ $__System.registerDynamic("76", ["6f"], true, function($__require, exports, modu
   return module.exports;
 });
 
-$__System.registerDynamic("70", ["76"], true, function($__require, exports, module) {
+$__System.registerDynamic("33", ["3b"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('76');
+  module.exports = $__require('3b');
   return module.exports;
 });
 
-$__System.registerDynamic("77", [], true, function($__require, exports, module) {
+$__System.registerDynamic("3c", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -13020,16 +9416,16 @@ $__System.registerDynamic("77", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("6f", ["77"], true, function($__require, exports, module) {
+$__System.registerDynamic("32", ["3c"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('77');
+  module.exports = $__require('3c');
   return module.exports;
 });
 
-$__System.registerDynamic("78", [], true, function($__require, exports, module) {
+$__System.registerDynamic("3d", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -13242,23 +9638,23 @@ $__System.registerDynamic("78", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("79", ["78"], true, function($__require, exports, module) {
+$__System.registerDynamic("3e", ["3d"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('78');
+  module.exports = $__require('3d');
   return module.exports;
 });
 
-$__System.registerDynamic("7a", ["43", "73", "75", "70", "6f", "79"], true, function($__require, exports, module) {
+$__System.registerDynamic("3f", ["40", "38", "3a", "33", "32", "3e"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
   "format cjs";
   (function(global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('43'), $__require('73'), $__require('75'), $__require('70'), $__require('6f'), $__require('79')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-selection', 'd3-dispatch', 'd3-timer', 'd3-interpolate', 'd3-color', 'd3-ease'], factory) : (factory((global.d3 = global.d3 || {}), global.d3, global.d3, global.d3, global.d3, global.d3, global.d3));
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('40'), $__require('38'), $__require('3a'), $__require('33'), $__require('32'), $__require('3e')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-selection', 'd3-dispatch', 'd3-timer', 'd3-interpolate', 'd3-color', 'd3-ease'], factory) : (factory((global.d3 = global.d3 || {}), global.d3, global.d3, global.d3, global.d3, global.d3, global.d3));
   }(this, function(exports, d3Selection, d3Dispatch, d3Timer, d3Interpolate, d3Color, d3Ease) {
     'use strict';
     var emptyOn = d3Dispatch.dispatch("start", "end", "interrupt");
@@ -13955,32 +10351,19 @@ $__System.registerDynamic("7a", ["43", "73", "75", "70", "6f", "79"], true, func
   return module.exports;
 });
 
-$__System.registerDynamic("45", ["7a"], true, function($__require, exports, module) {
+$__System.registerDynamic("41", ["3f"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('7a');
+  module.exports = $__require('3f');
   return module.exports;
 });
 
-$__System.register('7b', ['43', '3f'], function (_export) {
+$__System.register('42', ['36', '40'], function (_export) {
     'use strict';
 
-    var d3_select, defaultHeaderTexts, cfg;
-
-    // long version
-    /*d3_select(".js-headline").text(attrs.name);
-    d3_select(".js-team").text(attrs.team);
-    d3_select(".js-final").text(cAll!==0 ? "1 " + data.color + " out of " + cAll : "rank " + data.color + " in 2016 fianl");
-    d3_select(".js-medal").text(cMedal!==0 ? ", "+cMedal+" olympic medals" : "");
-    d3_select(".js-world").text(cWorld!==0 ? ", "+cWorld+" world records" : "");
-    d3_select(".js-standfirst").text(
-        "In " + attrs.year + " " + cfg[event].event + " event, " +
-        attrs.name.split(" ")[0] + " marked " + attrs.mark + cfg[event].unit + " which " + 
-        (attrs.dist !== 0 ? "could be " + attrs.dist + "m behind " : "is ") +
-        "current world record."
-    );*/
+    var defaultHeaderTexts, colors, d3_select, cfg;
 
     function isNumeric(n) {
         return !isNaN(parseFloat(n)) && isFinite(n);
@@ -13993,11 +10376,78 @@ $__System.register('7b', ['43', '3f'], function (_export) {
             return d3_select(".js-" + key).text("");
         });
     }
+
+    function getRecordHtml(records, id) {
+        // TODO: double check calc
+        var cf = records.filter(function (dr) {
+            return isNumeric(dr.color);
+        }).length;
+        var cw = records.filter(function (dr) {
+            return dr.color === "wr";
+        }).length;
+        var cm = records.length - cf - cw;
+        var ct = cm > 1 ? " medals" : " medal";
+        //console.log("w:", cw, "m:", cm);
+
+        return (cm > 0 ? cm + ct : "") + (cm > 0 && cw > 0 ? " and " : "") + (cw > 0 ? cw + " WRP" : "");
+    }
+
+    function getInfoPos(data) {
+        var top = undefined,
+            left = undefined;
+        var alignTop = undefined,
+            alignLeft = undefined;
+
+        var state = d3_select(".js-chart").attr("data-state");
+        var chart = document.querySelector(".js-chart").getBoundingClientRect();
+        var select = document.querySelector("#" + data.id).getBoundingClientRect();
+        var width = document.querySelector(".tooltip").offsetWidth;
+        var height = document.querySelector(".tooltip").offsetHeight; // + 30;
+
+        var testFinal = state === "final";
+        var test1_4Bottom = select.top > chart.top + chart.height * 3 / 4;
+        var test1_3Top = select.top < chart.top + chart.height / 3;
+
+        /* horizontal align */
+        var x = {
+            l: select.left - width - 60, // left
+            c: select.left - width / 2 + data.r, // center
+            r: chart.width - width // right
+        };
+        /* vertical align */
+        var y = {
+            t: select.top - height - 30, // top
+            m: select.top - height / 2 + data.r, // middle
+            b: select.top + data.r * 2 + 30 // under
+        };
+
+        // 1. default: middleLeft, topLeft(bottom 1/4), topCenter (fianl)
+        left = testFinal ? x.c : x.l;
+        top = testFinal || test1_4Bottom ? y.t : y.m;
+
+        // 2. test and adjust outside edgs: top, left, right
+        var testTop = top > chart.top;
+        top = testTop ? top : chart.top;
+
+        var testLeft = left > 0;
+        var testRight = left + width < chart.width;
+        left = testLeft ? left : 0;
+        left = testRight ? left : x.r;
+
+        // 3. test overlay
+        var testOverlay = select.left + data.r * 2 < left + width && select.top + data.r * 2 < top + height;
+        if (testOverlay) {
+            top = test1_3Top ? y.b : y.t;
+        }
+
+        return { top: top + "px", left: left + "px" };
+    }
     return {
-        setters: [function (_) {
+        setters: [function (_2) {
+            defaultHeaderTexts = _2.defaultHeaderTexts;
+            colors = _2.colors;
+        }, function (_) {
             d3_select = _.select;
-        }, function (_f) {
-            defaultHeaderTexts = _f.defaultHeaderTexts;
         }],
         execute: function () {
             cfg = {
@@ -14015,44 +10465,25 @@ $__System.register('7b', ['43', '3f'], function (_export) {
 
                     cleanFields();
                     d3_select(".tooltip").style("opacity", 0);
-                    //d3_select(".js-headline").text(defaultHeaderTexts.headline[data]);
-                    //d3_select(".js-standfirst").text(defaultHeaderTexts.standfirst[data]);
                 } else {
-                        // TODO: double check calc
-                        var cFinal = records.filter(function (dr) {
-                            return isNumeric(dr.color);
-                        }).length;
-                        var cWorld = records.filter(function (dr) {
-                            return dr.color === "wr";
-                        }).length;
-                        var cMedal = records.length - cFinal - cWorld;
-                        var cAll = cMedal + cWorld;
+                    console.log(data);
 
-                        var attrs = data.attrs;
-                        var _event = window.location.search.replace("?", "");
-                        var state = d3_select(".js-chart").attr("data-state");
-                        var rank = (isNumeric(data.color) ? "rank " : "") + data.color;
+                    var attrs = data.attrs;
+                    var _event = window.location.search.replace("?", "");
 
-                        // short version
-                        d3_select(".js-title").text(attrs.name);
-                        d3_select(".js-team").text(attrs.team);
-                        d3_select(".js-result").text(rank + " " + attrs.mark + cfg[_event].unit + " (" + attrs.year + ")");
-                        d3_select(".js-record").text(cMedal + " medals and " + cWorld + " wr");
+                    d3_select(".js-title").text(attrs.name);
+                    d3_select(".js-team").text(attrs.team);
+                    d3_select(".js-record").html(getRecordHtml(records, data.id));
+                    d3_select(".js-result").html((isNumeric(data.color) ? "rank " + data.color + " - " : "<span class='icon-medal' style='background-color:" + colors[data.color] + "'></span>") + attrs.mark + cfg[_event].unit + " (" + attrs.year + ")" + (data.id.indexOf("wr") > -1 ? " WR" : "") + (data.id.indexOf("or") > -1 ? " OR" : ""));
 
-                        var width = document.querySelector(".tooltip").offsetWidth;
-                        var height = document.querySelector(".tooltip").offsetHeight + 30;
-                        var point = document.querySelector("#" + data.id).getBoundingClientRect();
-                        var chart = document.querySelector(".js-chart").getBoundingClientRect();
-                        var left = point.left - (state !== "final" ? width + 60 : width / 2 - 10);
-                        var _top = point.top - (state !== "final" && point.top < chart.top + chart.height * 3 / 4 ? 35 : height);
-
-                        d3_select(".tooltip").style("opacity", 1).style("top", (_top > chart.top ? _top : chart.top + 5) + "px").style("left", left > 0 ? left + "px" : 0);
-                    }
+                    var pos = getInfoPos(data);
+                    d3_select(".tooltip").style("opacity", 1).style("top", pos.top).style("left", pos.left);
+                }
             });
         }
     };
 });
-$__System.register("7c", ["43"], function (_export) {
+$__System.register("43", ["40"], function (_export) {
     "use strict";
 
     var d3_select;
@@ -14073,10 +10504,10 @@ $__System.register("7c", ["43"], function (_export) {
         }
     };
 });
-$__System.register('7d', ['43', '44', '45', '3f', '7b', '7c'], function (_export) {
+$__System.register('44', ['36', '40', '41', '42', '43', '1d'], function (_export) {
     'use strict';
 
-    var d3_select, utils, transition, colors, sync, updateInfo, updateHighlight, selectAllDots, selectDotRelated, selectDotPre;
+    var colors, sync, d3_select, transition, updateInfo, updateHighlight, utils, selectAllDots, selectDotRelated, selectDotPre;
 
     function showBestAthlete(d1) {
         var attrs = d1.attrs;
@@ -14122,19 +10553,19 @@ $__System.register('7d', ['43', '44', '45', '3f', '7b', '7c'], function (_export
         });
     }
     return {
-        setters: [function (_) {
+        setters: [function (_3) {
+            colors = _3.colors;
+            sync = _3.sync;
+        }, function (_) {
             d3_select = _.select;
-        }, function (_3) {
-            utils = _3['default'];
         }, function (_2) {
             transition = _2.transition;
-        }, function (_f) {
-            colors = _f.colors;
-            sync = _f.sync;
-        }, function (_b) {
-            updateInfo = _b['default'];
-        }, function (_c) {
-            updateHighlight = _c['default'];
+        }, function (_4) {
+            updateInfo = _4['default'];
+        }, function (_5) {
+            updateHighlight = _5['default'];
+        }, function (_d) {
+            utils = _d['default'];
         }],
         execute: function () {
             _export('default', function (cfg) {
@@ -14160,9 +10591,11 @@ $__System.register('7d', ['43', '44', '45', '3f', '7b', '7c'], function (_export
                 };
 
                 this.init = function (data, scale) {
+                    var dataLen = data.length - 1;
+                    var idTexts = { "world": "wr", "medal": "or", "final": "gm" };
                     data.map(function (dd, i) {
                         dd.r = cfg.radius;
-                        dd.id = cfg.dataset.slice(0, 1) + i;
+                        dd.id = cfg.dataset.slice(0, 1) + i + (i === dataLen ? "-" + idTexts[cfg.dataset] : "");
                         return dd;
                     });
 
@@ -14204,11 +10637,6 @@ $__System.register('7d', ['43', '44', '45', '3f', '7b', '7c'], function (_export
                     cfg.best = data[data.length - 1];
                     // TODO: add most frequent ?
                     // ...
-
-                    if (cfg.dataset === "world") {
-                        var els = dots._groups[0];
-                        cfg.wr = els[els.length - 1].id;
-                    }
                 };
 
                 // update
@@ -14219,8 +10647,8 @@ $__System.register('7d', ['43', '44', '45', '3f', '7b', '7c'], function (_export
                         return cfg.cx(d, cfg.radius, scale.x) + "%";
                     }).attr("cy", function (d) {
                         var cy = cfg.cy(d, cfg.radius, scale.y);
-                        if (d.id === cfg.wr && cy > 95) {
-                            cy = 52;
+                        if (d.id.indexOf("wr") && cy > 95) {
+                            cy = 60;
                         }
                         return cy + "%";
                     });
@@ -14265,7 +10693,7 @@ $__System.register('7d', ['43', '44', '45', '3f', '7b', '7c'], function (_export
         }
     };
 });
-$__System.registerDynamic("7e", [], true, function($__require, exports, module) {
+$__System.registerDynamic("45", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -14405,32 +10833,32 @@ $__System.registerDynamic("7e", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("3e", ["7e"], true, function($__require, exports, module) {
+$__System.registerDynamic("46", ["45"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('7e');
+  module.exports = $__require('45');
   return module.exports;
 });
 
-$__System.register('7f', ['43', '4b', '3e', '3f'], function (_export) {
+$__System.register('47', ['36', '40', '46', 'c'], function (_export) {
 
     /* param: coord - x or y */
     /* param: direction - h or v, isJump? */
     'use strict';
 
-    var d3_select, d3_range, d3_extent, d3_axisBottom, sync;
+    var sync, d3_select, d3_axisBottom, d3_range, d3_extent;
     return {
-        setters: [function (_) {
+        setters: [function (_3) {
+            sync = _3.sync;
+        }, function (_) {
             d3_select = _.select;
-        }, function (_b) {
-            d3_range = _b.range;
-            d3_extent = _b.extent;
-        }, function (_e) {
-            d3_axisBottom = _e.axisBottom;
-        }, function (_f) {
-            sync = _f.sync;
+        }, function (_2) {
+            d3_axisBottom = _2.axisBottom;
+        }, function (_c) {
+            d3_range = _c.range;
+            d3_extent = _c.extent;
         }],
         execute: function () {
             _export('default', function (cfg) {
@@ -14484,7 +10912,7 @@ $__System.register('7f', ['43', '4b', '3e', '3f'], function (_export) {
                     line.enter().append("line").attr("opacity", 0).transition().duration(opt.duration * 1000)
                     //.attr("opacity", 1)
                     .attr("opacity", function (d, i) {
-                        return i % divHide === 0 ? 1 : 0.25;
+                        return i % divHide === 0 ? 1 : 0.5;
                     }).attr("x1", function (d) {
                         return 0;
                     }).attr("x2", function (d) {
@@ -14515,7 +10943,7 @@ $__System.register('7f', ['43', '4b', '3e', '3f'], function (_export) {
 
                     // update
                     line.transition().duration(opt.duration * 1000).attr("opacity", function (d, i) {
-                        return i % divHide === 0 ? 1 : 0.25;
+                        return i % divHide === 0 ? 1 : 0.5;
                     }).attr(coord + "1", function (d) {
                         return scale[coord](d) + "%";
                     }).attr(coord + "2", function (d) {
@@ -14534,7 +10962,7 @@ $__System.register('7f', ['43', '4b', '3e', '3f'], function (_export) {
         }
     };
 });
-$__System.registerDynamic("21", [], true, function($__require, exports, module) {
+$__System.registerDynamic("48", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -14555,38 +10983,38 @@ $__System.registerDynamic("21", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("80", ["21"], true, function($__require, exports, module) {
+$__System.registerDynamic("49", ["48"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  var $ = $__require('21');
+  var $ = $__require('48');
   module.exports = function defineProperties(T, D) {
     return $.setDescs(T, D);
   };
   return module.exports;
 });
 
-$__System.registerDynamic("81", ["80"], true, function($__require, exports, module) {
+$__System.registerDynamic("4a", ["49"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
   module.exports = {
-    "default": $__require('80'),
+    "default": $__require('49'),
     __esModule: true
   };
   return module.exports;
 });
 
-$__System.register("3f", ["44", "81"], function (_export) {
-    var utils, _Object$defineProperties, minWidth, padding, size, cols, width, height, chart, colors, sync, defaultHeaderTexts, point;
+$__System.register("36", ["4a", "1d"], function (_export) {
+    var _Object$defineProperties, utils, minWidth, padding, size, cols, width, height, chart, colors, sync, defaultHeaderTexts, point;
 
     return {
-        setters: [function (_2) {
-            utils = _2["default"];
-        }, function (_) {
-            _Object$defineProperties = _["default"];
+        setters: [function (_a) {
+            _Object$defineProperties = _a["default"];
+        }, function (_d) {
+            utils = _d["default"];
         }],
         execute: function () {
             "use strict";
@@ -14614,7 +11042,8 @@ $__System.register("3f", ["44", "81"], function (_export) {
                 gold: "#fbdc00",
                 silver: "#C0C0C0",
                 bronze: "#CD7F32",
-                others: "#E0E0E0"
+                others: "#E0E0E0",
+                wr: "#333"
             };
 
             _export("colors", colors);
@@ -14686,8 +11115,8 @@ $__System.register("3f", ["44", "81"], function (_export) {
         }
     };
 });
-$__System.register('52', ['33', '43', '71', '4b', '7b', '7d', '7f', '3f'], function (_export) {
-    var _Object$keys, d3_select, calcScale, d3_extent, updateInfo, Dots, Axis, defaultHeaderTexts;
+$__System.register('b', ['35', '36', '40', '42', '44', '47', 'd', 'c'], function (_export) {
+    var calcScale, defaultHeaderTexts, d3_select, updateInfo, Dots, Axis, _Object$keys, d3_extent;
 
     function getDomain(data) {
         return {
@@ -14739,27 +11168,26 @@ $__System.register('52', ['33', '43', '71', '4b', '7b', '7d', '7f', '3f'], funct
         //}, (data.delay)*1000);
     }
     return {
-        setters: [function (_) {
-            _Object$keys = _['default'];
-        }, function (_2) {
-            d3_select = _2.select;
+        setters: [function (_2) {
+            calcScale = _2['default'];
+        }, function (_6) {
+            defaultHeaderTexts = _6.defaultHeaderTexts;
+        }, function (_) {
+            d3_select = _.select;
         }, function (_3) {
-            calcScale = _3['default'];
-        }, function (_b) {
-            d3_extent = _b.extent;
-        }, function (_b2) {
-            updateInfo = _b2['default'];
+            updateInfo = _3['default'];
+        }, function (_4) {
+            Dots = _4['default'];
+        }, function (_5) {
+            Axis = _5['default'];
         }, function (_d) {
-            Dots = _d['default'];
-        }, function (_f) {
-            Axis = _f['default'];
-        }, function (_f2) {
-            defaultHeaderTexts = _f2.defaultHeaderTexts;
+            _Object$keys = _d['default'];
+        }, function (_c) {
+            d3_extent = _c.extent;
         }],
         execute: function () {
-            'use strict';
-
             //import Grid from '../draw/grid';
+            'use strict';
 
             _export('default', function (data, dataCombo) {
                 var domain = getDomain(dataCombo);
@@ -14873,7 +11301,7 @@ $__System.register('52', ['33', '43', '71', '4b', '7b', '7d', '7f', '3f'], funct
         }
     };
 });
-$__System.registerDynamic("82", [], true, function($__require, exports, module) {
+$__System.registerDynamic("4b", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -15339,31 +11767,31 @@ $__System.registerDynamic("82", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("4b", ["82"], true, function($__require, exports, module) {
+$__System.registerDynamic("c", ["4b"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('82');
+  module.exports = $__require('4b');
   return module.exports;
 });
 
-$__System.register('83', ['33', '51', '52', '60', '5f', '4b'], function (_export) {
-    var _Object$keys, parseData, result, jsonFinals, jsonRecord, d3_extent;
+$__System.register('4c', ['d', '1a', '1b', 'a', 'b', 'c'], function (_export) {
+    var _Object$keys, jsonRecord, jsonFinals, parseData, result, d3_extent;
 
     return {
-        setters: [function (_) {
-            _Object$keys = _['default'];
-        }, function (_3) {
-            parseData = _3['default'];
-        }, function (_4) {
-            result = _4['default'];
-        }, function (_2) {
-            jsonFinals = _2['default'];
-        }, function (_f) {
-            jsonRecord = _f['default'];
+        setters: [function (_d) {
+            _Object$keys = _d['default'];
+        }, function (_a) {
+            jsonRecord = _a['default'];
         }, function (_b) {
-            d3_extent = _b.extent;
+            jsonFinals = _b['default'];
+        }, function (_a2) {
+            parseData = _a2['default'];
+        }, function (_b2) {
+            result = _b2['default'];
+        }, function (_c) {
+            d3_extent = _c.extent;
         }],
         execute: function () {
             'use strict';
@@ -15394,7 +11822,7 @@ $__System.register('83', ['33', '51', '52', '60', '5f', '4b'], function (_export
         }
     };
 });
-$__System.registerDynamic("44", [], true, function($__require, exports, module) {
+$__System.registerDynamic("1d", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -15422,7 +11850,7 @@ $__System.registerDynamic("44", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.register("84", [], function (_export) {
+$__System.register("4d", [], function (_export) {
   "use strict";
 
   return {
@@ -15464,7 +11892,7 @@ $__System.register("84", [], function (_export) {
     }
   };
 });
-$__System.registerDynamic("85", [], true, function($__require, exports, module) {
+$__System.registerDynamic("4e", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -16389,19 +12817,22 @@ $__System.registerDynamic("85", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("43", ["85"], true, function($__require, exports, module) {
+$__System.registerDynamic("40", ["4e"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('85');
+  module.exports = $__require('4e');
   return module.exports;
 });
 
-$__System.register('1', ['3', '4', '5', '43', '44', '50', '51', '55', '58', '83', '84', '4c', '4d', '5b', '5e'], function (_export) {
+$__System.register('1', ['3', '4', '5', '6', '9', '10', '13', '16', '19', '40', 'a', '4c', '1d', '4d'], function (_export) {
     'use strict';
 
-    var iframeMessenger, embedHTML, chartHTML, d3_select, utils, breaststroke100_m, getData, freestyle200_m, freestyle100x4_relay_w, longjump_m, throttle, demo, team_pursuit_m, medley400_m, medley400_w;
+    // team
+
+    // individuals
+    var iframeMessenger, embedHTML, chartHTML, team_pursuit_m, freestyle100x4_relay_w, freestyle200_m, breaststroke100_m, medley400_m, medley400_w, d3_select, getData, longjump_m, utils, throttle;
 
     //console.log(event);
     //console.log(data);
@@ -16410,7 +12841,7 @@ $__System.register('1', ['3', '4', '5', '43', '44', '50', '51', '55', '58', '83'
         var size = utils.getWindowSize();
         var height = Math.round(size.w * 0.6);
 
-        d3_select(".graph").style("height", height + "px");
+        d3_select(".graph").style("height", height + "px").style("max-height", size.w > 1024 ? size.h - 200 + "px" : null).style("min-height", size.w > 1024 ? "360px" : null);
         //.style("width", size.w + "px")
         //console.log(size.w, height);
     }
@@ -16421,40 +12852,38 @@ $__System.register('1', ['3', '4', '5', '43', '44', '50', '51', '55', '58', '83'
             embedHTML = _2['default'];
         }, function (_3) {
             chartHTML = _3['default'];
-        }, function (_11) {
-            d3_select = _11.select;
-        }, function (_9) {
-            utils = _9['default'];
-        }, function (_5) {
-            breaststroke100_m = _5['default'];
         }, function (_4) {
-            getData = _4['default'];
+            team_pursuit_m = _4['default'];
+        }, function (_5) {
+            freestyle100x4_relay_w = _5['default'];
         }, function (_6) {
             freestyle200_m = _6['default'];
         }, function (_7) {
-            freestyle100x4_relay_w = _7['default'];
+            breaststroke100_m = _7['default'];
         }, function (_8) {
-            longjump_m = _8['default'];
+            medley400_m = _8['default'];
+        }, function (_9) {
+            medley400_w = _9['default'];
         }, function (_10) {
-            throttle = _10['default'];
+            d3_select = _10.select;
+        }, function (_a) {
+            getData = _a['default'];
         }, function (_c) {
-            demo = _c['default'];
+            longjump_m = _c['default'];
         }, function (_d) {
-            team_pursuit_m = _d['default'];
-        }, function (_b) {
-            medley400_m = _b['default'];
-        }, function (_e) {
-            medley400_w = _e['default'];
+            utils = _d['default'];
+        }, function (_d2) {
+            throttle = _d2['default'];
         }],
         execute: function () {
 
             window.init = function init(el, config) {
-                var event = window.location.search.replace("?", "");
                 iframeMessenger.enableAutoResize();
 
+                var event = window.location.search.replace("?", "");
                 if (!event) {
                     el.innerHTML = embedHTML;
-                    demo();
+                    //demo();
                     return;
                 }
 
