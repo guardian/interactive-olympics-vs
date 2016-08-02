@@ -642,9 +642,19 @@ p {
   cursor: pointer; }
 
 /* section header */
-header {
-  max-width: 496px; }
+.header {
+  background-color: rgba(255, 255, 255, 0.5);
+  max-width: 496px;
+  position: absolute;
+  top: 9%; }
 
+@media (max-width: 980px) {
+  .header {
+    top: -145px; }
+  .btn-next {
+    margin-top: 95px; } }
+
+/* section btn */
 .btn-next {
   font-size: 14px;
   line-height: 20px;
@@ -664,12 +674,12 @@ header {
 .arrow-right {
   position: absolute;
   right: 5px;
-  top: 4px; }
+  top: 3px; }
 
 .replay {
   position: absolute;
   right: 12px;
-  top: 10px; }
+  top: 8px; }
 
 /* section graph*/
 .graph {
@@ -682,7 +692,7 @@ header {
   font-family: "Guardian Text Sans Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   line-height: 17px;
   white-space: nowrap;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.75);
   border: 1px solid #f1f1f1;
   padding: 8px 10px 7px;
   position: fixed;
@@ -771,6 +781,13 @@ g[class^="axis"] {
     transform: scale(1);
     opacity: 0.25; } }
 
+/* responsive */
+@media (max-width: 480px) {
+  body {
+    font-size: 14px; }
+  .graph {
+    margin-top: 15px; } }
+
 /* atomic style */
 .fz-14 {
   font-size: 14px; }
@@ -789,17 +806,5 @@ g[class^="axis"] {
 
 .d-ib {
   display: inline-block; }
-
-.plot {
-  font-size: 12px;
-  line-height: 14px;
-  font-family: "Guardian Agate Sans 1 Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  display: inline-block; }
-
-@media (max-width: 480px) {
-  body {
-    font-size: 14px; }
-  .graph {
-    margin-top: 15px; } }
 
 /*# sourceMappingURL=embed.css.map */

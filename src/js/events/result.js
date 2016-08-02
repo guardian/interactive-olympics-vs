@@ -1,11 +1,9 @@
-import {select as d3_select} from 'd3-selection';
 import {extent as d3_extent} from 'd3-array';
+import {toState, getNextState} from '../draw/state';
 import calcScale from '../draw/scale';
-import updateInfo from '../draw/info';
 import Dots from '../draw/dots';
 import Axis from '../draw/axis';
 //import Grid from '../draw/grid';
-import {defaultHeaderTexts} from '../variables';
 
 export default function(data, dataCombo) {
     let domain = getDomain(dataCombo);
@@ -46,7 +44,6 @@ export default function(data, dataCombo) {
     state.final = { 
         delay: 0, 
         duration: 2, 
-        //domain: getDomain(data.finals.concat([data.medals[data.medals.length-1], data.worlds[data.worlds.length-1]])),
         domain: {
             x: [d3_extent(data.finals, d => d.x)[0], 0],
                 y: [2016, 2016]
@@ -101,9 +98,9 @@ export default function(data, dataCombo) {
     
     document.querySelector(".btn-next").addEventListener("click", () => {
         // current
-        let stateName = d3_select(".js-chart").attr("data-state");
+        let stateName = document.querySelector(".js-chart").getAttribute("data-state");
         // next
-        let stateNameNext = getNextState(stateName);
+        let stateNameNext = getNextState(stateName).name;
         let stateDataNext = state[stateNameNext];
         
         toState(els, {domain: stateDataNext.domain, opacity: stateDataNext.opacity, delay: 0, duration: 2}, stateNameNext);
@@ -115,43 +112,4 @@ function getDomain(data) {
         x: d3_extent(data, d => d.x),
         y: d3_extent(data, d => d.y)
     };
-}
-
-function getNextState(stateName) {
-    let stateList = ["final", "medal", "world", "mixed"];
-    let stateLen = stateList.length;
-    let stateNumbNext = (stateList.indexOf(stateName) + 1) % stateLen;
-    return stateList[stateNumbNext];
-}
-
-function toState(els, data, stateName) {
-    //window.setTimeout(() => {
-    
-    let scale = calcScale(data.domain);
-    Object.keys(els).forEach((key, i) => {
-        els[key].update(data, scale, data.opacity[i]); 
-    }); 
-
-    calcScale(data.domain);       
-    d3_select(".js-chart").attr("data-state", stateName);
-
-    d3_select(".states").selectAll(".btn").classed("btn-focus", false); 
-    d3_select(".btn-" + stateName).classed("btn-focus", true);
-
-    d3_select(".tooltip").selectAll(".count").classed("count-focus", false);
-    d3_select(".count-" + stateName).classed("count-focus", true);
-    
-    let nextState = getNextState(stateName);
-    let nextText = defaultHeaderTexts.headline[nextState].toLowerCase();
-    let isReplay = nextState === "final";
-    d3_select(".js-state-current").text(defaultHeaderTexts.headline[stateName]);
-    d3_select(".js-state-next").text((isReplay ? "Replay" : "Next with " + nextText));
-    d3_select(".replay").style("opacity", isReplay ? 1 : 0); 
-    d3_select(".arrow-right").style("opacity", isReplay ? 0 : 1); 
-    d3_select(".btn-next").classed("btn-disable", true).style("pointer-events", "none");
-    
-    // update info
-    updateInfo(stateName);
-       
-    //}, (data.delay)*1000);
 }

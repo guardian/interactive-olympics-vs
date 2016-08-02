@@ -1,4 +1,5 @@
 import utils from './lib/utils';
+import {json as d3_json} from 'd3-request';
 
 const minWidth = 320;
 const padding = 20;
@@ -26,7 +27,7 @@ export const colors = {
     wr: "#333"
 };
 
-// sync state, scale, domain, ... ?
+// sync scale, domain, ... ?
 export let sync = {
     s: {x: null, y:null},
     d: {x: null, y:null},
@@ -41,28 +42,36 @@ export let sync = {
     get domain() { return this.d; }
 };
 
-export const defaultHeaderTexts = { 
-    headline: {
-        "final": "2016 Olympic final result",
-        "medal": "Olympic medalists",
-        "world": "World record progression",
-        "mixed": "All results"
-    },
-    standfirst: {
-        "final": "",
-        "medal": "",
-        "world": "",
-        "mixed": "Interactive with this chart to explore more details ..."
-    }
+// header
+export let stateHeaders = {
+    list: ["final", "medal", "mixed"],
+    data: [{
+        state: "final", 
+        title: "2012 Olympic finals", 
+        description: "It was a WR, OR - how much better. Silver or bronze did better than gold last Olympic, or gold was worst than prior Olympics. Lorem ipsum dolor sit amet, ... "}, 
+    { 
+        state: "medal", 
+        title: "Olympic medalist since ...",
+        description: "It was a WR, OR - how much better. Silver or bronze did better than gold last Olympic, or gold was worst than prior Olympics. Aenean commodo ligula eget dolor."}, 
+    {
+        state: "mixed",
+        title: "All results",
+        description: "Interactive with this chart to discover more details ..."
+    }]
 };
 
-// highlight
-export let point = {
-    pt: null,
-    set obj(obj) {
-        this.pt = pt;
-    },
-    get obj() {
-        return this.pt;
-    }
-};
+export function setStateHeaders(type) {
+    let key = "1Qx2_oITx9455H4C_Kv8X4rPYtwnY_KwE-vxPe1cFx4M";
+    let url = "http://interactive.guim.co.uk/docsdata-test/" + key + ".json";
+    d3_json(url, (err, resp) => {
+        if (err) {
+            console.error(err);
+        } else if (resp.embed_vs){
+            // TODO: use type to get keys
+            stateHeaders.data = resp.embed_vs;
+            stateHeaders.list = resp.embed_vs.map(d => d.state);
+        } else {
+            console.error("content is not available!");
+        }
+    });
+}

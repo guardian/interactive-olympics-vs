@@ -127,7 +127,7 @@ function showBestAthlete(d1) {
     selectAllDots = d3_select(".js-chart")
     .selectAll("circle")
     .style("transition", "0.25s")
-    .attr("fill-opacity", d => d.o !== 0 ? 0.1 : 0);
+    .attr("fill-opacity", d => d.o !== 0 ? 0.2 : 0);
     
     selectDotRelated = selectAllDots
     .filter(d2 => d2.attrs.name.indexOf(attrs.name) > -1)

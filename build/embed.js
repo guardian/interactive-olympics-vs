@@ -285,11 +285,53 @@ $__System.registerDynamic("5", [], true, function($__require, exports, module) {
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = "<header>\n    <h2>But ... how did it compare?</h2>\n    <p>\n        It was a WR, OR - how much better. Silver or bronze did better than gold last Olympic, or gold was worst than prior Olympics.\n        <br>\n        <span class=\"js-state-current\"></span> \n        ...\n    </p>\n    <div class=\"btn-next\">\n        <span class=\"js-state-next\"></span>\n        <svg class=\"arrow-right\" width=\"28\" height=\"28\" viewBox=\"0 0 30 30\">\n            <path d=\"M22.8 14.6l-7.6-7.6-.7.7 5.5 6.6h-14v1.5h14l-5.5 6.6.7.7 7.6-7.6v-.9\" fill=\"#fff\"/>\n        </svg>\n        <svg class=\"replay\" width=\"16px\" height=\"16px\" viewBox=\"0 0 43 44\">\n            <path d=\"M7.15497025,33.442558 L14.398,32.27 L14.398,29.77 L1.58,29.77 L0.606,30.74 L0.606,44 L3.106,44 L4.278,36.27 L4.28132921,36.2666837 C8.31677436,41.0007268 14.3191026,44 21.023,44 C33.173,44 43.023,34.15 43.023,22 C43.023,9.85 33.173,0 21.023,0 C13.508,0 6.876,3.77 2.908,9.52 L2.944,9.54 L3.266,10.92 L4.964,11.98 L6.311,11.66 C9.572,7.04 14.945,4 21.023,4 C30.949,4 39.023,12.08 39.023,22 C39.023,31.92 30.949,40 21.023,40 C15.4437157,40 10.4578363,37.4375695 7.15497025,33.442558 Z\" fill=\"#fff\"></path>\n        </svg>\n    </div>\n</header>\n<div class=\"graph\">\n    <svg class=\"chart js-chart\">\n        <g class=\"axis-y\"></g>\n        <g class=\"axis-x\"></g>\n        <g class=\"line-ruler\"></g>\n        <g class=\"line-marks\"></g>\n        <g class=\"line-frame\"></g>\n        <g class=\"dots-final\"></g>\n        <g class=\"dots-medal\"></g>\n        <g class=\"dots-world\"></g>\n        <g class=\"dots-highlight\"></g>\n    </svg>\n    <div class=\"highlight\">\n        <div class=\"dots-select\"></div>\n        <div class=\"dots-animate\"></div>\n        <div class=\"line-v\"></div>\n        <div class=\"line-h\"></div>\n        <div class=\"text-x\"></div>\n        <div class=\"text-y\"></div>\n    </div>\n    <div class=\"tooltip\">\n        <span class=\"js-title fz-14 fw-b\"></span>\n        <span class=\"js-team fz-14 fw-b c-g\"></span><br>\n        <span class=\"js-result\"></span><br> \n        <span class=\"js-record\"></span>\n        <!--h2 class=\"m-0\">\n        <span class=\"js-headline\"></span>\n        <span class=\"js-team fz-14 c-g\"></span>\n        </h2-->\n        <!--p class=\"mb-10\">\n        <span class=\"js-final count count-final\"></span>\n        <span class=\"js-medal count count-medal\"></span>\n        <span class=\"js-world count count-world\"></span>\n    </p>\n    <p class=\"js-standfirst\"></p-->\n    </div>\n    <div class=\"states\">\n        <span class=\"btn-play\">Play states:</span>\n        <span class=\"btn btn-final\" data-dots=\"final\">final</span> |\n        <span class=\"btn btn-medal\" data-dots=\"medal\">medal</span> |\n        <span class=\"btn btn-world\" data-dots=\"world\">world records</span> |\n        <span class=\"btn btn-mixed\" data-dots=\"mixed\">all</span>\n    </div>\n</div>\n";
+  module.exports = "<div class=\"btn-next\">\n    <span class=\"js-state-next\"></span>\n    <svg class=\"arrow-right\" width=\"28\" height=\"28\" viewBox=\"0 0 30 30\">\n        <path d=\"M22.8 14.6l-7.6-7.6-.7.7 5.5 6.6h-14v1.5h14l-5.5 6.6.7.7 7.6-7.6v-.9\" fill=\"#fff\"/>\n    </svg>\n    <svg class=\"replay\" width=\"16px\" height=\"16px\" viewBox=\"0 0 43 44\">\n        <path d=\"M7.15497025,33.442558 L14.398,32.27 L14.398,29.77 L1.58,29.77 L0.606,30.74 L0.606,44 L3.106,44 L4.278,36.27 L4.28132921,36.2666837 C8.31677436,41.0007268 14.3191026,44 21.023,44 C33.173,44 43.023,34.15 43.023,22 C43.023,9.85 33.173,0 21.023,0 C13.508,0 6.876,3.77 2.908,9.52 L2.944,9.54 L3.266,10.92 L4.964,11.98 L6.311,11.66 C9.572,7.04 14.945,4 21.023,4 C30.949,4 39.023,12.08 39.023,22 C39.023,31.92 30.949,40 21.023,40 C15.4437157,40 10.4578363,37.4375695 7.15497025,33.442558 Z\" fill=\"#fff\"></path>\n    </svg>\n</div>\n\n<div class=\"graph\">\n    <svg class=\"chart js-chart\">\n        <g class=\"axis-y\"></g>\n        <g class=\"axis-x\"></g>\n        <g class=\"line-ruler\"></g>\n        <g class=\"line-marks\"></g>\n        <g class=\"line-frame\"></g>\n        <g class=\"dots-final\"></g>\n        <g class=\"dots-medal\"></g>\n        <g class=\"dots-world\"></g>\n        <g class=\"dots-highlight\"></g>\n    </svg>\n    <div class=\"highlight\">\n        <div class=\"dots-select\"></div>\n        <div class=\"dots-animate\"></div>\n        <div class=\"line-v\"></div>\n        <div class=\"line-h\"></div>\n        <div class=\"text-x\"></div>\n        <div class=\"text-y\"></div>\n    </div>\n    <p class=\"header\">\n        <span class=\"js-state-name\">2016 Olympic finals</span> -  \n        <span class=\"js-state-text\">It was a WR, OR - how much better. Silver or bronze did better than gold last Olympic, or gold was worst than prior Olympics ...\n    </p>   \n    <div class=\"tooltip\">\n        <span class=\"js-title fz-14 fw-b\"></span>\n        <span class=\"js-team fz-14 fw-b c-g\"></span><br>\n        <span class=\"js-result\"></span><br> \n        <span class=\"js-record\"></span>\n    </div>\n    <div class=\"states\">\n        <span class=\"btn-play\">Play states:</span>\n        <span class=\"btn btn-final\" data-dots=\"final\">final</span> |\n        <span class=\"btn btn-medal\" data-dots=\"medal\">medal</span> |\n        <span class=\"btn btn-world\" data-dots=\"world\">world records</span> |\n        <span class=\"btn btn-mixed\" data-dots=\"mixed\">all</span>\n    </div>\n</div>\n";
   return module.exports;
 });
 
-$__System.registerDynamic("6", [], true, function($__require, exports, module) {
+$__System.register("6", [], function (_export) {
+  "use strict";
+
+  return {
+    setters: [],
+    execute: function () {
+      _export("default", function (func, wait, options) {
+        var context, args, result;
+        var timeout = null;
+        var previous = 0;
+        if (!options) options = {};
+        var later = function later() {
+          previous = options.leading === false ? 0 : Date.now();
+          timeout = null;
+          result = func.apply(context, args);
+          if (!timeout) context = args = null;
+        };
+        return function () {
+          var now = Date.now();
+          if (!previous && options.leading === false) previous = now;
+          var remaining = wait - (now - previous);
+          context = this;
+          args = arguments;
+          if (remaining <= 0 || remaining > wait) {
+            if (timeout) {
+              clearTimeout(timeout);
+              timeout = null;
+            }
+            previous = now;
+            result = func.apply(context, args);
+            if (!timeout) context = args = null;
+          } else if (!timeout && options.trailing !== false) {
+            timeout = setTimeout(later, remaining);
+          }
+          return result;
+        };
+      });
+
+      ;
+    }
+  };
+});
+$__System.registerDynamic("7", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -956,7 +998,7 @@ $__System.registerDynamic("6", [], true, function($__require, exports, module) {
   return module.exports;
 });
 
-$__System.registerDynamic("7", [], true, function($__require, exports, module) {
+$__System.registerDynamic("8", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -969,7 +1011,7 @@ $__System.registerDynamic("7", [], true, function($__require, exports, module) {
   return module.exports;
 });
 
-$__System.registerDynamic("8", [], true, function($__require, exports, module) {
+$__System.registerDynamic("9", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -2102,7 +2144,7 @@ $__System.registerDynamic("8", [], true, function($__require, exports, module) {
   return module.exports;
 });
 
-$__System.register('9', ['7', '8', 'd', 'a', 'b', 'c'], function (_export) {
+$__System.register('a', ['8', '9', 'e', 'b', 'c', 'd'], function (_export) {
     var jsonRecord, jsonFinals, _Object$keys, parseData, result, d3_extent;
 
     return {
@@ -2110,14 +2152,14 @@ $__System.register('9', ['7', '8', 'd', 'a', 'b', 'c'], function (_export) {
             jsonRecord = _['default'];
         }, function (_2) {
             jsonFinals = _2['default'];
-        }, function (_d) {
-            _Object$keys = _d['default'];
-        }, function (_a) {
-            parseData = _a['default'];
+        }, function (_e) {
+            _Object$keys = _e['default'];
         }, function (_b) {
-            result = _b['default'];
+            parseData = _b['default'];
         }, function (_c) {
-            d3_extent = _c.extent;
+            result = _c['default'];
+        }, function (_d) {
+            d3_extent = _d.extent;
         }],
         execute: function () {
             'use strict';
@@ -2150,7 +2192,7 @@ $__System.register('9', ['7', '8', 'd', 'a', 'b', 'c'], function (_export) {
         }
     };
 });
-$__System.registerDynamic("e", [], true, function($__require, exports, module) {
+$__System.registerDynamic("f", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -2163,7 +2205,7 @@ $__System.registerDynamic("e", [], true, function($__require, exports, module) {
   return module.exports;
 });
 
-$__System.registerDynamic("f", [], true, function($__require, exports, module) {
+$__System.registerDynamic("10", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -2830,22 +2872,22 @@ $__System.registerDynamic("f", [], true, function($__require, exports, module) {
   return module.exports;
 });
 
-$__System.register('10', ['d', 'e', 'f', 'a', 'b', 'c'], function (_export) {
-    var _Object$keys, jsonRecord, jsonFinals, parseData, result, d3_extent;
+$__System.register('11', ['10', 'e', 'f', 'b', 'c', 'd'], function (_export) {
+    var jsonFinals, _Object$keys, jsonRecord, parseData, result, d3_extent;
 
     return {
-        setters: [function (_d) {
-            _Object$keys = _d['default'];
+        setters: [function (_) {
+            jsonFinals = _['default'];
         }, function (_e) {
-            jsonRecord = _e['default'];
+            _Object$keys = _e['default'];
         }, function (_f) {
-            jsonFinals = _f['default'];
-        }, function (_a) {
-            parseData = _a['default'];
+            jsonRecord = _f['default'];
         }, function (_b) {
-            result = _b['default'];
+            parseData = _b['default'];
         }, function (_c) {
-            d3_extent = _c.extent;
+            result = _c['default'];
+        }, function (_d) {
+            d3_extent = _d.extent;
         }],
         execute: function () {
             'use strict';
@@ -2878,7 +2920,7 @@ $__System.register('10', ['d', 'e', 'f', 'a', 'b', 'c'], function (_export) {
         }
     };
 });
-$__System.registerDynamic("11", [], true, function($__require, exports, module) {
+$__System.registerDynamic("12", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -2891,7 +2933,7 @@ $__System.registerDynamic("11", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("12", [], true, function($__require, exports, module) {
+$__System.registerDynamic("13", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -3232,7 +3274,7 @@ $__System.registerDynamic("12", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.register('13', ['11', '12', 'd', 'a', 'b', 'c'], function (_export) {
+$__System.register('14', ['12', '13', 'e', 'b', 'c', 'd'], function (_export) {
     var jsonRecord, jsonFinals, _Object$keys, parseData, result, d3_extent;
 
     return {
@@ -3240,14 +3282,14 @@ $__System.register('13', ['11', '12', 'd', 'a', 'b', 'c'], function (_export) {
             jsonRecord = _['default'];
         }, function (_2) {
             jsonFinals = _2['default'];
-        }, function (_d) {
-            _Object$keys = _d['default'];
-        }, function (_a) {
-            parseData = _a['default'];
+        }, function (_e) {
+            _Object$keys = _e['default'];
         }, function (_b) {
-            result = _b['default'];
+            parseData = _b['default'];
         }, function (_c) {
-            d3_extent = _c.extent;
+            result = _c['default'];
+        }, function (_d) {
+            d3_extent = _d.extent;
         }],
         execute: function () {
             'use strict';
@@ -3280,7 +3322,7 @@ $__System.register('13', ['11', '12', 'd', 'a', 'b', 'c'], function (_export) {
         }
     };
 });
-$__System.registerDynamic("14", [], true, function($__require, exports, module) {
+$__System.registerDynamic("15", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -3293,7 +3335,7 @@ $__System.registerDynamic("14", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("15", [], true, function($__require, exports, module) {
+$__System.registerDynamic("16", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -4277,7 +4319,7 @@ $__System.registerDynamic("15", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.register('16', ['14', '15', 'd', 'a', 'b', 'c'], function (_export) {
+$__System.register('17', ['15', '16', 'e', 'b', 'c', 'd'], function (_export) {
     var jsonRecord, jsonFinals, _Object$keys, parseData, result, d3_extent;
 
     return {
@@ -4285,14 +4327,14 @@ $__System.register('16', ['14', '15', 'd', 'a', 'b', 'c'], function (_export) {
             jsonRecord = _['default'];
         }, function (_2) {
             jsonFinals = _2['default'];
-        }, function (_d) {
-            _Object$keys = _d['default'];
-        }, function (_a) {
-            parseData = _a['default'];
+        }, function (_e) {
+            _Object$keys = _e['default'];
         }, function (_b) {
-            result = _b['default'];
+            parseData = _b['default'];
         }, function (_c) {
-            d3_extent = _c.extent;
+            result = _c['default'];
+        }, function (_d) {
+            d3_extent = _d.extent;
         }],
         execute: function () {
             'use strict';
@@ -4325,7 +4367,7 @@ $__System.register('16', ['14', '15', 'd', 'a', 'b', 'c'], function (_export) {
         }
     };
 });
-$__System.registerDynamic("17", [], true, function($__require, exports, module) {
+$__System.registerDynamic("18", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -4338,7 +4380,7 @@ $__System.registerDynamic("17", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("18", [], true, function($__require, exports, module) {
+$__System.registerDynamic("19", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -4823,7 +4865,7 @@ $__System.registerDynamic("18", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.register('19', ['17', '18', 'd', 'a', 'b', 'c'], function (_export) {
+$__System.register('1a', ['18', '19', 'e', 'b', 'c', 'd'], function (_export) {
     var jsonRecord, jsonFinals, _Object$keys, parseData, result, d3_extent;
 
     return {
@@ -4831,14 +4873,14 @@ $__System.register('19', ['17', '18', 'd', 'a', 'b', 'c'], function (_export) {
             jsonRecord = _['default'];
         }, function (_2) {
             jsonFinals = _2['default'];
-        }, function (_d) {
-            _Object$keys = _d['default'];
-        }, function (_a) {
-            parseData = _a['default'];
+        }, function (_e) {
+            _Object$keys = _e['default'];
         }, function (_b) {
-            result = _b['default'];
+            parseData = _b['default'];
         }, function (_c) {
-            d3_extent = _c.extent;
+            result = _c['default'];
+        }, function (_d) {
+            d3_extent = _d.extent;
         }],
         execute: function () {
             'use strict';
@@ -4871,7 +4913,7 @@ $__System.register('19', ['17', '18', 'd', 'a', 'b', 'c'], function (_export) {
         }
     };
 });
-$__System.registerDynamic("1a", [], true, function($__require, exports, module) {
+$__System.registerDynamic("1b", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -4884,7 +4926,7 @@ $__System.registerDynamic("1a", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("1b", [], true, function($__require, exports, module) {
+$__System.registerDynamic("1c", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -5484,7 +5526,7 @@ $__System.registerDynamic("1b", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("1c", [], true, function($__require, exports, module) {
+$__System.registerDynamic("1d", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -5515,7 +5557,7 @@ $__System.registerDynamic("1c", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.register("a", ["1c", "1d"], function (_export) {
+$__System.register("b", ["1d", "1e"], function (_export) {
     //import {json as d3_json} from "d3.request";
     "use strict";
 
@@ -5658,10 +5700,10 @@ $__System.register("a", ["1c", "1d"], function (_export) {
         };
     }
     return {
-        setters: [function (_c) {
-            array = _c["default"];
-        }, function (_d) {
-            utils = _d["default"];
+        setters: [function (_d) {
+            array = _d["default"];
+        }, function (_e) {
+            utils = _e["default"];
         }],
         execute: function () {
             thisYear = 2016;
@@ -5694,7 +5736,7 @@ $__System.register("a", ["1c", "1d"], function (_export) {
         }
     };
 });
-$__System.registerDynamic("1e", [], true, function($__require, exports, module) {
+$__System.registerDynamic("1f", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -5707,19 +5749,19 @@ $__System.registerDynamic("1e", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("1f", ["1e"], true, function($__require, exports, module) {
+$__System.registerDynamic("20", ["1f"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  var defined = $__require('1e');
+  var defined = $__require('1f');
   module.exports = function(it) {
     return Object(defined(it));
   };
   return module.exports;
 });
 
-$__System.registerDynamic("20", [], true, function($__require, exports, module) {
+$__System.registerDynamic("21", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -5730,7 +5772,7 @@ $__System.registerDynamic("20", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("21", [], true, function($__require, exports, module) {
+$__System.registerDynamic("22", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -5743,12 +5785,12 @@ $__System.registerDynamic("21", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("22", ["21"], true, function($__require, exports, module) {
+$__System.registerDynamic("23", ["22"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  var aFunction = $__require('21');
+  var aFunction = $__require('22');
   module.exports = function(fn, that, length) {
     aFunction(fn);
     if (that === undefined)
@@ -5774,14 +5816,14 @@ $__System.registerDynamic("22", ["21"], true, function($__require, exports, modu
   return module.exports;
 });
 
-$__System.registerDynamic("23", ["20", "24", "22"], true, function($__require, exports, module) {
+$__System.registerDynamic("24", ["21", "25", "23"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  var global = $__require('20'),
-      core = $__require('24'),
-      ctx = $__require('22'),
+  var global = $__require('21'),
+      core = $__require('25'),
+      ctx = $__require('23'),
       PROTOTYPE = 'prototype';
   var $export = function(type, name, source) {
     var IS_FORCED = type & $export.F,
@@ -5823,7 +5865,7 @@ $__System.registerDynamic("23", ["20", "24", "22"], true, function($__require, e
   return module.exports;
 });
 
-$__System.registerDynamic("25", [], true, function($__require, exports, module) {
+$__System.registerDynamic("26", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -5838,14 +5880,14 @@ $__System.registerDynamic("25", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("26", ["23", "24", "25"], true, function($__require, exports, module) {
+$__System.registerDynamic("27", ["24", "25", "26"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  var $export = $__require('23'),
-      core = $__require('24'),
-      fails = $__require('25');
+  var $export = $__require('24'),
+      core = $__require('25'),
+      fails = $__require('26');
   module.exports = function(KEY, exec) {
     var fn = (core.Object || {})[KEY] || Object[KEY],
         exp = {};
@@ -5857,13 +5899,13 @@ $__System.registerDynamic("26", ["23", "24", "25"], true, function($__require, e
   return module.exports;
 });
 
-$__System.registerDynamic("27", ["1f", "26"], true, function($__require, exports, module) {
+$__System.registerDynamic("28", ["20", "27"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  var toObject = $__require('1f');
-  $__require('26')('keys', function($keys) {
+  var toObject = $__require('20');
+  $__require('27')('keys', function($keys) {
     return function keys(it) {
       return $keys(toObject(it));
     };
@@ -5871,7 +5913,7 @@ $__System.registerDynamic("27", ["1f", "26"], true, function($__require, exports
   return module.exports;
 });
 
-$__System.registerDynamic("24", [], true, function($__require, exports, module) {
+$__System.registerDynamic("25", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -5882,289 +5924,97 @@ $__System.registerDynamic("24", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("28", ["27", "24"], true, function($__require, exports, module) {
+$__System.registerDynamic("29", ["28", "25"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  $__require('27');
-  module.exports = $__require('24').Object.keys;
+  $__require('28');
+  module.exports = $__require('25').Object.keys;
   return module.exports;
 });
 
-$__System.registerDynamic("d", ["28"], true, function($__require, exports, module) {
+$__System.registerDynamic("e", ["29"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
   module.exports = {
-    "default": $__require('28'),
+    "default": $__require('29'),
     __esModule: true
   };
   return module.exports;
 });
 
-$__System.registerDynamic("29", [], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  "format cjs";
-  (function(global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) : typeof define === 'function' && define.amd ? define(['exports'], factory) : (factory((global.d3 = global.d3 || {})));
-  }(this, function(exports) {
-    'use strict';
-    var prefix = "$";
-    function Map() {}
-    Map.prototype = map.prototype = {
-      constructor: Map,
-      has: function(key) {
-        return (prefix + key) in this;
-      },
-      get: function(key) {
-        return this[prefix + key];
-      },
-      set: function(key, value) {
-        this[prefix + key] = value;
-        return this;
-      },
-      remove: function(key) {
-        var property = prefix + key;
-        return property in this && delete this[property];
-      },
-      clear: function() {
-        for (var property in this)
-          if (property[0] === prefix)
-            delete this[property];
-      },
-      keys: function() {
-        var keys = [];
-        for (var property in this)
-          if (property[0] === prefix)
-            keys.push(property.slice(1));
-        return keys;
-      },
-      values: function() {
-        var values = [];
-        for (var property in this)
-          if (property[0] === prefix)
-            values.push(this[property]);
-        return values;
-      },
-      entries: function() {
-        var entries = [];
-        for (var property in this)
-          if (property[0] === prefix)
-            entries.push({
-              key: property.slice(1),
-              value: this[property]
-            });
-        return entries;
-      },
-      size: function() {
-        var size = 0;
-        for (var property in this)
-          if (property[0] === prefix)
-            ++size;
-        return size;
-      },
-      empty: function() {
-        for (var property in this)
-          if (property[0] === prefix)
-            return false;
-        return true;
-      },
-      each: function(f) {
-        for (var property in this)
-          if (property[0] === prefix)
-            f(this[property], property.slice(1), this);
-      }
-    };
-    function map(object, f) {
-      var map = new Map;
-      if (object instanceof Map)
-        object.each(function(value, key) {
-          map.set(key, value);
-        });
-      else if (Array.isArray(object)) {
-        var i = -1,
-            n = object.length,
-            o;
-        if (f == null)
-          while (++i < n)
-            map.set(i, object[i]);
-        else
-          while (++i < n)
-            map.set(f(o = object[i], i, object), o);
-      } else if (object)
-        for (var key in object)
-          map.set(key, object[key]);
-      return map;
-    }
-    function nest() {
-      var keys = [],
-          sortKeys = [],
-          sortValues,
-          rollup,
-          nest;
-      function apply(array, depth, createResult, setResult) {
-        if (depth >= keys.length)
-          return rollup != null ? rollup(array) : (sortValues != null ? array.sort(sortValues) : array);
-        var i = -1,
-            n = array.length,
-            key = keys[depth++],
-            keyValue,
-            value,
-            valuesByKey = map(),
-            values,
-            result = createResult();
-        while (++i < n) {
-          if (values = valuesByKey.get(keyValue = key(value = array[i]) + "")) {
-            values.push(value);
-          } else {
-            valuesByKey.set(keyValue, [value]);
-          }
-        }
-        valuesByKey.each(function(values, key) {
-          setResult(result, key, apply(values, depth, createResult, setResult));
-        });
-        return result;
-      }
-      function entries(map, depth) {
-        if (++depth > keys.length)
-          return map;
-        var array,
-            sortKey = sortKeys[depth - 1];
-        if (rollup != null && depth >= keys.length)
-          array = map.entries();
-        else
-          array = [], map.each(function(v, k) {
-            array.push({
-              key: k,
-              values: entries(v, depth)
-            });
-          });
-        return sortKey != null ? array.sort(function(a, b) {
-          return sortKey(a.key, b.key);
-        }) : array;
-      }
-      return nest = {
-        object: function(array) {
-          return apply(array, 0, createObject, setObject);
-        },
-        map: function(array) {
-          return apply(array, 0, createMap, setMap);
-        },
-        entries: function(array) {
-          return entries(apply(array, 0, createMap, setMap), 0);
-        },
-        key: function(d) {
-          keys.push(d);
-          return nest;
-        },
-        sortKeys: function(order) {
-          sortKeys[keys.length - 1] = order;
-          return nest;
-        },
-        sortValues: function(order) {
-          sortValues = order;
-          return nest;
-        },
-        rollup: function(f) {
-          rollup = f;
-          return nest;
-        }
-      };
-    }
-    function createObject() {
-      return {};
-    }
-    function setObject(object, key, value) {
-      object[key] = value;
-    }
-    function createMap() {
-      return map();
-    }
-    function setMap(map, key, value) {
-      map.set(key, value);
-    }
-    function Set() {}
-    var proto = map.prototype;
-    Set.prototype = set.prototype = {
-      constructor: Set,
-      has: proto.has,
-      add: function(value) {
-        value += "";
-        this[prefix + value] = value;
-        return this;
-      },
-      remove: proto.remove,
-      clear: proto.clear,
-      values: proto.keys,
-      size: proto.size,
-      empty: proto.empty,
-      each: proto.each
-    };
-    function set(object, f) {
-      var set = new Set;
-      if (object instanceof Set)
-        object.each(function(value) {
-          set.add(value);
-        });
-      else if (object) {
-        var i = -1,
-            n = object.length;
-        if (f == null)
-          while (++i < n)
-            set.add(object[i]);
-        else
-          while (++i < n)
-            set.add(f(object[i], i, object));
-      }
-      return set;
-    }
-    function keys(map) {
-      var keys = [];
-      for (var key in map)
-        keys.push(key);
-      return keys;
-    }
-    function values(map) {
-      var values = [];
-      for (var key in map)
-        values.push(map[key]);
-      return values;
-    }
-    function entries(map) {
-      var entries = [];
-      for (var key in map)
-        entries.push({
-          key: key,
-          value: map[key]
-        });
-      return entries;
-    }
-    exports.nest = nest;
-    exports.set = set;
-    exports.map = map;
-    exports.keys = keys;
-    exports.values = values;
-    exports.entries = entries;
-    Object.defineProperty(exports, '__esModule', {value: true});
-  }));
-  return module.exports;
-});
+$__System.register('2a', ['e', '2b', '2c', '2d', '2e'], function (_export) {
+    var _Object$keys, calcScale, updateInfo, stateHeaders, d3_select;
 
-$__System.registerDynamic("2a", ["29"], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  module.exports = $__require('29');
-  return module.exports;
-});
+    function getNextState(stateName) {
+        var list = stateHeaders.list;
+        var currIndex = list.indexOf(stateName);
+        var nextIndex = (currIndex + 1) % list.length;
+        return {
+            index: nextIndex,
+            name: list[nextIndex]
+        };
+    }
 
-$__System.registerDynamic("2b", [], true, function($__require, exports, module) {
+    function toState(els, data, stateName) {
+
+        var scale = calcScale(data.domain);
+        _Object$keys(els).forEach(function (key, i) {
+            els[key].update(data, scale, data.opacity[i]);
+        });
+
+        calcScale(data.domain);
+        d3_select(".js-chart").attr("data-state", stateName);
+
+        d3_select(".states").selectAll(".btn").classed("btn-focus", false);
+        d3_select(".btn-" + stateName).classed("btn-focus", true);
+
+        d3_select(".tooltip").selectAll(".count").classed("count-focus", false);
+        d3_select(".count-" + stateName).classed("count-focus", true);
+
+        var headers = stateHeaders.data;
+        var currInd = stateHeaders.list.indexOf(stateName);
+        var nextInd = getNextState(stateName).index;
+        var isReplay = nextInd === "final";
+
+        // current
+        d3_select(".js-state-name").text(headers[currInd].title);
+        d3_select(".js-state-text").text(headers[currInd].description);
+        // next
+        d3_select(".js-state-next").text(isReplay ? "Replay" : "Next with " + headers[nextInd].title.toLowerCase());
+        d3_select(".replay").style("opacity", isReplay ? 1 : 0);
+        d3_select(".arrow-right").style("opacity", isReplay ? 0 : 1);
+        d3_select(".btn-next").classed("btn-disable", true).style("pointer-events", "none");
+
+        // update info
+        updateInfo(stateName);
+    }
+
+    return {
+        setters: [function (_e) {
+            _Object$keys = _e['default'];
+        }, function (_b) {
+            calcScale = _b['default'];
+        }, function (_c) {
+            updateInfo = _c['default'];
+        }, function (_d) {
+            stateHeaders = _d.stateHeaders;
+        }, function (_e2) {
+            d3_select = _e2.select;
+        }],
+        execute: function () {
+            'use strict';
+
+            _export('getNextState', getNextState);
+
+            _export('toState', toState);
+        }
+    };
+});
+$__System.registerDynamic("2f", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -6451,16 +6301,16 @@ $__System.registerDynamic("2b", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("2c", ["2b"], true, function($__require, exports, module) {
+$__System.registerDynamic("30", ["2f"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('2b');
+  module.exports = $__require('2f');
   return module.exports;
 });
 
-$__System.registerDynamic("2d", [], true, function($__require, exports, module) {
+$__System.registerDynamic("31", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -6800,23 +6650,23 @@ $__System.registerDynamic("2d", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("2e", ["2d"], true, function($__require, exports, module) {
+$__System.registerDynamic("32", ["31"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('2d');
+  module.exports = $__require('31');
   return module.exports;
 });
 
-$__System.registerDynamic("2f", ["2e"], true, function($__require, exports, module) {
+$__System.registerDynamic("33", ["32"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
   "format cjs";
   (function(global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('2e')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-time'], factory) : (factory((global.d3 = global.d3 || {}), global.d3));
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('32')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-time'], factory) : (factory((global.d3 = global.d3 || {}), global.d3));
   }(this, function(exports, d3Time) {
     'use strict';
     function localDate(d) {
@@ -7325,23 +7175,23 @@ $__System.registerDynamic("2f", ["2e"], true, function($__require, exports, modu
   return module.exports;
 });
 
-$__System.registerDynamic("30", ["2f"], true, function($__require, exports, module) {
+$__System.registerDynamic("34", ["33"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('2f');
+  module.exports = $__require('33');
   return module.exports;
 });
 
-$__System.registerDynamic("31", ["c", "2a", "33", "2c", "2e", "30", "32"], true, function($__require, exports, module) {
+$__System.registerDynamic("35", ["d", "36", "38", "30", "32", "34", "37"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
   "format cjs";
   (function(global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('c'), $__require('2a'), $__require('33'), $__require('2c'), $__require('2e'), $__require('30'), $__require('32')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-array', 'd3-collection', 'd3-interpolate', 'd3-format', 'd3-time', 'd3-time-format', 'd3-color'], factory) : (factory((global.d3 = global.d3 || {}), global.d3, global.d3, global.d3, global.d3, global.d3, global.d3, global.d3));
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('d'), $__require('36'), $__require('38'), $__require('30'), $__require('32'), $__require('34'), $__require('37')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-array', 'd3-collection', 'd3-interpolate', 'd3-format', 'd3-time', 'd3-time-format', 'd3-color'], factory) : (factory((global.d3 = global.d3 || {}), global.d3, global.d3, global.d3, global.d3, global.d3, global.d3, global.d3));
   }(this, function(exports, d3Array, d3Collection, d3Interpolate, d3Format, d3Time, d3TimeFormat, d3Color) {
     'use strict';
     var array = Array.prototype;
@@ -8083,24 +7933,24 @@ $__System.registerDynamic("31", ["c", "2a", "33", "2c", "2e", "30", "32"], true,
   return module.exports;
 });
 
-$__System.registerDynamic("34", ["31"], true, function($__require, exports, module) {
+$__System.registerDynamic("39", ["35"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('31');
+  module.exports = $__require('35');
   return module.exports;
 });
 
-$__System.register('35', ['34', '36'], function (_export) {
+$__System.register('2b', ['39', '2d'], function (_export) {
     'use strict';
 
     var d3_scaleLinear, sync;
     return {
-        setters: [function (_2) {
-            d3_scaleLinear = _2.scaleLinear;
-        }, function (_) {
-            sync = _.sync;
+        setters: [function (_) {
+            d3_scaleLinear = _.scaleLinear;
+        }, function (_d) {
+            sync = _d.sync;
         }],
         execute: function () {
             _export('default', function (domain) {
@@ -8135,138 +7985,7 @@ $__System.register('35', ['34', '36'], function (_export) {
         }
     };
 });
-$__System.registerDynamic("37", [], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  "format cjs";
-  (function(global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) : typeof define === 'function' && define.amd ? define(['exports'], factory) : (factory((global.d3 = global.d3 || {})));
-  }(this, function(exports) {
-    'use strict';
-    var noop = {value: function() {}};
-    function dispatch() {
-      for (var i = 0,
-          n = arguments.length,
-          _ = {},
-          t; i < n; ++i) {
-        if (!(t = arguments[i] + "") || (t in _))
-          throw new Error("illegal type: " + t);
-        _[t] = [];
-      }
-      return new Dispatch(_);
-    }
-    function Dispatch(_) {
-      this._ = _;
-    }
-    function parseTypenames(typenames, types) {
-      return typenames.trim().split(/^|\s+/).map(function(t) {
-        var name = "",
-            i = t.indexOf(".");
-        if (i >= 0)
-          name = t.slice(i + 1), t = t.slice(0, i);
-        if (t && !types.hasOwnProperty(t))
-          throw new Error("unknown type: " + t);
-        return {
-          type: t,
-          name: name
-        };
-      });
-    }
-    Dispatch.prototype = dispatch.prototype = {
-      constructor: Dispatch,
-      on: function(typename, callback) {
-        var _ = this._,
-            T = parseTypenames(typename + "", _),
-            t,
-            i = -1,
-            n = T.length;
-        if (arguments.length < 2) {
-          while (++i < n)
-            if ((t = (typename = T[i]).type) && (t = get(_[t], typename.name)))
-              return t;
-          return;
-        }
-        if (callback != null && typeof callback !== "function")
-          throw new Error("invalid callback: " + callback);
-        while (++i < n) {
-          if (t = (typename = T[i]).type)
-            _[t] = set(_[t], typename.name, callback);
-          else if (callback == null)
-            for (t in _)
-              _[t] = set(_[t], typename.name, null);
-        }
-        return this;
-      },
-      copy: function() {
-        var copy = {},
-            _ = this._;
-        for (var t in _)
-          copy[t] = _[t].slice();
-        return new Dispatch(copy);
-      },
-      call: function(type, that) {
-        if ((n = arguments.length - 2) > 0)
-          for (var args = new Array(n),
-              i = 0,
-              n,
-              t; i < n; ++i)
-            args[i] = arguments[i + 2];
-        if (!this._.hasOwnProperty(type))
-          throw new Error("unknown type: " + type);
-        for (t = this._[type], i = 0, n = t.length; i < n; ++i)
-          t[i].value.apply(that, args);
-      },
-      apply: function(type, that, args) {
-        if (!this._.hasOwnProperty(type))
-          throw new Error("unknown type: " + type);
-        for (var t = this._[type],
-            i = 0,
-            n = t.length; i < n; ++i)
-          t[i].value.apply(that, args);
-      }
-    };
-    function get(type, name) {
-      for (var i = 0,
-          n = type.length,
-          c; i < n; ++i) {
-        if ((c = type[i]).name === name) {
-          return c.value;
-        }
-      }
-    }
-    function set(type, name, callback) {
-      for (var i = 0,
-          n = type.length; i < n; ++i) {
-        if (type[i].name === name) {
-          type[i] = noop, type = type.slice(0, i).concat(type.slice(i + 1));
-          break;
-        }
-      }
-      if (callback != null)
-        type.push({
-          name: name,
-          value: callback
-        });
-      return type;
-    }
-    exports.dispatch = dispatch;
-    Object.defineProperty(exports, '__esModule', {value: true});
-  }));
-  return module.exports;
-});
-
-$__System.registerDynamic("38", ["37"], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  module.exports = $__require('37');
-  return module.exports;
-});
-
-$__System.registerDynamic("39", [], true, function($__require, exports, module) {
+$__System.registerDynamic("3a", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -8428,23 +8147,23 @@ $__System.registerDynamic("39", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("3a", ["39"], true, function($__require, exports, module) {
+$__System.registerDynamic("3b", ["3a"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('39');
+  module.exports = $__require('3a');
   return module.exports;
 });
 
-$__System.registerDynamic("3b", ["32"], true, function($__require, exports, module) {
+$__System.registerDynamic("3c", ["37"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
   "format cjs";
   (function(global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('32')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-color'], factory) : (factory((global.d3 = global.d3 || {}), global.d3));
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('37')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-color'], factory) : (factory((global.d3 = global.d3 || {}), global.d3));
   }(this, function(exports, d3Color) {
     'use strict';
     function basis(t1, v0, v1, v2, v3) {
@@ -8939,16 +8658,16 @@ $__System.registerDynamic("3b", ["32"], true, function($__require, exports, modu
   return module.exports;
 });
 
-$__System.registerDynamic("33", ["3b"], true, function($__require, exports, module) {
+$__System.registerDynamic("38", ["3c"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('3b');
+  module.exports = $__require('3c');
   return module.exports;
 });
 
-$__System.registerDynamic("3c", [], true, function($__require, exports, module) {
+$__System.registerDynamic("3d", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -9416,16 +9135,16 @@ $__System.registerDynamic("3c", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("32", ["3c"], true, function($__require, exports, module) {
+$__System.registerDynamic("37", ["3d"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('3c');
+  module.exports = $__require('3d');
   return module.exports;
 });
 
-$__System.registerDynamic("3d", [], true, function($__require, exports, module) {
+$__System.registerDynamic("3e", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -9638,23 +9357,23 @@ $__System.registerDynamic("3d", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("3e", ["3d"], true, function($__require, exports, module) {
+$__System.registerDynamic("3f", ["3e"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('3d');
+  module.exports = $__require('3e');
   return module.exports;
 });
 
-$__System.registerDynamic("3f", ["40", "38", "3a", "33", "32", "3e"], true, function($__require, exports, module) {
+$__System.registerDynamic("40", ["2e", "41", "3b", "38", "37", "3f"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
   "format cjs";
   (function(global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('40'), $__require('38'), $__require('3a'), $__require('33'), $__require('32'), $__require('3e')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-selection', 'd3-dispatch', 'd3-timer', 'd3-interpolate', 'd3-color', 'd3-ease'], factory) : (factory((global.d3 = global.d3 || {}), global.d3, global.d3, global.d3, global.d3, global.d3, global.d3));
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('2e'), $__require('41'), $__require('3b'), $__require('38'), $__require('37'), $__require('3f')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-selection', 'd3-dispatch', 'd3-timer', 'd3-interpolate', 'd3-color', 'd3-ease'], factory) : (factory((global.d3 = global.d3 || {}), global.d3, global.d3, global.d3, global.d3, global.d3, global.d3));
   }(this, function(exports, d3Selection, d3Dispatch, d3Timer, d3Interpolate, d3Color, d3Ease) {
     'use strict';
     var emptyOn = d3Dispatch.dispatch("start", "end", "interrupt");
@@ -10351,19 +10070,19 @@ $__System.registerDynamic("3f", ["40", "38", "3a", "33", "32", "3e"], true, func
   return module.exports;
 });
 
-$__System.registerDynamic("41", ["3f"], true, function($__require, exports, module) {
+$__System.registerDynamic("42", ["40"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('3f');
+  module.exports = $__require('40');
   return module.exports;
 });
 
-$__System.register('42', ['36', '40'], function (_export) {
+$__System.register('2c', ['2e', '2d'], function (_export) {
     'use strict';
 
-    var defaultHeaderTexts, colors, d3_select, cfg;
+    var d3_select, defaultHeaderTexts, colors, cfg;
 
     function isNumeric(n) {
         return !isNaN(parseFloat(n)) && isFinite(n);
@@ -10443,11 +10162,11 @@ $__System.register('42', ['36', '40'], function (_export) {
         return { top: top + "px", left: left + "px" };
     }
     return {
-        setters: [function (_2) {
-            defaultHeaderTexts = _2.defaultHeaderTexts;
-            colors = _2.colors;
-        }, function (_) {
-            d3_select = _.select;
+        setters: [function (_e) {
+            d3_select = _e.select;
+        }, function (_d) {
+            defaultHeaderTexts = _d.defaultHeaderTexts;
+            colors = _d.colors;
         }],
         execute: function () {
             cfg = {
@@ -10466,7 +10185,7 @@ $__System.register('42', ['36', '40'], function (_export) {
                     cleanFields();
                     d3_select(".tooltip").style("opacity", 0);
                 } else {
-                    console.log(data);
+                    //console.log(data);
 
                     var attrs = data.attrs;
                     var _event = window.location.search.replace("?", "");
@@ -10483,13 +10202,13 @@ $__System.register('42', ['36', '40'], function (_export) {
         }
     };
 });
-$__System.register("43", ["40"], function (_export) {
+$__System.register("43", ["2e"], function (_export) {
     "use strict";
 
     var d3_select;
     return {
-        setters: [function (_) {
-            d3_select = _.select;
+        setters: [function (_e) {
+            d3_select = _e.select;
         }],
         execute: function () {
             _export("default", function (data) {
@@ -10504,10 +10223,10 @@ $__System.register("43", ["40"], function (_export) {
         }
     };
 });
-$__System.register('44', ['36', '40', '41', '42', '43', '1d'], function (_export) {
+$__System.register('44', ['42', '43', '2e', '1e', '2d', '2c'], function (_export) {
     'use strict';
 
-    var colors, sync, d3_select, transition, updateInfo, updateHighlight, utils, selectAllDots, selectDotRelated, selectDotPre;
+    var transition, updateHighlight, d3_select, utils, colors, sync, updateInfo, selectAllDots, selectDotRelated, selectDotPre;
 
     function showBestAthlete(d1) {
         var attrs = d1.attrs;
@@ -10516,7 +10235,7 @@ $__System.register('44', ['36', '40', '41', '42', '43', '1d'], function (_export
 
         // name
         selectAllDots = d3_select(".js-chart").selectAll("circle").style("transition", "0.25s").attr("fill-opacity", function (d) {
-            return d.o !== 0 ? 0.1 : 0;
+            return d.o !== 0 ? 0.2 : 0;
         });
 
         selectDotRelated = selectAllDots.filter(function (d2) {
@@ -10553,19 +10272,19 @@ $__System.register('44', ['36', '40', '41', '42', '43', '1d'], function (_export
         });
     }
     return {
-        setters: [function (_3) {
-            colors = _3.colors;
-            sync = _3.sync;
-        }, function (_) {
-            d3_select = _.select;
+        setters: [function (_) {
+            transition = _.transition;
         }, function (_2) {
-            transition = _2.transition;
-        }, function (_4) {
-            updateInfo = _4['default'];
-        }, function (_5) {
-            updateHighlight = _5['default'];
+            updateHighlight = _2['default'];
+        }, function (_e) {
+            d3_select = _e.select;
+        }, function (_e2) {
+            utils = _e2['default'];
         }, function (_d) {
-            utils = _d['default'];
+            colors = _d.colors;
+            sync = _d.sync;
+        }, function (_c) {
+            updateInfo = _c['default'];
         }],
         execute: function () {
             _export('default', function (cfg) {
@@ -10694,1205 +10413,6 @@ $__System.register('44', ['36', '40', '41', '42', '43', '1d'], function (_export
     };
 });
 $__System.registerDynamic("45", [], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  "format cjs";
-  (function(global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) : typeof define === 'function' && define.amd ? define(['exports'], factory) : (factory((global.d3 = global.d3 || {})));
-  }(this, function(exports) {
-    'use strict';
-    var slice = Array.prototype.slice;
-    function identity(x) {
-      return x;
-    }
-    var top = 1;
-    var right = 2;
-    var bottom = 3;
-    var left = 4;
-    var epsilon = 1e-6;
-    function translateX(scale0, scale1, d) {
-      var x = scale0(d);
-      return "translate(" + (isFinite(x) ? x : scale1(d)) + ",0)";
-    }
-    function translateY(scale0, scale1, d) {
-      var y = scale0(d);
-      return "translate(0," + (isFinite(y) ? y : scale1(d)) + ")";
-    }
-    function center(scale) {
-      var width = scale.bandwidth() / 2;
-      return function(d) {
-        return scale(d) + width;
-      };
-    }
-    function entering() {
-      return !this.__axis;
-    }
-    function axis(orient, scale) {
-      var tickArguments = [],
-          tickValues = null,
-          tickFormat = null,
-          tickSizeInner = 6,
-          tickSizeOuter = 6,
-          tickPadding = 3;
-      function axis(context) {
-        var values = tickValues == null ? (scale.ticks ? scale.ticks.apply(scale, tickArguments) : scale.domain()) : tickValues,
-            format = tickFormat == null ? (scale.tickFormat ? scale.tickFormat.apply(scale, tickArguments) : identity) : tickFormat,
-            spacing = Math.max(tickSizeInner, 0) + tickPadding,
-            transform = orient === top || orient === bottom ? translateX : translateY,
-            range = scale.range(),
-            range0 = range[0] + 0.5,
-            range1 = range[range.length - 1] + 0.5,
-            position = (scale.bandwidth ? center : identity)(scale.copy()),
-            selection = context.selection ? context.selection() : context,
-            path = selection.selectAll(".domain").data([null]),
-            tick = selection.selectAll(".tick").data(values, scale).order(),
-            tickExit = tick.exit(),
-            tickEnter = tick.enter().append("g").attr("class", "tick"),
-            line = tick.select("line"),
-            text = tick.select("text"),
-            k = orient === top || orient === left ? -1 : 1,
-            x,
-            y = orient === left || orient === right ? (x = "x", "y") : (x = "y", "x");
-        path = path.merge(path.enter().insert("path", ".tick").attr("class", "domain").attr("stroke", "#000"));
-        tick = tick.merge(tickEnter);
-        line = line.merge(tickEnter.append("line").attr("stroke", "#000").attr(x + "2", k * tickSizeInner).attr(y + "1", 0.5).attr(y + "2", 0.5));
-        text = text.merge(tickEnter.append("text").attr("fill", "#000").attr(x, k * spacing).attr(y, 0.5).attr("dy", orient === top ? "0em" : orient === bottom ? ".71em" : ".32em"));
-        if (context !== selection) {
-          path = path.transition(context);
-          tick = tick.transition(context);
-          line = line.transition(context);
-          text = text.transition(context);
-          tickExit = tickExit.transition(context).attr("opacity", epsilon).attr("transform", function(d) {
-            return transform(position, this.parentNode.__axis || position, d);
-          });
-          tickEnter.attr("opacity", epsilon).attr("transform", function(d) {
-            return transform(this.parentNode.__axis || position, position, d);
-          });
-        }
-        tickExit.remove();
-        path.attr("d", orient === left || orient == right ? "M" + k * tickSizeOuter + "," + range0 + "H0.5V" + range1 + "H" + k * tickSizeOuter : "M" + range0 + "," + k * tickSizeOuter + "V0.5H" + range1 + "V" + k * tickSizeOuter);
-        tick.attr("opacity", 1).attr("transform", function(d) {
-          return transform(position, position, d);
-        });
-        line.attr(x + "2", k * tickSizeInner);
-        text.attr(x, k * spacing).text(format);
-        selection.filter(entering).attr("fill", "none").attr("font-size", 10).attr("font-family", "sans-serif").attr("text-anchor", orient === right ? "start" : orient === left ? "end" : "middle");
-        selection.each(function() {
-          this.__axis = position;
-        });
-      }
-      axis.scale = function(_) {
-        return arguments.length ? (scale = _, axis) : scale;
-      };
-      axis.ticks = function() {
-        return tickArguments = slice.call(arguments), axis;
-      };
-      axis.tickArguments = function(_) {
-        return arguments.length ? (tickArguments = _ == null ? [] : slice.call(_), axis) : tickArguments.slice();
-      };
-      axis.tickValues = function(_) {
-        return arguments.length ? (tickValues = _ == null ? null : slice.call(_), axis) : tickValues && tickValues.slice();
-      };
-      axis.tickFormat = function(_) {
-        return arguments.length ? (tickFormat = _, axis) : tickFormat;
-      };
-      axis.tickSize = function(_) {
-        return arguments.length ? (tickSizeInner = tickSizeOuter = +_, axis) : tickSizeInner;
-      };
-      axis.tickSizeInner = function(_) {
-        return arguments.length ? (tickSizeInner = +_, axis) : tickSizeInner;
-      };
-      axis.tickSizeOuter = function(_) {
-        return arguments.length ? (tickSizeOuter = +_, axis) : tickSizeOuter;
-      };
-      axis.tickPadding = function(_) {
-        return arguments.length ? (tickPadding = +_, axis) : tickPadding;
-      };
-      return axis;
-    }
-    function axisTop(scale) {
-      return axis(top, scale);
-    }
-    function axisRight(scale) {
-      return axis(right, scale);
-    }
-    function axisBottom(scale) {
-      return axis(bottom, scale);
-    }
-    function axisLeft(scale) {
-      return axis(left, scale);
-    }
-    exports.axisTop = axisTop;
-    exports.axisRight = axisRight;
-    exports.axisBottom = axisBottom;
-    exports.axisLeft = axisLeft;
-    Object.defineProperty(exports, '__esModule', {value: true});
-  }));
-  return module.exports;
-});
-
-$__System.registerDynamic("46", ["45"], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  module.exports = $__require('45');
-  return module.exports;
-});
-
-$__System.register('47', ['36', '40', '46', 'c'], function (_export) {
-
-    /* param: coord - x or y */
-    /* param: direction - h or v, isJump? */
-    'use strict';
-
-    var sync, d3_select, d3_axisBottom, d3_range, d3_extent;
-    return {
-        setters: [function (_3) {
-            sync = _3.sync;
-        }, function (_) {
-            d3_select = _.select;
-        }, function (_2) {
-            d3_axisBottom = _2.axisBottom;
-        }, function (_c) {
-            d3_range = _c.range;
-            d3_extent = _c.extent;
-        }],
-        execute: function () {
-            _export('default', function (cfg) {
-                var axis = undefined,
-                    line = undefined,
-                    text = undefined;
-                var coord = cfg.coord;
-
-                var getSteps = function getSteps(scale) {
-                    switch (true) {
-                        //TODO: steps case
-                        case cfg.value === "year":
-                            var min = scale.domain[coord][0];
-                            var max = scale.domain[coord][1];
-                            var range = min === max ? [min] : d3_range(max, min, -4);
-                            return range[range.length - 1] - 4 === min ? range.concat([min]) : range;
-                        case cfg.value === "mark":
-                            //TODO: remove axisBottom later?
-                            var d3_axis = d3_axisBottom(scale[coord]).ticks(8);
-                            return d3_axis.scale().ticks(d3_axis.ticks()[0]).reverse();
-                    }
-                };
-
-                this.init = function (data, scale) {
-                    axis = d3_select(".axis-" + coord).attr("class", "axis-" + cfg.value);
-                };
-
-                this.update = function (opt, scale) {
-                    var steps = getSteps(scale);
-
-                    var divHide = undefined;
-                    var axisSize = document.querySelector(".js-chart").getBoundingClientRect();
-                    switch (coord) {
-                        case "x":
-                            divHide = Math.ceil(24 * steps.length / (axisSize.width - 30));break;
-                        case "y":
-                            divHide = Math.ceil(12 * steps.length / (axisSize.height - 30));break;
-                    }
-                    //console.log(coord, steps.length, divHide);
-
-                    line = axis.selectAll("line").data(steps);
-                    text = axis.selectAll("text").data(steps);
-
-                    // exit
-                    line.exit().remove();
-                    text.exit().remove();
-
-                    // enter
-                    //window.setTimeout(() => {
-
-                    line.enter().append("line").attr("opacity", 0).transition().duration(opt.duration * 1000)
-                    //.attr("opacity", 1)
-                    .attr("opacity", function (d, i) {
-                        return i % divHide === 0 ? 1 : 0.5;
-                    }).attr("x1", function (d) {
-                        return 0;
-                    }).attr("x2", function (d) {
-                        return "95.5%";
-                    }).attr("y1", function (d) {
-                        return 0;
-                    }).attr("y2", function (d) {
-                        return "99%";
-                    }).attr(coord + "1", function (d) {
-                        return scale[coord](d) + "%";
-                    }).attr(coord + "2", function (d) {
-                        return scale[coord](d) + "%";
-                    });
-
-                    text.enter().append("text").transition().duration(opt.duration * 1000).attr("x", function (d) {
-                        return "101%";
-                    }).attr("y", function (d) {
-                        return "100%";
-                    }).attr("dy", coord === "x" ? ".71em" : ".3em").attr(coord, function (d) {
-                        return scale[coord](d) + "%";
-                    }).attr("opacity", function (d, i) {
-                        return i % divHide === 0 ? 1 : 0;
-                    }).text(function (d) {
-                        return Math.round(Math.abs(d) * 100) / 100;
-                    });
-
-                    //}, (opt.duration-1)*1000);
-
-                    // update
-                    line.transition().duration(opt.duration * 1000).attr("opacity", function (d, i) {
-                        return i % divHide === 0 ? 1 : 0.5;
-                    }).attr(coord + "1", function (d) {
-                        return scale[coord](d) + "%";
-                    }).attr(coord + "2", function (d) {
-                        return scale[coord](d) + "%";
-                    });
-
-                    text.transition().duration(opt.duration * 1000).attr("dy", coord === "x" ? ".71em" : ".3em").attr(coord, function (d) {
-                        return scale[coord](d) + "%";
-                    }).attr("opacity", function (d, i) {
-                        return i % divHide === 0 ? 1 : 0;
-                    }).text(function (d) {
-                        return Math.round(Math.abs(d) * 100) / 100;
-                    });
-                };
-            });
-        }
-    };
-});
-$__System.registerDynamic("48", [], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  var $Object = Object;
-  module.exports = {
-    create: $Object.create,
-    getProto: $Object.getPrototypeOf,
-    isEnum: {}.propertyIsEnumerable,
-    getDesc: $Object.getOwnPropertyDescriptor,
-    setDesc: $Object.defineProperty,
-    setDescs: $Object.defineProperties,
-    getKeys: $Object.keys,
-    getNames: $Object.getOwnPropertyNames,
-    getSymbols: $Object.getOwnPropertySymbols,
-    each: [].forEach
-  };
-  return module.exports;
-});
-
-$__System.registerDynamic("49", ["48"], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  var $ = $__require('48');
-  module.exports = function defineProperties(T, D) {
-    return $.setDescs(T, D);
-  };
-  return module.exports;
-});
-
-$__System.registerDynamic("4a", ["49"], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  module.exports = {
-    "default": $__require('49'),
-    __esModule: true
-  };
-  return module.exports;
-});
-
-$__System.register("36", ["4a", "1d"], function (_export) {
-    var _Object$defineProperties, utils, minWidth, padding, size, cols, width, height, chart, colors, sync, defaultHeaderTexts, point;
-
-    return {
-        setters: [function (_a) {
-            _Object$defineProperties = _a["default"];
-        }, function (_d) {
-            utils = _d["default"];
-        }],
-        execute: function () {
-            "use strict";
-
-            minWidth = 320;
-            padding = 20;
-
-            // window
-            size = utils.getWindowSize();
-            cols = Math.floor(size.w / minWidth);
-
-            // chart
-            width = (cols > 0 ? Math.round(size.w / cols) : minWidth) - padding * 2 - 1;
-            height = Math.round(width * 0.62) - padding * 2;
-            chart = {
-                w: width,
-                h: height,
-                padding: padding
-            };
-
-            _export("chart", chart);
-
-            // colors
-            colors = {
-                gold: "#fbdc00",
-                silver: "#C0C0C0",
-                bronze: "#CD7F32",
-                others: "#E0E0E0",
-                wr: "#333"
-            };
-
-            _export("colors", colors);
-
-            // sync state, scale, domain, ... ?
-            sync = _Object$defineProperties({
-                s: { x: null, y: null },
-                d: { x: null, y: null }
-            }, {
-                scale: {
-                    set: function set(s) {
-                        this.s.x = s.x;
-                        this.s.y = s.y;
-                        this.d.x = s.domain.x;
-                        this.d.y = s.domain.y;
-                        //console.log("year:", this.d.y, "mark:", this.d.x);
-                    },
-                    get: function get() {
-                        return this.s;
-                    },
-                    configurable: true,
-                    enumerable: true
-                },
-                domain: {
-                    get: function get() {
-                        return this.d;
-                    },
-                    configurable: true,
-                    enumerable: true
-                }
-            });
-
-            _export("sync", sync);
-
-            defaultHeaderTexts = {
-                headline: {
-                    "final": "2016 Olympic final result",
-                    "medal": "Olympic medalists",
-                    "world": "World record progression",
-                    "mixed": "All results"
-                },
-                standfirst: {
-                    "final": "",
-                    "medal": "",
-                    "world": "",
-                    "mixed": "Interactive with this chart to explore more details ..."
-                }
-            };
-
-            _export("defaultHeaderTexts", defaultHeaderTexts);
-
-            // highlight
-            point = _Object$defineProperties({
-                pt: null
-            }, {
-                obj: {
-                    set: function set(obj) {
-                        this.pt = pt;
-                    },
-                    get: function get() {
-                        return this.pt;
-                    },
-                    configurable: true,
-                    enumerable: true
-                }
-            });
-
-            _export("point", point);
-        }
-    };
-});
-$__System.register('b', ['35', '36', '40', '42', '44', '47', 'd', 'c'], function (_export) {
-    var calcScale, defaultHeaderTexts, d3_select, updateInfo, Dots, Axis, _Object$keys, d3_extent;
-
-    function getDomain(data) {
-        return {
-            x: d3_extent(data, function (d) {
-                return d.x;
-            }),
-            y: d3_extent(data, function (d) {
-                return d.y;
-            })
-        };
-    }
-
-    function getNextState(stateName) {
-        var stateList = ["final", "medal", "world", "mixed"];
-        var stateLen = stateList.length;
-        var stateNumbNext = (stateList.indexOf(stateName) + 1) % stateLen;
-        return stateList[stateNumbNext];
-    }
-
-    function toState(els, data, stateName) {
-        //window.setTimeout(() => {
-
-        var scale = calcScale(data.domain);
-        _Object$keys(els).forEach(function (key, i) {
-            els[key].update(data, scale, data.opacity[i]);
-        });
-
-        calcScale(data.domain);
-        d3_select(".js-chart").attr("data-state", stateName);
-
-        d3_select(".states").selectAll(".btn").classed("btn-focus", false);
-        d3_select(".btn-" + stateName).classed("btn-focus", true);
-
-        d3_select(".tooltip").selectAll(".count").classed("count-focus", false);
-        d3_select(".count-" + stateName).classed("count-focus", true);
-
-        var nextState = getNextState(stateName);
-        var nextText = defaultHeaderTexts.headline[nextState].toLowerCase();
-        var isReplay = nextState === "final";
-        d3_select(".js-state-current").text(defaultHeaderTexts.headline[stateName]);
-        d3_select(".js-state-next").text(isReplay ? "Replay" : "Next with " + nextText);
-        d3_select(".replay").style("opacity", isReplay ? 1 : 0);
-        d3_select(".arrow-right").style("opacity", isReplay ? 0 : 1);
-        d3_select(".btn-next").classed("btn-disable", true).style("pointer-events", "none");
-
-        // update info
-        updateInfo(stateName);
-
-        //}, (data.delay)*1000);
-    }
-    return {
-        setters: [function (_2) {
-            calcScale = _2['default'];
-        }, function (_6) {
-            defaultHeaderTexts = _6.defaultHeaderTexts;
-        }, function (_) {
-            d3_select = _.select;
-        }, function (_3) {
-            updateInfo = _3['default'];
-        }, function (_4) {
-            Dots = _4['default'];
-        }, function (_5) {
-            Axis = _5['default'];
-        }, function (_d) {
-            _Object$keys = _d['default'];
-        }, function (_c) {
-            d3_extent = _c.extent;
-        }],
-        execute: function () {
-            //import Grid from '../draw/grid';
-            'use strict';
-
-            _export('default', function (data, dataCombo) {
-                var domain = getDomain(dataCombo);
-                //console.log(domain);
-
-                // init, draw all
-                var scale = calcScale(domain);
-                var els = {};
-
-                els.dotsF = new Dots({
-                    dataset: "final",
-                    radius: 9
-                });
-                els.dotsF.init(data.finals, scale);
-
-                els.dotsM = new Dots({
-                    dataset: "medal",
-                    radius: 6
-                });
-                els.dotsM.init(data.medals, scale);
-
-                els.dotsW = new Dots({
-                    dataset: "world",
-                    radius: 3,
-                    color: "#333",
-                    stroke: "rgba(255, 255, 255, 0.25)"
-                });
-                els.dotsW.init(data.worlds, scale);
-
-                els.axisY = new Axis({ coord: "y", value: "year" });
-                els.axisY.init(dataCombo.map(function (d) {
-                    return d.y;
-                }), scale);
-
-                els.axisX = new Axis({ coord: "x", value: "mark" });
-                els.axisX.init(dataCombo.map(function (d) {
-                    return d.x;
-                }), scale);
-
-                // update with animations
-                var state = {};
-                state.final = {
-                    delay: 0,
-                    duration: 2,
-                    //domain: getDomain(data.finals.concat([data.medals[data.medals.length-1], data.worlds[data.worlds.length-1]])),
-                    domain: {
-                        x: [d3_extent(data.finals, function (d) {
-                            return d.x;
-                        })[0], 0],
-                        y: [2016, 2016]
-                    },
-                    opacity: [0.75, 0, 0]
-                };
-
-                var domainMedal = getDomain(data.finals.concat(data.medals));
-                domainMedal.x[1] = 0;
-                state.medal = {
-                    delay: 5,
-                    duration: 2,
-                    domain: domainMedal,
-                    opacity: [0.75, 0.5, 0]
-                };
-
-                state.world = {
-                    delay: 10,
-                    duration: 2,
-                    domain: getDomain(data.finals.concat(data.worlds)),
-                    opacity: [0.75, 0, 0.75]
-                };
-
-                state.mixed = {
-                    delay: 15,
-                    duration: 2,
-                    domain: domain,
-                    opacity: [0.75, 0.5, 0.75]
-                };
-
-                // default
-                toState(els, state.final, "final");
-                // play states
-                document.querySelector(".btn-play").addEventListener("click", function () {
-                    play();
-                });
-                var play = function play() {
-                    _Object$keys(state).map(function (key) {
-                        toState(els, state[key], [key]);
-                    });
-                };
-                //play();
-
-                // state on event
-                var btns = document.querySelectorAll(".btn");
-                btns.forEach(function (btn) {
-                    return btn.addEventListener("click", function (e) {
-                        var name = e.target.getAttribute("data-dots");
-                        var data = state[name];
-                        toState(els, { domain: data.domain, opacity: data.opacity, delay: 0, duration: 2 }, name);
-                    });
-                });
-
-                document.querySelector(".btn-next").addEventListener("click", function () {
-                    // current
-                    var stateName = d3_select(".js-chart").attr("data-state");
-                    // next
-                    var stateNameNext = getNextState(stateName);
-                    var stateDataNext = state[stateNameNext];
-
-                    toState(els, { domain: stateDataNext.domain, opacity: stateDataNext.opacity, delay: 0, duration: 2 }, stateNameNext);
-                });
-            });
-        }
-    };
-});
-$__System.registerDynamic("4b", [], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  "format cjs";
-  (function(global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) : typeof define === 'function' && define.amd ? define(['exports'], factory) : (factory((global.d3 = global.d3 || {})));
-  }(this, function(exports) {
-    'use strict';
-    function ascending(a, b) {
-      return a < b ? -1 : a > b ? 1 : a >= b ? 0 : NaN;
-    }
-    function bisector(compare) {
-      if (compare.length === 1)
-        compare = ascendingComparator(compare);
-      return {
-        left: function(a, x, lo, hi) {
-          if (lo == null)
-            lo = 0;
-          if (hi == null)
-            hi = a.length;
-          while (lo < hi) {
-            var mid = lo + hi >>> 1;
-            if (compare(a[mid], x) < 0)
-              lo = mid + 1;
-            else
-              hi = mid;
-          }
-          return lo;
-        },
-        right: function(a, x, lo, hi) {
-          if (lo == null)
-            lo = 0;
-          if (hi == null)
-            hi = a.length;
-          while (lo < hi) {
-            var mid = lo + hi >>> 1;
-            if (compare(a[mid], x) > 0)
-              hi = mid;
-            else
-              lo = mid + 1;
-          }
-          return lo;
-        }
-      };
-    }
-    function ascendingComparator(f) {
-      return function(d, x) {
-        return ascending(f(d), x);
-      };
-    }
-    var ascendingBisect = bisector(ascending);
-    var bisectRight = ascendingBisect.right;
-    var bisectLeft = ascendingBisect.left;
-    function descending(a, b) {
-      return b < a ? -1 : b > a ? 1 : b >= a ? 0 : NaN;
-    }
-    function number(x) {
-      return x === null ? NaN : +x;
-    }
-    function variance(array, f) {
-      var n = array.length,
-          m = 0,
-          a,
-          d,
-          s = 0,
-          i = -1,
-          j = 0;
-      if (f == null) {
-        while (++i < n) {
-          if (!isNaN(a = number(array[i]))) {
-            d = a - m;
-            m += d / ++j;
-            s += d * (a - m);
-          }
-        }
-      } else {
-        while (++i < n) {
-          if (!isNaN(a = number(f(array[i], i, array)))) {
-            d = a - m;
-            m += d / ++j;
-            s += d * (a - m);
-          }
-        }
-      }
-      if (j > 1)
-        return s / (j - 1);
-    }
-    function deviation(array, f) {
-      var v = variance(array, f);
-      return v ? Math.sqrt(v) : v;
-    }
-    function extent(array, f) {
-      var i = -1,
-          n = array.length,
-          a,
-          b,
-          c;
-      if (f == null) {
-        while (++i < n)
-          if ((b = array[i]) != null && b >= b) {
-            a = c = b;
-            break;
-          }
-        while (++i < n)
-          if ((b = array[i]) != null) {
-            if (a > b)
-              a = b;
-            if (c < b)
-              c = b;
-          }
-      } else {
-        while (++i < n)
-          if ((b = f(array[i], i, array)) != null && b >= b) {
-            a = c = b;
-            break;
-          }
-        while (++i < n)
-          if ((b = f(array[i], i, array)) != null) {
-            if (a > b)
-              a = b;
-            if (c < b)
-              c = b;
-          }
-      }
-      return [a, c];
-    }
-    var array = Array.prototype;
-    var slice = array.slice;
-    var map = array.map;
-    function constant(x) {
-      return function() {
-        return x;
-      };
-    }
-    function identity(x) {
-      return x;
-    }
-    function range(start, stop, step) {
-      start = +start, stop = +stop, step = (n = arguments.length) < 2 ? (stop = start, start = 0, 1) : n < 3 ? 1 : +step;
-      var i = -1,
-          n = Math.max(0, Math.ceil((stop - start) / step)) | 0,
-          range = new Array(n);
-      while (++i < n) {
-        range[i] = start + i * step;
-      }
-      return range;
-    }
-    var e10 = Math.sqrt(50);
-    var e5 = Math.sqrt(10);
-    var e2 = Math.sqrt(2);
-    function ticks(start, stop, count) {
-      var step = tickStep(start, stop, count);
-      return range(Math.ceil(start / step) * step, Math.floor(stop / step) * step + step / 2, step);
-    }
-    function tickStep(start, stop, count) {
-      var step0 = Math.abs(stop - start) / Math.max(0, count),
-          step1 = Math.pow(10, Math.floor(Math.log(step0) / Math.LN10)),
-          error = step0 / step1;
-      if (error >= e10)
-        step1 *= 10;
-      else if (error >= e5)
-        step1 *= 5;
-      else if (error >= e2)
-        step1 *= 2;
-      return stop < start ? -step1 : step1;
-    }
-    function sturges(values) {
-      return Math.ceil(Math.log(values.length) / Math.LN2) + 1;
-    }
-    function histogram() {
-      var value = identity,
-          domain = extent,
-          threshold = sturges;
-      function histogram(data) {
-        var i,
-            n = data.length,
-            x,
-            values = new Array(n);
-        for (i = 0; i < n; ++i) {
-          values[i] = value(data[i], i, data);
-        }
-        var xz = domain(values),
-            x0 = xz[0],
-            x1 = xz[1],
-            tz = threshold(values, x0, x1);
-        if (!Array.isArray(tz))
-          tz = ticks(x0, x1, tz);
-        var m = tz.length;
-        while (tz[0] <= x0)
-          tz.shift(), --m;
-        while (tz[m - 1] >= x1)
-          tz.pop(), --m;
-        var bins = new Array(m + 1),
-            bin;
-        for (i = 0; i <= m; ++i) {
-          bin = bins[i] = [];
-          bin.x0 = i > 0 ? tz[i - 1] : x0;
-          bin.x1 = i < m ? tz[i] : x1;
-        }
-        for (i = 0; i < n; ++i) {
-          x = values[i];
-          if (x0 <= x && x <= x1) {
-            bins[bisectRight(tz, x, 0, m)].push(data[i]);
-          }
-        }
-        return bins;
-      }
-      histogram.value = function(_) {
-        return arguments.length ? (value = typeof _ === "function" ? _ : constant(_), histogram) : value;
-      };
-      histogram.domain = function(_) {
-        return arguments.length ? (domain = typeof _ === "function" ? _ : constant([_[0], _[1]]), histogram) : domain;
-      };
-      histogram.thresholds = function(_) {
-        return arguments.length ? (threshold = typeof _ === "function" ? _ : Array.isArray(_) ? constant(slice.call(_)) : constant(_), histogram) : threshold;
-      };
-      return histogram;
-    }
-    function quantile(array, p, f) {
-      if (f == null)
-        f = number;
-      if (!(n = array.length))
-        return;
-      if ((p = +p) <= 0 || n < 2)
-        return +f(array[0], 0, array);
-      if (p >= 1)
-        return +f(array[n - 1], n - 1, array);
-      var n,
-          h = (n - 1) * p,
-          i = Math.floor(h),
-          a = +f(array[i], i, array),
-          b = +f(array[i + 1], i + 1, array);
-      return a + (b - a) * (h - i);
-    }
-    function freedmanDiaconis(values, min, max) {
-      values = map.call(values, number).sort(ascending);
-      return Math.ceil((max - min) / (2 * (quantile(values, 0.75) - quantile(values, 0.25)) * Math.pow(values.length, -1 / 3)));
-    }
-    function scott(values, min, max) {
-      return Math.ceil((max - min) / (3.5 * deviation(values) * Math.pow(values.length, -1 / 3)));
-    }
-    function max(array, f) {
-      var i = -1,
-          n = array.length,
-          a,
-          b;
-      if (f == null) {
-        while (++i < n)
-          if ((b = array[i]) != null && b >= b) {
-            a = b;
-            break;
-          }
-        while (++i < n)
-          if ((b = array[i]) != null && b > a)
-            a = b;
-      } else {
-        while (++i < n)
-          if ((b = f(array[i], i, array)) != null && b >= b) {
-            a = b;
-            break;
-          }
-        while (++i < n)
-          if ((b = f(array[i], i, array)) != null && b > a)
-            a = b;
-      }
-      return a;
-    }
-    function mean(array, f) {
-      var s = 0,
-          n = array.length,
-          a,
-          i = -1,
-          j = n;
-      if (f == null) {
-        while (++i < n)
-          if (!isNaN(a = number(array[i])))
-            s += a;
-          else
-            --j;
-      } else {
-        while (++i < n)
-          if (!isNaN(a = number(f(array[i], i, array))))
-            s += a;
-          else
-            --j;
-      }
-      if (j)
-        return s / j;
-    }
-    function median(array, f) {
-      var numbers = [],
-          n = array.length,
-          a,
-          i = -1;
-      if (f == null) {
-        while (++i < n)
-          if (!isNaN(a = number(array[i])))
-            numbers.push(a);
-      } else {
-        while (++i < n)
-          if (!isNaN(a = number(f(array[i], i, array))))
-            numbers.push(a);
-      }
-      return quantile(numbers.sort(ascending), 0.5);
-    }
-    function merge(arrays) {
-      var n = arrays.length,
-          m,
-          i = -1,
-          j = 0,
-          merged,
-          array;
-      while (++i < n)
-        j += arrays[i].length;
-      merged = new Array(j);
-      while (--n >= 0) {
-        array = arrays[n];
-        m = array.length;
-        while (--m >= 0) {
-          merged[--j] = array[m];
-        }
-      }
-      return merged;
-    }
-    function min(array, f) {
-      var i = -1,
-          n = array.length,
-          a,
-          b;
-      if (f == null) {
-        while (++i < n)
-          if ((b = array[i]) != null && b >= b) {
-            a = b;
-            break;
-          }
-        while (++i < n)
-          if ((b = array[i]) != null && a > b)
-            a = b;
-      } else {
-        while (++i < n)
-          if ((b = f(array[i], i, array)) != null && b >= b) {
-            a = b;
-            break;
-          }
-        while (++i < n)
-          if ((b = f(array[i], i, array)) != null && a > b)
-            a = b;
-      }
-      return a;
-    }
-    function pairs(array) {
-      var i = 0,
-          n = array.length - 1,
-          p = array[0],
-          pairs = new Array(n < 0 ? 0 : n);
-      while (i < n)
-        pairs[i] = [p, p = array[++i]];
-      return pairs;
-    }
-    function permute(array, indexes) {
-      var i = indexes.length,
-          permutes = new Array(i);
-      while (i--)
-        permutes[i] = array[indexes[i]];
-      return permutes;
-    }
-    function scan(array, compare) {
-      if (!(n = array.length))
-        return;
-      var i = 0,
-          n,
-          j = 0,
-          xi,
-          xj = array[j];
-      if (!compare)
-        compare = ascending;
-      while (++i < n)
-        if (compare(xi = array[i], xj) < 0 || compare(xj, xj) !== 0)
-          xj = xi, j = i;
-      if (compare(xj, xj) === 0)
-        return j;
-    }
-    function shuffle(array, i0, i1) {
-      var m = (i1 == null ? array.length : i1) - (i0 = i0 == null ? 0 : +i0),
-          t,
-          i;
-      while (m) {
-        i = Math.random() * m-- | 0;
-        t = array[m + i0];
-        array[m + i0] = array[i + i0];
-        array[i + i0] = t;
-      }
-      return array;
-    }
-    function sum(array, f) {
-      var s = 0,
-          n = array.length,
-          a,
-          i = -1;
-      if (f == null) {
-        while (++i < n)
-          if (a = +array[i])
-            s += a;
-      } else {
-        while (++i < n)
-          if (a = +f(array[i], i, array))
-            s += a;
-      }
-      return s;
-    }
-    function transpose(matrix) {
-      if (!(n = matrix.length))
-        return [];
-      for (var i = -1,
-          m = min(matrix, length),
-          transpose = new Array(m); ++i < m; ) {
-        for (var j = -1,
-            n,
-            row = transpose[i] = new Array(n); ++j < n; ) {
-          row[j] = matrix[j][i];
-        }
-      }
-      return transpose;
-    }
-    function length(d) {
-      return d.length;
-    }
-    function zip() {
-      return transpose(arguments);
-    }
-    exports.bisect = bisectRight;
-    exports.bisectRight = bisectRight;
-    exports.bisectLeft = bisectLeft;
-    exports.ascending = ascending;
-    exports.bisector = bisector;
-    exports.descending = descending;
-    exports.deviation = deviation;
-    exports.extent = extent;
-    exports.histogram = histogram;
-    exports.thresholdFreedmanDiaconis = freedmanDiaconis;
-    exports.thresholdScott = scott;
-    exports.thresholdSturges = sturges;
-    exports.max = max;
-    exports.mean = mean;
-    exports.median = median;
-    exports.merge = merge;
-    exports.min = min;
-    exports.pairs = pairs;
-    exports.permute = permute;
-    exports.quantile = quantile;
-    exports.range = range;
-    exports.scan = scan;
-    exports.shuffle = shuffle;
-    exports.sum = sum;
-    exports.ticks = ticks;
-    exports.tickStep = tickStep;
-    exports.transpose = transpose;
-    exports.variance = variance;
-    exports.zip = zip;
-    Object.defineProperty(exports, '__esModule', {value: true});
-  }));
-  return module.exports;
-});
-
-$__System.registerDynamic("c", ["4b"], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  module.exports = $__require('4b');
-  return module.exports;
-});
-
-$__System.register('4c', ['d', '1a', '1b', 'a', 'b', 'c'], function (_export) {
-    var _Object$keys, jsonRecord, jsonFinals, parseData, result, d3_extent;
-
-    return {
-        setters: [function (_d) {
-            _Object$keys = _d['default'];
-        }, function (_a) {
-            jsonRecord = _a['default'];
-        }, function (_b) {
-            jsonFinals = _b['default'];
-        }, function (_a2) {
-            parseData = _a2['default'];
-        }, function (_b2) {
-            result = _b2['default'];
-        }, function (_c) {
-            d3_extent = _c.extent;
-        }],
-        execute: function () {
-            'use strict';
-
-            _export('default', function () {
-                var data = parseData(jsonRecord, jsonFinals);
-                var dataCombo = data.finals.concat(data.medals, data.worlds);
-
-                var distWr = d3_extent(dataCombo, function (d) {
-                    return d.x;
-                })[1];
-                _Object$keys(data).forEach(function (dd) {
-                    // time to distance
-                    data[dd] = data[dd].map(function (dm) {
-                        dm.x = Math.round((dm.x - distWr) * 1000) / 1000;
-                        dm.attrs.dist = Math.abs(dm.x);
-                        return dm;
-                    });
-                    // sort
-                    data[dd].sort(function (d1, d2) {
-                        return d1.x - d2.x;
-                    });
-                });
-                console.log(data);
-
-                result(data, dataCombo);
-            });
-        }
-    };
-});
-$__System.registerDynamic("1d", [], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  exports.getWindowSize = () => {
-    let d = document;
-    let e = d.documentElement;
-    let g = d.getElementsByTagName('body')[0];
-    let w = window.innerWidth || e.clientWidth || g.clientWidth;
-    let h = window.innerHeight || e.clientHeight || g.clientHeight;
-    return {
-      w: w,
-      h: h
-    };
-  };
-  exports.num2class = (num) => {
-    return num.toString().replace(".", "_");
-  };
-  exports.str2class = (str) => {
-    return str.replace(/\s/g, "_");
-  };
-  exports.nlist2arr = (nodelist) => {
-    return Array.prototype.slice.call(nodelist);
-  };
-  return module.exports;
-});
-
-$__System.register("4d", [], function (_export) {
-  "use strict";
-
-  return {
-    setters: [],
-    execute: function () {
-      _export("default", function (func, wait, options) {
-        var context, args, result;
-        var timeout = null;
-        var previous = 0;
-        if (!options) options = {};
-        var later = function later() {
-          previous = options.leading === false ? 0 : Date.now();
-          timeout = null;
-          result = func.apply(context, args);
-          if (!timeout) context = args = null;
-        };
-        return function () {
-          var now = Date.now();
-          if (!previous && options.leading === false) previous = now;
-          var remaining = wait - (now - previous);
-          context = this;
-          args = arguments;
-          if (remaining <= 0 || remaining > wait) {
-            if (timeout) {
-              clearTimeout(timeout);
-              timeout = null;
-            }
-            previous = now;
-            result = func.apply(context, args);
-            if (!timeout) context = args = null;
-          } else if (!timeout && options.trailing !== false) {
-            timeout = setTimeout(later, remaining);
-          }
-          return result;
-        };
-      });
-
-      ;
-    }
-  };
-});
-$__System.registerDynamic("4e", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -12817,33 +11337,1920 @@ $__System.registerDynamic("4e", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("40", ["4e"], true, function($__require, exports, module) {
+$__System.registerDynamic("2e", ["45"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('4e');
+  module.exports = $__require('45');
   return module.exports;
 });
 
-$__System.register('1', ['3', '4', '5', '6', '9', '10', '13', '16', '19', '40', 'a', '4c', '1d', '4d'], function (_export) {
+$__System.registerDynamic("46", [], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  "format cjs";
+  (function(global, factory) {
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) : typeof define === 'function' && define.amd ? define(['exports'], factory) : (factory((global.d3 = global.d3 || {})));
+  }(this, function(exports) {
+    'use strict';
+    var slice = Array.prototype.slice;
+    function identity(x) {
+      return x;
+    }
+    var top = 1;
+    var right = 2;
+    var bottom = 3;
+    var left = 4;
+    var epsilon = 1e-6;
+    function translateX(scale0, scale1, d) {
+      var x = scale0(d);
+      return "translate(" + (isFinite(x) ? x : scale1(d)) + ",0)";
+    }
+    function translateY(scale0, scale1, d) {
+      var y = scale0(d);
+      return "translate(0," + (isFinite(y) ? y : scale1(d)) + ")";
+    }
+    function center(scale) {
+      var width = scale.bandwidth() / 2;
+      return function(d) {
+        return scale(d) + width;
+      };
+    }
+    function entering() {
+      return !this.__axis;
+    }
+    function axis(orient, scale) {
+      var tickArguments = [],
+          tickValues = null,
+          tickFormat = null,
+          tickSizeInner = 6,
+          tickSizeOuter = 6,
+          tickPadding = 3;
+      function axis(context) {
+        var values = tickValues == null ? (scale.ticks ? scale.ticks.apply(scale, tickArguments) : scale.domain()) : tickValues,
+            format = tickFormat == null ? (scale.tickFormat ? scale.tickFormat.apply(scale, tickArguments) : identity) : tickFormat,
+            spacing = Math.max(tickSizeInner, 0) + tickPadding,
+            transform = orient === top || orient === bottom ? translateX : translateY,
+            range = scale.range(),
+            range0 = range[0] + 0.5,
+            range1 = range[range.length - 1] + 0.5,
+            position = (scale.bandwidth ? center : identity)(scale.copy()),
+            selection = context.selection ? context.selection() : context,
+            path = selection.selectAll(".domain").data([null]),
+            tick = selection.selectAll(".tick").data(values, scale).order(),
+            tickExit = tick.exit(),
+            tickEnter = tick.enter().append("g").attr("class", "tick"),
+            line = tick.select("line"),
+            text = tick.select("text"),
+            k = orient === top || orient === left ? -1 : 1,
+            x,
+            y = orient === left || orient === right ? (x = "x", "y") : (x = "y", "x");
+        path = path.merge(path.enter().insert("path", ".tick").attr("class", "domain").attr("stroke", "#000"));
+        tick = tick.merge(tickEnter);
+        line = line.merge(tickEnter.append("line").attr("stroke", "#000").attr(x + "2", k * tickSizeInner).attr(y + "1", 0.5).attr(y + "2", 0.5));
+        text = text.merge(tickEnter.append("text").attr("fill", "#000").attr(x, k * spacing).attr(y, 0.5).attr("dy", orient === top ? "0em" : orient === bottom ? ".71em" : ".32em"));
+        if (context !== selection) {
+          path = path.transition(context);
+          tick = tick.transition(context);
+          line = line.transition(context);
+          text = text.transition(context);
+          tickExit = tickExit.transition(context).attr("opacity", epsilon).attr("transform", function(d) {
+            return transform(position, this.parentNode.__axis || position, d);
+          });
+          tickEnter.attr("opacity", epsilon).attr("transform", function(d) {
+            return transform(this.parentNode.__axis || position, position, d);
+          });
+        }
+        tickExit.remove();
+        path.attr("d", orient === left || orient == right ? "M" + k * tickSizeOuter + "," + range0 + "H0.5V" + range1 + "H" + k * tickSizeOuter : "M" + range0 + "," + k * tickSizeOuter + "V0.5H" + range1 + "V" + k * tickSizeOuter);
+        tick.attr("opacity", 1).attr("transform", function(d) {
+          return transform(position, position, d);
+        });
+        line.attr(x + "2", k * tickSizeInner);
+        text.attr(x, k * spacing).text(format);
+        selection.filter(entering).attr("fill", "none").attr("font-size", 10).attr("font-family", "sans-serif").attr("text-anchor", orient === right ? "start" : orient === left ? "end" : "middle");
+        selection.each(function() {
+          this.__axis = position;
+        });
+      }
+      axis.scale = function(_) {
+        return arguments.length ? (scale = _, axis) : scale;
+      };
+      axis.ticks = function() {
+        return tickArguments = slice.call(arguments), axis;
+      };
+      axis.tickArguments = function(_) {
+        return arguments.length ? (tickArguments = _ == null ? [] : slice.call(_), axis) : tickArguments.slice();
+      };
+      axis.tickValues = function(_) {
+        return arguments.length ? (tickValues = _ == null ? null : slice.call(_), axis) : tickValues && tickValues.slice();
+      };
+      axis.tickFormat = function(_) {
+        return arguments.length ? (tickFormat = _, axis) : tickFormat;
+      };
+      axis.tickSize = function(_) {
+        return arguments.length ? (tickSizeInner = tickSizeOuter = +_, axis) : tickSizeInner;
+      };
+      axis.tickSizeInner = function(_) {
+        return arguments.length ? (tickSizeInner = +_, axis) : tickSizeInner;
+      };
+      axis.tickSizeOuter = function(_) {
+        return arguments.length ? (tickSizeOuter = +_, axis) : tickSizeOuter;
+      };
+      axis.tickPadding = function(_) {
+        return arguments.length ? (tickPadding = +_, axis) : tickPadding;
+      };
+      return axis;
+    }
+    function axisTop(scale) {
+      return axis(top, scale);
+    }
+    function axisRight(scale) {
+      return axis(right, scale);
+    }
+    function axisBottom(scale) {
+      return axis(bottom, scale);
+    }
+    function axisLeft(scale) {
+      return axis(left, scale);
+    }
+    exports.axisTop = axisTop;
+    exports.axisRight = axisRight;
+    exports.axisBottom = axisBottom;
+    exports.axisLeft = axisLeft;
+    Object.defineProperty(exports, '__esModule', {value: true});
+  }));
+  return module.exports;
+});
+
+$__System.registerDynamic("47", ["46"], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  module.exports = $__require('46');
+  return module.exports;
+});
+
+$__System.registerDynamic("48", [], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  var $Object = Object;
+  module.exports = {
+    create: $Object.create,
+    getProto: $Object.getPrototypeOf,
+    isEnum: {}.propertyIsEnumerable,
+    getDesc: $Object.getOwnPropertyDescriptor,
+    setDesc: $Object.defineProperty,
+    setDescs: $Object.defineProperties,
+    getKeys: $Object.keys,
+    getNames: $Object.getOwnPropertyNames,
+    getSymbols: $Object.getOwnPropertySymbols,
+    each: [].forEach
+  };
+  return module.exports;
+});
+
+$__System.registerDynamic("49", ["48"], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  var $ = $__require('48');
+  module.exports = function defineProperties(T, D) {
+    return $.setDescs(T, D);
+  };
+  return module.exports;
+});
+
+$__System.registerDynamic("4a", ["49"], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  module.exports = {
+    "default": $__require('49'),
+    __esModule: true
+  };
+  return module.exports;
+});
+
+$__System.registerDynamic("1e", [], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  exports.getWindowSize = () => {
+    let d = document;
+    let e = d.documentElement;
+    let g = d.getElementsByTagName('body')[0];
+    let w = window.innerWidth || e.clientWidth || g.clientWidth;
+    let h = window.innerHeight || e.clientHeight || g.clientHeight;
+    return {
+      w: w,
+      h: h
+    };
+  };
+  exports.num2class = (num) => {
+    return num.toString().replace(".", "_");
+  };
+  exports.str2class = (str) => {
+    return str.replace(/\s/g, "_");
+  };
+  exports.nlist2arr = (nodelist) => {
+    return Array.prototype.slice.call(nodelist);
+  };
+  return module.exports;
+});
+
+$__System.registerDynamic("4b", [], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  "format cjs";
+  (function(global, factory) {
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) : typeof define === 'function' && define.amd ? define(['exports'], factory) : (factory((global.d3 = global.d3 || {})));
+  }(this, function(exports) {
+    'use strict';
+    var prefix = "$";
+    function Map() {}
+    Map.prototype = map.prototype = {
+      constructor: Map,
+      has: function(key) {
+        return (prefix + key) in this;
+      },
+      get: function(key) {
+        return this[prefix + key];
+      },
+      set: function(key, value) {
+        this[prefix + key] = value;
+        return this;
+      },
+      remove: function(key) {
+        var property = prefix + key;
+        return property in this && delete this[property];
+      },
+      clear: function() {
+        for (var property in this)
+          if (property[0] === prefix)
+            delete this[property];
+      },
+      keys: function() {
+        var keys = [];
+        for (var property in this)
+          if (property[0] === prefix)
+            keys.push(property.slice(1));
+        return keys;
+      },
+      values: function() {
+        var values = [];
+        for (var property in this)
+          if (property[0] === prefix)
+            values.push(this[property]);
+        return values;
+      },
+      entries: function() {
+        var entries = [];
+        for (var property in this)
+          if (property[0] === prefix)
+            entries.push({
+              key: property.slice(1),
+              value: this[property]
+            });
+        return entries;
+      },
+      size: function() {
+        var size = 0;
+        for (var property in this)
+          if (property[0] === prefix)
+            ++size;
+        return size;
+      },
+      empty: function() {
+        for (var property in this)
+          if (property[0] === prefix)
+            return false;
+        return true;
+      },
+      each: function(f) {
+        for (var property in this)
+          if (property[0] === prefix)
+            f(this[property], property.slice(1), this);
+      }
+    };
+    function map(object, f) {
+      var map = new Map;
+      if (object instanceof Map)
+        object.each(function(value, key) {
+          map.set(key, value);
+        });
+      else if (Array.isArray(object)) {
+        var i = -1,
+            n = object.length,
+            o;
+        if (f == null)
+          while (++i < n)
+            map.set(i, object[i]);
+        else
+          while (++i < n)
+            map.set(f(o = object[i], i, object), o);
+      } else if (object)
+        for (var key in object)
+          map.set(key, object[key]);
+      return map;
+    }
+    function nest() {
+      var keys = [],
+          sortKeys = [],
+          sortValues,
+          rollup,
+          nest;
+      function apply(array, depth, createResult, setResult) {
+        if (depth >= keys.length)
+          return rollup != null ? rollup(array) : (sortValues != null ? array.sort(sortValues) : array);
+        var i = -1,
+            n = array.length,
+            key = keys[depth++],
+            keyValue,
+            value,
+            valuesByKey = map(),
+            values,
+            result = createResult();
+        while (++i < n) {
+          if (values = valuesByKey.get(keyValue = key(value = array[i]) + "")) {
+            values.push(value);
+          } else {
+            valuesByKey.set(keyValue, [value]);
+          }
+        }
+        valuesByKey.each(function(values, key) {
+          setResult(result, key, apply(values, depth, createResult, setResult));
+        });
+        return result;
+      }
+      function entries(map, depth) {
+        if (++depth > keys.length)
+          return map;
+        var array,
+            sortKey = sortKeys[depth - 1];
+        if (rollup != null && depth >= keys.length)
+          array = map.entries();
+        else
+          array = [], map.each(function(v, k) {
+            array.push({
+              key: k,
+              values: entries(v, depth)
+            });
+          });
+        return sortKey != null ? array.sort(function(a, b) {
+          return sortKey(a.key, b.key);
+        }) : array;
+      }
+      return nest = {
+        object: function(array) {
+          return apply(array, 0, createObject, setObject);
+        },
+        map: function(array) {
+          return apply(array, 0, createMap, setMap);
+        },
+        entries: function(array) {
+          return entries(apply(array, 0, createMap, setMap), 0);
+        },
+        key: function(d) {
+          keys.push(d);
+          return nest;
+        },
+        sortKeys: function(order) {
+          sortKeys[keys.length - 1] = order;
+          return nest;
+        },
+        sortValues: function(order) {
+          sortValues = order;
+          return nest;
+        },
+        rollup: function(f) {
+          rollup = f;
+          return nest;
+        }
+      };
+    }
+    function createObject() {
+      return {};
+    }
+    function setObject(object, key, value) {
+      object[key] = value;
+    }
+    function createMap() {
+      return map();
+    }
+    function setMap(map, key, value) {
+      map.set(key, value);
+    }
+    function Set() {}
+    var proto = map.prototype;
+    Set.prototype = set.prototype = {
+      constructor: Set,
+      has: proto.has,
+      add: function(value) {
+        value += "";
+        this[prefix + value] = value;
+        return this;
+      },
+      remove: proto.remove,
+      clear: proto.clear,
+      values: proto.keys,
+      size: proto.size,
+      empty: proto.empty,
+      each: proto.each
+    };
+    function set(object, f) {
+      var set = new Set;
+      if (object instanceof Set)
+        object.each(function(value) {
+          set.add(value);
+        });
+      else if (object) {
+        var i = -1,
+            n = object.length;
+        if (f == null)
+          while (++i < n)
+            set.add(object[i]);
+        else
+          while (++i < n)
+            set.add(f(object[i], i, object));
+      }
+      return set;
+    }
+    function keys(map) {
+      var keys = [];
+      for (var key in map)
+        keys.push(key);
+      return keys;
+    }
+    function values(map) {
+      var values = [];
+      for (var key in map)
+        values.push(map[key]);
+      return values;
+    }
+    function entries(map) {
+      var entries = [];
+      for (var key in map)
+        entries.push({
+          key: key,
+          value: map[key]
+        });
+      return entries;
+    }
+    exports.nest = nest;
+    exports.set = set;
+    exports.map = map;
+    exports.keys = keys;
+    exports.values = values;
+    exports.entries = entries;
+    Object.defineProperty(exports, '__esModule', {value: true});
+  }));
+  return module.exports;
+});
+
+$__System.registerDynamic("36", ["4b"], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  module.exports = $__require('4b');
+  return module.exports;
+});
+
+$__System.registerDynamic("4c", [], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  "format cjs";
+  (function(global, factory) {
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) : typeof define === 'function' && define.amd ? define(['exports'], factory) : (factory((global.d3 = global.d3 || {})));
+  }(this, function(exports) {
+    'use strict';
+    var noop = {value: function() {}};
+    function dispatch() {
+      for (var i = 0,
+          n = arguments.length,
+          _ = {},
+          t; i < n; ++i) {
+        if (!(t = arguments[i] + "") || (t in _))
+          throw new Error("illegal type: " + t);
+        _[t] = [];
+      }
+      return new Dispatch(_);
+    }
+    function Dispatch(_) {
+      this._ = _;
+    }
+    function parseTypenames(typenames, types) {
+      return typenames.trim().split(/^|\s+/).map(function(t) {
+        var name = "",
+            i = t.indexOf(".");
+        if (i >= 0)
+          name = t.slice(i + 1), t = t.slice(0, i);
+        if (t && !types.hasOwnProperty(t))
+          throw new Error("unknown type: " + t);
+        return {
+          type: t,
+          name: name
+        };
+      });
+    }
+    Dispatch.prototype = dispatch.prototype = {
+      constructor: Dispatch,
+      on: function(typename, callback) {
+        var _ = this._,
+            T = parseTypenames(typename + "", _),
+            t,
+            i = -1,
+            n = T.length;
+        if (arguments.length < 2) {
+          while (++i < n)
+            if ((t = (typename = T[i]).type) && (t = get(_[t], typename.name)))
+              return t;
+          return;
+        }
+        if (callback != null && typeof callback !== "function")
+          throw new Error("invalid callback: " + callback);
+        while (++i < n) {
+          if (t = (typename = T[i]).type)
+            _[t] = set(_[t], typename.name, callback);
+          else if (callback == null)
+            for (t in _)
+              _[t] = set(_[t], typename.name, null);
+        }
+        return this;
+      },
+      copy: function() {
+        var copy = {},
+            _ = this._;
+        for (var t in _)
+          copy[t] = _[t].slice();
+        return new Dispatch(copy);
+      },
+      call: function(type, that) {
+        if ((n = arguments.length - 2) > 0)
+          for (var args = new Array(n),
+              i = 0,
+              n,
+              t; i < n; ++i)
+            args[i] = arguments[i + 2];
+        if (!this._.hasOwnProperty(type))
+          throw new Error("unknown type: " + type);
+        for (t = this._[type], i = 0, n = t.length; i < n; ++i)
+          t[i].value.apply(that, args);
+      },
+      apply: function(type, that, args) {
+        if (!this._.hasOwnProperty(type))
+          throw new Error("unknown type: " + type);
+        for (var t = this._[type],
+            i = 0,
+            n = t.length; i < n; ++i)
+          t[i].value.apply(that, args);
+      }
+    };
+    function get(type, name) {
+      for (var i = 0,
+          n = type.length,
+          c; i < n; ++i) {
+        if ((c = type[i]).name === name) {
+          return c.value;
+        }
+      }
+    }
+    function set(type, name, callback) {
+      for (var i = 0,
+          n = type.length; i < n; ++i) {
+        if (type[i].name === name) {
+          type[i] = noop, type = type.slice(0, i).concat(type.slice(i + 1));
+          break;
+        }
+      }
+      if (callback != null)
+        type.push({
+          name: name,
+          value: callback
+        });
+      return type;
+    }
+    exports.dispatch = dispatch;
+    Object.defineProperty(exports, '__esModule', {value: true});
+  }));
+  return module.exports;
+});
+
+$__System.registerDynamic("41", ["4c"], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  module.exports = $__require('4c');
+  return module.exports;
+});
+
+$__System.registerDynamic("4d", [], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  "format cjs";
+  (function(global, factory) {
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) : typeof define === 'function' && define.amd ? define(['exports'], factory) : (factory((global.d3 = global.d3 || {})));
+  }(this, function(exports) {
+    'use strict';
+    function objectConverter(columns) {
+      return new Function("d", "return {" + columns.map(function(name, i) {
+        return JSON.stringify(name) + ": d[" + i + "]";
+      }).join(",") + "}");
+    }
+    function customConverter(columns, f) {
+      var object = objectConverter(columns);
+      return function(row, i) {
+        return f(object(row), i, columns);
+      };
+    }
+    function inferColumns(rows) {
+      var columnSet = Object.create(null),
+          columns = [];
+      rows.forEach(function(row) {
+        for (var column in row) {
+          if (!(column in columnSet)) {
+            columns.push(columnSet[column] = column);
+          }
+        }
+      });
+      return columns;
+    }
+    function dsv(delimiter) {
+      var reFormat = new RegExp("[\"" + delimiter + "\n]"),
+          delimiterCode = delimiter.charCodeAt(0);
+      function parse(text, f) {
+        var convert,
+            columns,
+            rows = parseRows(text, function(row, i) {
+              if (convert)
+                return convert(row, i - 1);
+              columns = row, convert = f ? customConverter(row, f) : objectConverter(row);
+            });
+        rows.columns = columns;
+        return rows;
+      }
+      function parseRows(text, f) {
+        var EOL = {},
+            EOF = {},
+            rows = [],
+            N = text.length,
+            I = 0,
+            n = 0,
+            t,
+            eol;
+        function token() {
+          if (I >= N)
+            return EOF;
+          if (eol)
+            return eol = false, EOL;
+          var j = I,
+              c;
+          if (text.charCodeAt(j) === 34) {
+            var i = j;
+            while (i++ < N) {
+              if (text.charCodeAt(i) === 34) {
+                if (text.charCodeAt(i + 1) !== 34)
+                  break;
+                ++i;
+              }
+            }
+            I = i + 2;
+            c = text.charCodeAt(i + 1);
+            if (c === 13) {
+              eol = true;
+              if (text.charCodeAt(i + 2) === 10)
+                ++I;
+            } else if (c === 10) {
+              eol = true;
+            }
+            return text.slice(j + 1, i).replace(/""/g, "\"");
+          }
+          while (I < N) {
+            var k = 1;
+            c = text.charCodeAt(I++);
+            if (c === 10)
+              eol = true;
+            else if (c === 13) {
+              eol = true;
+              if (text.charCodeAt(I) === 10)
+                ++I, ++k;
+            } else if (c !== delimiterCode)
+              continue;
+            return text.slice(j, I - k);
+          }
+          return text.slice(j);
+        }
+        while ((t = token()) !== EOF) {
+          var a = [];
+          while (t !== EOL && t !== EOF) {
+            a.push(t);
+            t = token();
+          }
+          if (f && (a = f(a, n++)) == null)
+            continue;
+          rows.push(a);
+        }
+        return rows;
+      }
+      function format(rows, columns) {
+        if (columns == null)
+          columns = inferColumns(rows);
+        return [columns.map(formatValue).join(delimiter)].concat(rows.map(function(row) {
+          return columns.map(function(column) {
+            return formatValue(row[column]);
+          }).join(delimiter);
+        })).join("\n");
+      }
+      function formatRows(rows) {
+        return rows.map(formatRow).join("\n");
+      }
+      function formatRow(row) {
+        return row.map(formatValue).join(delimiter);
+      }
+      function formatValue(text) {
+        return text == null ? "" : reFormat.test(text += "") ? "\"" + text.replace(/\"/g, "\"\"") + "\"" : text;
+      }
+      return {
+        parse: parse,
+        parseRows: parseRows,
+        format: format,
+        formatRows: formatRows
+      };
+    }
+    var csv = dsv(",");
+    var csvParse = csv.parse;
+    var csvParseRows = csv.parseRows;
+    var csvFormat = csv.format;
+    var csvFormatRows = csv.formatRows;
+    var tsv = dsv("\t");
+    var tsvParse = tsv.parse;
+    var tsvParseRows = tsv.parseRows;
+    var tsvFormat = tsv.format;
+    var tsvFormatRows = tsv.formatRows;
+    exports.dsvFormat = dsv;
+    exports.csvParse = csvParse;
+    exports.csvParseRows = csvParseRows;
+    exports.csvFormat = csvFormat;
+    exports.csvFormatRows = csvFormatRows;
+    exports.tsvParse = tsvParse;
+    exports.tsvParseRows = tsvParseRows;
+    exports.tsvFormat = tsvFormat;
+    exports.tsvFormatRows = tsvFormatRows;
+    Object.defineProperty(exports, '__esModule', {value: true});
+  }));
+  return module.exports;
+});
+
+$__System.registerDynamic("4e", ["4d"], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  module.exports = $__require('4d');
+  return module.exports;
+});
+
+$__System.registerDynamic("4f", ["36", "41", "4e"], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  "format cjs";
+  (function(global, factory) {
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('36'), $__require('41'), $__require('4e')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-collection', 'd3-dispatch', 'd3-dsv'], factory) : (factory((global.d3 = global.d3 || {}), global.d3, global.d3, global.d3));
+  }(this, function(exports, d3Collection, d3Dispatch, d3Dsv) {
+    'use strict';
+    function request(url, callback) {
+      var request,
+          event = d3Dispatch.dispatch("beforesend", "progress", "load", "error"),
+          mimeType,
+          headers = d3Collection.map(),
+          xhr = new XMLHttpRequest,
+          user = null,
+          password = null,
+          response,
+          responseType,
+          timeout = 0;
+      if (typeof XDomainRequest !== "undefined" && !("withCredentials" in xhr) && /^(http(s)?:)?\/\//.test(url))
+        xhr = new XDomainRequest;
+      "onload" in xhr ? xhr.onload = xhr.onerror = xhr.ontimeout = respond : xhr.onreadystatechange = function(o) {
+        xhr.readyState > 3 && respond(o);
+      };
+      function respond(o) {
+        var status = xhr.status,
+            result;
+        if (!status && hasResponse(xhr) || status >= 200 && status < 300 || status === 304) {
+          if (response) {
+            try {
+              result = response.call(request, xhr);
+            } catch (e) {
+              event.call("error", request, e);
+              return;
+            }
+          } else {
+            result = xhr;
+          }
+          event.call("load", request, result);
+        } else {
+          event.call("error", request, o);
+        }
+      }
+      xhr.onprogress = function(e) {
+        event.call("progress", request, e);
+      };
+      request = {
+        header: function(name, value) {
+          name = (name + "").toLowerCase();
+          if (arguments.length < 2)
+            return headers.get(name);
+          if (value == null)
+            headers.remove(name);
+          else
+            headers.set(name, value + "");
+          return request;
+        },
+        mimeType: function(value) {
+          if (!arguments.length)
+            return mimeType;
+          mimeType = value == null ? null : value + "";
+          return request;
+        },
+        responseType: function(value) {
+          if (!arguments.length)
+            return responseType;
+          responseType = value;
+          return request;
+        },
+        timeout: function(value) {
+          if (!arguments.length)
+            return timeout;
+          timeout = +value;
+          return request;
+        },
+        user: function(value) {
+          return arguments.length < 1 ? user : (user = value == null ? null : value + "", request);
+        },
+        password: function(value) {
+          return arguments.length < 1 ? password : (password = value == null ? null : value + "", request);
+        },
+        response: function(value) {
+          response = value;
+          return request;
+        },
+        get: function(data, callback) {
+          return request.send("GET", data, callback);
+        },
+        post: function(data, callback) {
+          return request.send("POST", data, callback);
+        },
+        send: function(method, data, callback) {
+          xhr.open(method, url, true, user, password);
+          if (mimeType != null && !headers.has("accept"))
+            headers.set("accept", mimeType + ",*/*");
+          if (xhr.setRequestHeader)
+            headers.each(function(value, name) {
+              xhr.setRequestHeader(name, value);
+            });
+          if (mimeType != null && xhr.overrideMimeType)
+            xhr.overrideMimeType(mimeType);
+          if (responseType != null)
+            xhr.responseType = responseType;
+          if (timeout > 0)
+            xhr.timeout = timeout;
+          if (callback == null && typeof data === "function")
+            callback = data, data = null;
+          if (callback != null && callback.length === 1)
+            callback = fixCallback(callback);
+          if (callback != null)
+            request.on("error", callback).on("load", function(xhr) {
+              callback(null, xhr);
+            });
+          event.call("beforesend", request, xhr);
+          xhr.send(data == null ? null : data);
+          return request;
+        },
+        abort: function() {
+          xhr.abort();
+          return request;
+        },
+        on: function() {
+          var value = event.on.apply(event, arguments);
+          return value === event ? request : value;
+        }
+      };
+      if (callback != null) {
+        if (typeof callback !== "function")
+          throw new Error("invalid callback: " + callback);
+        return request.get(callback);
+      }
+      return request;
+    }
+    function fixCallback(callback) {
+      return function(error, xhr) {
+        callback(error == null ? xhr : null);
+      };
+    }
+    function hasResponse(xhr) {
+      var type = xhr.responseType;
+      return type && type !== "text" ? xhr.response : xhr.responseText;
+    }
+    function type(defaultMimeType, response) {
+      return function(url, callback) {
+        var r = request(url).mimeType(defaultMimeType).response(response);
+        if (callback != null) {
+          if (typeof callback !== "function")
+            throw new Error("invalid callback: " + callback);
+          return r.get(callback);
+        }
+        return r;
+      };
+    }
+    var html = type("text/html", function(xhr) {
+      return document.createRange().createContextualFragment(xhr.responseText);
+    });
+    var json = type("application/json", function(xhr) {
+      return JSON.parse(xhr.responseText);
+    });
+    var text = type("text/plain", function(xhr) {
+      return xhr.responseText;
+    });
+    var xml = type("application/xml", function(xhr) {
+      var xml = xhr.responseXML;
+      if (!xml)
+        throw new Error("parse error");
+      return xml;
+    });
+    function dsv(defaultMimeType, parse) {
+      return function(url, row, callback) {
+        if (arguments.length < 3)
+          callback = row, row = null;
+        var r = request(url).mimeType(defaultMimeType);
+        r.row = function(_) {
+          return arguments.length ? r.response(responseOf(parse, row = _)) : row;
+        };
+        r.row(row);
+        return callback ? r.get(callback) : r;
+      };
+    }
+    function responseOf(parse, row) {
+      return function(request) {
+        return parse(request.responseText, row);
+      };
+    }
+    var csv = dsv("text/csv", d3Dsv.csvParse);
+    var tsv = dsv("text/tab-separated-values", d3Dsv.tsvParse);
+    exports.request = request;
+    exports.html = html;
+    exports.json = json;
+    exports.text = text;
+    exports.xml = xml;
+    exports.csv = csv;
+    exports.tsv = tsv;
+    Object.defineProperty(exports, '__esModule', {value: true});
+  }));
+  return module.exports;
+});
+
+$__System.registerDynamic("50", ["4f"], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  module.exports = $__require('4f');
+  return module.exports;
+});
+
+$__System.register('2d', ['50', '4a', '1e'], function (_export) {
+    var d3_json, _Object$defineProperties, utils, minWidth, padding, size, cols, width, height, chart, colors, sync, stateHeaders;
+
+    function setStateHeaders(type) {
+        var key = "1Qx2_oITx9455H4C_Kv8X4rPYtwnY_KwE-vxPe1cFx4M";
+        var url = "http://interactive.guim.co.uk/docsdata-test/" + key + ".json";
+        d3_json(url, function (err, resp) {
+            if (err) {
+                console.error(err);
+            } else if (resp.embed_vs) {
+                // TODO: use type to get keys
+                stateHeaders.data = resp.embed_vs;
+                stateHeaders.list = resp.embed_vs.map(function (d) {
+                    return d.state;
+                });
+            } else {
+                console.error("content is not available!");
+            }
+        });
+    }
+
+    return {
+        setters: [function (_) {
+            d3_json = _.json;
+        }, function (_a) {
+            _Object$defineProperties = _a['default'];
+        }, function (_e) {
+            utils = _e['default'];
+        }],
+        execute: function () {
+            'use strict';
+
+            _export('setStateHeaders', setStateHeaders);
+
+            minWidth = 320;
+            padding = 20;
+
+            // window
+            size = utils.getWindowSize();
+            cols = Math.floor(size.w / minWidth);
+
+            // chart
+            width = (cols > 0 ? Math.round(size.w / cols) : minWidth) - padding * 2 - 1;
+            height = Math.round(width * 0.62) - padding * 2;
+            chart = {
+                w: width,
+                h: height,
+                padding: padding
+            };
+
+            _export('chart', chart);
+
+            // colors
+            colors = {
+                gold: "#fbdc00",
+                silver: "#C0C0C0",
+                bronze: "#CD7F32",
+                others: "#E0E0E0",
+                wr: "#333"
+            };
+
+            _export('colors', colors);
+
+            // sync scale, domain, ... ?
+            sync = _Object$defineProperties({
+                s: { x: null, y: null },
+                d: { x: null, y: null }
+            }, {
+                scale: {
+                    set: function set(s) {
+                        this.s.x = s.x;
+                        this.s.y = s.y;
+                        this.d.x = s.domain.x;
+                        this.d.y = s.domain.y;
+                        //console.log("year:", this.d.y, "mark:", this.d.x);
+                    },
+                    get: function get() {
+                        return this.s;
+                    },
+                    configurable: true,
+                    enumerable: true
+                },
+                domain: {
+                    get: function get() {
+                        return this.d;
+                    },
+                    configurable: true,
+                    enumerable: true
+                }
+            });
+
+            _export('sync', sync);
+
+            // header
+            stateHeaders = {
+                list: ["final", "medal", "mixed"],
+                data: [{
+                    state: "final",
+                    title: "2012 Olympic finals",
+                    description: "It was a WR, OR - how much better. Silver or bronze did better than gold last Olympic, or gold was worst than prior Olympics. Lorem ipsum dolor sit amet, ... " }, {
+                    state: "medal",
+                    title: "Olympic medalist since ...",
+                    description: "It was a WR, OR - how much better. Silver or bronze did better than gold last Olympic, or gold was worst than prior Olympics. Aenean commodo ligula eget dolor." }, {
+                    state: "mixed",
+                    title: "All results",
+                    description: "Interactive with this chart to discover more details ..."
+                }]
+            };
+
+            _export('stateHeaders', stateHeaders);
+        }
+    };
+});
+$__System.register('51', ['47', 'd', '2e', '2d'], function (_export) {
+
+    /* param: coord - x or y */
+    /* param: direction - h or v, isJump? */
     'use strict';
 
+    var d3_axisBottom, d3_range, d3_extent, d3_select, sync;
+    return {
+        setters: [function (_) {
+            d3_axisBottom = _.axisBottom;
+        }, function (_d) {
+            d3_range = _d.range;
+            d3_extent = _d.extent;
+        }, function (_e) {
+            d3_select = _e.select;
+        }, function (_d2) {
+            sync = _d2.sync;
+        }],
+        execute: function () {
+            _export('default', function (cfg) {
+                var axis = undefined,
+                    line = undefined,
+                    text = undefined;
+                var coord = cfg.coord;
+
+                var getSteps = function getSteps(scale) {
+                    switch (true) {
+                        //TODO: steps case
+                        case cfg.value === "year":
+                            var min = scale.domain[coord][0];
+                            var max = scale.domain[coord][1];
+                            var range = min === max ? [min] : d3_range(max, min, -4);
+                            return range[range.length - 1] - 4 === min ? range.concat([min]) : range;
+                        case cfg.value === "mark":
+                            //TODO: remove axisBottom later?
+                            var d3_axis = d3_axisBottom(scale[coord]).ticks(8);
+                            return d3_axis.scale().ticks(d3_axis.ticks()[0]).reverse();
+                    }
+                };
+
+                this.init = function (data, scale) {
+                    axis = d3_select(".axis-" + coord).attr("class", "axis-" + cfg.value);
+                };
+
+                this.update = function (opt, scale) {
+                    var steps = getSteps(scale);
+
+                    var divHide = undefined;
+                    var axisSize = document.querySelector(".js-chart").getBoundingClientRect();
+                    switch (coord) {
+                        case "x":
+                            divHide = Math.ceil(24 * steps.length / (axisSize.width - 30));break;
+                        case "y":
+                            divHide = Math.ceil(12 * steps.length / (axisSize.height - 30));break;
+                    }
+                    //console.log(coord, steps.length, divHide);
+
+                    line = axis.selectAll("line").data(steps);
+                    text = axis.selectAll("text").data(steps);
+
+                    // exit
+                    line.exit().remove();
+                    text.exit().remove();
+
+                    // enter
+                    //window.setTimeout(() => {
+
+                    line.enter().append("line").attr("opacity", 0).transition().duration(opt.duration * 1000)
+                    //.attr("opacity", 1)
+                    .attr("opacity", function (d, i) {
+                        return i % divHide === 0 ? 1 : 0.5;
+                    }).attr("x1", function (d) {
+                        return 0;
+                    }).attr("x2", function (d) {
+                        return "95.5%";
+                    }).attr("y1", function (d) {
+                        return 0;
+                    }).attr("y2", function (d) {
+                        return "99%";
+                    }).attr(coord + "1", function (d) {
+                        return scale[coord](d) + "%";
+                    }).attr(coord + "2", function (d) {
+                        return scale[coord](d) + "%";
+                    });
+
+                    text.enter().append("text").transition().duration(opt.duration * 1000).attr("x", function (d) {
+                        return "101%";
+                    }).attr("y", function (d) {
+                        return "100%";
+                    }).attr("dy", coord === "x" ? ".71em" : ".3em").attr(coord, function (d) {
+                        return scale[coord](d) + "%";
+                    }).attr("opacity", function (d, i) {
+                        return i % divHide === 0 ? 1 : 0;
+                    }).text(function (d) {
+                        return Math.round(Math.abs(d) * 100) / 100;
+                    });
+
+                    //}, (opt.duration-1)*1000);
+
+                    // update
+                    line.transition().duration(opt.duration * 1000).attr("opacity", function (d, i) {
+                        return i % divHide === 0 ? 1 : 0.5;
+                    }).attr(coord + "1", function (d) {
+                        return scale[coord](d) + "%";
+                    }).attr(coord + "2", function (d) {
+                        return scale[coord](d) + "%";
+                    });
+
+                    text.transition().duration(opt.duration * 1000).attr("dy", coord === "x" ? ".71em" : ".3em").attr(coord, function (d) {
+                        return scale[coord](d) + "%";
+                    }).attr("opacity", function (d, i) {
+                        return i % divHide === 0 ? 1 : 0;
+                    }).text(function (d) {
+                        return Math.round(Math.abs(d) * 100) / 100;
+                    });
+                };
+            });
+        }
+    };
+});
+$__System.register('c', ['44', '51', 'e', 'd', '2a', '2b'], function (_export) {
+    var Dots, Axis, _Object$keys, d3_extent, toState, getNextState, calcScale;
+
+    function getDomain(data) {
+        return {
+            x: d3_extent(data, function (d) {
+                return d.x;
+            }),
+            y: d3_extent(data, function (d) {
+                return d.y;
+            })
+        };
+    }
+    return {
+        setters: [function (_) {
+            Dots = _['default'];
+        }, function (_2) {
+            Axis = _2['default'];
+        }, function (_e) {
+            _Object$keys = _e['default'];
+        }, function (_d) {
+            d3_extent = _d.extent;
+        }, function (_a) {
+            toState = _a.toState;
+            getNextState = _a.getNextState;
+        }, function (_b) {
+            calcScale = _b['default'];
+        }],
+        execute: function () {
+            //import Grid from '../draw/grid';
+
+            'use strict';
+
+            _export('default', function (data, dataCombo) {
+                var domain = getDomain(dataCombo);
+                //console.log(domain);
+
+                // init, draw all
+                var scale = calcScale(domain);
+                var els = {};
+
+                els.dotsF = new Dots({
+                    dataset: "final",
+                    radius: 9
+                });
+                els.dotsF.init(data.finals, scale);
+
+                els.dotsM = new Dots({
+                    dataset: "medal",
+                    radius: 6
+                });
+                els.dotsM.init(data.medals, scale);
+
+                els.dotsW = new Dots({
+                    dataset: "world",
+                    radius: 3,
+                    color: "#333",
+                    stroke: "rgba(255, 255, 255, 0.25)"
+                });
+                els.dotsW.init(data.worlds, scale);
+
+                els.axisY = new Axis({ coord: "y", value: "year" });
+                els.axisY.init(dataCombo.map(function (d) {
+                    return d.y;
+                }), scale);
+
+                els.axisX = new Axis({ coord: "x", value: "mark" });
+                els.axisX.init(dataCombo.map(function (d) {
+                    return d.x;
+                }), scale);
+
+                // update with animations
+                var state = {};
+                state.final = {
+                    delay: 0,
+                    duration: 2,
+                    domain: {
+                        x: [d3_extent(data.finals, function (d) {
+                            return d.x;
+                        })[0], 0],
+                        y: [2016, 2016]
+                    },
+                    opacity: [0.75, 0, 0]
+                };
+
+                var domainMedal = getDomain(data.finals.concat(data.medals));
+                domainMedal.x[1] = 0;
+                state.medal = {
+                    delay: 5,
+                    duration: 2,
+                    domain: domainMedal,
+                    opacity: [0.75, 0.5, 0]
+                };
+
+                state.world = {
+                    delay: 10,
+                    duration: 2,
+                    domain: getDomain(data.finals.concat(data.worlds)),
+                    opacity: [0.75, 0, 0.75]
+                };
+
+                state.mixed = {
+                    delay: 15,
+                    duration: 2,
+                    domain: domain,
+                    opacity: [0.75, 0.5, 0.75]
+                };
+
+                // default
+                toState(els, state.final, "final");
+                // play states
+                document.querySelector(".btn-play").addEventListener("click", function () {
+                    play();
+                });
+                var play = function play() {
+                    _Object$keys(state).map(function (key) {
+                        toState(els, state[key], [key]);
+                    });
+                };
+                //play();
+
+                // state on event
+                var btns = document.querySelectorAll(".btn");
+                btns.forEach(function (btn) {
+                    return btn.addEventListener("click", function (e) {
+                        var name = e.target.getAttribute("data-dots");
+                        var data = state[name];
+                        toState(els, { domain: data.domain, opacity: data.opacity, delay: 0, duration: 2 }, name);
+                    });
+                });
+
+                document.querySelector(".btn-next").addEventListener("click", function () {
+                    // current
+                    var stateName = document.querySelector(".js-chart").getAttribute("data-state");
+                    // next
+                    var stateNameNext = getNextState(stateName).name;
+                    var stateDataNext = state[stateNameNext];
+
+                    toState(els, { domain: stateDataNext.domain, opacity: stateDataNext.opacity, delay: 0, duration: 2 }, stateNameNext);
+                });
+            });
+        }
+    };
+});
+$__System.registerDynamic("52", [], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  "format cjs";
+  (function(global, factory) {
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) : typeof define === 'function' && define.amd ? define(['exports'], factory) : (factory((global.d3 = global.d3 || {})));
+  }(this, function(exports) {
+    'use strict';
+    function ascending(a, b) {
+      return a < b ? -1 : a > b ? 1 : a >= b ? 0 : NaN;
+    }
+    function bisector(compare) {
+      if (compare.length === 1)
+        compare = ascendingComparator(compare);
+      return {
+        left: function(a, x, lo, hi) {
+          if (lo == null)
+            lo = 0;
+          if (hi == null)
+            hi = a.length;
+          while (lo < hi) {
+            var mid = lo + hi >>> 1;
+            if (compare(a[mid], x) < 0)
+              lo = mid + 1;
+            else
+              hi = mid;
+          }
+          return lo;
+        },
+        right: function(a, x, lo, hi) {
+          if (lo == null)
+            lo = 0;
+          if (hi == null)
+            hi = a.length;
+          while (lo < hi) {
+            var mid = lo + hi >>> 1;
+            if (compare(a[mid], x) > 0)
+              hi = mid;
+            else
+              lo = mid + 1;
+          }
+          return lo;
+        }
+      };
+    }
+    function ascendingComparator(f) {
+      return function(d, x) {
+        return ascending(f(d), x);
+      };
+    }
+    var ascendingBisect = bisector(ascending);
+    var bisectRight = ascendingBisect.right;
+    var bisectLeft = ascendingBisect.left;
+    function descending(a, b) {
+      return b < a ? -1 : b > a ? 1 : b >= a ? 0 : NaN;
+    }
+    function number(x) {
+      return x === null ? NaN : +x;
+    }
+    function variance(array, f) {
+      var n = array.length,
+          m = 0,
+          a,
+          d,
+          s = 0,
+          i = -1,
+          j = 0;
+      if (f == null) {
+        while (++i < n) {
+          if (!isNaN(a = number(array[i]))) {
+            d = a - m;
+            m += d / ++j;
+            s += d * (a - m);
+          }
+        }
+      } else {
+        while (++i < n) {
+          if (!isNaN(a = number(f(array[i], i, array)))) {
+            d = a - m;
+            m += d / ++j;
+            s += d * (a - m);
+          }
+        }
+      }
+      if (j > 1)
+        return s / (j - 1);
+    }
+    function deviation(array, f) {
+      var v = variance(array, f);
+      return v ? Math.sqrt(v) : v;
+    }
+    function extent(array, f) {
+      var i = -1,
+          n = array.length,
+          a,
+          b,
+          c;
+      if (f == null) {
+        while (++i < n)
+          if ((b = array[i]) != null && b >= b) {
+            a = c = b;
+            break;
+          }
+        while (++i < n)
+          if ((b = array[i]) != null) {
+            if (a > b)
+              a = b;
+            if (c < b)
+              c = b;
+          }
+      } else {
+        while (++i < n)
+          if ((b = f(array[i], i, array)) != null && b >= b) {
+            a = c = b;
+            break;
+          }
+        while (++i < n)
+          if ((b = f(array[i], i, array)) != null) {
+            if (a > b)
+              a = b;
+            if (c < b)
+              c = b;
+          }
+      }
+      return [a, c];
+    }
+    var array = Array.prototype;
+    var slice = array.slice;
+    var map = array.map;
+    function constant(x) {
+      return function() {
+        return x;
+      };
+    }
+    function identity(x) {
+      return x;
+    }
+    function range(start, stop, step) {
+      start = +start, stop = +stop, step = (n = arguments.length) < 2 ? (stop = start, start = 0, 1) : n < 3 ? 1 : +step;
+      var i = -1,
+          n = Math.max(0, Math.ceil((stop - start) / step)) | 0,
+          range = new Array(n);
+      while (++i < n) {
+        range[i] = start + i * step;
+      }
+      return range;
+    }
+    var e10 = Math.sqrt(50);
+    var e5 = Math.sqrt(10);
+    var e2 = Math.sqrt(2);
+    function ticks(start, stop, count) {
+      var step = tickStep(start, stop, count);
+      return range(Math.ceil(start / step) * step, Math.floor(stop / step) * step + step / 2, step);
+    }
+    function tickStep(start, stop, count) {
+      var step0 = Math.abs(stop - start) / Math.max(0, count),
+          step1 = Math.pow(10, Math.floor(Math.log(step0) / Math.LN10)),
+          error = step0 / step1;
+      if (error >= e10)
+        step1 *= 10;
+      else if (error >= e5)
+        step1 *= 5;
+      else if (error >= e2)
+        step1 *= 2;
+      return stop < start ? -step1 : step1;
+    }
+    function sturges(values) {
+      return Math.ceil(Math.log(values.length) / Math.LN2) + 1;
+    }
+    function histogram() {
+      var value = identity,
+          domain = extent,
+          threshold = sturges;
+      function histogram(data) {
+        var i,
+            n = data.length,
+            x,
+            values = new Array(n);
+        for (i = 0; i < n; ++i) {
+          values[i] = value(data[i], i, data);
+        }
+        var xz = domain(values),
+            x0 = xz[0],
+            x1 = xz[1],
+            tz = threshold(values, x0, x1);
+        if (!Array.isArray(tz))
+          tz = ticks(x0, x1, tz);
+        var m = tz.length;
+        while (tz[0] <= x0)
+          tz.shift(), --m;
+        while (tz[m - 1] >= x1)
+          tz.pop(), --m;
+        var bins = new Array(m + 1),
+            bin;
+        for (i = 0; i <= m; ++i) {
+          bin = bins[i] = [];
+          bin.x0 = i > 0 ? tz[i - 1] : x0;
+          bin.x1 = i < m ? tz[i] : x1;
+        }
+        for (i = 0; i < n; ++i) {
+          x = values[i];
+          if (x0 <= x && x <= x1) {
+            bins[bisectRight(tz, x, 0, m)].push(data[i]);
+          }
+        }
+        return bins;
+      }
+      histogram.value = function(_) {
+        return arguments.length ? (value = typeof _ === "function" ? _ : constant(_), histogram) : value;
+      };
+      histogram.domain = function(_) {
+        return arguments.length ? (domain = typeof _ === "function" ? _ : constant([_[0], _[1]]), histogram) : domain;
+      };
+      histogram.thresholds = function(_) {
+        return arguments.length ? (threshold = typeof _ === "function" ? _ : Array.isArray(_) ? constant(slice.call(_)) : constant(_), histogram) : threshold;
+      };
+      return histogram;
+    }
+    function quantile(array, p, f) {
+      if (f == null)
+        f = number;
+      if (!(n = array.length))
+        return;
+      if ((p = +p) <= 0 || n < 2)
+        return +f(array[0], 0, array);
+      if (p >= 1)
+        return +f(array[n - 1], n - 1, array);
+      var n,
+          h = (n - 1) * p,
+          i = Math.floor(h),
+          a = +f(array[i], i, array),
+          b = +f(array[i + 1], i + 1, array);
+      return a + (b - a) * (h - i);
+    }
+    function freedmanDiaconis(values, min, max) {
+      values = map.call(values, number).sort(ascending);
+      return Math.ceil((max - min) / (2 * (quantile(values, 0.75) - quantile(values, 0.25)) * Math.pow(values.length, -1 / 3)));
+    }
+    function scott(values, min, max) {
+      return Math.ceil((max - min) / (3.5 * deviation(values) * Math.pow(values.length, -1 / 3)));
+    }
+    function max(array, f) {
+      var i = -1,
+          n = array.length,
+          a,
+          b;
+      if (f == null) {
+        while (++i < n)
+          if ((b = array[i]) != null && b >= b) {
+            a = b;
+            break;
+          }
+        while (++i < n)
+          if ((b = array[i]) != null && b > a)
+            a = b;
+      } else {
+        while (++i < n)
+          if ((b = f(array[i], i, array)) != null && b >= b) {
+            a = b;
+            break;
+          }
+        while (++i < n)
+          if ((b = f(array[i], i, array)) != null && b > a)
+            a = b;
+      }
+      return a;
+    }
+    function mean(array, f) {
+      var s = 0,
+          n = array.length,
+          a,
+          i = -1,
+          j = n;
+      if (f == null) {
+        while (++i < n)
+          if (!isNaN(a = number(array[i])))
+            s += a;
+          else
+            --j;
+      } else {
+        while (++i < n)
+          if (!isNaN(a = number(f(array[i], i, array))))
+            s += a;
+          else
+            --j;
+      }
+      if (j)
+        return s / j;
+    }
+    function median(array, f) {
+      var numbers = [],
+          n = array.length,
+          a,
+          i = -1;
+      if (f == null) {
+        while (++i < n)
+          if (!isNaN(a = number(array[i])))
+            numbers.push(a);
+      } else {
+        while (++i < n)
+          if (!isNaN(a = number(f(array[i], i, array))))
+            numbers.push(a);
+      }
+      return quantile(numbers.sort(ascending), 0.5);
+    }
+    function merge(arrays) {
+      var n = arrays.length,
+          m,
+          i = -1,
+          j = 0,
+          merged,
+          array;
+      while (++i < n)
+        j += arrays[i].length;
+      merged = new Array(j);
+      while (--n >= 0) {
+        array = arrays[n];
+        m = array.length;
+        while (--m >= 0) {
+          merged[--j] = array[m];
+        }
+      }
+      return merged;
+    }
+    function min(array, f) {
+      var i = -1,
+          n = array.length,
+          a,
+          b;
+      if (f == null) {
+        while (++i < n)
+          if ((b = array[i]) != null && b >= b) {
+            a = b;
+            break;
+          }
+        while (++i < n)
+          if ((b = array[i]) != null && a > b)
+            a = b;
+      } else {
+        while (++i < n)
+          if ((b = f(array[i], i, array)) != null && b >= b) {
+            a = b;
+            break;
+          }
+        while (++i < n)
+          if ((b = f(array[i], i, array)) != null && a > b)
+            a = b;
+      }
+      return a;
+    }
+    function pairs(array) {
+      var i = 0,
+          n = array.length - 1,
+          p = array[0],
+          pairs = new Array(n < 0 ? 0 : n);
+      while (i < n)
+        pairs[i] = [p, p = array[++i]];
+      return pairs;
+    }
+    function permute(array, indexes) {
+      var i = indexes.length,
+          permutes = new Array(i);
+      while (i--)
+        permutes[i] = array[indexes[i]];
+      return permutes;
+    }
+    function scan(array, compare) {
+      if (!(n = array.length))
+        return;
+      var i = 0,
+          n,
+          j = 0,
+          xi,
+          xj = array[j];
+      if (!compare)
+        compare = ascending;
+      while (++i < n)
+        if (compare(xi = array[i], xj) < 0 || compare(xj, xj) !== 0)
+          xj = xi, j = i;
+      if (compare(xj, xj) === 0)
+        return j;
+    }
+    function shuffle(array, i0, i1) {
+      var m = (i1 == null ? array.length : i1) - (i0 = i0 == null ? 0 : +i0),
+          t,
+          i;
+      while (m) {
+        i = Math.random() * m-- | 0;
+        t = array[m + i0];
+        array[m + i0] = array[i + i0];
+        array[i + i0] = t;
+      }
+      return array;
+    }
+    function sum(array, f) {
+      var s = 0,
+          n = array.length,
+          a,
+          i = -1;
+      if (f == null) {
+        while (++i < n)
+          if (a = +array[i])
+            s += a;
+      } else {
+        while (++i < n)
+          if (a = +f(array[i], i, array))
+            s += a;
+      }
+      return s;
+    }
+    function transpose(matrix) {
+      if (!(n = matrix.length))
+        return [];
+      for (var i = -1,
+          m = min(matrix, length),
+          transpose = new Array(m); ++i < m; ) {
+        for (var j = -1,
+            n,
+            row = transpose[i] = new Array(n); ++j < n; ) {
+          row[j] = matrix[j][i];
+        }
+      }
+      return transpose;
+    }
+    function length(d) {
+      return d.length;
+    }
+    function zip() {
+      return transpose(arguments);
+    }
+    exports.bisect = bisectRight;
+    exports.bisectRight = bisectRight;
+    exports.bisectLeft = bisectLeft;
+    exports.ascending = ascending;
+    exports.bisector = bisector;
+    exports.descending = descending;
+    exports.deviation = deviation;
+    exports.extent = extent;
+    exports.histogram = histogram;
+    exports.thresholdFreedmanDiaconis = freedmanDiaconis;
+    exports.thresholdScott = scott;
+    exports.thresholdSturges = sturges;
+    exports.max = max;
+    exports.mean = mean;
+    exports.median = median;
+    exports.merge = merge;
+    exports.min = min;
+    exports.pairs = pairs;
+    exports.permute = permute;
+    exports.quantile = quantile;
+    exports.range = range;
+    exports.scan = scan;
+    exports.shuffle = shuffle;
+    exports.sum = sum;
+    exports.ticks = ticks;
+    exports.tickStep = tickStep;
+    exports.transpose = transpose;
+    exports.variance = variance;
+    exports.zip = zip;
+    Object.defineProperty(exports, '__esModule', {value: true});
+  }));
+  return module.exports;
+});
+
+$__System.registerDynamic("d", ["52"], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  module.exports = $__require('52');
+  return module.exports;
+});
+
+$__System.register('53', ['e', '1b', '1c', 'b', 'c', 'd'], function (_export) {
+    var _Object$keys, jsonRecord, jsonFinals, parseData, result, d3_extent;
+
+    return {
+        setters: [function (_e) {
+            _Object$keys = _e['default'];
+        }, function (_b) {
+            jsonRecord = _b['default'];
+        }, function (_c) {
+            jsonFinals = _c['default'];
+        }, function (_b2) {
+            parseData = _b2['default'];
+        }, function (_c2) {
+            result = _c2['default'];
+        }, function (_d) {
+            d3_extent = _d.extent;
+        }],
+        execute: function () {
+            'use strict';
+
+            _export('default', function () {
+                var data = parseData(jsonRecord, jsonFinals);
+                var dataCombo = data.finals.concat(data.medals, data.worlds);
+
+                var distWr = d3_extent(dataCombo, function (d) {
+                    return d.x;
+                })[1];
+                _Object$keys(data).forEach(function (dd) {
+                    // time to distance
+                    data[dd] = data[dd].map(function (dm) {
+                        dm.x = Math.round((dm.x - distWr) * 1000) / 1000;
+                        dm.attrs.dist = Math.abs(dm.x);
+                        return dm;
+                    });
+                    // sort
+                    data[dd].sort(function (d1, d2) {
+                        return d1.x - d2.x;
+                    });
+                });
+                console.log(data);
+
+                result(data, dataCombo);
+            });
+        }
+    };
+});
+$__System.register('1', ['3', '4', '5', '6', '7', '11', '14', '17', '53', '2d', '1e', 'a', '1a'], function (_export) {
+
     // team
+    'use strict';
 
     // individuals
-    var iframeMessenger, embedHTML, chartHTML, team_pursuit_m, freestyle100x4_relay_w, freestyle200_m, breaststroke100_m, medley400_m, medley400_w, d3_select, getData, longjump_m, utils, throttle;
-
-    //console.log(event);
-    //console.log(data);
+    var iframeMessenger, embedHTML, chartHTML, throttle, team_pursuit_m, freestyle200_m, breaststroke100_m, medley400_m, longjump_m, setStateHeaders, utils, freestyle100x4_relay_w, medley400_w;
 
     function setGraphSize() {
         var size = utils.getWindowSize();
         var height = Math.round(size.w * 0.6);
 
-        d3_select(".graph").style("height", height + "px").style("max-height", size.w > 1024 ? size.h - 200 + "px" : null).style("min-height", size.w > 1024 ? "360px" : null);
-        //.style("width", size.w + "px")
-        //console.log(size.w, height);
+        var elGraph = document.querySelector(".graph");
+        elGraph.style.height = height + "px";
+        elGraph.style.maxHeight = size.w > 1024 ? size.h - 200 + "px" : null;
+        elGraph.style.minHeight = size.w > 1024 ? "360px" : null;
     }
     return {
         setters: [function (_) {
@@ -12853,9 +13260,9 @@ $__System.register('1', ['3', '4', '5', '6', '9', '10', '13', '16', '19', '40', 
         }, function (_3) {
             chartHTML = _3['default'];
         }, function (_4) {
-            team_pursuit_m = _4['default'];
+            throttle = _4['default'];
         }, function (_5) {
-            freestyle100x4_relay_w = _5['default'];
+            team_pursuit_m = _5['default'];
         }, function (_6) {
             freestyle200_m = _6['default'];
         }, function (_7) {
@@ -12863,17 +13270,15 @@ $__System.register('1', ['3', '4', '5', '6', '9', '10', '13', '16', '19', '40', 
         }, function (_8) {
             medley400_m = _8['default'];
         }, function (_9) {
-            medley400_w = _9['default'];
-        }, function (_10) {
-            d3_select = _10.select;
-        }, function (_a) {
-            getData = _a['default'];
-        }, function (_c) {
-            longjump_m = _c['default'];
+            longjump_m = _9['default'];
         }, function (_d) {
-            utils = _d['default'];
-        }, function (_d2) {
-            throttle = _d2['default'];
+            setStateHeaders = _d.setStateHeaders;
+        }, function (_e) {
+            utils = _e['default'];
+        }, function (_a) {
+            freestyle100x4_relay_w = _a['default'];
+        }, function (_a2) {
+            medley400_w = _a2['default'];
         }],
         execute: function () {
 
@@ -12883,37 +13288,30 @@ $__System.register('1', ['3', '4', '5', '6', '9', '10', '13', '16', '19', '40', 
                 var event = window.location.search.replace("?", "");
                 if (!event) {
                     el.innerHTML = embedHTML;
-                    //demo();
+                    console.error("param is required!");
                     return;
                 }
 
-                var data = undefined;
                 el.innerHTML = chartHTML;
                 window.addEventListener("resize", throttle(setGraphSize, 500));
                 setGraphSize();
 
+                var data = undefined;
+                setStateHeaders(event);
+
                 switch (event) {
-                    case "team-pursuit_m":
-                        data = getData(team_pursuit_m, "T");
-                        break;
-                    case "medley-400_w":
-                        medley400_w();
-                        break;
-                    case "medley-400_m":
-                        medley400_m();
-                        break;
-                    case "freestyle-100x4_relay_w":
-                        freestyle100x4_relay_w();
-                        break;
-                    case "freestyle-200_m":
-                        freestyle200_m();
-                        break;
-                    case "breaststroke-100_m":
-                        breaststroke100_m();
-                        break;
                     case "long-jump_m":
-                        longjump_m();
-                        break;
+                        longjump_m();break;
+                    case "medley-400_w":
+                        medley400_w();break;
+                    case "medley-400_m":
+                        medley400_m();break;
+                    case "freestyle-100x4_relay_w":
+                        freestyle100x4_relay_w();break;
+                    case "freestyle-200_m":
+                        freestyle200_m();break;
+                    case "breaststroke-100_m":
+                        breaststroke100_m();break;
                     default:
                         console.log("This event is not special!");
                 }
