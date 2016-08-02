@@ -3,6 +3,7 @@ import {toState, getNextState} from '../draw/state';
 import calcScale from '../draw/scale';
 import Dots from '../draw/dots';
 import Axis from '../draw/axis';
+import utils from '../lib/utils';
 //import Grid from '../draw/grid';
 
 export default function(data, dataCombo) {
@@ -76,7 +77,7 @@ export default function(data, dataCombo) {
 
     // default 
     toState(els, state.final, "final");
-    // play states
+    /*/ play states
     document.querySelector(".btn-play").addEventListener("click", () => {
         play();
     });
@@ -85,10 +86,10 @@ export default function(data, dataCombo) {
             toState(els, state[key], [key]);
         });  
     };
-    //play();
+    //play();*/
 
     // state on event
-    let btns = document.querySelectorAll(".btn");
+    let btns = utils.nlist2arr(document.querySelectorAll(".btn"));
     btns.forEach(btn => 
         btn.addEventListener("click", (e) => {
             let name = e.target.getAttribute("data-dots");

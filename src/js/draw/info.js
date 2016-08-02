@@ -34,11 +34,8 @@ export default function(data, records) {
             (data.id.indexOf("wr") > -1 ? " WR" : "") + 
             (data.id.indexOf("or") > -1 ? " OR" : "") 
         );
-       
-        let pos = getInfoPos(data);       
-        d3_select(".tooltip").style("opacity", 1)
-        .style("top", pos.top)
-        .style("left", pos.left);
+        
+        updateInfoPosition(data); 
     }
 }
 
@@ -65,6 +62,19 @@ function getRecordHtml(records, id) {
         (cm > 0 && cw >0 ? " and " : "") + 
         (cw > 0 ? cw + " WRP" : "")
     );
+}
+
+let preData = null;
+export function updateInfoPosition(data) {
+    if (!data && !preData) return;
+    if (!data && preData) data = preData;
+
+    let pos = getInfoPos(data);       
+    d3_select(".tooltip").style("opacity", 1)
+    .style("top", pos.top)
+    .style("left", pos.left);
+    
+    preData = data;
 }
 
 function getInfoPos (data) {
@@ -108,8 +118,8 @@ function getInfoPos (data) {
     left = testRight ? left : x.r;
 
     // 3. test overlay
-    let testOverlay = (select.left + data.r*2 < left + width) && (select.top + data.r*2 < top + height); 
+    let testOverlay = (select.left < left + width) && (select.top + data.r*2 < top + height); 
     if (testOverlay) { top = test1_3Top ? y.b : y.t; }
-    
+
     return {top: top + "px", left: left + "px"};
 }

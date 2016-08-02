@@ -32,8 +32,8 @@ export function toState(els, data, stateName) {
     let headers = stateHeaders.data;
     let currInd = stateHeaders.list.indexOf(stateName);
     let nextInd = getNextState(stateName).index;
-    let isReplay = nextInd === "final";
-    
+    let isReplay = nextInd === 0;
+
     // current
     d3_select(".js-state-name").text(headers[currInd].title);
     d3_select(".js-state-text").text(headers[currInd].description);

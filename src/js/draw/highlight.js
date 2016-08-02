@@ -1,16 +1,28 @@
 import {select as d3_select} from 'd3-selection';
 
-export default function (data) {
+let preData = null;
+let elDot = d3_select(".hl-circle");
+
+export function updateHighlight(data) {
     //window.setTimeout(() => {
-    let pos = document.querySelector("#" + data.id).getBoundingClientRect();
-   
-    d3_select(".highlight").style("opacity", 1); 
-    
-    d3_select(".dots-animate")
+    if (!data && !preData) return;
+    if (!data && preData) data = preData;
+
+    // dots-highlight
+    let dot = d3_select("#"+data.id);
+    d3_select(".hl-circle")
     .classed("animate", true)
-    .style("width", (data.r*2) + "px")
-    .style("height", (data.r*2) + "px")
-    .style("top", (pos.top - 1) + "px")
-    .style("left", (pos.left - 1) + "px");
+    .attr("opacity", 1)
+    .attr("cx", dot.attr("cx"))
+    .attr("cy", dot.attr("cy"))
+    .attr("r", dot.attr("r")); 
+
+    preData = data;
     //}, 500);
+}
+
+export function hideHighlight() {
+    d3_select(".hl-circle")
+    .classed("animate", false)
+    .style("opacity", 0);
 }

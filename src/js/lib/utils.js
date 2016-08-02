@@ -1,18 +1,18 @@
-exports.getWindowSize = () => {
-    let d = document;
-    let e = d.documentElement;
-    let g = d.getElementsByTagName('body')[0];
-    let w = window.innerWidth || e.clientWidth || g.clientWidth;
-    let h = window.innerHeight|| e.clientHeight|| g.clientHeight;
+exports.getWindowSize = function() {
+    var d = document;
+    var e = d.documentElement;
+    var g = d.getElementsByTagName('body')[0];
+    var w = window.innerWidth || e.clientWidth || g.clientWidth;
+    var h = window.innerHeight|| e.clientHeight|| g.clientHeight;
     return {w: w, h: h};
 };
 
-exports.num2class = (num) => {
+exports.num2class = function(num) {
     return num.toString().replace(".", "_");
 };
-exports.str2class = (str) => {
+exports.str2class = function(str) {
     return str.replace(/\s/g, "_");
 };
-exports.nlist2arr = (nodelist) => {
+exports.nlist2arr = function(nodelist) {
     return Array.prototype.slice.call(nodelist);
 };

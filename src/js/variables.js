@@ -62,7 +62,7 @@ export let stateHeaders = {
 
 export function setStateHeaders(type) {
     let key = "1Qx2_oITx9455H4C_Kv8X4rPYtwnY_KwE-vxPe1cFx4M";
-    let url = "http://interactive.guim.co.uk/docsdata-test/" + key + ".json";
+    let url = "https://interactive.guim.co.uk/docsdata-test/" + key + ".json";
     d3_json(url, (err, resp) => {
         if (err) {
             console.error(err);

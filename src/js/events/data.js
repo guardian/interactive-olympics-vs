@@ -70,18 +70,16 @@ function getName(participant, type, team) {
 }
 
 function getProperties(property, rank) {
-    /*return property.length ? property
-    .filter(dp => dp.type.indexOf("Record")>-1 || dp.type.indexOf("Medal")>-1)
-    .map(dt => dt.value.toLowerCase()).join(", ") : rank;
-    */
     let flag = property.length;
-    let medal = flag ? property.filter(dp => dp.type.indexOf("Medal") > -1)
-    .map(dp => dp.value.toLowerCase()) : (rank ? rank : null);
-    let record = flag ? property.filter(dp => dp.type.indexOf("Record") > -1)
-    .map(dt => dt.value.toLowerCase()).join(", ") : null;
+    
+    let medal;
+    medal = flag ? property.filter(dp => dp.type.indexOf("Medal") > -1).map(dp => dp.value.toLowerCase()) : rank;
+    medal = medal.length ? medal : rank; // team, again
+
+    let record = flag ? property.filter(dp => dp.type.indexOf("Record") > -1).map(dt => dt.value.toLowerCase()).join(", ") : null;
     
     //console.log(property);
-    //console.log(medal, flag, rank); 
+    //console.log(medal, record, rank, flag); 
     
     return {
         medal: medal[0],

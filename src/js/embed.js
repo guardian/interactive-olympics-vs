@@ -1,10 +1,11 @@
 import iframeMessenger from 'guardian/iframe-messenger';
-import embedHTML from './text/embed.html!text';
-import chartHTML from './text/chart.html!text';
+import embedHTML from './text/chart.html!text';
 
-import {setStateHeaders} from './variables';
 import utils from './lib/utils';
 import throttle from './lib/throttle';
+import {setStateHeaders} from './variables';
+import {updateHighlight} from './draw/highlight';
+import {updateInfoPosition} from './draw/info';
 
 // team
 import team_pursuit_m from '../dataDummy/team-pursuit_m.json!json';
@@ -19,21 +20,24 @@ import longjump_m from '../js/events/longjump_m';
 
 window.init = function init(el, config) {
     iframeMessenger.enableAutoResize();
-
+    
+    // get event type
     let event = window.location.search.replace("?", "");
     if (!event) { 
-        el.innerHTML = embedHTML;
         console.error("param is required!");
         return; 
     }
-
-    el.innerHTML = chartHTML;
-    window.addEventListener("resize", throttle(setGraphSize, 500));
-    setGraphSize();
-
-    let data;
-    setStateHeaders(event); 
     
+    // set embed size
+    el.innerHTML = embedHTML;
+    window.addEventListener("resize", throttle(setEmbedSize, 500));
+    setEmbedSize();
+
+    // init state loop
+    setStateHeaders(event); 
+
+    // load chart    
+    let data;
     switch (event) {
         case "long-jump_m": longjump_m(); break;
         case "medley-400_w": medley400_w(); break;       
@@ -46,12 +50,15 @@ window.init = function init(el, config) {
     }
 };
 
-function setGraphSize() {
+function setEmbedSize() {
     let size = utils.getWindowSize();
     let height = Math.round(size.w*0.6);
     
-    let elGraph = document.querySelector(".graph");
-    elGraph.style.height = height + "px";
-    elGraph.style.maxHeight = size.w > 1024 ? size.h - 200 + "px" : null;
-    elGraph.style.minHeight = size.w > 1024 ? "360px" : null;
+    let elEmbed = document.querySelector(".graph");
+    elEmbed.style.height = height + "px";
+    elEmbed.style.maxHeight = size.w < 980 ? null : size.h - 50 + "px";
+    elEmbed.style.minHeight = size.w < 980 ? null : "360px";
+
+    updateHighlight();
+    updateInfoPosition();
 }
