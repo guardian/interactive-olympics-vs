@@ -4,7 +4,7 @@ import embedHTML from './text/chart.html!text';
 import utils from './lib/utils';
 import throttle from './lib/throttle';
 import {setStateHeaders} from './variables';
-import {updateHighlight} from './draw/highlight';
+import {showHighlightAnimate} from './draw/highlight';
 import {updateInfoPosition} from './draw/info';
 
 // team
@@ -59,6 +59,6 @@ function setEmbedSize() {
     elEmbed.style.maxHeight = size.w < 980 ? null : size.h - 50 + "px";
     elEmbed.style.minHeight = size.w < 980 ? null : "360px";
 
-    updateHighlight();
+    showHighlightAnimate();
     updateInfoPosition();
 }

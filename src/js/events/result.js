@@ -42,12 +42,14 @@ export default function(data, dataCombo) {
 
     // update with animations
     let state = {};
+    let minY = d3_extent(data.finals.concat(data.worlds[data.worlds.length-1], data.medals[data.medals.length-1]), d => d.y)[0];
+    let diff = 2016 - minY;
+    
     state.final = { 
-        delay: 0, 
         duration: 2, 
         domain: {
             x: [d3_extent(data.finals, d => d.x)[0], 0],
-                y: [2016, 2016]
+            y: [2016 - diff*2, 2016 + diff*2]
         },
         opacity: [0.75, 0, 0]
     };
@@ -55,21 +57,18 @@ export default function(data, dataCombo) {
     let domainMedal = getDomain(data.finals.concat(data.medals));
     domainMedal.x[1] = 0;
     state.medal = { 
-        delay: 5, 
         duration: 2,
         domain: domainMedal, 
         opacity: [0.75, 0.5, 0]
     };    
 
     state.world = { 
-        delay: 10, 
         duration: 2,
         domain: getDomain(data.finals.concat(data.worlds)),
         opacity: [0.75, 0, 0.75]
     };    
 
     state.mixed = { 
-        delay: 15, 
         duration: 2,
         domain: domain,
         opacity: [0.75, 0.5, 0.75]
@@ -94,7 +93,7 @@ export default function(data, dataCombo) {
         btn.addEventListener("click", (e) => {
             let name = e.target.getAttribute("data-dots");
             let data = state[name];
-            toState(els, {domain: data.domain, opacity: data.opacity, delay: 0, duration: 2}, name);
+            toState(els, {domain: data.domain, opacity: data.opacity, duration: 2}, name);
     }));
     
     document.querySelector(".btn-next").addEventListener("click", () => {
@@ -104,7 +103,7 @@ export default function(data, dataCombo) {
         let stateNameNext = getNextState(stateName).name;
         let stateDataNext = state[stateNameNext];
         
-        toState(els, {domain: stateDataNext.domain, opacity: stateDataNext.opacity, delay: 0, duration: 2}, stateNameNext);
+        toState(els, {domain: stateDataNext.domain, opacity: stateDataNext.opacity, duration: 2}, stateNameNext);
     });
 }
 

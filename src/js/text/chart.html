@@ -9,12 +9,15 @@
 </div>
 
 <div class="graph">
-    <svg class="chart js-chart">
+    <svg class="chart js-chart" data-state="final">
         <g class="axis-y"></g>
         <g class="axis-x"></g>
         <g class="mark-highlight">
-            <line y2="99%"></line>            
-            <text y="99%" fill="#333"></text>            
+            <!--line class="hl-wr" x2="95%"></line>            
+            <line class="hl-or" x2="95%"></line--> 
+            <line class="hl-lv" y2="99%" stroke="#e6e6e6"></line>            
+            <text class="hl-year" x="101%" fill="#333" dy=".3em"></text>            
+            <text class="hl-mark" y="100%" fill="#333" dy=".71em"></text>            
         </g>
         <g class="dots final"></g>
         <g class="dots medal"></g>

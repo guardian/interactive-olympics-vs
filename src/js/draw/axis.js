@@ -7,12 +7,15 @@ import {sync} from "../variables";
 /* param: coord - x or y */
 /* param: direction - h or v, isJump? */
 export default function(cfg) {
+    cfg.state = document.querySelector(".js-chart").getAttribute("data-state"); 
+
     let axis, line, text;
     let coord = cfg.coord;
 
     let getSteps = (scale) => {
         switch (true) {
-        //TODO: steps case 
+        case cfg.state === "final" && cfg.value === "year":
+            return [2016]; 
         case cfg.value === "year": 
             let min = scale.domain[coord][0];
             let max = scale.domain[coord][1];

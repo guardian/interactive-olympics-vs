@@ -34,7 +34,7 @@ p {
     
     position: relative;
     display: inline-block;
-    padding: 7px 36px 5px 12px;
+    padding: 6px 36px 6px 12px;
     border-radius: 20px;
 
     transition: 1s;
@@ -47,7 +47,7 @@ p {
 .arrow-right {
     position: absolute;
     right: 5px;
-    top: 3px;
+    top: 2px;
 }
 .replay {
     position: absolute;
@@ -97,28 +97,37 @@ p {
     //padding: 5px 20px 20px 5px;
     padding: 11px 30px 10px 10px;
     
-    text {
-    @include fs-data(2);
-    fill: rgb(187, 187, 187);
-    }
-    circle {
-    cursor: pointer;
-}}
-g[class^="axis"] {
+    text { @include fs-data(2); }
+    circle { cursor: pointer; }
+}
+
+g[class^="axis"],
+.mark-highlight text {
     text-anchor: middle;
 }
-.axis-year line {
+.axis-year text,
+.axis-mark text {
+    fill: rgb(187, 187, 187);
+}
+.axis-year line,
+.mark-highlight line {
     stroke: #e6e6e6;//rgb(238, 238, 238);
     shape-rendering: auto;
     stroke-dasharray: 1, 1;    
 }
 .axis-mark line {
-    stroke: transparent;//#f6f6f6;//rgb(246, 246, 246);
+    //#f6f6f6;//rgb(246, 246, 246);
+    stroke: transparent;
     shape-rendering: auto;
 }
-.dots-world circle:last-child {
+.medal, 
+.world {
+circle:last-child {
     fill-opacity: 1;
     pointer-events: all;
+}}
+.mark-higlight {
+    transition: 0.25s;
 }
 
 // states 

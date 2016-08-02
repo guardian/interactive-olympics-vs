@@ -657,7 +657,7 @@ p {
   background-color: #2492c4;
   position: relative;
   display: inline-block;
-  padding: 7px 36px 5px 12px;
+  padding: 6px 36px 6px 12px;
   border-radius: 20px;
   transition: 1s; }
 
@@ -668,7 +668,7 @@ p {
 .arrow-right {
   position: absolute;
   right: 5px;
-  top: 3px; }
+  top: 2px; }
 
 .replay {
   position: absolute;
@@ -710,15 +710,20 @@ p {
   .chart text {
     font-size: 12px;
     line-height: 14px;
-    font-family: "Guardian Agate Sans 1 Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    fill: #bbbbbb; }
+    font-family: "Guardian Agate Sans 1 Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
   .chart circle {
     cursor: pointer; }
 
-g[class^="axis"] {
+g[class^="axis"],
+.mark-highlight text {
   text-anchor: middle; }
 
-.axis-year line {
+.axis-year text,
+.axis-mark text {
+  fill: #bbbbbb; }
+
+.axis-year line,
+.mark-highlight line {
   stroke: #e6e6e6;
   shape-rendering: auto;
   stroke-dasharray: 1, 1; }
@@ -727,9 +732,13 @@ g[class^="axis"] {
   stroke: transparent;
   shape-rendering: auto; }
 
-.dots-world circle:last-child {
+.medal circle:last-child,
+.world circle:last-child {
   fill-opacity: 1;
   pointer-events: all; }
+
+.mark-higlight {
+  transition: 0.25s; }
 
 .states {
   color: grey;

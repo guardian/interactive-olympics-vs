@@ -3,7 +3,7 @@ import {transition} from 'd3-transition';
 
 import utils from '../lib/utils';
 import {colors, sync} from '../variables';
-import {updateHighlight, hideHighlight} from './highlight';
+import {showHighlightMark, showHighlightAnimate, hideHighlight, hideHighlightMark, hideHighlightAnimate} from './highlight';
 import updateInfo from './info';
 
 export default function(cfg) {
@@ -48,11 +48,11 @@ export default function(cfg) {
         // interaction
         .on("mouseover", d => { 
             showBestAthlete(d); 
-            hideHighlight(); 
+            hideHighlightAnimate(); 
         })
         .on("mouseout",  d => { 
             hideAllAthletes(d);
-            updateHighlight(d);
+            showHighlightAnimate(d);
         });
 
         // best of each state
@@ -78,6 +78,7 @@ export default function(cfg) {
         .attr("cy", d => {
             let cy = cfg.cy(d, cfg.radius, scale.y);
             if (d.id.indexOf("wr") && cy > 95) { cy = 60; }
+            if (d.id.indexOf("or") && cy > 95) { cy = 70; }
             return cy + "%";
         });
 
@@ -104,7 +105,7 @@ export default function(cfg) {
             hideAllAthletes(cfg.best);
             
             if (state === cfg.dataset) { 
-                updateHighlight(cfg.best); 
+                showHighlightAnimate(cfg.best); 
                 d3_select(".btn-next")
                 .style("pointer-events", "all")
                 .classed("btn-disable", false);
@@ -137,8 +138,9 @@ function showBestAthlete(d1) {
     .attr("fill-opacity", d => d.o === 0 ? 0 : 1)
     .attr("r", d => d.r*1.5);
     
+    showHighlightMark(d1);
+    hideHighlightAnimate();
     if (selectDotPre) { selectDotPre.attr("stroke", null); }
-    hideHighlight();
 
     selectDotPre = d3_select("#" + d1.id)
     .attr("stroke", "black")

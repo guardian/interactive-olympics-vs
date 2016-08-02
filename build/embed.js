@@ -276,7 +276,7 @@ $__System.registerDynamic("4", [], true, function($__require, exports, module) {
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = "<div class=\"btn-next\">\n    <span class=\"js-state-next\"></span>\n    <svg class=\"arrow-right\" width=\"28\" height=\"28\" viewBox=\"0 0 30 30\">\n        <path d=\"M22.8 14.6l-7.6-7.6-.7.7 5.5 6.6h-14v1.5h14l-5.5 6.6.7.7 7.6-7.6v-.9\" fill=\"#fff\"/>\n    </svg>\n    <svg class=\"replay\" width=\"16px\" height=\"16px\" viewBox=\"0 0 43 44\">\n        <path d=\"M7.15497025,33.442558 L14.398,32.27 L14.398,29.77 L1.58,29.77 L0.606,30.74 L0.606,44 L3.106,44 L4.278,36.27 L4.28132921,36.2666837 C8.31677436,41.0007268 14.3191026,44 21.023,44 C33.173,44 43.023,34.15 43.023,22 C43.023,9.85 33.173,0 21.023,0 C13.508,0 6.876,3.77 2.908,9.52 L2.944,9.54 L3.266,10.92 L4.964,11.98 L6.311,11.66 C9.572,7.04 14.945,4 21.023,4 C30.949,4 39.023,12.08 39.023,22 C39.023,31.92 30.949,40 21.023,40 C15.4437157,40 10.4578363,37.4375695 7.15497025,33.442558 Z\" fill=\"#fff\"></path>\n    </svg>\n</div>\n\n<div class=\"graph\">\n    <svg class=\"chart js-chart\">\n        <g class=\"axis-y\"></g>\n        <g class=\"axis-x\"></g>\n        <g class=\"mark-highlight\">\n            <line y2=\"99%\"></line>            \n            <text y=\"99%\" fill=\"#333\"></text>            \n        </g>\n        <g class=\"dots final\"></g>\n        <g class=\"dots medal\"></g>\n        <g class=\"dots world\"></g>\n        <g class=\"dots-highlight\">\n            <circle class=\"hl-circle\"></circle>\n        </g>\n    </svg>\n    <p class=\"header\">\n        <span class=\"js-state-name\">2016 Olympic finals</span> -  \n        <span class=\"js-state-text\">It was a WR, OR - how much better. Silver or bronze did better than gold last Olympic, or gold was worst than prior Olympics ...</span>\n    </p>   \n    <div class=\"tooltip\">\n        <span class=\"js-title fz-14 fw-b\"></span>\n        <span class=\"js-team fz-14 fw-b c-g\"></span><br>\n        <span class=\"js-result\"></span><br> \n        <span class=\"js-record\"></span>\n    </div>\n    <div class=\"states\">\n        <span class=\"btn-play\">Play states:</span>\n        <span class=\"btn btn-final\" data-dots=\"final\">final</span> |\n        <span class=\"btn btn-medal\" data-dots=\"medal\">medal</span> |\n        <span class=\"btn btn-world\" data-dots=\"world\">world records</span> |\n        <span class=\"btn btn-mixed\" data-dots=\"mixed\">all</span>\n    </div>\n</div>\n";
+  module.exports = "<div class=\"btn-next\">\n    <span class=\"js-state-next\"></span>\n    <svg class=\"arrow-right\" width=\"28\" height=\"28\" viewBox=\"0 0 30 30\">\n        <path d=\"M22.8 14.6l-7.6-7.6-.7.7 5.5 6.6h-14v1.5h14l-5.5 6.6.7.7 7.6-7.6v-.9\" fill=\"#fff\"/>\n    </svg>\n    <svg class=\"replay\" width=\"16px\" height=\"16px\" viewBox=\"0 0 43 44\">\n        <path d=\"M7.15497025,33.442558 L14.398,32.27 L14.398,29.77 L1.58,29.77 L0.606,30.74 L0.606,44 L3.106,44 L4.278,36.27 L4.28132921,36.2666837 C8.31677436,41.0007268 14.3191026,44 21.023,44 C33.173,44 43.023,34.15 43.023,22 C43.023,9.85 33.173,0 21.023,0 C13.508,0 6.876,3.77 2.908,9.52 L2.944,9.54 L3.266,10.92 L4.964,11.98 L6.311,11.66 C9.572,7.04 14.945,4 21.023,4 C30.949,4 39.023,12.08 39.023,22 C39.023,31.92 30.949,40 21.023,40 C15.4437157,40 10.4578363,37.4375695 7.15497025,33.442558 Z\" fill=\"#fff\"></path>\n    </svg>\n</div>\n\n<div class=\"graph\">\n    <svg class=\"chart js-chart\" data-state=\"final\">\n        <g class=\"axis-y\"></g>\n        <g class=\"axis-x\"></g>\n        <g class=\"mark-highlight\">\n            <!--line class=\"hl-wr\" x2=\"95%\"></line>            \n            <line class=\"hl-or\" x2=\"95%\"></line--> \n            <line class=\"hl-lv\" y2=\"99%\" stroke=\"#e6e6e6\"></line>            \n            <text class=\"hl-year\" x=\"101%\" fill=\"#333\" dy=\".3em\"></text>            \n            <text class=\"hl-mark\" y=\"100%\" fill=\"#333\" dy=\".71em\"></text>            \n        </g>\n        <g class=\"dots final\"></g>\n        <g class=\"dots medal\"></g>\n        <g class=\"dots world\"></g>\n        <g class=\"dots-highlight\">\n            <circle class=\"hl-circle\"></circle>\n        </g>\n    </svg>\n    <p class=\"header\">\n        <span class=\"js-state-name\">2016 Olympic finals</span> -  \n        <span class=\"js-state-text\">It was a WR, OR - how much better. Silver or bronze did better than gold last Olympic, or gold was worst than prior Olympics ...</span>\n    </p>   \n    <div class=\"tooltip\">\n        <span class=\"js-title fz-14 fw-b\"></span>\n        <span class=\"js-team fz-14 fw-b c-g\"></span><br>\n        <span class=\"js-result\"></span><br> \n        <span class=\"js-record\"></span>\n    </div>\n    <div class=\"states\">\n        <span class=\"btn-play\">Play states:</span>\n        <span class=\"btn btn-final\" data-dots=\"final\">final</span> |\n        <span class=\"btn btn-medal\" data-dots=\"medal\">medal</span> |\n        <span class=\"btn btn-world\" data-dots=\"world\">world records</span> |\n        <span class=\"btn btn-mixed\" data-dots=\"mixed\">all</span>\n    </div>\n</div>\n";
   return module.exports;
 });
 
@@ -10087,26 +10087,62 @@ $__System.registerDynamic("41", ["3f"], true, function($__require, exports, modu
 $__System.register("42", ["2d"], function (_export) {
     "use strict";
 
-    var d3_select, preData, elDot;
+    var d3_select, preData;
 
-    _export("updateHighlight", updateHighlight);
+    _export("showHighlightMark", showHighlightMark);
+
+    _export("showHighlightAnimate", showHighlightAnimate);
 
     _export("hideHighlight", hideHighlight);
 
-    function updateHighlight(data) {
-        //window.setTimeout(() => {
+    _export("hideHighlightMark", hideHighlightMark);
+
+    _export("hideHighlightAnimate", hideHighlightAnimate);
+
+    function showHighlightMark(data) {
         if (!data && !preData) return;
         if (!data && preData) data = preData;
 
         // dots-highlight
         var dot = d3_select("#" + data.id);
-        d3_select(".hl-circle").classed("animate", true).attr("opacity", 1).attr("cx", dot.attr("cx")).attr("cy", dot.attr("cy")).attr("r", dot.attr("r"));
+        var x = dot.attr("cx");
+        var y = dot.attr("cy");
+
+        d3_select(".mark-highlight").style("opacity", 1);
+
+        d3_select(".hl-lv").attr("x1", x).attr("x2", x).attr("y1", y);
+        d3_select(".hl-year").attr("y", y).text(data.attrs.year);
+        d3_select(".hl-mark").attr("x", x).text(data.attrs.dist + " m");
 
         preData = data;
-        //}, 500);
+    }
+
+    function showHighlightAnimate(data) {
+        if (!data && !preData) return;
+        if (!data && preData) data = preData;
+
+        // dots-highlight
+        var dot = d3_select("#" + data.id);
+        var x = dot.attr("cx");
+        var y = dot.attr("cy");
+        var year = data.attrs.year;
+        var mark = data.attrs.mark;
+
+        d3_select(".hl-circle").classed("animate", true).style("opacity", 1).attr("cx", x).attr("cy", y).attr("r", dot.attr("r"));
+
+        preData = data;
     }
 
     function hideHighlight() {
+        hideHighlightMark();
+        hideHighlightAnimate();
+    }
+
+    function hideHighlightMark() {
+        d3_select(".mark-highlight").style("opacity", 0);
+    }
+
+    function hideHighlightAnimate() {
         d3_select(".hl-circle").classed("animate", false).style("opacity", 0);
     }
 
@@ -10116,7 +10152,6 @@ $__System.register("42", ["2d"], function (_export) {
         }],
         execute: function () {
             preData = null;
-            elDot = d3_select(".hl-circle");
         }
     };
 });
@@ -10259,7 +10294,7 @@ $__System.register('2b', ['2d', '2c'], function (_export) {
 $__System.register('43', ['41', '42', '2d', '1d', '2c', '2b'], function (_export) {
     'use strict';
 
-    var transition, updateHighlight, hideHighlight, d3_select, utils, colors, sync, updateInfo, selectAllDots, selectDotRelated, selectDotPre;
+    var transition, showHighlightMark, showHighlightAnimate, hideHighlight, hideHighlightMark, hideHighlightAnimate, d3_select, utils, colors, sync, updateInfo, selectAllDots, selectDotRelated, selectDotPre;
 
     function showBestAthlete(d1) {
         var attrs = d1.attrs;
@@ -10279,10 +10314,11 @@ $__System.register('43', ['41', '42', '2d', '1d', '2c', '2b'], function (_export
             return d.r * 1.5;
         });
 
+        showHighlightMark(d1);
+        hideHighlightAnimate();
         if (selectDotPre) {
             selectDotPre.attr("stroke", null);
         }
-        hideHighlight();
 
         selectDotPre = d3_select("#" + d1.id).attr("stroke", "black").attr("r", function (d) {
             return d.r * 2;
@@ -10309,8 +10345,11 @@ $__System.register('43', ['41', '42', '2d', '1d', '2c', '2b'], function (_export
         setters: [function (_) {
             transition = _.transition;
         }, function (_2) {
-            updateHighlight = _2.updateHighlight;
+            showHighlightMark = _2.showHighlightMark;
+            showHighlightAnimate = _2.showHighlightAnimate;
             hideHighlight = _2.hideHighlight;
+            hideHighlightMark = _2.hideHighlightMark;
+            hideHighlightAnimate = _2.hideHighlightAnimate;
         }, function (_d) {
             d3_select = _d.select;
         }, function (_d2) {
@@ -10379,10 +10418,10 @@ $__System.register('43', ['41', '42', '2d', '1d', '2c', '2b'], function (_export
                     // interaction
                     .on("mouseover", function (d) {
                         showBestAthlete(d);
-                        hideHighlight();
+                        hideHighlightAnimate();
                     }).on("mouseout", function (d) {
                         hideAllAthletes(d);
-                        updateHighlight(d);
+                        showHighlightAnimate(d);
                     });
 
                     // best of each state
@@ -10408,6 +10447,9 @@ $__System.register('43', ['41', '42', '2d', '1d', '2c', '2b'], function (_export
                         if (d.id.indexOf("wr") && cy > 95) {
                             cy = 60;
                         }
+                        if (d.id.indexOf("or") && cy > 95) {
+                            cy = 70;
+                        }
                         return cy + "%";
                     });
 
@@ -10432,7 +10474,7 @@ $__System.register('43', ['41', '42', '2d', '1d', '2c', '2b'], function (_export
                         hideAllAthletes(cfg.best);
 
                         if (state === cfg.dataset) {
-                            updateHighlight(cfg.best);
+                            showHighlightAnimate(cfg.best);
                             d3_select(".btn-next").style("pointer-events", "all").classed("btn-disable", false);
                         }
 
@@ -12479,6 +12521,8 @@ $__System.register('50', ['46', 'c', '2d', '2c'], function (_export) {
         }],
         execute: function () {
             _export('default', function (cfg) {
+                cfg.state = document.querySelector(".js-chart").getAttribute("data-state");
+
                 var axis = undefined,
                     line = undefined,
                     text = undefined;
@@ -12486,7 +12530,8 @@ $__System.register('50', ['46', 'c', '2d', '2c'], function (_export) {
 
                 var getSteps = function getSteps(scale) {
                     switch (true) {
-                        //TODO: steps case
+                        case cfg.state === "final" && cfg.value === "year":
+                            return [2016];
                         case cfg.value === "year":
                             var min = scale.domain[coord][0];
                             var max = scale.domain[coord][1];
@@ -12680,14 +12725,18 @@ $__System.register('b', ['29', '43', '50', 'c', '2a', '1d'], function (_export) 
 
                 // update with animations
                 var state = {};
+                var minY = d3_extent(data.finals.concat(data.worlds[data.worlds.length - 1], data.medals[data.medals.length - 1]), function (d) {
+                    return d.y;
+                })[0];
+                var diff = 2016 - minY;
+
                 state.final = {
-                    delay: 0,
                     duration: 2,
                     domain: {
                         x: [d3_extent(data.finals, function (d) {
                             return d.x;
                         })[0], 0],
-                        y: [2016, 2016]
+                        y: [2016 - diff * 2, 2016 + diff * 2]
                     },
                     opacity: [0.75, 0, 0]
                 };
@@ -12695,21 +12744,18 @@ $__System.register('b', ['29', '43', '50', 'c', '2a', '1d'], function (_export) 
                 var domainMedal = getDomain(data.finals.concat(data.medals));
                 domainMedal.x[1] = 0;
                 state.medal = {
-                    delay: 5,
                     duration: 2,
                     domain: domainMedal,
                     opacity: [0.75, 0.5, 0]
                 };
 
                 state.world = {
-                    delay: 10,
                     duration: 2,
                     domain: getDomain(data.finals.concat(data.worlds)),
                     opacity: [0.75, 0, 0.75]
                 };
 
                 state.mixed = {
-                    delay: 15,
                     duration: 2,
                     domain: domain,
                     opacity: [0.75, 0.5, 0.75]
@@ -12734,7 +12780,7 @@ $__System.register('b', ['29', '43', '50', 'c', '2a', '1d'], function (_export) 
                     return btn.addEventListener("click", function (e) {
                         var name = e.target.getAttribute("data-dots");
                         var data = state[name];
-                        toState(els, { domain: data.domain, opacity: data.opacity, delay: 0, duration: 2 }, name);
+                        toState(els, { domain: data.domain, opacity: data.opacity, duration: 2 }, name);
                     });
                 });
 
@@ -12745,7 +12791,7 @@ $__System.register('b', ['29', '43', '50', 'c', '2a', '1d'], function (_export) 
                     var stateNameNext = getNextState(stateName).name;
                     var stateDataNext = state[stateNameNext];
 
-                    toState(els, { domain: stateDataNext.domain, opacity: stateDataNext.opacity, delay: 0, duration: 2 }, stateNameNext);
+                    toState(els, { domain: stateDataNext.domain, opacity: stateDataNext.opacity, duration: 2 }, stateNameNext);
                 });
             });
         }
@@ -13279,7 +13325,7 @@ $__System.register('1', ['3', '4', '5', '6', '9', '10', '13', '16', '19', '42', 
     // individuals
     'use strict';
 
-    var iframeMessenger, embedHTML, throttle, team_pursuit_m, freestyle100x4_relay_w, freestyle200_m, breaststroke100_m, medley400_m, medley400_w, updateHighlight, longjump_m, utils, setStateHeaders, updateInfoPosition;
+    var iframeMessenger, embedHTML, throttle, team_pursuit_m, freestyle100x4_relay_w, freestyle200_m, breaststroke100_m, medley400_m, medley400_w, showHighlightAnimate, longjump_m, utils, setStateHeaders, updateInfoPosition;
 
     function setEmbedSize() {
         var size = utils.getWindowSize();
@@ -13290,7 +13336,7 @@ $__System.register('1', ['3', '4', '5', '6', '9', '10', '13', '16', '19', '42', 
         elEmbed.style.maxHeight = size.w < 980 ? null : size.h - 50 + "px";
         elEmbed.style.minHeight = size.w < 980 ? null : "360px";
 
-        updateHighlight();
+        showHighlightAnimate();
         updateInfoPosition();
     }
     return {
@@ -13313,7 +13359,7 @@ $__System.register('1', ['3', '4', '5', '6', '9', '10', '13', '16', '19', '42', 
         }, function (_10) {
             medley400_w = _10['default'];
         }, function (_4) {
-            updateHighlight = _4.updateHighlight;
+            showHighlightAnimate = _4.showHighlightAnimate;
         }, function (_11) {
             longjump_m = _11['default'];
         }, function (_d) {
