@@ -19,7 +19,7 @@ export default function(jsonRecord, jsonFinals) {
         medals: parseDataRecord(jsonRecord.header, jsonRecord.olympics, type),
         finals: parseDataFinals(dataFinals, type)
     };
-    console.log(data);
+    //console.log(data);
 
     // 2. remap for charts
     return {
@@ -128,7 +128,8 @@ function remapDataForCharts(data, type) {
                 year: dd.year,
                 name: dd.name,
                 team: dd.team,
-                mark: result.txt 
+                mark: result.txt,
+                time: result.val 
             }
         };
     });

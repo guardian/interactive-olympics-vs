@@ -3,7 +3,7 @@ import {transition} from 'd3-transition';
 
 import utils from '../lib/utils';
 import {colors, sync} from '../variables';
-import {showHighlightMark, showHighlightAnimate, hideHighlight, hideHighlightMark, hideHighlightAnimate} from './highlight';
+import {showHighlightAxis, updateDotAnimation, hideHighlight, hideHighlightAxis, hideDotAnimation} from './highlight';
 import updateInfo from './info';
 
 export default function(cfg) {
@@ -34,30 +34,37 @@ export default function(cfg) {
         .data(data)
         .enter().append("circle")
         .attr("id", d => d.id)
+        .attr("class", (d, i) => {
+            let cn = "";
+            if (cfg.dataset === "world" && i === data.length-1) cn += "js-wr wr "; 
+            if (cfg.dataset === "medal" && i === data.length-1) cn += "js-or or ";
+            return cn ? cn.trim() : null; 
+        })
         .attr("data-year", d => d.attrs.year)
         .attr("data-mark", d => d.attrs.mark)
         .attr("data-name", d => d.attrs.name)
         .attr("cx", d => 0)//cfg.cx(d, cfg.radius, scale.x) + "%")
         .attr("cy", d => "50%")//cfg.cy(d, cfg.radius, scale.y) + "%")
         .attr("r", cfg.radius)
-        .attr("fill-opacity", () => 0)
+        .attr("fill-opacity", 0)
         .attr("fill", d => tempColor(d))
-        .attr("stroke-opacity", () => 0)
+        .attr("stroke-opacity", 0)
         .attr("stroke", () => { if(cfg.stroke) return cfg.stroke; })
         .attr("stroke-width", 1)
         // interaction
         .on("mouseover", d => { 
-            showBestAthlete(d); 
-            hideHighlightAnimate(); 
+            showBestAthlete(d, cfg.dataset); 
+            hideDotAnimation(); 
         })
         .on("mouseout",  d => { 
             hideAllAthletes(d);
-            showHighlightAnimate(d);
+            updateDotAnimation(d);
         });
 
         // best of each state
         cfg.best = {};
         cfg.best = data[cfg.ilast];
+
         // TODO: add most frequent ?
         // ...
     };
@@ -75,12 +82,7 @@ export default function(cfg) {
         .attr("fill-opacity", opacity)
         .attr("stroke-opacity", opacity)
         .attr("cx", d => cfg.cx(d, cfg.radius, scale.x) + "%")
-        .attr("cy", d => {
-            let cy = cfg.cy(d, cfg.radius, scale.y);
-            if (d.id.indexOf("wr") && cy > 95) { cy = 60; }
-            if (d.id.indexOf("or") && cy > 95) { cy = 70; }
-            return cy + "%";
-        });
+        .attr("cy", d => cfg.cy(d, cfg.radius, scale.y) + "%");
 
         // disable events on transition
         // console.log("event lock");
@@ -93,7 +95,7 @@ export default function(cfg) {
             state = d3_select(".js-chart").attr("data-state");
             if (state === cfg.dataset) { 
                 //console.log("highlight");
-                showBestAthlete(cfg.best); 
+                showBestAthlete(cfg.best, state); 
             } else if (state === "mixed") {
                 d3_select(".btn-next")
                 .style("pointer-events", "all")
@@ -105,7 +107,7 @@ export default function(cfg) {
             hideAllAthletes(cfg.best);
             
             if (state === cfg.dataset) { 
-                showHighlightAnimate(cfg.best); 
+                updateDotAnimation(cfg.best); 
                 d3_select(".btn-next")
                 .style("pointer-events", "all")
                 .classed("btn-disable", false);
@@ -118,42 +120,54 @@ export default function(cfg) {
 }
 
 // interaction
-let selectAllDots = null;
-let selectDotRelated = null;
-let selectDotPre = null;
+let select = {
+    all: null,
+    related: null,
+    pre: null,
+    //wr: null,
+    //or: null
+};
 
-function showBestAthlete(d1) {
+function showBestAthlete(d1, state) {
     let attrs = d1.attrs;
     let x = sync.scale.x(d1.x);
     let y = sync.scale.y(d1.y);
 
-    // name
-    selectAllDots = d3_select(".js-chart")
+    // change opacity
+    select.all = d3_select(".js-chart")
     .selectAll(".dots circle")
     .style("transition", "0.25s")
-    .attr("fill-opacity", d => d.o !== 0 ? 0.15 : 0);
-    
-    selectDotRelated = selectAllDots
-    .filter(d2 => d2.attrs.name.indexOf(attrs.name) > -1)
-    .attr("fill-opacity", d => d.o === 0 ? 0 : 1)
-    .attr("r", d => d.r*1.5);
-    
-    showHighlightMark(d1);
-    hideHighlightAnimate();
-    if (selectDotPre) { selectDotPre.attr("stroke", null); }
+    .classed("o-15", d => d.o !== 0 ? true : false);
 
-    selectDotPre = d3_select("#" + d1.id)
-    .attr("stroke", "black")
+    select.related = select.all
+    .filter(d2 => d2.attrs.name.indexOf(attrs.name) > -1)
+    .classed("o-1", d => d.o !== 0 ? true : false)
     .attr("r", d => d.r*2);
- 
-    // info
-    updateInfo(d1, selectDotRelated._groups[0].map(el => el.__data__));
+    
+    if (state !== "final") { 
+        d3_select(".js-wr")
+        .classed("o-15", d2 => d2.attrs.name.indexOf(attrs.name) === -1 ? true : false);
+        d3_select(".js-or")
+        .classed("o-15", d2 => d2.attrs.name.indexOf(attrs.name) === -1 ? true : false);
+    }
+    // remove stroke on previous selected
+    if (select.pre) { select.pre.attr("stroke", null); }
+    // add stroke to current selected
+    select.pre = d3_select("#" + d1.id)
+    .attr("stroke", "black");
+    
+    // update info and highlight 
+    updateInfo(d1, select.related._groups[0].map(el => el.__data__));
+    hideDotAnimation();
+    showHighlightAxis(d1);
 }
 
 function hideAllAthletes(d1) {
     let attrs = d1.attrs;
 
-    // name
-    selectAllDots.attr("fill-opacity", d => d.o).style("transition", "0s");
-    selectDotRelated.attr("r", d => d.r);
+    select.all
+    .classed("o-1", false).classed("o-15", false)
+    .style("transition", "0s");
+    
+    select.related.attr("r", d => d.r);
 }

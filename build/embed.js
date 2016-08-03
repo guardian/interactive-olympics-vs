@@ -276,7 +276,7 @@ $__System.registerDynamic("4", [], true, function($__require, exports, module) {
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = "<div class=\"btn-next\">\n    <span class=\"js-state-next\"></span>\n    <svg class=\"arrow-right\" width=\"28\" height=\"28\" viewBox=\"0 0 30 30\">\n        <path d=\"M22.8 14.6l-7.6-7.6-.7.7 5.5 6.6h-14v1.5h14l-5.5 6.6.7.7 7.6-7.6v-.9\" fill=\"#fff\"/>\n    </svg>\n    <svg class=\"replay\" width=\"16px\" height=\"16px\" viewBox=\"0 0 43 44\">\n        <path d=\"M7.15497025,33.442558 L14.398,32.27 L14.398,29.77 L1.58,29.77 L0.606,30.74 L0.606,44 L3.106,44 L4.278,36.27 L4.28132921,36.2666837 C8.31677436,41.0007268 14.3191026,44 21.023,44 C33.173,44 43.023,34.15 43.023,22 C43.023,9.85 33.173,0 21.023,0 C13.508,0 6.876,3.77 2.908,9.52 L2.944,9.54 L3.266,10.92 L4.964,11.98 L6.311,11.66 C9.572,7.04 14.945,4 21.023,4 C30.949,4 39.023,12.08 39.023,22 C39.023,31.92 30.949,40 21.023,40 C15.4437157,40 10.4578363,37.4375695 7.15497025,33.442558 Z\" fill=\"#fff\"></path>\n    </svg>\n</div>\n\n<div class=\"graph\">\n    <svg class=\"chart js-chart\" data-state=\"final\">\n        <g class=\"axis-y\"></g>\n        <g class=\"axis-x\"></g>\n        <g class=\"mark-highlight\">\n            <!--line class=\"hl-wr\" x2=\"95%\"></line>            \n            <line class=\"hl-or\" x2=\"95%\"></line--> \n            <line class=\"hl-lv\" y2=\"99%\" stroke=\"#e6e6e6\"></line>            \n            <text class=\"hl-year\" x=\"101%\" fill=\"#333\" dy=\".3em\"></text>            \n            <text class=\"hl-mark\" y=\"100%\" fill=\"#333\" dy=\".71em\"></text>            \n        </g>\n        <g class=\"dots final\"></g>\n        <g class=\"dots medal\"></g>\n        <g class=\"dots world\"></g>\n        <g class=\"dots-highlight\">\n            <circle class=\"hl-circle\"></circle>\n        </g>\n    </svg>\n    <p class=\"header\">\n        <span class=\"js-state-name\">2016 Olympic finals</span> -  \n        <span class=\"js-state-text\">It was a WR, OR - how much better. Silver or bronze did better than gold last Olympic, or gold was worst than prior Olympics ...</span>\n    </p>   \n    <div class=\"tooltip\">\n        <span class=\"js-title fz-14 fw-b\"></span>\n        <span class=\"js-team fz-14 fw-b c-g\"></span><br>\n        <span class=\"js-result\"></span><br> \n        <span class=\"js-record\"></span>\n    </div>\n    <div class=\"states\">\n        <span class=\"btn-play\">Play states:</span>\n        <span class=\"btn btn-final\" data-dots=\"final\">final</span> |\n        <span class=\"btn btn-medal\" data-dots=\"medal\">medal</span> |\n        <span class=\"btn btn-world\" data-dots=\"world\">world records</span> |\n        <span class=\"btn btn-mixed\" data-dots=\"mixed\">all</span>\n    </div>\n</div>\n";
+  module.exports = "<div class=\"btn-next res\">\n    <span class=\"js-state-next\">Start</span>\n    <svg class=\"arrow-right\" width=\"28\" height=\"28\" viewBox=\"0 0 30 30\">\n        <path d=\"M22.8 14.6l-7.6-7.6-.7.7 5.5 6.6h-14v1.5h14l-5.5 6.6.7.7 7.6-7.6v-.9\" fill=\"#fff\"/>\n    </svg>\n    <svg class=\"replay\" width=\"16px\" height=\"16px\" viewBox=\"0 0 43 44\" opacity=\"0\">\n        <path d=\"M7.15497025,33.442558 L14.398,32.27 L14.398,29.77 L1.58,29.77 L0.606,30.74 L0.606,44 L3.106,44 L4.278,36.27 L4.28132921,36.2666837 C8.31677436,41.0007268 14.3191026,44 21.023,44 C33.173,44 43.023,34.15 43.023,22 C43.023,9.85 33.173,0 21.023,0 C13.508,0 6.876,3.77 2.908,9.52 L2.944,9.54 L3.266,10.92 L4.964,11.98 L6.311,11.66 C9.572,7.04 14.945,4 21.023,4 C30.949,4 39.023,12.08 39.023,22 C39.023,31.92 30.949,40 21.023,40 C15.4437157,40 10.4578363,37.4375695 7.15497025,33.442558 Z\" fill=\"#fff\"></path>\n    </svg>\n</div>\n\n<div class=\"graph\">\n    <svg class=\"chart js-chart\" data-state=\"final\">\n        <g class=\"axis-y\"></g>\n        <g class=\"axis-x\"></g>\n        <g class=\"mark-highlight\">\n            <line class=\"hl-lv\" y2=\"98%\"></line>            \n            <text class=\"hl-year\" x=\"101%\" fill=\"#333\" dy=\".3em\"></text> \n            <text class=\"hl-mark\" y=\"100%\" fill=\"#333\" dy=\".71em\"></text>\n            <g class=\"js-final\">\n            <line class=\"hl-lh-wr\"></line>            \n            <line class=\"hl-lh-or\"></line> \n            <text class=\"hl-txt-wr\" dy=\"-5\"></text> \n            <text class=\"hl-txt-or\" dy=\"-5\"></text> \n            </g>\n        </g>\n        <g class=\"dots final\"></g>\n        <g class=\"dots medal\"></g>\n        <g class=\"dots world\"></g>\n        <g class=\"dots-highlight\">\n            <circle class=\"hl-circle\"></circle>\n        </g>\n    </svg>\n    <p class=\"header res\">\n        <span class=\"js-state-name\">2016 Olympic finals</span> -  \n        <span class=\"js-state-text\">It was a WR, OR - how much better. Silver or bronze did better than gold last Olympic, or gold was worst than prior Olympics ...</span>\n    </p>   \n    <div class=\"tooltip\">\n        <span class=\"js-title fz-14 fw-b\"></span>\n        <span class=\"js-team fz-14 fw-b c-g\"></span><br>\n        <span class=\"js-result\"></span><br> \n        <span class=\"js-record\"></span>\n    </div>\n    <div class=\"states\">\n        <span class=\"btn-play\">Play states:</span>\n        <span class=\"btn btn-final\" data-dots=\"final\">final</span> |\n        <span class=\"btn btn-medal\" data-dots=\"medal\">medal</span> |\n        <span class=\"btn btn-world\" data-dots=\"world\">world records</span> |\n        <span class=\"btn btn-mixed\" data-dots=\"mixed\">all</span>\n    </div>\n</div>\n";
   return module.exports;
 });
 
@@ -2904,7 +2904,7 @@ $__System.register('10', ['d', 'e', 'f', 'a', 'b', 'c'], function (_export) {
                         return d1.x - d2.x;
                     });
                 });
-                console.log(data);
+                //console.log(data);
 
                 result(data, dataCombo);
             });
@@ -5677,7 +5677,8 @@ $__System.register("a", ["1c", "1d"], function (_export) {
                     year: dd.year,
                     name: dd.name,
                     team: dd.team,
-                    mark: result.txt
+                    mark: result.txt,
+                    time: result.val
                 }
             };
         });
@@ -5730,7 +5731,7 @@ $__System.register("a", ["1c", "1d"], function (_export) {
                     medals: parseDataRecord(jsonRecord.header, jsonRecord.olympics, type),
                     finals: parseDataFinals(dataFinals, type)
                 };
-                console.log(data);
+                //console.log(data);
 
                 // 2. remap for charts
                 return {
@@ -5965,14 +5966,14 @@ $__System.register('29', ['d', '2a', '2b', '2c', '2d'], function (_export) {
     }
 
     function toState(els, data, stateName) {
+        d3_select(".js-chart").attr("data-state", stateName);
 
         var scale = calcScale(data.domain);
         _Object$keys(els).forEach(function (key, i) {
             els[key].update(data, scale, data.opacity[i]);
         });
 
-        calcScale(data.domain);
-        d3_select(".js-chart").attr("data-state", stateName);
+        //calcScale(data.domain);      
 
         d3_select(".states").selectAll(".btn").classed("btn-focus", false);
         d3_select(".btn-" + stateName).classed("btn-focus", true);
@@ -5989,10 +5990,12 @@ $__System.register('29', ['d', '2a', '2b', '2c', '2d'], function (_export) {
         d3_select(".js-state-name").text(headers[currInd].title);
         d3_select(".js-state-text").text(headers[currInd].description);
         // next
-        d3_select(".js-state-next").text(isReplay ? "Replay" : "Next with " + headers[nextInd].title.toLowerCase());
-        d3_select(".replay").style("opacity", isReplay ? 1 : 0);
-        d3_select(".arrow-right").style("opacity", isReplay ? 0 : 1);
         d3_select(".btn-next").classed("btn-disable", true).style("pointer-events", "none");
+        window.setTimeout(function () {
+            d3_select(".js-state-next").text(isReplay ? "Replay" : "Next with " + headers[nextInd].title.toLowerCase());
+            d3_select(".replay").style("opacity", isReplay ? 1 : 0);
+            d3_select(".arrow-right").style("opacity", isReplay ? 0 : 1);
+        }, 2500);
 
         // update info
         updateInfo(stateName);
@@ -10084,44 +10087,72 @@ $__System.registerDynamic("41", ["3f"], true, function($__require, exports, modu
   return module.exports;
 });
 
-$__System.register("42", ["2d"], function (_export) {
+$__System.register("42", ["2d", "2c"], function (_export) {
     "use strict";
 
-    var d3_select, preData;
+    var d3_select, record, preData;
 
-    _export("showHighlightMark", showHighlightMark);
+    _export("showHighlightAxis", showHighlightAxis);
 
-    _export("showHighlightAnimate", showHighlightAnimate);
+    _export("updateDotAnimation", updateDotAnimation);
 
     _export("hideHighlight", hideHighlight);
 
-    _export("hideHighlightMark", hideHighlightMark);
+    _export("hideHighlightAxis", hideHighlightAxis);
 
-    _export("hideHighlightAnimate", hideHighlightAnimate);
+    _export("hideDotAnimation", hideDotAnimation);
 
-    function showHighlightMark(data) {
+    function showHighlightAxis(data) {
         if (!data && !preData) return;
         if (!data && preData) data = preData;
 
-        // dots-highlight
+        preData = data;
+        d3_select(".mark-highlight").style("opacity", 0);
+        d3_select(".js-final").classed("d-n", true);
+        if (data.attrs.dist === 0) return;
+
+        // x, y axis
         var dot = d3_select("#" + data.id);
         var x = dot.attr("cx");
         var y = dot.attr("cy");
 
         d3_select(".mark-highlight").style("opacity", 1);
 
+        var atpt = data.attrs;
+        var atwr = record.wr.attrs;
+        var ator = record.or.attrs;
+        var twr = Math.round((atpt.time - atwr.time) * 100) / 100;
+
         d3_select(".hl-lv").attr("x1", x).attr("x2", x).attr("y1", y);
         d3_select(".hl-year").attr("y", y).text(data.attrs.year);
-        d3_select(".hl-mark").attr("x", x).text(data.attrs.dist + " m");
+        d3_select(".hl-mark").attr("x", x).text(data.attrs.dist + " m (+" + twr + "s)");
 
-        preData = data;
+        // wr, or
+        if (d3_select(".js-chart").attr("data-state") !== "final" || data.id.indexOf("wr") > -1 || data.id.indexOf("or") > -1) {
+            return;
+        }
+        d3_select(".js-final").classed("d-n", false);
+
+        var elwr = d3_select(".js-wr");
+        var elor = d3_select(".js-or");
+        // dist > 0 or hide
+        d3_select(".hl-lh-wr").attr("x1", x).attr("x2", elwr.attr("cx")).attr("y1", elwr.attr("cy")).attr("y2", elwr.attr("cy"));
+        d3_select(".hl-lh-or").attr("x1", x).attr("x2", elor.attr("cx")).attr("y1", elor.attr("cy")).attr("y2", elor.attr("cy"));
+
+        d3_select(".hl-txt-wr").attr("y", elwr.attr("cy")).html(addMark(x, atpt.dist, twr, "wr"));
+
+        var tor = atpt.time - ator.time;
+        if (time === 0) {
+            d3_select(".hl-txt-or").text("");return;
+        }
+        d3_select(".hl-txt-or").attr("x", x).attr("y", elor.attr("cy")).html(addMark(x, atpt.dist - ator.dist, tor, "or"));
     }
 
-    function showHighlightAnimate(data) {
+    function updateDotAnimation(data) {
         if (!data && !preData) return;
         if (!data && preData) data = preData;
 
-        // dots-highlight
+        // circle
         var dot = d3_select("#" + data.id);
         var x = dot.attr("cx");
         var y = dot.attr("cy");
@@ -10134,21 +10165,27 @@ $__System.register("42", ["2d"], function (_export) {
     }
 
     function hideHighlight() {
-        hideHighlightMark();
-        hideHighlightAnimate();
+        hideHighlightAxis();
+        hideDotAnimation();
     }
 
-    function hideHighlightMark() {
+    function hideHighlightAxis() {
         d3_select(".mark-highlight").style("opacity", 0);
     }
 
-    function hideHighlightAnimate() {
+    function hideDotAnimation() {
         d3_select(".hl-circle").classed("animate", false).style("opacity", 0);
     }
 
+    function addMark(x, dist, time, type) {
+        // TODO: even behind WR and OR
+        return "<tspan x='" + x + "' dx='5'>" + "<tspan class='" + type + "-dist'>" + Math.round(dist * 100) / 100 + "m</tspan> " + "(+" + time + "s)" + "</tspan>" + "<tspan x='" + x + "' dx='5' dy='20'> behind " + type.toUpperCase() + "</tspan>";
+    }
     return {
         setters: [function (_d) {
             d3_select = _d.select;
+        }, function (_c) {
+            record = _c.record;
         }],
         execute: function () {
             preData = null;
@@ -10294,50 +10331,58 @@ $__System.register('2b', ['2d', '2c'], function (_export) {
 $__System.register('43', ['41', '42', '2d', '1d', '2c', '2b'], function (_export) {
     'use strict';
 
-    var transition, showHighlightMark, showHighlightAnimate, hideHighlight, hideHighlightMark, hideHighlightAnimate, d3_select, utils, colors, sync, updateInfo, selectAllDots, selectDotRelated, selectDotPre;
+    var transition, showHighlightAxis, updateDotAnimation, hideHighlight, hideHighlightAxis, hideDotAnimation, d3_select, utils, colors, sync, updateInfo, select;
 
-    function showBestAthlete(d1) {
+    //wr: null,
+    //or: null
+
+    function showBestAthlete(d1, state) {
         var attrs = d1.attrs;
         var x = sync.scale.x(d1.x);
         var y = sync.scale.y(d1.y);
 
-        // name
-        selectAllDots = d3_select(".js-chart").selectAll(".dots circle").style("transition", "0.25s").attr("fill-opacity", function (d) {
-            return d.o !== 0 ? 0.15 : 0;
+        // change opacity
+        select.all = d3_select(".js-chart").selectAll(".dots circle").style("transition", "0.25s").classed("o-15", function (d) {
+            return d.o !== 0 ? true : false;
         });
 
-        selectDotRelated = selectAllDots.filter(function (d2) {
+        select.related = select.all.filter(function (d2) {
             return d2.attrs.name.indexOf(attrs.name) > -1;
-        }).attr("fill-opacity", function (d) {
-            return d.o === 0 ? 0 : 1;
+        }).classed("o-1", function (d) {
+            return d.o !== 0 ? true : false;
         }).attr("r", function (d) {
-            return d.r * 1.5;
-        });
-
-        showHighlightMark(d1);
-        hideHighlightAnimate();
-        if (selectDotPre) {
-            selectDotPre.attr("stroke", null);
-        }
-
-        selectDotPre = d3_select("#" + d1.id).attr("stroke", "black").attr("r", function (d) {
             return d.r * 2;
         });
 
-        // info
-        updateInfo(d1, selectDotRelated._groups[0].map(function (el) {
+        if (state !== "final") {
+            d3_select(".js-wr").classed("o-15", function (d2) {
+                return d2.attrs.name.indexOf(attrs.name) === -1 ? true : false;
+            });
+            d3_select(".js-or").classed("o-15", function (d2) {
+                return d2.attrs.name.indexOf(attrs.name) === -1 ? true : false;
+            });
+        }
+        // remove stroke on previous selected
+        if (select.pre) {
+            select.pre.attr("stroke", null);
+        }
+        // add stroke to current selected
+        select.pre = d3_select("#" + d1.id).attr("stroke", "black");
+
+        // update info and highlight
+        updateInfo(d1, select.related._groups[0].map(function (el) {
             return el.__data__;
         }));
+        hideDotAnimation();
+        showHighlightAxis(d1);
     }
 
     function hideAllAthletes(d1) {
         var attrs = d1.attrs;
 
-        // name
-        selectAllDots.attr("fill-opacity", function (d) {
-            return d.o;
-        }).style("transition", "0s");
-        selectDotRelated.attr("r", function (d) {
+        select.all.classed("o-1", false).classed("o-15", false).style("transition", "0s");
+
+        select.related.attr("r", function (d) {
             return d.r;
         });
     }
@@ -10345,11 +10390,11 @@ $__System.register('43', ['41', '42', '2d', '1d', '2c', '2b'], function (_export
         setters: [function (_) {
             transition = _.transition;
         }, function (_2) {
-            showHighlightMark = _2.showHighlightMark;
-            showHighlightAnimate = _2.showHighlightAnimate;
+            showHighlightAxis = _2.showHighlightAxis;
+            updateDotAnimation = _2.updateDotAnimation;
             hideHighlight = _2.hideHighlight;
-            hideHighlightMark = _2.hideHighlightMark;
-            hideHighlightAnimate = _2.hideHighlightAnimate;
+            hideHighlightAxis = _2.hideHighlightAxis;
+            hideDotAnimation = _2.hideDotAnimation;
         }, function (_d) {
             d3_select = _d.select;
         }, function (_d2) {
@@ -10394,6 +10439,11 @@ $__System.register('43', ['41', '42', '2d', '1d', '2c', '2b'], function (_export
 
                     dots = d3_select("." + cfg.dataset).selectAll("circle").data(data).enter().append("circle").attr("id", function (d) {
                         return d.id;
+                    }).attr("class", function (d, i) {
+                        var cn = "";
+                        if (cfg.dataset === "world" && i === data.length - 1) cn += "js-wr wr ";
+                        if (cfg.dataset === "medal" && i === data.length - 1) cn += "js-or or ";
+                        return cn ? cn.trim() : null;
                     }).attr("data-year", function (d) {
                         return d.attrs.year;
                     }).attr("data-mark", function (d) {
@@ -10406,27 +10456,24 @@ $__System.register('43', ['41', '42', '2d', '1d', '2c', '2b'], function (_export
                     .attr("cy", function (d) {
                         return "50%";
                     }) //cfg.cy(d, cfg.radius, scale.y) + "%")
-                    .attr("r", cfg.radius).attr("fill-opacity", function () {
-                        return 0;
-                    }).attr("fill", function (d) {
+                    .attr("r", cfg.radius).attr("fill-opacity", 0).attr("fill", function (d) {
                         return tempColor(d);
-                    }).attr("stroke-opacity", function () {
-                        return 0;
-                    }).attr("stroke", function () {
+                    }).attr("stroke-opacity", 0).attr("stroke", function () {
                         if (cfg.stroke) return cfg.stroke;
                     }).attr("stroke-width", 1)
                     // interaction
                     .on("mouseover", function (d) {
-                        showBestAthlete(d);
-                        hideHighlightAnimate();
+                        showBestAthlete(d, cfg.dataset);
+                        hideDotAnimation();
                     }).on("mouseout", function (d) {
                         hideAllAthletes(d);
-                        showHighlightAnimate(d);
+                        updateDotAnimation(d);
                     });
 
                     // best of each state
                     cfg.best = {};
                     cfg.best = data[cfg.ilast];
+
                     // TODO: add most frequent ?
                     // ...
                 };
@@ -10443,14 +10490,7 @@ $__System.register('43', ['41', '42', '2d', '1d', '2c', '2b'], function (_export
                     .duration(opt.duration * 1000).attr("fill-opacity", opacity).attr("stroke-opacity", opacity).attr("cx", function (d) {
                         return cfg.cx(d, cfg.radius, scale.x) + "%";
                     }).attr("cy", function (d) {
-                        var cy = cfg.cy(d, cfg.radius, scale.y);
-                        if (d.id.indexOf("wr") && cy > 95) {
-                            cy = 60;
-                        }
-                        if (d.id.indexOf("or") && cy > 95) {
-                            cy = 70;
-                        }
-                        return cy + "%";
+                        return cfg.cy(d, cfg.radius, scale.y) + "%";
                     });
 
                     // disable events on transition
@@ -10464,7 +10504,7 @@ $__System.register('43', ['41', '42', '2d', '1d', '2c', '2b'], function (_export
                         state = d3_select(".js-chart").attr("data-state");
                         if (state === cfg.dataset) {
                             //console.log("highlight");
-                            showBestAthlete(cfg.best);
+                            showBestAthlete(cfg.best, state);
                         } else if (state === "mixed") {
                             d3_select(".btn-next").style("pointer-events", "all").classed("btn-disable", false);
                         }
@@ -10474,7 +10514,7 @@ $__System.register('43', ['41', '42', '2d', '1d', '2c', '2b'], function (_export
                         hideAllAthletes(cfg.best);
 
                         if (state === cfg.dataset) {
-                            showHighlightAnimate(cfg.best);
+                            updateDotAnimation(cfg.best);
                             d3_select(".btn-next").style("pointer-events", "all").classed("btn-disable", false);
                         }
 
@@ -10485,9 +10525,10 @@ $__System.register('43', ['41', '42', '2d', '1d', '2c', '2b'], function (_export
             });
 
             // interaction
-            selectAllDots = null;
-            selectDotRelated = null;
-            selectDotPre = null;
+            select = {
+                all: null,
+                related: null,
+                pre: null };
         }
     };
 });
@@ -12389,7 +12430,7 @@ $__System.registerDynamic("4f", ["4e"], true, function($__require, exports, modu
 });
 
 $__System.register('2c', ['49', '1d', '4f'], function (_export) {
-    var _Object$defineProperties, utils, d3_json, minWidth, padding, size, cols, width, height, chart, colors, sync, stateHeaders;
+    var _Object$defineProperties, utils, d3_json, minWidth, padding, size, cols, width, height, chart, colors, sync, stateHeaders, record;
 
     function setStateHeaders(type) {
         var key = "1Qx2_oITx9455H4C_Kv8X4rPYtwnY_KwE-vxPe1cFx4M";
@@ -12498,6 +12539,34 @@ $__System.register('2c', ['49', '1d', '4f'], function (_export) {
             };
 
             _export('stateHeaders', stateHeaders);
+
+            record = _Object$defineProperties({
+                dataWr: null,
+                dataOr: null
+            }, {
+                wr: {
+                    set: function set(data) {
+                        this.dataWr = data;
+                    },
+                    get: function get() {
+                        return this.dataWr;
+                    },
+                    configurable: true,
+                    enumerable: true
+                },
+                or: {
+                    set: function set(data) {
+                        this.dataOr = data;
+                    },
+                    get: function get() {
+                        return this.dataOr;
+                    },
+                    configurable: true,
+                    enumerable: true
+                }
+            });
+
+            _export('record', record);
         }
     };
 });
@@ -12521,7 +12590,6 @@ $__System.register('50', ['46', 'c', '2d', '2c'], function (_export) {
         }],
         execute: function () {
             _export('default', function (cfg) {
-                cfg.state = document.querySelector(".js-chart").getAttribute("data-state");
 
                 var axis = undefined,
                     line = undefined,
@@ -12529,6 +12597,8 @@ $__System.register('50', ['46', 'c', '2d', '2c'], function (_export) {
                 var coord = cfg.coord;
 
                 var getSteps = function getSteps(scale) {
+                    cfg.state = document.querySelector(".js-chart").getAttribute("data-state");
+
                     switch (true) {
                         case cfg.state === "final" && cfg.value === "year":
                             return [2016];
@@ -12538,7 +12608,6 @@ $__System.register('50', ['46', 'c', '2d', '2c'], function (_export) {
                             var range = min === max ? [min] : d3_range(max, min, -4);
                             return range[range.length - 1] - 4 === min ? range.concat([min]) : range;
                         case cfg.value === "mark":
-                            //TODO: remove axisBottom later?
                             var d3_axis = d3_axisBottom(scale[coord]).ticks(8);
                             return d3_axis.scale().ticks(d3_axis.ticks()[0]).reverse();
                     }
@@ -12652,12 +12721,12 @@ $__System.registerDynamic("1d", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.register('b', ['29', '43', '50', 'c', '2a', '1d'], function (_export) {
+$__System.register('b', ['29', '43', '50', 'c', '2c', '2a', '1d'], function (_export) {
     //import Grid from '../draw/grid';
 
     'use strict';
 
-    var toState, getNextState, Dots, Axis, d3_extent, calcScale, utils;
+    var toState, getNextState, Dots, Axis, d3_extent, record, calcScale, utils;
 
     function getDomain(data) {
         return {
@@ -12679,6 +12748,8 @@ $__System.register('b', ['29', '43', '50', 'c', '2a', '1d'], function (_export) 
             Axis = _3['default'];
         }, function (_c) {
             d3_extent = _c.extent;
+        }, function (_c2) {
+            record = _c2.record;
         }, function (_a) {
             calcScale = _a['default'];
         }, function (_d) {
@@ -12686,8 +12757,10 @@ $__System.register('b', ['29', '43', '50', 'c', '2a', '1d'], function (_export) 
         }],
         execute: function () {
             _export('default', function (data, dataCombo) {
+                record.or = data.medals[data.medals.length - 1];
+                record.wr = data.worlds[data.worlds.length - 1];
+
                 var domain = getDomain(dataCombo);
-                //console.log(domain);
 
                 // init, draw all
                 var scale = calcScale(domain);
@@ -12736,7 +12809,7 @@ $__System.register('b', ['29', '43', '50', 'c', '2a', '1d'], function (_export) 
                         x: [d3_extent(data.finals, function (d) {
                             return d.x;
                         })[0], 0],
-                        y: [2016 - diff * 2, 2016 + diff * 2]
+                        y: [2016 - diff * 1.5, 2016 + diff * 1.25]
                     },
                     opacity: [0.75, 0, 0]
                 };
@@ -13325,7 +13398,7 @@ $__System.register('1', ['3', '4', '5', '6', '9', '10', '13', '16', '19', '42', 
     // individuals
     'use strict';
 
-    var iframeMessenger, embedHTML, throttle, team_pursuit_m, freestyle100x4_relay_w, freestyle200_m, breaststroke100_m, medley400_m, medley400_w, showHighlightAnimate, longjump_m, utils, setStateHeaders, updateInfoPosition;
+    var iframeMessenger, embedHTML, throttle, team_pursuit_m, freestyle100x4_relay_w, freestyle200_m, breaststroke100_m, medley400_m, medley400_w, updateDotAnimation, longjump_m, utils, setStateHeaders, updateInfoPosition;
 
     function setEmbedSize() {
         var size = utils.getWindowSize();
@@ -13333,10 +13406,8 @@ $__System.register('1', ['3', '4', '5', '6', '9', '10', '13', '16', '19', '42', 
 
         var elEmbed = document.querySelector(".graph");
         elEmbed.style.height = height + "px";
-        elEmbed.style.maxHeight = size.w < 980 ? null : size.h - 50 + "px";
-        elEmbed.style.minHeight = size.w < 980 ? null : "360px";
 
-        showHighlightAnimate();
+        updateDotAnimation();
         updateInfoPosition();
     }
     return {
@@ -13359,7 +13430,7 @@ $__System.register('1', ['3', '4', '5', '6', '9', '10', '13', '16', '19', '42', 
         }, function (_10) {
             medley400_w = _10['default'];
         }, function (_4) {
-            showHighlightAnimate = _4.showHighlightAnimate;
+            updateDotAnimation = _4.updateDotAnimation;
         }, function (_11) {
             longjump_m = _11['default'];
         }, function (_d) {

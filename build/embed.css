@@ -626,13 +626,12 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased; }
 
-html,
 body {
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 14px;
+  line-height: 20px;
   font-family: "Guardian Text Egyptian Web", Georgia, serif;
-  color: #333;
-  margin: 0;
+  max-width: 1300px;
+  margin: auto;
   padding: 0; }
 
 p {
@@ -644,9 +643,10 @@ p {
 /* section header */
 .header {
   background-color: rgba(255, 255, 255, 0.5);
-  max-width: 496px;
   position: absolute;
-  top: 9%; }
+  top: -168px;
+  max-width: 496px;
+  width: calc(100% - 30px); }
 
 /* section btn */
 .btn-next {
@@ -654,12 +654,13 @@ p {
   line-height: 20px;
   font-family: "Guardian Text Sans Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   color: #fff;
-  background-color: #2492c4;
+  background-color: #1991c6;
   position: relative;
   display: inline-block;
-  padding: 6px 36px 6px 12px;
-  border-radius: 20px;
-  transition: 1s; }
+  margin-top: 95px;
+  padding: 12px 36px 10px 15px;
+  border-radius: 24px;
+  transition: color 1s; }
 
 .btn-disable {
   background-color: #bbb;
@@ -668,17 +669,20 @@ p {
 .arrow-right {
   position: absolute;
   right: 5px;
-  top: 2px; }
+  top: 7px; }
 
 .replay {
   position: absolute;
   right: 12px;
-  top: 8px; }
+  top: 13px; }
 
 /* section graph*/
 .graph {
   position: relative;
-  width: 100%; }
+  width: 100%;
+  min-height: 280px;
+  max-height: 680px;
+  margin-top: 15px; }
 
 .tooltip {
   font-size: 12px;
@@ -686,7 +690,7 @@ p {
   font-family: "Guardian Text Sans Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   line-height: 17px;
   white-space: nowrap;
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(255, 255, 255, 0.5);
   border: 1px solid #f1f1f1;
   padding: 8px 10px 7px;
   position: fixed;
@@ -707,38 +711,56 @@ p {
   box-sizing: border-box;
   position: absolute;
   padding: 11px 30px 10px 10px; }
-  .chart text {
-    font-size: 12px;
-    line-height: 14px;
-    font-family: "Guardian Agate Sans 1 Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
   .chart circle {
     cursor: pointer; }
 
 g[class^="axis"],
-.mark-highlight text {
+.hl-year, .hl-mark {
+  font-size: 12px;
+  line-height: 14px;
+  font-family: "Guardian Agate Sans 1 Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   text-anchor: middle; }
 
 .axis-year text,
 .axis-mark text {
-  fill: #bbbbbb; }
-
-.axis-year line,
-.mark-highlight line {
-  stroke: #e6e6e6;
-  shape-rendering: auto;
-  stroke-dasharray: 1, 1; }
+  fill: #bdbdbd; }
 
 .axis-mark line {
   stroke: transparent;
-  shape-rendering: auto; }
+  shape-rendering: crispEdges; }
 
-.medal circle:last-child,
-.world circle:last-child {
+.axis-year line,
+.hl-lv {
+  stroke: #eaeaea;
+  stroke-dasharray: 1, 1;
+  shape-rendering: crispEdges; }
+
+.hl-lh-wr, .hl-lh-or {
+  stroke: #bdbdbd;
+  stroke-width: 2pt;
+  shape-rendering: crispEdges; }
+
+.mark-highlight {
+  font-size: 12px;
+  line-height: 16px;
+  font-family: "Guardian Text Sans Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  fill: #767676; }
+
+.wr-dist {
+  font-size: 16px;
+  line-height: 20px;
+  font-family: "Guardian Agate Sans 1 Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  fill: #333; }
+
+.or-dist {
+  font-size: 16px;
+  line-height: 20px;
+  font-family: "Guardian Agate Sans 1 Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  fill: #fbdc00; }
+
+.wr, .or {
   fill-opacity: 1;
   pointer-events: all; }
-
-.mark-higlight {
-  transition: 0.25s; }
 
 .states {
   color: grey;
@@ -786,17 +808,33 @@ g[class^="axis"],
     opacity: 0.25; } }
 
 /* responsive */
-@media (max-width: 479px) {
+@media (min-width: 480px) {
   body {
-    font-size: 13px; }
-  .graph {
-    margin-top: 15px; } }
+    font-size: 16px;
+    line-height: 24px;
+    font-family: "Guardian Text Egyptian Web", Georgia, serif; } }
 
-@media (max-width: 979px) {
+@media (min-width: 980px) {
   .header {
-    top: -145px; }
+    top: 9%; }
+  .graph,
   .btn-next {
-    margin-top: 95px; } }
+    margin-top: 0; } }
+
+@media (min-width: 740px) {
+  [class*="-dist"] {
+    font-size: 26px; } }
+
+.res {
+  margin-left: 20px; }
+
+@media (min-width: 1140px) {
+  .res {
+    margin-left: 180px; } }
+
+@media (min-width: 1300px) {
+  .res {
+    margin-left: 260px; } }
 
 /* atomic style */
 .fz-14 {
@@ -806,7 +844,7 @@ g[class^="axis"],
   font-weight: bold; }
 
 .c-g {
-  color: grey; }
+  color: #767676; }
 
 .m-0 {
   margin: 0; }
@@ -816,5 +854,17 @@ g[class^="axis"],
 
 .d-ib {
   display: inline-block; }
+
+.d-n {
+  display: none; }
+
+.o-15 {
+  opacity: 0.15; }
+
+.o-25 {
+  opacity: 0.25; }
+
+.o-1 {
+  opacity: 1; }
 
 /*# sourceMappingURL=embed.css.map */

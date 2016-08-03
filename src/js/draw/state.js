@@ -14,14 +14,14 @@ export function getNextState(stateName) {
 }
 
 export function toState(els, data, stateName) {
+    d3_select(".js-chart").attr("data-state", stateName);
     
     let scale = calcScale(data.domain);
     Object.keys(els).forEach((key, i) => {
         els[key].update(data, scale, data.opacity[i]); 
     }); 
 
-    calcScale(data.domain);       
-    d3_select(".js-chart").attr("data-state", stateName);
+    //calcScale(data.domain);       
 
     d3_select(".states").selectAll(".btn").classed("btn-focus", false); 
     d3_select(".btn-" + stateName).classed("btn-focus", true);
@@ -38,10 +38,12 @@ export function toState(els, data, stateName) {
     d3_select(".js-state-name").text(headers[currInd].title);
     d3_select(".js-state-text").text(headers[currInd].description);
     // next
+    d3_select(".btn-next").classed("btn-disable", true).style("pointer-events", "none");
+    window.setTimeout(()=> {
     d3_select(".js-state-next").text(isReplay ? "Replay" : "Next with " + headers[nextInd].title.toLowerCase());
     d3_select(".replay").style("opacity", isReplay ? 1 : 0); 
     d3_select(".arrow-right").style("opacity", isReplay ? 0 : 1); 
-    d3_select(".btn-next").classed("btn-disable", true).style("pointer-events", "none");
+    }, 2500);
     
     // update info
     updateInfo(stateName);

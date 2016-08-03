@@ -22,7 +22,7 @@ export default function() {
         // sort
         data[dd].sort((d1, d2) => d1.x - d2.x);
     });
-    console.log(data);
+    //console.log(data);
 
     result(data, dataCombo); 
 }

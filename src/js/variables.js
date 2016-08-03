@@ -24,7 +24,7 @@ export const colors = {
     silver: "#C0C0C0", 
     bronze: "#CD7F32", 
     others: "#E0E0E0",
-    wr: "#333"
+    wr:     "#333"
 };
 
 // sync scale, domain, ... ?
@@ -75,3 +75,12 @@ export function setStateHeaders(type) {
         }
     });
 }
+
+export let record = {
+    dataWr: null,
+    dataOr: null,
+    set wr(data) { this.dataWr = data; },
+    set or(data) { this.dataOr = data; },
+    get wr() { return this.dataWr; },
+    get or() { return this.dataOr; },
+};

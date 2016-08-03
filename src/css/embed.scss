@@ -1,10 +1,10 @@
 @import "fonts";
 
-html,
+//html,
 body {
-    @include fs-bodyCopy(2);
-    color: #333;
-    margin: 0;
+    @include fs-bodyCopy(1);
+    max-width: 1300px;
+    margin: auto;
     padding: 0;
 }
 p {
@@ -21,23 +21,25 @@ p {
 /* section header */
 .header {
     background-color: rgba(255, 255, 255, 0.5);
-    max-width: 496px; // 620 (max width)*0.8
     position: absolute;
-    top: 9%;
+    top: -168px;
+    max-width: 496px; // 620 (max width)*0.8
+    width: calc(100% - 30px);
 }
 
 /* section btn */
 .btn-next {
     @include fs-textSans(3);
     color: #fff;
-    background-color: #2492c4;
+    background-color: #1991c6;
     
     position: relative;
     display: inline-block;
-    padding: 6px 36px 6px 12px;
-    border-radius: 20px;
+    margin-top: 95px;
+    padding: 12px 36px 10px 15px;
+    border-radius: 24px;
 
-    transition: 1s;
+    transition: color 1s;
 }
 .btn-disable {
     background-color: #bbb;
@@ -47,12 +49,12 @@ p {
 .arrow-right {
     position: absolute;
     right: 5px;
-    top: 2px;
+    top: 7px;
 }
 .replay {
     position: absolute;
     right: 12px;
-    top: 8px;
+    top: 13px;
 }
 
 
@@ -60,6 +62,9 @@ p {
 .graph {
     position: relative;
     width: 100%;
+    min-height: 280px;
+    max-height: 680px;
+    margin-top: 15px; 
 }
 
 
@@ -68,7 +73,7 @@ p {
     @include fs-textSans(1);
     line-height: 17px;
     white-space: nowrap;
-    background-color: rgba(255, 255, 255, 0.75);
+    background-color: rgba(255, 255, 255, 0.5);
     
     //width: 50%;
     //min-width: 300px;
@@ -94,40 +99,45 @@ p {
     box-sizing: border-box;
 
     position: absolute;
-    //padding: 5px 20px 20px 5px;
     padding: 11px 30px 10px 10px;
     
-    text { @include fs-data(2); }
     circle { cursor: pointer; }
 }
 
 g[class^="axis"],
-.mark-highlight text {
+.hl-year, .hl-mark {
+    @include fs-data(2);
     text-anchor: middle;
 }
 .axis-year text,
 .axis-mark text {
-    fill: rgb(187, 187, 187);
-}
-.axis-year line,
-.mark-highlight line {
-    stroke: #e6e6e6;//rgb(238, 238, 238);
-    shape-rendering: auto;
-    stroke-dasharray: 1, 1;    
+    fill: #bdbdbd; //n-3
 }
 .axis-mark line {
-    //#f6f6f6;//rgb(246, 246, 246);
     stroke: transparent;
-    shape-rendering: auto;
+    shape-rendering: crispEdges;
 }
-.medal, 
-.world {
-circle:last-child {
+.axis-year line,
+.hl-lv {
+    stroke: #eaeaea; //n-5 
+    stroke-dasharray: 1, 1;    
+    shape-rendering: crispEdges;
+}
+.hl-lh-wr, .hl-lh-or {
+    stroke: #bdbdbd; //n-3
+    stroke-width: 2pt;
+    shape-rendering: crispEdges;
+}
+.mark-highlight {
+    @include fs-textSans(1);
+    fill: #767676; //n-2
+}
+.wr-dist { @include fs-data(5); fill: #333; }
+.or-dist { @include fs-data(5); fill: rgb(251, 220, 0); }
+
+.wr, .or { 
     fill-opacity: 1;
     pointer-events: all;
-}}
-.mark-higlight {
-    transition: 0.25s;
 }
 
 // states 
@@ -163,7 +173,7 @@ circle:last-child {
 }
 .hl-circle{
     fill: transparent;
-    stroke: #333;
+    stroke: #333; //n-1
     transform-origin: 50%; 
     pointer-events: none; 
 }
@@ -177,27 +187,45 @@ circle:last-child {
 }
 
 /* responsive */
-@media (max-width: 479px) { 
+@media (min-width: 480px) { 
 body {
-    font-size: 13px;
-}
-.graph {
-    margin-top: 15px; 
+    @include fs-bodyCopy(2);
 }}
-@media (max-width: 979px) { 
+@media (min-width: 980px) { 
 .header {
-    top: -145px;
+    top: 9%;
 }
+.graph,
 .btn-next {
-    margin-top: 95px;
+    margin-top: 0;
+}}
+@media (min-width: 740px) { 
+[class*="-dist"] {
+    font-size: 26px;
+}}
+// layout
+.res {
+    margin-left: 20px;
+}
+@media (min-width: 1140px) { 
+.res {
+    margin-left: 180px;
+}}
+@media (min-width: 1300px) { 
+.res {
+    margin-left: 260px;
 }}
 
 /* atomic style */
 .fz-14 { font-size: 14px; }
 .fw-b { font-weight: bold; }
-.c-g { color: grey; }
+.c-g { color: #767676; }
 
 .m-0 { margin: 0; }
 .mb-10 { margin-bottom: 10px; }
 
 .d-ib { display: inline-block; }
+.d-n { display: none; }
+.o-15 { opacity: 0.15; }
+.o-25 { opacity: 0.25; }
+.o-1 { opacity: 1; }

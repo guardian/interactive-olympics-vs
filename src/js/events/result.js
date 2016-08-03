@@ -1,4 +1,5 @@
 import {extent as d3_extent} from 'd3-array';
+import {record} from "../variables";
 import {toState, getNextState} from '../draw/state';
 import calcScale from '../draw/scale';
 import Dots from '../draw/dots';
@@ -7,8 +8,10 @@ import utils from '../lib/utils';
 //import Grid from '../draw/grid';
 
 export default function(data, dataCombo) {
+    record.or = data.medals[data.medals.length-1];
+    record.wr = data.worlds[data.worlds.length-1];
+
     let domain = getDomain(dataCombo);
-    //console.log(domain);
 
     // init, draw all
     let scale = calcScale(domain);
@@ -49,7 +52,7 @@ export default function(data, dataCombo) {
         duration: 2, 
         domain: {
             x: [d3_extent(data.finals, d => d.x)[0], 0],
-            y: [2016 - diff*2, 2016 + diff*2]
+            y: [2016 - diff*1.5, 2016 + diff*1.25]
         },
         opacity: [0.75, 0, 0]
     };

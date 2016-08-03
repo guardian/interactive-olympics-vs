@@ -7,12 +7,13 @@ import {sync} from "../variables";
 /* param: coord - x or y */
 /* param: direction - h or v, isJump? */
 export default function(cfg) {
-    cfg.state = document.querySelector(".js-chart").getAttribute("data-state"); 
 
     let axis, line, text;
     let coord = cfg.coord;
 
     let getSteps = (scale) => {
+        cfg.state = document.querySelector(".js-chart").getAttribute("data-state"); 
+        
         switch (true) {
         case cfg.state === "final" && cfg.value === "year":
             return [2016]; 
@@ -22,7 +23,6 @@ export default function(cfg) {
             let range = min===max ? [min] : d3_range(max, min, -4);
             return range[range.length-1] - 4 === min ? range.concat([min]) : range; 
         case cfg.value === "mark":
-            //TODO: remove axisBottom later? 
             let d3_axis = d3_axisBottom(scale[coord]).ticks(8);
             return d3_axis.scale().ticks(d3_axis.ticks()[0]).reverse();
         }
@@ -35,7 +35,7 @@ export default function(cfg) {
 
     this.update = (opt, scale) => {
         let steps = getSteps(scale);
-        
+
         let divHide;
         let axisSize = document.querySelector(".js-chart").getBoundingClientRect();
         switch(coord) {
