@@ -79,6 +79,7 @@ export default function(data, dataCombo) {
 
     // default 
     toState(els, state.final, "final");
+    
     /*/ play states
     document.querySelector(".btn-play").addEventListener("click", () => {
         play();
@@ -88,7 +89,7 @@ export default function(data, dataCombo) {
             toState(els, state[key], [key]);
         });  
     };
-    //play();*/
+    //play();
 
     // state on event
     let btns = utils.nlist2arr(document.querySelectorAll(".btn"));
@@ -98,7 +99,8 @@ export default function(data, dataCombo) {
             let data = state[name];
             toState(els, {domain: data.domain, opacity: data.opacity, duration: 2}, name);
     }));
-    
+    */
+
     document.querySelector(".btn-next").addEventListener("click", () => {
         // current
         let stateName = document.querySelector(".js-chart").getAttribute("data-state");

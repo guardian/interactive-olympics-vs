@@ -50,13 +50,39 @@ window.init = function init(el, config) {
     }
 };
 
+let page = { w: 0, mode: "small"};
 function setEmbedSize() {
     let size = utils.getWindowSize();
-    let height = Math.round(size.w*0.6);
+    if (size.w === page.w) return;
     
+    // page width change
     let elEmbed = document.querySelector(".graph");
+    let height = Math.round(size.w*0.6);
     elEmbed.style.height = height + "px";
 
     updateDotAnimation();
     updateInfoPosition();
+
+    // header position change
+    switch (true) {
+    case (size.w < 980 && page.w >= 980): swapeChildNodes("in", "top"); break;
+    case (page.w < 980 && size.w >= 980): swapeChildNodes("top", "in"); break;
+    default: /*console.log("no change");*/ }
+    
+    page.w = size.w;
 }
+
+function swapeChildNodes(pre, cur) {
+    //console.log(pre, "->", cur);
+    let nodeCurParent = document.querySelector("." + cur);
+    let nodePreParent = document.querySelector("." + pre);
+    
+    // copy from pre parent
+    let nodeToBeSwapped = nodePreParent.children;
+
+    // remove from pre add to new parent
+    utils.nlist2arr(nodeToBeSwapped).forEach(node => {
+        nodePreParent.removeChild(node);
+        nodeCurParent.appendChild(node);
+    });
+} 

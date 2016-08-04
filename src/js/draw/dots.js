@@ -80,7 +80,7 @@ export default function(cfg) {
         //.delay((d, i) => i*delay)
         .duration(opt.duration*1000)
         .attr("fill-opacity", opacity)
-        .attr("stroke-opacity", opacity)
+        .attr("stroke-opacity", opacity!==0 ? 0.8 : 0)
         .attr("cx", d => cfg.cx(d, cfg.radius, scale.x) + "%")
         .attr("cy", d => cfg.cy(d, cfg.radius, scale.y) + "%");
 

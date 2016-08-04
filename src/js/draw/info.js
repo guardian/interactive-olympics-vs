@@ -54,13 +54,13 @@ function getRecordHtml(records, id) {
     let cf = records.filter(dr => isNumeric(dr.color)).length; 
     let cw = records.filter(dr => dr.color === "wr").length;
     let cm = records.length - cf - cw; 
-    let ct = cm > 1 ? " medals" : " medal";
-    //console.log("w:", cw, "m:", cm);
+    let tw = cw > 1 ? " WRs" : " wr";
+    let tm = cm > 1 ? " medals" : " medal";
     
     return (
-        (cm > 0 ? cm + ct : "") + 
+        (cm > 0 ? cm + tm : "") + 
         (cm > 0 && cw >0 ? " and " : "") + 
-        (cw > 0 ? cw + " WRP" : "")
+        (cw > 0 ? cw + tw : "")
     );
 }
 

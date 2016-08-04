@@ -276,7 +276,7 @@ $__System.registerDynamic("4", [], true, function($__require, exports, module) {
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = "<div class=\"btn-next res\">\n    <span class=\"js-state-next\">Start</span>\n    <svg class=\"arrow-right\" width=\"28\" height=\"28\" viewBox=\"0 0 30 30\">\n        <path d=\"M22.8 14.6l-7.6-7.6-.7.7 5.5 6.6h-14v1.5h14l-5.5 6.6.7.7 7.6-7.6v-.9\" fill=\"#fff\"/>\n    </svg>\n    <svg class=\"replay\" width=\"16px\" height=\"16px\" viewBox=\"0 0 43 44\" opacity=\"0\">\n        <path d=\"M7.15497025,33.442558 L14.398,32.27 L14.398,29.77 L1.58,29.77 L0.606,30.74 L0.606,44 L3.106,44 L4.278,36.27 L4.28132921,36.2666837 C8.31677436,41.0007268 14.3191026,44 21.023,44 C33.173,44 43.023,34.15 43.023,22 C43.023,9.85 33.173,0 21.023,0 C13.508,0 6.876,3.77 2.908,9.52 L2.944,9.54 L3.266,10.92 L4.964,11.98 L6.311,11.66 C9.572,7.04 14.945,4 21.023,4 C30.949,4 39.023,12.08 39.023,22 C39.023,31.92 30.949,40 21.023,40 C15.4437157,40 10.4578363,37.4375695 7.15497025,33.442558 Z\" fill=\"#fff\"></path>\n    </svg>\n</div>\n\n<div class=\"graph\">\n    <svg class=\"chart js-chart\" data-state=\"final\">\n        <g class=\"axis-y\"></g>\n        <g class=\"axis-x\"></g>\n        <g class=\"mark-highlight\">\n            <line class=\"hl-lv\" y2=\"98%\"></line>            \n            <text class=\"hl-year\" x=\"101%\" fill=\"#333\" dy=\".3em\"></text> \n            <text class=\"hl-mark\" y=\"100%\" fill=\"#333\" dy=\".71em\"></text>\n            <g class=\"js-final\">\n            <line class=\"hl-lh-wr\"></line>            \n            <line class=\"hl-lh-or\"></line> \n            <text class=\"hl-txt-wr\" dy=\"-5\"></text> \n            <text class=\"hl-txt-or\" dy=\"-5\"></text> \n            </g>\n        </g>\n        <g class=\"dots final\"></g>\n        <g class=\"dots medal\"></g>\n        <g class=\"dots world\"></g>\n        <g class=\"dots-highlight\">\n            <circle class=\"hl-circle\"></circle>\n        </g>\n    </svg>\n    <p class=\"header res\">\n        <span class=\"js-state-name\">2016 Olympic finals</span> -  \n        <span class=\"js-state-text\">It was a WR, OR - how much better. Silver or bronze did better than gold last Olympic, or gold was worst than prior Olympics ...</span>\n    </p>   \n    <div class=\"tooltip\">\n        <span class=\"js-title fz-14 fw-b\"></span>\n        <span class=\"js-team fz-14 fw-b c-g\"></span><br>\n        <span class=\"js-result\"></span><br> \n        <span class=\"js-record\"></span>\n    </div>\n    <div class=\"states\">\n        <span class=\"btn-play\">Play states:</span>\n        <span class=\"btn btn-final\" data-dots=\"final\">final</span> |\n        <span class=\"btn btn-medal\" data-dots=\"medal\">medal</span> |\n        <span class=\"btn btn-world\" data-dots=\"world\">world records</span> |\n        <span class=\"btn btn-mixed\" data-dots=\"mixed\">all</span>\n    </div>\n</div>\n";
+  module.exports = "<header class=\"top\">\n    <div class=\"header res\">\n        <p class=\"mt-0\">\n            <span class=\"js-state-name\">2016 Olympic finals</span> -  \n            <span class=\"js-state-text\">It was a WR, OR - how much better. Silver or bronze did better than gold last Olympic, or gold was worst than prior Olympics ...</span>\n        </p>\n        <div class=\"btn-next\">\n            <span class=\"js-state-next\">Start</span>\n            <svg class=\"arrow-right\" width=\"28\" height=\"28\" viewBox=\"0 0 30 30\">\n                <path d=\"M22.8 14.6l-7.6-7.6-.7.7 5.5 6.6h-14v1.5h14l-5.5 6.6.7.7 7.6-7.6v-.9\" fill=\"#fff\"/>\n            </svg>\n            <svg class=\"replay\" width=\"16px\" height=\"16px\" viewBox=\"0 0 43 44\" opacity=\"0\">\n                <path d=\"M7.15497025,33.442558 L14.398,32.27 L14.398,29.77 L1.58,29.77 L0.606,30.74 L0.606,44 L3.106,44 L4.278,36.27 L4.28132921,36.2666837 C8.31677436,41.0007268 14.3191026,44 21.023,44 C33.173,44 43.023,34.15 43.023,22 C43.023,9.85 33.173,0 21.023,0 C13.508,0 6.876,3.77 2.908,9.52 L2.944,9.54 L3.266,10.92 L4.964,11.98 L6.311,11.66 C9.572,7.04 14.945,4 21.023,4 C30.949,4 39.023,12.08 39.023,22 C39.023,31.92 30.949,40 21.023,40 C15.4437157,40 10.4578363,37.4375695 7.15497025,33.442558 Z\" fill=\"#fff\"></path>\n            </svg>\n        </div>\n    </div>\n</header>\n\n<div class=\"graph\">\n    <svg class=\"chart js-chart\" data-state=\"final\">\n        <g class=\"axis-y\"></g>\n        <g class=\"axis-x\"></g>\n        <g class=\"mark-highlight\">\n            <line class=\"hl-lv\" y2=\"98%\"></line>            \n            <text class=\"hl-year\" x=\"101%\" fill=\"#333\" dy=\".3em\"></text> \n            <text class=\"hl-mark\" y=\"100%\" fill=\"#333\" dy=\".71em\"></text>\n            <g class=\"js-final\">\n                <line class=\"hl-lh-wr\"></line>            \n                <line class=\"hl-lh-or\"></line> \n                <text class=\"hl-txt-wr\" dy=\"-5\"></text> \n                <text class=\"hl-txt-or\" dy=\"-5\"></text> \n            </g>\n        </g>\n        <g class=\"dots final\"></g>\n        <g class=\"dots medal\"></g>\n        <g class=\"dots world\"></g>\n        <g class=\"dots-highlight\">\n            <circle class=\"hl-circle\"></circle>\n        </g>\n    </svg>   \n    <div class=\"tooltip\">\n        <span class=\"js-title fz-14 fw-b\"></span>\n        <span class=\"js-team fz-14 fw-b c-g\"></span><br>\n        <span class=\"js-result\"></span><br> \n        <span class=\"js-record\"></span>\n    </div>\n    <div class=\"states\">\n        <span class=\"btn-play\">Play states:</span>\n        <span class=\"btn btn-final\" data-dots=\"final\">final</span> |\n        <span class=\"btn btn-medal\" data-dots=\"medal\">medal</span> |\n        <span class=\"btn btn-world\" data-dots=\"world\">world records</span> |\n        <span class=\"btn btn-mixed\" data-dots=\"mixed\">all</span>\n    </div>\n</div>\n\n<header class=\"in\"></header>\n";
   return module.exports;
 });
 
@@ -10121,11 +10121,11 @@ $__System.register("42", ["2d", "2c"], function (_export) {
         var atpt = data.attrs;
         var atwr = record.wr.attrs;
         var ator = record.or.attrs;
-        var twr = Math.round((atpt.time - atwr.time) * 100) / 100;
+        var ttwr = Math.round((atpt.time - atwr.time) * 100) / 100;
 
         d3_select(".hl-lv").attr("x1", x).attr("x2", x).attr("y1", y);
         d3_select(".hl-year").attr("y", y).text(data.attrs.year);
-        d3_select(".hl-mark").attr("x", x).text(data.attrs.dist + " m (+" + twr + "s)");
+        d3_select(".hl-mark").attr("x", x).text(data.attrs.dist + " m (+" + ttwr + "s)");
 
         // wr, or
         if (d3_select(".js-chart").attr("data-state") !== "final" || data.id.indexOf("wr") > -1 || data.id.indexOf("or") > -1) {
@@ -10139,13 +10139,16 @@ $__System.register("42", ["2d", "2c"], function (_export) {
         d3_select(".hl-lh-wr").attr("x1", x).attr("x2", elwr.attr("cx")).attr("y1", elwr.attr("cy")).attr("y2", elwr.attr("cy"));
         d3_select(".hl-lh-or").attr("x1", x).attr("x2", elor.attr("cx")).attr("y1", elor.attr("cy")).attr("y2", elor.attr("cy"));
 
-        d3_select(".hl-txt-wr").attr("y", elwr.attr("cy")).html(addMark(x, atpt.dist, twr, "wr"));
+        d3_select(".hl-txt-wr").attr("y", elwr.attr("cy")).html(addMark(x, atpt.dist, ttwr, "wr"));
 
-        var tor = atpt.time - ator.time;
-        if (time === 0) {
+        var ttor = Math.round((atpt.time - ator.time) * 100) / 100;
+        if (ttor === 0) {
             d3_select(".hl-txt-or").text("");return;
         }
-        d3_select(".hl-txt-or").attr("x", x).attr("y", elor.attr("cy")).html(addMark(x, atpt.dist - ator.dist, tor, "or"));
+        if (ttor === ttwr) {
+            d3_select(".hl-txt-wr .behind").text("behind WR and OR");return;
+        }
+        d3_select(".hl-txt-or").attr("x", x).attr("y", elor.attr("cy")).html(addMark(x, atpt.dist - ator.dist, ttor, "or"));
     }
 
     function updateDotAnimation(data) {
@@ -10179,7 +10182,7 @@ $__System.register("42", ["2d", "2c"], function (_export) {
 
     function addMark(x, dist, time, type) {
         // TODO: even behind WR and OR
-        return "<tspan x='" + x + "' dx='5'>" + "<tspan class='" + type + "-dist'>" + Math.round(dist * 100) / 100 + "m</tspan> " + "(+" + time + "s)" + "</tspan>" + "<tspan x='" + x + "' dx='5' dy='20'> behind " + type.toUpperCase() + "</tspan>";
+        return "<tspan x='" + x + "' dx='5'>" + "<tspan class='" + type + "-dist'>" + Math.round(dist * 100) / 100 + "m</tspan> " + "(+" + time + "s)" + "</tspan>" + "<tspan x='" + x + "' dx='5' dy='20' class='behind'>behind " + type.toUpperCase() + "</tspan>";
     }
     return {
         setters: [function (_d) {
@@ -10220,10 +10223,10 @@ $__System.register('2b', ['2d', '2c'], function (_export) {
             return dr.color === "wr";
         }).length;
         var cm = records.length - cf - cw;
-        var ct = cm > 1 ? " medals" : " medal";
-        //console.log("w:", cw, "m:", cm);
+        var tw = cw > 1 ? " WRs" : " wr";
+        var tm = cm > 1 ? " medals" : " medal";
 
-        return (cm > 0 ? cm + ct : "") + (cm > 0 && cw > 0 ? " and " : "") + (cw > 0 ? cw + " WRP" : "");
+        return (cm > 0 ? cm + tm : "") + (cm > 0 && cw > 0 ? " and " : "") + (cw > 0 ? cw + tw : "");
     }
 
     function updateInfoPosition(data) {
@@ -10487,7 +10490,7 @@ $__System.register('43', ['41', '42', '2d', '1d', '2c', '2b'], function (_export
                         return d.o = opacity;
                     }).transition()
                     //.delay((d, i) => i*delay)
-                    .duration(opt.duration * 1000).attr("fill-opacity", opacity).attr("stroke-opacity", opacity).attr("cx", function (d) {
+                    .duration(opt.duration * 1000).attr("fill-opacity", opacity).attr("stroke-opacity", opacity !== 0 ? 0.8 : 0).attr("cx", function (d) {
                         return cfg.cx(d, cfg.radius, scale.x) + "%";
                     }).attr("cy", function (d) {
                         return cfg.cy(d, cfg.radius, scale.y) + "%";
@@ -12836,6 +12839,7 @@ $__System.register('b', ['29', '43', '50', 'c', '2c', '2a', '1d'], function (_ex
 
                 // default
                 toState(els, state.final, "final");
+
                 /*/ play states
                 document.querySelector(".btn-play").addEventListener("click", () => {
                     play();
@@ -12845,17 +12849,16 @@ $__System.register('b', ['29', '43', '50', 'c', '2c', '2a', '1d'], function (_ex
                         toState(els, state[key], [key]);
                     });  
                 };
-                //play();*/
-
-                // state on event
-                var btns = utils.nlist2arr(document.querySelectorAll(".btn"));
-                btns.forEach(function (btn) {
-                    return btn.addEventListener("click", function (e) {
-                        var name = e.target.getAttribute("data-dots");
-                        var data = state[name];
-                        toState(els, { domain: data.domain, opacity: data.opacity, duration: 2 }, name);
-                    });
-                });
+                //play();
+                 // state on event
+                let btns = utils.nlist2arr(document.querySelectorAll(".btn"));
+                btns.forEach(btn => 
+                    btn.addEventListener("click", (e) => {
+                        let name = e.target.getAttribute("data-dots");
+                        let data = state[name];
+                        toState(els, {domain: data.domain, opacity: data.opacity, duration: 2}, name);
+                }));
+                */
 
                 document.querySelector(".btn-next").addEventListener("click", function () {
                     // current
@@ -13398,17 +13401,44 @@ $__System.register('1', ['3', '4', '5', '6', '9', '10', '13', '16', '19', '42', 
     // individuals
     'use strict';
 
-    var iframeMessenger, embedHTML, throttle, team_pursuit_m, freestyle100x4_relay_w, freestyle200_m, breaststroke100_m, medley400_m, medley400_w, updateDotAnimation, longjump_m, utils, setStateHeaders, updateInfoPosition;
+    var iframeMessenger, embedHTML, throttle, team_pursuit_m, freestyle100x4_relay_w, freestyle200_m, breaststroke100_m, medley400_m, medley400_w, updateDotAnimation, longjump_m, utils, setStateHeaders, updateInfoPosition, page;
 
     function setEmbedSize() {
         var size = utils.getWindowSize();
-        var height = Math.round(size.w * 0.6);
+        if (size.w === page.w) return;
 
+        // page width change
         var elEmbed = document.querySelector(".graph");
+        var height = Math.round(size.w * 0.6);
         elEmbed.style.height = height + "px";
 
         updateDotAnimation();
         updateInfoPosition();
+
+        // header position change
+        switch (true) {
+            case size.w < 980 && page.w >= 980:
+                swapeChildNodes("in", "top");break;
+            case page.w < 980 && size.w >= 980:
+                swapeChildNodes("top", "in");break;
+            default: /*console.log("no change");*/}
+
+        page.w = size.w;
+    }
+
+    function swapeChildNodes(pre, cur) {
+        //console.log(pre, "->", cur);
+        var nodeCurParent = document.querySelector("." + cur);
+        var nodePreParent = document.querySelector("." + pre);
+
+        // copy from pre parent
+        var nodeToBeSwapped = nodePreParent.children;
+
+        // remove from pre add to new parent
+        utils.nlist2arr(nodeToBeSwapped).forEach(function (node) {
+            nodePreParent.removeChild(node);
+            nodeCurParent.appendChild(node);
+        });
     }
     return {
         setters: [function (_) {
@@ -13479,6 +13509,8 @@ $__System.register('1', ['3', '4', '5', '6', '9', '10', '13', '16', '19', '42', 
                         console.log("This event is not special!");
                 }
             };
+
+            page = { w: 0, mode: "small" };
         }
     };
 });

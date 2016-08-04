@@ -627,8 +627,8 @@ html {
   -webkit-font-smoothing: antialiased; }
 
 body {
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 16px;
+  line-height: 24px;
   font-family: "Guardian Text Egyptian Web", Georgia, serif;
   max-width: 1300px;
   margin: auto;
@@ -643,10 +643,14 @@ p {
 /* section header */
 .header {
   background-color: rgba(255, 255, 255, 0.5);
+  max-width: 496px; }
+
+.top {
+  margin-bottom: 20px; }
+
+.in {
   position: absolute;
-  top: -168px;
-  max-width: 496px;
-  width: calc(100% - 30px); }
+  top: 0; }
 
 /* section btn */
 .btn-next {
@@ -657,10 +661,12 @@ p {
   background-color: #1991c6;
   position: relative;
   display: inline-block;
-  margin-top: 95px;
   padding: 12px 36px 10px 15px;
   border-radius: 24px;
   transition: color 1s; }
+
+.btn-next:hover {
+  background-color: #0082ba; }
 
 .btn-disable {
   background-color: #bbb;
@@ -681,8 +687,7 @@ p {
   position: relative;
   width: 100%;
   min-height: 280px;
-  max-height: 680px;
-  margin-top: 15px; }
+  max-height: 680px; }
 
 .tooltip {
   font-size: 12px;
@@ -756,7 +761,7 @@ g[class^="axis"],
   font-size: 16px;
   line-height: 20px;
   font-family: "Guardian Agate Sans 1 Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  fill: #fbdc00; }
+  fill: #ffc500; }
 
 .wr, .or {
   fill-opacity: 1;
@@ -808,25 +813,12 @@ g[class^="axis"],
     opacity: 0.25; } }
 
 /* responsive */
-@media (min-width: 480px) {
-  body {
-    font-size: 16px;
-    line-height: 24px;
-    font-family: "Guardian Text Egyptian Web", Georgia, serif; } }
-
-@media (min-width: 980px) {
-  .header {
-    top: 9%; }
-  .graph,
-  .btn-next {
-    margin-top: 0; } }
-
 @media (min-width: 740px) {
   [class*="-dist"] {
     font-size: 26px; } }
 
 .res {
-  margin-left: 20px; }
+  margin-left: 10px; }
 
 @media (min-width: 1140px) {
   .res {
@@ -848,6 +840,9 @@ g[class^="axis"],
 
 .m-0 {
   margin: 0; }
+
+.mt-0 {
+  margin-top: 0; }
 
 .mb-10 {
   margin-bottom: 10px; }

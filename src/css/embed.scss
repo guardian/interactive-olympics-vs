@@ -2,7 +2,7 @@
 
 //html,
 body {
-    @include fs-bodyCopy(1);
+    @include fs-bodyCopy(2);
     max-width: 1300px;
     margin: auto;
     padding: 0;
@@ -18,13 +18,18 @@ p {
 
 .interactive-embed { }
 
+
 /* section header */
 .header {
     background-color: rgba(255, 255, 255, 0.5);
-    position: absolute;
-    top: -168px;
     max-width: 496px; // 620 (max width)*0.8
-    width: calc(100% - 30px);
+}
+.top {
+    margin-bottom: 20px;
+}
+.in {
+    position: absolute;
+    top: 0;
 }
 
 /* section btn */
@@ -35,11 +40,14 @@ p {
     
     position: relative;
     display: inline-block;
-    margin-top: 95px;
+    //margin-top: 95px;
     padding: 12px 36px 10px 15px;
     border-radius: 24px;
 
     transition: color 1s;
+}
+.btn-next:hover {
+    background-color: #0082ba;
 }
 .btn-disable {
     background-color: #bbb;
@@ -64,7 +72,6 @@ p {
     width: 100%;
     min-height: 280px;
     max-height: 680px;
-    margin-top: 15px; 
 }
 
 
@@ -133,7 +140,7 @@ g[class^="axis"],
     fill: #767676; //n-2
 }
 .wr-dist { @include fs-data(5); fill: #333; }
-.or-dist { @include fs-data(5); fill: rgb(251, 220, 0); }
+.or-dist { @include fs-data(5); fill: #ffc500; }
 
 .wr, .or { 
     fill-opacity: 1;
@@ -186,26 +193,16 @@ g[class^="axis"],
     100% { transform: scale(1);    opacity: 0.25; }
 }
 
+
 /* responsive */
-@media (min-width: 480px) { 
-body {
-    @include fs-bodyCopy(2);
-}}
-@media (min-width: 980px) { 
-.header {
-    top: 9%;
-}
-.graph,
-.btn-next {
-    margin-top: 0;
-}}
 @media (min-width: 740px) { 
 [class*="-dist"] {
     font-size: 26px;
 }}
+
 // layout
 .res {
-    margin-left: 20px;
+    margin-left: 10px;
 }
 @media (min-width: 1140px) { 
 .res {
@@ -216,12 +213,14 @@ body {
     margin-left: 260px;
 }}
 
+
 /* atomic style */
 .fz-14 { font-size: 14px; }
 .fw-b { font-weight: bold; }
 .c-g { color: #767676; }
 
 .m-0 { margin: 0; }
+.mt-0 { margin-top: 0; }
 .mb-10 { margin-bottom: 10px; }
 
 .d-ib { display: inline-block; }

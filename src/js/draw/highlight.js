@@ -23,13 +23,13 @@ export function showHighlightAxis(data) {
     let atpt = data.attrs;
     let atwr = record.wr.attrs;
     let ator = record.or.attrs;
-    let twr = Math.round((atpt.time - atwr.time)*100)/100;
+    let ttwr = Math.round((atpt.time - atwr.time)*100)/100;
 
     d3_select(".hl-lv")
     .attr("x1", x).attr("x2", x)
     .attr("y1", y);
     d3_select(".hl-year").attr("y", y).text(data.attrs.year);
-    d3_select(".hl-mark").attr("x", x).text(data.attrs.dist + " m (+" + twr + "s)");
+    d3_select(".hl-mark").attr("x", x).text(data.attrs.dist + " m (+" + ttwr + "s)");
     
     // wr, or
     if (d3_select(".js-chart").attr("data-state") !== "final" || 
@@ -50,13 +50,14 @@ export function showHighlightAxis(data) {
     
     d3_select(".hl-txt-wr")
     .attr("y", elwr.attr("cy"))
-    .html(addMark(x, atpt.dist, twr, "wr"));
+    .html(addMark(x, atpt.dist, ttwr, "wr"));
     
-    let tor = atpt.time - ator.time;
-    if (time === 0) { d3_select(".hl-txt-or").text(""); return; }
+    let ttor = Math.round((atpt.time - ator.time)*100)/100;
+    if (ttor === 0) { d3_select(".hl-txt-or").text(""); return; }
+    if (ttor === ttwr) { d3_select(".hl-txt-wr .behind").text("behind WR and OR"); return; }
     d3_select(".hl-txt-or")
     .attr("x", x).attr("y", elor.attr("cy"))
-    .html(addMark(x, atpt.dist-ator.dist, tor, "or"));
+    .html(addMark(x, atpt.dist-ator.dist, ttor, "or"));
 }
 
 export function updateDotAnimation(data) {
@@ -100,6 +101,6 @@ function addMark(x, dist, time, type) {
             "<tspan class='" + type + "-dist'>" + Math.round(dist*100)/100 + "m</tspan> " +
             "(+" + time + "s)" + 
         "</tspan>" + 
-        "<tspan x='" + x + "' dx='5' dy='20'> behind " + type.toUpperCase() + "</tspan>"
+        "<tspan x='" + x + "' dx='5' dy='20' class='behind'>behind " + type.toUpperCase() + "</tspan>"
     );
 }
