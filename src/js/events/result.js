@@ -8,6 +8,7 @@ import utils from '../lib/utils';
 //import Grid from '../draw/grid';
 
 export default function(data, dataCombo) {
+    // TODO: move to data/parse due to calc change
     record.or = data.medals[data.medals.length-1];
     record.wr = data.worlds[data.worlds.length-1];
 
@@ -80,27 +81,7 @@ export default function(data, dataCombo) {
     // default 
     toState(els, state.final, "final");
     
-    /*/ play states
-    document.querySelector(".btn-play").addEventListener("click", () => {
-        play();
-    });
-    let play = () => {
-        Object.keys(state).map(key => {
-            toState(els, state[key], [key]);
-        });  
-    };
-    //play();
-
-    // state on event
-    let btns = utils.nlist2arr(document.querySelectorAll(".btn"));
-    btns.forEach(btn => 
-        btn.addEventListener("click", (e) => {
-            let name = e.target.getAttribute("data-dots");
-            let data = state[name];
-            toState(els, {domain: data.domain, opacity: data.opacity, duration: 2}, name);
-    }));
-    */
-
+    // next button
     document.querySelector(".btn-next").addEventListener("click", () => {
         // current
         let stateName = document.querySelector(".js-chart").getAttribute("data-state");

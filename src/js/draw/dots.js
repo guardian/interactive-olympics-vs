@@ -1,4 +1,5 @@
 import {select as d3_select} from 'd3-selection';
+import {voronoi as d3_voronoi} from 'd3-voronoi';
 import {transition} from 'd3-transition';
 
 import utils from '../lib/utils';
@@ -28,6 +29,10 @@ export default function(cfg) {
             dd.id = cfg.dataset.slice(0, 1) + i + (i===cfg.ilast? "-" + idTexts[cfg.dataset] : "");
             return dd;
         });
+
+        // test point picker
+        //test(data);
+        // end of test
 
         dots = d3_select("." + cfg.dataset)
         .selectAll("circle")
@@ -89,7 +94,7 @@ export default function(cfg) {
         let elParent = d3_select("." + cfg.dataset);
         elParent.style("pointer-events", "none");
         hideHighlight(); 
-        
+
         let state;
         window.setTimeout(() => {
             state = d3_select(".js-chart").attr("data-state");
@@ -105,14 +110,14 @@ export default function(cfg) {
 
         window.setTimeout(() => {
             hideAllAthletes(cfg.best);
-            
+
             if (state === cfg.dataset) { 
                 updateDotAnimation(cfg.best); 
                 d3_select(".btn-next")
                 .style("pointer-events", "all")
                 .classed("btn-disable", false);
             }  
-            
+
             //console.log("event free");
             elParent.style("pointer-events", opacity === 0 ? "none" : "all");
         }, (opt.duration + 3) * 1000); 
@@ -143,7 +148,7 @@ function showBestAthlete(d1, state) {
     .filter(d2 => d2.attrs.name.indexOf(attrs.name) > -1)
     .classed("o-1", d => d.o !== 0 ? true : false)
     .attr("r", d => d.r*2);
-    
+
     if (state !== "final") { 
         d3_select(".js-wr")
         .classed("o-15", d2 => d2.attrs.name.indexOf(attrs.name) === -1 ? true : false);
@@ -155,7 +160,7 @@ function showBestAthlete(d1, state) {
     // add stroke to current selected
     select.pre = d3_select("#" + d1.id)
     .attr("stroke", "black");
-    
+
     // update info and highlight 
     updateInfo(d1, select.related._groups[0].map(el => el.__data__));
     hideDotAnimation();
@@ -168,6 +173,28 @@ function hideAllAthletes(d1) {
     select.all
     .classed("o-1", false).classed("o-15", false)
     .style("transition", "0s");
-    
+
     select.related.attr("r", d => d.r);
+}
+
+function test(data) {
+    var voronoi = d3_voronoi()
+    .x(function(d) { return d.x; })
+    .y(function(d) { return d.y; })
+    .extent([[-1, -1], [d3_select("svg").attr("width") + 1, d3_select("svg").attr("height") + 1]]);
+    // TODO:
+    // http://bl.ocks.org/mbostock/ec10387f24c1fad2acac3bc11eb218a5 
+    d3_select(".path").selectAll(".any")
+    .data(voronoi.ploygons(data))
+    .enter().append("path")
+    .attr("d", function(d) { return "M" + d.join(",") + "Z"; })
+    .attr("id", function(d,i) { return "path-"+i; })
+    .attr("clip-path", function(d,i) { return "url(#clip-"+i+")"; })
+    .style('fill-opacity', 0.4)
+    .style("fill", rgba(200,200,200, 0.25))
+    .style("stroke", rgba(200,200,200, 0.5));
+}
+
+function renderCell(d) {
+      return d === null ? null : "M" + d.join("L") + "Z";
 }

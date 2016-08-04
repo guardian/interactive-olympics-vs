@@ -44,43 +44,29 @@ export let sync = {
 
 // header
 export let stateHeaders = {
-    list: ["final", "medal", "mixed"],
-    data: [{
-        state: "final", 
-        title: "2012 Olympic finals", 
-        description: "It was a WR, OR - how much better. Silver or bronze did better than gold last Olympic, or gold was worst than prior Olympics. Lorem ipsum dolor sit amet, ... "}, 
-    { 
-        state: "medal", 
-        title: "Olympic medalist since ...",
-        description: "It was a WR, OR - how much better. Silver or bronze did better than gold last Olympic, or gold was worst than prior Olympics. Aenean commodo ligula eget dolor."}, 
-    {
-        state: "mixed",
-        title: "All results",
-        description: "Interactive with this chart to discover more details ..."
-    }]
+    dataObj: null,
+    objList: null,
+    set data(dataObj) { 
+        this.dataObj = dataObj; 
+        this.objList = dataObj.map(d => d.state);
+    },
+    get data() { return this.dataObj; },
+    get list() { return this.objList; }     
 };
-
-export function setStateHeaders(type) {
-    let key = "1Qx2_oITx9455H4C_Kv8X4rPYtwnY_KwE-vxPe1cFx4M";
-    let url = "https://interactive.guim.co.uk/docsdata-test/" + key + ".json";
-    d3_json(url, (err, resp) => {
-        if (err) {
-            console.error(err);
-        } else if (resp.embed_vs){
-            // TODO: use type to get keys
-            stateHeaders.data = resp.embed_vs;
-            stateHeaders.list = resp.embed_vs.map(d => d.state);
-        } else {
-            console.error("content is not available!");
-        }
-    });
-}
 
 export let record = {
     dataWr: null,
     dataOr: null,
+    typeMark: null,
+    
     set wr(data) { this.dataWr = data; },
     set or(data) { this.dataOr = data; },
     get wr() { return this.dataWr; },
     get or() { return this.dataOr; },
+    
+    set type(data) { 
+        this.typeMark = data === "Time" ? "s" : "m"; 
+    },
+    get type() { return this.typeMark; }
+    
 };

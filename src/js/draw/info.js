@@ -1,14 +1,5 @@
 import {select as d3_select} from 'd3-selection';
-import {defaultHeaderTexts, colors} from '../variables';
-
-const cfg = {
-    "long-jump_m": { unit: "m", event: "men's high jump" },
-    "freestyle-200_m": { unit: "s", event: "men's freestyle 200m" },
-    "freestyle-100x4_relay_w": { unit: "s", event: "women's freestyle 4x100m" },
-    "breaststroke-100_m": { unit: "s", event: "men's breaststroke 100m" },
-    "medley-400_m": { unit: "s", event: "men's medley 400m" },
-    "medley-400_w": { unit: "s", event: "womens's medley 400m" }
-};
+import {defaultHeaderTexts, colors, record} from '../variables';
 
 export default function(data, records) {
     //console.log(data);
@@ -30,7 +21,7 @@ export default function(data, records) {
             (isNumeric(data.color) ? 
             "rank " + data.color + " - ": 
             "<span class='icon-medal' style='background-color:" + colors[data.color] + "'></span>") +
-            attrs.mark + cfg[event].unit + " (" + attrs.year + ")" +
+            attrs.mark + record.type + " (" + attrs.year + ")" +
             (data.id.indexOf("wr") > -1 ? " WR" : "") + 
             (data.id.indexOf("or") > -1 ? " OR" : "") 
         );

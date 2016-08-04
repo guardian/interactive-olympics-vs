@@ -662,13 +662,13 @@ p {
   position: relative;
   display: inline-block;
   padding: 12px 36px 10px 15px;
-  border-radius: 24px;
-  transition: color 1s; }
+  border-radius: 24px; }
 
 .btn-next:hover {
   background-color: #0082ba; }
 
-.btn-disable {
+.btn-disable,
+.btn-disable:hover {
   background-color: #bbb;
   cursor: default; }
 
@@ -767,27 +767,6 @@ g[class^="axis"],
   fill-opacity: 1;
   pointer-events: all; }
 
-.states {
-  color: grey;
-  font-size: 13px;
-  width: 100%;
-  position: absolute;
-  top: 100%;
-  border-top: 1px solid #ccc;
-  margin-top: 20px;
-  padding-top: 3px;
-  display: none; }
-
-.btn {
-  padding: 0 5px; }
-
-.btn-focus {
-  border-top: 4px solid;
-  padding-top: 5px; }
-
-.count-focus {
-  text-decoration: underline; }
-
 .highlight {
   opacity: 0;
   pointer-events: none; }
@@ -819,6 +798,10 @@ g[class^="axis"],
 
 .res {
   margin-left: 10px; }
+
+@media (min-width: 980px) {
+  .top {
+    margin-bottom: 0; } }
 
 @media (min-width: 1140px) {
   .res {

@@ -1,16 +1,17 @@
-//import {json as d3_json} from "d3.request";
 import array from '../lib/array';
 import utils from "../lib/utils";
+import {record} from "../variables";
 
 const thisYear = 2016;
 
-export default function(jsonRecord, jsonFinals) {
+export default function(jsonRecord, jsonFinals, resultType) {
     let dataFinals = jsonFinals.olympics.eventUnit.result.entrant;
     let type = {
         team: dataFinals[0].type,
         result: dataFinals[0].property.filter(dp => dp.type === "Result Type")[0].value,
         direction: "h" // h - horizontal or v - vertical
     };
+    record.type = type.result;
 
     // 1. format data from PA and records to .. 
     // => year, name, team, record, result

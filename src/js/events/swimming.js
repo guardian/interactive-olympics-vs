@@ -1,15 +1,22 @@
-import jsonRecord from '../../data/freestyle200_m.json!json';
-import jsonFinals from '../../dataDummy/freestyle200_m.json!json';
-import parseData from './data';
+import {extent as d3_extent} from 'd3-array';
+import {stateHeaders} from '../variables';
+import parseData from '../data/parser';
+import fetchData from '../data/loader';
 import result from './result';
 
-import {extent as d3_extent} from 'd3-array';
+export default function(event, test) {
+    if (test) { console.log("this is a testing page"); }
+    fetchData(event, test, displayResult);
+}
 
-export default function() {
-    let data = parseData(jsonRecord, jsonFinals);
+function displayResult (err, jsonRecord, jsonFinals, jsonStates) {
+    if (err) { console.error(err); return; }
+
+    stateHeaders.data = jsonStates.embed_vs;
+
+    let data = parseData(jsonRecord, jsonFinals, "Time");
     let dataCombo = data.finals.concat(data.medals, data.worlds);
 
-    /* data manipulation, even specific */ 
     // fastest swimming time
     let timeWr = d3_extent(dataCombo, d => d.x)[0];
     Object.keys(data).forEach(dd => {
