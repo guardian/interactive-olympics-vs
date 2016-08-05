@@ -276,7 +276,7 @@ $__System.registerDynamic("4", [], true, function($__require, exports, module) {
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = "<header class=\"top\">\n    <div class=\"header res\">\n        <p class=\"mt-0\">\n            <span class=\"js-state-name\">2016 Olympic finals</span> -  \n            <span class=\"js-state-text\">It was a WR, OR - how much better. Silver or bronze did better than gold last Olympic, or gold was worst than prior Olympics ...</span>\n        </p>\n        <div class=\"btn-next\">\n            <span class=\"js-state-next\">Start</span>\n            <svg class=\"arrow-right\" width=\"28\" height=\"28\" viewBox=\"0 0 30 30\">\n                <path d=\"M22.8 14.6l-7.6-7.6-.7.7 5.5 6.6h-14v1.5h14l-5.5 6.6.7.7 7.6-7.6v-.9\" fill=\"#fff\"/>\n            </svg>\n            <svg class=\"replay\" width=\"16px\" height=\"16px\" viewBox=\"0 0 43 44\" opacity=\"0\">\n                <path d=\"M7.15497025,33.442558 L14.398,32.27 L14.398,29.77 L1.58,29.77 L0.606,30.74 L0.606,44 L3.106,44 L4.278,36.27 L4.28132921,36.2666837 C8.31677436,41.0007268 14.3191026,44 21.023,44 C33.173,44 43.023,34.15 43.023,22 C43.023,9.85 33.173,0 21.023,0 C13.508,0 6.876,3.77 2.908,9.52 L2.944,9.54 L3.266,10.92 L4.964,11.98 L6.311,11.66 C9.572,7.04 14.945,4 21.023,4 C30.949,4 39.023,12.08 39.023,22 C39.023,31.92 30.949,40 21.023,40 C15.4437157,40 10.4578363,37.4375695 7.15497025,33.442558 Z\" fill=\"#fff\"></path>\n            </svg>\n        </div>\n    </div>\n</header>\n\n<div class=\"graph\">\n    <svg class=\"chart js-chart\" data-state=\"final\">\n        <g class=\"axis-y\"></g>\n        <g class=\"axis-x\"></g>\n        <g class=\"mark-highlight\">\n            <line class=\"hl-lv\" y2=\"98%\"></line>            \n            <text class=\"hl-year\" x=\"101%\" fill=\"#333\" dy=\".3em\"></text> \n            <text class=\"hl-mark\" y=\"100%\" fill=\"#333\" dy=\".71em\"></text>\n            <g class=\"js-final\">\n                <line class=\"hl-lh-wr\"></line>            \n                <line class=\"hl-lh-or\"></line> \n                <text class=\"hl-txt-wr\" dy=\"-5\"></text> \n                <text class=\"hl-txt-or\" dy=\"-5\"></text> \n            </g>\n        </g>\n        <g class=\"clip\"></g>\n        <g class=\"path\"></g>\n        <g class=\"dots final\"></g>\n        <g class=\"dots medal\"></g>\n        <g class=\"dots world\"></g>\n        <g class=\"dots-highlight\">\n            <circle class=\"hl-circle\"></circle>\n        </g>\n    </svg>   \n    <div class=\"tooltip\">\n        <span class=\"js-title fz-14 fw-b\"></span>\n        <span class=\"js-team fz-14 fw-b c-g\"></span><br>\n        <span class=\"js-result\"></span><br> \n        <span class=\"js-record\"></span>\n    </div>\n</div>\n\n<header class=\"in\"></header>\n";
+  module.exports = "<header class=\"top\">\n    <div class=\"header res\">\n        <p class=\"mt-0\">\n            <span class=\"js-state-name\">2016 Olympic finals</span> -  \n            <span class=\"js-state-text\">It was a WR, OR - how much better. Silver or bronze did better than gold last Olympic, or gold was worst than prior Olympics ...</span>\n        </p>\n        <div class=\"btn-next\">\n            <span class=\"js-state-next\">Start</span>\n            <svg class=\"arrow-right\" width=\"28\" height=\"28\" viewBox=\"0 0 30 30\">\n                <path d=\"M22.8 14.6l-7.6-7.6-.7.7 5.5 6.6h-14v1.5h14l-5.5 6.6.7.7 7.6-7.6v-.9\" fill=\"#fff\"/>\n            </svg>\n            <svg class=\"replay\" width=\"16px\" height=\"16px\" viewBox=\"0 0 43 44\" opacity=\"0\">\n                <path d=\"M7.15497025,33.442558 L14.398,32.27 L14.398,29.77 L1.58,29.77 L0.606,30.74 L0.606,44 L3.106,44 L4.278,36.27 L4.28132921,36.2666837 C8.31677436,41.0007268 14.3191026,44 21.023,44 C33.173,44 43.023,34.15 43.023,22 C43.023,9.85 33.173,0 21.023,0 C13.508,0 6.876,3.77 2.908,9.52 L2.944,9.54 L3.266,10.92 L4.964,11.98 L6.311,11.66 C9.572,7.04 14.945,4 21.023,4 C30.949,4 39.023,12.08 39.023,22 C39.023,31.92 30.949,40 21.023,40 C15.4437157,40 10.4578363,37.4375695 7.15497025,33.442558 Z\" fill=\"#fff\"></path>\n            </svg>\n        </div>\n    </div>\n</header>\n\n<div class=\"graph\">\n    <svg class=\"chart js-chart\" data-state=\"final\">\n        <g class=\"axis-y\"></g>\n        <g class=\"axis-x\"></g>\n        <g class=\"mark-highlight\">\n            <line class=\"hl-lv\" y2=\"98%\"></line>            \n            <text class=\"hl-year\" x=\"101%\" fill=\"#333\" dy=\".3em\"></text> \n            <text class=\"hl-mark\" y=\"100%\" fill=\"#333\" dy=\".71em\"></text>\n            <g class=\"js-final\">\n                <line class=\"hl-lh-wr\"></line>            \n                <line class=\"hl-lh-or\"></line> \n                <text class=\"hl-txt-wr\" dy=\"-5\"></text> \n                <text class=\"hl-txt-or\" dy=\"-5\"></text> \n            </g>\n        </g>\n        <g class=\"clip\"></g>\n        <g class=\"path\"></g>\n        <g class=\"dots final\"></g>\n        <g class=\"dots medal\"></g>\n        <g class=\"dots world\"></g>\n        <g class=\"dots-highlight\">\n            <circle class=\"hl-circle\"></circle>\n        </g>\n    </svg>   \n    <div class=\"tooltip\">\n        <span class=\"js-title fz-14 fw-b\"></span>\n        <span class=\"js-team fz-14 fw-b c-g\"></span><br>\n        <span class=\"js-result\"></span><br> \n        <span class=\"js-record\"></span>\n    </div>\n</div>\n\n<header class=\"in\"></header>\n\n<div class=\"note res d-n\">\n    Note that the position are based on the athletes' average speed\n</div>\n";
   return module.exports;
 });
 
@@ -484,28 +484,34 @@ $__System.register('8', ['7', '9'], function (_export) {
                 var urlData = "https://interactive.guim.co.uk/2016/07/olympic-vs/data/";
                 var docsKey = keys[event] ? keys[event] : defaultKey;
 
+                //d3_json(urlData + (test ? "test/" : "") + event + "_final.json", (resp, err) => console.log(resp, err));
+
                 d3_queue().defer(d3_json, urlData + event + ".json").defer(d3_json, urlData + (test ? "test/" : "") + event + "_final.json").defer(d3_json, urlDocs + docsKey + ".json").await(cbResult);
             });
         }
     };
 });
-$__System.register('a', ['8', 'f', 'b', 'c', 'd', 'e'], function (_export) {
-    var fetchData, _Object$keys, d3_extent, stateHeaders, parseData, result;
+$__System.register('a', ['8', 'e', 'b', 'c', 'd'], function (_export) {
+    var fetchData, _Object$keys, stateHeaders, record, parseData, result;
 
     function displayResult(err, jsonRecord, jsonFinals, jsonStates) {
         if (err) {
-            console.error(err);return;
+            console.log(err);return;
         }
 
+        /* state */
         stateHeaders.data = jsonStates.embed_vs;
 
+        /* chart */
         var data = parseData(jsonRecord, jsonFinals, "Time");
-        var dataCombo = data.finals.concat(data.medals, data.worlds);
 
         // fastest swimming time
-        var timeWr = d3_extent(dataCombo, function (d) {
-            return d.x;
-        })[0];
+        var best = {};
+        best.medals = data.medals[data.medals.length - 1];
+        best.worlds = data.worlds[data.worlds.length - 1];
+        best.finals = data.finals[data.finals.length - 1];
+
+        var timeWr = Math.min(best.medals.x, best.worlds.x, best.finals.x);
         _Object$keys(data).forEach(function (dd) {
             // time to distance
             data[dd] = data[dd].map(function (dm) {
@@ -513,28 +519,50 @@ $__System.register('a', ['8', 'f', 'b', 'c', 'd', 'e'], function (_export) {
                 dm.attrs.dist = Math.round(Math.abs(dm.x) * 100) / 100;
                 return dm;
             });
-            // sort
-            data[dd].sort(function (d1, d2) {
-                return d1.x - d2.x;
-            });
         });
-        //console.log(data);
 
-        result(data, dataCombo);
+        // set wr, or records and append data if needed
+        setRecord("or", "medals", data, best);
+        setRecord("wr", "worlds", data, best);
+
+        result(data);
+    }
+
+    function setRecord(typeRecord, typeData, data, best) {
+        var isNewRecord = best.finals.x > best[typeData].x;
+        switch (true) {
+            case typeRecord === "wr":
+                if (isNewRecord) {
+                    // clone obj, trick!
+                    var newWr = JSON.parse(JSON.stringify(best.finals));
+                    newWr.color = "wr";
+                    data.worlds.push(newWr);
+                }
+                record.wr = data.worlds[data.worlds.length - 1];
+                break;
+            case typeRecord === "or":
+                record.or = isNewRecord ? best.finals : best.medals;
+                break;
+        }
+
+        if (isNewRecord) {
+            console.log("new " + typeRecord + "!!");
+        } else if (best.finals.x === best[typeData].x) {
+            console.log("almost break a new " + typeRecord + "!");
+        }
     }
     return {
         setters: [function (_) {
             fetchData = _['default'];
-        }, function (_f) {
-            _Object$keys = _f['default'];
-        }, function (_b) {
-            d3_extent = _b.extent;
-        }, function (_c) {
-            stateHeaders = _c.stateHeaders;
-        }, function (_d) {
-            parseData = _d['default'];
         }, function (_e) {
-            result = _e['default'];
+            _Object$keys = _e['default'];
+        }, function (_b) {
+            stateHeaders = _b.stateHeaders;
+            record = _b.record;
+        }, function (_c) {
+            parseData = _c['default'];
+        }, function (_d) {
+            result = _d['default'];
         }],
         execute: function () {
             'use strict';
@@ -548,7 +576,7 @@ $__System.register('a', ['8', 'f', 'b', 'c', 'd', 'e'], function (_export) {
         }
     };
 });
-$__System.registerDynamic("10", [], true, function($__require, exports, module) {
+$__System.registerDynamic("f", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -1215,7 +1243,7 @@ $__System.registerDynamic("10", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("11", [], true, function($__require, exports, module) {
+$__System.registerDynamic("10", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -1228,7 +1256,7 @@ $__System.registerDynamic("11", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("12", [], true, function($__require, exports, module) {
+$__System.registerDynamic("11", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -1828,7 +1856,7 @@ $__System.registerDynamic("12", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("13", [], true, function($__require, exports, module) {
+$__System.registerDynamic("12", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -1873,7 +1901,7 @@ $__System.registerDynamic("13", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.register("d", ["13", "14", "c"], function (_export) {
+$__System.register("c", ["12", "13", "b"], function (_export) {
     "use strict";
 
     var array, utils, record, thisYear;
@@ -1951,8 +1979,9 @@ $__System.register("d", ["13", "14", "c"], function (_export) {
         var dataRemap = undefined;
         var dataGroup = undefined;
 
+        // remap to avoid visual overlapped
         if (isOverlappingAvoid) {
-            // add count and index to avoid visual overlapped
+            // add count and index
             dataGroup = array.groupBy(["year", "result"], data);
             dataGroup = dataGroup.map(function (dg) {
                 dg = remapDataForCharts(dg, type);
@@ -1972,6 +2001,20 @@ $__System.register("d", ["13", "14", "c"], function (_export) {
             dataRemap = remapDataForCharts(data, type);
         }
 
+        // sort
+        switch (type.result) {
+            case "Time":
+                dataRemap.sort(function (d1, d2) {
+                    return d2.attrs.time - d1.attrs.time;
+                });
+                break;
+            case "Distance":
+                dataRemap.sort(function (d1, d2) {
+                    return d1.attrs.dist - d2.attrs.dist;
+                });
+                break;
+        }
+
         return dataRemap;
     }
 
@@ -1979,6 +2022,7 @@ $__System.register("d", ["13", "14", "c"], function (_export) {
         return data.map(function (dd) {
             var result = getParsedValue(dd.result, type.result);
             var isJump = type.dirction === "h";
+            dd.year = parseInt(dd.year);
             return {
                 x: isJump ? dd.year : result.val,
                 y: isJump ? result.val : dd.year,
@@ -1989,6 +2033,7 @@ $__System.register("d", ["13", "14", "c"], function (_export) {
                     team: dd.team,
                     mark: result.txt,
                     time: result.val
+                    // TODO: remove time if type.result is distance?
                 }
             };
         });
@@ -2020,8 +2065,8 @@ $__System.register("d", ["13", "14", "c"], function (_export) {
             array = _["default"];
         }, function (_2) {
             utils = _2["default"];
-        }, function (_c) {
-            record = _c.record;
+        }, function (_b) {
+            record = _b.record;
         }],
         execute: function () {
             thisYear = 2016;
@@ -2055,7 +2100,7 @@ $__System.register("d", ["13", "14", "c"], function (_export) {
         }
     };
 });
-$__System.registerDynamic("15", [], true, function($__require, exports, module) {
+$__System.registerDynamic("14", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -2068,19 +2113,19 @@ $__System.registerDynamic("15", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("16", ["15"], true, function($__require, exports, module) {
+$__System.registerDynamic("15", ["14"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  var defined = $__require('15');
+  var defined = $__require('14');
   module.exports = function(it) {
     return Object(defined(it));
   };
   return module.exports;
 });
 
-$__System.registerDynamic("17", [], true, function($__require, exports, module) {
+$__System.registerDynamic("16", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -2091,7 +2136,7 @@ $__System.registerDynamic("17", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("18", [], true, function($__require, exports, module) {
+$__System.registerDynamic("17", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -2104,12 +2149,12 @@ $__System.registerDynamic("18", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("19", ["18"], true, function($__require, exports, module) {
+$__System.registerDynamic("18", ["17"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  var aFunction = $__require('18');
+  var aFunction = $__require('17');
   module.exports = function(fn, that, length) {
     aFunction(fn);
     if (that === undefined)
@@ -2135,14 +2180,14 @@ $__System.registerDynamic("19", ["18"], true, function($__require, exports, modu
   return module.exports;
 });
 
-$__System.registerDynamic("1a", ["17", "1b", "19"], true, function($__require, exports, module) {
+$__System.registerDynamic("19", ["16", "1a", "18"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  var global = $__require('17'),
-      core = $__require('1b'),
-      ctx = $__require('19'),
+  var global = $__require('16'),
+      core = $__require('1a'),
+      ctx = $__require('18'),
       PROTOTYPE = 'prototype';
   var $export = function(type, name, source) {
     var IS_FORCED = type & $export.F,
@@ -2184,7 +2229,7 @@ $__System.registerDynamic("1a", ["17", "1b", "19"], true, function($__require, e
   return module.exports;
 });
 
-$__System.registerDynamic("1c", [], true, function($__require, exports, module) {
+$__System.registerDynamic("1b", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -2199,14 +2244,14 @@ $__System.registerDynamic("1c", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("1d", ["1a", "1b", "1c"], true, function($__require, exports, module) {
+$__System.registerDynamic("1c", ["19", "1a", "1b"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  var $export = $__require('1a'),
-      core = $__require('1b'),
-      fails = $__require('1c');
+  var $export = $__require('19'),
+      core = $__require('1a'),
+      fails = $__require('1b');
   module.exports = function(KEY, exec) {
     var fn = (core.Object || {})[KEY] || Object[KEY],
         exp = {};
@@ -2218,13 +2263,13 @@ $__System.registerDynamic("1d", ["1a", "1b", "1c"], true, function($__require, e
   return module.exports;
 });
 
-$__System.registerDynamic("1e", ["16", "1d"], true, function($__require, exports, module) {
+$__System.registerDynamic("1d", ["15", "1c"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  var toObject = $__require('16');
-  $__require('1d')('keys', function($keys) {
+  var toObject = $__require('15');
+  $__require('1c')('keys', function($keys) {
     return function keys(it) {
       return $keys(toObject(it));
     };
@@ -2232,7 +2277,7 @@ $__System.registerDynamic("1e", ["16", "1d"], true, function($__require, exports
   return module.exports;
 });
 
-$__System.registerDynamic("1b", [], true, function($__require, exports, module) {
+$__System.registerDynamic("1a", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -2243,29 +2288,29 @@ $__System.registerDynamic("1b", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("1f", ["1e", "1b"], true, function($__require, exports, module) {
+$__System.registerDynamic("1e", ["1d", "1a"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  $__require('1e');
-  module.exports = $__require('1b').Object.keys;
+  $__require('1d');
+  module.exports = $__require('1a').Object.keys;
   return module.exports;
 });
 
-$__System.registerDynamic("f", ["1f"], true, function($__require, exports, module) {
+$__System.registerDynamic("e", ["1e"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
   module.exports = {
-    "default": $__require('1f'),
+    "default": $__require('1e'),
     __esModule: true
   };
   return module.exports;
 });
 
-$__System.register('20', ['21', '22', '23', 'f', 'c'], function (_export) {
+$__System.register('1f', ['20', '21', '22', 'e', 'b'], function (_export) {
     var calcScale, updateInfo, d3_select, _Object$keys, stateHeaders;
 
     function getNextState(stateName) {
@@ -2303,12 +2348,12 @@ $__System.register('20', ['21', '22', '23', 'f', 'c'], function (_export) {
         d3_select(".js-state-name").text(headers[currInd].title);
         d3_select(".js-state-text").text(headers[currInd].description);
         // next
-        d3_select(".btn-next").classed("btn-disable", true).style("pointer-events", "none");
-        window.setTimeout(function () {
-            d3_select(".js-state-next").text(isReplay ? "Replay" : "Next with " + headers[nextInd].title.toLowerCase());
-            d3_select(".replay").style("opacity", isReplay ? 1 : 0);
-            d3_select(".arrow-right").style("opacity", isReplay ? 0 : 1);
-        }, 2500);
+        d3_select(".btn-next").style("pointer-events", "none").classed("btn-disable", true);
+        //window.setTimeout(()=> {
+        d3_select(".js-state-next").text(isReplay ? "Replay" : "Next with " + headers[nextInd].title.toLowerCase());
+        d3_select(".replay").style("opacity", isReplay ? 1 : 0);
+        d3_select(".arrow-right").style("opacity", isReplay ? 0 : 1);
+        //}, 2500);
 
         // update info
         updateInfo(stateName);
@@ -2321,10 +2366,10 @@ $__System.register('20', ['21', '22', '23', 'f', 'c'], function (_export) {
             updateInfo = _2['default'];
         }, function (_3) {
             d3_select = _3.select;
-        }, function (_f) {
-            _Object$keys = _f['default'];
-        }, function (_c) {
-            stateHeaders = _c.stateHeaders;
+        }, function (_e) {
+            _Object$keys = _e['default'];
+        }, function (_b) {
+            stateHeaders = _b.stateHeaders;
         }],
         execute: function () {
             'use strict';
@@ -2335,7 +2380,7 @@ $__System.register('20', ['21', '22', '23', 'f', 'c'], function (_export) {
         }
     };
 });
-$__System.registerDynamic("24", [], true, function($__require, exports, module) {
+$__System.registerDynamic("23", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -2622,16 +2667,16 @@ $__System.registerDynamic("24", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("25", ["24"], true, function($__require, exports, module) {
+$__System.registerDynamic("24", ["23"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('24');
+  module.exports = $__require('23');
   return module.exports;
 });
 
-$__System.registerDynamic("26", [], true, function($__require, exports, module) {
+$__System.registerDynamic("25", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -2971,23 +3016,23 @@ $__System.registerDynamic("26", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("27", ["26"], true, function($__require, exports, module) {
+$__System.registerDynamic("26", ["25"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('26');
+  module.exports = $__require('25');
   return module.exports;
 });
 
-$__System.registerDynamic("28", ["27"], true, function($__require, exports, module) {
+$__System.registerDynamic("27", ["26"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
   "format cjs";
   (function(global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('27')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-time'], factory) : (factory((global.d3 = global.d3 || {}), global.d3));
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('26')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-time'], factory) : (factory((global.d3 = global.d3 || {}), global.d3));
   }(this, function(exports, d3Time) {
     'use strict';
     function localDate(d) {
@@ -3496,23 +3541,23 @@ $__System.registerDynamic("28", ["27"], true, function($__require, exports, modu
   return module.exports;
 });
 
-$__System.registerDynamic("29", ["28"], true, function($__require, exports, module) {
+$__System.registerDynamic("28", ["27"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('28');
+  module.exports = $__require('27');
   return module.exports;
 });
 
-$__System.registerDynamic("2a", ["b", "2b", "2d", "25", "27", "29", "2c"], true, function($__require, exports, module) {
+$__System.registerDynamic("29", ["2a", "2b", "2d", "24", "26", "28", "2c"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
   "format cjs";
   (function(global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('b'), $__require('2b'), $__require('2d'), $__require('25'), $__require('27'), $__require('29'), $__require('2c')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-array', 'd3-collection', 'd3-interpolate', 'd3-format', 'd3-time', 'd3-time-format', 'd3-color'], factory) : (factory((global.d3 = global.d3 || {}), global.d3, global.d3, global.d3, global.d3, global.d3, global.d3, global.d3));
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('2a'), $__require('2b'), $__require('2d'), $__require('24'), $__require('26'), $__require('28'), $__require('2c')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-array', 'd3-collection', 'd3-interpolate', 'd3-format', 'd3-time', 'd3-time-format', 'd3-color'], factory) : (factory((global.d3 = global.d3 || {}), global.d3, global.d3, global.d3, global.d3, global.d3, global.d3, global.d3));
   }(this, function(exports, d3Array, d3Collection, d3Interpolate, d3Format, d3Time, d3TimeFormat, d3Color) {
     'use strict';
     var array = Array.prototype;
@@ -4254,22 +4299,22 @@ $__System.registerDynamic("2a", ["b", "2b", "2d", "25", "27", "29", "2c"], true,
   return module.exports;
 });
 
-$__System.registerDynamic("2e", ["2a"], true, function($__require, exports, module) {
+$__System.registerDynamic("2e", ["29"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('2a');
+  module.exports = $__require('29');
   return module.exports;
 });
 
-$__System.register('21', ['c', '2e'], function (_export) {
+$__System.register('20', ['b', '2e'], function (_export) {
     'use strict';
 
     var sync, d3_scaleLinear;
     return {
-        setters: [function (_c) {
-            sync = _c.sync;
+        setters: [function (_b) {
+            sync = _b.sync;
         }, function (_e) {
             d3_scaleLinear = _e.scaleLinear;
         }],
@@ -6614,14 +6659,14 @@ $__System.registerDynamic("36", ["35"], true, function($__require, exports, modu
   return module.exports;
 });
 
-$__System.registerDynamic("37", ["23", "38", "32", "2d", "2c", "36"], true, function($__require, exports, module) {
+$__System.registerDynamic("37", ["22", "38", "32", "2d", "2c", "36"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
   "format cjs";
   (function(global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('23'), $__require('38'), $__require('32'), $__require('2d'), $__require('2c'), $__require('36')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-selection', 'd3-dispatch', 'd3-timer', 'd3-interpolate', 'd3-color', 'd3-ease'], factory) : (factory((global.d3 = global.d3 || {}), global.d3, global.d3, global.d3, global.d3, global.d3, global.d3));
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('22'), $__require('38'), $__require('32'), $__require('2d'), $__require('2c'), $__require('36')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-selection', 'd3-dispatch', 'd3-timer', 'd3-interpolate', 'd3-color', 'd3-ease'], factory) : (factory((global.d3 = global.d3 || {}), global.d3, global.d3, global.d3, global.d3, global.d3, global.d3));
   }(this, function(exports, d3Selection, d3Dispatch, d3Timer, d3Interpolate, d3Color, d3Ease) {
     'use strict';
     var emptyOn = d3Dispatch.dispatch("start", "end", "interrupt");
@@ -7327,10 +7372,10 @@ $__System.registerDynamic("39", ["37"], true, function($__require, exports, modu
   return module.exports;
 });
 
-$__System.register("3a", ["23", "c"], function (_export) {
+$__System.register("3a", ["22", "b"], function (_export) {
     "use strict";
 
-    var d3_select, record, preData;
+    var d3_select, record, browser, preData;
 
     _export("showHighlightAxis", showHighlightAxis);
 
@@ -7373,8 +7418,8 @@ $__System.register("3a", ["23", "c"], function (_export) {
         }
         d3_select(".js-final").classed("d-n", false);
 
-        var elwr = d3_select(".js-wr");
-        var elor = d3_select(".js-or");
+        var elwr = d3_select(".wr");
+        var elor = d3_select(".or");
         // dist > 0 or hide
         d3_select(".hl-lh-wr").attr("x1", x).attr("x2", elwr.attr("cx")).attr("y1", elwr.attr("cy")).attr("y2", elwr.attr("cy"));
         d3_select(".hl-lh-or").attr("x1", x).attr("x2", elor.attr("cx")).attr("y1", elor.attr("cy")).attr("y2", elor.attr("cy"));
@@ -7402,7 +7447,7 @@ $__System.register("3a", ["23", "c"], function (_export) {
         var year = data.attrs.year;
         var mark = data.attrs.mark;
 
-        d3_select(".hl-circle").classed("animate", true).style("opacity", 1).attr("cx", x).attr("cy", y).attr("r", dot.attr("r"));
+        d3_select(".hl-circle").classed("animate", browser !== "ff" ? true : false).style("opacity", 1).attr("cx", x).attr("cy", y).attr("r", dot.attr("r"));
 
         preData = data;
     }
@@ -7427,15 +7472,16 @@ $__System.register("3a", ["23", "c"], function (_export) {
     return {
         setters: [function (_) {
             d3_select = _.select;
-        }, function (_c) {
-            record = _c.record;
+        }, function (_b) {
+            record = _b.record;
+            browser = _b.browser;
         }],
         execute: function () {
             preData = null;
         }
     };
 });
-$__System.register('22', ['23', 'c'], function (_export) {
+$__System.register('21', ['22', 'b'], function (_export) {
     'use strict';
 
     var d3_select, defaultHeaderTexts, colors, record, preData;
@@ -7532,10 +7578,10 @@ $__System.register('22', ['23', 'c'], function (_export) {
     return {
         setters: [function (_) {
             d3_select = _.select;
-        }, function (_c) {
-            defaultHeaderTexts = _c.defaultHeaderTexts;
-            colors = _c.colors;
-            record = _c.record;
+        }, function (_b) {
+            defaultHeaderTexts = _b.defaultHeaderTexts;
+            colors = _b.colors;
+            record = _b.record;
         }],
         execute: function () {
             _export('default', function (data, records) {
@@ -7553,7 +7599,7 @@ $__System.register('22', ['23', 'c'], function (_export) {
                     d3_select(".js-title").text(attrs.name);
                     d3_select(".js-team").text(attrs.team);
                     d3_select(".js-record").html(getRecordHtml(records, data.id));
-                    d3_select(".js-result").html((isNumeric(data.color) ? "rank " + data.color + " - " : "<span class='icon-medal' style='background-color:" + colors[data.color] + "'></span>") + attrs.mark + record.type + " (" + attrs.year + ")" + (data.id.indexOf("wr") > -1 ? " WR" : "") + (data.id.indexOf("or") > -1 ? " OR" : ""));
+                    d3_select(".js-result").html((isNumeric(data.color) ? "rank " + data.color + " - " : "<span class='icon-medal' style='background-color:" + colors[data.color] + "'></span>") + attrs.mark + record.type + " (" + attrs.year + ")" + (data.x === record.wr.x ? " WR " : "") + (data.x === record.or.x ? " OR" : ""));
 
                     updateInfoPosition(data);
                 }
@@ -7563,13 +7609,10 @@ $__System.register('22', ['23', 'c'], function (_export) {
         }
     };
 });
-$__System.register('3b', ['14', '22', '23', '30', '39', 'c', '3a'], function (_export) {
+$__System.register('3b', ['13', '21', '22', '30', '39', 'b', '3a'], function (_export) {
     'use strict';
 
-    var utils, updateInfo, d3_select, d3_voronoi, transition, colors, sync, showHighlightAxis, updateDotAnimation, hideHighlight, hideHighlightAxis, hideDotAnimation, select;
-
-    //wr: null,
-    //or: null
+    var utils, updateInfo, d3_select, d3_voronoi, transition, colors, sync, record, showHighlightAxis, updateDotAnimation, hideHighlight, hideHighlightAxis, hideDotAnimation, select;
 
     function showBestAthlete(d1, state) {
         var attrs = d1.attrs;
@@ -7590,11 +7633,10 @@ $__System.register('3b', ['14', '22', '23', '30', '39', 'c', '3a'], function (_e
         });
 
         if (state !== "final") {
-            d3_select(".js-wr").classed("o-15", function (d2) {
-                return d2.attrs.name.indexOf(attrs.name) === -1 ? true : false;
-            });
-            d3_select(".js-or").classed("o-15", function (d2) {
-                return d2.attrs.name.indexOf(attrs.name) === -1 ? true : false;
+            ["or", "wr"].forEach(function (type) {
+                d3_select("#" + record[type].id).classed("o-15", function (d2) {
+                    return d2.attrs.name.indexOf(attrs.name) === -1 ? true : false;
+                });
             });
         }
         // remove stroke on previous selected
@@ -7653,9 +7695,10 @@ $__System.register('3b', ['14', '22', '23', '30', '39', 'c', '3a'], function (_e
             d3_voronoi = _2.voronoi;
         }, function (_3) {
             transition = _3.transition;
-        }, function (_c) {
-            colors = _c.colors;
-            sync = _c.sync;
+        }, function (_b) {
+            colors = _b.colors;
+            sync = _b.sync;
+            record = _b.record;
         }, function (_a) {
             showHighlightAxis = _a.showHighlightAxis;
             updateDotAnimation = _a.updateDotAnimation;
@@ -7688,10 +7731,9 @@ $__System.register('3b', ['14', '22', '23', '30', '39', 'c', '3a'], function (_e
 
                 this.init = function (data, scale) {
                     cfg.ilast = data.length - 1;
-                    var idTexts = { "world": "wr", "medal": "or", "final": "gm" };
                     data.map(function (dd, i) {
                         dd.r = cfg.radius;
-                        dd.id = cfg.dataset.slice(0, 1) + i + (i === cfg.ilast ? "-" + idTexts[cfg.dataset] : "");
+                        dd.id = cfg.dataset.slice(0, 1) + i;
                         return dd;
                     });
 
@@ -7701,11 +7743,6 @@ $__System.register('3b', ['14', '22', '23', '30', '39', 'c', '3a'], function (_e
 
                     dots = d3_select("." + cfg.dataset).selectAll("circle").data(data).enter().append("circle").attr("id", function (d) {
                         return d.id;
-                    }).attr("class", function (d, i) {
-                        var cn = "";
-                        if (cfg.dataset === "world" && i === data.length - 1) cn += "js-wr wr ";
-                        if (cfg.dataset === "medal" && i === data.length - 1) cn += "js-or or ";
-                        return cn ? cn.trim() : null;
                     }).attr("data-year", function (d) {
                         return d.attrs.year;
                     }).attr("data-mark", function (d) {
@@ -7713,12 +7750,10 @@ $__System.register('3b', ['14', '22', '23', '30', '39', 'c', '3a'], function (_e
                     }).attr("data-name", function (d) {
                         return d.attrs.name;
                     }).attr("cx", function (d) {
-                        return 0;
-                    }) //cfg.cx(d, cfg.radius, scale.x) + "%")
-                    .attr("cy", function (d) {
-                        return "50%";
-                    }) //cfg.cy(d, cfg.radius, scale.y) + "%")
-                    .attr("r", cfg.radius).attr("fill-opacity", 0).attr("fill", function (d) {
+                        return cfg.cx(d, cfg.radius, scale.x) + "%";
+                    }).attr("cy", function (d) {
+                        return cfg.cy(d, cfg.radius, scale.y) + "%";
+                    }).attr("r", cfg.radius).attr("fill-opacity", 0).attr("fill", function (d) {
                         return tempColor(d);
                     }).attr("stroke-opacity", 0).attr("stroke", function () {
                         if (cfg.stroke) return cfg.stroke;
@@ -7732,9 +7767,8 @@ $__System.register('3b', ['14', '22', '23', '30', '39', 'c', '3a'], function (_e
                         updateDotAnimation(d);
                     });
 
-                    // best of each state
-                    cfg.best = {};
-                    cfg.best = data[cfg.ilast];
+                    // best of each state for highlight
+                    cfg.best = cfg.dataset !== "medal" ? data[cfg.ilast] : record.or;
 
                     // TODO: add most frequent ?
                     // ...
@@ -7762,15 +7796,16 @@ $__System.register('3b', ['14', '22', '23', '30', '39', 'c', '3a'], function (_e
                     hideHighlight();
 
                     var state = undefined;
+                    var delay1 = opt.duration ? opt.duration : 0.5;
+                    var delay2 = opt.duration ? opt.duration + 3 : 0.5;
                     window.setTimeout(function () {
                         state = d3_select(".js-chart").attr("data-state");
                         if (state === cfg.dataset) {
-                            //console.log("highlight");
                             showBestAthlete(cfg.best, state);
                         } else if (state === "mixed") {
                             d3_select(".btn-next").style("pointer-events", "all").classed("btn-disable", false);
                         }
-                    }, (opt.duration + 0.5) * 1000);
+                    }, delay1 * 1000);
 
                     window.setTimeout(function () {
                         hideAllAthletes(cfg.best);
@@ -7782,7 +7817,7 @@ $__System.register('3b', ['14', '22', '23', '30', '39', 'c', '3a'], function (_e
 
                         //console.log("event free");
                         elParent.style("pointer-events", opacity === 0 ? "none" : "all");
-                    }, (opt.duration + 3) * 1000);
+                    }, delay2 * 1000);
                 };
             });
 
@@ -7790,7 +7825,8 @@ $__System.register('3b', ['14', '22', '23', '30', '39', 'c', '3a'], function (_e
             select = {
                 all: null,
                 related: null,
-                pre: null };
+                pre: null
+            };
         }
     };
 });
@@ -8719,7 +8755,7 @@ $__System.registerDynamic("3c", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("23", ["3c"], true, function($__require, exports, module) {
+$__System.registerDynamic("22", ["3c"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -8877,965 +8913,7 @@ $__System.registerDynamic("3e", ["3d"], true, function($__require, exports, modu
   return module.exports;
 });
 
-$__System.registerDynamic("3f", [], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  var $Object = Object;
-  module.exports = {
-    create: $Object.create,
-    getProto: $Object.getPrototypeOf,
-    isEnum: {}.propertyIsEnumerable,
-    getDesc: $Object.getOwnPropertyDescriptor,
-    setDesc: $Object.defineProperty,
-    setDescs: $Object.defineProperties,
-    getKeys: $Object.keys,
-    getNames: $Object.getOwnPropertyNames,
-    getSymbols: $Object.getOwnPropertySymbols,
-    each: [].forEach
-  };
-  return module.exports;
-});
-
-$__System.registerDynamic("40", ["3f"], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  var $ = $__require('3f');
-  module.exports = function defineProperties(T, D) {
-    return $.setDescs(T, D);
-  };
-  return module.exports;
-});
-
-$__System.registerDynamic("41", ["40"], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  module.exports = {
-    "default": $__require('40'),
-    __esModule: true
-  };
-  return module.exports;
-});
-
-$__System.registerDynamic("42", [], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  "format cjs";
-  (function(global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) : typeof define === 'function' && define.amd ? define(['exports'], factory) : (factory((global.d3 = global.d3 || {})));
-  }(this, function(exports) {
-    'use strict';
-    var prefix = "$";
-    function Map() {}
-    Map.prototype = map.prototype = {
-      constructor: Map,
-      has: function(key) {
-        return (prefix + key) in this;
-      },
-      get: function(key) {
-        return this[prefix + key];
-      },
-      set: function(key, value) {
-        this[prefix + key] = value;
-        return this;
-      },
-      remove: function(key) {
-        var property = prefix + key;
-        return property in this && delete this[property];
-      },
-      clear: function() {
-        for (var property in this)
-          if (property[0] === prefix)
-            delete this[property];
-      },
-      keys: function() {
-        var keys = [];
-        for (var property in this)
-          if (property[0] === prefix)
-            keys.push(property.slice(1));
-        return keys;
-      },
-      values: function() {
-        var values = [];
-        for (var property in this)
-          if (property[0] === prefix)
-            values.push(this[property]);
-        return values;
-      },
-      entries: function() {
-        var entries = [];
-        for (var property in this)
-          if (property[0] === prefix)
-            entries.push({
-              key: property.slice(1),
-              value: this[property]
-            });
-        return entries;
-      },
-      size: function() {
-        var size = 0;
-        for (var property in this)
-          if (property[0] === prefix)
-            ++size;
-        return size;
-      },
-      empty: function() {
-        for (var property in this)
-          if (property[0] === prefix)
-            return false;
-        return true;
-      },
-      each: function(f) {
-        for (var property in this)
-          if (property[0] === prefix)
-            f(this[property], property.slice(1), this);
-      }
-    };
-    function map(object, f) {
-      var map = new Map;
-      if (object instanceof Map)
-        object.each(function(value, key) {
-          map.set(key, value);
-        });
-      else if (Array.isArray(object)) {
-        var i = -1,
-            n = object.length,
-            o;
-        if (f == null)
-          while (++i < n)
-            map.set(i, object[i]);
-        else
-          while (++i < n)
-            map.set(f(o = object[i], i, object), o);
-      } else if (object)
-        for (var key in object)
-          map.set(key, object[key]);
-      return map;
-    }
-    function nest() {
-      var keys = [],
-          sortKeys = [],
-          sortValues,
-          rollup,
-          nest;
-      function apply(array, depth, createResult, setResult) {
-        if (depth >= keys.length)
-          return rollup != null ? rollup(array) : (sortValues != null ? array.sort(sortValues) : array);
-        var i = -1,
-            n = array.length,
-            key = keys[depth++],
-            keyValue,
-            value,
-            valuesByKey = map(),
-            values,
-            result = createResult();
-        while (++i < n) {
-          if (values = valuesByKey.get(keyValue = key(value = array[i]) + "")) {
-            values.push(value);
-          } else {
-            valuesByKey.set(keyValue, [value]);
-          }
-        }
-        valuesByKey.each(function(values, key) {
-          setResult(result, key, apply(values, depth, createResult, setResult));
-        });
-        return result;
-      }
-      function entries(map, depth) {
-        if (++depth > keys.length)
-          return map;
-        var array,
-            sortKey = sortKeys[depth - 1];
-        if (rollup != null && depth >= keys.length)
-          array = map.entries();
-        else
-          array = [], map.each(function(v, k) {
-            array.push({
-              key: k,
-              values: entries(v, depth)
-            });
-          });
-        return sortKey != null ? array.sort(function(a, b) {
-          return sortKey(a.key, b.key);
-        }) : array;
-      }
-      return nest = {
-        object: function(array) {
-          return apply(array, 0, createObject, setObject);
-        },
-        map: function(array) {
-          return apply(array, 0, createMap, setMap);
-        },
-        entries: function(array) {
-          return entries(apply(array, 0, createMap, setMap), 0);
-        },
-        key: function(d) {
-          keys.push(d);
-          return nest;
-        },
-        sortKeys: function(order) {
-          sortKeys[keys.length - 1] = order;
-          return nest;
-        },
-        sortValues: function(order) {
-          sortValues = order;
-          return nest;
-        },
-        rollup: function(f) {
-          rollup = f;
-          return nest;
-        }
-      };
-    }
-    function createObject() {
-      return {};
-    }
-    function setObject(object, key, value) {
-      object[key] = value;
-    }
-    function createMap() {
-      return map();
-    }
-    function setMap(map, key, value) {
-      map.set(key, value);
-    }
-    function Set() {}
-    var proto = map.prototype;
-    Set.prototype = set.prototype = {
-      constructor: Set,
-      has: proto.has,
-      add: function(value) {
-        value += "";
-        this[prefix + value] = value;
-        return this;
-      },
-      remove: proto.remove,
-      clear: proto.clear,
-      values: proto.keys,
-      size: proto.size,
-      empty: proto.empty,
-      each: proto.each
-    };
-    function set(object, f) {
-      var set = new Set;
-      if (object instanceof Set)
-        object.each(function(value) {
-          set.add(value);
-        });
-      else if (object) {
-        var i = -1,
-            n = object.length;
-        if (f == null)
-          while (++i < n)
-            set.add(object[i]);
-        else
-          while (++i < n)
-            set.add(f(object[i], i, object));
-      }
-      return set;
-    }
-    function keys(map) {
-      var keys = [];
-      for (var key in map)
-        keys.push(key);
-      return keys;
-    }
-    function values(map) {
-      var values = [];
-      for (var key in map)
-        values.push(map[key]);
-      return values;
-    }
-    function entries(map) {
-      var entries = [];
-      for (var key in map)
-        entries.push({
-          key: key,
-          value: map[key]
-        });
-      return entries;
-    }
-    exports.nest = nest;
-    exports.set = set;
-    exports.map = map;
-    exports.keys = keys;
-    exports.values = values;
-    exports.entries = entries;
-    Object.defineProperty(exports, '__esModule', {value: true});
-  }));
-  return module.exports;
-});
-
-$__System.registerDynamic("2b", ["42"], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  module.exports = $__require('42');
-  return module.exports;
-});
-
-$__System.registerDynamic("43", [], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  "format cjs";
-  (function(global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) : typeof define === 'function' && define.amd ? define(['exports'], factory) : (factory((global.d3 = global.d3 || {})));
-  }(this, function(exports) {
-    'use strict';
-    var noop = {value: function() {}};
-    function dispatch() {
-      for (var i = 0,
-          n = arguments.length,
-          _ = {},
-          t; i < n; ++i) {
-        if (!(t = arguments[i] + "") || (t in _))
-          throw new Error("illegal type: " + t);
-        _[t] = [];
-      }
-      return new Dispatch(_);
-    }
-    function Dispatch(_) {
-      this._ = _;
-    }
-    function parseTypenames(typenames, types) {
-      return typenames.trim().split(/^|\s+/).map(function(t) {
-        var name = "",
-            i = t.indexOf(".");
-        if (i >= 0)
-          name = t.slice(i + 1), t = t.slice(0, i);
-        if (t && !types.hasOwnProperty(t))
-          throw new Error("unknown type: " + t);
-        return {
-          type: t,
-          name: name
-        };
-      });
-    }
-    Dispatch.prototype = dispatch.prototype = {
-      constructor: Dispatch,
-      on: function(typename, callback) {
-        var _ = this._,
-            T = parseTypenames(typename + "", _),
-            t,
-            i = -1,
-            n = T.length;
-        if (arguments.length < 2) {
-          while (++i < n)
-            if ((t = (typename = T[i]).type) && (t = get(_[t], typename.name)))
-              return t;
-          return;
-        }
-        if (callback != null && typeof callback !== "function")
-          throw new Error("invalid callback: " + callback);
-        while (++i < n) {
-          if (t = (typename = T[i]).type)
-            _[t] = set(_[t], typename.name, callback);
-          else if (callback == null)
-            for (t in _)
-              _[t] = set(_[t], typename.name, null);
-        }
-        return this;
-      },
-      copy: function() {
-        var copy = {},
-            _ = this._;
-        for (var t in _)
-          copy[t] = _[t].slice();
-        return new Dispatch(copy);
-      },
-      call: function(type, that) {
-        if ((n = arguments.length - 2) > 0)
-          for (var args = new Array(n),
-              i = 0,
-              n,
-              t; i < n; ++i)
-            args[i] = arguments[i + 2];
-        if (!this._.hasOwnProperty(type))
-          throw new Error("unknown type: " + type);
-        for (t = this._[type], i = 0, n = t.length; i < n; ++i)
-          t[i].value.apply(that, args);
-      },
-      apply: function(type, that, args) {
-        if (!this._.hasOwnProperty(type))
-          throw new Error("unknown type: " + type);
-        for (var t = this._[type],
-            i = 0,
-            n = t.length; i < n; ++i)
-          t[i].value.apply(that, args);
-      }
-    };
-    function get(type, name) {
-      for (var i = 0,
-          n = type.length,
-          c; i < n; ++i) {
-        if ((c = type[i]).name === name) {
-          return c.value;
-        }
-      }
-    }
-    function set(type, name, callback) {
-      for (var i = 0,
-          n = type.length; i < n; ++i) {
-        if (type[i].name === name) {
-          type[i] = noop, type = type.slice(0, i).concat(type.slice(i + 1));
-          break;
-        }
-      }
-      if (callback != null)
-        type.push({
-          name: name,
-          value: callback
-        });
-      return type;
-    }
-    exports.dispatch = dispatch;
-    Object.defineProperty(exports, '__esModule', {value: true});
-  }));
-  return module.exports;
-});
-
-$__System.registerDynamic("38", ["43"], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  module.exports = $__require('43');
-  return module.exports;
-});
-
-$__System.registerDynamic("44", [], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  "format cjs";
-  (function(global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) : typeof define === 'function' && define.amd ? define(['exports'], factory) : (factory((global.d3 = global.d3 || {})));
-  }(this, function(exports) {
-    'use strict';
-    function objectConverter(columns) {
-      return new Function("d", "return {" + columns.map(function(name, i) {
-        return JSON.stringify(name) + ": d[" + i + "]";
-      }).join(",") + "}");
-    }
-    function customConverter(columns, f) {
-      var object = objectConverter(columns);
-      return function(row, i) {
-        return f(object(row), i, columns);
-      };
-    }
-    function inferColumns(rows) {
-      var columnSet = Object.create(null),
-          columns = [];
-      rows.forEach(function(row) {
-        for (var column in row) {
-          if (!(column in columnSet)) {
-            columns.push(columnSet[column] = column);
-          }
-        }
-      });
-      return columns;
-    }
-    function dsv(delimiter) {
-      var reFormat = new RegExp("[\"" + delimiter + "\n]"),
-          delimiterCode = delimiter.charCodeAt(0);
-      function parse(text, f) {
-        var convert,
-            columns,
-            rows = parseRows(text, function(row, i) {
-              if (convert)
-                return convert(row, i - 1);
-              columns = row, convert = f ? customConverter(row, f) : objectConverter(row);
-            });
-        rows.columns = columns;
-        return rows;
-      }
-      function parseRows(text, f) {
-        var EOL = {},
-            EOF = {},
-            rows = [],
-            N = text.length,
-            I = 0,
-            n = 0,
-            t,
-            eol;
-        function token() {
-          if (I >= N)
-            return EOF;
-          if (eol)
-            return eol = false, EOL;
-          var j = I,
-              c;
-          if (text.charCodeAt(j) === 34) {
-            var i = j;
-            while (i++ < N) {
-              if (text.charCodeAt(i) === 34) {
-                if (text.charCodeAt(i + 1) !== 34)
-                  break;
-                ++i;
-              }
-            }
-            I = i + 2;
-            c = text.charCodeAt(i + 1);
-            if (c === 13) {
-              eol = true;
-              if (text.charCodeAt(i + 2) === 10)
-                ++I;
-            } else if (c === 10) {
-              eol = true;
-            }
-            return text.slice(j + 1, i).replace(/""/g, "\"");
-          }
-          while (I < N) {
-            var k = 1;
-            c = text.charCodeAt(I++);
-            if (c === 10)
-              eol = true;
-            else if (c === 13) {
-              eol = true;
-              if (text.charCodeAt(I) === 10)
-                ++I, ++k;
-            } else if (c !== delimiterCode)
-              continue;
-            return text.slice(j, I - k);
-          }
-          return text.slice(j);
-        }
-        while ((t = token()) !== EOF) {
-          var a = [];
-          while (t !== EOL && t !== EOF) {
-            a.push(t);
-            t = token();
-          }
-          if (f && (a = f(a, n++)) == null)
-            continue;
-          rows.push(a);
-        }
-        return rows;
-      }
-      function format(rows, columns) {
-        if (columns == null)
-          columns = inferColumns(rows);
-        return [columns.map(formatValue).join(delimiter)].concat(rows.map(function(row) {
-          return columns.map(function(column) {
-            return formatValue(row[column]);
-          }).join(delimiter);
-        })).join("\n");
-      }
-      function formatRows(rows) {
-        return rows.map(formatRow).join("\n");
-      }
-      function formatRow(row) {
-        return row.map(formatValue).join(delimiter);
-      }
-      function formatValue(text) {
-        return text == null ? "" : reFormat.test(text += "") ? "\"" + text.replace(/\"/g, "\"\"") + "\"" : text;
-      }
-      return {
-        parse: parse,
-        parseRows: parseRows,
-        format: format,
-        formatRows: formatRows
-      };
-    }
-    var csv = dsv(",");
-    var csvParse = csv.parse;
-    var csvParseRows = csv.parseRows;
-    var csvFormat = csv.format;
-    var csvFormatRows = csv.formatRows;
-    var tsv = dsv("\t");
-    var tsvParse = tsv.parse;
-    var tsvParseRows = tsv.parseRows;
-    var tsvFormat = tsv.format;
-    var tsvFormatRows = tsv.formatRows;
-    exports.dsvFormat = dsv;
-    exports.csvParse = csvParse;
-    exports.csvParseRows = csvParseRows;
-    exports.csvFormat = csvFormat;
-    exports.csvFormatRows = csvFormatRows;
-    exports.tsvParse = tsvParse;
-    exports.tsvParseRows = tsvParseRows;
-    exports.tsvFormat = tsvFormat;
-    exports.tsvFormatRows = tsvFormatRows;
-    Object.defineProperty(exports, '__esModule', {value: true});
-  }));
-  return module.exports;
-});
-
-$__System.registerDynamic("45", ["44"], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  module.exports = $__require('44');
-  return module.exports;
-});
-
-$__System.registerDynamic("46", ["2b", "38", "45"], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  "format cjs";
-  (function(global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('2b'), $__require('38'), $__require('45')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-collection', 'd3-dispatch', 'd3-dsv'], factory) : (factory((global.d3 = global.d3 || {}), global.d3, global.d3, global.d3));
-  }(this, function(exports, d3Collection, d3Dispatch, d3Dsv) {
-    'use strict';
-    function request(url, callback) {
-      var request,
-          event = d3Dispatch.dispatch("beforesend", "progress", "load", "error"),
-          mimeType,
-          headers = d3Collection.map(),
-          xhr = new XMLHttpRequest,
-          user = null,
-          password = null,
-          response,
-          responseType,
-          timeout = 0;
-      if (typeof XDomainRequest !== "undefined" && !("withCredentials" in xhr) && /^(http(s)?:)?\/\//.test(url))
-        xhr = new XDomainRequest;
-      "onload" in xhr ? xhr.onload = xhr.onerror = xhr.ontimeout = respond : xhr.onreadystatechange = function(o) {
-        xhr.readyState > 3 && respond(o);
-      };
-      function respond(o) {
-        var status = xhr.status,
-            result;
-        if (!status && hasResponse(xhr) || status >= 200 && status < 300 || status === 304) {
-          if (response) {
-            try {
-              result = response.call(request, xhr);
-            } catch (e) {
-              event.call("error", request, e);
-              return;
-            }
-          } else {
-            result = xhr;
-          }
-          event.call("load", request, result);
-        } else {
-          event.call("error", request, o);
-        }
-      }
-      xhr.onprogress = function(e) {
-        event.call("progress", request, e);
-      };
-      request = {
-        header: function(name, value) {
-          name = (name + "").toLowerCase();
-          if (arguments.length < 2)
-            return headers.get(name);
-          if (value == null)
-            headers.remove(name);
-          else
-            headers.set(name, value + "");
-          return request;
-        },
-        mimeType: function(value) {
-          if (!arguments.length)
-            return mimeType;
-          mimeType = value == null ? null : value + "";
-          return request;
-        },
-        responseType: function(value) {
-          if (!arguments.length)
-            return responseType;
-          responseType = value;
-          return request;
-        },
-        timeout: function(value) {
-          if (!arguments.length)
-            return timeout;
-          timeout = +value;
-          return request;
-        },
-        user: function(value) {
-          return arguments.length < 1 ? user : (user = value == null ? null : value + "", request);
-        },
-        password: function(value) {
-          return arguments.length < 1 ? password : (password = value == null ? null : value + "", request);
-        },
-        response: function(value) {
-          response = value;
-          return request;
-        },
-        get: function(data, callback) {
-          return request.send("GET", data, callback);
-        },
-        post: function(data, callback) {
-          return request.send("POST", data, callback);
-        },
-        send: function(method, data, callback) {
-          xhr.open(method, url, true, user, password);
-          if (mimeType != null && !headers.has("accept"))
-            headers.set("accept", mimeType + ",*/*");
-          if (xhr.setRequestHeader)
-            headers.each(function(value, name) {
-              xhr.setRequestHeader(name, value);
-            });
-          if (mimeType != null && xhr.overrideMimeType)
-            xhr.overrideMimeType(mimeType);
-          if (responseType != null)
-            xhr.responseType = responseType;
-          if (timeout > 0)
-            xhr.timeout = timeout;
-          if (callback == null && typeof data === "function")
-            callback = data, data = null;
-          if (callback != null && callback.length === 1)
-            callback = fixCallback(callback);
-          if (callback != null)
-            request.on("error", callback).on("load", function(xhr) {
-              callback(null, xhr);
-            });
-          event.call("beforesend", request, xhr);
-          xhr.send(data == null ? null : data);
-          return request;
-        },
-        abort: function() {
-          xhr.abort();
-          return request;
-        },
-        on: function() {
-          var value = event.on.apply(event, arguments);
-          return value === event ? request : value;
-        }
-      };
-      if (callback != null) {
-        if (typeof callback !== "function")
-          throw new Error("invalid callback: " + callback);
-        return request.get(callback);
-      }
-      return request;
-    }
-    function fixCallback(callback) {
-      return function(error, xhr) {
-        callback(error == null ? xhr : null);
-      };
-    }
-    function hasResponse(xhr) {
-      var type = xhr.responseType;
-      return type && type !== "text" ? xhr.response : xhr.responseText;
-    }
-    function type(defaultMimeType, response) {
-      return function(url, callback) {
-        var r = request(url).mimeType(defaultMimeType).response(response);
-        if (callback != null) {
-          if (typeof callback !== "function")
-            throw new Error("invalid callback: " + callback);
-          return r.get(callback);
-        }
-        return r;
-      };
-    }
-    var html = type("text/html", function(xhr) {
-      return document.createRange().createContextualFragment(xhr.responseText);
-    });
-    var json = type("application/json", function(xhr) {
-      return JSON.parse(xhr.responseText);
-    });
-    var text = type("text/plain", function(xhr) {
-      return xhr.responseText;
-    });
-    var xml = type("application/xml", function(xhr) {
-      var xml = xhr.responseXML;
-      if (!xml)
-        throw new Error("parse error");
-      return xml;
-    });
-    function dsv(defaultMimeType, parse) {
-      return function(url, row, callback) {
-        if (arguments.length < 3)
-          callback = row, row = null;
-        var r = request(url).mimeType(defaultMimeType);
-        r.row = function(_) {
-          return arguments.length ? r.response(responseOf(parse, row = _)) : row;
-        };
-        r.row(row);
-        return callback ? r.get(callback) : r;
-      };
-    }
-    function responseOf(parse, row) {
-      return function(request) {
-        return parse(request.responseText, row);
-      };
-    }
-    var csv = dsv("text/csv", d3Dsv.csvParse);
-    var tsv = dsv("text/tab-separated-values", d3Dsv.tsvParse);
-    exports.request = request;
-    exports.html = html;
-    exports.json = json;
-    exports.text = text;
-    exports.xml = xml;
-    exports.csv = csv;
-    exports.tsv = tsv;
-    Object.defineProperty(exports, '__esModule', {value: true});
-  }));
-  return module.exports;
-});
-
-$__System.registerDynamic("9", ["46"], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  module.exports = $__require('46');
-  return module.exports;
-});
-
-$__System.register('c', ['9', '14', '41'], function (_export) {
-    var d3_json, utils, _Object$defineProperties, minWidth, padding, size, cols, width, height, chart, colors, sync, stateHeaders, record;
-
-    return {
-        setters: [function (_3) {
-            d3_json = _3.json;
-        }, function (_2) {
-            utils = _2['default'];
-        }, function (_) {
-            _Object$defineProperties = _['default'];
-        }],
-        execute: function () {
-            'use strict';
-
-            minWidth = 320;
-            padding = 20;
-
-            // window
-            size = utils.getWindowSize();
-            cols = Math.floor(size.w / minWidth);
-
-            // chart
-            width = (cols > 0 ? Math.round(size.w / cols) : minWidth) - padding * 2 - 1;
-            height = Math.round(width * 0.62) - padding * 2;
-            chart = {
-                w: width,
-                h: height,
-                padding: padding
-            };
-
-            _export('chart', chart);
-
-            // colors
-            colors = {
-                gold: "#fbdc00",
-                silver: "#C0C0C0",
-                bronze: "#CD7F32",
-                others: "#E0E0E0",
-                wr: "#333"
-            };
-
-            _export('colors', colors);
-
-            // sync scale, domain, ... ?
-            sync = _Object$defineProperties({
-                s: { x: null, y: null },
-                d: { x: null, y: null }
-            }, {
-                scale: {
-                    set: function set(s) {
-                        this.s.x = s.x;
-                        this.s.y = s.y;
-                        this.d.x = s.domain.x;
-                        this.d.y = s.domain.y;
-                        //console.log("year:", this.d.y, "mark:", this.d.x);
-                    },
-                    get: function get() {
-                        return this.s;
-                    },
-                    configurable: true,
-                    enumerable: true
-                },
-                domain: {
-                    get: function get() {
-                        return this.d;
-                    },
-                    configurable: true,
-                    enumerable: true
-                }
-            });
-
-            _export('sync', sync);
-
-            // header
-            stateHeaders = _Object$defineProperties({
-                dataObj: null,
-                objList: null
-            }, {
-                data: {
-                    set: function set(dataObj) {
-                        this.dataObj = dataObj;
-                        this.objList = dataObj.map(function (d) {
-                            return d.state;
-                        });
-                    },
-                    get: function get() {
-                        return this.dataObj;
-                    },
-                    configurable: true,
-                    enumerable: true
-                },
-                list: {
-                    get: function get() {
-                        return this.objList;
-                    },
-                    configurable: true,
-                    enumerable: true
-                }
-            });
-
-            _export('stateHeaders', stateHeaders);
-
-            record = _Object$defineProperties({
-                dataWr: null,
-                dataOr: null,
-                typeMark: null
-
-            }, {
-                wr: {
-                    set: function set(data) {
-                        this.dataWr = data;
-                    },
-                    get: function get() {
-                        return this.dataWr;
-                    },
-                    configurable: true,
-                    enumerable: true
-                },
-                or: {
-                    set: function set(data) {
-                        this.dataOr = data;
-                    },
-                    get: function get() {
-                        return this.dataOr;
-                    },
-                    configurable: true,
-                    enumerable: true
-                },
-                type: {
-                    set: function set(data) {
-                        this.typeMark = data === "Time" ? "s" : "m";
-                    },
-                    get: function get() {
-                        return this.typeMark;
-                    },
-                    configurable: true,
-                    enumerable: true
-                }
-            });
-
-            _export('record', record);
-        }
-    };
-});
-$__System.register('47', ['23', 'b', '3e', 'c'], function (_export) {
+$__System.register('3f', ['22', '2a', '3e', 'b'], function (_export) {
 
     /* param: coord - x or y */
     /* param: direction - h or v, isJump? */
@@ -9845,13 +8923,13 @@ $__System.register('47', ['23', 'b', '3e', 'c'], function (_export) {
     return {
         setters: [function (_) {
             d3_select = _.select;
-        }, function (_b) {
-            d3_range = _b.range;
-            d3_extent = _b.extent;
+        }, function (_a) {
+            d3_range = _a.range;
+            d3_extent = _a.extent;
         }, function (_e) {
             d3_axisBottom = _e.axisBottom;
-        }, function (_c) {
-            sync = _c.sync;
+        }, function (_b) {
+            sync = _b.sync;
         }],
         execute: function () {
             _export('default', function (cfg) {
@@ -9958,40 +9036,10 @@ $__System.register('47', ['23', 'b', '3e', 'c'], function (_export) {
         }
     };
 });
-$__System.registerDynamic("14", [], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  exports.getWindowSize = function() {
-    var d = document;
-    var e = d.documentElement;
-    var g = d.getElementsByTagName('body')[0];
-    var w = window.innerWidth || e.clientWidth || g.clientWidth;
-    var h = window.innerHeight || e.clientHeight || g.clientHeight;
-    return {
-      w: w,
-      h: h
-    };
-  };
-  exports.num2class = function(num) {
-    return num.toString().replace(".", "_");
-  };
-  exports.str2class = function(str) {
-    return str.replace(/\s/g, "_");
-  };
-  exports.nlist2arr = function(nodelist) {
-    return Array.prototype.slice.call(nodelist);
-  };
-  return module.exports;
-});
-
-$__System.register('e', ['14', '20', '21', '47', 'b', 'c', '3b'], function (_export) {
-    //import Grid from '../draw/grid';
-
+$__System.register('d', ['13', '20', '22', '2a', '1f', 'b', '3b', '3f'], function (_export) {
     'use strict';
 
-    var utils, toState, getNextState, calcScale, Axis, d3_extent, record, Dots;
+    var utils, calcScale, d3_select, d3_extent, toState, getNextState, record, Dots, Axis;
 
     function getDomain(data) {
         return {
@@ -10004,28 +9052,27 @@ $__System.register('e', ['14', '20', '21', '47', 'b', 'c', '3b'], function (_exp
         };
     }
     return {
-        setters: [function (_4) {
-            utils = _4['default'];
-        }, function (_) {
-            toState = _.toState;
-            getNextState = _.getNextState;
+        setters: [function (_3) {
+            utils = _3['default'];
         }, function (_2) {
             calcScale = _2['default'];
-        }, function (_3) {
-            Axis = _3['default'];
+        }, function (_) {
+            d3_select = _.select;
+        }, function (_a) {
+            d3_extent = _a.extent;
+        }, function (_f) {
+            toState = _f.toState;
+            getNextState = _f.getNextState;
         }, function (_b) {
-            d3_extent = _b.extent;
-        }, function (_c) {
-            record = _c.record;
+            record = _b.record;
         }, function (_b2) {
             Dots = _b2['default'];
+        }, function (_f2) {
+            Axis = _f2['default'];
         }],
         execute: function () {
-            _export('default', function (data, dataCombo) {
-                // TODO: move to data/parse due to calc change
-                record.or = data.medals[data.medals.length - 1];
-                record.wr = data.worlds[data.worlds.length - 1];
-
+            _export('default', function (data) {
+                var dataCombo = data.finals.concat(data.medals, data.worlds);
                 var domain = getDomain(dataCombo);
 
                 // init, draw all
@@ -10052,6 +9099,7 @@ $__System.register('e', ['14', '20', '21', '47', 'b', 'c', '3b'], function (_exp
                 });
                 els.dotsW.init(data.worlds, scale);
 
+                // axis
                 els.axisY = new Axis({ coord: "y", value: "year" });
                 els.axisY.init(dataCombo.map(function (d) {
                     return d.y;
@@ -10062,19 +9110,19 @@ $__System.register('e', ['14', '20', '21', '47', 'b', 'c', '3b'], function (_exp
                     return d.x;
                 }), scale);
 
+                // note and misc updates
+                d3_select("#" + record.wr.id).attr("class", "wr");
+                d3_select("#" + record.or.id).attr("class", "or");
+                d3_select(".note").classed("d-n", record.type !== "s" ? true : false);
+
                 // update with animations
                 var state = {};
-                var minY = d3_extent(data.finals.concat(data.worlds[data.worlds.length - 1], data.medals[data.medals.length - 1]), function (d) {
-                    return d.y;
-                })[0];
-                var diff = 2016 - minY;
+                var domainFinal = getDomain(data.finals.concat([record.wr, record.or]));
+                var diff = 2016 - domainFinal.y[0];
 
                 state.final = {
-                    duration: 2,
                     domain: {
-                        x: [d3_extent(data.finals, function (d) {
-                            return d.x;
-                        })[0], 0],
+                        x: [domainFinal.x[0], 0],
                         y: [2016 - diff * 1.5, 2016 + diff * 1.25]
                     },
                     opacity: [0.75, 0, 0]
@@ -10083,19 +9131,16 @@ $__System.register('e', ['14', '20', '21', '47', 'b', 'c', '3b'], function (_exp
                 var domainMedal = getDomain(data.finals.concat(data.medals));
                 domainMedal.x[1] = 0;
                 state.medal = {
-                    duration: 2,
                     domain: domainMedal,
                     opacity: [0.75, 0.5, 0]
                 };
 
                 state.world = {
-                    duration: 2,
                     domain: getDomain(data.finals.concat(data.worlds)),
                     opacity: [0.75, 0, 0.75]
                 };
 
                 state.mixed = {
-                    duration: 2,
                     domain: domain,
                     opacity: [0.75, 0.5, 0.75]
                 };
@@ -10117,7 +9162,7 @@ $__System.register('e', ['14', '20', '21', '47', 'b', 'c', '3b'], function (_exp
         }
     };
 });
-$__System.registerDynamic("48", [], true, function($__require, exports, module) {
+$__System.registerDynamic("40", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -10583,7 +9628,849 @@ $__System.registerDynamic("48", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("b", ["48"], true, function($__require, exports, module) {
+$__System.registerDynamic("2a", ["40"], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  module.exports = $__require('40');
+  return module.exports;
+});
+
+$__System.registerDynamic("41", [], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  var $Object = Object;
+  module.exports = {
+    create: $Object.create,
+    getProto: $Object.getPrototypeOf,
+    isEnum: {}.propertyIsEnumerable,
+    getDesc: $Object.getOwnPropertyDescriptor,
+    setDesc: $Object.defineProperty,
+    setDescs: $Object.defineProperties,
+    getKeys: $Object.keys,
+    getNames: $Object.getOwnPropertyNames,
+    getSymbols: $Object.getOwnPropertySymbols,
+    each: [].forEach
+  };
+  return module.exports;
+});
+
+$__System.registerDynamic("42", ["41"], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  var $ = $__require('41');
+  module.exports = function defineProperties(T, D) {
+    return $.setDescs(T, D);
+  };
+  return module.exports;
+});
+
+$__System.registerDynamic("43", ["42"], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  module.exports = {
+    "default": $__require('42'),
+    __esModule: true
+  };
+  return module.exports;
+});
+
+$__System.registerDynamic("13", [], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  exports.getWindowSize = function() {
+    var d = document;
+    var e = d.documentElement;
+    var g = d.getElementsByTagName('body')[0];
+    var w = window.innerWidth || e.clientWidth || g.clientWidth;
+    var h = window.innerHeight || e.clientHeight || g.clientHeight;
+    return {
+      w: w,
+      h: h
+    };
+  };
+  exports.num2class = function(num) {
+    return num.toString().replace(".", "_");
+  };
+  exports.str2class = function(str) {
+    return str.replace(/\s/g, "_");
+  };
+  exports.nlist2arr = function(nodelist) {
+    return Array.prototype.slice.call(nodelist);
+  };
+  return module.exports;
+});
+
+$__System.registerDynamic("44", [], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  "format cjs";
+  (function(global, factory) {
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) : typeof define === 'function' && define.amd ? define(['exports'], factory) : (factory((global.d3 = global.d3 || {})));
+  }(this, function(exports) {
+    'use strict';
+    var prefix = "$";
+    function Map() {}
+    Map.prototype = map.prototype = {
+      constructor: Map,
+      has: function(key) {
+        return (prefix + key) in this;
+      },
+      get: function(key) {
+        return this[prefix + key];
+      },
+      set: function(key, value) {
+        this[prefix + key] = value;
+        return this;
+      },
+      remove: function(key) {
+        var property = prefix + key;
+        return property in this && delete this[property];
+      },
+      clear: function() {
+        for (var property in this)
+          if (property[0] === prefix)
+            delete this[property];
+      },
+      keys: function() {
+        var keys = [];
+        for (var property in this)
+          if (property[0] === prefix)
+            keys.push(property.slice(1));
+        return keys;
+      },
+      values: function() {
+        var values = [];
+        for (var property in this)
+          if (property[0] === prefix)
+            values.push(this[property]);
+        return values;
+      },
+      entries: function() {
+        var entries = [];
+        for (var property in this)
+          if (property[0] === prefix)
+            entries.push({
+              key: property.slice(1),
+              value: this[property]
+            });
+        return entries;
+      },
+      size: function() {
+        var size = 0;
+        for (var property in this)
+          if (property[0] === prefix)
+            ++size;
+        return size;
+      },
+      empty: function() {
+        for (var property in this)
+          if (property[0] === prefix)
+            return false;
+        return true;
+      },
+      each: function(f) {
+        for (var property in this)
+          if (property[0] === prefix)
+            f(this[property], property.slice(1), this);
+      }
+    };
+    function map(object, f) {
+      var map = new Map;
+      if (object instanceof Map)
+        object.each(function(value, key) {
+          map.set(key, value);
+        });
+      else if (Array.isArray(object)) {
+        var i = -1,
+            n = object.length,
+            o;
+        if (f == null)
+          while (++i < n)
+            map.set(i, object[i]);
+        else
+          while (++i < n)
+            map.set(f(o = object[i], i, object), o);
+      } else if (object)
+        for (var key in object)
+          map.set(key, object[key]);
+      return map;
+    }
+    function nest() {
+      var keys = [],
+          sortKeys = [],
+          sortValues,
+          rollup,
+          nest;
+      function apply(array, depth, createResult, setResult) {
+        if (depth >= keys.length)
+          return rollup != null ? rollup(array) : (sortValues != null ? array.sort(sortValues) : array);
+        var i = -1,
+            n = array.length,
+            key = keys[depth++],
+            keyValue,
+            value,
+            valuesByKey = map(),
+            values,
+            result = createResult();
+        while (++i < n) {
+          if (values = valuesByKey.get(keyValue = key(value = array[i]) + "")) {
+            values.push(value);
+          } else {
+            valuesByKey.set(keyValue, [value]);
+          }
+        }
+        valuesByKey.each(function(values, key) {
+          setResult(result, key, apply(values, depth, createResult, setResult));
+        });
+        return result;
+      }
+      function entries(map, depth) {
+        if (++depth > keys.length)
+          return map;
+        var array,
+            sortKey = sortKeys[depth - 1];
+        if (rollup != null && depth >= keys.length)
+          array = map.entries();
+        else
+          array = [], map.each(function(v, k) {
+            array.push({
+              key: k,
+              values: entries(v, depth)
+            });
+          });
+        return sortKey != null ? array.sort(function(a, b) {
+          return sortKey(a.key, b.key);
+        }) : array;
+      }
+      return nest = {
+        object: function(array) {
+          return apply(array, 0, createObject, setObject);
+        },
+        map: function(array) {
+          return apply(array, 0, createMap, setMap);
+        },
+        entries: function(array) {
+          return entries(apply(array, 0, createMap, setMap), 0);
+        },
+        key: function(d) {
+          keys.push(d);
+          return nest;
+        },
+        sortKeys: function(order) {
+          sortKeys[keys.length - 1] = order;
+          return nest;
+        },
+        sortValues: function(order) {
+          sortValues = order;
+          return nest;
+        },
+        rollup: function(f) {
+          rollup = f;
+          return nest;
+        }
+      };
+    }
+    function createObject() {
+      return {};
+    }
+    function setObject(object, key, value) {
+      object[key] = value;
+    }
+    function createMap() {
+      return map();
+    }
+    function setMap(map, key, value) {
+      map.set(key, value);
+    }
+    function Set() {}
+    var proto = map.prototype;
+    Set.prototype = set.prototype = {
+      constructor: Set,
+      has: proto.has,
+      add: function(value) {
+        value += "";
+        this[prefix + value] = value;
+        return this;
+      },
+      remove: proto.remove,
+      clear: proto.clear,
+      values: proto.keys,
+      size: proto.size,
+      empty: proto.empty,
+      each: proto.each
+    };
+    function set(object, f) {
+      var set = new Set;
+      if (object instanceof Set)
+        object.each(function(value) {
+          set.add(value);
+        });
+      else if (object) {
+        var i = -1,
+            n = object.length;
+        if (f == null)
+          while (++i < n)
+            set.add(object[i]);
+        else
+          while (++i < n)
+            set.add(f(object[i], i, object));
+      }
+      return set;
+    }
+    function keys(map) {
+      var keys = [];
+      for (var key in map)
+        keys.push(key);
+      return keys;
+    }
+    function values(map) {
+      var values = [];
+      for (var key in map)
+        values.push(map[key]);
+      return values;
+    }
+    function entries(map) {
+      var entries = [];
+      for (var key in map)
+        entries.push({
+          key: key,
+          value: map[key]
+        });
+      return entries;
+    }
+    exports.nest = nest;
+    exports.set = set;
+    exports.map = map;
+    exports.keys = keys;
+    exports.values = values;
+    exports.entries = entries;
+    Object.defineProperty(exports, '__esModule', {value: true});
+  }));
+  return module.exports;
+});
+
+$__System.registerDynamic("2b", ["44"], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  module.exports = $__require('44');
+  return module.exports;
+});
+
+$__System.registerDynamic("45", [], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  "format cjs";
+  (function(global, factory) {
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) : typeof define === 'function' && define.amd ? define(['exports'], factory) : (factory((global.d3 = global.d3 || {})));
+  }(this, function(exports) {
+    'use strict';
+    var noop = {value: function() {}};
+    function dispatch() {
+      for (var i = 0,
+          n = arguments.length,
+          _ = {},
+          t; i < n; ++i) {
+        if (!(t = arguments[i] + "") || (t in _))
+          throw new Error("illegal type: " + t);
+        _[t] = [];
+      }
+      return new Dispatch(_);
+    }
+    function Dispatch(_) {
+      this._ = _;
+    }
+    function parseTypenames(typenames, types) {
+      return typenames.trim().split(/^|\s+/).map(function(t) {
+        var name = "",
+            i = t.indexOf(".");
+        if (i >= 0)
+          name = t.slice(i + 1), t = t.slice(0, i);
+        if (t && !types.hasOwnProperty(t))
+          throw new Error("unknown type: " + t);
+        return {
+          type: t,
+          name: name
+        };
+      });
+    }
+    Dispatch.prototype = dispatch.prototype = {
+      constructor: Dispatch,
+      on: function(typename, callback) {
+        var _ = this._,
+            T = parseTypenames(typename + "", _),
+            t,
+            i = -1,
+            n = T.length;
+        if (arguments.length < 2) {
+          while (++i < n)
+            if ((t = (typename = T[i]).type) && (t = get(_[t], typename.name)))
+              return t;
+          return;
+        }
+        if (callback != null && typeof callback !== "function")
+          throw new Error("invalid callback: " + callback);
+        while (++i < n) {
+          if (t = (typename = T[i]).type)
+            _[t] = set(_[t], typename.name, callback);
+          else if (callback == null)
+            for (t in _)
+              _[t] = set(_[t], typename.name, null);
+        }
+        return this;
+      },
+      copy: function() {
+        var copy = {},
+            _ = this._;
+        for (var t in _)
+          copy[t] = _[t].slice();
+        return new Dispatch(copy);
+      },
+      call: function(type, that) {
+        if ((n = arguments.length - 2) > 0)
+          for (var args = new Array(n),
+              i = 0,
+              n,
+              t; i < n; ++i)
+            args[i] = arguments[i + 2];
+        if (!this._.hasOwnProperty(type))
+          throw new Error("unknown type: " + type);
+        for (t = this._[type], i = 0, n = t.length; i < n; ++i)
+          t[i].value.apply(that, args);
+      },
+      apply: function(type, that, args) {
+        if (!this._.hasOwnProperty(type))
+          throw new Error("unknown type: " + type);
+        for (var t = this._[type],
+            i = 0,
+            n = t.length; i < n; ++i)
+          t[i].value.apply(that, args);
+      }
+    };
+    function get(type, name) {
+      for (var i = 0,
+          n = type.length,
+          c; i < n; ++i) {
+        if ((c = type[i]).name === name) {
+          return c.value;
+        }
+      }
+    }
+    function set(type, name, callback) {
+      for (var i = 0,
+          n = type.length; i < n; ++i) {
+        if (type[i].name === name) {
+          type[i] = noop, type = type.slice(0, i).concat(type.slice(i + 1));
+          break;
+        }
+      }
+      if (callback != null)
+        type.push({
+          name: name,
+          value: callback
+        });
+      return type;
+    }
+    exports.dispatch = dispatch;
+    Object.defineProperty(exports, '__esModule', {value: true});
+  }));
+  return module.exports;
+});
+
+$__System.registerDynamic("38", ["45"], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  module.exports = $__require('45');
+  return module.exports;
+});
+
+$__System.registerDynamic("46", [], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  "format cjs";
+  (function(global, factory) {
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) : typeof define === 'function' && define.amd ? define(['exports'], factory) : (factory((global.d3 = global.d3 || {})));
+  }(this, function(exports) {
+    'use strict';
+    function objectConverter(columns) {
+      return new Function("d", "return {" + columns.map(function(name, i) {
+        return JSON.stringify(name) + ": d[" + i + "]";
+      }).join(",") + "}");
+    }
+    function customConverter(columns, f) {
+      var object = objectConverter(columns);
+      return function(row, i) {
+        return f(object(row), i, columns);
+      };
+    }
+    function inferColumns(rows) {
+      var columnSet = Object.create(null),
+          columns = [];
+      rows.forEach(function(row) {
+        for (var column in row) {
+          if (!(column in columnSet)) {
+            columns.push(columnSet[column] = column);
+          }
+        }
+      });
+      return columns;
+    }
+    function dsv(delimiter) {
+      var reFormat = new RegExp("[\"" + delimiter + "\n]"),
+          delimiterCode = delimiter.charCodeAt(0);
+      function parse(text, f) {
+        var convert,
+            columns,
+            rows = parseRows(text, function(row, i) {
+              if (convert)
+                return convert(row, i - 1);
+              columns = row, convert = f ? customConverter(row, f) : objectConverter(row);
+            });
+        rows.columns = columns;
+        return rows;
+      }
+      function parseRows(text, f) {
+        var EOL = {},
+            EOF = {},
+            rows = [],
+            N = text.length,
+            I = 0,
+            n = 0,
+            t,
+            eol;
+        function token() {
+          if (I >= N)
+            return EOF;
+          if (eol)
+            return eol = false, EOL;
+          var j = I,
+              c;
+          if (text.charCodeAt(j) === 34) {
+            var i = j;
+            while (i++ < N) {
+              if (text.charCodeAt(i) === 34) {
+                if (text.charCodeAt(i + 1) !== 34)
+                  break;
+                ++i;
+              }
+            }
+            I = i + 2;
+            c = text.charCodeAt(i + 1);
+            if (c === 13) {
+              eol = true;
+              if (text.charCodeAt(i + 2) === 10)
+                ++I;
+            } else if (c === 10) {
+              eol = true;
+            }
+            return text.slice(j + 1, i).replace(/""/g, "\"");
+          }
+          while (I < N) {
+            var k = 1;
+            c = text.charCodeAt(I++);
+            if (c === 10)
+              eol = true;
+            else if (c === 13) {
+              eol = true;
+              if (text.charCodeAt(I) === 10)
+                ++I, ++k;
+            } else if (c !== delimiterCode)
+              continue;
+            return text.slice(j, I - k);
+          }
+          return text.slice(j);
+        }
+        while ((t = token()) !== EOF) {
+          var a = [];
+          while (t !== EOL && t !== EOF) {
+            a.push(t);
+            t = token();
+          }
+          if (f && (a = f(a, n++)) == null)
+            continue;
+          rows.push(a);
+        }
+        return rows;
+      }
+      function format(rows, columns) {
+        if (columns == null)
+          columns = inferColumns(rows);
+        return [columns.map(formatValue).join(delimiter)].concat(rows.map(function(row) {
+          return columns.map(function(column) {
+            return formatValue(row[column]);
+          }).join(delimiter);
+        })).join("\n");
+      }
+      function formatRows(rows) {
+        return rows.map(formatRow).join("\n");
+      }
+      function formatRow(row) {
+        return row.map(formatValue).join(delimiter);
+      }
+      function formatValue(text) {
+        return text == null ? "" : reFormat.test(text += "") ? "\"" + text.replace(/\"/g, "\"\"") + "\"" : text;
+      }
+      return {
+        parse: parse,
+        parseRows: parseRows,
+        format: format,
+        formatRows: formatRows
+      };
+    }
+    var csv = dsv(",");
+    var csvParse = csv.parse;
+    var csvParseRows = csv.parseRows;
+    var csvFormat = csv.format;
+    var csvFormatRows = csv.formatRows;
+    var tsv = dsv("\t");
+    var tsvParse = tsv.parse;
+    var tsvParseRows = tsv.parseRows;
+    var tsvFormat = tsv.format;
+    var tsvFormatRows = tsv.formatRows;
+    exports.dsvFormat = dsv;
+    exports.csvParse = csvParse;
+    exports.csvParseRows = csvParseRows;
+    exports.csvFormat = csvFormat;
+    exports.csvFormatRows = csvFormatRows;
+    exports.tsvParse = tsvParse;
+    exports.tsvParseRows = tsvParseRows;
+    exports.tsvFormat = tsvFormat;
+    exports.tsvFormatRows = tsvFormatRows;
+    Object.defineProperty(exports, '__esModule', {value: true});
+  }));
+  return module.exports;
+});
+
+$__System.registerDynamic("47", ["46"], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  module.exports = $__require('46');
+  return module.exports;
+});
+
+$__System.registerDynamic("48", ["2b", "38", "47"], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  "format cjs";
+  (function(global, factory) {
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('2b'), $__require('38'), $__require('47')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-collection', 'd3-dispatch', 'd3-dsv'], factory) : (factory((global.d3 = global.d3 || {}), global.d3, global.d3, global.d3));
+  }(this, function(exports, d3Collection, d3Dispatch, d3Dsv) {
+    'use strict';
+    function request(url, callback) {
+      var request,
+          event = d3Dispatch.dispatch("beforesend", "progress", "load", "error"),
+          mimeType,
+          headers = d3Collection.map(),
+          xhr = new XMLHttpRequest,
+          user = null,
+          password = null,
+          response,
+          responseType,
+          timeout = 0;
+      if (typeof XDomainRequest !== "undefined" && !("withCredentials" in xhr) && /^(http(s)?:)?\/\//.test(url))
+        xhr = new XDomainRequest;
+      "onload" in xhr ? xhr.onload = xhr.onerror = xhr.ontimeout = respond : xhr.onreadystatechange = function(o) {
+        xhr.readyState > 3 && respond(o);
+      };
+      function respond(o) {
+        var status = xhr.status,
+            result;
+        if (!status && hasResponse(xhr) || status >= 200 && status < 300 || status === 304) {
+          if (response) {
+            try {
+              result = response.call(request, xhr);
+            } catch (e) {
+              event.call("error", request, e);
+              return;
+            }
+          } else {
+            result = xhr;
+          }
+          event.call("load", request, result);
+        } else {
+          event.call("error", request, o);
+        }
+      }
+      xhr.onprogress = function(e) {
+        event.call("progress", request, e);
+      };
+      request = {
+        header: function(name, value) {
+          name = (name + "").toLowerCase();
+          if (arguments.length < 2)
+            return headers.get(name);
+          if (value == null)
+            headers.remove(name);
+          else
+            headers.set(name, value + "");
+          return request;
+        },
+        mimeType: function(value) {
+          if (!arguments.length)
+            return mimeType;
+          mimeType = value == null ? null : value + "";
+          return request;
+        },
+        responseType: function(value) {
+          if (!arguments.length)
+            return responseType;
+          responseType = value;
+          return request;
+        },
+        timeout: function(value) {
+          if (!arguments.length)
+            return timeout;
+          timeout = +value;
+          return request;
+        },
+        user: function(value) {
+          return arguments.length < 1 ? user : (user = value == null ? null : value + "", request);
+        },
+        password: function(value) {
+          return arguments.length < 1 ? password : (password = value == null ? null : value + "", request);
+        },
+        response: function(value) {
+          response = value;
+          return request;
+        },
+        get: function(data, callback) {
+          return request.send("GET", data, callback);
+        },
+        post: function(data, callback) {
+          return request.send("POST", data, callback);
+        },
+        send: function(method, data, callback) {
+          xhr.open(method, url, true, user, password);
+          if (mimeType != null && !headers.has("accept"))
+            headers.set("accept", mimeType + ",*/*");
+          if (xhr.setRequestHeader)
+            headers.each(function(value, name) {
+              xhr.setRequestHeader(name, value);
+            });
+          if (mimeType != null && xhr.overrideMimeType)
+            xhr.overrideMimeType(mimeType);
+          if (responseType != null)
+            xhr.responseType = responseType;
+          if (timeout > 0)
+            xhr.timeout = timeout;
+          if (callback == null && typeof data === "function")
+            callback = data, data = null;
+          if (callback != null && callback.length === 1)
+            callback = fixCallback(callback);
+          if (callback != null)
+            request.on("error", callback).on("load", function(xhr) {
+              callback(null, xhr);
+            });
+          event.call("beforesend", request, xhr);
+          xhr.send(data == null ? null : data);
+          return request;
+        },
+        abort: function() {
+          xhr.abort();
+          return request;
+        },
+        on: function() {
+          var value = event.on.apply(event, arguments);
+          return value === event ? request : value;
+        }
+      };
+      if (callback != null) {
+        if (typeof callback !== "function")
+          throw new Error("invalid callback: " + callback);
+        return request.get(callback);
+      }
+      return request;
+    }
+    function fixCallback(callback) {
+      return function(error, xhr) {
+        callback(error == null ? xhr : null);
+      };
+    }
+    function hasResponse(xhr) {
+      var type = xhr.responseType;
+      return type && type !== "text" ? xhr.response : xhr.responseText;
+    }
+    function type(defaultMimeType, response) {
+      return function(url, callback) {
+        var r = request(url).mimeType(defaultMimeType).response(response);
+        if (callback != null) {
+          if (typeof callback !== "function")
+            throw new Error("invalid callback: " + callback);
+          return r.get(callback);
+        }
+        return r;
+      };
+    }
+    var html = type("text/html", function(xhr) {
+      return document.createRange().createContextualFragment(xhr.responseText);
+    });
+    var json = type("application/json", function(xhr) {
+      return JSON.parse(xhr.responseText);
+    });
+    var text = type("text/plain", function(xhr) {
+      return xhr.responseText;
+    });
+    var xml = type("application/xml", function(xhr) {
+      var xml = xhr.responseXML;
+      if (!xml)
+        throw new Error("parse error");
+      return xml;
+    });
+    function dsv(defaultMimeType, parse) {
+      return function(url, row, callback) {
+        if (arguments.length < 3)
+          callback = row, row = null;
+        var r = request(url).mimeType(defaultMimeType);
+        r.row = function(_) {
+          return arguments.length ? r.response(responseOf(parse, row = _)) : row;
+        };
+        r.row(row);
+        return callback ? r.get(callback) : r;
+      };
+    }
+    function responseOf(parse, row) {
+      return function(request) {
+        return parse(request.responseText, row);
+      };
+    }
+    var csv = dsv("text/csv", d3Dsv.csvParse);
+    var tsv = dsv("text/tab-separated-values", d3Dsv.tsvParse);
+    exports.request = request;
+    exports.html = html;
+    exports.json = json;
+    exports.text = text;
+    exports.xml = xml;
+    exports.csv = csv;
+    exports.tsv = tsv;
+    Object.defineProperty(exports, '__esModule', {value: true});
+  }));
+  return module.exports;
+});
+
+$__System.registerDynamic("9", ["48"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -10592,57 +10479,230 @@ $__System.registerDynamic("b", ["48"], true, function($__require, exports, modul
   return module.exports;
 });
 
-$__System.register('49', ['11', '12', 'f', 'd', 'e', 'b'], function (_export) {
-    var jsonRecord, jsonFinals, _Object$keys, parseData, result, d3_extent;
+$__System.register('b', ['9', '13', '43'], function (_export) {
+    var d3_json, utils, _Object$defineProperties, minWidth, padding, size, cols, isFirefox, browser, width, height, chart, colors, sync, stateHeaders, record;
 
+    return {
+        setters: [function (_3) {
+            d3_json = _3.json;
+        }, function (_2) {
+            utils = _2['default'];
+        }, function (_) {
+            _Object$defineProperties = _['default'];
+        }],
+        execute: function () {
+            'use strict';
+
+            minWidth = 320;
+            padding = 20;
+
+            // window
+            size = utils.getWindowSize();
+            cols = Math.floor(size.w / minWidth);
+            isFirefox = typeof InstallTrigger !== 'undefined';
+
+            // browser type
+            browser = isFirefox ? "ff" : null;
+
+            _export('browser', browser);
+
+            // chart
+            width = (cols > 0 ? Math.round(size.w / cols) : minWidth) - padding * 2 - 1;
+            height = Math.round(width * 0.62) - padding * 2;
+            chart = {
+                w: width,
+                h: height,
+                padding: padding
+            };
+
+            _export('chart', chart);
+
+            // colors
+            colors = {
+                gold: "#fbdc00",
+                silver: "#C0C0C0",
+                bronze: "#CD7F32",
+                others: "#aad8f1", //"#E0E0E0",
+                wr: "#333"
+            };
+
+            _export('colors', colors);
+
+            // sync scale, domain, ... ?
+            sync = _Object$defineProperties({
+                s: { x: null, y: null },
+                d: { x: null, y: null }
+            }, {
+                scale: {
+                    set: function set(s) {
+                        this.s.x = s.x;
+                        this.s.y = s.y;
+                        this.d.x = s.domain.x;
+                        this.d.y = s.domain.y;
+                        //console.log("year:", this.d.y, "mark:", this.d.x);
+                    },
+                    get: function get() {
+                        return this.s;
+                    },
+                    configurable: true,
+                    enumerable: true
+                },
+                domain: {
+                    get: function get() {
+                        return this.d;
+                    },
+                    configurable: true,
+                    enumerable: true
+                }
+            });
+
+            _export('sync', sync);
+
+            // header
+            stateHeaders = _Object$defineProperties({
+                dataObj: null,
+                objList: null
+            }, {
+                data: {
+                    set: function set(dataObj) {
+                        this.dataObj = dataObj;
+                        this.objList = dataObj.map(function (d) {
+                            return d.state;
+                        });
+                    },
+                    get: function get() {
+                        return this.dataObj;
+                    },
+                    configurable: true,
+                    enumerable: true
+                },
+                list: {
+                    get: function get() {
+                        return this.objList;
+                    },
+                    configurable: true,
+                    enumerable: true
+                }
+            });
+
+            _export('stateHeaders', stateHeaders);
+
+            record = _Object$defineProperties({
+                dataWr: null,
+                dataOr: null,
+                typeMark: null
+
+            }, {
+                wr: {
+                    set: function set(data) {
+                        this.dataWr = data;
+                    },
+                    get: function get() {
+                        return this.dataWr;
+                    },
+                    configurable: true,
+                    enumerable: true
+                },
+                or: {
+                    set: function set(data) {
+                        this.dataOr = data;
+                    },
+                    get: function get() {
+                        return this.dataOr;
+                    },
+                    configurable: true,
+                    enumerable: true
+                },
+                type: {
+                    set: function set(data) {
+                        this.typeMark = data === "Time" ? "s" : "m";
+                    },
+                    get: function get() {
+                        return this.typeMark;
+                    },
+                    configurable: true,
+                    enumerable: true
+                }
+            });
+
+            _export('record', record);
+        }
+    };
+});
+$__System.register('49', ['10', '11', 'e', 'c', 'd', '2a', 'b'], function (_export) {
+    var jsonRecord, jsonFinals, _Object$keys, parseData, result, d3_extent, record;
+
+    function displayResult(err, jsonRecord, jsonFinals, jsonStates) {
+        if (err) {
+            console.error(err);return;
+        }
+
+        stateHeaders.data = jsonStates.embed_vs;
+
+        var data = parseData(jsonRecord, jsonFinals, "Distance");
+        var dataCombo = data.finals.concat(data.medals, data.worlds);
+
+        // TODO: move to data/parse due to calc change
+        var tempOr = data.medals[data.medals.length - 1];
+        var tempWr = data.worlds[data.worlds.length - 1];
+        //record.or = tempOr
+        //record.wr
+        console.log("gm", data.finals[data.finals.length - 1]);
+        console.log("wr", tempWr);
+        console.log("or", tempOr);
+
+        // farest record
+        var distWr = d3_extent(dataCombo, function (d) {
+            return d.x;
+        })[1];
+        _Object$keys(data).forEach(function (dd) {
+            // time to distance
+            data[dd] = data[dd].map(function (dm) {
+                dm.x = Math.round((dm.x - distWr) * 1000) / 1000;
+                dm.attrs.dist = Math.abs(dm.x);
+                return dm;
+            });
+            // sort
+            data[dd].sort(function (d1, d2) {
+                return d1.x - d2.x;
+            });
+        });
+        console.log(data);
+
+        result(data, dataCombo);
+    }
     return {
         setters: [function (_) {
             jsonRecord = _['default'];
         }, function (_2) {
             jsonFinals = _2['default'];
-        }, function (_f) {
-            _Object$keys = _f['default'];
-        }, function (_d) {
-            parseData = _d['default'];
         }, function (_e) {
-            result = _e['default'];
+            _Object$keys = _e['default'];
+        }, function (_c) {
+            parseData = _c['default'];
+        }, function (_d) {
+            result = _d['default'];
+        }, function (_a) {
+            d3_extent = _a.extent;
         }, function (_b) {
-            d3_extent = _b.extent;
+            record = _b.record;
         }],
         execute: function () {
             'use strict';
 
-            _export('default', function () {
-                var data = parseData(jsonRecord, jsonFinals, "Distance");
-                var dataCombo = data.finals.concat(data.medals, data.worlds);
-
-                // farest record
-                var distWr = d3_extent(dataCombo, function (d) {
-                    return d.x;
-                })[1];
-                _Object$keys(data).forEach(function (dd) {
-                    // time to distance
-                    data[dd] = data[dd].map(function (dm) {
-                        dm.x = Math.round((dm.x - distWr) * 1000) / 1000;
-                        dm.attrs.dist = Math.abs(dm.x);
-                        return dm;
-                    });
-                    // sort
-                    data[dd].sort(function (d1, d2) {
-                        return d1.x - d2.x;
-                    });
-                });
-                console.log(data);
-
-                result(data, dataCombo);
+            _export('default', function (event, test) {
+                if (test) {
+                    console.log("this is a testing page");
+                }
+                fetchData(event, test, displayResult);
             });
         }
     };
 });
-$__System.register('1', ['3', '4', '5', '10', '14', '22', '49', '3a', 'a'], function (_export) {
+$__System.register('1', ['3', '4', '5', '13', '21', '49', '3a', 'a', 'f'], function (_export) {
     'use strict';
 
-    var iframeMessenger, embedHTML, throttle, team_pursuit_m, utils, updateInfoPosition, longjump_m, updateDotAnimation, swimming, page;
+    var iframeMessenger, embedHTML, throttle, utils, updateInfoPosition, longjump_m, updateDotAnimation, swimming, team_pursuit_m, page;
 
     function setEmbedSize() {
         var size = utils.getWindowSize();
@@ -10688,18 +10748,18 @@ $__System.register('1', ['3', '4', '5', '10', '14', '22', '49', '3a', 'a'], func
             embedHTML = _2['default'];
         }, function (_4) {
             throttle = _4['default'];
-        }, function (_6) {
-            team_pursuit_m = _6['default'];
         }, function (_3) {
             utils = _3['default'];
         }, function (_5) {
             updateInfoPosition = _5.updateInfoPosition;
-        }, function (_7) {
-            longjump_m = _7['default'];
+        }, function (_6) {
+            longjump_m = _6['default'];
         }, function (_a) {
             updateDotAnimation = _a.updateDotAnimation;
         }, function (_a2) {
             swimming = _a2['default'];
+        }, function (_f) {
+            team_pursuit_m = _f['default'];
         }],
         execute: function () {
 
@@ -10735,9 +10795,9 @@ $__System.register('1', ['3', '4', '5', '10', '14', '22', '49', '3a', 'a'], func
                     case "medley_400_m":
                         swimming(event, "Test");
                         break;
-                    case "longjump_m":
-                        longjump_m();
-                        break;
+                    //case "longjump_m":
+                    //    longjump_m(event, "Test");
+                    //    break;
 
                     default:
                         console.log("This event is not special!");

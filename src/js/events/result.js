@@ -1,17 +1,14 @@
+import {select as d3_select} from 'd3-selection';
 import {extent as d3_extent} from 'd3-array';
-import {record} from "../variables";
 import {toState, getNextState} from '../draw/state';
+import {record} from '../variables';
 import calcScale from '../draw/scale';
 import Dots from '../draw/dots';
 import Axis from '../draw/axis';
 import utils from '../lib/utils';
-//import Grid from '../draw/grid';
 
-export default function(data, dataCombo) {
-    // TODO: move to data/parse due to calc change
-    record.or = data.medals[data.medals.length-1];
-    record.wr = data.worlds[data.worlds.length-1];
-
+export default function(data) {
+    let dataCombo = data.finals.concat(data.medals, data.worlds);
     let domain = getDomain(dataCombo);
 
     // init, draw all
@@ -37,22 +34,28 @@ export default function(data, dataCombo) {
         stroke: "rgba(255, 255, 255, 0.25)"
     });
     els.dotsW.init(data.worlds, scale);   
-
+    
+    // axis
     els.axisY = new Axis({coord: "y", value: "year"});
     els.axisY.init(dataCombo.map(d => d.y), scale); 
 
     els.axisX = new Axis({coord: "x", value: "mark"});
     els.axisX.init(dataCombo.map(d => d.x), scale);    
+    
+    // note and misc updates
+    d3_select("#" + record.wr.id).attr("class", "wr"); 
+    d3_select("#" + record.or.id).attr("class", "or");
+    d3_select(".note").classed("d-n", record.type !== "s" ? true : false);
+
 
     // update with animations
     let state = {};
-    let minY = d3_extent(data.finals.concat(data.worlds[data.worlds.length-1], data.medals[data.medals.length-1]), d => d.y)[0];
-    let diff = 2016 - minY;
+    let domainFinal = getDomain(data.finals.concat([record.wr, record.or]));
+    let diff = 2016 - domainFinal.y[0];
     
     state.final = { 
-        duration: 2, 
         domain: {
-            x: [d3_extent(data.finals, d => d.x)[0], 0],
+            x: [domainFinal.x[0], 0],
             y: [2016 - diff*1.5, 2016 + diff*1.25]
         },
         opacity: [0.75, 0, 0]
@@ -61,19 +64,16 @@ export default function(data, dataCombo) {
     let domainMedal = getDomain(data.finals.concat(data.medals));
     domainMedal.x[1] = 0;
     state.medal = { 
-        duration: 2,
         domain: domainMedal, 
         opacity: [0.75, 0.5, 0]
     };    
 
     state.world = { 
-        duration: 2,
         domain: getDomain(data.finals.concat(data.worlds)),
         opacity: [0.75, 0, 0.75]
     };    
 
     state.mixed = { 
-        duration: 2,
         domain: domain,
         opacity: [0.75, 0.5, 0.75]
     };    

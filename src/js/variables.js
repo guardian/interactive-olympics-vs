@@ -7,6 +7,10 @@ const padding = 20;
 // window
 let size = utils.getWindowSize();
 let cols = Math.floor(size.w/minWidth);
+let isFirefox = typeof InstallTrigger !== 'undefined';
+
+// browser type
+export let browser = isFirefox ? "ff" : null;
 
 // chart
 let width = (cols > 0 ? Math.round(size.w/cols) : minWidth) - padding*2-1;
@@ -23,7 +27,7 @@ export const colors = {
     gold:   "#fbdc00", 
     silver: "#C0C0C0", 
     bronze: "#CD7F32", 
-    others: "#E0E0E0",
+    others: "#aad8f1",//"#E0E0E0",
     wr:     "#333"
 };
 

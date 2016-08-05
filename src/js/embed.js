@@ -24,7 +24,7 @@ window.init = function init(el, config) {
     el.innerHTML = embedHTML;
     window.addEventListener("resize", throttle(setEmbedSize, 500));
     setEmbedSize();
-
+    
     // load chart    
     let data;
     switch (event) {
@@ -42,9 +42,9 @@ window.init = function init(el, config) {
         case "medley_400_m": 
             swimming(event, "Test");
             break;       
-        case "longjump_m": 
-            longjump_m(); 
-            break;
+        //case "longjump_m": 
+        //    longjump_m(event, "Test"); 
+        //    break;
         
         default:
             console.log("This event is not special!");

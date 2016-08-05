@@ -95,8 +95,9 @@ function remapData(data, type, isOverlappingAvoid) {
     let dataRemap;
     let dataGroup;
     
+    // remap to avoid visual overlapped
     if (isOverlappingAvoid) {
-        // add count and index to avoid visual overlapped
+        // add count and index
         dataGroup = array.groupBy(["year", "result"], data);
         dataGroup = dataGroup.map(dg => {
             dg = remapDataForCharts(dg, type);
@@ -113,6 +114,16 @@ function remapData(data, type, isOverlappingAvoid) {
     } else {
         dataRemap = remapDataForCharts(data, type);
     }
+    
+    // sort
+    switch (type.result) {
+        case "Time":     
+            dataRemap.sort((d1, d2) => d2.attrs.time - d1.attrs.time); 
+            break;
+        case "Distance": 
+            dataRemap.sort((d1, d2) => d1.attrs.dist - d2.attrs.dist); 
+            break;
+    }
 
     return dataRemap; 
 }
@@ -121,6 +132,7 @@ function remapDataForCharts(data, type) {
     return data.map(dd => {
         let result = getParsedValue(dd.result, type.result);
         let isJump = type.dirction === "h";
+        dd.year = parseInt(dd.year);
         return {
             x: isJump ? dd.year : result.val,
             y: isJump ? result.val : dd.year,
@@ -131,6 +143,7 @@ function remapDataForCharts(data, type) {
                 team: dd.team,
                 mark: result.txt,
                 time: result.val 
+                // TODO: remove time if type.result is distance? 
             }
         };
     });

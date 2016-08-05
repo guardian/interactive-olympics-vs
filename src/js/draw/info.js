@@ -22,8 +22,8 @@ export default function(data, records) {
             "rank " + data.color + " - ": 
             "<span class='icon-medal' style='background-color:" + colors[data.color] + "'></span>") +
             attrs.mark + record.type + " (" + attrs.year + ")" +
-            (data.id.indexOf("wr") > -1 ? " WR" : "") + 
-            (data.id.indexOf("or") > -1 ? " OR" : "") 
+            (data.x === record.wr.x ? " WR " : "") + 
+            (data.x === record.or.x ? " OR" : "") 
         );
         
         updateInfoPosition(data); 

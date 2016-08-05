@@ -1,12 +1,12 @@
 import {select as d3_select} from 'd3-selection';
-import {record} from "../variables";
+import {record, browser} from "../variables";
 
 let preData = null;
 
 export function showHighlightAxis(data) {
     if (!data && !preData) return;
     if (!data && preData) data = preData;
-
+    
     preData = data;
     d3_select(".mark-highlight").style("opacity", 0);
     d3_select(".js-final").classed("d-n", true);
@@ -38,8 +38,8 @@ export function showHighlightAxis(data) {
     } 
     d3_select(".js-final").classed("d-n", false);
     
-    let elwr = d3_select(".js-wr");
-    let elor = d3_select(".js-or");
+    let elwr = d3_select(".wr");
+    let elor = d3_select(".or");
     // dist > 0 or hide
     d3_select(".hl-lh-wr")
     .attr("x1", x).attr("x2", elwr.attr("cx"))
@@ -72,7 +72,7 @@ export function updateDotAnimation(data) {
     let mark = data.attrs.mark;
        
     d3_select(".hl-circle")
-    .classed("animate", true)
+    .classed("animate", browser !== "ff" ? true : false)
     .style("opacity", 1)
     .attr("cx", x)
     .attr("cy", y)

@@ -3,7 +3,7 @@ import {voronoi as d3_voronoi} from 'd3-voronoi';
 import {transition} from 'd3-transition';
 
 import utils from '../lib/utils';
-import {colors, sync} from '../variables';
+import {colors, sync, record} from '../variables';
 import {showHighlightAxis, updateDotAnimation, hideHighlight, hideHighlightAxis, hideDotAnimation} from './highlight';
 import updateInfo from './info';
 
@@ -23,10 +23,9 @@ export default function(cfg) {
 
     this.init = (data, scale) => {
         cfg.ilast = data.length - 1;
-        let idTexts = {"world": "wr", "medal": "or", "final": "gm"}; 
         data.map((dd, i) => {
             dd.r = cfg.radius; 
-            dd.id = cfg.dataset.slice(0, 1) + i + (i===cfg.ilast? "-" + idTexts[cfg.dataset] : "");
+            dd.id = cfg.dataset.slice(0, 1) + i;
             return dd;
         });
 
@@ -39,17 +38,11 @@ export default function(cfg) {
         .data(data)
         .enter().append("circle")
         .attr("id", d => d.id)
-        .attr("class", (d, i) => {
-            let cn = "";
-            if (cfg.dataset === "world" && i === data.length-1) cn += "js-wr wr "; 
-            if (cfg.dataset === "medal" && i === data.length-1) cn += "js-or or ";
-            return cn ? cn.trim() : null; 
-        })
         .attr("data-year", d => d.attrs.year)
         .attr("data-mark", d => d.attrs.mark)
         .attr("data-name", d => d.attrs.name)
-        .attr("cx", d => 0)//cfg.cx(d, cfg.radius, scale.x) + "%")
-        .attr("cy", d => "50%")//cfg.cy(d, cfg.radius, scale.y) + "%")
+        .attr("cx", d => cfg.cx(d, cfg.radius, scale.x) + "%")
+        .attr("cy", d => cfg.cy(d, cfg.radius, scale.y) + "%")
         .attr("r", cfg.radius)
         .attr("fill-opacity", 0)
         .attr("fill", d => tempColor(d))
@@ -66,9 +59,8 @@ export default function(cfg) {
             updateDotAnimation(d);
         });
 
-        // best of each state
-        cfg.best = {};
-        cfg.best = data[cfg.ilast];
+        // best of each state for highlight
+        cfg.best = cfg.dataset !== "medal" ? data[cfg.ilast] : record.or;
 
         // TODO: add most frequent ?
         // ...
@@ -96,17 +88,18 @@ export default function(cfg) {
         hideHighlight(); 
 
         let state;
+        let delay1 = opt.duration ? opt.duration : 0.5;
+        let delay2 = opt.duration ? opt.duration + 3 : 0.5;
         window.setTimeout(() => {
             state = d3_select(".js-chart").attr("data-state");
             if (state === cfg.dataset) { 
-                //console.log("highlight");
                 showBestAthlete(cfg.best, state); 
             } else if (state === "mixed") {
                 d3_select(".btn-next")
                 .style("pointer-events", "all")
                 .classed("btn-disable", false);
             }
-        }, (opt.duration+0.5) * 1000); 
+        }, delay1*1000); 
 
         window.setTimeout(() => {
             hideAllAthletes(cfg.best);
@@ -120,7 +113,7 @@ export default function(cfg) {
 
             //console.log("event free");
             elParent.style("pointer-events", opacity === 0 ? "none" : "all");
-        }, (opt.duration + 3) * 1000); 
+        }, delay2*1000); 
     };
 }
 
@@ -129,8 +122,6 @@ let select = {
     all: null,
     related: null,
     pre: null,
-    //wr: null,
-    //or: null
 };
 
 function showBestAthlete(d1, state) {
@@ -150,10 +141,10 @@ function showBestAthlete(d1, state) {
     .attr("r", d => d.r*2);
 
     if (state !== "final") { 
-        d3_select(".js-wr")
-        .classed("o-15", d2 => d2.attrs.name.indexOf(attrs.name) === -1 ? true : false);
-        d3_select(".js-or")
-        .classed("o-15", d2 => d2.attrs.name.indexOf(attrs.name) === -1 ? true : false);
+        ["or", "wr"].forEach((type) => {
+            d3_select("#" + record[type].id)
+            .classed("o-15", d2 => d2.attrs.name.indexOf(attrs.name) === -1 ? true : false);
+        });
     }
     // remove stroke on previous selected
     if (select.pre) { select.pre.attr("stroke", null); }

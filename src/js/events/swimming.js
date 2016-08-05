@@ -1,5 +1,4 @@
-import {extent as d3_extent} from 'd3-array';
-import {stateHeaders} from '../variables';
+import {stateHeaders, record} from '../variables';
 import parseData from '../data/parser';
 import fetchData from '../data/loader';
 import result from './result';
@@ -10,26 +9,58 @@ export default function(event, test) {
 }
 
 function displayResult (err, jsonRecord, jsonFinals, jsonStates) {
-    if (err) { console.error(err); return; }
-
+    if (err) { console.log(err); return; }
+        
+    /* state */
     stateHeaders.data = jsonStates.embed_vs;
-
+    
+    /* chart */
     let data = parseData(jsonRecord, jsonFinals, "Time");
-    let dataCombo = data.finals.concat(data.medals, data.worlds);
 
     // fastest swimming time
-    let timeWr = d3_extent(dataCombo, d => d.x)[0];
+    let best = {};
+    best.medals = data.medals[data.medals.length-1];
+    best.worlds = data.worlds[data.worlds.length-1];
+    best.finals = data.finals[data.finals.length-1];
+    
+    let timeWr = Math.min(best.medals.x, best.worlds.x, best.finals.x);
     Object.keys(data).forEach(dd => {
         // time to distance
         data[dd] = data[dd].map(dm => {
-            dm.x = 100*timeWr/dm.x - 100;
+            dm.x = 100*timeWr / dm.x - 100;
             dm.attrs.dist = Math.round(Math.abs(dm.x)*100)/100;
             return dm;
         });
-        // sort
-        data[dd].sort((d1, d2) => d1.x - d2.x);
     });
-    //console.log(data);
+    
+    // set wr, or records and append data if needed
+    setRecord("or", "medals", data, best);
+    setRecord("wr", "worlds", data, best);
 
-    result(data, dataCombo); 
+    result(data); 
 }
+
+function setRecord(typeRecord, typeData, data, best) {
+    let isNewRecord = best.finals.x > best[typeData].x;
+    switch (true) {
+    case (typeRecord === "wr"):
+        if (isNewRecord) {
+            // clone obj, trick! 
+            let newWr = (JSON.parse(JSON.stringify(best.finals)));
+            newWr.color = "wr";
+            data.worlds.push(newWr);
+        } 
+        record.wr = data.worlds[data.worlds.length-1];
+        break;
+    case (typeRecord === "or"): 
+        record.or = isNewRecord ? best.finals : best.medals;
+        break;
+    }
+
+    if (isNewRecord) {
+        console.log("new " + typeRecord + "!!");
+    } else if (best.finals.x === best[typeData].x) {
+        console.log("almost break a new " + typeRecord + "!");
+    }
+}
+
