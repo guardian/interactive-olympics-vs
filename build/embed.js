@@ -276,7 +276,7 @@ $__System.registerDynamic("4", [], true, function($__require, exports, module) {
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = "<header class=\"top\">\n    <div class=\"header res\">\n        <p class=\"mt-0\">\n            <span class=\"js-state-name\">2016 Olympic finals</span> -  \n            <span class=\"js-state-text\">It was a WR, OR - how much better. Silver or bronze did better than gold last Olympic, or gold was worst than prior Olympics ...</span>\n        </p>\n        <div class=\"btn-next\">\n            <span class=\"js-state-next\">Start</span>\n            <svg class=\"arrow-right\" width=\"28\" height=\"28\" viewBox=\"0 0 30 30\">\n                <path d=\"M22.8 14.6l-7.6-7.6-.7.7 5.5 6.6h-14v1.5h14l-5.5 6.6.7.7 7.6-7.6v-.9\" fill=\"#fff\"/>\n            </svg>\n            <svg class=\"replay\" width=\"16px\" height=\"16px\" viewBox=\"0 0 43 44\" opacity=\"0\">\n                <path d=\"M7.15497025,33.442558 L14.398,32.27 L14.398,29.77 L1.58,29.77 L0.606,30.74 L0.606,44 L3.106,44 L4.278,36.27 L4.28132921,36.2666837 C8.31677436,41.0007268 14.3191026,44 21.023,44 C33.173,44 43.023,34.15 43.023,22 C43.023,9.85 33.173,0 21.023,0 C13.508,0 6.876,3.77 2.908,9.52 L2.944,9.54 L3.266,10.92 L4.964,11.98 L6.311,11.66 C9.572,7.04 14.945,4 21.023,4 C30.949,4 39.023,12.08 39.023,22 C39.023,31.92 30.949,40 21.023,40 C15.4437157,40 10.4578363,37.4375695 7.15497025,33.442558 Z\" fill=\"#fff\"></path>\n            </svg>\n        </div>\n    </div>\n</header>\n\n<div class=\"graph\">\n    <svg class=\"chart js-chart\" data-state=\"final\">\n        <g class=\"axis-y\"></g>\n        <g class=\"axis-x\"></g>\n        <g class=\"mark-highlight\">\n            <line class=\"hl-lv\" y2=\"98%\"></line>            \n            <text class=\"hl-year\" x=\"101%\" fill=\"#333\" dy=\".3em\"></text> \n            <text class=\"hl-mark\" y=\"100%\" fill=\"#333\" dy=\".71em\"></text>\n            <g class=\"js-final\">\n                <line class=\"hl-lh-wr\"></line>            \n                <line class=\"hl-lh-or\"></line> \n                <text class=\"hl-txt-wr\" dy=\"-5\"></text> \n                <text class=\"hl-txt-or\" dy=\"-5\"></text> \n            </g>\n        </g>\n        <g class=\"clip\"></g>\n        <g class=\"path\"></g>\n        <g class=\"dots final\"></g>\n        <g class=\"dots medal\"></g>\n        <g class=\"dots world\"></g>\n        <g class=\"dots-highlight\">\n            <circle class=\"hl-circle\"></circle>\n        </g>\n    </svg>   \n    <div class=\"tooltip\">\n        <span class=\"js-title fz-14 fw-b\"></span>\n        <span class=\"js-team fz-14 fw-b c-g\"></span><br>\n        <span class=\"js-result\"></span><br> \n        <span class=\"js-record\"></span>\n    </div>\n</div>\n\n<header class=\"in\"></header>\n\n<div class=\"note res d-n\">\n    Note that the position are based on the athletes' average speed\n</div>\n";
+  module.exports = "<header class=\"top\">\n    <div class=\"header res\">\n        <p class=\"mt-0\">\n            <!--span class=\"js-state-name\">2016 Olympic finals</span> -<-->  \n            <span class=\"js-state-text\">Loading ...</span>\n        </p>\n        <div class=\"btn-next\">\n            <span class=\"js-state-next\">Start</span>\n            <svg class=\"arrow-right\" width=\"28\" height=\"28\" viewBox=\"0 0 30 30\">\n                <path d=\"M22.8 14.6l-7.6-7.6-.7.7 5.5 6.6h-14v1.5h14l-5.5 6.6.7.7 7.6-7.6v-.9\" fill=\"#fff\"/>\n            </svg>\n            <svg class=\"replay\" width=\"16px\" height=\"16px\" viewBox=\"0 0 43 44\" opacity=\"0\">\n                <path d=\"M7.15497025,33.442558 L14.398,32.27 L14.398,29.77 L1.58,29.77 L0.606,30.74 L0.606,44 L3.106,44 L4.278,36.27 L4.28132921,36.2666837 C8.31677436,41.0007268 14.3191026,44 21.023,44 C33.173,44 43.023,34.15 43.023,22 C43.023,9.85 33.173,0 21.023,0 C13.508,0 6.876,3.77 2.908,9.52 L2.944,9.54 L3.266,10.92 L4.964,11.98 L6.311,11.66 C9.572,7.04 14.945,4 21.023,4 C30.949,4 39.023,12.08 39.023,22 C39.023,31.92 30.949,40 21.023,40 C15.4437157,40 10.4578363,37.4375695 7.15497025,33.442558 Z\" fill=\"#fff\"></path>\n            </svg>\n        </div>\n    </div>\n</header>\n\n<div class=\"graph\">\n    <svg class=\"chart js-chart\" data-state=\"final\">\n        <g class=\"axis-y\"></g>\n        <g class=\"axis-x\"></g>\n        <g class=\"mark-highlight\">\n            <line class=\"hl-lv\" y2=\"98%\"></line>            \n            <text class=\"hl-year\" x=\"101%\" fill=\"#333\" dy=\".3em\"></text> \n            <text class=\"hl-mark\" y=\"100%\" fill=\"#333\" dy=\".71em\"></text>\n            <g class=\"js-final\">\n                <line class=\"hl-lh-wr\"></line>            \n                <line class=\"hl-lh-or\"></line> \n                <text class=\"hl-txt-wr\"></text> \n                <text class=\"hl-txt-or\"></text> \n            </g>\n        </g>\n        <g class=\"dots final\"></g>\n        <g class=\"dots medal\"></g>\n        <g class=\"dots world\"></g>\n        <g class=\"dots-highlight\">\n            <circle class=\"hl-circle\"></circle>\n        </g>\n        <g class=\"dots-picker\"></g>\n    </svg>   \n    <div class=\"tooltip\">\n        <span class=\"js-title fz-14 fw-b\"></span>\n        <span class=\"js-team fz-14 fw-b c-g\"></span><br>\n        <span class=\"js-result\"></span><br> \n        <span class=\"js-record\"></span>\n    </div>\n</div>\n\n<header class=\"in\"></header>\n\n<div class=\"note res d-n\">\n    Note that the position are based on the athletes' average speed\n</div>\n";
   return module.exports;
 });
 
@@ -486,7 +486,7 @@ $__System.register('8', ['7', '9'], function (_export) {
 
                 //d3_json(urlData + (test ? "test/" : "") + event + "_final.json", (resp, err) => console.log(resp, err));
 
-                d3_queue().defer(d3_json, urlData + event + ".json").defer(d3_json, urlData + (test ? "test/" : "") + event + "_final.json").defer(d3_json, urlDocs + docsKey + ".json").await(cbResult);
+                d3_queue().defer(d3_json, urlData + event + ".json").defer(d3_json, urlData + (test ? "test/" : "live/") + event + "_final.json").defer(d3_json, urlDocs + docsKey + ".json").await(cbResult);
             });
         }
     };
@@ -581,673 +581,6 @@ $__System.registerDynamic("f", [], true, function($__require, exports, module) {
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = {"olympics": {"eventUnit": {
-        "identifier": "CTM402101",
-        "description": "Men's Team Pursuit Finals - Gold",
-        "unitType": "NOC",
-        "medalEvent": "Yes",
-        "disciplineDescription": {
-          "identifier": "cycling-track",
-          "value": "Cycling Track"
-        },
-        "phaseDescription": {
-          "identifier": "CTM4021",
-          "value": "Finals"
-        },
-        "result": {
-          "type": "Official",
-          "timestamp": "2016-07-06T15:42:39Z",
-          "entrant": [{
-            "order": "1",
-            "type": "Team",
-            "code": "CTM402GBR01",
-            "rank": "1",
-            "value": "3:51.659",
-            "property": [{
-              "type": "Medal Awarded",
-              "value": "Gold"
-            }, {
-              "type": "Record Set",
-              "value": "WR"
-            }, {
-              "type": "Record Set",
-              "value": "OR"
-            }, {
-              "type": "Diff",
-              "value": "0.000"
-            }, {
-              "type": "Result Type",
-              "value": "Time"
-            }],
-            "resultExtension": [{
-              "type": "Split Times",
-              "extension": [{
-                "position": "1",
-                "value": "1:02.518",
-                "property": {
-                  "type": "Diff",
-                  "value": "0.000"
-                }
-              }, {
-                "position": "1",
-                "value": "12.772",
-                "property": {
-                  "type": "Diff",
-                  "value": "0.000"
-                }
-              }, {
-                "position": "2",
-                "value": "1:58.485",
-                "property": {
-                  "type": "Diff",
-                  "value": "0.000"
-                }
-              }, {
-                "position": "2",
-                "value": "20.374",
-                "property": {
-                  "type": "Diff",
-                  "value": "0.000"
-                }
-              }, {
-                "position": "3",
-                "value": "2:54.772",
-                "property": {
-                  "type": "Diff",
-                  "value": "0.000"
-                }
-              }, {
-                "position": "3",
-                "value": "27.496",
-                "property": {
-                  "type": "Diff",
-                  "value": "0.000"
-                }
-              }, {
-                "position": "4",
-                "value": "3:51.659",
-                "property": {
-                  "type": "Diff",
-                  "value": "0.000"
-                }
-              }, {
-                "position": "4",
-                "value": "34.578",
-                "property": {
-                  "type": "Diff",
-                  "value": "0.000"
-                }
-              }, {
-                "position": "5",
-                "value": "41.518",
-                "property": {
-                  "type": "Diff",
-                  "value": "0.000"
-                }
-              }, {
-                "position": "6",
-                "value": "48.544",
-                "property": {
-                  "type": "Diff",
-                  "value": "0.000"
-                }
-              }, {
-                "position": "7",
-                "value": "55.526",
-                "property": {
-                  "type": "Diff",
-                  "value": "0.000"
-                }
-              }, {
-                "position": "8",
-                "value": "1:02.518",
-                "property": {
-                  "type": "Diff",
-                  "value": "0.000"
-                }
-              }, {
-                "position": "9",
-                "value": "1:09.643",
-                "property": {
-                  "type": "Diff",
-                  "value": "0.000"
-                }
-              }, {
-                "position": "10",
-                "value": "1:16.646",
-                "property": {
-                  "type": "Diff",
-                  "value": "0.000"
-                }
-              }, {
-                "position": "11",
-                "value": "1:23.616",
-                "property": {
-                  "type": "Diff",
-                  "value": "0.000"
-                }
-              }, {
-                "position": "12",
-                "value": "1:30.720",
-                "property": {
-                  "type": "Diff",
-                  "value": "0.000"
-                }
-              }, {
-                "position": "13",
-                "value": "1:37.635",
-                "property": {
-                  "type": "Diff",
-                  "value": "0.000"
-                }
-              }, {
-                "position": "14",
-                "value": "1:44.648",
-                "property": {
-                  "type": "Diff",
-                  "value": "0.000"
-                }
-              }, {
-                "position": "15",
-                "value": "1:51.575",
-                "property": {
-                  "type": "Diff",
-                  "value": "0.000"
-                }
-              }, {
-                "position": "16",
-                "value": "1:58.485",
-                "property": {
-                  "type": "Diff",
-                  "value": "0.000"
-                }
-              }, {
-                "position": "17",
-                "value": "2:05.505",
-                "property": {
-                  "type": "Diff",
-                  "value": "0.000"
-                }
-              }, {
-                "position": "18",
-                "value": "2:12.440",
-                "property": {
-                  "type": "Diff",
-                  "value": "0.000"
-                }
-              }, {
-                "position": "19",
-                "value": "2:19.405",
-                "property": {
-                  "type": "Diff",
-                  "value": "0.000"
-                }
-              }, {
-                "position": "20",
-                "value": "2:26.547",
-                "property": {
-                  "type": "Diff",
-                  "value": "0.000"
-                }
-              }, {
-                "position": "21",
-                "value": "2:33.600",
-                "property": {
-                  "type": "Diff",
-                  "value": "0.000"
-                }
-              }, {
-                "position": "22",
-                "value": "2:40.803",
-                "property": {
-                  "type": "Diff",
-                  "value": "0.000"
-                }
-              }, {
-                "position": "23",
-                "value": "2:47.815",
-                "property": {
-                  "type": "Diff",
-                  "value": "0.000"
-                }
-              }, {
-                "position": "24",
-                "value": "2:54.772",
-                "property": {
-                  "type": "Diff",
-                  "value": "0.000"
-                }
-              }, {
-                "position": "25",
-                "value": "3:01.792",
-                "property": {
-                  "type": "Diff",
-                  "value": "0.000"
-                }
-              }, {
-                "position": "26",
-                "value": "3:08.744",
-                "property": {
-                  "type": "Diff",
-                  "value": "0.000"
-                }
-              }, {
-                "position": "27",
-                "value": "3:15.688",
-                "property": {
-                  "type": "Diff",
-                  "value": "0.000"
-                }
-              }, {
-                "position": "28",
-                "value": "3:22.810",
-                "property": {
-                  "type": "Diff",
-                  "value": "0.000"
-                }
-              }, {
-                "position": "29",
-                "value": "3:29.913",
-                "property": {
-                  "type": "Diff",
-                  "value": "0.000"
-                }
-              }, {
-                "position": "30",
-                "value": "3:37.215",
-                "property": {
-                  "type": "Diff",
-                  "value": "0.000"
-                }
-              }, {
-                "position": "31",
-                "value": "3:44.520",
-                "property": {
-                  "type": "Diff",
-                  "value": "0.000"
-                }
-              }, {
-                "position": "32",
-                "value": "3:51.659",
-                "property": {
-                  "type": "Diff",
-                  "value": "0.000"
-                }
-              }]
-            }, {
-              "type": "Average Speed",
-              "value": "62.160"
-            }],
-            "country": {
-              "identifier": "GBR",
-              "name": "Great Britain",
-              "longName": "Great Britain"
-            },
-            "participant": [{
-              "order": "1",
-              "bib": "21",
-              "competitor": {
-                "identifier": "7110324",
-                "firstName": "Edward",
-                "lastName": "Clancy",
-                "fullName": "Edward Clancy"
-              }
-            }, {
-              "order": "2",
-              "bib": "22",
-              "competitor": {
-                "identifier": "7110340",
-                "firstName": "Geraint",
-                "lastName": "Thomas",
-                "fullName": "Geraint Thomas"
-              }
-            }, {
-              "order": "3",
-              "bib": "103",
-              "competitor": {
-                "identifier": "7110323",
-                "firstName": "Steven",
-                "lastName": "Burke",
-                "fullName": "Steven Burke"
-              }
-            }, {
-              "order": "4",
-              "bib": "106",
-              "competitor": {
-                "identifier": "7110624",
-                "firstName": "Peter",
-                "lastName": "Kennaugh",
-                "fullName": "Peter Kennaugh"
-              }
-            }]
-          }, {
-            "order": "2",
-            "type": "Team",
-            "code": "CTM402AUS01",
-            "rank": "2",
-            "value": "3:54.581",
-            "property": [{
-              "type": "Medal Awarded",
-              "value": "Silver"
-            }, {
-              "type": "Diff",
-              "value": "+2.922"
-            }, {
-              "type": "Result Type",
-              "value": "Time"
-            }],
-            "resultExtension": [{
-              "type": "Split Times",
-              "extension": [{
-                "position": "1",
-                "value": "1:02.828",
-                "property": {
-                  "type": "Diff",
-                  "value": "+0.310"
-                }
-              }, {
-                "position": "1",
-                "value": "13.263",
-                "property": {
-                  "type": "Diff",
-                  "value": "+0.491"
-                }
-              }, {
-                "position": "2",
-                "value": "1:59.044",
-                "property": {
-                  "type": "Diff",
-                  "value": "+0.559"
-                }
-              }, {
-                "position": "2",
-                "value": "20.897",
-                "property": {
-                  "type": "Diff",
-                  "value": "+0.523"
-                }
-              }, {
-                "position": "3",
-                "value": "2:56.242",
-                "property": {
-                  "type": "Diff",
-                  "value": "+1.470"
-                }
-              }, {
-                "position": "3",
-                "value": "28.022",
-                "property": {
-                  "type": "Diff",
-                  "value": "+0.526"
-                }
-              }, {
-                "position": "4",
-                "value": "3:54.581",
-                "property": {
-                  "type": "Diff",
-                  "value": "+2.922"
-                }
-              }, {
-                "position": "4",
-                "value": "35.044",
-                "property": {
-                  "type": "Diff",
-                  "value": "+0.466"
-                }
-              }, {
-                "position": "5",
-                "value": "41.969",
-                "property": {
-                  "type": "Diff",
-                  "value": "+0.451"
-                }
-              }, {
-                "position": "6",
-                "value": "49.001",
-                "property": {
-                  "type": "Diff",
-                  "value": "+0.457"
-                }
-              }, {
-                "position": "7",
-                "value": "55.920",
-                "property": {
-                  "type": "Diff",
-                  "value": "+0.394"
-                }
-              }, {
-                "position": "8",
-                "value": "1:02.828",
-                "property": {
-                  "type": "Diff",
-                  "value": "+0.310"
-                }
-              }, {
-                "position": "9",
-                "value": "1:09.897",
-                "property": {
-                  "type": "Diff",
-                  "value": "+0.254"
-                }
-              }, {
-                "position": "10",
-                "value": "1:16.858",
-                "property": {
-                  "type": "Diff",
-                  "value": "+0.212"
-                }
-              }, {
-                "position": "11",
-                "value": "1:23.910",
-                "property": {
-                  "type": "Diff",
-                  "value": "+0.294"
-                }
-              }, {
-                "position": "12",
-                "value": "1:30.887",
-                "property": {
-                  "type": "Diff",
-                  "value": "+0.167"
-                }
-              }, {
-                "position": "13",
-                "value": "1:37.984",
-                "property": {
-                  "type": "Diff",
-                  "value": "+0.349"
-                }
-              }, {
-                "position": "14",
-                "value": "1:44.964",
-                "property": {
-                  "type": "Diff",
-                  "value": "+0.316"
-                }
-              }, {
-                "position": "15",
-                "value": "1:52.055",
-                "property": {
-                  "type": "Diff",
-                  "value": "+0.480"
-                }
-              }, {
-                "position": "16",
-                "value": "1:59.044",
-                "property": {
-                  "type": "Diff",
-                  "value": "+0.559"
-                }
-              }, {
-                "position": "17",
-                "value": "2:06.149",
-                "property": {
-                  "type": "Diff",
-                  "value": "+0.644"
-                }
-              }, {
-                "position": "18",
-                "value": "2:13.131",
-                "property": {
-                  "type": "Diff",
-                  "value": "+0.691"
-                }
-              }, {
-                "position": "19",
-                "value": "2:20.088",
-                "property": {
-                  "type": "Diff",
-                  "value": "+0.683"
-                }
-              }, {
-                "position": "20",
-                "value": "2:27.209",
-                "property": {
-                  "type": "Diff",
-                  "value": "+0.662"
-                }
-              }, {
-                "position": "21",
-                "value": "2:34.372",
-                "property": {
-                  "type": "Diff",
-                  "value": "+0.772"
-                }
-              }, {
-                "position": "22",
-                "value": "2:41.722",
-                "property": {
-                  "type": "Diff",
-                  "value": "+0.919"
-                }
-              }, {
-                "position": "23",
-                "value": "2:48.930",
-                "property": {
-                  "type": "Diff",
-                  "value": "+1.115"
-                }
-              }, {
-                "position": "24",
-                "value": "2:56.242",
-                "property": {
-                  "type": "Diff",
-                  "value": "+1.470"
-                }
-              }, {
-                "position": "25",
-                "value": "3:03.307",
-                "property": {
-                  "type": "Diff",
-                  "value": "+1.515"
-                }
-              }, {
-                "position": "26",
-                "value": "3:10.424",
-                "property": {
-                  "type": "Diff",
-                  "value": "+1.680"
-                }
-              }, {
-                "position": "27",
-                "value": "3:17.699",
-                "property": {
-                  "type": "Diff",
-                  "value": "+2.011"
-                }
-              }, {
-                "position": "28",
-                "value": "3:24.819",
-                "property": {
-                  "type": "Diff",
-                  "value": "+2.009"
-                }
-              }, {
-                "position": "29",
-                "value": "3:32.112",
-                "property": {
-                  "type": "Diff",
-                  "value": "+2.199"
-                }
-              }, {
-                "position": "30",
-                "value": "3:39.599",
-                "property": {
-                  "type": "Diff",
-                  "value": "+2.384"
-                }
-              }, {
-                "position": "31",
-                "value": "3:47.159",
-                "property": {
-                  "type": "Diff",
-                  "value": "+2.639"
-                }
-              }, {
-                "position": "32",
-                "value": "3:54.581",
-                "property": {
-                  "type": "Diff",
-                  "value": "+2.922"
-                }
-              }]
-            }, {
-              "type": "Average Speed",
-              "value": "61.386"
-            }],
-            "country": {
-              "identifier": "AUS",
-              "name": "Australia",
-              "longName": "Australia"
-            },
-            "participant": [{
-              "order": "1",
-              "bib": "2",
-              "competitor": {
-                "identifier": "7110301",
-                "firstName": "Jack",
-                "lastName": "Bobridge",
-                "fullName": "Jack Bobridge"
-              }
-            }, {
-              "order": "2",
-              "bib": "3",
-              "competitor": {
-                "identifier": "7110297",
-                "firstName": "Glenn",
-                "lastName": "O'shea",
-                "fullName": "Glenn O'shea"
-              }
-            }, {
-              "order": "3",
-              "bib": "46",
-              "competitor": {
-                "identifier": "7110303",
-                "firstName": "Rohan",
-                "lastName": "Dennis",
-                "fullName": "Rohan Dennis"
-              }
-            }, {
-              "order": "4",
-              "bib": "49",
-              "competitor": {
-                "identifier": "7110306",
-                "firstName": "Michael",
-                "lastName": "Hepburn",
-                "fullName": "Michael Hepburn"
-              }
-            }]
-          }]
-        }
-      }}};
-  return module.exports;
-});
-
-$__System.registerDynamic("10", [], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
   module.exports = {
     "header": ["year", "name", "team", "record", "result"],
     "world_records": [[1901, "Peter O'Connor", "IRE", "wr", 7.61], [1921, "Edward Orval Gourdin", "USA", "wr", 7.69], [1924, "Robert LeGendre", "USA", "wr", 7.76], [1925, "William De Hart Hubbard", "USA", "wr", 7.89], [1928, "Edward Barton Hamm", "USA", "wr", 7.9], [1928, "Sylvio Cator", "HAI", "wr", 7.93], [1931, "Chuhei Nambu", "JPN", "wr", 7.98], [1935, "Jesse Owens", "USA", "wr", 8.13], [1960, "Ralph Boston", "USA", "wr", 8.21], [1961, "Ralph Boston", "USA", "wr", 8.24], [1961, "Ralph Boston", "USA", "wr", 8.28], [1962, "Igor Ter-Ovanesyan", "URS", "wr", 8.31], [1964, "Ralph Boston", "USA", "wr", 8.31], [1964, "Ralph Boston", "USA", "wr", 8.34], [1965, "Ralph Boston", "USA", "wr", 8.35], [1967, "Igor Ter-Ovanesyan", "URS", "wr", 8.35], [1968, "Bob Beamon", "USA", "wr", 8.9], [1991, "Mike Powell", "USA", "wr", 8.95]],
@@ -1256,607 +589,7 @@ $__System.registerDynamic("10", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("11", [], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  module.exports = {"olympics": {"eventUnit": {
-        "identifier": "ATM061101",
-        "description": "Men's Long Jump Final",
-        "unitType": "Individuals",
-        "medalEvent": "Yes",
-        "disciplineDescription": {
-          "identifier": "athletics",
-          "value": "Athletics"
-        },
-        "phaseDescription": {
-          "identifier": "ATM0611",
-          "value": "Final"
-        },
-        "result": {
-          "type": "Official",
-          "timestamp": "2013-11-13T12:14:31Z",
-          "entrant": [{
-            "order": "1",
-            "type": "Individual",
-            "code": "1127211",
-            "rank": "1",
-            "value": "8.31",
-            "property": [{
-              "type": "Medal Awarded",
-              "value": "Gold"
-            }, {
-              "type": "Result Type",
-              "value": "Distance"
-            }],
-            "resultExtension": [{
-              "type": "Wind Speed",
-              "value": "-0.4"
-            }, {
-              "type": "Split Results",
-              "extension": [{
-                "position": "1",
-                "value": "6.28"
-              }, {
-                "position": "2",
-                "value": "8.21"
-              }, {
-                "position": "3",
-                "value": "8.14"
-              }, {
-                "position": "4",
-                "value": "8.31"
-              }, {
-                "position": "5",
-                "value": "x"
-              }, {
-                "position": "6",
-                "value": "6.33"
-              }]
-            }],
-            "country": {
-              "identifier": "GBR",
-              "name": "Great Britain",
-              "longName": "Great Britain"
-            },
-            "participant": {
-              "order": "1",
-              "bib": "1832",
-              "competitor": {
-                "identifier": "1127211",
-                "firstName": "Greg",
-                "lastName": "Rutherford",
-                "fullName": "Greg Rutherford"
-              }
-            }
-          }, {
-            "order": "2",
-            "type": "Individual",
-            "code": "1090308",
-            "rank": "2",
-            "value": "8.16",
-            "property": [{
-              "type": "Medal Awarded",
-              "value": "Silver"
-            }, {
-              "type": "Result Type",
-              "value": "Distance"
-            }],
-            "resultExtension": [{
-              "type": "Wind Speed",
-              "value": "-0.2"
-            }, {
-              "type": "Split Results",
-              "extension": [{
-                "position": "1",
-                "value": "x"
-              }, {
-                "position": "2",
-                "value": "7.97"
-              }, {
-                "position": "3",
-                "value": "x"
-              }, {
-                "position": "4",
-                "value": "x"
-              }, {
-                "position": "5",
-                "value": "8.13"
-              }, {
-                "position": "6",
-                "value": "8.16"
-              }]
-            }],
-            "country": {
-              "identifier": "AUS",
-              "name": "Australia",
-              "longName": "Australia"
-            },
-            "participant": {
-              "order": "1",
-              "bib": "1066",
-              "competitor": {
-                "identifier": "1090308",
-                "firstName": "Mitchell",
-                "lastName": "Watt",
-                "fullName": "Mitchell Watt"
-              }
-            }
-          }, {
-            "order": "3",
-            "type": "Individual",
-            "code": "1135588",
-            "rank": "3",
-            "value": "8.12",
-            "property": [{
-              "type": "Medal Awarded",
-              "value": "Bronze"
-            }, {
-              "type": "Result Type",
-              "value": "Distance"
-            }],
-            "resultExtension": [{
-              "type": "Wind Speed",
-              "value": "-0.2"
-            }, {
-              "type": "Split Results",
-              "extension": [{
-                "position": "1",
-                "value": "7.98"
-              }, {
-                "position": "2",
-                "value": "8.07"
-              }, {
-                "position": "3",
-                "value": "7.93"
-              }, {
-                "position": "4",
-                "value": "8.12"
-              }, {
-                "position": "5",
-                "value": "7.96"
-              }, {
-                "position": "6",
-                "value": "x"
-              }]
-            }],
-            "country": {
-              "identifier": "USA",
-              "name": "United States",
-              "longName": "United States of America"
-            },
-            "participant": {
-              "order": "1",
-              "bib": "3211",
-              "competitor": {
-                "identifier": "1135588",
-                "firstName": "Will",
-                "lastName": "Claye",
-                "fullName": "Will Claye"
-              }
-            }
-          }, {
-            "order": "4",
-            "type": "Individual",
-            "code": "1018320",
-            "rank": "4",
-            "value": "8.11",
-            "property": {
-              "type": "Result Type",
-              "value": "Distance"
-            },
-            "resultExtension": [{
-              "type": "Wind Speed",
-              "value": "-0.7"
-            }, {
-              "type": "Split Results",
-              "extension": [{
-                "position": "1",
-                "value": "7.63"
-              }, {
-                "position": "2",
-                "value": "7.80"
-              }, {
-                "position": "3",
-                "value": "8.07"
-              }, {
-                "position": "4",
-                "value": "8.11"
-              }, {
-                "position": "5",
-                "value": "8.07"
-              }, {
-                "position": "6",
-                "value": "7.98"
-              }]
-            }],
-            "country": {
-              "identifier": "SWE",
-              "name": "Sweden",
-              "longName": "Sweden"
-            },
-            "participant": {
-              "order": "1",
-              "bib": "3002",
-              "competitor": {
-                "identifier": "1018320",
-                "firstName": "Michel",
-                "lastName": "Torneus",
-                "fullName": "Michel Torneus"
-              }
-            }
-          }, {
-            "order": "5",
-            "type": "Individual",
-            "code": "1119463",
-            "rank": "5",
-            "value": "8.10",
-            "property": {
-              "type": "Result Type",
-              "value": "Distance"
-            },
-            "resultExtension": [{
-              "type": "Wind Speed",
-              "value": "+0.4"
-            }, {
-              "type": "Split Results",
-              "extension": [{
-                "position": "1",
-                "value": "7.87"
-              }, {
-                "position": "2",
-                "value": "x"
-              }, {
-                "position": "3",
-                "value": "7.96"
-              }, {
-                "position": "4",
-                "value": "8.10"
-              }, {
-                "position": "5",
-                "value": "7.96"
-              }, {
-                "position": "6",
-                "value": "7.98"
-              }]
-            }],
-            "country": {
-              "identifier": "GER",
-              "name": "Germany",
-              "longName": "Germany"
-            },
-            "participant": {
-              "order": "1",
-              "bib": "1892",
-              "competitor": {
-                "identifier": "1119463",
-                "firstName": "Sebastian",
-                "lastName": "Bayer",
-                "fullName": "Sebastian Bayer"
-              }
-            }
-          }, {
-            "order": "6",
-            "type": "Individual",
-            "code": "1094292",
-            "rank": "6",
-            "value": "8.07",
-            "property": {
-              "type": "Result Type",
-              "value": "Distance"
-            },
-            "resultExtension": [{
-              "type": "Wind Speed",
-              "value": "+0.2"
-            }, {
-              "type": "Split Results",
-              "extension": [{
-                "position": "1",
-                "value": "8.06"
-              }, {
-                "position": "2",
-                "value": "7.87"
-              }, {
-                "position": "3",
-                "value": "7.83"
-              }, {
-                "position": "4",
-                "value": "8.07"
-              }, {
-                "position": "5",
-                "value": "7.74"
-              }, {
-                "position": "6",
-                "value": "7.76"
-              }]
-            }],
-            "country": {
-              "identifier": "GBR",
-              "name": "Great Britain",
-              "longName": "Great Britain"
-            },
-            "participant": {
-              "order": "1",
-              "bib": "1839",
-              "competitor": {
-                "identifier": "1094292",
-                "firstName": "Christopher",
-                "lastName": "Tomlinson",
-                "fullName": "Christopher Tomlinson"
-              }
-            }
-          }, {
-            "order": "7",
-            "type": "Individual",
-            "code": "1099126",
-            "rank": "7",
-            "value": "8.01",
-            "property": {
-              "type": "Result Type",
-              "value": "Distance"
-            },
-            "resultExtension": [{
-              "type": "Wind Speed",
-              "value": "-0.1"
-            }, {
-              "type": "Split Results",
-              "extension": [{
-                "position": "1",
-                "value": "x"
-              }, {
-                "position": "2",
-                "value": "x"
-              }, {
-                "position": "3",
-                "value": "7.96"
-              }, {
-                "position": "4",
-                "value": "8.01"
-              }, {
-                "position": "5",
-                "value": "x"
-              }, {
-                "position": "6",
-                "value": "x"
-              }]
-            }],
-            "country": {
-              "identifier": "BRA",
-              "name": "Brazil",
-              "longName": "Brazil"
-            },
-            "participant": {
-              "order": "1",
-              "bib": "1219",
-              "competitor": {
-                "identifier": "1099126",
-                "firstName": "Mauro Vinicius",
-                "lastName": "da Silva",
-                "fullName": "Mauro Vinicius da Silva"
-              }
-            }
-          }, {
-            "order": "8",
-            "type": "Individual",
-            "code": "1086011",
-            "rank": "8",
-            "value": "7.93",
-            "property": {
-              "type": "Result Type",
-              "value": "Distance"
-            },
-            "resultExtension": [{
-              "type": "Wind Speed",
-              "value": "-2.3"
-            }, {
-              "type": "Split Results",
-              "extension": [{
-                "position": "1",
-                "value": "7.93"
-              }, {
-                "position": "2",
-                "value": "x"
-              }, {
-                "position": "3",
-                "value": "7.62"
-              }, {
-                "position": "4",
-                "value": "x"
-              }, {
-                "position": "5",
-                "value": "x"
-              }, {
-                "position": "6",
-                "value": "x"
-              }]
-            }],
-            "country": {
-              "identifier": "RSA",
-              "name": "South Africa",
-              "longName": "South Africa"
-            },
-            "participant": {
-              "order": "1",
-              "bib": "2785",
-              "competitor": {
-                "identifier": "1086011",
-                "firstName": "Godfrey Khotso",
-                "lastName": "Mokoena",
-                "fullName": "Godfrey Khotso Mokoena"
-              }
-            }
-          }, {
-            "order": "9",
-            "type": "Individual",
-            "code": "1090262",
-            "rank": "9",
-            "value": "7.85",
-            "property": {
-              "type": "Result Type",
-              "value": "Distance"
-            },
-            "resultExtension": [{
-              "type": "Wind Speed",
-              "value": "-0.3"
-            }, {
-              "type": "Split Results",
-              "extension": [{
-                "position": "1",
-                "value": "7.85"
-              }, {
-                "position": "2",
-                "value": "x"
-              }, {
-                "position": "3",
-                "value": "7.63"
-              }]
-            }],
-            "country": {
-              "identifier": "AUS",
-              "name": "Australia",
-              "longName": "Australia"
-            },
-            "participant": {
-              "order": "1",
-              "bib": "1043",
-              "competitor": {
-                "identifier": "1090262",
-                "firstName": "Henry",
-                "lastName": "Frayne",
-                "fullName": "Henry Frayne"
-              }
-            }
-          }, {
-            "order": "10",
-            "type": "Individual",
-            "code": "1284181",
-            "rank": "10",
-            "value": "7.80",
-            "property": {
-              "type": "Result Type",
-              "value": "Distance"
-            },
-            "resultExtension": [{
-              "type": "Wind Speed",
-              "value": "+0.2"
-            }, {
-              "type": "Split Results",
-              "extension": [{
-                "position": "1",
-                "value": "x"
-              }, {
-                "position": "2",
-                "value": "7.80"
-              }, {
-                "position": "3",
-                "value": "7.76"
-              }]
-            }],
-            "country": {
-              "identifier": "USA",
-              "name": "United States",
-              "longName": "United States of America"
-            },
-            "participant": {
-              "order": "1",
-              "bib": "3218",
-              "competitor": {
-                "identifier": "1284181",
-                "firstName": "Marquise",
-                "lastName": "Goodwin",
-                "fullName": "Marquise Goodwin"
-              }
-            }
-          }, {
-            "order": "11",
-            "type": "Individual",
-            "code": "1016752",
-            "rank": "11",
-            "value": "7.78",
-            "property": {
-              "type": "Result Type",
-              "value": "Distance"
-            },
-            "resultExtension": [{
-              "type": "Wind Speed",
-              "value": "-0.9"
-            }, {
-              "type": "Split Results",
-              "extension": [{
-                "position": "1",
-                "value": "x"
-              }, {
-                "position": "2",
-                "value": "x"
-              }, {
-                "position": "3",
-                "value": "7.78"
-              }]
-            }],
-            "country": {
-              "identifier": "RUS",
-              "name": "Russian Fed.",
-              "longName": "Russian Federation"
-            },
-            "participant": {
-              "order": "1",
-              "bib": "2818",
-              "competitor": {
-                "identifier": "1016752",
-                "firstName": "Aleksandr",
-                "lastName": "Menkov",
-                "fullName": "Aleksandr Menkov"
-              }
-            }
-          }, {
-            "order": "12",
-            "type": "Individual",
-            "code": "1086699",
-            "rank": "12",
-            "value": "7.70",
-            "property": {
-              "type": "Result Type",
-              "value": "Distance"
-            },
-            "resultExtension": [{
-              "type": "Wind Speed",
-              "value": "+0.9"
-            }, {
-              "type": "Split Results",
-              "extension": [{
-                "position": "1",
-                "value": "7.70"
-              }, {
-                "position": "2",
-                "value": "x"
-              }, {
-                "position": "3",
-                "value": "x"
-              }]
-            }],
-            "country": {
-              "identifier": "BER",
-              "name": "Bermuda",
-              "longName": "Bermuda"
-            },
-            "participant": {
-              "order": "1",
-              "bib": "1151",
-              "competitor": {
-                "identifier": "1086699",
-                "firstName": "Tyrone",
-                "lastName": "Smith",
-                "fullName": "Tyrone Smith"
-              }
-            }
-          }]
-        }
-      }}};
-  return module.exports;
-});
-
-$__System.registerDynamic("12", [], true, function($__require, exports, module) {
+$__System.registerDynamic("10", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -1901,7 +634,7 @@ $__System.registerDynamic("12", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.register("c", ["12", "13", "b"], function (_export) {
+$__System.register("c", ["10", "11", "b"], function (_export) {
     "use strict";
 
     var array, utils, record, thisYear;
@@ -2093,14 +826,14 @@ $__System.register("c", ["12", "13", "b"], function (_export) {
 
                 // 2. remap for charts
                 return {
-                    worlds: remapData(data.worlds, type, false), // world records
+                    worlds: remapData(data.worlds, type, true), // world records
                     medals: remapData(data.medals, type, true), // olympic medalists
                     finals: remapData(data.finals, type, true) };
             });
         }
     };
 });
-$__System.registerDynamic("14", [], true, function($__require, exports, module) {
+$__System.registerDynamic("12", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -2113,19 +846,19 @@ $__System.registerDynamic("14", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("15", ["14"], true, function($__require, exports, module) {
+$__System.registerDynamic("13", ["12"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  var defined = $__require('14');
+  var defined = $__require('12');
   module.exports = function(it) {
     return Object(defined(it));
   };
   return module.exports;
 });
 
-$__System.registerDynamic("16", [], true, function($__require, exports, module) {
+$__System.registerDynamic("14", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -2136,7 +869,7 @@ $__System.registerDynamic("16", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("17", [], true, function($__require, exports, module) {
+$__System.registerDynamic("15", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -2149,12 +882,12 @@ $__System.registerDynamic("17", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("18", ["17"], true, function($__require, exports, module) {
+$__System.registerDynamic("16", ["15"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  var aFunction = $__require('17');
+  var aFunction = $__require('15');
   module.exports = function(fn, that, length) {
     aFunction(fn);
     if (that === undefined)
@@ -2180,14 +913,14 @@ $__System.registerDynamic("18", ["17"], true, function($__require, exports, modu
   return module.exports;
 });
 
-$__System.registerDynamic("19", ["16", "1a", "18"], true, function($__require, exports, module) {
+$__System.registerDynamic("17", ["14", "18", "16"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  var global = $__require('16'),
-      core = $__require('1a'),
-      ctx = $__require('18'),
+  var global = $__require('14'),
+      core = $__require('18'),
+      ctx = $__require('16'),
       PROTOTYPE = 'prototype';
   var $export = function(type, name, source) {
     var IS_FORCED = type & $export.F,
@@ -2229,7 +962,7 @@ $__System.registerDynamic("19", ["16", "1a", "18"], true, function($__require, e
   return module.exports;
 });
 
-$__System.registerDynamic("1b", [], true, function($__require, exports, module) {
+$__System.registerDynamic("19", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -2244,14 +977,14 @@ $__System.registerDynamic("1b", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("1c", ["19", "1a", "1b"], true, function($__require, exports, module) {
+$__System.registerDynamic("1a", ["17", "18", "19"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  var $export = $__require('19'),
-      core = $__require('1a'),
-      fails = $__require('1b');
+  var $export = $__require('17'),
+      core = $__require('18'),
+      fails = $__require('19');
   module.exports = function(KEY, exec) {
     var fn = (core.Object || {})[KEY] || Object[KEY],
         exp = {};
@@ -2263,13 +996,13 @@ $__System.registerDynamic("1c", ["19", "1a", "1b"], true, function($__require, e
   return module.exports;
 });
 
-$__System.registerDynamic("1d", ["15", "1c"], true, function($__require, exports, module) {
+$__System.registerDynamic("1b", ["13", "1a"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  var toObject = $__require('15');
-  $__require('1c')('keys', function($keys) {
+  var toObject = $__require('13');
+  $__require('1a')('keys', function($keys) {
     return function keys(it) {
       return $keys(toObject(it));
     };
@@ -2277,7 +1010,7 @@ $__System.registerDynamic("1d", ["15", "1c"], true, function($__require, exports
   return module.exports;
 });
 
-$__System.registerDynamic("1a", [], true, function($__require, exports, module) {
+$__System.registerDynamic("18", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -2288,30 +1021,30 @@ $__System.registerDynamic("1a", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("1e", ["1d", "1a"], true, function($__require, exports, module) {
+$__System.registerDynamic("1c", ["1b", "18"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  $__require('1d');
-  module.exports = $__require('1a').Object.keys;
+  $__require('1b');
+  module.exports = $__require('18').Object.keys;
   return module.exports;
 });
 
-$__System.registerDynamic("e", ["1e"], true, function($__require, exports, module) {
+$__System.registerDynamic("e", ["1c"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
   module.exports = {
-    "default": $__require('1e'),
+    "default": $__require('1c'),
     __esModule: true
   };
   return module.exports;
 });
 
-$__System.register('1f', ['20', '21', '22', 'e', 'b'], function (_export) {
-    var calcScale, updateInfo, d3_select, _Object$keys, stateHeaders;
+$__System.register('1d', ['20', '21', 'e', 'b', '1e', '1f'], function (_export) {
+    var updateInfo, updatePicker, _Object$keys, stateHeaders, d3_select, calcScale;
 
     function getNextState(stateName) {
         var list = stateHeaders.list;
@@ -2357,19 +1090,22 @@ $__System.register('1f', ['20', '21', '22', 'e', 'b'], function (_export) {
 
         // update info
         updateInfo(stateName);
+        updatePicker(scale);
     }
 
     return {
         setters: [function (_) {
-            calcScale = _['default'];
+            updateInfo = _['default'];
         }, function (_2) {
-            updateInfo = _2['default'];
-        }, function (_3) {
-            d3_select = _3.select;
+            updatePicker = _2.updatePicker;
         }, function (_e) {
             _Object$keys = _e['default'];
         }, function (_b) {
             stateHeaders = _b.stateHeaders;
+        }, function (_e2) {
+            d3_select = _e2.select;
+        }, function (_f) {
+            calcScale = _f['default'];
         }],
         execute: function () {
             'use strict';
@@ -2380,7 +1116,7 @@ $__System.register('1f', ['20', '21', '22', 'e', 'b'], function (_export) {
         }
     };
 });
-$__System.registerDynamic("23", [], true, function($__require, exports, module) {
+$__System.registerDynamic("22", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -2667,16 +1403,16 @@ $__System.registerDynamic("23", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("24", ["23"], true, function($__require, exports, module) {
+$__System.registerDynamic("23", ["22"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('23');
+  module.exports = $__require('22');
   return module.exports;
 });
 
-$__System.registerDynamic("25", [], true, function($__require, exports, module) {
+$__System.registerDynamic("24", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -3016,23 +1752,23 @@ $__System.registerDynamic("25", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("26", ["25"], true, function($__require, exports, module) {
+$__System.registerDynamic("25", ["24"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('25');
+  module.exports = $__require('24');
   return module.exports;
 });
 
-$__System.registerDynamic("27", ["26"], true, function($__require, exports, module) {
+$__System.registerDynamic("26", ["25"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
   "format cjs";
   (function(global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('26')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-time'], factory) : (factory((global.d3 = global.d3 || {}), global.d3));
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('25')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-time'], factory) : (factory((global.d3 = global.d3 || {}), global.d3));
   }(this, function(exports, d3Time) {
     'use strict';
     function localDate(d) {
@@ -3541,23 +2277,23 @@ $__System.registerDynamic("27", ["26"], true, function($__require, exports, modu
   return module.exports;
 });
 
-$__System.registerDynamic("28", ["27"], true, function($__require, exports, module) {
+$__System.registerDynamic("27", ["26"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('27');
+  module.exports = $__require('26');
   return module.exports;
 });
 
-$__System.registerDynamic("29", ["2a", "2b", "2d", "24", "26", "28", "2c"], true, function($__require, exports, module) {
+$__System.registerDynamic("28", ["29", "2a", "2c", "23", "25", "27", "2b"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
   "format cjs";
   (function(global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('2a'), $__require('2b'), $__require('2d'), $__require('24'), $__require('26'), $__require('28'), $__require('2c')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-array', 'd3-collection', 'd3-interpolate', 'd3-format', 'd3-time', 'd3-time-format', 'd3-color'], factory) : (factory((global.d3 = global.d3 || {}), global.d3, global.d3, global.d3, global.d3, global.d3, global.d3, global.d3));
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('29'), $__require('2a'), $__require('2c'), $__require('23'), $__require('25'), $__require('27'), $__require('2b')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-array', 'd3-collection', 'd3-interpolate', 'd3-format', 'd3-time', 'd3-time-format', 'd3-color'], factory) : (factory((global.d3 = global.d3 || {}), global.d3, global.d3, global.d3, global.d3, global.d3, global.d3, global.d3));
   }(this, function(exports, d3Array, d3Collection, d3Interpolate, d3Format, d3Time, d3TimeFormat, d3Color) {
     'use strict';
     var array = Array.prototype;
@@ -4299,24 +3035,24 @@ $__System.registerDynamic("29", ["2a", "2b", "2d", "24", "26", "28", "2c"], true
   return module.exports;
 });
 
-$__System.registerDynamic("2e", ["29"], true, function($__require, exports, module) {
+$__System.registerDynamic("2d", ["28"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('29');
+  module.exports = $__require('28');
   return module.exports;
 });
 
-$__System.register('20', ['b', '2e'], function (_export) {
+$__System.register('1f', ['b', '2d'], function (_export) {
     'use strict';
 
     var sync, d3_scaleLinear;
     return {
         setters: [function (_b) {
             sync = _b.sync;
-        }, function (_e) {
-            d3_scaleLinear = _e.scaleLinear;
+        }, function (_d) {
+            d3_scaleLinear = _d.scaleLinear;
         }],
         execute: function () {
             _export('default', function (domain) {
@@ -4351,7 +3087,273 @@ $__System.register('20', ['b', '2e'], function (_export) {
         }
     };
 });
-$__System.registerDynamic("2f", [], true, function($__require, exports, module) {
+$__System.registerDynamic("2e", [], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  "format cjs";
+  (function(global, factory) {
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) : typeof define === 'function' && define.amd ? define(['exports'], factory) : (factory((global.d3 = global.d3 || {})));
+  }(this, function(exports) {
+    'use strict';
+    var slice = Array.prototype.slice;
+    function identity(x) {
+      return x;
+    }
+    var top = 1;
+    var right = 2;
+    var bottom = 3;
+    var left = 4;
+    var epsilon = 1e-6;
+    function translateX(scale0, scale1, d) {
+      var x = scale0(d);
+      return "translate(" + (isFinite(x) ? x : scale1(d)) + ",0)";
+    }
+    function translateY(scale0, scale1, d) {
+      var y = scale0(d);
+      return "translate(0," + (isFinite(y) ? y : scale1(d)) + ")";
+    }
+    function center(scale) {
+      var width = scale.bandwidth() / 2;
+      return function(d) {
+        return scale(d) + width;
+      };
+    }
+    function entering() {
+      return !this.__axis;
+    }
+    function axis(orient, scale) {
+      var tickArguments = [],
+          tickValues = null,
+          tickFormat = null,
+          tickSizeInner = 6,
+          tickSizeOuter = 6,
+          tickPadding = 3;
+      function axis(context) {
+        var values = tickValues == null ? (scale.ticks ? scale.ticks.apply(scale, tickArguments) : scale.domain()) : tickValues,
+            format = tickFormat == null ? (scale.tickFormat ? scale.tickFormat.apply(scale, tickArguments) : identity) : tickFormat,
+            spacing = Math.max(tickSizeInner, 0) + tickPadding,
+            transform = orient === top || orient === bottom ? translateX : translateY,
+            range = scale.range(),
+            range0 = range[0] + 0.5,
+            range1 = range[range.length - 1] + 0.5,
+            position = (scale.bandwidth ? center : identity)(scale.copy()),
+            selection = context.selection ? context.selection() : context,
+            path = selection.selectAll(".domain").data([null]),
+            tick = selection.selectAll(".tick").data(values, scale).order(),
+            tickExit = tick.exit(),
+            tickEnter = tick.enter().append("g").attr("class", "tick"),
+            line = tick.select("line"),
+            text = tick.select("text"),
+            k = orient === top || orient === left ? -1 : 1,
+            x,
+            y = orient === left || orient === right ? (x = "x", "y") : (x = "y", "x");
+        path = path.merge(path.enter().insert("path", ".tick").attr("class", "domain").attr("stroke", "#000"));
+        tick = tick.merge(tickEnter);
+        line = line.merge(tickEnter.append("line").attr("stroke", "#000").attr(x + "2", k * tickSizeInner).attr(y + "1", 0.5).attr(y + "2", 0.5));
+        text = text.merge(tickEnter.append("text").attr("fill", "#000").attr(x, k * spacing).attr(y, 0.5).attr("dy", orient === top ? "0em" : orient === bottom ? ".71em" : ".32em"));
+        if (context !== selection) {
+          path = path.transition(context);
+          tick = tick.transition(context);
+          line = line.transition(context);
+          text = text.transition(context);
+          tickExit = tickExit.transition(context).attr("opacity", epsilon).attr("transform", function(d) {
+            return transform(position, this.parentNode.__axis || position, d);
+          });
+          tickEnter.attr("opacity", epsilon).attr("transform", function(d) {
+            return transform(this.parentNode.__axis || position, position, d);
+          });
+        }
+        tickExit.remove();
+        path.attr("d", orient === left || orient == right ? "M" + k * tickSizeOuter + "," + range0 + "H0.5V" + range1 + "H" + k * tickSizeOuter : "M" + range0 + "," + k * tickSizeOuter + "V0.5H" + range1 + "V" + k * tickSizeOuter);
+        tick.attr("opacity", 1).attr("transform", function(d) {
+          return transform(position, position, d);
+        });
+        line.attr(x + "2", k * tickSizeInner);
+        text.attr(x, k * spacing).text(format);
+        selection.filter(entering).attr("fill", "none").attr("font-size", 10).attr("font-family", "sans-serif").attr("text-anchor", orient === right ? "start" : orient === left ? "end" : "middle");
+        selection.each(function() {
+          this.__axis = position;
+        });
+      }
+      axis.scale = function(_) {
+        return arguments.length ? (scale = _, axis) : scale;
+      };
+      axis.ticks = function() {
+        return tickArguments = slice.call(arguments), axis;
+      };
+      axis.tickArguments = function(_) {
+        return arguments.length ? (tickArguments = _ == null ? [] : slice.call(_), axis) : tickArguments.slice();
+      };
+      axis.tickValues = function(_) {
+        return arguments.length ? (tickValues = _ == null ? null : slice.call(_), axis) : tickValues && tickValues.slice();
+      };
+      axis.tickFormat = function(_) {
+        return arguments.length ? (tickFormat = _, axis) : tickFormat;
+      };
+      axis.tickSize = function(_) {
+        return arguments.length ? (tickSizeInner = tickSizeOuter = +_, axis) : tickSizeInner;
+      };
+      axis.tickSizeInner = function(_) {
+        return arguments.length ? (tickSizeInner = +_, axis) : tickSizeInner;
+      };
+      axis.tickSizeOuter = function(_) {
+        return arguments.length ? (tickSizeOuter = +_, axis) : tickSizeOuter;
+      };
+      axis.tickPadding = function(_) {
+        return arguments.length ? (tickPadding = +_, axis) : tickPadding;
+      };
+      return axis;
+    }
+    function axisTop(scale) {
+      return axis(top, scale);
+    }
+    function axisRight(scale) {
+      return axis(right, scale);
+    }
+    function axisBottom(scale) {
+      return axis(bottom, scale);
+    }
+    function axisLeft(scale) {
+      return axis(left, scale);
+    }
+    exports.axisTop = axisTop;
+    exports.axisRight = axisRight;
+    exports.axisBottom = axisBottom;
+    exports.axisLeft = axisLeft;
+    Object.defineProperty(exports, '__esModule', {value: true});
+  }));
+  return module.exports;
+});
+
+$__System.registerDynamic("2f", ["2e"], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  module.exports = $__require('2e');
+  return module.exports;
+});
+
+$__System.register('30', ['29', '1e', '2f', 'b'], function (_export) {
+
+    /* param: coord - x or y */
+    /* param: direction - h or v, isJump? */
+    'use strict';
+
+    var d3_range, d3_extent, d3_select, d3_axisBottom, sync;
+    return {
+        setters: [function (_) {
+            d3_range = _.range;
+            d3_extent = _.extent;
+        }, function (_e) {
+            d3_select = _e.select;
+        }, function (_f) {
+            d3_axisBottom = _f.axisBottom;
+        }, function (_b) {
+            sync = _b.sync;
+        }],
+        execute: function () {
+            _export('default', function (cfg) {
+
+                var axis = undefined,
+                    line = undefined,
+                    text = undefined;
+                var coord = cfg.coord;
+
+                var getSteps = function getSteps(scale) {
+                    cfg.state = document.querySelector(".js-chart").getAttribute("data-state");
+
+                    switch (true) {
+                        case cfg.state === "final" && cfg.value === "year":
+                            return [2016];
+                        case cfg.value === "year":
+                            var min = scale.domain[coord][0];
+                            var max = scale.domain[coord][1];
+                            var range = min === max ? [min] : d3_range(max, min, -4);
+                            return range[range.length - 1] - 4 === min ? range.concat([min]) : range;
+                        case cfg.value === "mark":
+                            var d3_axis = d3_axisBottom(scale[coord]).ticks(8);
+                            return d3_axis.scale().ticks(d3_axis.ticks()[0]).reverse();
+                    }
+                };
+
+                this.init = function (data, scale) {
+                    axis = d3_select(".axis-" + coord).attr("class", "axis-" + cfg.value);
+                };
+
+                this.update = function (opt, scale) {
+                    var steps = getSteps(scale);
+
+                    var divHide = undefined;
+                    var axisSize = document.querySelector(".js-chart").getBoundingClientRect();
+                    switch (coord) {
+                        case "x":
+                            divHide = Math.ceil(24 * steps.length / (axisSize.width - 30));break;
+                        case "y":
+                            divHide = Math.ceil(12 * steps.length / (axisSize.height - 30));break;
+                    }
+                    //console.log(coord, steps.length, divHide);
+
+                    line = axis.selectAll("line").data(steps);
+                    text = axis.selectAll("text").data(steps);
+
+                    // exit
+                    line.exit().remove();
+                    text.exit().remove();
+
+                    // enter
+                    line.enter().append("line").attr("opacity", 0).transition().duration(opt.duration * 1000).attr("opacity", function (d, i) {
+                        return i % divHide === 0 ? 1 : 0.5;
+                    }).attr("x1", function (d) {
+                        return 0;
+                    }).attr("x2", function (d) {
+                        return "95.5%";
+                    }).attr("y1", function (d) {
+                        return 0;
+                    }).attr("y2", function (d) {
+                        return "99%";
+                    }).attr(coord + "1", function (d) {
+                        return scale[coord](d) + "%";
+                    }).attr(coord + "2", function (d) {
+                        return scale[coord](d) + "%";
+                    });
+
+                    text.enter().append("text").transition().duration(opt.duration * 1000).attr("x", function (d) {
+                        return "101%";
+                    }).attr("y", function (d) {
+                        return "100%";
+                    }).attr("dy", coord === "x" ? ".71em" : ".3em").attr(coord, function (d) {
+                        return scale[coord](d) + "%";
+                    }).attr("opacity", function (d, i) {
+                        return i % divHide === 0 ? 1 : 0;
+                    }).text(function (d) {
+                        return Math.round(Math.abs(d) * 100) / 100;
+                    });
+
+                    // update
+                    line.transition().duration(opt.duration * 1000).attr("opacity", function (d, i) {
+                        return i % divHide === 0 ? 1 : 0.5;
+                    }).attr(coord + "1", function (d) {
+                        return scale[coord](d) + "%";
+                    }).attr(coord + "2", function (d) {
+                        return scale[coord](d) + "%";
+                    });
+
+                    text.transition().duration(opt.duration * 1000).attr("dy", coord === "x" ? ".71em" : ".3em").attr(coord, function (d) {
+                        return scale[coord](d) + "%";
+                    }).attr("opacity", function (d, i) {
+                        return i % divHide === 0 ? 1 : 0;
+                    }).text(function (d) {
+                        return Math.round(Math.abs(d) * 100) / 100;
+                    });
+                };
+            });
+        }
+    };
+});
+$__System.registerDynamic("31", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -5269,16 +4271,16 @@ $__System.registerDynamic("2f", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("30", ["2f"], true, function($__require, exports, module) {
+$__System.registerDynamic("32", ["31"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('2f');
+  module.exports = $__require('31');
   return module.exports;
 });
 
-$__System.registerDynamic("31", [], true, function($__require, exports, module) {
+$__System.registerDynamic("33", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -5440,23 +4442,23 @@ $__System.registerDynamic("31", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("32", ["31"], true, function($__require, exports, module) {
+$__System.registerDynamic("34", ["33"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('31');
+  module.exports = $__require('33');
   return module.exports;
 });
 
-$__System.registerDynamic("33", ["2c"], true, function($__require, exports, module) {
+$__System.registerDynamic("35", ["2b"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
   "format cjs";
   (function(global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('2c')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-color'], factory) : (factory((global.d3 = global.d3 || {}), global.d3));
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('2b')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-color'], factory) : (factory((global.d3 = global.d3 || {}), global.d3));
   }(this, function(exports, d3Color) {
     'use strict';
     function basis(t1, v0, v1, v2, v3) {
@@ -5951,16 +4953,16 @@ $__System.registerDynamic("33", ["2c"], true, function($__require, exports, modu
   return module.exports;
 });
 
-$__System.registerDynamic("2d", ["33"], true, function($__require, exports, module) {
+$__System.registerDynamic("2c", ["35"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('33');
+  module.exports = $__require('35');
   return module.exports;
 });
 
-$__System.registerDynamic("34", [], true, function($__require, exports, module) {
+$__System.registerDynamic("36", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -6428,16 +5430,16 @@ $__System.registerDynamic("34", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("2c", ["34"], true, function($__require, exports, module) {
+$__System.registerDynamic("2b", ["36"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('34');
+  module.exports = $__require('36');
   return module.exports;
 });
 
-$__System.registerDynamic("35", [], true, function($__require, exports, module) {
+$__System.registerDynamic("37", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -6650,23 +5652,23 @@ $__System.registerDynamic("35", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("36", ["35"], true, function($__require, exports, module) {
+$__System.registerDynamic("38", ["37"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('35');
+  module.exports = $__require('37');
   return module.exports;
 });
 
-$__System.registerDynamic("37", ["22", "38", "32", "2d", "2c", "36"], true, function($__require, exports, module) {
+$__System.registerDynamic("39", ["1e", "3a", "34", "2c", "2b", "38"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
   "format cjs";
   (function(global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('22'), $__require('38'), $__require('32'), $__require('2d'), $__require('2c'), $__require('36')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-selection', 'd3-dispatch', 'd3-timer', 'd3-interpolate', 'd3-color', 'd3-ease'], factory) : (factory((global.d3 = global.d3 || {}), global.d3, global.d3, global.d3, global.d3, global.d3, global.d3));
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('1e'), $__require('3a'), $__require('34'), $__require('2c'), $__require('2b'), $__require('38')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-selection', 'd3-dispatch', 'd3-timer', 'd3-interpolate', 'd3-color', 'd3-ease'], factory) : (factory((global.d3 = global.d3 || {}), global.d3, global.d3, global.d3, global.d3, global.d3, global.d3));
   }(this, function(exports, d3Selection, d3Dispatch, d3Timer, d3Interpolate, d3Color, d3Ease) {
     'use strict';
     var emptyOn = d3Dispatch.dispatch("start", "end", "interrupt");
@@ -7363,125 +6365,16 @@ $__System.registerDynamic("37", ["22", "38", "32", "2d", "2c", "36"], true, func
   return module.exports;
 });
 
-$__System.registerDynamic("39", ["37"], true, function($__require, exports, module) {
+$__System.registerDynamic("3b", ["39"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('37');
+  module.exports = $__require('39');
   return module.exports;
 });
 
-$__System.register("3a", ["22", "b"], function (_export) {
-    "use strict";
-
-    var d3_select, record, browser, preData;
-
-    _export("showHighlightAxis", showHighlightAxis);
-
-    _export("updateDotAnimation", updateDotAnimation);
-
-    _export("hideHighlight", hideHighlight);
-
-    _export("hideHighlightAxis", hideHighlightAxis);
-
-    _export("hideDotAnimation", hideDotAnimation);
-
-    function showHighlightAxis(data) {
-        if (!data && !preData) return;
-        if (!data && preData) data = preData;
-
-        preData = data;
-        d3_select(".mark-highlight").style("opacity", 0);
-        d3_select(".js-final").classed("d-n", true);
-        if (data.attrs.dist === 0) return;
-
-        // x, y axis
-        var dot = d3_select("#" + data.id);
-        var x = dot.attr("cx");
-        var y = dot.attr("cy");
-
-        d3_select(".mark-highlight").style("opacity", 1);
-
-        var atpt = data.attrs;
-        var atwr = record.wr.attrs;
-        var ator = record.or.attrs;
-        var ttwr = Math.round((atpt.time - atwr.time) * 100) / 100;
-
-        d3_select(".hl-lv").attr("x1", x).attr("x2", x).attr("y1", y);
-        d3_select(".hl-year").attr("y", y).text(data.attrs.year);
-        d3_select(".hl-mark").attr("x", x).text(data.attrs.dist + " m (+" + ttwr + "s)");
-
-        // wr, or
-        if (d3_select(".js-chart").attr("data-state") !== "final" || data.id.indexOf("wr") > -1 || data.id.indexOf("or") > -1) {
-            return;
-        }
-        d3_select(".js-final").classed("d-n", false);
-
-        var elwr = d3_select(".wr");
-        var elor = d3_select(".or");
-        // dist > 0 or hide
-        d3_select(".hl-lh-wr").attr("x1", x).attr("x2", elwr.attr("cx")).attr("y1", elwr.attr("cy")).attr("y2", elwr.attr("cy"));
-        d3_select(".hl-lh-or").attr("x1", x).attr("x2", elor.attr("cx")).attr("y1", elor.attr("cy")).attr("y2", elor.attr("cy"));
-
-        d3_select(".hl-txt-wr").attr("y", elwr.attr("cy")).html(addMark(x, atpt.dist, ttwr, "wr"));
-
-        var ttor = Math.round((atpt.time - ator.time) * 100) / 100;
-        if (ttor === 0) {
-            d3_select(".hl-txt-or").text("");return;
-        }
-        if (ttor === ttwr) {
-            d3_select(".hl-txt-wr .behind").text("behind WR and OR");return;
-        }
-        d3_select(".hl-txt-or").attr("x", x).attr("y", elor.attr("cy")).html(addMark(x, atpt.dist - ator.dist, ttor, "or"));
-    }
-
-    function updateDotAnimation(data) {
-        if (!data && !preData) return;
-        if (!data && preData) data = preData;
-
-        // circle
-        var dot = d3_select("#" + data.id);
-        var x = dot.attr("cx");
-        var y = dot.attr("cy");
-        var year = data.attrs.year;
-        var mark = data.attrs.mark;
-
-        d3_select(".hl-circle").classed("animate", browser !== "ff" ? true : false).style("opacity", 1).attr("cx", x).attr("cy", y).attr("r", dot.attr("r"));
-
-        preData = data;
-    }
-
-    function hideHighlight() {
-        hideHighlightAxis();
-        hideDotAnimation();
-    }
-
-    function hideHighlightAxis() {
-        d3_select(".mark-highlight").style("opacity", 0);
-    }
-
-    function hideDotAnimation() {
-        d3_select(".hl-circle").classed("animate", false).style("opacity", 0);
-    }
-
-    function addMark(x, dist, time, type) {
-        // TODO: even behind WR and OR
-        return "<tspan x='" + x + "' dx='5'>" + "<tspan class='" + type + "-dist'>" + Math.round(dist * 100) / 100 + "m</tspan> " + "(+" + time + "s)" + "</tspan>" + "<tspan x='" + x + "' dx='5' dy='20' class='behind'>behind " + type.toUpperCase() + "</tspan>";
-    }
-    return {
-        setters: [function (_) {
-            d3_select = _.select;
-        }, function (_b) {
-            record = _b.record;
-            browser = _b.browser;
-        }],
-        execute: function () {
-            preData = null;
-        }
-    };
-});
-$__System.register('21', ['22', 'b'], function (_export) {
+$__System.register('20', ['1e', 'b'], function (_export) {
     'use strict';
 
     var d3_select, defaultHeaderTexts, colors, record, preData;
@@ -7576,8 +6469,8 @@ $__System.register('21', ['22', 'b'], function (_export) {
         return { top: top + "px", left: left + "px" };
     }
     return {
-        setters: [function (_) {
-            d3_select = _.select;
+        setters: [function (_e) {
+            d3_select = _e.select;
         }, function (_b) {
             defaultHeaderTexts = _b.defaultHeaderTexts;
             colors = _b.colors;
@@ -7591,8 +6484,6 @@ $__System.register('21', ['22', 'b'], function (_export) {
                     cleanFields();
                     d3_select(".tooltip").style("opacity", 0);
                 } else {
-                    //console.log(data);
-
                     var attrs = data.attrs;
                     var _event = window.location.search.replace("?", "");
 
@@ -7609,15 +6500,19 @@ $__System.register('21', ['22', 'b'], function (_export) {
         }
     };
 });
-$__System.register('3b', ['13', '21', '22', '30', '39', 'b', '3a'], function (_export) {
+$__System.register('3c', ['11', '20', '1e', '3b', 'b', '3d'], function (_export) {
     'use strict';
 
-    var utils, updateInfo, d3_select, d3_voronoi, transition, colors, sync, record, showHighlightAxis, updateDotAnimation, hideHighlight, hideHighlightAxis, hideDotAnimation, select;
+    var utils, updateInfo, d3_select, transition, colors, sync, record, showHighlightAxis, updateDotAnimation, hideHighlight, hideDotAnimation, cxShift, cyShift, cx, cy, select;
+
+    _export('showBestAthlete', showBestAthlete);
+
+    _export('hideAllAthletes', hideAllAthletes);
 
     function showBestAthlete(d1, state) {
         var attrs = d1.attrs;
-        var x = sync.scale.x(d1.x);
-        var y = sync.scale.y(d1.y);
+        //let x = sync.scale.x(d1.x);
+        //let y = sync.scale.y(d1.y);
 
         // change opacity
         select.all = d3_select(".js-chart").selectAll(".dots circle").style("transition", "0.25s").classed("o-15", function (d) {
@@ -7664,67 +6559,49 @@ $__System.register('3b', ['13', '21', '22', '30', '39', 'b', '3a'], function (_e
         });
     }
 
-    function test(data) {
-        var voronoi = d3_voronoi().x(function (d) {
-            return d.x;
-        }).y(function (d) {
-            return d.y;
-        }).extent([[-1, -1], [d3_select("svg").attr("width") + 1, d3_select("svg").attr("height") + 1]]);
-        // TODO:
-        // http://bl.ocks.org/mbostock/ec10387f24c1fad2acac3bc11eb218a5
-        d3_select(".path").selectAll(".any").data(voronoi.ploygons(data)).enter().append("path").attr("d", function (d) {
-            return "M" + d.join(",") + "Z";
-        }).attr("id", function (d, i) {
-            return "path-" + i;
-        }).attr("clip-path", function (d, i) {
-            return "url(#clip-" + i + ")";
-        }).style('fill-opacity', 0.4).style("fill", rgba(200, 200, 200, 0.25)).style("stroke", rgba(200, 200, 200, 0.5));
-    }
-
-    function renderCell(d) {
-        return d === null ? null : "M" + d.join("L") + "Z";
-    }
     return {
-        setters: [function (_4) {
-            utils = _4['default'];
-        }, function (_5) {
-            updateInfo = _5['default'];
-        }, function (_) {
-            d3_select = _.select;
+        setters: [function (_) {
+            utils = _['default'];
         }, function (_2) {
-            d3_voronoi = _2.voronoi;
-        }, function (_3) {
-            transition = _3.transition;
+            updateInfo = _2['default'];
+        }, function (_e) {
+            d3_select = _e.select;
         }, function (_b) {
-            colors = _b.colors;
-            sync = _b.sync;
-            record = _b.record;
-        }, function (_a) {
-            showHighlightAxis = _a.showHighlightAxis;
-            updateDotAnimation = _a.updateDotAnimation;
-            hideHighlight = _a.hideHighlight;
-            hideHighlightAxis = _a.hideHighlightAxis;
-            hideDotAnimation = _a.hideDotAnimation;
+            transition = _b.transition;
+        }, function (_b2) {
+            colors = _b2.colors;
+            sync = _b2.sync;
+            record = _b2.record;
+        }, function (_d) {
+            showHighlightAxis = _d.showHighlightAxis;
+            updateDotAnimation = _d.updateDotAnimation;
+            hideHighlight = _d.hideHighlight;
+            hideDotAnimation = _d.hideDotAnimation;
         }],
         execute: function () {
+            cxShift = function cxShift(d, r) {
+                return r * ((d.index - 1) * 2 - (d.count - 1)) * 0.75;
+            };
+
+            cyShift = function cyShift(d, r) {
+                return 0.5 * ((d.index - 1) * 2 - (d.count - 1)) * 0.5;
+            };
+
+            cx = function cx(d, r, x) {
+                return x(d.x);
+            };
+
+            // + (d.count ? cxShift(d, cfg.radius) : 0);
+
+            cy = function cy(d, r, y) {
+                return y(d.y) - (d.count ? cyShift(d, r) : 0);
+            };
+
             _export('default', function (cfg) {
 
                 // TODO: depends on h or v direction
                 // TODO: recalc r, temp 1%
                 var dots = undefined;
-                var cxShift = function cxShift(d, r) {
-                    return r * ((d.index - 1) * 2 - (d.count - 1)) * 0.75;
-                };
-                var cyShift = function cyShift(d, r) {
-                    return 1 * ((d.index - 1) * 2 - (d.count - 1)) * 0.75;
-                };
-                cfg.cx = function (d, r, x) {
-                    return x(d.x);
-                }; // + (d.count ? cxShift(d, cfg.radius) : 0);
-                cfg.cy = function (d, r, y) {
-                    return y(d.y) + (d.count ? cyShift(d, r) : 0);
-                };
-
                 var tempColor = function tempColor(d) {
                     return colors[d.color] || cfg.color ? colors[d.color] || cfg.color : colors.others;
                 };
@@ -7737,10 +6614,6 @@ $__System.register('3b', ['13', '21', '22', '30', '39', 'b', '3a'], function (_e
                         return dd;
                     });
 
-                    // test point picker
-                    //test(data);
-                    // end of test
-
                     dots = d3_select("." + cfg.dataset).selectAll("circle").data(data).enter().append("circle").attr("id", function (d) {
                         return d.id;
                     }).attr("data-year", function (d) {
@@ -7750,22 +6623,23 @@ $__System.register('3b', ['13', '21', '22', '30', '39', 'b', '3a'], function (_e
                     }).attr("data-name", function (d) {
                         return d.attrs.name;
                     }).attr("cx", function (d) {
-                        return cfg.cx(d, cfg.radius, scale.x) + "%";
+                        return cx(d, cfg.radius, scale.x) + "%";
                     }).attr("cy", function (d) {
-                        return cfg.cy(d, cfg.radius, scale.y) + "%";
+                        return cy(d, cfg.radius, scale.y) + "%";
                     }).attr("r", cfg.radius).attr("fill-opacity", 0).attr("fill", function (d) {
                         return tempColor(d);
                     }).attr("stroke-opacity", 0).attr("stroke", function () {
                         if (cfg.stroke) return cfg.stroke;
-                    }).attr("stroke-width", 1)
+                    }).attr("stroke-width", 1);
                     // interaction
-                    .on("mouseover", function (d) {
-                        showBestAthlete(d, cfg.dataset);
-                        hideDotAnimation();
-                    }).on("mouseout", function (d) {
+                    /*.on("mouseover", d => { 
+                        showBestAthlete(d, cfg.dataset); 
+                        hideDotAnimation(); 
+                    })
+                    .on("mouseout",  d => { 
                         hideAllAthletes(d);
                         updateDotAnimation(d);
-                    });
+                    });*/
 
                     // best of each state for highlight
                     cfg.best = cfg.dataset !== "medal" ? data[cfg.ilast] : record.or;
@@ -7780,13 +6654,13 @@ $__System.register('3b', ['13', '21', '22', '30', '39', 'b', '3a'], function (_e
                     //console.log(cfg.dataset, delay, cfg.ilast);
 
                     dots.style("transition", "0s").each(function (d) {
-                        return d.o = opacity;
+                        return d.o = d.cn ? 1 : opacity;
                     }).transition()
                     //.delay((d, i) => i*delay)
                     .duration(opt.duration * 1000).attr("fill-opacity", opacity).attr("stroke-opacity", opacity !== 0 ? 0.8 : 0).attr("cx", function (d) {
-                        return cfg.cx(d, cfg.radius, scale.x) + "%";
+                        return cx(d, cfg.radius, scale.x) + "%";
                     }).attr("cy", function (d) {
-                        return cfg.cy(d, cfg.radius, scale.y) + "%";
+                        return cy(d, cfg.radius, scale.y) + "%";
                     });
 
                     // disable events on transition
@@ -7830,7 +6704,7 @@ $__System.register('3b', ['13', '21', '22', '30', '39', 'b', '3a'], function (_e
         }
     };
 });
-$__System.registerDynamic("3c", [], true, function($__require, exports, module) {
+$__System.registerDynamic("3e", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -8755,291 +7629,269 @@ $__System.registerDynamic("3c", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("22", ["3c"], true, function($__require, exports, module) {
+$__System.registerDynamic("1e", ["3e"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('3c');
+  module.exports = $__require('3e');
   return module.exports;
 });
 
-$__System.registerDynamic("3d", [], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  "format cjs";
-  (function(global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) : typeof define === 'function' && define.amd ? define(['exports'], factory) : (factory((global.d3 = global.d3 || {})));
-  }(this, function(exports) {
-    'use strict';
-    var slice = Array.prototype.slice;
-    function identity(x) {
-      return x;
-    }
-    var top = 1;
-    var right = 2;
-    var bottom = 3;
-    var left = 4;
-    var epsilon = 1e-6;
-    function translateX(scale0, scale1, d) {
-      var x = scale0(d);
-      return "translate(" + (isFinite(x) ? x : scale1(d)) + ",0)";
-    }
-    function translateY(scale0, scale1, d) {
-      var y = scale0(d);
-      return "translate(0," + (isFinite(y) ? y : scale1(d)) + ")";
-    }
-    function center(scale) {
-      var width = scale.bandwidth() / 2;
-      return function(d) {
-        return scale(d) + width;
-      };
-    }
-    function entering() {
-      return !this.__axis;
-    }
-    function axis(orient, scale) {
-      var tickArguments = [],
-          tickValues = null,
-          tickFormat = null,
-          tickSizeInner = 6,
-          tickSizeOuter = 6,
-          tickPadding = 3;
-      function axis(context) {
-        var values = tickValues == null ? (scale.ticks ? scale.ticks.apply(scale, tickArguments) : scale.domain()) : tickValues,
-            format = tickFormat == null ? (scale.tickFormat ? scale.tickFormat.apply(scale, tickArguments) : identity) : tickFormat,
-            spacing = Math.max(tickSizeInner, 0) + tickPadding,
-            transform = orient === top || orient === bottom ? translateX : translateY,
-            range = scale.range(),
-            range0 = range[0] + 0.5,
-            range1 = range[range.length - 1] + 0.5,
-            position = (scale.bandwidth ? center : identity)(scale.copy()),
-            selection = context.selection ? context.selection() : context,
-            path = selection.selectAll(".domain").data([null]),
-            tick = selection.selectAll(".tick").data(values, scale).order(),
-            tickExit = tick.exit(),
-            tickEnter = tick.enter().append("g").attr("class", "tick"),
-            line = tick.select("line"),
-            text = tick.select("text"),
-            k = orient === top || orient === left ? -1 : 1,
-            x,
-            y = orient === left || orient === right ? (x = "x", "y") : (x = "y", "x");
-        path = path.merge(path.enter().insert("path", ".tick").attr("class", "domain").attr("stroke", "#000"));
-        tick = tick.merge(tickEnter);
-        line = line.merge(tickEnter.append("line").attr("stroke", "#000").attr(x + "2", k * tickSizeInner).attr(y + "1", 0.5).attr(y + "2", 0.5));
-        text = text.merge(tickEnter.append("text").attr("fill", "#000").attr(x, k * spacing).attr(y, 0.5).attr("dy", orient === top ? "0em" : orient === bottom ? ".71em" : ".32em"));
-        if (context !== selection) {
-          path = path.transition(context);
-          tick = tick.transition(context);
-          line = line.transition(context);
-          text = text.transition(context);
-          tickExit = tickExit.transition(context).attr("opacity", epsilon).attr("transform", function(d) {
-            return transform(position, this.parentNode.__axis || position, d);
-          });
-          tickEnter.attr("opacity", epsilon).attr("transform", function(d) {
-            return transform(this.parentNode.__axis || position, position, d);
-          });
+$__System.register("3d", ["1e", "b"], function (_export) {
+    "use strict";
+
+    var d3_select, record, browser, preData, tspan;
+
+    _export("showHighlightAxis", showHighlightAxis);
+
+    _export("updateDotAnimation", updateDotAnimation);
+
+    _export("hideHighlight", hideHighlight);
+
+    _export("hideDotAnimation", hideDotAnimation);
+
+    function showHighlightAxis(data) {
+        if (!data && !preData) return;
+        if (!data && preData) data = preData;
+
+        preData = data;
+        d3_select(".mark-highlight").style("opacity", 0);
+        d3_select(".js-final").classed("d-n", true);
+        if (data.attrs.dist === 0) {
+            /*console.log("update text", data);
+            d3_select(".hl-txt-wr")
+            .attr("y", "50%")
+            .attr("x", "100%")
+            .text("WR, OR");
+            d3_select(".hl-txt-or")
+            .text("");
+            d3_select(".js-final").classed("d-n", false);*/
+            return;
         }
-        tickExit.remove();
-        path.attr("d", orient === left || orient == right ? "M" + k * tickSizeOuter + "," + range0 + "H0.5V" + range1 + "H" + k * tickSizeOuter : "M" + range0 + "," + k * tickSizeOuter + "V0.5H" + range1 + "V" + k * tickSizeOuter);
-        tick.attr("opacity", 1).attr("transform", function(d) {
-          return transform(position, position, d);
-        });
-        line.attr(x + "2", k * tickSizeInner);
-        text.attr(x, k * spacing).text(format);
-        selection.filter(entering).attr("fill", "none").attr("font-size", 10).attr("font-family", "sans-serif").attr("text-anchor", orient === right ? "start" : orient === left ? "end" : "middle");
-        selection.each(function() {
-          this.__axis = position;
-        });
-      }
-      axis.scale = function(_) {
-        return arguments.length ? (scale = _, axis) : scale;
-      };
-      axis.ticks = function() {
-        return tickArguments = slice.call(arguments), axis;
-      };
-      axis.tickArguments = function(_) {
-        return arguments.length ? (tickArguments = _ == null ? [] : slice.call(_), axis) : tickArguments.slice();
-      };
-      axis.tickValues = function(_) {
-        return arguments.length ? (tickValues = _ == null ? null : slice.call(_), axis) : tickValues && tickValues.slice();
-      };
-      axis.tickFormat = function(_) {
-        return arguments.length ? (tickFormat = _, axis) : tickFormat;
-      };
-      axis.tickSize = function(_) {
-        return arguments.length ? (tickSizeInner = tickSizeOuter = +_, axis) : tickSizeInner;
-      };
-      axis.tickSizeInner = function(_) {
-        return arguments.length ? (tickSizeInner = +_, axis) : tickSizeInner;
-      };
-      axis.tickSizeOuter = function(_) {
-        return arguments.length ? (tickSizeOuter = +_, axis) : tickSizeOuter;
-      };
-      axis.tickPadding = function(_) {
-        return arguments.length ? (tickPadding = +_, axis) : tickPadding;
-      };
-      return axis;
-    }
-    function axisTop(scale) {
-      return axis(top, scale);
-    }
-    function axisRight(scale) {
-      return axis(right, scale);
-    }
-    function axisBottom(scale) {
-      return axis(bottom, scale);
-    }
-    function axisLeft(scale) {
-      return axis(left, scale);
-    }
-    exports.axisTop = axisTop;
-    exports.axisRight = axisRight;
-    exports.axisBottom = axisBottom;
-    exports.axisLeft = axisLeft;
-    Object.defineProperty(exports, '__esModule', {value: true});
-  }));
-  return module.exports;
-});
 
-$__System.registerDynamic("3e", ["3d"], true, function($__require, exports, module) {
-  ;
-  var define,
-      global = this,
-      GLOBAL = this;
-  module.exports = $__require('3d');
-  return module.exports;
-});
+        // x, y axis
+        var dot = d3_select("#" + data.id);
+        var x = dot.attr("cx");
+        var y = dot.attr("cy");
 
-$__System.register('3f', ['22', '2a', '3e', 'b'], function (_export) {
+        d3_select(".mark-highlight").style("opacity", 1);
 
-    /* param: coord - x or y */
-    /* param: direction - h or v, isJump? */
-    'use strict';
+        var atpt = data.attrs;
+        var atwr = record.wr.attrs;
+        var ator = record.or.attrs;
+        var ttwr = Math.round((atpt.time - atwr.time) * 100) / 100;
 
-    var d3_select, d3_range, d3_extent, d3_axisBottom, sync;
+        d3_select(".hl-lv").attr("x1", x).attr("x2", x).attr("y1", y);
+        d3_select(".hl-year").attr("y", y).text(data.attrs.year);
+        d3_select(".hl-mark").attr("x", x).text(data.attrs.dist + " m (+" + ttwr + "s)");
+
+        // wr, or
+        if (d3_select(".js-chart").attr("data-state") !== "final") {
+            return;
+        }
+        d3_select(".js-final").classed("d-n", false);
+
+        var elwr = d3_select(".wr");
+        var elor = d3_select(".or");
+        var isNewRecord = record.wr.y === 2016;
+        // dist > 0 or hide
+        d3_select(".hl-lh-wr").attr("x1", x).attr("x2", elwr.attr("cx")).attr("y1", elwr.attr("cy")).attr("y2", elwr.attr("cy"));
+        d3_select(".hl-lh-or").attr("x1", x).attr("x2", elor.attr("cx")).attr("y1", elor.attr("cy")).attr("y2", elor.attr("cy"));
+
+        d3_select(".hl-txt-wr").attr("y", elwr.attr("cy")).html(addMark(x, atpt.dist, ttwr, "wr", isNewRecord));
+
+        var ttor = Math.round((atpt.time - ator.time) * 100) / 100;
+        if (ttor === 0) {
+            d3_select(".hl-txt-or").text("");return;
+        }
+        if (ttor === ttwr) {
+            d3_select(".hl-txt-wr .behind").text("behind WR and OR");return;
+        }
+        d3_select(".hl-txt-or").attr("x", x).attr("y", elor.attr("cy")).html(addMark(x, atpt.dist - ator.dist, ttor, "or", isNewRecord));
+    }
+
+    function updateDotAnimation(data) {
+        if (!data && !preData) return;
+        if (!data && preData) data = preData;
+
+        // circle
+        var dot = d3_select("#" + data.id);
+        var x = dot.attr("cx");
+        var y = dot.attr("cy");
+        var year = data.attrs.year;
+        var mark = data.attrs.mark;
+
+        d3_select(".hl-circle").classed("animate", browser !== "ff" ? true : false).style("opacity", 1).attr("cx", x).attr("cy", y).attr("r", dot.attr("r"));
+
+        preData = data;
+    }
+
+    function hideHighlight() {
+        hideHighlightAxis();
+        hideDotAnimation();
+    }
+
+    function hideHighlightAxis() {
+        d3_select(".mark-highlight").style("opacity", 0);
+    }
+
+    function hideDotAnimation() {
+        d3_select(".hl-circle").classed("animate", false).style("opacity", 0);
+    }
+
+    function addMark(x, dist, time, type, isNewRecord) {
+        // TODO: even behind WR and OR
+        var flag = isNewRecord ? "record" : "origin";
+
+        return "<tspan x='" + x + "' dx='5' dy='" + tspan[flag].dyt + "'>" + "<tspan class='" + type + "-dist'>" + Math.round(dist * 100) / 100 + "m</tspan> " + "(+" + time + "s)" + "</tspan>" + "<tspan x='" + x + "' dx='6' dy='" + tspan[flag].dyb + "' class='behind'>" + "behind " + type.toUpperCase() + "</tspan>";
+    }
+    function addRecord() {}
     return {
-        setters: [function (_) {
-            d3_select = _.select;
-        }, function (_a) {
-            d3_range = _a.range;
-            d3_extent = _a.extent;
-        }, function (_e) {
-            d3_axisBottom = _e.axisBottom;
+        setters: [function (_e) {
+            d3_select = _e.select;
         }, function (_b) {
-            sync = _b.sync;
+            record = _b.record;
+            browser = _b.browser;
         }],
         execute: function () {
-            _export('default', function (cfg) {
-
-                var axis = undefined,
-                    line = undefined,
-                    text = undefined;
-                var coord = cfg.coord;
-
-                var getSteps = function getSteps(scale) {
-                    cfg.state = document.querySelector(".js-chart").getAttribute("data-state");
-
-                    switch (true) {
-                        case cfg.state === "final" && cfg.value === "year":
-                            return [2016];
-                        case cfg.value === "year":
-                            var min = scale.domain[coord][0];
-                            var max = scale.domain[coord][1];
-                            var range = min === max ? [min] : d3_range(max, min, -4);
-                            return range[range.length - 1] - 4 === min ? range.concat([min]) : range;
-                        case cfg.value === "mark":
-                            var d3_axis = d3_axisBottom(scale[coord]).ticks(8);
-                            return d3_axis.scale().ticks(d3_axis.ticks()[0]).reverse();
-                    }
-                };
-
-                this.init = function (data, scale) {
-                    axis = d3_select(".axis-" + coord).attr("class", "axis-" + cfg.value);
-                };
-
-                this.update = function (opt, scale) {
-                    var steps = getSteps(scale);
-
-                    var divHide = undefined;
-                    var axisSize = document.querySelector(".js-chart").getBoundingClientRect();
-                    switch (coord) {
-                        case "x":
-                            divHide = Math.ceil(24 * steps.length / (axisSize.width - 30));break;
-                        case "y":
-                            divHide = Math.ceil(12 * steps.length / (axisSize.height - 30));break;
-                    }
-                    //console.log(coord, steps.length, divHide);
-
-                    line = axis.selectAll("line").data(steps);
-                    text = axis.selectAll("text").data(steps);
-
-                    // exit
-                    line.exit().remove();
-                    text.exit().remove();
-
-                    // enter
-                    //window.setTimeout(() => {
-
-                    line.enter().append("line").attr("opacity", 0).transition().duration(opt.duration * 1000)
-                    //.attr("opacity", 1)
-                    .attr("opacity", function (d, i) {
-                        return i % divHide === 0 ? 1 : 0.5;
-                    }).attr("x1", function (d) {
-                        return 0;
-                    }).attr("x2", function (d) {
-                        return "95.5%";
-                    }).attr("y1", function (d) {
-                        return 0;
-                    }).attr("y2", function (d) {
-                        return "99%";
-                    }).attr(coord + "1", function (d) {
-                        return scale[coord](d) + "%";
-                    }).attr(coord + "2", function (d) {
-                        return scale[coord](d) + "%";
-                    });
-
-                    text.enter().append("text").transition().duration(opt.duration * 1000).attr("x", function (d) {
-                        return "101%";
-                    }).attr("y", function (d) {
-                        return "100%";
-                    }).attr("dy", coord === "x" ? ".71em" : ".3em").attr(coord, function (d) {
-                        return scale[coord](d) + "%";
-                    }).attr("opacity", function (d, i) {
-                        return i % divHide === 0 ? 1 : 0;
-                    }).text(function (d) {
-                        return Math.round(Math.abs(d) * 100) / 100;
-                    });
-
-                    //}, (opt.duration-1)*1000);
-
-                    // update
-                    line.transition().duration(opt.duration * 1000).attr("opacity", function (d, i) {
-                        return i % divHide === 0 ? 1 : 0.5;
-                    }).attr(coord + "1", function (d) {
-                        return scale[coord](d) + "%";
-                    }).attr(coord + "2", function (d) {
-                        return scale[coord](d) + "%";
-                    });
-
-                    text.transition().duration(opt.duration * 1000).attr("dy", coord === "x" ? ".71em" : ".3em").attr(coord, function (d) {
-                        return scale[coord](d) + "%";
-                    }).attr("opacity", function (d, i) {
-                        return i % divHide === 0 ? 1 : 0;
-                    }).text(function (d) {
-                        return Math.round(Math.abs(d) * 100) / 100;
-                    });
-                };
-            });
+            preData = null;
+            tspan = {
+                "origin": { dyt: -5, dyb: 20 },
+                "record": { dyt: 36, dyb: 16 }
+            };
         }
     };
 });
-$__System.register('d', ['13', '20', '22', '2a', '1f', 'b', '3b', '3f'], function (_export) {
+$__System.register('21', ['32', '1e', 'b', '3c', '3d'], function (_export) {
+
+    // ref: bl.ocks.org/njvack/1405439
+    // ref: bl.ocks.org/mbostock/ec10387f24c1fad2acac3bc11eb218a5
     'use strict';
 
-    var utils, calcScale, d3_select, d3_extent, toState, getNextState, record, Dots, Axis;
+    var d3_voronoi, d3_select, sync, chart, showBestAthlete, hideAllAthletes, updateDotAnimation, hideDotAnimation, radius, picks, paths, cxShift, cyShift, cx, cy, w, h, dataPickAll, dataPickVisible, dataGoldX, dataPath;
+
+    _export('initPicker', initPicker);
+
+    _export('updatePicker', updatePicker);
+
+    function initPicker(data) {
+        var chartRect = document.querySelector(".chart").getBoundingClientRect();
+        w = chartRect.width - 40;
+        h = chartRect.height - 20;
+        dataPickAll = data;
+    }
+
+    function updatePicker(scale) {
+        dataPickVisible = dataPickAll.filter(function (d) {
+            return d.o !== 0;
+        });
+        dataGoldX = dataPickVisible.filter(function (d) {
+            return d.color !== "wr";
+        }).map(function (d) {
+            return d.x;
+        });
+        dataPickVisible = dataPickVisible.filter(function (d) {
+            var isOverlapped = d.color === "wr" && dataGoldX.some(function (gx) {
+                return gx === d.x;
+            });
+            return !isOverlapped;
+        });
+
+        var picker = d3_select(".dots-picker");
+        picker.selectAll("g").remove();
+
+        var circle = picker.selectAll("g").data(dataPickVisible).enter().append("g");
+
+        circle.append("clipPath").attr("id", function (d, i) {
+            return "clip-" + i;
+        }).append("circle").attr("data-id", function (d) {
+            return d.id;
+        }).attr("cx", function (d) {
+            return cx(d, radius, scale.x) + "%";
+        }).attr("cy", function (d) {
+            return cy(d, radius, scale.y) + "%";
+        }).attr("r", radius);
+
+        circle.append("path").data(dataPath(scale)).attr("d", renderCell).attr("id", function (d, i) {
+            return "path-" + i;
+        }).attr("clip-path", function (d, i) {
+            return "url(#clip-" + i + ")";
+        })
+        // interaction
+        .on("mouseover", function (d, i) {
+            console.log(d.id);
+            var state = d3_select(".js-chart").attr("data-state");
+            showBestAthlete(dataPickVisible[i], state);
+            hideDotAnimation();
+        }).on("mouseout", function (d, i) {
+            hideAllAthletes(dataPickVisible[i]);
+            updateDotAnimation(dataPickVisible[i]);
+        });
+    }
+
+    function renderCell(d) {
+        return d === null ? null : "M" + d.join("L") + "Z";
+    }
+    return {
+        setters: [function (_) {
+            d3_voronoi = _.voronoi;
+        }, function (_e) {
+            d3_select = _e.select;
+        }, function (_b) {
+            sync = _b.sync;
+            chart = _b.chart;
+        }, function (_c) {
+            showBestAthlete = _c.showBestAthlete;
+            hideAllAthletes = _c.hideAllAthletes;
+        }, function (_d) {
+            updateDotAnimation = _d.updateDotAnimation;
+            hideDotAnimation = _d.hideDotAnimation;
+        }],
+        execute: function () {
+            radius = 18;
+            picks = undefined;
+            paths = undefined;
+
+            cxShift = function cxShift(d, r) {
+                return r * ((d.index - 1) * 2 - (d.count - 1)) * 0.75;
+            };
+
+            cyShift = function cyShift(d, r) {
+                return 0.5 * ((d.index - 1) * 2 - (d.count - 1)) * 0.5;
+            };
+
+            cx = function cx(d, r, x) {
+                return x(d.x);
+            };
+
+            // + (d.count ? cxShift(d, cfg.radius) : 0);
+
+            cy = function cy(d, r, y) {
+                return y(d.y) - (d.count ? cyShift(d, r) : 0);
+            };
+
+            w = undefined;
+            h = undefined;
+            dataPickAll = undefined;
+            dataPickVisible = undefined;
+            dataGoldX = undefined;
+
+            dataPath = function dataPath(scale) {
+                var voronoi = d3_voronoi().x(function (d) {
+                    return cx(d, radius, scale.x) * w / 100;
+                }).y(function (d) {
+                    return cy(d, radius, scale.y) * h / 100;
+                }).extent([[0, 0], [w, h]]);
+                return voronoi.polygons(dataPickVisible);
+            };
+        }
+    };
+});
+$__System.register('d', ['11', '21', '29', '30', '1e', '1d', 'b', '1f', '3c'], function (_export) {
+    'use strict';
+
+    var utils, initPicker, d3_extent, Axis, d3_select, toState, getNextState, record, calcScale, Dots;
 
     function getDomain(data) {
         return {
@@ -9052,23 +7904,25 @@ $__System.register('d', ['13', '20', '22', '2a', '1f', 'b', '3b', '3f'], functio
         };
     }
     return {
-        setters: [function (_3) {
-            utils = _3['default'];
-        }, function (_2) {
-            calcScale = _2['default'];
+        setters: [function (_2) {
+            utils = _2['default'];
+        }, function (_4) {
+            initPicker = _4.initPicker;
         }, function (_) {
-            d3_select = _.select;
-        }, function (_a) {
-            d3_extent = _a.extent;
-        }, function (_f) {
-            toState = _f.toState;
-            getNextState = _f.getNextState;
+            d3_extent = _.extent;
+        }, function (_3) {
+            Axis = _3['default'];
+        }, function (_e) {
+            d3_select = _e.select;
+        }, function (_d) {
+            toState = _d.toState;
+            getNextState = _d.getNextState;
         }, function (_b) {
             record = _b.record;
-        }, function (_b2) {
-            Dots = _b2['default'];
-        }, function (_f2) {
-            Axis = _f2['default'];
+        }, function (_f) {
+            calcScale = _f['default'];
+        }, function (_c) {
+            Dots = _c['default'];
         }],
         execute: function () {
             _export('default', function (data) {
@@ -9079,6 +7933,7 @@ $__System.register('d', ['13', '20', '22', '2a', '1f', 'b', '3b', '3f'], functio
                 var scale = calcScale(domain);
                 var els = {};
 
+                // circles
                 els.dotsF = new Dots({
                     dataset: "final",
                     radius: 9
@@ -9111,9 +7966,16 @@ $__System.register('d', ['13', '20', '22', '2a', '1f', 'b', '3b', '3f'], functio
                 }), scale);
 
                 // note and misc updates
-                d3_select("#" + record.wr.id).attr("class", "wr");
-                d3_select("#" + record.or.id).attr("class", "or");
+                d3_select("#" + record.wr.id).attr("class", "wr").each(function (d) {
+                    return d.cn = "wr";
+                });
+                d3_select("#" + record.or.id).attr("class", "or").each(function (d) {
+                    return d.cn = "or";
+                });
                 d3_select(".note").classed("d-n", record.type !== "s" ? true : false);
+
+                // dots pickers
+                initPicker(dataCombo);
 
                 // update with animations
                 var state = {};
@@ -9162,7 +8024,7 @@ $__System.register('d', ['13', '20', '22', '2a', '1f', 'b', '3b', '3f'], functio
         }
     };
 });
-$__System.registerDynamic("40", [], true, function($__require, exports, module) {
+$__System.registerDynamic("3f", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -9628,16 +8490,16 @@ $__System.registerDynamic("40", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("2a", ["40"], true, function($__require, exports, module) {
+$__System.registerDynamic("29", ["3f"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('40');
+  module.exports = $__require('3f');
   return module.exports;
 });
 
-$__System.registerDynamic("41", [], true, function($__require, exports, module) {
+$__System.registerDynamic("40", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -9658,31 +8520,31 @@ $__System.registerDynamic("41", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("42", ["41"], true, function($__require, exports, module) {
+$__System.registerDynamic("41", ["40"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  var $ = $__require('41');
+  var $ = $__require('40');
   module.exports = function defineProperties(T, D) {
     return $.setDescs(T, D);
   };
   return module.exports;
 });
 
-$__System.registerDynamic("43", ["42"], true, function($__require, exports, module) {
+$__System.registerDynamic("42", ["41"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
   module.exports = {
-    "default": $__require('42'),
+    "default": $__require('41'),
     __esModule: true
   };
   return module.exports;
 });
 
-$__System.registerDynamic("13", [], true, function($__require, exports, module) {
+$__System.registerDynamic("11", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -9710,7 +8572,7 @@ $__System.registerDynamic("13", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("44", [], true, function($__require, exports, module) {
+$__System.registerDynamic("43", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -9961,16 +8823,16 @@ $__System.registerDynamic("44", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("2b", ["44"], true, function($__require, exports, module) {
+$__System.registerDynamic("2a", ["43"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('44');
+  module.exports = $__require('43');
   return module.exports;
 });
 
-$__System.registerDynamic("45", [], true, function($__require, exports, module) {
+$__System.registerDynamic("44", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -10092,16 +8954,16 @@ $__System.registerDynamic("45", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("38", ["45"], true, function($__require, exports, module) {
+$__System.registerDynamic("3a", ["44"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('45');
+  module.exports = $__require('44');
   return module.exports;
 });
 
-$__System.registerDynamic("46", [], true, function($__require, exports, module) {
+$__System.registerDynamic("45", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -10260,23 +9122,23 @@ $__System.registerDynamic("46", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("47", ["46"], true, function($__require, exports, module) {
+$__System.registerDynamic("46", ["45"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('46');
+  module.exports = $__require('45');
   return module.exports;
 });
 
-$__System.registerDynamic("48", ["2b", "38", "47"], true, function($__require, exports, module) {
+$__System.registerDynamic("47", ["2a", "3a", "46"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
   "format cjs";
   (function(global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('2b'), $__require('38'), $__require('47')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-collection', 'd3-dispatch', 'd3-dsv'], factory) : (factory((global.d3 = global.d3 || {}), global.d3, global.d3, global.d3));
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('2a'), $__require('3a'), $__require('46')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-collection', 'd3-dispatch', 'd3-dsv'], factory) : (factory((global.d3 = global.d3 || {}), global.d3, global.d3, global.d3));
   }(this, function(exports, d3Collection, d3Dispatch, d3Dsv) {
     'use strict';
     function request(url, callback) {
@@ -10470,16 +9332,16 @@ $__System.registerDynamic("48", ["2b", "38", "47"], true, function($__require, e
   return module.exports;
 });
 
-$__System.registerDynamic("9", ["48"], true, function($__require, exports, module) {
+$__System.registerDynamic("9", ["47"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('48');
+  module.exports = $__require('47');
   return module.exports;
 });
 
-$__System.register('b', ['9', '13', '43'], function (_export) {
+$__System.register('b', ['9', '11', '42'], function (_export) {
     var d3_json, utils, _Object$defineProperties, minWidth, padding, size, cols, isFirefox, browser, width, height, chart, colors, sync, stateHeaders, record;
 
     return {
@@ -10629,8 +9491,8 @@ $__System.register('b', ['9', '13', '43'], function (_export) {
         }
     };
 });
-$__System.register('49', ['10', '11', 'e', 'c', 'd', '2a', 'b'], function (_export) {
-    var jsonRecord, jsonFinals, _Object$keys, parseData, result, d3_extent, record;
+$__System.register('48', ['29', 'e', 'f', 'c', 'd', 'b'], function (_export) {
+    var d3_extent, _Object$keys, jsonRecord, parseData, result, record;
 
     function displayResult(err, jsonRecord, jsonFinals, jsonStates) {
         if (err) {
@@ -10673,22 +9535,22 @@ $__System.register('49', ['10', '11', 'e', 'c', 'd', '2a', 'b'], function (_expo
     }
     return {
         setters: [function (_) {
-            jsonRecord = _['default'];
-        }, function (_2) {
-            jsonFinals = _2['default'];
+            d3_extent = _.extent;
         }, function (_e) {
             _Object$keys = _e['default'];
+        }, function (_f) {
+            jsonRecord = _f['default'];
         }, function (_c) {
             parseData = _c['default'];
         }, function (_d) {
             result = _d['default'];
-        }, function (_a) {
-            d3_extent = _a.extent;
         }, function (_b) {
             record = _b.record;
         }],
         execute: function () {
             'use strict';
+
+            //import jsonFinals from '../../dataDummy/long-jump_m.json!json';
 
             _export('default', function (event, test) {
                 if (test) {
@@ -10699,10 +9561,10 @@ $__System.register('49', ['10', '11', 'e', 'c', 'd', '2a', 'b'], function (_expo
         }
     };
 });
-$__System.register('1', ['3', '4', '5', '13', '21', '49', '3a', 'a', 'f'], function (_export) {
+$__System.register('1', ['3', '4', '5', '11', '20', '48', '3d', 'a'], function (_export) {
     'use strict';
 
-    var iframeMessenger, embedHTML, throttle, utils, updateInfoPosition, longjump_m, updateDotAnimation, swimming, team_pursuit_m, page;
+    var iframeMessenger, embedHTML, throttle, utils, updateInfoPosition, longjump_m, updateDotAnimation, swimming, page;
 
     function setEmbedSize() {
         var size = utils.getWindowSize();
@@ -10754,12 +9616,10 @@ $__System.register('1', ['3', '4', '5', '13', '21', '49', '3a', 'a', 'f'], funct
             updateInfoPosition = _5.updateInfoPosition;
         }, function (_6) {
             longjump_m = _6['default'];
+        }, function (_d) {
+            updateDotAnimation = _d.updateDotAnimation;
         }, function (_a) {
-            updateDotAnimation = _a.updateDotAnimation;
-        }, function (_a2) {
-            swimming = _a2['default'];
-        }, function (_f) {
-            team_pursuit_m = _f['default'];
+            swimming = _a['default'];
         }],
         execute: function () {
 

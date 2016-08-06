@@ -2,10 +2,11 @@ import {select as d3_select} from 'd3-selection';
 import {extent as d3_extent} from 'd3-array';
 import {toState, getNextState} from '../draw/state';
 import {record} from '../variables';
+import utils from '../lib/utils';
 import calcScale from '../draw/scale';
 import Dots from '../draw/dots';
 import Axis from '../draw/axis';
-import utils from '../lib/utils';
+import {initPicker} from '../draw/dotPicker';
 
 export default function(data) {
     let dataCombo = data.finals.concat(data.medals, data.worlds);
@@ -14,7 +15,8 @@ export default function(data) {
     // init, draw all
     let scale = calcScale(domain);
     let els = {};
-
+    
+    // circles
     els.dotsF = new Dots({
         dataset: "final",
         radius: 9
@@ -43,10 +45,12 @@ export default function(data) {
     els.axisX.init(dataCombo.map(d => d.x), scale);    
     
     // note and misc updates
-    d3_select("#" + record.wr.id).attr("class", "wr"); 
-    d3_select("#" + record.or.id).attr("class", "or");
+    d3_select("#" + record.wr.id).attr("class", "wr").each(d => d.cn = "wr"); 
+    d3_select("#" + record.or.id).attr("class", "or").each(d => d.cn = "or");
     d3_select(".note").classed("d-n", record.type !== "s" ? true : false);
 
+    // dots pickers
+    initPicker(dataCombo);   
 
     // update with animations
     let state = {};

@@ -52,13 +52,10 @@ export default function(cfg) {
         text.exit().remove();
         
         // enter
-        //window.setTimeout(() => {
-        
         line.enter()
         .append("line")
         .attr("opacity", 0)
         .transition().duration(opt.duration*1000)
-        //.attr("opacity", 1)
         .attr("opacity", (d, i) => i%divHide === 0 ? 1 : 0.5)
         .attr("x1", d => 0)
         .attr("x2", d => "95.5%")
@@ -76,8 +73,6 @@ export default function(cfg) {
         .attr(coord, d => scale[coord](d) + "%")
         .attr("opacity", (d, i) => i%divHide === 0 ? 1 : 0)
         .text(d => Math.round(Math.abs(d)*100)/100);
-
-        //}, (opt.duration-1)*1000);
          
         // update
         line

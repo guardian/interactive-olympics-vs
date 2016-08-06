@@ -10,7 +10,17 @@ export function showHighlightAxis(data) {
     preData = data;
     d3_select(".mark-highlight").style("opacity", 0);
     d3_select(".js-final").classed("d-n", true);
-    if (data.attrs.dist === 0) return;
+    if (data.attrs.dist === 0) {
+        /*console.log("update text", data);
+        d3_select(".hl-txt-wr")
+        .attr("y", "50%")
+        .attr("x", "100%")
+        .text("WR, OR");
+        d3_select(".hl-txt-or")
+        .text("");
+        d3_select(".js-final").classed("d-n", false);*/
+        return;
+    }
 
     // x, y axis
     let dot = d3_select("#"+data.id);
@@ -32,14 +42,14 @@ export function showHighlightAxis(data) {
     d3_select(".hl-mark").attr("x", x).text(data.attrs.dist + " m (+" + ttwr + "s)");
     
     // wr, or
-    if (d3_select(".js-chart").attr("data-state") !== "final" || 
-        data.id.indexOf("wr") > -1 || data.id.indexOf("or") > -1) {
+    if (d3_select(".js-chart").attr("data-state") !== "final") {
         return; 
     } 
     d3_select(".js-final").classed("d-n", false);
     
     let elwr = d3_select(".wr");
     let elor = d3_select(".or");
+    let isNewRecord = record.wr.y === 2016;
     // dist > 0 or hide
     d3_select(".hl-lh-wr")
     .attr("x1", x).attr("x2", elwr.attr("cx"))
@@ -50,14 +60,14 @@ export function showHighlightAxis(data) {
     
     d3_select(".hl-txt-wr")
     .attr("y", elwr.attr("cy"))
-    .html(addMark(x, atpt.dist, ttwr, "wr"));
+    .html(addMark(x, atpt.dist, ttwr, "wr", isNewRecord));
     
     let ttor = Math.round((atpt.time - ator.time)*100)/100;
     if (ttor === 0) { d3_select(".hl-txt-or").text(""); return; }
     if (ttor === ttwr) { d3_select(".hl-txt-wr .behind").text("behind WR and OR"); return; }
     d3_select(".hl-txt-or")
     .attr("x", x).attr("y", elor.attr("cy"))
-    .html(addMark(x, atpt.dist-ator.dist, ttor, "or"));
+    .html(addMark(x, atpt.dist-ator.dist, ttor, "or", isNewRecord));
 }
 
 export function updateDotAnimation(data) {
@@ -84,7 +94,7 @@ export function hideHighlight() {
     hideHighlightAxis();
     hideDotAnimation();
 }
-export function hideHighlightAxis() {
+function hideHighlightAxis() {
     d3_select(".mark-highlight")
     .style("opacity", 0); 
 }
@@ -94,13 +104,25 @@ export function hideDotAnimation() {
     .style("opacity", 0);
 }
 
-function addMark(x, dist, time, type) {
+const tspan = {
+    "origin": { dyt: -5, dyb: 20 },   
+    "record": { dyt: 36, dyb: 16 },   
+};
+
+function addMark(x, dist, time, type, isNewRecord) {
     // TODO: even behind WR and OR
+    let flag = isNewRecord ? "record" : "origin";
+
     return (
-        "<tspan x='" + x + "' dx='5'>" + 
+        "<tspan x='" + x + "' dx='5' dy='" + tspan[flag].dyt + "'>" + 
             "<tspan class='" + type + "-dist'>" + Math.round(dist*100)/100 + "m</tspan> " +
             "(+" + time + "s)" + 
         "</tspan>" + 
-        "<tspan x='" + x + "' dx='5' dy='20' class='behind'>behind " + type.toUpperCase() + "</tspan>"
+        "<tspan x='" + x + "' dx='6' dy='" + tspan[flag].dyb + "' class='behind'>" + 
+            "behind " + type.toUpperCase() + 
+        "</tspan>"
     );
+}
+function addRecord() {
+    
 }

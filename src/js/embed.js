@@ -7,7 +7,6 @@ import {updateDotAnimation} from './draw/highlight';
 import {updateInfoPosition} from './draw/info';
 
 import swimming from '../js/events/swimming';
-import team_pursuit_m from '../dataDummy/team-pursuit_m.json!json';
 import longjump_m from '../js/events/longjump_m';
 
 window.init = function init(el, config) {

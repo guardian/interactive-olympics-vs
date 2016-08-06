@@ -9,8 +9,6 @@ export default function(data, records) {
         d3_select(".tooltip").style("opacity", 0);
          
     } else {
-        //console.log(data);
-
         let attrs = data.attrs;
         let event = window.location.search.replace("?", ""); 
 

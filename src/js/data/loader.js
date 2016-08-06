@@ -18,7 +18,7 @@ export default function(event, test, cbResult) {
 
     d3_queue()
     .defer(d3_json, urlData + event + ".json")
-    .defer(d3_json, urlData + (test ? "test/" : "") + event + "_final.json")
+    .defer(d3_json, urlData + (test ? "test/" : "live/") + event + "_final.json")
     .defer(d3_json, urlDocs + docsKey + ".json")
     .await(cbResult);
 }

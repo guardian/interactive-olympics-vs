@@ -765,6 +765,11 @@ g[class^="axis"],
   fill-opacity: 1;
   pointer-events: all; }
 
+.dots-picker path {
+  pointer-events: all;
+  fill: none;
+  stroke: none; }
+
 .highlight {
   opacity: 0;
   pointer-events: none; }

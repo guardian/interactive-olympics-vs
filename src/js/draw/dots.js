@@ -1,22 +1,21 @@
 import {select as d3_select} from 'd3-selection';
-import {voronoi as d3_voronoi} from 'd3-voronoi';
 import {transition} from 'd3-transition';
 
 import utils from '../lib/utils';
 import {colors, sync, record} from '../variables';
-import {showHighlightAxis, updateDotAnimation, hideHighlight, hideHighlightAxis, hideDotAnimation} from './highlight';
+import {showHighlightAxis, updateDotAnimation, hideHighlight, hideDotAnimation} from './highlight';
 import updateInfo from './info';
+
+let cxShift = (d, r) => r*((d.index-1)*2 - (d.count-1))*0.75;
+let cyShift = (d, r) => 0.5*((d.index-1)*2 - (d.count-1))*0.5;
+let cx = (d, r, x) => x(d.x);// + (d.count ? cxShift(d, cfg.radius) : 0);
+let cy = (d, r, y) => y(d.y) - (d.count ? cyShift(d, r) : 0);
 
 export default function(cfg) {
 
     // TODO: depends on h or v direction
     // TODO: recalc r, temp 1%
     let dots;
-    let cxShift = (d, r) => r*((d.index-1)*2 - (d.count-1))*0.75;
-    let cyShift = (d, r) => 1*((d.index-1)*2 - (d.count-1))*0.75;
-    cfg.cx = (d, r, x) => x(d.x);// + (d.count ? cxShift(d, cfg.radius) : 0);
-    cfg.cy = (d, r, y) => y(d.y) + (d.count ? cyShift(d, r) : 0);
-
     let tempColor = (d) => {
         return (colors[d.color]||cfg.color) ? (colors[d.color]||cfg.color) : colors.others;
     };
@@ -29,10 +28,6 @@ export default function(cfg) {
             return dd;
         });
 
-        // test point picker
-        //test(data);
-        // end of test
-
         dots = d3_select("." + cfg.dataset)
         .selectAll("circle")
         .data(data)
@@ -41,23 +36,23 @@ export default function(cfg) {
         .attr("data-year", d => d.attrs.year)
         .attr("data-mark", d => d.attrs.mark)
         .attr("data-name", d => d.attrs.name)
-        .attr("cx", d => cfg.cx(d, cfg.radius, scale.x) + "%")
-        .attr("cy", d => cfg.cy(d, cfg.radius, scale.y) + "%")
+        .attr("cx", d => cx(d, cfg.radius, scale.x) + "%")
+        .attr("cy", d => cy(d, cfg.radius, scale.y) + "%")
         .attr("r", cfg.radius)
         .attr("fill-opacity", 0)
         .attr("fill", d => tempColor(d))
         .attr("stroke-opacity", 0)
         .attr("stroke", () => { if(cfg.stroke) return cfg.stroke; })
-        .attr("stroke-width", 1)
+        .attr("stroke-width", 1);
         // interaction
-        .on("mouseover", d => { 
+        /*.on("mouseover", d => { 
             showBestAthlete(d, cfg.dataset); 
             hideDotAnimation(); 
         })
         .on("mouseout",  d => { 
             hideAllAthletes(d);
             updateDotAnimation(d);
-        });
+        });*/
 
         // best of each state for highlight
         cfg.best = cfg.dataset !== "medal" ? data[cfg.ilast] : record.or;
@@ -72,14 +67,14 @@ export default function(cfg) {
         //console.log(cfg.dataset, delay, cfg.ilast);
 
         dots.style("transition", "0s")
-        .each(d => d.o = opacity)
+        .each(d => d.o = d.cn ? 1 : opacity)
         .transition()
         //.delay((d, i) => i*delay)
         .duration(opt.duration*1000)
         .attr("fill-opacity", opacity)
         .attr("stroke-opacity", opacity!==0 ? 0.8 : 0)
-        .attr("cx", d => cfg.cx(d, cfg.radius, scale.x) + "%")
-        .attr("cy", d => cfg.cy(d, cfg.radius, scale.y) + "%");
+        .attr("cx", d => cx(d, cfg.radius, scale.x) + "%")
+        .attr("cy", d => cy(d, cfg.radius, scale.y) + "%");
 
         // disable events on transition
         // console.log("event lock");
@@ -124,10 +119,10 @@ let select = {
     pre: null,
 };
 
-function showBestAthlete(d1, state) {
+export function showBestAthlete(d1, state) {
     let attrs = d1.attrs;
-    let x = sync.scale.x(d1.x);
-    let y = sync.scale.y(d1.y);
+    //let x = sync.scale.x(d1.x);
+    //let y = sync.scale.y(d1.y);
 
     // change opacity
     select.all = d3_select(".js-chart")
@@ -158,7 +153,7 @@ function showBestAthlete(d1, state) {
     showHighlightAxis(d1);
 }
 
-function hideAllAthletes(d1) {
+export function hideAllAthletes(d1) {
     let attrs = d1.attrs;
 
     select.all
@@ -166,26 +161,4 @@ function hideAllAthletes(d1) {
     .style("transition", "0s");
 
     select.related.attr("r", d => d.r);
-}
-
-function test(data) {
-    var voronoi = d3_voronoi()
-    .x(function(d) { return d.x; })
-    .y(function(d) { return d.y; })
-    .extent([[-1, -1], [d3_select("svg").attr("width") + 1, d3_select("svg").attr("height") + 1]]);
-    // TODO:
-    // http://bl.ocks.org/mbostock/ec10387f24c1fad2acac3bc11eb218a5 
-    d3_select(".path").selectAll(".any")
-    .data(voronoi.ploygons(data))
-    .enter().append("path")
-    .attr("d", function(d) { return "M" + d.join(",") + "Z"; })
-    .attr("id", function(d,i) { return "path-"+i; })
-    .attr("clip-path", function(d,i) { return "url(#clip-"+i+")"; })
-    .style('fill-opacity', 0.4)
-    .style("fill", rgba(200,200,200, 0.25))
-    .style("stroke", rgba(200,200,200, 0.5));
-}
-
-function renderCell(d) {
-      return d === null ? null : "M" + d.join("L") + "Z";
 }

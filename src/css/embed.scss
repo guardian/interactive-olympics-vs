@@ -143,6 +143,14 @@ g[class^="axis"],
     pointer-events: all;
 }
 
+// picker
+.dots-picker {
+path {
+    pointer-events: all;
+    fill: none;//rgba(230, 230, 230, 0.5);
+    stroke: none;//#ddd;
+}}
+
 // highlight
 .highlight {
     opacity: 0;

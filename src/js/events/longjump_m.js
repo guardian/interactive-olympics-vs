@@ -1,5 +1,5 @@
 import jsonRecord from '../../data/long-jump_m.json!json';
-import jsonFinals from '../../dataDummy/long-jump_m.json!json';
+//import jsonFinals from '../../dataDummy/long-jump_m.json!json';
 import parseData from '../data/parser';
 import result from './result';
 

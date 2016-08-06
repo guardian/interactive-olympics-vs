@@ -24,7 +24,7 @@ export default function(jsonRecord, jsonFinals, resultType) {
 
     // 2. remap for charts
     return {
-        worlds: remapData(data.worlds, type, false),  // world records
+        worlds: remapData(data.worlds, type, true),  // world records
         medals: remapData(data.medals, type, true),   // olympic medalists
         finals: remapData(data.finals, type, true)    // olympic finals of this year
     };

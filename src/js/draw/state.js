@@ -1,7 +1,8 @@
-import calcScale from '../draw/scale';
-import updateInfo from '../draw/info';
 import {stateHeaders} from '../variables';
 import {select as d3_select} from 'd3-selection';
+import calcScale from '../draw/scale';
+import updateInfo from '../draw/info';
+import {updatePicker} from '../draw/dotPicker';
 
 export function getNextState(stateName) {
     let list = stateHeaders.list;
@@ -47,4 +48,5 @@ export function toState(els, data, stateName) {
     
     // update info
     updateInfo(stateName);
+    updatePicker(scale);
 }
