@@ -10,13 +10,13 @@ export default function(cfg) {
 
     let axis, line, text;
     let coord = cfg.coord;
-
+    let tempStep = [];
     let getSteps = (scale) => {
         cfg.state = document.querySelector(".js-chart").getAttribute("data-state"); 
         
         switch (true) {
         case cfg.state === "final" && cfg.value === "year":
-            return [2016]; 
+            return [2016].concat(tempStep); 
         case cfg.value === "year": 
             let min = scale.domain[coord][0];
             let max = scale.domain[coord][1];
@@ -28,7 +28,8 @@ export default function(cfg) {
         }
     };
 
-    this.init = (data, scale) => {
+    this.init = (data, scale, years) => {
+        tempStep = years;
         axis = d3_select(".axis-" + coord)
         .attr("class", "axis-" +  cfg.value);
     };

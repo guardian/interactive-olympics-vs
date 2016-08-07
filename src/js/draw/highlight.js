@@ -34,22 +34,24 @@ export function showHighlightAxis(data) {
     let atwr = record.wr.attrs;
     let ator = record.or.attrs;
     let ttwr = Math.round((atpt.time - atwr.time)*100)/100;
-
+    let elwr = d3_select(".wr");
+    let elor = d3_select(".or");
+ 
+    let state = d3_select(".js-chart").attr("data-state");
+    
     d3_select(".hl-lv")
     .attr("x1", x).attr("x2", x)
-    .attr("y1", y);
+    .attr("y1", state === "final" ? elwr.attr("cy") : y);
     d3_select(".hl-year").attr("y", y).text(data.attrs.year);
     d3_select(".hl-mark").attr("x", x).text(data.attrs.dist + " m (+" + ttwr + "s)");
     
     // wr, or
-    if (d3_select(".js-chart").attr("data-state") !== "final") {
+    if (state !== "final") {
         return; 
     } 
     d3_select(".js-final").classed("d-n", false);
     
-    let elwr = d3_select(".wr");
-    let elor = d3_select(".or");
-    let isNewRecord = record.wr.y === 2016;
+   let isNewRecord = record.wr.y === 2016;
     // dist > 0 or hide
     d3_select(".hl-lh-wr")
     .attr("x1", x).attr("x2", elwr.attr("cx"))
@@ -80,13 +82,13 @@ export function updateDotAnimation(data) {
     let y = dot.attr("cy");
     let year = data.attrs.year;
     let mark = data.attrs.mark;
-       
+    
     d3_select(".hl-circle")
     .classed("animate", browser !== "ff" ? true : false)
     .style("opacity", 1)
     .attr("cx", x)
     .attr("cy", y)
-    .attr("r", dot.attr("r")); 
+    .attr("r", 6);//dot.attr("r")); 
  
      preData = data;
 }

@@ -79,7 +79,7 @@ function getInfoPos (data) {
     let testFinal = state === "final";
     let test1_4Bottom = select.top > chart.top + chart.height*3/4;
     let test1_3Top = select.top < chart.top + chart.height/3;
-    
+
     /* horizontal align */
     let x = {
         l: select.left - width - 60,         // left
@@ -109,6 +109,13 @@ function getInfoPos (data) {
     // 3. test overlay
     let testOverlay = (select.left < left + width) && (select.top + data.r*2 < top + height); 
     if (testOverlay) { top = test1_3Top ? y.b : y.t; }
+    
+    // temp, HACK!!!
+    if (testFinal && !test1_4Bottom && data.y !== 2016) {
+        top = y.b;
+    } else if (testFinal && test1_4Bottom && data.y !== 2016 && chart.width < 620) {
+        top = chart.top;
+    }
 
     return {top: top + "px", left: left + "px"};
 }

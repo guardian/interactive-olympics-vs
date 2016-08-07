@@ -21,6 +21,7 @@ window.init = function init(el, config) {
     
     // set embed size
     el.innerHTML = embedHTML;
+    el.setAttribute("data-event", event);
     window.addEventListener("resize", throttle(setEmbedSize, 500));
     setEmbedSize();
     
@@ -30,11 +31,11 @@ window.init = function init(el, config) {
        
         // realtime final data
         case "freestyle_100x4_relay_w": 
+        case "freestyle_400_w": 
             swimming(event);
             break;
         
         // testing
-        case "freestyle_400_w": 
         case "freestyle_200_m": 
         case "breaststroke_100_m": 
         case "medley_400_w": 

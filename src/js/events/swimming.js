@@ -1,4 +1,5 @@
 import {stateHeaders, record} from '../variables';
+import {cfgData} from '../data/events';
 import parseData from '../data/parser';
 import fetchData from '../data/loader';
 import result from './result';
@@ -16,6 +17,7 @@ function displayResult (err, jsonRecord, jsonFinals, jsonStates) {
     
     /* chart */
     let data = parseData(jsonRecord, jsonFinals, "Time");
+    let event = document.querySelector(".js-interactive").getAttribute("data-event");
 
     // fastest swimming time
     let best = {};
@@ -24,15 +26,16 @@ function displayResult (err, jsonRecord, jsonFinals, jsonStates) {
     best.finals = data.finals[data.finals.length-1];
     
     let timeWr = Math.min(best.medals.x, best.worlds.x, best.finals.x);
+    let distance = cfgData[event].distance;
     Object.keys(data).forEach(dd => {
         // time to distance
         data[dd] = data[dd].map(dm => {
-            dm.x = 100*timeWr / dm.x - 100;
+            dm.x = distance*timeWr / dm.x - distance;
             dm.attrs.dist = Math.round(Math.abs(dm.x)*100)/100;
             return dm;
         });
     });
-    
+
     // set wr, or records and append data if needed
     setRecord("or", "medals", data, best);
     setRecord("wr", "worlds", data, best);

@@ -35,7 +35,7 @@ export function initPicker (data) {
 
 export function updatePicker(scale) {
     dataPickVisible = dataPickAll.filter(d => d.o !== 0);
-    dataGoldX = dataPickVisible.filter(d => d.color !== "wr").map(d => d.x);
+    dataGoldX = dataPickVisible.filter(d => d.color === "gold").map(d => d.x);
     dataPickVisible = dataPickVisible.filter(d => {
         let isOverlapped = (d.color === "wr") && (dataGoldX.some(gx => gx === d.x));
         return !isOverlapped;
@@ -65,7 +65,6 @@ export function updatePicker(scale) {
     .attr("clip-path", (d, i) => "url(#clip-" + i + ")")
     // interaction
     .on("mouseover", (d, i) => {
-        console.log(d.id);
         let state = d3_select(".js-chart").attr("data-state");
         showBestAthlete(dataPickVisible[i], state); 
         hideDotAnimation(); 

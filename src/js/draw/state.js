@@ -35,16 +35,17 @@ export function toState(els, data, stateName) {
     let nextInd = getNextState(stateName).index;
     let isReplay = nextInd === 0;
 
-    // current
+    // btn current
     d3_select(".js-state-name").text(headers[currInd].title);
     d3_select(".js-state-text").text(headers[currInd].description);
-    // next
-    d3_select(".btn-next").style("pointer-events", "none").classed("btn-disable", true);
-    //window.setTimeout(()=> {
-    d3_select(".js-state-next").text(isReplay ? "Replay" : "Next with " + headers[nextInd].title.toLowerCase());
+    // btn next
+    d3_select(".js-state-next").text(isReplay ? "Replay" : "" + headers[nextInd].title);
     d3_select(".replay").style("opacity", isReplay ? 1 : 0); 
     d3_select(".arrow-right").style("opacity", isReplay ? 0 : 1); 
-    //}, 2500);
+    d3_select(".btn-next").classed("enable", false);
+    // dot picker as an event handler
+    d3_select(".dots-pick").classed("enable", false);
+    //console.log("lock");
     
     // update info
     updateInfo(stateName);

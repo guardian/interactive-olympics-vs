@@ -2,6 +2,7 @@ import {select as d3_select} from 'd3-selection';
 import {extent as d3_extent} from 'd3-array';
 import {toState, getNextState} from '../draw/state';
 import {record} from '../variables';
+import {cfgData} from '../data/events';
 import utils from '../lib/utils';
 import calcScale from '../draw/scale';
 import Dots from '../draw/dots';
@@ -36,31 +37,38 @@ export default function(data) {
         stroke: "rgba(255, 255, 255, 0.25)"
     });
     els.dotsW.init(data.worlds, scale);   
+ 
+    let yearTemp = cfgData[d3_select(".js-interactive").attr("data-event")].extra_years_final_state;
+    let dataTemp = data.medals.filter(d => yearTemp.some(dy => dy === d.y));
+    dataTemp.forEach(d => {
+        d3_select("#" + d.id).attr("class", "temp").each(d => d.cn = "temp"); 
+    });   
     
     // axis
     els.axisY = new Axis({coord: "y", value: "year"});
-    els.axisY.init(dataCombo.map(d => d.y), scale); 
+    els.axisY.init(dataCombo.map(d => d.y), scale, yearTemp); 
 
     els.axisX = new Axis({coord: "x", value: "mark"});
     els.axisX.init(dataCombo.map(d => d.x), scale);    
     
     // note and misc updates
-    d3_select("#" + record.wr.id).attr("class", "wr").each(d => d.cn = "wr"); 
-    d3_select("#" + record.or.id).attr("class", "or").each(d => d.cn = "or");
     d3_select(".note").classed("d-n", record.type !== "s" ? true : false);
+    d3_select("#" + record.wr.id).attr("class", "wr").each(d => d.cn = "wr"); 
+    d3_select("#" + record.or.id).attr("class", "or").each(d => d.cn = "or"); 
 
     // dots pickers
     initPicker(dataCombo);   
 
     // update with animations
     let state = {};
-    let domainFinal = getDomain(data.finals.concat([record.wr, record.or]));
+    
+    let domainFinal = getDomain(data.finals.concat([record.wr, record.or], dataTemp));
     let diff = 2016 - domainFinal.y[0];
     
     state.final = { 
         domain: {
             x: [domainFinal.x[0], 0],
-            y: [2016 - diff*1.5, 2016 + diff*1.25]
+            y: [2016 - diff*1.25, 2016 + diff*0.75]
         },
         opacity: [0.75, 0, 0]
     };

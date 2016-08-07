@@ -44,15 +44,6 @@ export default function(cfg) {
         .attr("stroke-opacity", 0)
         .attr("stroke", () => { if(cfg.stroke) return cfg.stroke; })
         .attr("stroke-width", 1);
-        // interaction
-        /*.on("mouseover", d => { 
-            showBestAthlete(d, cfg.dataset); 
-            hideDotAnimation(); 
-        })
-        .on("mouseout",  d => { 
-            hideAllAthletes(d);
-            updateDotAnimation(d);
-        });*/
 
         // best of each state for highlight
         cfg.best = cfg.dataset !== "medal" ? data[cfg.ilast] : record.or;
@@ -67,47 +58,51 @@ export default function(cfg) {
         //console.log(cfg.dataset, delay, cfg.ilast);
 
         dots.style("transition", "0s")
-        .each(d => d.o = d.cn ? 1 : opacity)
+        .each(d => { 
+            //if (d.cn) console.log(d.cn);
+            d.o = d.cn ? 1 : opacity;
+            d.o = (d.cn === "temp" && d3_select(".js-chart").attr("data-state") === "final") ? 1 : opacity;
+        })
         .transition()
         //.delay((d, i) => i*delay)
         .duration(opt.duration*1000)
-        .attr("fill-opacity", opacity)
+        .attr("fill-opacity", d => d.o)
         .attr("stroke-opacity", opacity!==0 ? 0.8 : 0)
         .attr("cx", d => cx(d, cfg.radius, scale.x) + "%")
         .attr("cy", d => cy(d, cfg.radius, scale.y) + "%");
 
         // disable events on transition
-        // console.log("event lock");
-        let elParent = d3_select("." + cfg.dataset);
-        elParent.style("pointer-events", "none");
+        let btnStates = d3_select(".btn-next");
+        let dotPicker = d3_select(".dots-picker");
         hideHighlight(); 
 
         let state;
         let delay1 = opt.duration ? opt.duration : 0.5;
         let delay2 = opt.duration ? opt.duration + 3 : 0.5;
+        
+        // after animation
         window.setTimeout(() => {
             state = d3_select(".js-chart").attr("data-state");
             if (state === cfg.dataset) { 
                 showBestAthlete(cfg.best, state); 
             } else if (state === "mixed") {
-                d3_select(".btn-next")
-                .style("pointer-events", "all")
-                .classed("btn-disable", false);
+                //console.log("free");
+                btnStates.classed("enable", true);
+                dotPicker.classed("enable", true);
             }
         }, delay1*1000); 
-
+        
+        // after highlight
         window.setTimeout(() => {
             hideAllAthletes(cfg.best);
 
             if (state === cfg.dataset) { 
                 updateDotAnimation(cfg.best); 
-                d3_select(".btn-next")
-                .style("pointer-events", "all")
-                .classed("btn-disable", false);
+                //console.log("free");
+                btnStates.classed("enable", true);
+                dotPicker.classed("enable", true);
             }  
 
-            //console.log("event free");
-            elParent.style("pointer-events", opacity === 0 ? "none" : "all");
         }, delay2*1000); 
     };
 }
@@ -121,8 +116,6 @@ let select = {
 
 export function showBestAthlete(d1, state) {
     let attrs = d1.attrs;
-    //let x = sync.scale.x(d1.x);
-    //let y = sync.scale.y(d1.y);
 
     // change opacity
     select.all = d3_select(".js-chart")
