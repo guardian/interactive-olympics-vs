@@ -44,8 +44,9 @@ export function toState(els, data, stateName) {
     d3_select(".arrow-right").style("opacity", isReplay ? 0 : 1); 
     d3_select(".btn-next").classed("enable", false);
     // dot picker as an event handler
-    d3_select(".dots-pick").classed("enable", false);
+    d3_select(".dots-picker").classed("enable", false);
     //console.log("lock");
+    //console.log(document.querySelector(".dots-picker"));
     
     // update info
     updateInfo(stateName);

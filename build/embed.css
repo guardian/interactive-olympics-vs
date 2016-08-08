@@ -838,17 +838,11 @@ g[class^="axis"],
 .fw-b {
   font-weight: bold; }
 
-.c-g {
+.c-n2 {
   color: #767676; }
-
-.m-0 {
-  margin: 0; }
 
 .mt-0 {
   margin-top: 0; }
-
-.mb-10 {
-  margin-bottom: 10px; }
 
 .d-ib {
   display: inline-block; }
@@ -856,13 +850,10 @@ g[class^="axis"],
 .d-n {
   display: none; }
 
-.o-15 {
-  opacity: 0.15; }
-
-.o-25 {
-  opacity: 0.25; }
+.o-2 {
+  fill-opacity: 0.2; }
 
 .o-1 {
-  opacity: 1; }
+  fill-opacity: 1; }
 
 /*# sourceMappingURL=embed.css.map */

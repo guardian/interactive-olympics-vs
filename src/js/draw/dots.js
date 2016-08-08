@@ -6,6 +6,8 @@ import {colors, sync, record} from '../variables';
 import {showHighlightAxis, updateDotAnimation, hideHighlight, hideDotAnimation} from './highlight';
 import updateInfo from './info';
 
+const sHighlight = 1;
+
 let cxShift = (d, r) => r*((d.index-1)*2 - (d.count-1))*0.75;
 let cyShift = (d, r) => 0.5*((d.index-1)*2 - (d.count-1))*0.5;
 let cx = (d, r, x) => x(d.x);// + (d.count ? cxShift(d, cfg.radius) : 0);
@@ -76,34 +78,35 @@ export default function(cfg) {
         let dotPicker = d3_select(".dots-picker");
         hideHighlight(); 
 
-        let state;
         let delay1 = opt.duration ? opt.duration : 0.5;
-        let delay2 = opt.duration ? opt.duration + 3 : 0.5;
+        let delay2 = opt.duration ? opt.duration + sHighlight : 0.5;
         
-        // after animation
-        window.setTimeout(() => {
-            state = d3_select(".js-chart").attr("data-state");
-            if (state === cfg.dataset) { 
-                showBestAthlete(cfg.best, state); 
-            } else if (state === "mixed") {
+        let state = d3_select(".js-chart").attr("data-state");
+        if (state === cfg.dataset) { 
+            
+            // after animation
+            window.setTimeout(() => {
+                    showBestAthlete(cfg.best, state); 
+            }, delay1*1000); 
+            
+            // after highlight
+            window.setTimeout(() => {
+                hideAllAthletes(cfg.best);
+                    updateDotAnimation(cfg.best); 
+                    //console.log("free");
+                    btnStates.classed("enable", true);
+                    dotPicker.classed("enable", true);
+            }, delay2*1000);
+
+        } else if (state === "mixed") {
+            
+            // after animation
+            window.setTimeout(() => {
                 //console.log("free");
                 btnStates.classed("enable", true);
                 dotPicker.classed("enable", true);
-            }
-        }, delay1*1000); 
-        
-        // after highlight
-        window.setTimeout(() => {
-            hideAllAthletes(cfg.best);
-
-            if (state === cfg.dataset) { 
-                updateDotAnimation(cfg.best); 
-                //console.log("free");
-                btnStates.classed("enable", true);
-                dotPicker.classed("enable", true);
-            }  
-
-        }, delay2*1000); 
+            }, delay1*1000); 
+        }
     };
 }
 
@@ -121,7 +124,7 @@ export function showBestAthlete(d1, state) {
     select.all = d3_select(".js-chart")
     .selectAll(".dots circle")
     .style("transition", "0.25s")
-    .classed("o-15", d => d.o !== 0 ? true : false);
+    .classed("o-2", d => d.o !== 0 ? true : false);
 
     select.related = select.all
     .filter(d2 => d2.attrs.name.indexOf(attrs.name) > -1)
@@ -131,7 +134,7 @@ export function showBestAthlete(d1, state) {
     if (state !== "final") { 
         ["or", "wr"].forEach((type) => {
             d3_select("#" + record[type].id)
-            .classed("o-15", d2 => d2.attrs.name.indexOf(attrs.name) === -1 ? true : false);
+            .classed("o-2", d2 => d2.attrs.name.indexOf(attrs.name) === -1 ? true : false);
         });
     }
     // remove stroke on previous selected
@@ -149,9 +152,6 @@ export function showBestAthlete(d1, state) {
 export function hideAllAthletes(d1) {
     let attrs = d1.attrs;
 
-    select.all
-    .classed("o-1", false).classed("o-15", false)
-    .style("transition", "0s");
-
+    select.all.classed("o-1", false).classed("o-2", false);
     select.related.attr("r", d => d.r);
 }

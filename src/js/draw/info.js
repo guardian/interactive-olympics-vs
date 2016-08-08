@@ -10,8 +10,9 @@ export default function(data, records) {
          
     } else {
         let attrs = data.attrs;
-        let event = window.location.search.replace("?", ""); 
+        let event = d3_select(".js-interactive").attr("data-event");
 
+        // data
         d3_select(".js-title").text(attrs.name);
         d3_select(".js-team").text(attrs.team);
         d3_select(".js-record").html(getRecordHtml(records, data.id)); 
@@ -24,6 +25,7 @@ export default function(data, records) {
             (data.x === record.or.x ? " OR" : "") 
         );
         
+        // position
         updateInfoPosition(data); 
     }
 }
@@ -72,25 +74,28 @@ function getInfoPos (data) {
 
     let state = d3_select(".js-chart").attr("data-state"); 
     let chart = document.querySelector(".js-chart").getBoundingClientRect();
-    let select = document.querySelector("#" + data.id).getBoundingClientRect();
-    let width = document.querySelector(".tooltip").offsetWidth;
-    let height = document.querySelector(".tooltip").offsetHeight;// + 30;
+    let point = document.querySelector("#" + data.id).getBoundingClientRect();
+    let eltp = document.querySelector(".tooltip"); 
+    let tooltip = {
+        width : eltp.offsetWidth,
+        height: eltp.offsetHeight // + 30;
+    };
     
     let testFinal = state === "final";
-    let test1_4Bottom = select.top > chart.top + chart.height*3/4;
-    let test1_3Top = select.top < chart.top + chart.height/3;
+    let test1_4Bottom = point.top > chart.top + chart.height*3/4;
+    let test1_3Top = point.top < chart.top + chart.height/3;
 
     /* horizontal align */
     let x = {
-        l: select.left - width - 60,         // left
-        c: select.left - (width/2) + data.r, // center 
-        r: chart.width - width               // right 
+        l: point.left - tooltip.width - 60,         // left
+        c: point.left - (tooltip.width/2) + data.r, // center 
+        r: chart.width - tooltip.width              // right 
     };
     /* vertical align */
     let y = {
-        t: select.top - height - 30,         // top
-        m: select.top - (height/2) + data.r, // middle
-        b: select.top + data.r*2 + 30        // under 
+        t: point.top - tooltip.height - 30,         // top
+        m: point.top - (tooltip.height/2) + data.r, // middle
+        b: point.top + data.r*2 + 30        // under 
     };
 
     // 1. default: middleLeft, topLeft(bottom 1/4), topCenter (fianl)
@@ -102,12 +107,12 @@ function getInfoPos (data) {
     top = testTop ? top : chart.top;
     
     let testLeft = left > 0; 
-    let testRight = left + width < chart.width;
+    let testRight = left + tooltip.width < chart.width;
     left = testLeft ? left : 0;
     left = testRight ? left : x.r;
 
     // 3. test overlay
-    let testOverlay = (select.left < left + width) && (select.top + data.r*2 < top + height); 
+    let testOverlay = (point.left < left + tooltip.width) && (point.top + data.r*2 < top + tooltip.height); 
     if (testOverlay) { top = test1_3Top ? y.b : y.t; }
     
     // temp, HACK!!!

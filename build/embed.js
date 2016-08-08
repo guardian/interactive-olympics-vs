@@ -276,7 +276,7 @@ $__System.registerDynamic("4", [], true, function($__require, exports, module) {
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = "<header class=\"top\">\n    <div class=\"header res\">\n        <p class=\"mt-0\">\n            <!--span class=\"js-state-name\">2016 Olympic finals</span> -<-->  \n            <span class=\"js-state-text\">Loading ...</span>\n        </p>\n        <div class=\"btn-next\">\n            <span class=\"js-state-next\">Start</span>\n            <svg class=\"arrow-right\" width=\"28\" height=\"28\" viewBox=\"0 0 30 30\">\n                <path d=\"M22.8 14.6l-7.6-7.6-.7.7 5.5 6.6h-14v1.5h14l-5.5 6.6.7.7 7.6-7.6v-.9\" fill=\"#fff\"/>\n            </svg>\n            <svg class=\"replay\" width=\"16px\" height=\"16px\" viewBox=\"0 0 43 44\" opacity=\"0\">\n                <path d=\"M7.15497025,33.442558 L14.398,32.27 L14.398,29.77 L1.58,29.77 L0.606,30.74 L0.606,44 L3.106,44 L4.278,36.27 L4.28132921,36.2666837 C8.31677436,41.0007268 14.3191026,44 21.023,44 C33.173,44 43.023,34.15 43.023,22 C43.023,9.85 33.173,0 21.023,0 C13.508,0 6.876,3.77 2.908,9.52 L2.944,9.54 L3.266,10.92 L4.964,11.98 L6.311,11.66 C9.572,7.04 14.945,4 21.023,4 C30.949,4 39.023,12.08 39.023,22 C39.023,31.92 30.949,40 21.023,40 C15.4437157,40 10.4578363,37.4375695 7.15497025,33.442558 Z\" fill=\"#fff\"></path>\n            </svg>\n        </div>\n    </div>\n</header>\n\n<div class=\"graph\">\n    <svg class=\"chart js-chart\" data-state=\"final\">\n        <g class=\"axis-y\"></g>\n        <g class=\"axis-x\"></g>\n        <g class=\"mark-highlight\">\n            <line class=\"hl-lv\" y2=\"98%\"></line>            \n            <text class=\"hl-year\" x=\"101%\" fill=\"#333\" dy=\".3em\"></text> \n            <text class=\"hl-mark\" y=\"100%\" fill=\"#333\" dy=\".71em\"></text>\n            <g class=\"js-final\">\n                <line class=\"hl-lh-wr\"></line>            \n                <line class=\"hl-lh-or\"></line> \n                <text class=\"hl-txt-wr\"></text> \n                <text class=\"hl-txt-or\"></text> \n            </g>\n        </g>\n        <g class=\"dots final\"></g>\n        <g class=\"dots medal\"></g>\n        <g class=\"dots world\"></g>\n        <g class=\"dots-highlight\">\n            <circle class=\"hl-circle\"></circle>\n        </g>\n        <g class=\"dots-picker\"></g>\n    </svg>   \n    <div class=\"tooltip\">\n        <span class=\"js-title fz-14 fw-b\"></span>\n        <span class=\"js-team fz-14 fw-b c-g\"></span><br>\n        <span class=\"js-result\"></span><br> \n        <span class=\"js-record\"></span>\n    </div>\n</div>\n\n<header class=\"in\"></header>\n\n<div class=\"note res d-n\">\n    The positions (behind WR) are based on the athletes' average speed\n</div>\n";
+  module.exports = "<header class=\"top\">\n    <div class=\"header res\">\n        <p class=\"mt-0\">\n            <!--span class=\"js-state-name\">2016 Olympic finals</span> -<-->  \n            <span class=\"js-state-text\">Loading ...</span>\n        </p>\n        <div class=\"btn-next\">\n            <span class=\"js-state-next\">Start</span>\n            <svg class=\"arrow-right\" width=\"28\" height=\"28\" viewBox=\"0 0 30 30\">\n                <path d=\"M22.8 14.6l-7.6-7.6-.7.7 5.5 6.6h-14v1.5h14l-5.5 6.6.7.7 7.6-7.6v-.9\" fill=\"#fff\"/>\n            </svg>\n            <svg class=\"replay\" width=\"16px\" height=\"16px\" viewBox=\"0 0 43 44\" opacity=\"0\">\n                <path d=\"M7.15497025,33.442558 L14.398,32.27 L14.398,29.77 L1.58,29.77 L0.606,30.74 L0.606,44 L3.106,44 L4.278,36.27 L4.28132921,36.2666837 C8.31677436,41.0007268 14.3191026,44 21.023,44 C33.173,44 43.023,34.15 43.023,22 C43.023,9.85 33.173,0 21.023,0 C13.508,0 6.876,3.77 2.908,9.52 L2.944,9.54 L3.266,10.92 L4.964,11.98 L6.311,11.66 C9.572,7.04 14.945,4 21.023,4 C30.949,4 39.023,12.08 39.023,22 C39.023,31.92 30.949,40 21.023,40 C15.4437157,40 10.4578363,37.4375695 7.15497025,33.442558 Z\" fill=\"#fff\"></path>\n            </svg>\n        </div>\n    </div>\n</header>\n\n<div class=\"graph\">\n    <svg class=\"chart js-chart\" data-state=\"final\">\n        <g class=\"axis-y\"></g>\n        <g class=\"axis-x\"></g>\n        <g class=\"mark-highlight\">\n            <line class=\"hl-lv\" y2=\"98%\"></line>            \n            <text class=\"hl-year\" x=\"101%\" fill=\"#333\" dy=\".3em\"></text> \n            <text class=\"hl-mark\" y=\"100%\" fill=\"#333\" dy=\".71em\"></text>\n            <g class=\"js-final\">\n                <line class=\"hl-lh-wr\"></line>            \n                <line class=\"hl-lh-or\"></line> \n                <text class=\"hl-txt-wr\"></text> \n                <text class=\"hl-txt-or\"></text> \n            </g>\n        </g>\n        <g class=\"dots final\"></g>\n        <g class=\"dots medal\"></g>\n        <g class=\"dots world\"></g>\n        <g class=\"dots-highlight\">\n            <circle class=\"hl-circle\"></circle>\n        </g>\n        <g class=\"dots-picker\"></g>\n    </svg>   \n    <div class=\"tooltip\">\n        <span class=\"js-title fz-14 fw-b\"></span>\n        <span class=\"js-team fz-14 fw-b c-n2\"></span><br>\n        <span class=\"js-result\"></span><br> \n        <span class=\"js-record\"></span>\n    </div>\n</div>\n\n<header class=\"in\"></header>\n\n<div class=\"note res d-n\">\n    The positions (behind WR) are based on the athletes' average speed\n</div>\n";
   return module.exports;
 });
 
@@ -1086,8 +1086,9 @@ $__System.register('1e', ['20', '21', '22', 'f', 'c', '1f'], function (_export) 
         d3_select(".arrow-right").style("opacity", isReplay ? 0 : 1);
         d3_select(".btn-next").classed("enable", false);
         // dot picker as an event handler
-        d3_select(".dots-pick").classed("enable", false);
+        d3_select(".dots-picker").classed("enable", false);
         //console.log("lock");
+        //console.log(document.querySelector(".dots-picker"));
 
         // update info
         updateInfo(stateName);
@@ -6457,25 +6458,28 @@ $__System.register('21', ['1f', 'c'], function (_export) {
 
         var state = d3_select(".js-chart").attr("data-state");
         var chart = document.querySelector(".js-chart").getBoundingClientRect();
-        var select = document.querySelector("#" + data.id).getBoundingClientRect();
-        var width = document.querySelector(".tooltip").offsetWidth;
-        var height = document.querySelector(".tooltip").offsetHeight; // + 30;
+        var point = document.querySelector("#" + data.id).getBoundingClientRect();
+        var eltp = document.querySelector(".tooltip");
+        var tooltip = {
+            width: eltp.offsetWidth,
+            height: eltp.offsetHeight // + 30;
+        };
 
         var testFinal = state === "final";
-        var test1_4Bottom = select.top > chart.top + chart.height * 3 / 4;
-        var test1_3Top = select.top < chart.top + chart.height / 3;
+        var test1_4Bottom = point.top > chart.top + chart.height * 3 / 4;
+        var test1_3Top = point.top < chart.top + chart.height / 3;
 
         /* horizontal align */
         var x = {
-            l: select.left - width - 60, // left
-            c: select.left - width / 2 + data.r, // center
-            r: chart.width - width // right
+            l: point.left - tooltip.width - 60, // left
+            c: point.left - tooltip.width / 2 + data.r, // center
+            r: chart.width - tooltip.width // right
         };
         /* vertical align */
         var y = {
-            t: select.top - height - 30, // top
-            m: select.top - height / 2 + data.r, // middle
-            b: select.top + data.r * 2 + 30 // under
+            t: point.top - tooltip.height - 30, // top
+            m: point.top - tooltip.height / 2 + data.r, // middle
+            b: point.top + data.r * 2 + 30 // under
         };
 
         // 1. default: middleLeft, topLeft(bottom 1/4), topCenter (fianl)
@@ -6487,12 +6491,12 @@ $__System.register('21', ['1f', 'c'], function (_export) {
         top = testTop ? top : chart.top;
 
         var testLeft = left > 0;
-        var testRight = left + width < chart.width;
+        var testRight = left + tooltip.width < chart.width;
         left = testLeft ? left : 0;
         left = testRight ? left : x.r;
 
         // 3. test overlay
-        var testOverlay = select.left < left + width && select.top + data.r * 2 < top + height;
+        var testOverlay = point.left < left + tooltip.width && point.top + data.r * 2 < top + tooltip.height;
         if (testOverlay) {
             top = test1_3Top ? y.b : y.t;
         }
@@ -6523,13 +6527,15 @@ $__System.register('21', ['1f', 'c'], function (_export) {
                     d3_select(".tooltip").style("opacity", 0);
                 } else {
                     var attrs = data.attrs;
-                    var _event = window.location.search.replace("?", "");
+                    var _event = d3_select(".js-interactive").attr("data-event");
 
+                    // data
                     d3_select(".js-title").text(attrs.name);
                     d3_select(".js-team").text(attrs.team);
                     d3_select(".js-record").html(getRecordHtml(records, data.id));
                     d3_select(".js-result").html((isNumeric(data.color) ? "rank " + data.color + " - " : "<span class='icon-medal' style='background-color:" + colors[data.color] + "'></span>") + attrs.mark + record.type + " (" + attrs.year + ")" + (data.x === record.wr.x ? " WR " : "") + (data.x === record.or.x ? " OR" : ""));
 
+                    // position
                     updateInfoPosition(data);
                 }
             });
@@ -6541,7 +6547,7 @@ $__System.register('21', ['1f', 'c'], function (_export) {
 $__System.register('3d', ['12', '21', '1f', '3c', 'c', '3e'], function (_export) {
     'use strict';
 
-    var utils, updateInfo, d3_select, transition, colors, sync, record, showHighlightAxis, updateDotAnimation, hideHighlight, hideDotAnimation, cxShift, cyShift, cx, cy, select;
+    var utils, updateInfo, d3_select, transition, colors, sync, record, showHighlightAxis, updateDotAnimation, hideHighlight, hideDotAnimation, sHighlight, cxShift, cyShift, cx, cy, select;
 
     _export('showBestAthlete', showBestAthlete);
 
@@ -6551,7 +6557,7 @@ $__System.register('3d', ['12', '21', '1f', '3c', 'c', '3e'], function (_export)
         var attrs = d1.attrs;
 
         // change opacity
-        select.all = d3_select(".js-chart").selectAll(".dots circle").style("transition", "0.25s").classed("o-15", function (d) {
+        select.all = d3_select(".js-chart").selectAll(".dots circle").style("transition", "0.25s").classed("o-2", function (d) {
             return d.o !== 0 ? true : false;
         });
 
@@ -6565,7 +6571,7 @@ $__System.register('3d', ['12', '21', '1f', '3c', 'c', '3e'], function (_export)
 
         if (state !== "final") {
             ["or", "wr"].forEach(function (type) {
-                d3_select("#" + record[type].id).classed("o-15", function (d2) {
+                d3_select("#" + record[type].id).classed("o-2", function (d2) {
                     return d2.attrs.name.indexOf(attrs.name) === -1 ? true : false;
                 });
             });
@@ -6588,8 +6594,7 @@ $__System.register('3d', ['12', '21', '1f', '3c', 'c', '3e'], function (_export)
     function hideAllAthletes(d1) {
         var attrs = d1.attrs;
 
-        select.all.classed("o-1", false).classed("o-15", false).style("transition", "0s");
-
+        select.all.classed("o-1", false).classed("o-2", false);
         select.related.attr("r", function (d) {
             return d.r;
         });
@@ -6615,6 +6620,8 @@ $__System.register('3d', ['12', '21', '1f', '3c', 'c', '3e'], function (_export)
             hideDotAnimation = _e.hideDotAnimation;
         }],
         execute: function () {
+            sHighlight = 1;
+
             cxShift = function cxShift(d, r) {
                 return r * ((d.index - 1) * 2 - (d.count - 1)) * 0.75;
             };
@@ -6699,33 +6706,34 @@ $__System.register('3d', ['12', '21', '1f', '3c', 'c', '3e'], function (_export)
                     var dotPicker = d3_select(".dots-picker");
                     hideHighlight();
 
-                    var state = undefined;
                     var delay1 = opt.duration ? opt.duration : 0.5;
-                    var delay2 = opt.duration ? opt.duration + 3 : 0.5;
+                    var delay2 = opt.duration ? opt.duration + sHighlight : 0.5;
 
-                    // after animation
-                    window.setTimeout(function () {
-                        state = d3_select(".js-chart").attr("data-state");
-                        if (state === cfg.dataset) {
+                    var state = d3_select(".js-chart").attr("data-state");
+                    if (state === cfg.dataset) {
+
+                        // after animation
+                        window.setTimeout(function () {
                             showBestAthlete(cfg.best, state);
-                        } else if (state === "mixed") {
-                            //console.log("free");
-                            btnStates.classed("enable", true);
-                            dotPicker.classed("enable", true);
-                        }
-                    }, delay1 * 1000);
+                        }, delay1 * 1000);
 
-                    // after highlight
-                    window.setTimeout(function () {
-                        hideAllAthletes(cfg.best);
-
-                        if (state === cfg.dataset) {
+                        // after highlight
+                        window.setTimeout(function () {
+                            hideAllAthletes(cfg.best);
                             updateDotAnimation(cfg.best);
                             //console.log("free");
                             btnStates.classed("enable", true);
                             dotPicker.classed("enable", true);
-                        }
-                    }, delay2 * 1000);
+                        }, delay2 * 1000);
+                    } else if (state === "mixed") {
+
+                        // after animation
+                        window.setTimeout(function () {
+                            //console.log("free");
+                            btnStates.classed("enable", true);
+                            dotPicker.classed("enable", true);
+                        }, delay1 * 1000);
+                    }
                 };
             });
 
