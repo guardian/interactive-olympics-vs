@@ -10,17 +10,6 @@ export function showHighlightAxis(data) {
     preData = data;
     d3_select(".mark-highlight").style("opacity", 0);
     d3_select(".js-final").classed("d-n", true);
-    if (data.attrs.dist === 0) {
-        /*console.log("update text", data);
-        d3_select(".hl-txt-wr")
-        .attr("y", "50%")
-        .attr("x", "100%")
-        .text("WR, OR");
-        d3_select(".hl-txt-or")
-        .text("");
-        d3_select(".js-final").classed("d-n", false);*/
-        return;
-    }
 
     // x, y axis
     let dot = d3_select("#"+data.id);
@@ -36,23 +25,36 @@ export function showHighlightAxis(data) {
     let ttwr = Math.round((atpt.time - atwr.time)*100)/100;
     let elwr = d3_select(".wr");
     let elor = d3_select(".or");
- 
-    let state = d3_select(".js-chart").attr("data-state");
     
+    let state = d3_select(".js-chart").attr("data-state");
+    let y1lv = () => {
+        //let top = document.querySelector(".final circle")
+        //.getBoundingClientRect().top;
+        return state === "final" ? "28%" : y;
+    };
+ 
     d3_select(".hl-lv")
     .attr("x1", x).attr("x2", x)
-    .attr("y1", state === "final" ? elwr.attr("cy") : y);
+    .attr("y1", y1lv);
     d3_select(".hl-year").attr("y", y).text(data.attrs.year);
-    d3_select(".hl-mark").attr("x", x).text(data.attrs.dist + " m (+" + ttwr + "s)");
+    d3_select(".hl-mark").attr("x", x).text(
+        data.attrs.dist === 0 ?
+        "0" : data.attrs.dist + " m (+" + ttwr + "s)"
+    );
     
     // wr, or
-    if (state !== "final") {
+    if (state !== "final" || data.attrs.dist === 0) {
         return; 
     } 
     d3_select(".js-final").classed("d-n", false);
     
-   let isNewRecord = record.wr.y === 2016;
+    // cases
     // dist > 0 or hide
+    let isNewRecord = record.wr.y === 2016;
+    let flag = isNewRecord ? "record" : "origin";
+    let diff = Math.abs(parseInt(elwr.attr("cy").replace("%", "")) - parseInt(elor.attr("cy").replace("%", "")));
+    let isTooClose = diff < 6;
+
     d3_select(".hl-lh-wr")
     .attr("x1", x).attr("x2", elwr.attr("cx"))
     .attr("y1", elwr.attr("cy")).attr("y2", elwr.attr("cy"));
@@ -62,14 +64,14 @@ export function showHighlightAxis(data) {
     
     d3_select(".hl-txt-wr")
     .attr("y", elwr.attr("cy"))
-    .html(addMark(x, atpt.dist, ttwr, "wr", isNewRecord));
+    .html(addMark(x, atpt.dist, ttwr, "wr", flag));
     
     let ttor = Math.round((atpt.time - ator.time)*100)/100;
     if (ttor === 0) { d3_select(".hl-txt-or").text(""); return; }
     if (ttor === ttwr) { d3_select(".hl-txt-wr .behind").text("behind WR and OR"); return; }
     d3_select(".hl-txt-or")
     .attr("x", x).attr("y", elor.attr("cy"))
-    .html(addMark(x, atpt.dist-ator.dist, ttor, "or", isNewRecord));
+    .html(addMark(x, atpt.dist-ator.dist, ttor, "or", "bottom"));
 }
 
 export function updateDotAnimation(data) {
@@ -107,24 +109,21 @@ export function hideDotAnimation() {
 }
 
 const tspan = {
-    "origin": { dyt: -5, dyb: 20 },   
-    "record": { dyt: 36, dyb: 16 },   
+    "origin": { dyt: -20, dyb: 12 },  //top 
+    "bottom": { dyt:  25, dyb: 12 },  //bottom1 
+    "record": { dyt:  35, dyb: 12 },  //bottom2 
 };
 
-function addMark(x, dist, time, type, isNewRecord) {
+function addMark(x, dist, time, typeRecord, flag) {
     // TODO: even behind WR and OR
-    let flag = isNewRecord ? "record" : "origin";
 
     return (
-        "<tspan x='" + x + "' dx='5' dy='" + tspan[flag].dyt + "'>" + 
-            "<tspan class='" + type + "-dist'>" + Math.round(dist*100)/100 + "m</tspan> " +
+        "<tspan x='" + x + "' dx='10' dy='" + tspan[flag].dyt + "'>" + 
+            "<tspan class='" + typeRecord + "-dist'>" + Math.round(dist*100)/100 + "m</tspan> " +
             "(+" + time + "s)" + 
         "</tspan>" + 
-        "<tspan x='" + x + "' dx='6' dy='" + tspan[flag].dyb + "' class='behind'>" + 
-            "behind " + type.toUpperCase() + 
+        "<tspan x='" + x + "' dx='11' dy='" + tspan[flag].dyb + "' class='behind'>" + 
+            "behind " + typeRecord.toUpperCase() + 
         "</tspan>"
     );
-}
-function addRecord() {
-    
 }

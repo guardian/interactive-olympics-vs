@@ -59,11 +59,16 @@ export default function(cfg) {
         //let delay = cfg.dataset === "world" ? 0.1:1;//cfg.ilast/(opt.duration*1000) : 0;
         //console.log(cfg.dataset, delay, cfg.ilast);
 
+        let state = d3_select(".js-chart").attr("data-state");
         dots.style("transition", "0s")
         .each(d => { 
+            d.o = opacity;
+            if (state === "final" && d.cn === "temp") {
+                d.o = 0.5;
+            } else if (d.cn === "wr" || d.cn === "or") { 
+                d.o = 1;
+            } 
             //if (d.cn) console.log(d.cn);
-            d.o = d.cn ? 1 : opacity;
-            d.o = (d.cn === "temp" && d3_select(".js-chart").attr("data-state") === "final") ? 1 : opacity;
         })
         .transition()
         //.delay((d, i) => i*delay)
@@ -81,7 +86,6 @@ export default function(cfg) {
         let delay1 = opt.duration ? opt.duration : 0.5;
         let delay2 = opt.duration ? opt.duration + sHighlight : 0.5;
         
-        let state = d3_select(".js-chart").attr("data-state");
         if (state === cfg.dataset) { 
             
             // after animation
@@ -121,22 +125,21 @@ export function showBestAthlete(d1, state) {
     let attrs = d1.attrs;
 
     // change opacity
+    // - all visible dots
     select.all = d3_select(".js-chart")
     .selectAll(".dots circle")
     .style("transition", "0.25s")
     .classed("o-2", d => d.o !== 0 ? true : false);
-
+    // - related dot(s)
     select.related = select.all
     .filter(d2 => d2.attrs.name.indexOf(attrs.name) > -1)
     .classed("o-1", d => d.o !== 0 ? true : false)
     .attr("r", d => d.r*2);
-
-    if (state !== "final") { 
-        ["or", "wr"].forEach((type) => {
-            d3_select("#" + record[type].id)
-            .classed("o-2", d2 => d2.attrs.name.indexOf(attrs.name) === -1 ? true : false);
-        });
-    }
+    // - or, wr
+    ["or", "wr"].forEach((type) => {
+        d3_select("." + type).classed("o-5", state === "final" ? true : false);
+    });
+   
     // remove stroke on previous selected
     if (select.pre) { select.pre.attr("stroke", null); }
     // add stroke to current selected
@@ -154,4 +157,8 @@ export function hideAllAthletes(d1) {
 
     select.all.classed("o-1", false).classed("o-2", false);
     select.related.attr("r", d => d.r);
+
+    ["or", "wr"].forEach((type) => {
+        d3_select("." + type).classed("o-5", false);
+    }); 
 }

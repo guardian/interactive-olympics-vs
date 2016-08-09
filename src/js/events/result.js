@@ -68,7 +68,7 @@ export default function(data) {
     state.final = { 
         domain: {
             x: [domainFinal.x[0], 0],
-            y: [2016 - diff*1.25, 2016 + diff*0.75]
+            y: [2016 - diff*1.25, 2016 + diff*1]
         },
         opacity: [0.75, 0, 0]
     };

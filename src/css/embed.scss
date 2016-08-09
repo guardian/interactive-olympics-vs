@@ -35,7 +35,7 @@ p {
     
     position: relative;
     display: inline-block;
-    padding: 6px 36px 4px 15px;
+    padding: 6px 30px 4px 15px;
     border-radius: 24px;
     pointer-event: none;
 }
@@ -96,14 +96,19 @@ p {
     height: 100%;
     box-sizing: border-box;
     position: absolute;
-    padding: 11px 30px 10px 10px;
+    padding: 11px 36px 10px 10px;
     overflow: visible; // for firefox
     pointer-events: none;
 }
 
-g[class^="axis"],
-.hl-year, .hl-mark {
+[class^="axis"],
+.mark-highlight text {
     @include fs-data(2);
+}
+.axis-year, .hl-year, {
+    text-anchor: start;
+}
+.axis-mark, .hl-mark {
     text-anchor: middle;
 }
 .axis-year text,
@@ -119,6 +124,9 @@ g[class^="axis"],
     stroke: #eaeaea; //n-5 
     stroke-dasharray: 1, 1;    
     shape-rendering: crispEdges;
+}
+.hl-lv {
+    stroke: #dcdcdc; //n-4 
 }
 .hl-lh-wr, .hl-lh-or {
     stroke: #bdbdbd; //n-3
@@ -142,8 +150,8 @@ g[class^="axis"],
     fill: none;
     stroke: none;
     // testing
-    // fill: rgba(230, 230, 230, 0.5);
-    // stroke: #ddd;
+    //fill: rgba(230, 230, 230, 0.5);
+    //stroke: #ddd;
 }
 
 // highlight
@@ -222,4 +230,5 @@ g[class^="axis"],
 .d-ib { display: inline-block; }
 .d-n { display: none; }
 .o-2 { fill-opacity: 0.2; }
+.o-5 { fill-opacity: 0.7; }
 .o-1 { fill-opacity: 1; }

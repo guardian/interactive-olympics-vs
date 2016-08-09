@@ -658,7 +658,7 @@ p {
   background-color: #1991c6;
   position: relative;
   display: inline-block;
-  padding: 6px 36px 4px 15px;
+  padding: 6px 30px 4px 15px;
   border-radius: 24px;
   pointer-event: none; }
 
@@ -713,15 +713,20 @@ p {
   height: 100%;
   box-sizing: border-box;
   position: absolute;
-  padding: 11px 30px 10px 10px;
+  padding: 11px 36px 10px 10px;
   overflow: visible;
   pointer-events: none; }
 
-g[class^="axis"],
-.hl-year, .hl-mark {
+[class^="axis"],
+.mark-highlight text {
   font-size: 12px;
   line-height: 14px;
-  font-family: "Guardian Agate Sans 1 Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: "Guardian Agate Sans 1 Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
+
+.axis-year, .hl-year {
+  text-anchor: start; }
+
+.axis-mark, .hl-mark {
   text-anchor: middle; }
 
 .axis-year text,
@@ -737,6 +742,9 @@ g[class^="axis"],
   stroke: #eaeaea;
   stroke-dasharray: 1, 1;
   shape-rendering: crispEdges; }
+
+.hl-lv {
+  stroke: #dcdcdc; }
 
 .hl-lh-wr, .hl-lh-or {
   stroke: #bdbdbd;
@@ -852,6 +860,9 @@ g[class^="axis"],
 
 .o-2 {
   fill-opacity: 0.2; }
+
+.o-5 {
+  fill-opacity: 0.7; }
 
 .o-1 {
   fill-opacity: 1; }

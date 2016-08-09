@@ -276,7 +276,7 @@ $__System.registerDynamic("4", [], true, function($__require, exports, module) {
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = "<header class=\"top\">\n    <div class=\"header res\">\n        <p class=\"mt-0\">\n            <!--span class=\"js-state-name\">2016 Olympic finals</span> -<-->  \n            <span class=\"js-state-text\">Loading ...</span>\n        </p>\n        <div class=\"btn-next\">\n            <span class=\"js-state-next\">Start</span>\n            <svg class=\"arrow-right\" width=\"28\" height=\"28\" viewBox=\"0 0 30 30\">\n                <path d=\"M22.8 14.6l-7.6-7.6-.7.7 5.5 6.6h-14v1.5h14l-5.5 6.6.7.7 7.6-7.6v-.9\" fill=\"#fff\"/>\n            </svg>\n            <svg class=\"replay\" width=\"16px\" height=\"16px\" viewBox=\"0 0 43 44\" opacity=\"0\">\n                <path d=\"M7.15497025,33.442558 L14.398,32.27 L14.398,29.77 L1.58,29.77 L0.606,30.74 L0.606,44 L3.106,44 L4.278,36.27 L4.28132921,36.2666837 C8.31677436,41.0007268 14.3191026,44 21.023,44 C33.173,44 43.023,34.15 43.023,22 C43.023,9.85 33.173,0 21.023,0 C13.508,0 6.876,3.77 2.908,9.52 L2.944,9.54 L3.266,10.92 L4.964,11.98 L6.311,11.66 C9.572,7.04 14.945,4 21.023,4 C30.949,4 39.023,12.08 39.023,22 C39.023,31.92 30.949,40 21.023,40 C15.4437157,40 10.4578363,37.4375695 7.15497025,33.442558 Z\" fill=\"#fff\"></path>\n            </svg>\n        </div>\n    </div>\n</header>\n\n<div class=\"graph\">\n    <svg class=\"chart js-chart\" data-state=\"final\">\n        <g class=\"axis-y\"></g>\n        <g class=\"axis-x\"></g>\n        <g class=\"mark-highlight\">\n            <line class=\"hl-lv\" y2=\"98%\"></line>            \n            <text class=\"hl-year\" x=\"101%\" fill=\"#333\" dy=\".3em\"></text> \n            <text class=\"hl-mark\" y=\"100%\" fill=\"#333\" dy=\".71em\"></text>\n            <g class=\"js-final\">\n                <line class=\"hl-lh-wr\"></line>            \n                <line class=\"hl-lh-or\"></line> \n                <text class=\"hl-txt-wr\"></text> \n                <text class=\"hl-txt-or\"></text> \n            </g>\n        </g>\n        <g class=\"dots final\"></g>\n        <g class=\"dots medal\"></g>\n        <g class=\"dots world\"></g>\n        <g class=\"dots-highlight\">\n            <circle class=\"hl-circle\"></circle>\n        </g>\n        <g class=\"dots-picker\"></g>\n    </svg>   \n    <div class=\"tooltip\">\n        <span class=\"js-title fz-14 fw-b\"></span>\n        <span class=\"js-team fz-14 fw-b c-n2\"></span><br>\n        <span class=\"js-result\"></span><br> \n        <span class=\"js-record\"></span>\n    </div>\n</div>\n\n<header class=\"in\"></header>\n\n<div class=\"note res d-n\">\n    The positions (behind WR) are based on the athletes' average speed\n</div>\n";
+  module.exports = "<header class=\"top\">\n    <div class=\"header res\">\n        <p class=\"mt-0\">\n            <!--span class=\"js-state-name\">2016 Olympic finals</span> -<-->  \n            <span class=\"js-state-text\">Loading ...</span>\n        </p>\n        <div class=\"btn-next\">\n            <span class=\"js-state-next\">Start</span>\n            <svg class=\"arrow-right\" width=\"28\" height=\"28\" viewBox=\"0 0 30 30\">\n                <path d=\"M22.8 14.6l-7.6-7.6-.7.7 5.5 6.6h-14v1.5h14l-5.5 6.6.7.7 7.6-7.6v-.9\" fill=\"#fff\"/>\n            </svg>\n            <svg class=\"replay\" width=\"16px\" height=\"16px\" viewBox=\"0 0 43 44\" opacity=\"0\">\n                <path d=\"M7.15497025,33.442558 L14.398,32.27 L14.398,29.77 L1.58,29.77 L0.606,30.74 L0.606,44 L3.106,44 L4.278,36.27 L4.28132921,36.2666837 C8.31677436,41.0007268 14.3191026,44 21.023,44 C33.173,44 43.023,34.15 43.023,22 C43.023,9.85 33.173,0 21.023,0 C13.508,0 6.876,3.77 2.908,9.52 L2.944,9.54 L3.266,10.92 L4.964,11.98 L6.311,11.66 C9.572,7.04 14.945,4 21.023,4 C30.949,4 39.023,12.08 39.023,22 C39.023,31.92 30.949,40 21.023,40 C15.4437157,40 10.4578363,37.4375695 7.15497025,33.442558 Z\" fill=\"#fff\"></path>\n            </svg>\n        </div>\n    </div>\n</header>\n\n<div class=\"graph\">\n    <svg class=\"chart js-chart\" data-state=\"final\">\n        <g class=\"axis-y\"></g>\n        <g class=\"axis-x\"></g>\n        <g class=\"mark-highlight\">\n            <line class=\"hl-lv\" y2=\"98%\"></line>            \n            <text class=\"hl-year\" x=\"100%\" fill=\"#333\" dy=\".3em\"></text> \n            <text class=\"hl-mark\" y=\"100%\" fill=\"#333\" dy=\".71em\"></text>\n            <g class=\"js-final\">\n                <line class=\"hl-lh-wr\"></line>            \n                <line class=\"hl-lh-or\"></line> \n                <text class=\"hl-txt-wr\"></text> \n                <text class=\"hl-txt-or\"></text> \n            </g>\n        </g>\n        <g class=\"dots final\"></g>\n        <g class=\"dots medal\"></g>\n        <g class=\"dots world\"></g>\n        <g class=\"dots-highlight\">\n            <circle class=\"hl-circle\"></circle>\n        </g>\n        <g class=\"dots-picker\"></g>\n    </svg>   \n    <div class=\"tooltip\">\n        <span class=\"js-title fz-14 fw-b\"></span>\n        <span class=\"js-team fz-14 fw-b c-n2\"></span><br>\n        <span class=\"js-result\"></span><br> \n        <span class=\"js-record\"></span>\n    </div>\n</div>\n\n<header class=\"in\"></header>\n\n<div class=\"note res d-n\">\n    The positions (behind WR) are based on the athletes' average speed\n</div>\n";
   return module.exports;
 });
 
@@ -1139,7 +1139,7 @@ $__System.register("9", [], function (_export) {
                 "freestyle_200_m": {
                     key: "1rubYCASgNxcWrpWCrh1e4Y_kNfwF3jyt84L_iehxevI",
                     distance: 200,
-                    extra_years_final_state: []
+                    extra_years_final_state: [2000, 2004, 2012]
                 }
             };
 
@@ -3353,7 +3353,7 @@ $__System.register('31', ['30', '2a', '1f', 'c'], function (_export) {
                     });
 
                     text.enter().append("text").transition().duration(opt.duration * 1000).attr("x", function (d) {
-                        return "101%";
+                        return "100%";
                     }).attr("y", function (d) {
                         return "100%";
                     }).attr("dy", coord === "x" ? ".71em" : ".3em").attr(coord, function (d) {
@@ -6473,7 +6473,7 @@ $__System.register('21', ['1f', 'c'], function (_export) {
         var x = {
             l: point.left - tooltip.width - 60, // left
             c: point.left - tooltip.width / 2 + data.r, // center
-            r: chart.width - tooltip.width // right
+            r: point.left + data.r - 1 // right
         };
         /* vertical align */
         var y = {
@@ -6482,9 +6482,9 @@ $__System.register('21', ['1f', 'c'], function (_export) {
             b: point.top + data.r * 2 + 30 // under
         };
 
-        // 1. default: middleLeft, topLeft(bottom 1/4), topCenter (fianl)
+        // 1. default: middleLeft, topLeft (bottom 1/4)
         left = testFinal ? x.c : x.l;
-        top = testFinal || test1_4Bottom ? y.t : y.m;
+        top = test1_4Bottom ? y.t : y.m;
 
         // 2. test and adjust outside edgs: top, left, right
         var testTop = top > chart.top;
@@ -6492,8 +6492,8 @@ $__System.register('21', ['1f', 'c'], function (_export) {
 
         var testLeft = left > 0;
         var testRight = left + tooltip.width < chart.width;
-        left = testLeft ? left : 0;
-        left = testRight ? left : x.r;
+        left = testLeft ? left : 0; // left end
+        left = testRight ? left : chart.width - tooltip.width; // right end
 
         // 3. test overlay
         var testOverlay = point.left < left + tooltip.width && point.top + data.r * 2 < top + tooltip.height;
@@ -6501,11 +6501,10 @@ $__System.register('21', ['1f', 'c'], function (_export) {
             top = test1_3Top ? y.b : y.t;
         }
 
-        // temp, HACK!!!
-        if (testFinal && !test1_4Bottom && data.y !== 2016) {
-            top = y.b;
-        } else if (testFinal && test1_4Bottom && data.y !== 2016 && chart.width < 620) {
-            top = chart.top;
+        // 4. topCenter (fianl)
+        if (testFinal) {
+            var pointTop = document.querySelector(".final circle").getBoundingClientRect().top;
+            top = pointTop - tooltip.height - 35;
         }
 
         return { top: top + "px", left: left + "px" };
@@ -6557,10 +6556,11 @@ $__System.register('3d', ['12', '21', '1f', '3c', 'c', '3e'], function (_export)
         var attrs = d1.attrs;
 
         // change opacity
+        // - all visible dots
         select.all = d3_select(".js-chart").selectAll(".dots circle").style("transition", "0.25s").classed("o-2", function (d) {
             return d.o !== 0 ? true : false;
         });
-
+        // - related dot(s)
         select.related = select.all.filter(function (d2) {
             return d2.attrs.name.indexOf(attrs.name) > -1;
         }).classed("o-1", function (d) {
@@ -6568,14 +6568,11 @@ $__System.register('3d', ['12', '21', '1f', '3c', 'c', '3e'], function (_export)
         }).attr("r", function (d) {
             return d.r * 2;
         });
+        // - or, wr
+        ["or", "wr"].forEach(function (type) {
+            d3_select("." + type).classed("o-5", state === "final" ? true : false);
+        });
 
-        if (state !== "final") {
-            ["or", "wr"].forEach(function (type) {
-                d3_select("#" + record[type].id).classed("o-2", function (d2) {
-                    return d2.attrs.name.indexOf(attrs.name) === -1 ? true : false;
-                });
-            });
-        }
         // remove stroke on previous selected
         if (select.pre) {
             select.pre.attr("stroke", null);
@@ -6597,6 +6594,10 @@ $__System.register('3d', ['12', '21', '1f', '3c', 'c', '3e'], function (_export)
         select.all.classed("o-1", false).classed("o-2", false);
         select.related.attr("r", function (d) {
             return d.r;
+        });
+
+        ["or", "wr"].forEach(function (type) {
+            d3_select("." + type).classed("o-5", false);
         });
     }
 
@@ -6687,10 +6688,15 @@ $__System.register('3d', ['12', '21', '1f', '3c', 'c', '3e'], function (_export)
                     //let delay = cfg.dataset === "world" ? 0.1:1;//cfg.ilast/(opt.duration*1000) : 0;
                     //console.log(cfg.dataset, delay, cfg.ilast);
 
+                    var state = d3_select(".js-chart").attr("data-state");
                     dots.style("transition", "0s").each(function (d) {
+                        d.o = opacity;
+                        if (state === "final" && d.cn === "temp") {
+                            d.o = 0.5;
+                        } else if (d.cn === "wr" || d.cn === "or") {
+                            d.o = 1;
+                        }
                         //if (d.cn) console.log(d.cn);
-                        d.o = d.cn ? 1 : opacity;
-                        d.o = d.cn === "temp" && d3_select(".js-chart").attr("data-state") === "final" ? 1 : opacity;
                     }).transition()
                     //.delay((d, i) => i*delay)
                     .duration(opt.duration * 1000).attr("fill-opacity", function (d) {
@@ -6709,7 +6715,6 @@ $__System.register('3d', ['12', '21', '1f', '3c', 'c', '3e'], function (_export)
                     var delay1 = opt.duration ? opt.duration : 0.5;
                     var delay2 = opt.duration ? opt.duration + sHighlight : 0.5;
 
-                    var state = d3_select(".js-chart").attr("data-state");
                     if (state === cfg.dataset) {
 
                         // after animation
@@ -7700,17 +7705,6 @@ $__System.register("3e", ["1f", "c"], function (_export) {
         preData = data;
         d3_select(".mark-highlight").style("opacity", 0);
         d3_select(".js-final").classed("d-n", true);
-        if (data.attrs.dist === 0) {
-            /*console.log("update text", data);
-            d3_select(".hl-txt-wr")
-            .attr("y", "50%")
-            .attr("x", "100%")
-            .text("WR, OR");
-            d3_select(".hl-txt-or")
-            .text("");
-            d3_select(".js-final").classed("d-n", false);*/
-            return;
-        }
 
         // x, y axis
         var dot = d3_select("#" + data.id);
@@ -7727,23 +7721,33 @@ $__System.register("3e", ["1f", "c"], function (_export) {
         var elor = d3_select(".or");
 
         var state = d3_select(".js-chart").attr("data-state");
+        var y1lv = function y1lv() {
+            //let top = document.querySelector(".final circle")
+            //.getBoundingClientRect().top;
+            return state === "final" ? "28%" : y;
+        };
 
-        d3_select(".hl-lv").attr("x1", x).attr("x2", x).attr("y1", state === "final" ? elwr.attr("cy") : y);
+        d3_select(".hl-lv").attr("x1", x).attr("x2", x).attr("y1", y1lv);
         d3_select(".hl-year").attr("y", y).text(data.attrs.year);
-        d3_select(".hl-mark").attr("x", x).text(data.attrs.dist + " m (+" + ttwr + "s)");
+        d3_select(".hl-mark").attr("x", x).text(data.attrs.dist === 0 ? "0" : data.attrs.dist + " m (+" + ttwr + "s)");
 
         // wr, or
-        if (state !== "final") {
+        if (state !== "final" || data.attrs.dist === 0) {
             return;
         }
         d3_select(".js-final").classed("d-n", false);
 
-        var isNewRecord = record.wr.y === 2016;
+        // cases
         // dist > 0 or hide
+        var isNewRecord = record.wr.y === 2016;
+        var flag = isNewRecord ? "record" : "origin";
+        var diff = Math.abs(parseInt(elwr.attr("cy").replace("%", "")) - parseInt(elor.attr("cy").replace("%", "")));
+        var isTooClose = diff < 6;
+
         d3_select(".hl-lh-wr").attr("x1", x).attr("x2", elwr.attr("cx")).attr("y1", elwr.attr("cy")).attr("y2", elwr.attr("cy"));
         d3_select(".hl-lh-or").attr("x1", x).attr("x2", elor.attr("cx")).attr("y1", elor.attr("cy")).attr("y2", elor.attr("cy"));
 
-        d3_select(".hl-txt-wr").attr("y", elwr.attr("cy")).html(addMark(x, atpt.dist, ttwr, "wr", isNewRecord));
+        d3_select(".hl-txt-wr").attr("y", elwr.attr("cy")).html(addMark(x, atpt.dist, ttwr, "wr", flag));
 
         var ttor = Math.round((atpt.time - ator.time) * 100) / 100;
         if (ttor === 0) {
@@ -7752,7 +7756,7 @@ $__System.register("3e", ["1f", "c"], function (_export) {
         if (ttor === ttwr) {
             d3_select(".hl-txt-wr .behind").text("behind WR and OR");return;
         }
-        d3_select(".hl-txt-or").attr("x", x).attr("y", elor.attr("cy")).html(addMark(x, atpt.dist - ator.dist, ttor, "or", isNewRecord));
+        d3_select(".hl-txt-or").attr("x", x).attr("y", elor.attr("cy")).html(addMark(x, atpt.dist - ator.dist, ttor, "or", "bottom"));
     }
 
     function updateDotAnimation(data) {
@@ -7784,13 +7788,13 @@ $__System.register("3e", ["1f", "c"], function (_export) {
         d3_select(".hl-circle").classed("animate", false).style("opacity", 0);
     }
 
-    function addMark(x, dist, time, type, isNewRecord) {
-        // TODO: even behind WR and OR
-        var flag = isNewRecord ? "record" : "origin";
+    //bottom2
 
-        return "<tspan x='" + x + "' dx='5' dy='" + tspan[flag].dyt + "'>" + "<tspan class='" + type + "-dist'>" + Math.round(dist * 100) / 100 + "m</tspan> " + "(+" + time + "s)" + "</tspan>" + "<tspan x='" + x + "' dx='6' dy='" + tspan[flag].dyb + "' class='behind'>" + "behind " + type.toUpperCase() + "</tspan>";
+    function addMark(x, dist, time, typeRecord, flag) {
+        // TODO: even behind WR and OR
+
+        return "<tspan x='" + x + "' dx='10' dy='" + tspan[flag].dyt + "'>" + "<tspan class='" + typeRecord + "-dist'>" + Math.round(dist * 100) / 100 + "m</tspan> " + "(+" + time + "s)" + "</tspan>" + "<tspan x='" + x + "' dx='11' dy='" + tspan[flag].dyb + "' class='behind'>" + "behind " + typeRecord.toUpperCase() + "</tspan>";
     }
-    function addRecord() {}
     return {
         setters: [function (_f) {
             d3_select = _f.select;
@@ -7801,9 +7805,9 @@ $__System.register("3e", ["1f", "c"], function (_export) {
         execute: function () {
             preData = null;
             tspan = {
-                "origin": { dyt: -5, dyb: 20 },
-                "record": { dyt: 36, dyb: 16 }
-            };
+                "origin": { dyt: -20, dyb: 12 }, //top
+                "bottom": { dyt: 25, dyb: 12 }, //bottom1
+                "record": { dyt: 35, dyb: 12 } };
         }
     };
 });
@@ -8043,7 +8047,7 @@ $__System.register('e', ['9', '12', '20', '22', '31', '1f', '2a', '1e', 'c', '3d
                 state.final = {
                     domain: {
                         x: [domainFinal.x[0], 0],
-                        y: [2016 - diff * 1.25, 2016 + diff * 0.75]
+                        y: [2016 - diff * 1.25, 2016 + diff * 1]
                     },
                     opacity: [0.75, 0, 0]
                 };
@@ -9703,11 +9707,11 @@ $__System.register('1', ['3', '4', '5', '12', '21', '49', '3e', 'b'], function (
                     // realtime final data
                     case "freestyle_100x4_relay_w":
                     case "freestyle_400_w":
+                    case "freestyle_200_m":
                         swimming(event);
                         break;
 
                     // testing
-                    case "freestyle_200_m":
                     case "breaststroke_100_m":
                     case "medley_400_w":
                     case "medley_400_m":

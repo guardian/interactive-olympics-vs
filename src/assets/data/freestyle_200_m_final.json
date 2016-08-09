@@ -1,0 +1,663 @@
+{
+    "olympics": {
+        "eventUnit": {
+            "identifier": "SWM012101",
+            "description": "Men's 200m Freestyle Final",
+            "unitType": "Individuals",
+            "medalEvent": "Yes",
+            "disciplineDescription": {
+                "identifier": "swimming",
+                "value": "Swimming"
+            },
+            "phaseDescription": {
+                "identifier": "SWM0121",
+                "value": "Final"
+            },
+            "result": {
+                "type": "Official",
+                "timestamp": "2016-08-09T01:23:51Z",
+                "entrant": [{
+                    "order": "1",
+                    "type": "Individual",
+                    "code": "1194098",
+                    "rank": "1",
+                    "value": "1:44.65",
+                    "property": [{
+                        "type": "Medal Awarded",
+                        "value": "Gold"
+                    }, {
+                        "type": "Diff",
+                        "value": "0.00"
+                    }, {
+                        "type": "Result Type",
+                        "value": "Time"
+                    }],
+                    "resultExtension": [{
+                        "type": "Reaction Time",
+                        "value": "0.76"
+                    }, {
+                        "type": "Leg Breakdown",
+                        "extension": [{
+                            "position": "2",
+                            "value": "26.70"
+                        }, {
+                            "position": "3",
+                            "value": "26.37"
+                        }, {
+                            "position": "4",
+                            "value": "26.71"
+                        }]
+                    }, {
+                        "type": "Split Times",
+                        "extension": [{
+                            "position": "1",
+                            "value": "24.87",
+                            "property": {
+                                "type": "Diff",
+                                "value": "1.48"
+                            }
+                        }, {
+                            "position": "2",
+                            "value": "51.57",
+                            "property": {
+                                "type": "Diff",
+                                "value": "1.21"
+                            }
+                        }, {
+                            "position": "3",
+                            "value": "1:17.94",
+                            "property": {
+                                "type": "Diff",
+                                "value": "0.23"
+                            }
+                        }, {
+                            "position": "4",
+                            "value": "1:44.65",
+                            "property": {
+                                "type": "Diff",
+                                "value": "0.00"
+                            }
+                        }]
+                    }],
+                    "country": {
+                        "identifier": "CHN",
+                        "name": "China",
+                        "longName": "People's Republic of China"
+                    },
+                    "participant": {
+                        "order": "1",
+                        "competitor": {
+                            "identifier": "1194098",
+                            "firstName": "Yang",
+                            "lastName": "Sun",
+                            "fullName": "Yang Sun"
+                        }
+                    }
+                }, {
+                    "order": "2",
+                    "type": "Individual",
+                    "code": "1053071",
+                    "rank": "2",
+                    "value": "1:45.20",
+                    "property": [{
+                        "type": "Medal Awarded",
+                        "value": "Silver"
+                    }, {
+                        "type": "Record Set",
+                        "value": "AF"
+                    }, {
+                        "type": "Diff",
+                        "value": "0.55"
+                    }, {
+                        "type": "Result Type",
+                        "value": "Time"
+                    }],
+                    "resultExtension": [{
+                        "type": "Reaction Time",
+                        "value": "0.63"
+                    }, {
+                        "type": "Leg Breakdown",
+                        "extension": [{
+                            "position": "2",
+                            "value": "26.97"
+                        }, {
+                            "position": "3",
+                            "value": "27.35"
+                        }, {
+                            "position": "4",
+                            "value": "27.49"
+                        }]
+                    }, {
+                        "type": "Split Times",
+                        "extension": [{
+                            "position": "1",
+                            "value": "23.39",
+                            "property": {
+                                "type": "Diff",
+                                "value": "0.00"
+                            }
+                        }, {
+                            "position": "2",
+                            "value": "50.36",
+                            "property": {
+                                "type": "Diff",
+                                "value": "0.00"
+                            }
+                        }, {
+                            "position": "3",
+                            "value": "1:17.71",
+                            "property": {
+                                "type": "Diff",
+                                "value": "0.00"
+                            }
+                        }, {
+                            "position": "4",
+                            "value": "1:45.20",
+                            "property": {
+                                "type": "Diff",
+                                "value": "0.55"
+                            }
+                        }]
+                    }],
+                    "country": {
+                        "identifier": "RSA",
+                        "name": "South Africa",
+                        "longName": "South Africa"
+                    },
+                    "participant": {
+                        "order": "1",
+                        "competitor": {
+                            "identifier": "1053071",
+                            "firstName": "Chad Guy Bertrand",
+                            "lastName": "le Clos",
+                            "fullName": "Chad Guy Bertrand le Clos"
+                        }
+                    }
+                }, {
+                    "order": "3",
+                    "type": "Individual",
+                    "code": "1139982",
+                    "rank": "3",
+                    "value": "1:45.23",
+                    "property": [{
+                        "type": "Medal Awarded",
+                        "value": "Bronze"
+                    }, {
+                        "type": "Diff",
+                        "value": "0.58"
+                    }, {
+                        "type": "Result Type",
+                        "value": "Time"
+                    }],
+                    "resultExtension": [{
+                        "type": "Reaction Time",
+                        "value": "0.65"
+                    }, {
+                        "type": "Leg Breakdown",
+                        "extension": [{
+                            "position": "2",
+                            "value": "26.67"
+                        }, {
+                            "position": "3",
+                            "value": "26.60"
+                        }, {
+                            "position": "4",
+                            "value": "27.42"
+                        }]
+                    }, {
+                        "type": "Split Times",
+                        "extension": [{
+                            "position": "1",
+                            "value": "24.54",
+                            "property": {
+                                "type": "Diff",
+                                "value": "1.15"
+                            }
+                        }, {
+                            "position": "2",
+                            "value": "51.21",
+                            "property": {
+                                "type": "Diff",
+                                "value": "0.85"
+                            }
+                        }, {
+                            "position": "3",
+                            "value": "1:17.81",
+                            "property": {
+                                "type": "Diff",
+                                "value": "0.10"
+                            }
+                        }, {
+                            "position": "4",
+                            "value": "1:45.23",
+                            "property": {
+                                "type": "Diff",
+                                "value": "0.58"
+                            }
+                        }]
+                    }],
+                    "country": {
+                        "identifier": "USA",
+                        "name": "United States",
+                        "longName": "United States of America"
+                    },
+                    "participant": {
+                        "order": "1",
+                        "competitor": {
+                            "identifier": "1139982",
+                            "firstName": "Conor",
+                            "lastName": "Dwyer",
+                            "fullName": "Conor Dwyer"
+                        }
+                    }
+                }, {
+                    "order": "4",
+                    "type": "Individual",
+                    "code": "1211398",
+                    "rank": "4",
+                    "value": "1:45.49",
+                    "property": [{
+                        "type": "Diff",
+                        "value": "0.84"
+                    }, {
+                        "type": "Result Type",
+                        "value": "Time"
+                    }],
+                    "resultExtension": [{
+                        "type": "Reaction Time",
+                        "value": "0.66"
+                    }, {
+                        "type": "Leg Breakdown",
+                        "extension": [{
+                            "position": "2",
+                            "value": "26.46"
+                        }, {
+                            "position": "3",
+                            "value": "27.46"
+                        }, {
+                            "position": "4",
+                            "value": "26.79"
+                        }]
+                    }, {
+                        "type": "Split Times",
+                        "extension": [{
+                            "position": "1",
+                            "value": "24.78",
+                            "property": {
+                                "type": "Diff",
+                                "value": "1.39"
+                            }
+                        }, {
+                            "position": "2",
+                            "value": "51.24",
+                            "property": {
+                                "type": "Diff",
+                                "value": "0.88"
+                            }
+                        }, {
+                            "position": "3",
+                            "value": "1:18.70",
+                            "property": {
+                                "type": "Diff",
+                                "value": "0.99"
+                            }
+                        }, {
+                            "position": "4",
+                            "value": "1:45.49",
+                            "property": {
+                                "type": "Diff",
+                                "value": "0.84"
+                            }
+                        }]
+                    }],
+                    "country": {
+                        "identifier": "GBR",
+                        "name": "Great Britain",
+                        "longName": "Great Britain"
+                    },
+                    "participant": {
+                        "order": "1",
+                        "competitor": {
+                            "identifier": "1211398",
+                            "firstName": "James",
+                            "lastName": "Guy",
+                            "fullName": "James Guy"
+                        }
+                    }
+                }, {
+                    "order": "5",
+                    "type": "Individual",
+                    "code": "1119870",
+                    "rank": "5",
+                    "value": "1:45.58",
+                    "property": [{
+                        "type": "Diff",
+                        "value": "0.93"
+                    }, {
+                        "type": "Result Type",
+                        "value": "Time"
+                    }],
+                    "resultExtension": [{
+                        "type": "Reaction Time",
+                        "value": "0.76"
+                    }, {
+                        "type": "Leg Breakdown",
+                        "extension": [{
+                            "position": "2",
+                            "value": "26.62"
+                        }, {
+                            "position": "3",
+                            "value": "27.47"
+                        }, {
+                            "position": "4",
+                            "value": "26.61"
+                        }]
+                    }, {
+                        "type": "Split Times",
+                        "extension": [{
+                            "position": "1",
+                            "value": "24.88",
+                            "property": {
+                                "type": "Diff",
+                                "value": "1.49"
+                            }
+                        }, {
+                            "position": "2",
+                            "value": "51.50",
+                            "property": {
+                                "type": "Diff",
+                                "value": "1.14"
+                            }
+                        }, {
+                            "position": "3",
+                            "value": "1:18.97",
+                            "property": {
+                                "type": "Diff",
+                                "value": "1.26"
+                            }
+                        }, {
+                            "position": "4",
+                            "value": "1:45.58",
+                            "property": {
+                                "type": "Diff",
+                                "value": "0.93"
+                            }
+                        }]
+                    }],
+                    "country": {
+                        "identifier": "USA",
+                        "name": "United States",
+                        "longName": "United States of America"
+                    },
+                    "participant": {
+                        "order": "1",
+                        "competitor": {
+                            "identifier": "1119870",
+                            "firstName": "Francis",
+                            "lastName": "Haas",
+                            "fullName": "Francis Haas"
+                        }
+                    }
+                }, {
+                    "order": "6",
+                    "type": "Individual",
+                    "code": "1176162",
+                    "rank": "6",
+                    "value": "1:45.84",
+                    "property": [{
+                        "type": "Diff",
+                        "value": "1.19"
+                    }, {
+                        "type": "Result Type",
+                        "value": "Time"
+                    }],
+                    "resultExtension": [{
+                        "type": "Reaction Time",
+                        "value": "0.84"
+                    }, {
+                        "type": "Leg Breakdown",
+                        "extension": [{
+                            "position": "2",
+                            "value": "26.64"
+                        }, {
+                            "position": "3",
+                            "value": "27.21"
+                        }, {
+                            "position": "4",
+                            "value": "26.82"
+                        }]
+                    }, {
+                        "type": "Split Times",
+                        "extension": [{
+                            "position": "1",
+                            "value": "25.17",
+                            "property": {
+                                "type": "Diff",
+                                "value": "1.78"
+                            }
+                        }, {
+                            "position": "2",
+                            "value": "51.81",
+                            "property": {
+                                "type": "Diff",
+                                "value": "1.45"
+                            }
+                        }, {
+                            "position": "3",
+                            "value": "1:19.02",
+                            "property": {
+                                "type": "Diff",
+                                "value": "1.31"
+                            }
+                        }, {
+                            "position": "4",
+                            "value": "1:45.84",
+                            "property": {
+                                "type": "Diff",
+                                "value": "1.19"
+                            }
+                        }]
+                    }],
+                    "country": {
+                        "identifier": "GER",
+                        "name": "Germany",
+                        "longName": "Germany"
+                    },
+                    "participant": {
+                        "order": "1",
+                        "competitor": {
+                            "identifier": "1176162",
+                            "firstName": "Paul",
+                            "lastName": "Biedermann",
+                            "fullName": "Paul Biedermann"
+                        }
+                    }
+                }, {
+                    "order": "7",
+                    "type": "Individual",
+                    "code": "1142165",
+                    "rank": "7",
+                    "value": "1:45.90",
+                    "property": [{
+                        "type": "Diff",
+                        "value": "1.25"
+                    }, {
+                        "type": "Result Type",
+                        "value": "Time"
+                    }],
+                    "resultExtension": [{
+                        "type": "Reaction Time",
+                        "value": "0.65"
+                    }, {
+                        "type": "Leg Breakdown",
+                        "extension": [{
+                            "position": "2",
+                            "value": "27.08"
+                        }, {
+                            "position": "3",
+                            "value": "27.50"
+                        }, {
+                            "position": "4",
+                            "value": "26.53"
+                        }]
+                    }, {
+                        "type": "Split Times",
+                        "extension": [{
+                            "position": "1",
+                            "value": "24.79",
+                            "property": {
+                                "type": "Diff",
+                                "value": "1.40"
+                            }
+                        }, {
+                            "position": "2",
+                            "value": "51.87",
+                            "property": {
+                                "type": "Diff",
+                                "value": "1.51"
+                            }
+                        }, {
+                            "position": "3",
+                            "value": "1:19.37",
+                            "property": {
+                                "type": "Diff",
+                                "value": "1.66"
+                            }
+                        }, {
+                            "position": "4",
+                            "value": "1:45.90",
+                            "property": {
+                                "type": "Diff",
+                                "value": "1.25"
+                            }
+                        }]
+                    }],
+                    "country": {
+                        "identifier": "JPN",
+                        "name": "Japan",
+                        "longName": "Japan"
+                    },
+                    "participant": {
+                        "order": "1",
+                        "competitor": {
+                            "identifier": "1142165",
+                            "firstName": "Kosuke",
+                            "lastName": "Hagino",
+                            "fullName": "Kosuke Hagino"
+                        }
+                    }
+                }, {
+                    "order": "8",
+                    "type": "Individual",
+                    "code": "1228958",
+                    "rank": "8",
+                    "value": "1:45.91",
+                    "property": [{
+                        "type": "Diff",
+                        "value": "1.26"
+                    }, {
+                        "type": "Result Type",
+                        "value": "Time"
+                    }],
+                    "resultExtension": [{
+                        "type": "Reaction Time",
+                        "value": "0.66"
+                    }, {
+                        "type": "Leg Breakdown",
+                        "extension": [{
+                            "position": "2",
+                            "value": "26.94"
+                        }, {
+                            "position": "3",
+                            "value": "26.85"
+                        }, {
+                            "position": "4",
+                            "value": "27.33"
+                        }]
+                    }, {
+                        "type": "Split Times",
+                        "extension": [{
+                            "position": "1",
+                            "value": "24.79",
+                            "property": {
+                                "type": "Diff",
+                                "value": "1.40"
+                            }
+                        }, {
+                            "position": "2",
+                            "value": "51.73",
+                            "property": {
+                                "type": "Diff",
+                                "value": "1.37"
+                            }
+                        }, {
+                            "position": "3",
+                            "value": "1:18.58",
+                            "property": {
+                                "type": "Diff",
+                                "value": "0.87"
+                            }
+                        }, {
+                            "position": "4",
+                            "value": "1:45.91",
+                            "property": {
+                                "type": "Diff",
+                                "value": "1.26"
+                            }
+                        }]
+                    }],
+                    "country": {
+                        "identifier": "RUS",
+                        "name": "Russian Federation",
+                        "longName": "Russian Federation"
+                    },
+                    "participant": {
+                        "order": "1",
+                        "competitor": {
+                            "identifier": "1228958",
+                            "firstName": "Aleksandr",
+                            "lastName": "Krasnykh",
+                            "fullName": "Aleksandr Krasnykh"
+                        }
+                    }
+                }, {
+                    "order": "9",
+                    "type": "Individual",
+                    "code": "1175731",
+                    "country": {
+                        "identifier": "AUS",
+                        "name": "Australia",
+                        "longName": "Australia"
+                    },
+                    "participant": {
+                        "order": "1",
+                        "competitor": {
+                            "identifier": "1175731",
+                            "firstName": "Thomas",
+                            "lastName": "Fraser-Holmes",
+                            "fullName": "Thomas Fraser-Holmes"
+                        }
+                    }
+                }, {
+                    "order": "10",
+                    "type": "Individual",
+                    "code": "1051149",
+                    "country": {
+                        "identifier": "POL",
+                        "name": "Poland",
+                        "longName": "Poland"
+                    },
+                    "participant": {
+                        "order": "1",
+                        "competitor": {
+                            "identifier": "1051149",
+                            "firstName": "Kacper",
+                            "lastName": "Majchrzak",
+                            "fullName": "Kacper Majchrzak"
+                        }
+                    }
+                }]
+            }
+        }
+    }
+}

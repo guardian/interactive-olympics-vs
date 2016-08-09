@@ -12,6 +12,6 @@ export const cfgData = {
     "freestyle_200_m": {
         key: "1rubYCASgNxcWrpWCrh1e4Y_kNfwF3jyt84L_iehxevI",
         distance: 200,
-        extra_years_final_state: []
+        extra_years_final_state: [2000, 2004, 2012]
     }
 };

@@ -16,16 +16,16 @@ define([], function() {
             el.innerHTML = '<div style="font-size: 24px; text-align: center; padding: 72px 0; font-family: \'Guardian Egyptian Web\',Georgia,serif;">Loading…</div>';
 
             config = {
-                'assetPath': 'https://interactive.guim.co.uk/2016/07/olympic-vs/1470640982654'
+                'assetPath': ''
             };
 
             // Load CSS asynchronously
             window.setTimeout(function() {
-                addCSS('https://interactive.guim.co.uk/2016/07/olympic-vs/1470640982654/main.css');
+                addCSS('/main.css');
             }, 10);
 
             // Load JS and init
-            require(['https://interactive.guim.co.uk/2016/07/olympic-vs/1470640982654/main.js'], function(main) {
+            require(['/main.js'], function(main) {
                 main.init(el, context, config, mediator);
             }, function(err) { console.error('Error loading boot.', err); });
         }

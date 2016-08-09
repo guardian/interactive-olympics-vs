@@ -89,7 +89,7 @@ function getInfoPos (data) {
     let x = {
         l: point.left - tooltip.width - 60,         // left
         c: point.left - (tooltip.width/2) + data.r, // center 
-        r: chart.width - tooltip.width              // right 
+        r: point.left + data.r - 1                  // right 
     };
     /* vertical align */
     let y = {
@@ -98,9 +98,9 @@ function getInfoPos (data) {
         b: point.top + data.r*2 + 30        // under 
     };
 
-    // 1. default: middleLeft, topLeft(bottom 1/4), topCenter (fianl)
+    // 1. default: middleLeft, topLeft (bottom 1/4) 
     left = testFinal ? x.c : x.l;      
-    top = testFinal || test1_4Bottom ? y.t : y.m; 
+    top = test1_4Bottom ? y.t : y.m; 
     
     // 2. test and adjust outside edgs: top, left, right
     let testTop = top > chart.top;
@@ -108,18 +108,18 @@ function getInfoPos (data) {
     
     let testLeft = left > 0; 
     let testRight = left + tooltip.width < chart.width;
-    left = testLeft ? left : 0;
-    left = testRight ? left : x.r;
+    left = testLeft ? left : 0; // left end
+    left = testRight ? left : chart.width - tooltip.width; // right end
 
     // 3. test overlay
     let testOverlay = (point.left < left + tooltip.width) && (point.top + data.r*2 < top + tooltip.height); 
     if (testOverlay) { top = test1_3Top ? y.b : y.t; }
     
-    // temp, HACK!!!
-    if (testFinal && !test1_4Bottom && data.y !== 2016) {
-        top = y.b;
-    } else if (testFinal && test1_4Bottom && data.y !== 2016 && chart.width < 620) {
-        top = chart.top;
+    // 4. topCenter (fianl)
+    if (testFinal) {
+        let pointTop = document.querySelector(".final circle")
+        .getBoundingClientRect().top;
+        top = pointTop - tooltip.height - 35;
     }
 
     return {top: top + "px", left: left + "px"};

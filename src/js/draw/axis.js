@@ -68,7 +68,7 @@ export default function(cfg) {
         text.enter()
         .append("text")
         .transition().duration(opt.duration*1000)
-        .attr("x", d => "101%")
+        .attr("x", d => "100%")
         .attr("y", d => "100%")
         .attr("dy", coord === "x" ? ".71em" : ".3em")
         .attr(coord, d => scale[coord](d) + "%")
