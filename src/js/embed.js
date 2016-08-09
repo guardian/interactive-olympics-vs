@@ -7,6 +7,7 @@ import {updateDotAnimation} from './draw/highlight';
 import {updateInfoPosition} from './draw/info';
 
 import swimming from '../js/events/swimming';
+import cycling from '../js/events/cycling';
 import longjump_m from '../js/events/longjump_m';
 
 window.init = function init(el, config) {
@@ -42,6 +43,9 @@ window.init = function init(el, config) {
         case "medley_400_m": 
             swimming(event, "Test");
             break;       
+        case "cycling_road_timetrial_w": 
+            cycling(event, "Test");
+            break;
         //case "longjump_m": 
         //    longjump_m(event, "Test"); 
         //    break;

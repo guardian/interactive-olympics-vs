@@ -322,7 +322,96 @@ $__System.register("5", [], function (_export) {
     }
   };
 });
-$__System.registerDynamic("6", [], true, function($__require, exports, module) {
+$__System.register('6', ['7', '8', '9', 'c', 'a', 'b'], function (_export) {
+    var stateHeaders, record, cfgData, parseData, _Object$keys, fetchData, result;
+
+    function displayResult(err, jsonRecord, jsonFinals, jsonStates) {
+        if (err) {
+            console.log(err);return;
+        }
+
+        /* state */
+        stateHeaders.data = jsonStates.embed_vs;
+
+        /* chart */
+        var data = parseData(jsonRecord, jsonFinals, "Time");
+        var event = document.querySelector(".js-interactive").getAttribute("data-event");
+
+        // fastest swimming time
+        var best = {};
+        best.medals = data.medals[data.medals.length - 1];
+        best.worlds = data.worlds[data.worlds.length - 1];
+        best.finals = data.finals[data.finals.length - 1];
+
+        var timeWr = Math.min(best.medals.x, best.worlds.x, best.finals.x);
+        var distance = cfgData[event].distance;
+        _Object$keys(data).forEach(function (dd) {
+            // time to distance
+            data[dd] = data[dd].map(function (dm) {
+                dm.x = distance * timeWr / dm.x - distance;
+                dm.attrs.dist = Math.round(Math.abs(dm.x) * 100) / 100;
+                return dm;
+            });
+        });
+
+        // set wr, or records and append data if needed
+        setRecord("or", "medals", data, best);
+        setRecord("wr", "worlds", data, best);
+
+        result(data);
+    }
+
+    function setRecord(typeRecord, typeData, data, best) {
+        var isNewRecord = best.finals.x > best[typeData].x;
+        switch (true) {
+            case typeRecord === "wr":
+                if (isNewRecord) {
+                    // clone obj, trick!
+                    var newWr = JSON.parse(JSON.stringify(best.finals));
+                    newWr.color = "wr";
+                    data.worlds.push(newWr);
+                }
+                record.wr = data.worlds[data.worlds.length - 1];
+                break;
+            case typeRecord === "or":
+                record.or = isNewRecord ? best.finals : best.medals;
+                break;
+        }
+
+        if (isNewRecord) {
+            console.log("new " + typeRecord + "!!");
+        } else if (best.finals.x === best[typeData].x) {
+            console.log("almost break a new " + typeRecord + "!");
+        }
+    }
+    return {
+        setters: [function (_) {
+            stateHeaders = _.stateHeaders;
+            record = _.record;
+        }, function (_2) {
+            cfgData = _2.cfgData;
+        }, function (_3) {
+            parseData = _3['default'];
+        }, function (_c) {
+            _Object$keys = _c['default'];
+        }, function (_a) {
+            fetchData = _a['default'];
+        }, function (_b) {
+            result = _b['default'];
+        }],
+        execute: function () {
+            'use strict';
+
+            _export('default', function (event, test) {
+                if (test) {
+                    console.log("this is a testing page");
+                }
+                fetchData(event, test, displayResult);
+            });
+        }
+    };
+});
+$__System.registerDynamic("d", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -451,26 +540,26 @@ $__System.registerDynamic("6", [], true, function($__require, exports, module) {
   return module.exports;
 });
 
-$__System.registerDynamic("7", ["6"], true, function($__require, exports, module) {
+$__System.registerDynamic("e", ["d"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('6');
+  module.exports = $__require('d');
   return module.exports;
 });
 
-$__System.register('8', ['7', '9', 'a'], function (_export) {
+$__System.register('a', ['8', 'e', 'f'], function (_export) {
     'use strict';
 
-    var d3_queue, cfgData, d3_json, defaultKey;
+    var cfgData, d3_queue, d3_json, defaultKey;
     return {
         setters: [function (_) {
-            d3_queue = _.queue;
-        }, function (_2) {
-            cfgData = _2.cfgData;
-        }, function (_a) {
-            d3_json = _a.json;
+            cfgData = _.cfgData;
+        }, function (_e) {
+            d3_queue = _e.queue;
+        }, function (_f) {
+            d3_json = _f.json;
         }],
         execute: function () {
             defaultKey = "1Qx2_oITx9455H4C_Kv8X4rPYtwnY_KwE-vxPe1cFx4M";
@@ -480,15 +569,17 @@ $__System.register('8', ['7', '9', 'a'], function (_export) {
                 var urlData = "https://interactive.guim.co.uk/2016/07/olympic-vs/data/";
                 var docsKey = cfgData[event] ? cfgData[event].key : defaultKey;
 
-                //d3_json(urlData + (test ? "test/" : "live/") + event + "_final.json", (resp, err) => console.log(resp, err));
+                // testing
+                //let urlTest = urlDocs + docsKey + ".json";
+                //d3_json(urlTest, (resp, err) => console.log(resp, err));
 
                 d3_queue().defer(d3_json, urlData + event + ".json").defer(d3_json, urlData + (test ? "test/" : "live/") + event + "_final.json").defer(d3_json, urlDocs + docsKey + ".json").await(cbResult);
             });
         }
     };
 });
-$__System.register('b', ['8', '9', 'f', 'c', 'd', 'e'], function (_export) {
-    var fetchData, cfgData, _Object$keys, stateHeaders, record, parseData, result;
+$__System.register('10', ['7', '8', '9', 'c', 'a', 'b'], function (_export) {
+    var stateHeaders, record, cfgData, parseData, _Object$keys, fetchData, result;
 
     function displayResult(err, jsonRecord, jsonFinals, jsonStates) {
         if (err) {
@@ -507,8 +598,12 @@ $__System.register('b', ['8', '9', 'f', 'c', 'd', 'e'], function (_export) {
         best.medals = data.medals[data.medals.length - 1];
         best.worlds = data.worlds[data.worlds.length - 1];
         best.finals = data.finals[data.finals.length - 1];
+        console.log(data);
 
-        var timeWr = Math.min(best.medals.x, best.worlds.x, best.finals.x);
+        // TODO: conti   
+        var isWorld = data.worlds.length !== 0;
+        var bestX = isWorld ? best.worlds.x : best.medals.x;
+        var timeWr = Math.min(bestX, best.finals.x);
         var distance = cfgData[event].distance;
         _Object$keys(data).forEach(function (dd) {
             // time to distance
@@ -521,7 +616,7 @@ $__System.register('b', ['8', '9', 'f', 'c', 'd', 'e'], function (_export) {
 
         // set wr, or records and append data if needed
         setRecord("or", "medals", data, best);
-        setRecord("wr", "worlds", data, best);
+        record.wr = { id: "XXX", notAvailable: true };
 
         result(data);
     }
@@ -550,19 +645,19 @@ $__System.register('b', ['8', '9', 'f', 'c', 'd', 'e'], function (_export) {
         }
     }
     return {
-        setters: [function (_2) {
-            fetchData = _2['default'];
-        }, function (_) {
-            cfgData = _.cfgData;
-        }, function (_f) {
-            _Object$keys = _f['default'];
+        setters: [function (_) {
+            stateHeaders = _.stateHeaders;
+            record = _.record;
+        }, function (_2) {
+            cfgData = _2.cfgData;
+        }, function (_3) {
+            parseData = _3['default'];
         }, function (_c) {
-            stateHeaders = _c.stateHeaders;
-            record = _c.record;
-        }, function (_d) {
-            parseData = _d['default'];
-        }, function (_e) {
-            result = _e['default'];
+            _Object$keys = _c['default'];
+        }, function (_a) {
+            fetchData = _a['default'];
+        }, function (_b) {
+            result = _b['default'];
         }],
         execute: function () {
             'use strict';
@@ -576,7 +671,7 @@ $__System.register('b', ['8', '9', 'f', 'c', 'd', 'e'], function (_export) {
         }
     };
 });
-$__System.registerDynamic("10", [], true, function($__require, exports, module) {
+$__System.registerDynamic("11", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -589,7 +684,7 @@ $__System.registerDynamic("10", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("11", [], true, function($__require, exports, module) {
+$__System.registerDynamic("12", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -634,10 +729,10 @@ $__System.registerDynamic("11", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.register("d", ["11", "12", "c"], function (_export) {
+$__System.register("9", ["7", "12", "13"], function (_export) {
     "use strict";
 
-    var array, utils, record, thisYear;
+    var record, array, utils, thisYear;
     // olympic finals of this year
 
     /* 1. format data */
@@ -794,12 +889,12 @@ $__System.register("d", ["11", "12", "c"], function (_export) {
         };
     }
     return {
-        setters: [function (_) {
+        setters: [function (_3) {
+            record = _3.record;
+        }, function (_) {
             array = _["default"];
         }, function (_2) {
             utils = _2["default"];
-        }, function (_c) {
-            record = _c.record;
         }],
         execute: function () {
             thisYear = 2016;
@@ -833,7 +928,7 @@ $__System.register("d", ["11", "12", "c"], function (_export) {
         }
     };
 });
-$__System.registerDynamic("13", [], true, function($__require, exports, module) {
+$__System.registerDynamic("14", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -846,19 +941,19 @@ $__System.registerDynamic("13", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("14", ["13"], true, function($__require, exports, module) {
+$__System.registerDynamic("15", ["14"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  var defined = $__require('13');
+  var defined = $__require('14');
   module.exports = function(it) {
     return Object(defined(it));
   };
   return module.exports;
 });
 
-$__System.registerDynamic("15", [], true, function($__require, exports, module) {
+$__System.registerDynamic("16", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -869,7 +964,7 @@ $__System.registerDynamic("15", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("16", [], true, function($__require, exports, module) {
+$__System.registerDynamic("17", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -882,12 +977,12 @@ $__System.registerDynamic("16", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("17", ["16"], true, function($__require, exports, module) {
+$__System.registerDynamic("18", ["17"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  var aFunction = $__require('16');
+  var aFunction = $__require('17');
   module.exports = function(fn, that, length) {
     aFunction(fn);
     if (that === undefined)
@@ -913,14 +1008,14 @@ $__System.registerDynamic("17", ["16"], true, function($__require, exports, modu
   return module.exports;
 });
 
-$__System.registerDynamic("18", ["15", "19", "17"], true, function($__require, exports, module) {
+$__System.registerDynamic("19", ["16", "1a", "18"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  var global = $__require('15'),
-      core = $__require('19'),
-      ctx = $__require('17'),
+  var global = $__require('16'),
+      core = $__require('1a'),
+      ctx = $__require('18'),
       PROTOTYPE = 'prototype';
   var $export = function(type, name, source) {
     var IS_FORCED = type & $export.F,
@@ -962,7 +1057,7 @@ $__System.registerDynamic("18", ["15", "19", "17"], true, function($__require, e
   return module.exports;
 });
 
-$__System.registerDynamic("1a", [], true, function($__require, exports, module) {
+$__System.registerDynamic("1b", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -977,14 +1072,14 @@ $__System.registerDynamic("1a", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("1b", ["18", "19", "1a"], true, function($__require, exports, module) {
+$__System.registerDynamic("1c", ["19", "1a", "1b"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  var $export = $__require('18'),
-      core = $__require('19'),
-      fails = $__require('1a');
+  var $export = $__require('19'),
+      core = $__require('1a'),
+      fails = $__require('1b');
   module.exports = function(KEY, exec) {
     var fn = (core.Object || {})[KEY] || Object[KEY],
         exp = {};
@@ -996,13 +1091,13 @@ $__System.registerDynamic("1b", ["18", "19", "1a"], true, function($__require, e
   return module.exports;
 });
 
-$__System.registerDynamic("1c", ["14", "1b"], true, function($__require, exports, module) {
+$__System.registerDynamic("1d", ["15", "1c"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  var toObject = $__require('14');
-  $__require('1b')('keys', function($keys) {
+  var toObject = $__require('15');
+  $__require('1c')('keys', function($keys) {
     return function keys(it) {
       return $keys(toObject(it));
     };
@@ -1010,7 +1105,7 @@ $__System.registerDynamic("1c", ["14", "1b"], true, function($__require, exports
   return module.exports;
 });
 
-$__System.registerDynamic("19", [], true, function($__require, exports, module) {
+$__System.registerDynamic("1a", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -1021,30 +1116,30 @@ $__System.registerDynamic("19", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("1d", ["1c", "19"], true, function($__require, exports, module) {
+$__System.registerDynamic("1e", ["1d", "1a"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  $__require('1c');
-  module.exports = $__require('19').Object.keys;
+  $__require('1d');
+  module.exports = $__require('1a').Object.keys;
   return module.exports;
 });
 
-$__System.registerDynamic("f", ["1d"], true, function($__require, exports, module) {
+$__System.registerDynamic("c", ["1e"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
   module.exports = {
-    "default": $__require('1d'),
+    "default": $__require('1e'),
     __esModule: true
   };
   return module.exports;
 });
 
-$__System.register('1e', ['20', '21', '22', 'f', 'c', '1f'], function (_export) {
-    var calcScale, updateInfo, updatePicker, _Object$keys, stateHeaders, d3_select;
+$__System.register('1f', ['7', '20', '21', '22', '23', 'c'], function (_export) {
+    var stateHeaders, d3_select, calcScale, updateInfo, updatePicker, _Object$keys;
 
     function getNextState(stateName) {
         var list = stateHeaders.list;
@@ -1097,17 +1192,17 @@ $__System.register('1e', ['20', '21', '22', 'f', 'c', '1f'], function (_export) 
 
     return {
         setters: [function (_) {
-            calcScale = _['default'];
+            stateHeaders = _.stateHeaders;
         }, function (_2) {
-            updateInfo = _2['default'];
+            d3_select = _2.select;
         }, function (_3) {
-            updatePicker = _3.updatePicker;
-        }, function (_f) {
-            _Object$keys = _f['default'];
+            calcScale = _3['default'];
+        }, function (_4) {
+            updateInfo = _4['default'];
+        }, function (_5) {
+            updatePicker = _5.updatePicker;
         }, function (_c) {
-            stateHeaders = _c.stateHeaders;
-        }, function (_f2) {
-            d3_select = _f2.select;
+            _Object$keys = _c['default'];
         }],
         execute: function () {
             'use strict';
@@ -1118,7 +1213,7 @@ $__System.register('1e', ['20', '21', '22', 'f', 'c', '1f'], function (_export) 
         }
     };
 });
-$__System.register("9", [], function (_export) {
+$__System.register("8", [], function (_export) {
     "use strict";
 
     var cfgData;
@@ -1140,6 +1235,11 @@ $__System.register("9", [], function (_export) {
                     key: "1rubYCASgNxcWrpWCrh1e4Y_kNfwF3jyt84L_iehxevI",
                     distance: 200,
                     extra_years_final_state: [2000, 2004, 2012]
+                },
+                "cycling_road_timetrial_w": {
+                    key: "125ZO5kkFAzcUNclKmrnz6ElhLg0NtN4UqfnE89SYpDI",
+                    distance: 29.8,
+                    extra_years_final_state: []
                 }
             };
 
@@ -1147,7 +1247,7 @@ $__System.register("9", [], function (_export) {
         }
     };
 });
-$__System.registerDynamic("23", [], true, function($__require, exports, module) {
+$__System.registerDynamic("24", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -1434,16 +1534,16 @@ $__System.registerDynamic("23", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("24", ["23"], true, function($__require, exports, module) {
+$__System.registerDynamic("25", ["24"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('23');
+  module.exports = $__require('24');
   return module.exports;
 });
 
-$__System.registerDynamic("25", [], true, function($__require, exports, module) {
+$__System.registerDynamic("26", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -1783,23 +1883,23 @@ $__System.registerDynamic("25", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("26", ["25"], true, function($__require, exports, module) {
+$__System.registerDynamic("27", ["26"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('25');
+  module.exports = $__require('26');
   return module.exports;
 });
 
-$__System.registerDynamic("27", ["26"], true, function($__require, exports, module) {
+$__System.registerDynamic("28", ["27"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
   "format cjs";
   (function(global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('26')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-time'], factory) : (factory((global.d3 = global.d3 || {}), global.d3));
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('27')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-time'], factory) : (factory((global.d3 = global.d3 || {}), global.d3));
   }(this, function(exports, d3Time) {
     'use strict';
     function localDate(d) {
@@ -2308,23 +2408,23 @@ $__System.registerDynamic("27", ["26"], true, function($__require, exports, modu
   return module.exports;
 });
 
-$__System.registerDynamic("28", ["27"], true, function($__require, exports, module) {
+$__System.registerDynamic("29", ["28"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('27');
+  module.exports = $__require('28');
   return module.exports;
 });
 
-$__System.registerDynamic("29", ["2a", "2b", "2d", "24", "26", "28", "2c"], true, function($__require, exports, module) {
+$__System.registerDynamic("2a", ["2b", "2c", "2e", "25", "27", "29", "2d"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
   "format cjs";
   (function(global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('2a'), $__require('2b'), $__require('2d'), $__require('24'), $__require('26'), $__require('28'), $__require('2c')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-array', 'd3-collection', 'd3-interpolate', 'd3-format', 'd3-time', 'd3-time-format', 'd3-color'], factory) : (factory((global.d3 = global.d3 || {}), global.d3, global.d3, global.d3, global.d3, global.d3, global.d3, global.d3));
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('2b'), $__require('2c'), $__require('2e'), $__require('25'), $__require('27'), $__require('29'), $__require('2d')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-array', 'd3-collection', 'd3-interpolate', 'd3-format', 'd3-time', 'd3-time-format', 'd3-color'], factory) : (factory((global.d3 = global.d3 || {}), global.d3, global.d3, global.d3, global.d3, global.d3, global.d3, global.d3));
   }(this, function(exports, d3Array, d3Collection, d3Interpolate, d3Format, d3Time, d3TimeFormat, d3Color) {
     'use strict';
     var array = Array.prototype;
@@ -3066,24 +3166,24 @@ $__System.registerDynamic("29", ["2a", "2b", "2d", "24", "26", "28", "2c"], true
   return module.exports;
 });
 
-$__System.registerDynamic("2e", ["29"], true, function($__require, exports, module) {
+$__System.registerDynamic("2f", ["2a"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('29');
+  module.exports = $__require('2a');
   return module.exports;
 });
 
-$__System.register('20', ['c', '2e'], function (_export) {
+$__System.register('21', ['7', '2f'], function (_export) {
     'use strict';
 
     var sync, d3_scaleLinear;
     return {
-        setters: [function (_c) {
-            sync = _c.sync;
-        }, function (_e) {
-            d3_scaleLinear = _e.scaleLinear;
+        setters: [function (_) {
+            sync = _.sync;
+        }, function (_f) {
+            d3_scaleLinear = _f.scaleLinear;
         }],
         execute: function () {
             _export('default', function (domain) {
@@ -3118,7 +3218,7 @@ $__System.register('20', ['c', '2e'], function (_export) {
         }
     };
 });
-$__System.registerDynamic("2f", [], true, function($__require, exports, module) {
+$__System.registerDynamic("30", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -3258,32 +3358,32 @@ $__System.registerDynamic("2f", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("30", ["2f"], true, function($__require, exports, module) {
+$__System.registerDynamic("31", ["30"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('2f');
+  module.exports = $__require('30');
   return module.exports;
 });
 
-$__System.register('31', ['30', '2a', '1f', 'c'], function (_export) {
+$__System.register('32', ['7', '20', '31', '2b'], function (_export) {
 
     /* param: coord - x or y */
     /* param: direction - h or v, isJump? */
     'use strict';
 
-    var d3_axisBottom, d3_range, d3_extent, d3_select, sync;
+    var sync, d3_select, d3_axisBottom, d3_range, d3_extent;
     return {
-        setters: [function (_) {
-            d3_axisBottom = _.axisBottom;
-        }, function (_a) {
-            d3_range = _a.range;
-            d3_extent = _a.extent;
-        }, function (_f) {
-            d3_select = _f.select;
-        }, function (_c) {
-            sync = _c.sync;
+        setters: [function (_3) {
+            sync = _3.sync;
+        }, function (_) {
+            d3_select = _.select;
+        }, function (_2) {
+            d3_axisBottom = _2.axisBottom;
+        }, function (_b) {
+            d3_range = _b.range;
+            d3_extent = _b.extent;
         }],
         execute: function () {
             _export('default', function (cfg) {
@@ -3385,7 +3485,7 @@ $__System.register('31', ['30', '2a', '1f', 'c'], function (_export) {
         }
     };
 });
-$__System.registerDynamic("32", [], true, function($__require, exports, module) {
+$__System.registerDynamic("33", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -4303,16 +4403,16 @@ $__System.registerDynamic("32", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("33", ["32"], true, function($__require, exports, module) {
+$__System.registerDynamic("34", ["33"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('32');
+  module.exports = $__require('33');
   return module.exports;
 });
 
-$__System.registerDynamic("34", [], true, function($__require, exports, module) {
+$__System.registerDynamic("35", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -4474,23 +4574,23 @@ $__System.registerDynamic("34", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("35", ["34"], true, function($__require, exports, module) {
+$__System.registerDynamic("36", ["35"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('34');
+  module.exports = $__require('35');
   return module.exports;
 });
 
-$__System.registerDynamic("36", ["2c"], true, function($__require, exports, module) {
+$__System.registerDynamic("37", ["2d"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
   "format cjs";
   (function(global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('2c')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-color'], factory) : (factory((global.d3 = global.d3 || {}), global.d3));
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('2d')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-color'], factory) : (factory((global.d3 = global.d3 || {}), global.d3));
   }(this, function(exports, d3Color) {
     'use strict';
     function basis(t1, v0, v1, v2, v3) {
@@ -4985,16 +5085,16 @@ $__System.registerDynamic("36", ["2c"], true, function($__require, exports, modu
   return module.exports;
 });
 
-$__System.registerDynamic("2d", ["36"], true, function($__require, exports, module) {
+$__System.registerDynamic("2e", ["37"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('36');
+  module.exports = $__require('37');
   return module.exports;
 });
 
-$__System.registerDynamic("37", [], true, function($__require, exports, module) {
+$__System.registerDynamic("38", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -5462,16 +5562,16 @@ $__System.registerDynamic("37", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("2c", ["37"], true, function($__require, exports, module) {
+$__System.registerDynamic("2d", ["38"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('37');
+  module.exports = $__require('38');
   return module.exports;
 });
 
-$__System.registerDynamic("38", [], true, function($__require, exports, module) {
+$__System.registerDynamic("39", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -5684,23 +5784,23 @@ $__System.registerDynamic("38", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("39", ["38"], true, function($__require, exports, module) {
+$__System.registerDynamic("3a", ["39"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('38');
+  module.exports = $__require('39');
   return module.exports;
 });
 
-$__System.registerDynamic("3a", ["1f", "3b", "35", "2d", "2c", "39"], true, function($__require, exports, module) {
+$__System.registerDynamic("3b", ["20", "3c", "36", "2e", "2d", "3a"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
   "format cjs";
   (function(global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('1f'), $__require('3b'), $__require('35'), $__require('2d'), $__require('2c'), $__require('39')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-selection', 'd3-dispatch', 'd3-timer', 'd3-interpolate', 'd3-color', 'd3-ease'], factory) : (factory((global.d3 = global.d3 || {}), global.d3, global.d3, global.d3, global.d3, global.d3, global.d3));
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('20'), $__require('3c'), $__require('36'), $__require('2e'), $__require('2d'), $__require('3a')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-selection', 'd3-dispatch', 'd3-timer', 'd3-interpolate', 'd3-color', 'd3-ease'], factory) : (factory((global.d3 = global.d3 || {}), global.d3, global.d3, global.d3, global.d3, global.d3, global.d3));
   }(this, function(exports, d3Selection, d3Dispatch, d3Timer, d3Interpolate, d3Color, d3Ease) {
     'use strict';
     var emptyOn = d3Dispatch.dispatch("start", "end", "interrupt");
@@ -6397,19 +6497,19 @@ $__System.registerDynamic("3a", ["1f", "3b", "35", "2d", "2c", "39"], true, func
   return module.exports;
 });
 
-$__System.registerDynamic("3c", ["3a"], true, function($__require, exports, module) {
+$__System.registerDynamic("3d", ["3b"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('3a');
+  module.exports = $__require('3b');
   return module.exports;
 });
 
-$__System.register('21', ['1f', 'c'], function (_export) {
+$__System.register('22', ['7', '20'], function (_export) {
     'use strict';
 
-    var d3_select, defaultHeaderTexts, colors, record, preData;
+    var defaultHeaderTexts, colors, record, d3_select, preData;
 
     _export('updateInfoPosition', updateInfoPosition);
 
@@ -6510,12 +6610,12 @@ $__System.register('21', ['1f', 'c'], function (_export) {
         return { top: top + "px", left: left + "px" };
     }
     return {
-        setters: [function (_f) {
-            d3_select = _f.select;
-        }, function (_c) {
-            defaultHeaderTexts = _c.defaultHeaderTexts;
-            colors = _c.colors;
-            record = _c.record;
+        setters: [function (_2) {
+            defaultHeaderTexts = _2.defaultHeaderTexts;
+            colors = _2.colors;
+            record = _2.record;
+        }, function (_) {
+            d3_select = _.select;
         }],
         execute: function () {
             _export('default', function (data, records) {
@@ -6543,10 +6643,10 @@ $__System.register('21', ['1f', 'c'], function (_export) {
         }
     };
 });
-$__System.register('3d', ['12', '21', '1f', '3c', 'c', '3e'], function (_export) {
+$__System.register('3e', ['7', '13', '20', '22', '3d', '3f'], function (_export) {
     'use strict';
 
-    var utils, updateInfo, d3_select, transition, colors, sync, record, showHighlightAxis, updateDotAnimation, hideHighlight, hideDotAnimation, sHighlight, cxShift, cyShift, cx, cy, select;
+    var colors, sync, record, utils, d3_select, updateInfo, transition, showHighlightAxis, updateDotAnimation, hideHighlight, hideDotAnimation, sHighlight, cxShift, cyShift, cx, cy, select;
 
     _export('showBestAthlete', showBestAthlete);
 
@@ -6602,23 +6702,23 @@ $__System.register('3d', ['12', '21', '1f', '3c', 'c', '3e'], function (_export)
     }
 
     return {
-        setters: [function (_) {
-            utils = _['default'];
+        setters: [function (_3) {
+            colors = _3.colors;
+            sync = _3.sync;
+            record = _3.record;
         }, function (_2) {
-            updateInfo = _2['default'];
+            utils = _2['default'];
+        }, function (_) {
+            d3_select = _.select;
+        }, function (_4) {
+            updateInfo = _4['default'];
+        }, function (_d) {
+            transition = _d.transition;
         }, function (_f) {
-            d3_select = _f.select;
-        }, function (_c) {
-            transition = _c.transition;
-        }, function (_c2) {
-            colors = _c2.colors;
-            sync = _c2.sync;
-            record = _c2.record;
-        }, function (_e) {
-            showHighlightAxis = _e.showHighlightAxis;
-            updateDotAnimation = _e.updateDotAnimation;
-            hideHighlight = _e.hideHighlight;
-            hideDotAnimation = _e.hideDotAnimation;
+            showHighlightAxis = _f.showHighlightAxis;
+            updateDotAnimation = _f.updateDotAnimation;
+            hideHighlight = _f.hideHighlight;
+            hideDotAnimation = _f.hideDotAnimation;
         }],
         execute: function () {
             sHighlight = 1;
@@ -6751,7 +6851,7 @@ $__System.register('3d', ['12', '21', '1f', '3c', 'c', '3e'], function (_export)
         }
     };
 });
-$__System.registerDynamic("3f", [], true, function($__require, exports, module) {
+$__System.registerDynamic("40", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -7676,19 +7776,19 @@ $__System.registerDynamic("3f", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("1f", ["3f"], true, function($__require, exports, module) {
+$__System.registerDynamic("20", ["40"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('3f');
+  module.exports = $__require('40');
   return module.exports;
 });
 
-$__System.register("3e", ["1f", "c"], function (_export) {
+$__System.register("3f", ["7", "20"], function (_export) {
     "use strict";
 
-    var d3_select, record, browser, preData, tspan;
+    var record, browser, d3_select, preData, tspan;
 
     _export("showHighlightAxis", showHighlightAxis);
 
@@ -7706,7 +7806,7 @@ $__System.register("3e", ["1f", "c"], function (_export) {
         d3_select(".mark-highlight").style("opacity", 0);
         d3_select(".js-final").classed("d-n", true);
 
-        // x, y axis
+        /* x, y axis */
         var dot = d3_select("#" + data.id);
         var x = dot.attr("cx");
         var y = dot.attr("cy");
@@ -7716,9 +7816,13 @@ $__System.register("3e", ["1f", "c"], function (_export) {
         var atpt = data.attrs;
         var atwr = record.wr.attrs;
         var ator = record.or.attrs;
-        var ttwr = Math.round((atpt.time - atwr.time) * 100) / 100;
         var elwr = d3_select(".wr");
         var elor = d3_select(".or");
+
+        var iswr = !record.wr.notAvailable;
+        var ttwr = iswr ? Math.round((atpt.time - atwr.time) * 100) / 100 : null;
+        var ttor = Math.round((atpt.time - ator.time) * 100) / 100;
+        var time = iswr ? ttwr : ttor;
 
         var state = d3_select(".js-chart").attr("data-state");
         var y1lv = function y1lv() {
@@ -7729,33 +7833,33 @@ $__System.register("3e", ["1f", "c"], function (_export) {
 
         d3_select(".hl-lv").attr("x1", x).attr("x2", x).attr("y1", y1lv);
         d3_select(".hl-year").attr("y", y).text(data.attrs.year);
-        d3_select(".hl-mark").attr("x", x).text(data.attrs.dist === 0 ? "0" : data.attrs.dist + " m (+" + ttwr + "s)");
+        d3_select(".hl-mark").attr("x", x).text(data.attrs.dist === 0 ? "0" : data.attrs.dist + " m (+" + time + "s)");
 
-        // wr, or
+        /* wr, or */
         if (state !== "final" || data.attrs.dist === 0) {
             return;
         }
         d3_select(".js-final").classed("d-n", false);
 
-        // cases
-        // dist > 0 or hide
-        var isNewRecord = record.wr.y === 2016;
-        var flag = isNewRecord ? "record" : "origin";
-        var diff = Math.abs(parseInt(elwr.attr("cy").replace("%", "")) - parseInt(elor.attr("cy").replace("%", "")));
-        var isTooClose = diff < 6;
+        // wr, ps. some events don't have WRs
+        if (iswr) {
 
-        d3_select(".hl-lh-wr").attr("x1", x).attr("x2", elwr.attr("cx")).attr("y1", elwr.attr("cy")).attr("y2", elwr.attr("cy"));
+            var isNewRecord = record.wr.y === 2016;
+            var flag = isNewRecord ? "record" : "origin";
+
+            d3_select(".hl-lh-wr").attr("x1", x).attr("x2", elwr.attr("cx")).attr("y1", elwr.attr("cy")).attr("y2", elwr.attr("cy"));
+
+            d3_select(".hl-txt-wr").attr("y", elwr.attr("cy")).html(addMark(x, atpt.dist, ttwr, "wr", flag));
+        }
+
+        // or
         d3_select(".hl-lh-or").attr("x1", x).attr("x2", elor.attr("cx")).attr("y1", elor.attr("cy")).attr("y2", elor.attr("cy"));
 
-        d3_select(".hl-txt-wr").attr("y", elwr.attr("cy")).html(addMark(x, atpt.dist, ttwr, "wr", flag));
-
-        var ttor = Math.round((atpt.time - ator.time) * 100) / 100;
-        if (ttor === 0) {
-            d3_select(".hl-txt-or").text("");return;
-        }
-        if (ttor === ttwr) {
+        // or === wr
+        if (iswr && ttor === time) {
             d3_select(".hl-txt-wr .behind").text("behind WR and OR");return;
         }
+
         d3_select(".hl-txt-or").attr("x", x).attr("y", elor.attr("cy")).html(addMark(x, atpt.dist - ator.dist, ttor, "or", "bottom"));
     }
 
@@ -7796,11 +7900,11 @@ $__System.register("3e", ["1f", "c"], function (_export) {
         return "<tspan x='" + x + "' dx='10' dy='" + tspan[flag].dyt + "'>" + "<tspan class='" + typeRecord + "-dist'>" + Math.round(dist * 100) / 100 + "m</tspan> " + "(+" + time + "s)" + "</tspan>" + "<tspan x='" + x + "' dx='11' dy='" + tspan[flag].dyb + "' class='behind'>" + "behind " + typeRecord.toUpperCase() + "</tspan>";
     }
     return {
-        setters: [function (_f) {
-            d3_select = _f.select;
-        }, function (_c) {
-            record = _c.record;
-            browser = _c.browser;
+        setters: [function (_2) {
+            record = _2.record;
+            browser = _2.browser;
+        }, function (_) {
+            d3_select = _.select;
         }],
         execute: function () {
             preData = null;
@@ -7811,13 +7915,13 @@ $__System.register("3e", ["1f", "c"], function (_export) {
         }
     };
 });
-$__System.register('22', ['33', '1f', 'c', '3d', '3e'], function (_export) {
+$__System.register('23', ['7', '20', '34', '3e', '3f'], function (_export) {
 
     // ref: bl.ocks.org/njvack/1405439
     // ref: bl.ocks.org/mbostock/ec10387f24c1fad2acac3bc11eb218a5
     'use strict';
 
-    var d3_voronoi, d3_select, sync, chart, showBestAthlete, hideAllAthletes, updateDotAnimation, hideDotAnimation, radius, picks, paths, cxShift, cyShift, cx, cy, w, h, dataPickAll, dataPickVisible, dataGoldX, dataPath;
+    var sync, chart, d3_select, d3_voronoi, showBestAthlete, hideAllAthletes, updateDotAnimation, hideDotAnimation, radius, picks, paths, cxShift, cyShift, cx, cy, w, h, dataPickAll, dataPickVisible, dataGoldX, dataPath;
 
     _export('initPicker', initPicker);
 
@@ -7881,19 +7985,19 @@ $__System.register('22', ['33', '1f', 'c', '3d', '3e'], function (_export) {
         return d === null ? null : "M" + d.join("L") + "Z";
     }
     return {
-        setters: [function (_) {
-            d3_voronoi = _.voronoi;
-        }, function (_f) {
-            d3_select = _f.select;
-        }, function (_c) {
-            sync = _c.sync;
-            chart = _c.chart;
-        }, function (_d) {
-            showBestAthlete = _d.showBestAthlete;
-            hideAllAthletes = _d.hideAllAthletes;
+        setters: [function (_3) {
+            sync = _3.sync;
+            chart = _3.chart;
+        }, function (_) {
+            d3_select = _.select;
+        }, function (_2) {
+            d3_voronoi = _2.voronoi;
         }, function (_e) {
-            updateDotAnimation = _e.updateDotAnimation;
-            hideDotAnimation = _e.hideDotAnimation;
+            showBestAthlete = _e.showBestAthlete;
+            hideAllAthletes = _e.hideAllAthletes;
+        }, function (_f) {
+            updateDotAnimation = _f.updateDotAnimation;
+            hideDotAnimation = _f.hideDotAnimation;
         }],
         execute: function () {
             radius = 18;
@@ -7935,10 +8039,10 @@ $__System.register('22', ['33', '1f', 'c', '3d', '3e'], function (_export) {
         }
     };
 });
-$__System.register('e', ['9', '12', '20', '22', '31', '1f', '2a', '1e', 'c', '3d'], function (_export) {
+$__System.register('b', ['7', '8', '13', '20', '21', '23', '32', '2b', '1f', '3e'], function (_export) {
     'use strict';
 
-    var cfgData, utils, calcScale, initPicker, Axis, d3_select, d3_extent, toState, getNextState, record, Dots;
+    var record, cfgData, utils, d3_select, calcScale, initPicker, Axis, d3_extent, toState, getNextState, Dots;
 
     function getDomain(data) {
         return {
@@ -7951,27 +8055,27 @@ $__System.register('e', ['9', '12', '20', '22', '31', '1f', '2a', '1e', 'c', '3d
         };
     }
     return {
-        setters: [function (_) {
-            cfgData = _.cfgData;
-        }, function (_2) {
-            utils = _2['default'];
+        setters: [function (_2) {
+            record = _2.record;
         }, function (_3) {
-            calcScale = _3['default'];
-        }, function (_5) {
-            initPicker = _5.initPicker;
+            cfgData = _3.cfgData;
         }, function (_4) {
-            Axis = _4['default'];
+            utils = _4['default'];
+        }, function (_) {
+            d3_select = _.select;
+        }, function (_5) {
+            calcScale = _5['default'];
+        }, function (_7) {
+            initPicker = _7.initPicker;
+        }, function (_6) {
+            Axis = _6['default'];
+        }, function (_b) {
+            d3_extent = _b.extent;
         }, function (_f) {
-            d3_select = _f.select;
-        }, function (_a) {
-            d3_extent = _a.extent;
+            toState = _f.toState;
+            getNextState = _f.getNextState;
         }, function (_e) {
-            toState = _e.toState;
-            getNextState = _e.getNextState;
-        }, function (_c) {
-            record = _c.record;
-        }, function (_d) {
-            Dots = _d['default'];
+            Dots = _e['default'];
         }],
         execute: function () {
             _export('default', function (data) {
@@ -8086,7 +8190,7 @@ $__System.register('e', ['9', '12', '20', '22', '31', '1f', '2a', '1e', 'c', '3d
         }
     };
 });
-$__System.registerDynamic("40", [], true, function($__require, exports, module) {
+$__System.registerDynamic("41", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -8552,16 +8656,16 @@ $__System.registerDynamic("40", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("2a", ["40"], true, function($__require, exports, module) {
+$__System.registerDynamic("2b", ["41"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('40');
+  module.exports = $__require('41');
   return module.exports;
 });
 
-$__System.registerDynamic("41", [], true, function($__require, exports, module) {
+$__System.registerDynamic("42", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -8582,31 +8686,31 @@ $__System.registerDynamic("41", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("42", ["41"], true, function($__require, exports, module) {
+$__System.registerDynamic("43", ["42"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  var $ = $__require('41');
+  var $ = $__require('42');
   module.exports = function defineProperties(T, D) {
     return $.setDescs(T, D);
   };
   return module.exports;
 });
 
-$__System.registerDynamic("43", ["42"], true, function($__require, exports, module) {
+$__System.registerDynamic("44", ["43"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
   module.exports = {
-    "default": $__require('42'),
+    "default": $__require('43'),
     __esModule: true
   };
   return module.exports;
 });
 
-$__System.registerDynamic("12", [], true, function($__require, exports, module) {
+$__System.registerDynamic("13", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -8634,7 +8738,7 @@ $__System.registerDynamic("12", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("44", [], true, function($__require, exports, module) {
+$__System.registerDynamic("45", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -8885,16 +8989,16 @@ $__System.registerDynamic("44", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("2b", ["44"], true, function($__require, exports, module) {
+$__System.registerDynamic("2c", ["45"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('44');
+  module.exports = $__require('45');
   return module.exports;
 });
 
-$__System.registerDynamic("45", [], true, function($__require, exports, module) {
+$__System.registerDynamic("46", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -9016,16 +9120,16 @@ $__System.registerDynamic("45", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("3b", ["45"], true, function($__require, exports, module) {
+$__System.registerDynamic("3c", ["46"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('45');
+  module.exports = $__require('46');
   return module.exports;
 });
 
-$__System.registerDynamic("46", [], true, function($__require, exports, module) {
+$__System.registerDynamic("47", [], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
@@ -9184,23 +9288,23 @@ $__System.registerDynamic("46", [], true, function($__require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("47", ["46"], true, function($__require, exports, module) {
+$__System.registerDynamic("48", ["47"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('46');
+  module.exports = $__require('47');
   return module.exports;
 });
 
-$__System.registerDynamic("48", ["2b", "3b", "47"], true, function($__require, exports, module) {
+$__System.registerDynamic("49", ["2c", "3c", "48"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
   "format cjs";
   (function(global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('2b'), $__require('3b'), $__require('47')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-collection', 'd3-dispatch', 'd3-dsv'], factory) : (factory((global.d3 = global.d3 || {}), global.d3, global.d3, global.d3));
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, $__require('2c'), $__require('3c'), $__require('48')) : typeof define === 'function' && define.amd ? define(['exports', 'd3-collection', 'd3-dispatch', 'd3-dsv'], factory) : (factory((global.d3 = global.d3 || {}), global.d3, global.d3, global.d3));
   }(this, function(exports, d3Collection, d3Dispatch, d3Dsv) {
     'use strict';
     function request(url, callback) {
@@ -9394,16 +9498,16 @@ $__System.registerDynamic("48", ["2b", "3b", "47"], true, function($__require, e
   return module.exports;
 });
 
-$__System.registerDynamic("a", ["48"], true, function($__require, exports, module) {
+$__System.registerDynamic("f", ["49"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  module.exports = $__require('48');
+  module.exports = $__require('49');
   return module.exports;
 });
 
-$__System.register('c', ['12', '43', 'a'], function (_export) {
+$__System.register('7', ['13', '44', 'f'], function (_export) {
     var utils, _Object$defineProperties, d3_json, minWidth, padding, size, cols, isFirefox, browser, width, height, chart, colors, sync, stateHeaders, record;
 
     return {
@@ -9411,8 +9515,8 @@ $__System.register('c', ['12', '43', 'a'], function (_export) {
             utils = _2['default'];
         }, function (_) {
             _Object$defineProperties = _['default'];
-        }, function (_a) {
-            d3_json = _a.json;
+        }, function (_f) {
+            d3_json = _f.json;
         }],
         execute: function () {
             'use strict';
@@ -9553,8 +9657,8 @@ $__System.register('c', ['12', '43', 'a'], function (_export) {
         }
     };
 });
-$__System.register('49', ['10', 'f', 'd', 'e', '2a', 'c'], function (_export) {
-    var jsonRecord, _Object$keys, parseData, result, d3_extent, record;
+$__System.register('4a', ['7', '9', '11', 'c', 'b', '2b'], function (_export) {
+    var record, parseData, jsonRecord, _Object$keys, result, d3_extent;
 
     function displayResult(err, jsonRecord, jsonFinals, jsonStates) {
         if (err) {
@@ -9596,18 +9700,18 @@ $__System.register('49', ['10', 'f', 'd', 'e', '2a', 'c'], function (_export) {
         result(data, dataCombo);
     }
     return {
-        setters: [function (_) {
+        setters: [function (_3) {
+            record = _3.record;
+        }, function (_2) {
+            parseData = _2['default'];
+        }, function (_) {
             jsonRecord = _['default'];
-        }, function (_f) {
-            _Object$keys = _f['default'];
-        }, function (_d) {
-            parseData = _d['default'];
-        }, function (_e) {
-            result = _e['default'];
-        }, function (_a) {
-            d3_extent = _a.extent;
         }, function (_c) {
-            record = _c.record;
+            _Object$keys = _c['default'];
+        }, function (_b) {
+            result = _b['default'];
+        }, function (_b2) {
+            d3_extent = _b2.extent;
         }],
         execute: function () {
             //import jsonFinals from '../../dataDummy/long-jump_m.json!json';
@@ -9622,10 +9726,10 @@ $__System.register('49', ['10', 'f', 'd', 'e', '2a', 'c'], function (_export) {
         }
     };
 });
-$__System.register('1', ['3', '4', '5', '12', '21', '49', '3e', 'b'], function (_export) {
+$__System.register('1', ['3', '4', '5', '6', '10', '13', '22', '3f', '4a'], function (_export) {
     'use strict';
 
-    var iframeMessenger, embedHTML, throttle, utils, updateInfoPosition, longjump_m, updateDotAnimation, swimming, page;
+    var iframeMessenger, embedHTML, throttle, swimming, cycling, utils, updateInfoPosition, updateDotAnimation, longjump_m, page;
 
     function setEmbedSize() {
         var size = utils.getWindowSize();
@@ -9671,16 +9775,18 @@ $__System.register('1', ['3', '4', '5', '12', '21', '49', '3e', 'b'], function (
             embedHTML = _2['default'];
         }, function (_4) {
             throttle = _4['default'];
+        }, function (_6) {
+            swimming = _6['default'];
+        }, function (_7) {
+            cycling = _7['default'];
         }, function (_3) {
             utils = _3['default'];
         }, function (_5) {
             updateInfoPosition = _5.updateInfoPosition;
-        }, function (_6) {
-            longjump_m = _6['default'];
-        }, function (_e) {
-            updateDotAnimation = _e.updateDotAnimation;
-        }, function (_b) {
-            swimming = _b['default'];
+        }, function (_f) {
+            updateDotAnimation = _f.updateDotAnimation;
+        }, function (_a) {
+            longjump_m = _a['default'];
         }],
         execute: function () {
 
@@ -9716,6 +9822,9 @@ $__System.register('1', ['3', '4', '5', '12', '21', '49', '3e', 'b'], function (
                     case "medley_400_w":
                     case "medley_400_m":
                         swimming(event, "Test");
+                        break;
+                    case "cycling_road_timetrial_w":
+                        cycling(event, "Test");
                         break;
                     //case "longjump_m":
                     //    longjump_m(event, "Test");

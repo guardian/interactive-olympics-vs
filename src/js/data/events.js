@@ -13,5 +13,10 @@ export const cfgData = {
         key: "1rubYCASgNxcWrpWCrh1e4Y_kNfwF3jyt84L_iehxevI",
         distance: 200,
         extra_years_final_state: [2000, 2004, 2012]
+    },
+    "cycling_road_timetrial_w": {
+        key: "125ZO5kkFAzcUNclKmrnz6ElhLg0NtN4UqfnE89SYpDI",
+        distance: 29.8,
+        extra_years_final_state: []
     }
 };
