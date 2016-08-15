@@ -34,6 +34,7 @@ window.init = function init(el, config) {
         case "freestyle_100x4_relay_w": 
         case "freestyle_400_w": 
         case "freestyle_200_m": 
+        case "run_100_m": 
             swimming(event);
             break;
         

@@ -71,7 +71,14 @@ export function showHighlightAxis(data) {
     .attr("y1", elor.attr("cy")).attr("y2", elor.attr("cy"));
  
     // or === wr
-    if (iswr && ttor === time) { d3_select(".hl-txt-wr .behind").text("behind WR and OR"); return; }
+    if (iswr && ttor === time) { 
+        d3_select(".hl-txt-wr .behind").text("behind WR and OR"); 
+        de_select(".hl-txt-or").text("");
+        return; 
+    } else if (ttor === 0) {
+        d3_select(".hl-txt-or").text("");
+        return;
+    }
 
     d3_select(".hl-txt-or")
     .attr("x", x).attr("y", elor.attr("cy"))

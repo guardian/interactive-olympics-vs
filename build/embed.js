@@ -1240,6 +1240,11 @@ $__System.register("8", [], function (_export) {
                     key: "125ZO5kkFAzcUNclKmrnz6ElhLg0NtN4UqfnE89SYpDI",
                     distance: 29.8,
                     extra_years_final_state: []
+                },
+                "run_100_m": {
+                    key: "1DPNx1das2mGhvOveN-ACOgfDa4yKctkgkeZb9VVFZaI",
+                    distance: 100,
+                    extra_years_final_state: []
                 }
             };
 
@@ -7857,7 +7862,12 @@ $__System.register("3f", ["7", "20"], function (_export) {
 
         // or === wr
         if (iswr && ttor === time) {
-            d3_select(".hl-txt-wr .behind").text("behind WR and OR");return;
+            d3_select(".hl-txt-wr .behind").text("behind WR and OR");
+            de_select(".hl-txt-or").text("");
+            return;
+        } else if (ttor === 0) {
+            d3_select(".hl-txt-or").text("");
+            return;
         }
 
         d3_select(".hl-txt-or").attr("x", x).attr("y", elor.attr("cy")).html(addMark(x, atpt.dist - ator.dist, ttor, "or", "bottom"));
@@ -9814,6 +9824,7 @@ $__System.register('1', ['3', '4', '5', '6', '10', '13', '22', '3f', '4a'], func
                     case "freestyle_100x4_relay_w":
                     case "freestyle_400_w":
                     case "freestyle_200_m":
+                    case "run_100_m":
                         swimming(event);
                         break;
 

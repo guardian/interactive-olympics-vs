@@ -18,5 +18,10 @@ export const cfgData = {
         key: "125ZO5kkFAzcUNclKmrnz6ElhLg0NtN4UqfnE89SYpDI",
         distance: 29.8,
         extra_years_final_state: []
+    },
+    "run_100_m": {
+        key: "1DPNx1das2mGhvOveN-ACOgfDa4yKctkgkeZb9VVFZaI",
+        distance: 100,
+        extra_years_final_state: []
     }
 };
