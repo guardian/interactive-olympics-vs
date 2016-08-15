@@ -27,7 +27,8 @@ export const colors = {
     gold:   "#fbdc00", 
     silver: "#C0C0C0", 
     bronze: "#CD7F32", 
-    others: "#aad8f1",//"#E0E0E0",
+    others: "#aad8f1", //blue
+    runner: "#8EBE6F", //green
     wr:     "#333"
 };
 

@@ -6,7 +6,7 @@ import {updateDotAnimation, hideDotAnimation} from './highlight';
 
 // ref: bl.ocks.org/njvack/1405439
 // ref: bl.ocks.org/mbostock/ec10387f24c1fad2acac3bc11eb218a5
-const radius = 18;
+const radius = 20;
 
 let picks, paths;
 let cxShift = (d, r) => r*((d.index-1)*2 - (d.count-1))*0.75;
@@ -28,8 +28,8 @@ let dataPath = (scale) => {
 
 export function initPicker (data) {
     let chartRect = document.querySelector(".chart").getBoundingClientRect();
-    w = chartRect.width - 40;
-    h = chartRect.height - 20;
+    w = chartRect.width - 45;
+    h = chartRect.height - 21;
     dataPickAll = data;
 }
 

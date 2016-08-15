@@ -6751,8 +6751,10 @@ $__System.register('3e', ['7', '13', '20', '22', '3d', '3f'], function (_export)
                 // TODO: depends on h or v direction
                 // TODO: recalc r, temp 1%
                 var dots = undefined;
+                var event = d3_select(".js-interactive").attr("data-event");
                 var tempColor = function tempColor(d) {
-                    return colors[d.color] || cfg.color ? colors[d.color] || cfg.color : colors.others;
+                    var defaultColor = event.indexOf("run") > -1 ? "runner" : "others";
+                    return colors[d.color] || cfg.color ? colors[d.color] || cfg.color : colors[defaultColor];
                 };
 
                 this.init = function (data, scale) {
@@ -6817,8 +6819,8 @@ $__System.register('3e', ['7', '13', '20', '22', '3d', '3f'], function (_export)
                     var dotPicker = d3_select(".dots-picker");
                     hideHighlight();
 
-                    var delay1 = opt.duration ? opt.duration : 0.5;
-                    var delay2 = opt.duration ? opt.duration + sHighlight : 0.5;
+                    var delay1 = opt.duration ? opt.duration : 0;
+                    var delay2 = opt.duration ? opt.duration + sHighlight : 0;
 
                     if (state === cfg.dataset) {
 
@@ -7939,8 +7941,8 @@ $__System.register('23', ['7', '20', '34', '3e', '3f'], function (_export) {
 
     function initPicker(data) {
         var chartRect = document.querySelector(".chart").getBoundingClientRect();
-        w = chartRect.width - 40;
-        h = chartRect.height - 20;
+        w = chartRect.width - 45;
+        h = chartRect.height - 21;
         dataPickAll = data;
     }
 
@@ -8010,7 +8012,7 @@ $__System.register('23', ['7', '20', '34', '3e', '3f'], function (_export) {
             hideDotAnimation = _f.hideDotAnimation;
         }],
         execute: function () {
-            radius = 18;
+            radius = 20;
             picks = undefined;
             paths = undefined;
 
@@ -8093,7 +8095,19 @@ $__System.register('b', ['7', '8', '13', '20', '21', '23', '32', '2b', '1f', '3e
                 var domain = getDomain(dataCombo);
 
                 // init, draw all
-                var scale = calcScale(domain);
+                var yearTemp = cfgData[d3_select(".js-interactive").attr("data-event")].extra_years_final_state;
+                var dataTemp = data.medals.filter(function (d) {
+                    return yearTemp.some(function (dy) {
+                        return dy === d.y;
+                    });
+                });
+                var domainTemp = getDomain(data.finals.concat([record.wr, record.or], dataTemp));
+                var diff = 2016 - domainTemp.y[0];
+                var domainFinal = {
+                    x: [domainTemp.x[0], 0],
+                    y: [2016 - diff * 1.25, 2016 + diff * 1]
+                };
+                var scale = calcScale(domainFinal); //domain);
                 var els = {};
 
                 // circles
@@ -8117,18 +8131,6 @@ $__System.register('b', ['7', '8', '13', '20', '21', '23', '32', '2b', '1f', '3e
                 });
                 els.dotsW.init(data.worlds, scale);
 
-                var yearTemp = cfgData[d3_select(".js-interactive").attr("data-event")].extra_years_final_state;
-                var dataTemp = data.medals.filter(function (d) {
-                    return yearTemp.some(function (dy) {
-                        return dy === d.y;
-                    });
-                });
-                dataTemp.forEach(function (d) {
-                    d3_select("#" + d.id).attr("class", "temp").each(function (d) {
-                        return d.cn = "temp";
-                    });
-                });
-
                 // axis
                 els.axisY = new Axis({ coord: "y", value: "year" });
                 els.axisY.init(dataCombo.map(function (d) {
@@ -8148,21 +8150,19 @@ $__System.register('b', ['7', '8', '13', '20', '21', '23', '32', '2b', '1f', '3e
                 d3_select("#" + record.or.id).attr("class", "or").each(function (d) {
                     return d.cn = "or";
                 });
+                dataTemp.forEach(function (d) {
+                    d3_select("#" + d.id).attr("class", "temp").each(function (d) {
+                        return d.cn = "temp";
+                    });
+                });
 
                 // dots pickers
                 initPicker(dataCombo);
 
                 // update with animations
                 var state = {};
-
-                var domainFinal = getDomain(data.finals.concat([record.wr, record.or], dataTemp));
-                var diff = 2016 - domainFinal.y[0];
-
                 state.final = {
-                    domain: {
-                        x: [domainFinal.x[0], 0],
-                        y: [2016 - diff * 1.25, 2016 + diff * 1]
-                    },
+                    domain: domainFinal,
                     opacity: [0.75, 0, 0]
                 };
 
@@ -9560,7 +9560,8 @@ $__System.register('7', ['13', '44', 'f'], function (_export) {
                 gold: "#fbdc00",
                 silver: "#C0C0C0",
                 bronze: "#CD7F32",
-                others: "#aad8f1", //"#E0E0E0",
+                others: "#aad8f1", //blue
+                runner: "#8EBE6F", //green
                 wr: "#333"
             };
 

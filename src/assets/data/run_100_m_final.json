@@ -23,6 +23,9 @@
                     "rank": "1",
                     "value": "9.81",
                     "property": [{
+                        "type": "Medal Awarded",
+                        "value": "Gold"
+                    }, {
                         "type": "Record Set",
                         "value": "SB"
                     }, {
@@ -54,10 +57,13 @@
                     "code": "1127210",
                     "rank": "2",
                     "value": "9.89",
-                    "property": {
+                    "property": [{
+                        "type": "Medal Awarded",
+                        "value": "Silver"
+                    }, {
                         "type": "Result Type",
                         "value": "Time"
-                    },
+                    }],
                     "resultExtension": {
                         "type": "Reaction Time",
                         "value": "0.152"
@@ -84,6 +90,9 @@
                     "rank": "3",
                     "value": "9.91",
                     "property": [{
+                        "type": "Medal Awarded",
+                        "value": "Bronze"
+                    }, {
                         "type": "Record Set",
                         "value": "PB"
                     }, {

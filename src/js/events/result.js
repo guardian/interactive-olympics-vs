@@ -14,7 +14,15 @@ export default function(data) {
     let domain = getDomain(dataCombo);
 
     // init, draw all
-    let scale = calcScale(domain);
+    let yearTemp = cfgData[d3_select(".js-interactive").attr("data-event")].extra_years_final_state;
+    let dataTemp = data.medals.filter(d => yearTemp.some(dy => dy === d.y));
+    let domainTemp = getDomain(data.finals.concat([record.wr, record.or], dataTemp));
+    let diff = 2016 - domainTemp.y[0];
+    let domainFinal = {
+        x: [domainTemp.x[0], 0],
+        y: [2016 - diff*1.25, 2016 + diff*1]
+    };
+    let scale = calcScale(domainFinal);//domain);
     let els = {};
     
     // circles
@@ -37,12 +45,6 @@ export default function(data) {
         stroke: "rgba(255, 255, 255, 0.25)"
     });
     els.dotsW.init(data.worlds, scale);   
- 
-    let yearTemp = cfgData[d3_select(".js-interactive").attr("data-event")].extra_years_final_state;
-    let dataTemp = data.medals.filter(d => yearTemp.some(dy => dy === d.y));
-    dataTemp.forEach(d => {
-        d3_select("#" + d.id).attr("class", "temp").each(d => d.cn = "temp"); 
-    });   
     
     // axis
     els.axisY = new Axis({coord: "y", value: "year"});
@@ -55,21 +57,18 @@ export default function(data) {
     d3_select(".note").classed("d-n", record.type !== "s" ? true : false);
     d3_select("#" + record.wr.id).attr("class", "wr").each(d => d.cn = "wr"); 
     d3_select("#" + record.or.id).attr("class", "or").each(d => d.cn = "or"); 
+    dataTemp.forEach(d => {
+        d3_select("#" + d.id).attr("class", "temp").each(d => d.cn = "temp"); 
+    });   
+
 
     // dots pickers
     initPicker(dataCombo);   
 
     // update with animations
     let state = {};
-    
-    let domainFinal = getDomain(data.finals.concat([record.wr, record.or], dataTemp));
-    let diff = 2016 - domainFinal.y[0];
-    
     state.final = { 
-        domain: {
-            x: [domainFinal.x[0], 0],
-            y: [2016 - diff*1.25, 2016 + diff*1]
-        },
+        domain: domainFinal,
         opacity: [0.75, 0, 0]
     };
 

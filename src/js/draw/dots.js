@@ -18,8 +18,10 @@ export default function(cfg) {
     // TODO: depends on h or v direction
     // TODO: recalc r, temp 1%
     let dots;
+    let event = d3_select(".js-interactive").attr("data-event"); 
     let tempColor = (d) => {
-        return (colors[d.color]||cfg.color) ? (colors[d.color]||cfg.color) : colors.others;
+        let defaultColor = event.indexOf("run") > -1 ? "runner" : "others";
+        return (colors[d.color]||cfg.color) ? (colors[d.color]||cfg.color) : colors[defaultColor];
     };
 
     this.init = (data, scale) => {
@@ -83,8 +85,8 @@ export default function(cfg) {
         let dotPicker = d3_select(".dots-picker");
         hideHighlight(); 
 
-        let delay1 = opt.duration ? opt.duration : 0.5;
-        let delay2 = opt.duration ? opt.duration + sHighlight : 0.5;
+        let delay1 = opt.duration ? opt.duration : 0;
+        let delay2 = opt.duration ? opt.duration + sHighlight : 0;
         
         if (state === cfg.dataset) { 
             
