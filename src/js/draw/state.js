@@ -22,8 +22,6 @@ export function toState(els, data, stateName) {
         els[key].update(data, scale, data.opacity[i]); 
     }); 
 
-    //calcScale(data.domain);       
-
     d3_select(".states").selectAll(".btn").classed("btn-focus", false); 
     d3_select(".btn-" + stateName).classed("btn-focus", true);
 
@@ -34,19 +32,18 @@ export function toState(els, data, stateName) {
     let currInd = stateHeaders.list.indexOf(stateName);
     let nextInd = getNextState(stateName).index;
     let isReplay = nextInd === 0;
+    let isCircle = headers.length > 2; // switch if only two states
 
     // btn current
     d3_select(".js-state-name").text(headers[currInd].title);
     d3_select(".js-state-text").text(headers[currInd].description);
     // btn next
-    d3_select(".js-state-next").text(isReplay ? "Replay" : "" + headers[nextInd].title);
+    d3_select(".js-state-next").text(isReplay && isCircle ? "Replay" : "" + headers[nextInd].title);
     d3_select(".replay").style("opacity", isReplay ? 1 : 0); 
     d3_select(".arrow-right").style("opacity", isReplay ? 0 : 1); 
     d3_select(".btn-next").classed("enable", false);
     // dot picker as an event handler
     d3_select(".dots-picker").classed("enable", false);
-    //console.log("lock");
-    //console.log(document.querySelector(".dots-picker"));
     
     // update info
     updateInfo(stateName);

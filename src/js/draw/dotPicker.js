@@ -17,7 +17,7 @@ let cy = (d, r, y) => y(d.y) - (d.count ? cyShift(d, r) : 0);
 let w, h;
 let dataPickAll;
 let dataPickVisible;
-let dataGoldX;
+let dataGold;
 let dataPath = (scale) => {
     let voronoi = d3_voronoi()
     .x(function(d) { return cx(d, radius, scale.x)*w/100; })
@@ -35,9 +35,9 @@ export function initPicker (data) {
 
 export function updatePicker(scale) {
     dataPickVisible = dataPickAll.filter(d => d.o !== 0);
-    dataGoldX = dataPickVisible.filter(d => d.color === "gold").map(d => d.x);
-    dataPickVisible = dataPickVisible.filter(d => {
-        let isOverlapped = (d.color === "wr") && (dataGoldX.some(gx => gx === d.x));
+    dataGold = dataPickVisible.filter(d => d.color === "gold" || d.color === "silver");//.map(d => d.x);
+    dataPickVisible = dataPickVisible.filter(dp => {
+        let isOverlapped = (dp.color === "wr") && (dataGold.some(dg => dg.x === dp.x && dg.y === dp.y));
         return !isOverlapped;
     });
 

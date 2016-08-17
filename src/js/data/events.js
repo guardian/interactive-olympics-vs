@@ -23,5 +23,21 @@ export const cfgData = {
         key: "1DPNx1das2mGhvOveN-ACOgfDa4yKctkgkeZb9VVFZaI",
         distance: 100,
         extra_years_final_state: []
+    },
+    "run_200_w": {
+        key: "1cwk7e6sC5Y1eiowZrOaYzLZb9-dAUhJq-01zlc8izp8",
+        distance: 200,
+        extra_years_final_state: [1988, 2004, 2008]
+    },
+    "run_200_m": {
+        key: "1BVv0OG0QZYAy42gnWcjPAFBFJZTkeWiFCEKDCb0-nZo",
+        distance: 200,
+        extra_years_final_state: [2008, 2012]
+    },
+    "run_100x4_relay_m": {
+        key: "1GQP6IHVqzR-8MFYLUXjA9nZMlWw60eg0QEykowTVfPA",
+        distance: 400,
+        extra_years_final_state: [2008, 2012]
     }
+
 };

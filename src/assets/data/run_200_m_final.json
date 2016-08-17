@@ -1,0 +1,267 @@
+{
+    "olympics": {
+        "eventUnit": {
+            "identifier": "ATM002101",
+            "description": "Men's 200m Final",
+            "unitType": "Individuals",
+            "medalEvent": "Yes",
+            "disciplineDescription": {
+                "identifier": "athletics",
+                "value": "Athletics"
+            },
+            "phaseDescription": {
+                "identifier": "ATM0021",
+                "value": "Final"
+            },
+            "result": {
+                "type": "Official",
+                "timestamp": "2016-08-19T01:41:57Z",
+                "entrant": [{
+                    "order": "1",
+                    "type": "Individual",
+                    "code": "1056797",
+                    "rank": "1",
+                    "value": "19.78",
+                    "property": [{
+                        "type": "Medal Awarded",
+                        "value": "Gold"
+                    }, {
+                        "type": "Record Set",
+                        "value": "SB"
+                    }, {
+                        "type": "Result Type",
+                        "value": "Time"
+                    }],
+                    "resultExtension": {
+                        "type": "Reaction Time",
+                        "value": "0.156"
+                    },
+                    "country": {
+                        "identifier": "JAM",
+                        "name": "Jamaica",
+                        "longName": "Jamaica"
+                    },
+                    "participant": {
+                        "order": "1",
+                        "bib": "2612",
+                        "competitor": {
+                            "identifier": "1056797",
+                            "firstName": "Usain",
+                            "lastName": "Bolt",
+                            "fullName": "Usain Bolt"
+                        }
+                    }
+                }, {
+                    "order": "2",
+                    "type": "Individual",
+                    "code": "1109611",
+                    "rank": "2",
+                    "value": "20.02",
+                    "property": [{
+                        "type": "Medal Awarded",
+                        "value": "Silver"
+                    }, {
+                        "type": "Result Type",
+                        "value": "Time"
+                    }],
+                    "resultExtension": {
+                        "type": "Reaction Time",
+                        "value": "0.141"
+                    },
+                    "country": {
+                        "identifier": "CAN",
+                        "name": "Canada",
+                        "longName": "Canada"
+                    },
+                    "participant": {
+                        "order": "1",
+                        "bib": "2196",
+                        "competitor": {
+                            "identifier": "1109611",
+                            "firstName": "Andre",
+                            "lastName": "de Grasse",
+                            "fullName": "Andre de Grasse"
+                        }
+                    }
+                }, {
+                    "order": "3",
+                    "type": "Individual",
+                    "code": "1162396",
+                    "rank": "3",
+                    "value": "20.12",
+                    "property": [{
+                        "type": "Medal Awarded",
+                        "value": "Bronze"
+                    }, {
+                        "type": "Result Type",
+                        "value": "Time"
+                    }],
+                    "resultExtension": {
+                        "type": "Reaction Time",
+                        "value": "0.153"
+                    },
+                    "country": {
+                        "identifier": "FRA",
+                        "name": "France",
+                        "longName": "France"
+                    },
+                    "participant": {
+                        "order": "1",
+                        "bib": "2427",
+                        "competitor": {
+                            "identifier": "1162396",
+                            "firstName": "Christophe",
+                            "lastName": "Lemaitre",
+                            "fullName": "Christophe Lemaitre"
+                        }
+                    }
+                }, {
+                    "order": "4",
+                    "type": "Individual",
+                    "code": "1217647",
+                    "rank": "4",
+                    "value": "20.12",
+                    "property": {
+                        "type": "Result Type",
+                        "value": "Time"
+                    },
+                    "resultExtension": {
+                        "type": "Reaction Time",
+                        "value": "0.178"
+                    },
+                    "country": {
+                        "identifier": "GBR",
+                        "name": "Great Britain",
+                        "longName": "Great Britain"
+                    },
+                    "participant": {
+                        "order": "1",
+                        "bib": "2454",
+                        "competitor": {
+                            "identifier": "1217647",
+                            "firstName": "Adam",
+                            "lastName": "Gemili",
+                            "fullName": "Adam Gemili"
+                        }
+                    }
+                }, {
+                    "order": "5",
+                    "type": "Individual",
+                    "code": "1213255",
+                    "rank": "5",
+                    "value": "20.13",
+                    "property": {
+                        "type": "Result Type",
+                        "value": "Time"
+                    },
+                    "resultExtension": {
+                        "type": "Reaction Time",
+                        "value": "0.148"
+                    },
+                    "country": {
+                        "identifier": "NED",
+                        "name": "Netherlands",
+                        "longName": "Netherlands"
+                    },
+                    "participant": {
+                        "order": "1",
+                        "bib": "2785",
+                        "competitor": {
+                            "identifier": "1213255",
+                            "firstName": "Churandy",
+                            "lastName": "Martina",
+                            "fullName": "Churandy Martina"
+                        }
+                    }
+                }, {
+                    "order": "6",
+                    "type": "Individual",
+                    "code": "1160690",
+                    "rank": "6",
+                    "value": "20.19",
+                    "property": {
+                        "type": "Result Type",
+                        "value": "Time"
+                    },
+                    "resultExtension": {
+                        "type": "Reaction Time",
+                        "value": "0.189"
+                    },
+                    "country": {
+                        "identifier": "USA",
+                        "name": "United States",
+                        "longName": "United States of America"
+                    },
+                    "participant": {
+                        "order": "1",
+                        "bib": "3090",
+                        "competitor": {
+                            "identifier": "1160690",
+                            "firstName": "Lashawn",
+                            "lastName": "Merritt",
+                            "fullName": "Lashawn Merritt"
+                        }
+                    }
+                }, {
+                    "order": "7",
+                    "type": "Individual",
+                    "code": "1084476",
+                    "rank": "7",
+                    "value": "20.23",
+                    "property": {
+                        "type": "Result Type",
+                        "value": "Time"
+                    },
+                    "resultExtension": {
+                        "type": "Reaction Time",
+                        "value": "0.162"
+                    },
+                    "country": {
+                        "identifier": "PAN",
+                        "name": "Panama",
+                        "longName": "Panama"
+                    },
+                    "participant": {
+                        "order": "1",
+                        "bib": "2818",
+                        "competitor": {
+                            "identifier": "1084476",
+                            "firstName": "Alonso",
+                            "lastName": "Edward",
+                            "fullName": "Alonso Edward"
+                        }
+                    }
+                }, {
+                    "order": "8",
+                    "type": "Individual",
+                    "code": "1138558",
+                    "rank": "8",
+                    "value": "20.43",
+                    "property": {
+                        "type": "Result Type",
+                        "value": "Time"
+                    },
+                    "resultExtension": {
+                        "type": "Reaction Time",
+                        "value": "0.141"
+                    },
+                    "country": {
+                        "identifier": "TUR",
+                        "name": "Turkey",
+                        "longName": "Turkey"
+                    },
+                    "participant": {
+                        "order": "1",
+                        "bib": "3001",
+                        "competitor": {
+                            "identifier": "1138558",
+                            "firstName": "Ramil",
+                            "lastName": "Guliyev",
+                            "fullName": "Ramil Guliyev"
+                        }
+                    }
+                }]
+            }
+        }
+    }
+}

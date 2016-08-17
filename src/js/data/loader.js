@@ -9,10 +9,13 @@ export default function(event, test, cbResult) {
     let urlData = "https://interactive.guim.co.uk/2016/07/olympic-vs/data/";
     let docsKey = cfgData[event] ? cfgData[event].key : defaultKey;
       
-    // testing
-    //let urlTest = urlDocs + docsKey + ".json"; 
-    //d3_json(urlTest, (resp, err) => console.log(resp, err));
-
+    /*/ testing
+    let urlTest = 
+    urlData + event + ".json";
+    //urlData + (test ? "test/" : "live/") + event + "_final.json";    
+    //urlDocs + docsKey + ".json"; 
+    d3_json(urlTest, (resp, err) => console.log(resp, err));
+    */
     d3_queue()
     .defer(d3_json, urlData + event + ".json")
     .defer(d3_json, urlData + (test ? "test/" : "live/") + event + "_final.json")

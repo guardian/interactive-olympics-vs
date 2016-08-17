@@ -1,0 +1,276 @@
+{
+    "olympics": {
+        "eventUnit": {
+            "identifier": "ATW002101",
+            "description": "Women's 200m Final",
+            "unitType": "Individuals",
+            "medalEvent": "Yes",
+            "disciplineDescription": {
+                "identifier": "athletics",
+                "value": "Athletics"
+            },
+            "phaseDescription": {
+                "identifier": "ATW0021",
+                "value": "Final"
+            },
+            "result": {
+                "type": "Official",
+                "timestamp": "2016-08-18T01:36:28Z",
+                "entrant": [{
+                    "order": "1",
+                    "type": "Individual",
+                    "code": "1116079",
+                    "rank": "1",
+                    "value": "21.78",
+                    "property": [{
+                        "type": "Medal Awarded",
+                        "value": "Gold"
+                    }, {
+                        "type": "Record Set",
+                        "value": "SB"
+                    }, {
+                        "type": "Result Type",
+                        "value": "Time"
+                    }],
+                    "resultExtension": {
+                        "type": "Reaction Time",
+                        "value": "0.152"
+                    },
+                    "country": {
+                        "identifier": "JAM",
+                        "name": "Jamaica",
+                        "longName": "Jamaica"
+                    },
+                    "participant": {
+                        "order": "1",
+                        "bib": "903",
+                        "competitor": {
+                            "identifier": "1116079",
+                            "firstName": "Elaine",
+                            "lastName": "Thompson",
+                            "fullName": "Elaine Thompson"
+                        }
+                    }
+                }, {
+                    "order": "2",
+                    "type": "Individual",
+                    "code": "1213251",
+                    "rank": "2",
+                    "value": "21.88",
+                    "property": [{
+                        "type": "Medal Awarded",
+                        "value": "Silver"
+                    }, {
+                        "type": "Record Set",
+                        "value": "SB"
+                    }, {
+                        "type": "Result Type",
+                        "value": "Time"
+                    }],
+                    "resultExtension": {
+                        "type": "Reaction Time",
+                        "value": "0.141"
+                    },
+                    "country": {
+                        "identifier": "NED",
+                        "name": "Netherlands",
+                        "longName": "Netherlands"
+                    },
+                    "participant": {
+                        "order": "1",
+                        "bib": "1039",
+                        "competitor": {
+                            "identifier": "1213251",
+                            "firstName": "Dafne",
+                            "lastName": "Schippers",
+                            "fullName": "Dafne Schippers"
+                        }
+                    }
+                }, {
+                    "order": "3",
+                    "type": "Individual",
+                    "code": "1127046",
+                    "rank": "3",
+                    "value": "22.15",
+                    "property": [{
+                        "type": "Medal Awarded",
+                        "value": "Bronze"
+                    }, {
+                        "type": "Result Type",
+                        "value": "Time"
+                    }],
+                    "resultExtension": {
+                        "type": "Reaction Time",
+                        "value": "0.143"
+                    },
+                    "country": {
+                        "identifier": "USA",
+                        "name": "United States",
+                        "longName": "United States of America"
+                    },
+                    "participant": {
+                        "order": "1",
+                        "bib": "1326",
+                        "competitor": {
+                            "identifier": "1127046",
+                            "firstName": "Tori",
+                            "lastName": "Bowie",
+                            "fullName": "Tori Bowie"
+                        }
+                    }
+                }, {
+                    "order": "4",
+                    "type": "Individual",
+                    "code": "1152026",
+                    "rank": "4",
+                    "value": "22.21",
+                    "property": [{
+                        "type": "Record Set",
+                        "value": "NR"
+                    }, {
+                        "type": "Result Type",
+                        "value": "Time"
+                    }],
+                    "resultExtension": {
+                        "type": "Reaction Time",
+                        "value": "0.153"
+                    },
+                    "country": {
+                        "identifier": "CIV",
+                        "name": "Côte d'Ivoire",
+                        "longName": "Cote d'Ivoire"
+                    },
+                    "participant": {
+                        "order": "1",
+                        "bib": "540",
+                        "competitor": {
+                            "identifier": "1152026",
+                            "firstName": "Marie-Josee",
+                            "lastName": "Ta Lou",
+                            "fullName": "Marie-Josee Ta Lou"
+                        }
+                    }
+                }, {
+                    "order": "5",
+                    "type": "Individual",
+                    "code": "1217572",
+                    "rank": "5",
+                    "value": "22.31",
+                    "property": [{
+                        "type": "Record Set",
+                        "value": "SB"
+                    }, {
+                        "type": "Result Type",
+                        "value": "Time"
+                    }],
+                    "resultExtension": {
+                        "type": "Reaction Time",
+                        "value": "0.135"
+                    },
+                    "country": {
+                        "identifier": "GBR",
+                        "name": "Great Britain",
+                        "longName": "Great Britain"
+                    },
+                    "participant": {
+                        "order": "1",
+                        "bib": "695",
+                        "competitor": {
+                            "identifier": "1217572",
+                            "firstName": "Dina",
+                            "lastName": "Asher-Smith",
+                            "fullName": "Dina Asher-Smith"
+                        }
+                    }
+                }, {
+                    "order": "6",
+                    "type": "Individual",
+                    "code": "1149961",
+                    "rank": "6",
+                    "value": "22.34",
+                    "property": {
+                        "type": "Result Type",
+                        "value": "Time"
+                    },
+                    "resultExtension": {
+                        "type": "Reaction Time",
+                        "value": "0.158"
+                    },
+                    "country": {
+                        "identifier": "TTO",
+                        "name": "Trinidad and Tobago",
+                        "longName": "Trinidad and Tobago"
+                    },
+                    "participant": {
+                        "order": "1",
+                        "bib": "1245",
+                        "competitor": {
+                            "identifier": "1149961",
+                            "firstName": "Michelle-Lee",
+                            "lastName": "Ahye",
+                            "fullName": "Michelle-Lee Ahye"
+                        }
+                    }
+                }, {
+                    "order": "7",
+                    "type": "Individual",
+                    "code": "1415600",
+                    "rank": "7",
+                    "value": "22.65",
+                    "property": {
+                        "type": "Result Type",
+                        "value": "Time"
+                    },
+                    "resultExtension": {
+                        "type": "Reaction Time",
+                        "value": "0.171"
+                    },
+                    "country": {
+                        "identifier": "USA",
+                        "name": "United States",
+                        "longName": "United States of America"
+                    },
+                    "participant": {
+                        "order": "1",
+                        "bib": "1374",
+                        "competitor": {
+                            "identifier": "1415600",
+                            "firstName": "Deajah",
+                            "lastName": "Stevens",
+                            "fullName": "Deajah Stevens"
+                        }
+                    }
+                }, {
+                    "order": "8",
+                    "type": "Individual",
+                    "code": "1121835",
+                    "rank": "8",
+                    "value": "22.69",
+                    "property": {
+                        "type": "Result Type",
+                        "value": "Time"
+                    },
+                    "resultExtension": {
+                        "type": "Reaction Time",
+                        "value": "0.104"
+                    },
+                    "country": {
+                        "identifier": "BUL",
+                        "name": "Bulgaria",
+                        "longName": "Bulgaria"
+                    },
+                    "participant": {
+                        "order": "1",
+                        "bib": "458",
+                        "competitor": {
+                            "identifier": "1121835",
+                            "firstName": "Ivet",
+                            "lastName": "Lalova-Collio",
+                            "fullName": "Ivet Lalova-Collio"
+                        }
+                    }
+                }]
+            }
+        }
+    }
+}

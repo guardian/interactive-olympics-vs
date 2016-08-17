@@ -23,7 +23,7 @@ export function showHighlightAxis(data) {
     let atwr = record.wr.attrs;
     let ator = record.or.attrs;
     let elwr = d3_select(".wr");
-    let elor = d3_select(".or");
+    let elor = d3_select("#" + record.or.id);
 
     let iswr = !record.wr.notAvailable;
     let ttwr = iswr ? Math.round((atpt.time - atwr.time)*100)/100 : null;
@@ -50,19 +50,27 @@ export function showHighlightAxis(data) {
     if (state !== "final" || data.attrs.dist === 0) { return; } 
     d3_select(".js-final").classed("d-n", false);
     
+    let calcDist = Math.abs(elwr.attr("cy").replace("%", "") - elor.attr("cy").replace("%", ""));
+    let isTooClose =  calcDist < 5.5;
+    //console.log(calcDist);
+
     // wr, ps. some events don't have WRs
     if (iswr) { 
-    
+    let pos; 
     let isNewRecord = record.wr.y === 2016;
-    let flag = isNewRecord ? "record" : "origin";
-    
+    switch (true) {
+        case isNewRecord: pos = "record"; break;
+        case isTooClose: pos = "top"; break;
+        default: pos = "origin";
+    }
+
     d3_select(".hl-lh-wr")
     .attr("x1", x).attr("x2", elwr.attr("cx"))
     .attr("y1", elwr.attr("cy")).attr("y2", elwr.attr("cy"));
     
     d3_select(".hl-txt-wr")
     .attr("y", elwr.attr("cy"))
-    .html(addMark(x, atpt.dist, ttwr, "wr", flag));
+    .html(addMark(x, atpt.dist, ttwr, "wr", pos));
     }
 
     // or
@@ -73,7 +81,7 @@ export function showHighlightAxis(data) {
     // or === wr
     if (iswr && ttor === time) { 
         d3_select(".hl-txt-wr .behind").text("behind WR and OR"); 
-        de_select(".hl-txt-or").text("");
+        d3_select(".hl-txt-or").text("");
         return; 
     } else if (ttor === 0) {
         d3_select(".hl-txt-or").text("");
@@ -82,7 +90,7 @@ export function showHighlightAxis(data) {
 
     d3_select(".hl-txt-or")
     .attr("x", x).attr("y", elor.attr("cy"))
-    .html(addMark(x, atpt.dist-ator.dist, ttor, "or", "bottom"));
+    .html(addMark(x, atpt.dist-ator.dist, ttor, "or", isTooClose ? "bottom" : "origin"));
 }
 
 export function updateDotAnimation(data) {
@@ -120,20 +128,21 @@ export function hideDotAnimation() {
 }
 
 const tspan = {
-    "origin": { dyt: -20, dyb: 12 },  //top 
+    "top": { dyt: -20, dyb: 12 },  //top 
+    "origin": { dyt: -5, dyb: 18 },  //middle 
     "bottom": { dyt:  25, dyb: 12 },  //bottom1 
     "record": { dyt:  35, dyb: 12 },  //bottom2 
 };
 
-function addMark(x, dist, time, typeRecord, flag) {
+function addMark(x, dist, time, typeRecord, pos) {
     // TODO: even behind WR and OR
 
     return (
-        "<tspan x='" + x + "' dx='10' dy='" + tspan[flag].dyt + "'>" + 
+        "<tspan x='" + x + "' dx='10' dy='" + tspan[pos].dyt + "'>" + 
             "<tspan class='" + typeRecord + "-dist'>" + Math.round(dist*100)/100 + "m</tspan> " +
             "(+" + time + "s)" + 
         "</tspan>" + 
-        "<tspan x='" + x + "' dx='11' dy='" + tspan[flag].dyb + "' class='behind'>" + 
+        "<tspan x='" + x + "' dx='11' dy='" + tspan[pos].dyb + "' class='behind'>" + 
             "behind " + typeRecord.toUpperCase() + 
         "</tspan>"
     );

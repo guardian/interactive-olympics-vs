@@ -35,6 +35,9 @@ window.init = function init(el, config) {
         case "freestyle_400_w": 
         case "freestyle_200_m": 
         case "run_100_m": 
+        case "run_200_w": 
+        case "run_200_m": 
+        case "run_100x4_relay_m": 
             swimming(event);
             break;
         
@@ -70,7 +73,11 @@ function setEmbedSize() {
     updateInfoPosition();
 
     // header position change
+    let event = document.querySelector(".js-interactive").getAttribute("data-event");
+    //console.log(event);
     switch (true) {
+    // exception(s) due to layout
+    case (event === "run_200_m"): break;
     case (size.w < 980 && page.w >= 980): swapeChildNodes("in", "top"); break;
     case (page.w < 980 && size.w >= 980): swapeChildNodes("top", "in"); break;
     default: /*console.log("no change");*/ }
